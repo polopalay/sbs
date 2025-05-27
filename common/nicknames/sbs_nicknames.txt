@@ -1,0 +1,3 @@
+nickname_the_demon_queen = {}
+nickname_the_demon_king = {}
+nickname_the_devil_creation = {}

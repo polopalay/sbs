@@ -1,0 +1,87 @@
+﻿sbs_create_lesser_succubus_interaction = {
+	icon = sbs_create_lesser_succubus_interaction
+	desc = sbs_create_lesser_succubus_interaction.desc
+	category = interaction_category_diplomacy
+	use_diplomatic_range = yes
+	cooldown = { years = 25 }
+	common_interaction = yes
+	is_shown = {
+		NOT = { has_global_variable = seal_the_gates_of_hell }
+		scope:recipient = {
+			is_female = yes
+			OR = {
+				is_immortal = no
+				has_trait = saint
+			}
+		}
+		scope:actor = {
+			OR = {
+				has_trait = sbs_demon
+				AND = {
+					has_trait = sbs_succubus
+					is_valid_construction_alchemy3_trigger = yes
+				}
+			}
+		}
+	}
+	is_valid = {
+		scope:actor.faith.religion = religion:satanic_religion
+		scope:recipient = {
+			has_trait = lustful
+			OR = {
+				has_trait = deviant
+				any_secret = { secret_type = secret_deviant }
+			}
+			OR = {
+				has_trait = witch
+				any_secret = { secret_type = secret_witch }
+			}
+		}
+	}
+	on_accept = {
+		scope:recipient = {
+			if = {
+				limit = { has_trait = saint }
+				remove_trait = saint
+				set_character_faith_with_conversion = scope:actor.faith
+				give_nickname = nick_the_betrayer
+			}
+			if = {
+				limit = { has_trait = immortal }
+				remove_trait = immortal
+			}
+			add_trait = sbs_lesser_succubus
+			set_immortal_age = 18
+		}
+	}
+	auto_accept = {
+		scope:recipient = {
+			is_courtier_of = scope:actor
+		}
+	}
+	ai_accept = {
+		base = 20
+		opinion_modifier = {
+			opinion_target = scope:actor
+			who = scope:recipient
+			multiplier = 0.5
+		}
+	}
+	ai_frequency = 12
+	ai_targets = {
+		ai_recipients = family
+		ai_recipients = scripted_relations
+		ai_recipients = neighboring_rulers
+		ai_recipients = nearby_domicile_owners
+		max = 5
+	}
+	ai_potential = { always = yes }
+	ai_will_do = {
+		base = 10
+		modifier = { add = 100 scope:recipient = { is_child_of = scope:actor } }
+		modifier = { add = 5 scope:recipient = { is_female = yes is_courtier_of = scope:actor } }
+		modifier = { add = 5 scope:recipient = { is_female = yes is_vassal_of = scope:actor } }
+		modifier = { add = 100 scope:recipient = { is_ai = no } }
+		modifier = { add = 100 scope:recipient = { has_trait = saint } }
+	}
+}

@@ -1,0 +1,5 @@
+be_healed_opinion = {
+	opinion = 50
+	decaying = yes
+	years = 10
+}

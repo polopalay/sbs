@@ -1,0 +1,66 @@
+﻿l_russian:
+  sbs_devil_dead_interaction: "Исцеление"
+  sbs_devil_dead_interaction.desc: "Устраняет все виды болезней, травм и все позорные имена."
+  stress_flag: "Стресс"
+  healing_flag: "Исцеление"
+  honor_flag: "Честь"
+  dna_flag: "Ген"
+
+  sbs_devils_gift_interaction: "Разрушение разума"
+  sbs_devils_gift_interaction.desc: "Вызывает у [recipient.GetShortUIName] влечение к похотливым мыслям."
+
+  sbs_devils_curse_interaction: "Проклятие"
+  sbs_devils_curse_interaction.desc: "Дает [recipient.GetShortUIName] \"проклятие\"."
+
+  sbs_create_lesser_succubus_interaction: "Создать младшего суккуба"
+  sbs_create_lesser_succubus_interaction.desc: "[recipient.GetShortUIName] станет младшим суккубом."
+  recipient_secondary_sbs_create_lesser_succubus_interaction: "Выбрать один"
+
+  sbs_create_succubus_interaction: "Создать суккуба"
+  sbs_create_succubus_interaction.desc: "[recipient.GetShortUIName] станет суккубом."
+  recipient_secondary_sbs_create_succubus_interaction: "Выбрать один"
+
+  sbs_absorb_interaction: "Поглотить"
+  sbs_absorb_interaction.desc: "Поглотить силу от [recipient.GetShortUIName] в верность."
+
+  sbs_makeup_interaction: "Макияж"
+  sbs_makeup_interaction.desc: "Нанесите макияж на [recipient.GetShortUIName]."
+  succubus_no_horn: "Нет рогов"
+  succubus_horn0: "Длинные изогнутые рога"
+  succubus_horn1: "Скрученные рога"
+  succubus_horn2: "Остроконечные рога"
+  succubus_horn3: "Изогнутые рога"
+  succubus_horn4: "Короткие рога"
+  succubus_no_eyes: "Нет смоки глаз"
+  succubus_marking_1: "Плачущие смоки глаза"
+  succubus_marking_2: "Царапанные смоки глаза"
+  succubus_marking_3: "Царапанные смоки глаза"
+  succubus_marking_4: "Цветочные смоки глаза"
+  succubus_marking_5: "Маленькие смоки глаза"
+  succubus_marking_6: "Крошечные смоки глаза"
+  succubus_default_eyes: "Стандартные глаза"
+  succubus_white_eyes: "Белые глаза"
+  succubus_red_eyes: "Красные глаза"
+  succubus_default_hair: "Стандартные волосы"
+  succubus_white_hair: "Белые волосы"
+  succubus_red_hair: "Красные волосы"
+  naked: "Нагой"
+  glass: "Стекло"
+
+  sbs_deal_with_the_devil_interaction: "Сделка с дьяволом"
+  sbs_deal_with_the_devil_interaction.desc: "Заключите сделку с дьяволом и получите все, что хотите, за \"небольшую\" цену."
+  small_price: "Низкая цена"
+
+  sbs_ask_for_become_lesser_succubus_interaction: "Попросить стать меньшим суккубом"
+  sbs_ask_for_become_lesser_succubus_interaction.desc: "Попросите дьявола стать меньшим суккубом."
+  recipient_secondary_sbs_ask_for_become_lesser_succubus_interaction: "Выбрать один"
+
+  sbs_ask_for_become_succubus_interaction: "Попросить стать суккубом"
+  sbs_ask_for_become_succubus_interaction.desc: "Попросите дьявола стать суккубом."
+  recipient_secondary_sbs_ask_for_become_succubus_interaction: "Выбрать один"
+
+  sbs_looking_new_owner_interaction: "Поиск нового владельца"
+  sbs_looking_new_owner_interaction.desc: "Ищите нового владельца для [recipient.GetShortUIName]"
+
+  sbs_seal_the_devil_interaction: "Запечатать дьявола"
+  sbs_seal_the_devil_interaction.desc: "Во имя меча Божьего я запечатаю этих еретиков, аминь."

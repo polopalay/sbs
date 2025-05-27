@@ -1,0 +1,77 @@
+﻿k_lilith = {
+	6.1.3 = {
+		holder = lilith_character
+		government = theocracy_government
+	}
+}
+
+k_abandon = {
+	6.1.3 = {
+		holder = abaddon_character
+		government = theocracy_government
+	}
+}
+
+k_beelzebub = {
+	6.1.3 = {
+		holder = beelzebub_character
+		government = theocracy_government
+	}
+}
+
+k_mammon = {
+	6.1.3 = {
+		holder = mammon_character
+		government = theocracy_government
+	}
+}
+
+k_belial = {
+	6.1.3 = {
+		holder = belial_character
+		government = theocracy_government
+	}
+}
+
+k_asmodeus = {
+	6.1.3 = {
+		holder = asmodeus_character
+		government = theocracy_government
+	}
+}
+
+d_laamp_satan = {
+	666.12.13 = {
+		holder = lilim_character
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+}
+
+d_laamp_saint = {
+	1065.1.1 = {
+		holder = jeanne_character
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+}
+
+d_laamp_missionary = {
+	1065.1.1 = {
+		holder = catarina_character
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+}

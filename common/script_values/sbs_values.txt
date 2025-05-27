@@ -1,0 +1,891 @@
+sbs_number_slaves_need_for_become_demon = 13
+
+succubus_cost_value = {
+	value = 0
+	if = {
+		limit = { OR = { scope:stress = yes scope:actor = { is_ai = yes } } }
+		add = succubus_cost_dealing_with_stress_value
+	}
+	if = {
+		limit = { OR = { scope:healing = yes scope:actor = { is_ai = yes } } }
+		add = succubus_cost_heal_value
+	}
+	if = {
+		limit = { OR = { scope:dna = yes scope:actor = { is_ai = yes } } }
+		add = succubus_cost_purify_price_value
+	}
+	if = {
+		limit = { OR = { scope:honor = yes scope:actor = { is_ai = yes } } }
+		add = succubus_cost_honor_price_value
+	}
+	max = 50
+	min = 1
+}
+
+succubus_const_dealing_with_stress_value = {
+	value = 0
+	if = {
+		limit = { stress_level = 1 }
+		add = 1
+	}
+	if = {
+		limit = { stress_level = 2 }
+		add = 1
+	}
+	if = {
+		limit = { stress_level = 3 }
+		add = 1
+	}
+	if = {
+		limit = { stress_level = 4 }
+		add = 1
+	}
+	if = {
+		limit = { stress_level = 5 }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = drunkard }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = hashishiyah }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = rakish }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = reclusive }
+		add = 1 
+	}
+	if = {
+		limit = { has_trait = irritable }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = flagellant }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = profligate }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = improvident }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = contrite }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = comfort_eater }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = inappetetic }
+		add = 1
+	}
+}
+
+succubus_cost_heal_value = {
+	value = 0
+	if = {
+		limit = { has_trait = depressed_1 }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = depressed_genetic }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = lunatic_1 }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = lunatic_genetic }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = possessed_1 }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = scarred }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = one_eyed }
+		add = 2
+	}
+	if = {
+		limit = { has_trait = maimed }
+		add = 2
+	}
+	if = {
+		limit = { has_trait = one_legged }
+		add = 2
+	}
+	if = {
+		limit = { has_trait = disfigured }
+		add = 3
+	}
+	if = {
+		limit = { has_trait = eunuch }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = blind }
+		add = 3
+	}
+	if = {
+		limit = { has_trait = sickly }
+		add = 2
+	}
+	if = {
+		limit = { has_trait = infirm }
+		add = 2
+	}
+	if = {
+		limit = { has_trait = incapable }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = leper }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = dysentery }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = ergotism }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = wounded_1 }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = wounded_2 }
+		add = 2
+	}
+	if = {
+		limit = { has_trait = wounded_3 }
+		add = 3
+	}
+	if = {
+		limit = { has_trait = ill }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = pneumonic }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = gout_ridden }
+		add = 3
+	}
+	if = {
+		limit = { has_trait = typhus }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = consumption }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = cancer }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = great_pox }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = smallpox }
+		add = 3
+	}
+	if = {
+		limit = { has_trait = bubonic_plague }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = lovers_pox }
+		add = 3
+	}
+	if = {
+		limit = { has_trait = early_great_pox }
+		add = 3
+	}
+	if = {
+		limit = { has_trait = great_pox }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = possessed_genetic }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = bubonic_plague }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = measles }
+		add = 5
+	}
+	if = {
+		limit = { current_weight >= 25 }
+		add = 1
+	}
+	if = {
+		limit = { current_weight >= 50 }
+		add = 1
+	}
+	if = {
+		limit = { current_weight <= -25 }
+		add = 1
+	}
+	if = {
+		limit = { current_weight <= -50 }
+		add = 1
+	}
+}
+
+succubus_cost_purify_price_value = {
+	value = 0
+	if = {
+		limit = { has_trait = albino }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = lisping }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = stuttering }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = giant }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = scaly }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = clubfooted }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = dwarf }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = hunchbacked }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = infertile }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = wheezing }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = spindly }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = bleeder }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = weak }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = dull }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = beauty_bad_1 }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = beauty_bad_2 }
+		add = 7
+	}
+	if = {
+		limit = { has_trait = beauty_bad_3 }
+		add = 10
+	}
+	if = {
+		limit = { has_trait = intellect_bad_1 }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = intellect_bad_2 }
+		add = 7
+	}
+	if = {
+		limit = { has_trait = intellect_bad_3 }
+		add = 10
+	}
+	if = {
+		limit = { has_trait = physique_bad_1 }
+		add = 5
+	}
+	if = {
+		limit = { has_trait = physique_bad_2 }
+		add = 7
+	}
+	if = {
+		limit = { has_trait = physique_bad_3 }
+		add = 10
+	}
+	if = {
+		limit = { has_trait = inbred }
+		add = 5
+	}
+}
+
+succubus_cost_honor_price_value = {
+	value = 0
+	if = {
+		limit = {
+			has_trait = witch
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = witch }
+		}
+		add = 3
+	}
+	if = {
+		limit = {
+			has_trait = deviant
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = deviant }
+		}
+		add = 3
+	}
+	if = {
+		limit = {
+			has_trait = cannibal
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = cannibal }
+		}
+		add = 3
+	}
+	if = {
+		limit = {
+			has_trait = adulterer
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = adulterer }
+		}
+		add = 2
+	}
+	if = {
+		limit = {
+			has_trait = sodomite
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = sodomite }
+		}
+		add = 2
+	}
+	if = {
+		limit = {
+			has_trait = incestuous
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = incestuous }
+		}
+		add = 3
+	}
+	if = {
+		limit = {
+			has_trait = fornicator
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = fornicator }
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_trait = kinslayer_1
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = kinslayer_1 }
+		}
+		add = 3
+	}
+	if = {
+		limit = {
+			has_trait = kinslayer_2
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = kinslayer_2 }
+		}
+		add = 2
+	}
+	if = {
+		limit = {
+			has_trait = kinslayer_3
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = kinslayer_3 }
+		}
+		add = 2
+	}
+	if = {
+		limit = {
+			has_trait = murderer
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = murderer }
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_trait = lifestyle_prostitute
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = adulterer }
+		}
+		add = 1
+	}
+}
+
+deal_price_value = {
+	value = 0
+	if = {
+		limit = { OR = { scope:stress = yes scope:actor = { is_ai = yes } } }
+		add = dealing_with_stress_value
+	}
+	if = {
+		limit = { OR = { scope:healing = yes scope:actor = { is_ai = yes } } }
+		add = heal_price_value
+	}
+	if = {
+		limit = { OR = {  scope:dna = yes scope:actor = { is_ai = yes } } }
+		add = purify_price_value
+	}
+	if = {
+		limit = { OR = {  scope:honor = yes scope:actor = { is_ai = yes } } }
+		add = honor_price_value
+	}
+	min = 0
+}
+
+dealing_with_stress_value = {
+	value = 0
+	if = {
+		limit = { stress_level = 1 }
+		add = 20
+	}
+	if = {
+		limit = { stress_level = 2 }
+		add = 40
+	}
+	if = {
+		limit = { stress_level = 3 }
+		add = 60
+	}
+	if = {
+		limit = { stress_level = 4 }
+		add = 80
+	}
+	if = {
+		limit = { stress_level = 5 }
+		add = 100
+	}
+	if = {
+		limit = { has_trait = drunkard }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = hashishiyah }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = rakish }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = reclusive }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = irritable }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = flagellant }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = profligate }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = improvident }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = contrite }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = comfort_eater }
+		add = 25
+	}
+	if = {
+		limit = { has_trait = inappetetic }
+		add = 25
+	}
+}
+
+heal_price_value = {
+	value = 0
+	if = {
+		limit = { has_trait = depressed_1 }
+		add = 20
+	}
+	if = {
+		limit = { has_trait = depressed_genetic }
+		add = 20
+	}
+	if = {
+		limit = { has_trait = lunatic_1 }
+		add = 20
+	}
+	if = {
+		limit = { has_trait = lunatic_genetic }
+		add = 20
+	}
+	if = {
+		limit = { has_trait = possessed_1 }
+		add = 20
+	}
+	if = {
+		limit = { has_trait = scarred }
+		add = 20
+	}
+	if = {
+		limit = { has_trait = one_eyed }
+		add = 30
+	}
+	if = {
+		limit = { has_trait = maimed }
+		add = 30
+	}
+	if = {
+		limit = { has_trait = one_legged }
+		add = 30
+	}
+	if = {
+		limit = { has_trait = disfigured }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = eunuch }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = blind }
+		add = 30
+	}
+	if = {
+		limit = { has_trait = sickly }
+		add = 30
+	}
+	if = {
+		limit = { has_trait = infirm }
+		add = 30
+	}
+	if = {
+		limit = { has_trait = incapable }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = leper }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = dysentery }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = ergotism }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = wounded_1 }
+		add = 20
+	}
+	if = {
+		limit = { has_trait = wounded_2 }
+		add = 30
+	}
+	if = {
+		limit = { has_trait = wounded_3 }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = ill }
+		add = 20
+	}
+	if = {
+		limit = { has_trait = pneumonic }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = gout_ridden }
+		add = 30
+	}
+	if = {
+		limit = { has_trait = typhus }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = consumption }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = cancer }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = great_pox }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = smallpox }
+		add = 30
+	}
+	if = {
+		limit = { has_trait = bubonic_plague }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = lovers_pox }
+		add = 30
+	}
+	if = {
+		limit = { has_trait = early_great_pox }
+		add = 30
+	}
+	if = {
+		limit = { has_trait = great_pox }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = possessed_genetic }
+		add = 20
+	}
+	if = {
+		limit = { has_trait = bubonic_plague }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = measles }
+		add = 50
+	}
+	if = {
+		limit = { current_weight >= 25 }
+		add = 10
+	}
+	if = {
+		limit = { current_weight >= 50 }
+		add = 10
+	}
+	if = {
+		limit = { current_weight <= -25 }
+		add = 10
+	}
+	if = {
+		limit = { current_weight <= -50 }
+		add = 10
+	}
+}
+
+purify_price_value = {
+	value = 0
+	if = {
+		limit = { has_trait = albino }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = lisping }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = stuttering }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = giant }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = scaly }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = clubfooted }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = dwarf }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = hunchbacked }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = infertile }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = wheezing }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = spindly }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = bleeder }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = weak }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = dull }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = beauty_bad_1 }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = beauty_bad_2 }
+		add = 75
+	}
+	if = {
+		limit = { has_trait = beauty_bad_3 }
+		add = 100
+	}
+	if = {
+		limit = { has_trait = intellect_bad_1 }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = intellect_bad_2 }
+		add = 75
+	}
+	if = {
+		limit = { has_trait = intellect_bad_3 }
+		add = 100
+	}
+	if = {
+		limit = { has_trait = physique_bad_1 }
+		add = 50
+	}
+	if = {
+		limit = { has_trait = physique_bad_2 }
+		add = 75
+	}
+	if = {
+		limit = { has_trait = physique_bad_3 }
+		add = 100
+	}
+	if = {
+		limit = { has_trait = inbred }
+		add = 50
+	}
+}
+
+honor_price_value = {
+	value = 0
+	if = {
+		limit = {
+			has_trait = witch
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = witch }
+		}
+		add = 25
+	}
+	if = {
+		limit = {
+			has_trait = deviant
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = deviant }
+		}
+		add = 25
+	}
+	if = {
+		limit = {
+			has_trait = cannibal
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = cannibal }
+		}
+		add = 25
+	}
+	if = {
+		limit = {
+			has_trait = deviant
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = deviant }
+		}
+		add = 25
+	}
+	if = {
+		limit = {
+			has_trait = adulterer
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = adulterer }
+		}
+		add = 20
+	}
+	if = {
+		limit = {
+			has_trait = sodomite
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = sodomite }
+		}
+		add = 20
+	}
+	if = {
+		limit = {
+			has_trait = incestuous
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = incestuous }
+		}
+		add = 25
+	}
+	if = {
+		limit = {
+			has_trait = fornicator
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = fornicator }
+		}
+		add = 10
+	}
+	if = {
+		limit = {
+			has_trait = kinslayer_1
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = kinslayer1 }
+		}
+		add = 25
+	}
+	if = {
+		limit = {
+			has_trait = kinslayer_2
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = kinslayer2 }
+		}
+		add = 20
+	}
+	if = {
+		limit = {
+			has_trait = kinslayer_3
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = kinslayer3 }
+		}
+		add = 15
+	}
+	if = {
+		limit = {
+			has_trait = murderer
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = murderer }
+		}
+		add = 10
+	}
+	if = {
+		limit = {
+			has_trait = lifestyle_prostitute
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = adulterer }
+		}
+		add = 10
+	}
+}

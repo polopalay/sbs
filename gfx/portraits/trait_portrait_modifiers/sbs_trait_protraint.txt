@@ -1,0 +1,455 @@
+succubus_outfit = {
+	usage = game
+	succubus_1 = {
+		traits = { sbs_succubus }
+		trigger = {
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = corruption
+				value < 50
+			}
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = loyalty
+				value < 33
+			}
+		}
+		dna_modifiers = {
+			human = {
+				morph = {
+					mode = add
+					gene = succubus_womb
+					value = 1
+					template = womb_9
+				}
+			}
+		}
+	}
+	succubus_2 = {
+		traits = { sbs_succubus }
+		trigger = {
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = corruption
+				value >= 50
+			}
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = corruption
+				value < 100
+			}
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = loyalty
+				value < 33
+			}
+		}
+		dna_modifiers = {
+			human = {
+				morph = {
+					mode = add
+					gene = succubus_womb
+					value = 1
+					template = womb_8
+				}
+			}
+		}
+	}
+	succubus_3 = {
+		traits = { sbs_succubus }
+		trigger = {
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = corruption
+				value = 100
+			}
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = loyalty
+				value < 33
+			}
+		}
+		dna_modifiers = {
+			human = {
+				morph = {
+					mode = add
+					gene = succubus_womb
+					value = 1
+					template = womb_5
+				}
+			}
+		}
+	}
+	succubus_4 = {
+		traits = { sbs_succubus }
+		trigger = {
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = corruption
+				value < 50
+			}
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = loyalty
+				value >= 33
+			}
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = loyalty
+				value < 66
+			}
+		}
+		dna_modifiers = {
+			human = {
+				morph = {
+					mode = add
+					gene = succubus_womb
+					value = 1
+					template = womb_2
+				}
+			}
+		}
+	}
+	succubus_5 = {
+		traits = { sbs_succubus }
+		trigger = {
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = corruption
+				value < 50
+			}
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = loyalty
+				value >= 66
+			}
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = loyalty
+				value < 100
+			}
+		}
+		dna_modifiers = {
+			human = {
+				morph = {
+					mode = add
+					gene = succubus_womb
+					value = 1
+					template = womb_5
+				}
+			}
+		}
+	}
+	succubus_6 = {
+		traits = { sbs_succubus }
+		trigger = {
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = corruption
+				value < 50
+			}
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = loyalty
+				value = 100
+			}
+		}
+		dna_modifiers = {
+			human = {
+				morph = {
+					mode = add
+					gene = succubus_womb
+					value = 1
+					template = womb_12
+				}
+			}
+		}
+	}
+	succubus_7 = {
+		traits = { sbs_succubus }
+		trigger = {
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = corruption
+				value >=50
+			}
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = loyalty
+				value >= 33
+			}
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = loyalty
+				value < 66
+			}
+		}
+		dna_modifiers = {
+			human = {
+				morph = {
+					mode = add
+					gene = succubus_womb
+					value = 1
+					template = womb_10
+				}
+			}
+		}
+	}
+	succubus_8 = {
+		traits = { sbs_succubus }
+		trigger = {
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = corruption
+				value >=50
+			}
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = loyalty
+				value >= 66
+			}
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = loyalty
+				value < 100
+			}
+		}
+		dna_modifiers = {
+			human = {
+				morph = {
+					mode = add
+					gene = succubus_womb
+					value = 1
+					template = womb_11
+				}
+			}
+		}
+	}
+	succubus_9 = {
+		traits = { sbs_succubus }
+		trigger = {
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = corruption
+				value = 100
+			}
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = loyalty
+				value >= 33
+			}
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = loyalty
+				value < 66
+			}
+		}
+		dna_modifiers = {
+			human = {
+				morph = {
+					mode = add
+					gene = succubus_womb
+					value = 1
+					template = womb_15
+				}
+			}
+		}
+	}
+	succubus_10 = {
+		traits = { sbs_succubus }
+		trigger = {
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = corruption
+				value = 100
+			}
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = loyalty
+				value >= 66
+			}
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = loyalty
+				value < 100
+			}
+		}
+		dna_modifiers = {
+			human = {
+				morph = {
+					mode = add
+					gene = succubus_womb
+					value = 1
+					template = womb_16
+				}
+			}
+		}
+	}
+	succubus_11 = {
+		traits = { sbs_succubus }
+		trigger = {
+			AND = {
+				has_trait_xp = { trait = sbs_succubus track = corruption value = 100 }
+				has_trait_xp = { trait = sbs_succubus track = loyalty value = 100 }
+			}
+		}
+		dna_modifiers = {
+			human = {
+				morph = {
+					mode = add
+					gene = succubus_womb
+					value = 1
+					template = womb_6
+				}
+			}
+		}
+	}
+	lesser_succubus_1 = {
+		traits = { sbs_lesser_succubus }
+		trigger = {
+			has_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 0
+			}
+		}
+		dna_modifiers = {
+			human = {
+				morph = {
+					mode = add
+					gene = succubus_womb
+					value = 1
+					template = womb_13
+				}
+			}
+		}
+	}
+	lesser_succubus_1 = {
+		traits = { sbs_lesser_succubus }
+		trigger = {
+			has_trait_xp = {
+				trait = sbs_lesser_succubus
+				value < 50
+			}
+		}
+		dna_modifiers = {
+			human = {
+				morph = {
+					mode = add
+					gene = succubus_womb
+					value = 1
+					template = womb_4
+				}
+			}
+		}
+	}
+	lesser_succubus_2 = {
+		traits = { sbs_lesser_succubus }
+		trigger = {
+			has_trait_xp = {
+				trait = sbs_lesser_succubus
+				value >= 50
+			}
+		}
+		dna_modifiers = {
+			human = {
+				morph = {
+					mode = add
+					gene = succubus_womb
+					value = 1
+					template = womb_7
+				}
+			}
+		}
+	}
+	sbs_demon = {
+		traits = { sbs_demon }
+		trigger = {
+			is_female = yes
+		}
+		dna_modifiers = {
+			human = {
+				morph = {
+					mode = add
+					gene = succubus_womb
+					value = 1
+					template = womb_14
+				}
+			}
+		}
+	}
+}
+
+physical_traits_portrait_modifier = {
+	physical_1 = {
+		traits = { 
+			physique_good_1
+		}
+		dna_modifiers = {
+			human = {
+				morph = {
+					mode = modify_multiply
+					gene = gene_height
+					value = 1.1
+				}
+				morph = {
+					mode = modify_multiply
+					gene = gene_head_width
+					value = 1.1
+				}
+				morph = {
+					mode = modify_multiply
+					gene = gene_head_height
+					value = 1.1
+				}
+			}
+		}
+	}
+	physical_2 = {
+		traits = { 
+			physique_good_2
+		}
+		dna_modifiers = {
+			human = {
+				morph = {
+					mode = modify_multiply
+					gene = gene_height
+					value = 1.2
+				}
+				morph = {
+					mode = modify_multiply
+					gene = gene_head_width
+					value = 1.2
+				}
+				morph = {
+					mode = modify_multiply
+					gene = gene_head_height
+					value = 1.2
+				}
+			}
+		}
+	}
+	physical_3 = {
+		traits = { 
+			physique_good_3
+		}
+		dna_modifiers = {
+			human = {
+				morph = {
+					mode = modify_multiply
+					gene = gene_height
+					value = 1.25
+				}
+				morph = {
+					mode = modify_multiply
+					gene = gene_head_width
+					value = 1.25
+				}
+				morph = {
+					mode = modify_multiply
+					gene = gene_head_height
+					value = 1.25
+				}
+			}
+		}
+	}
+}

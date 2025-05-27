@@ -1,0 +1,20 @@
+﻿l_french:
+  become_demon: "Devenir démon"
+  become_demon.desc: "En tant que Succube béni par Satan et les princes de l'enfer, vous avez rempli toutes les conditions pour devenir un véritable démon, en sacrifiant 100 vies humaines pour effectuer ce rituel sacré."
+  become_demon.c: "Recevoir la bénédiction"
+  become_demon.t: "Commencer le rituel sacré"
+
+  masturbate: "Se Masturber"
+  masturbate.desc: "Votre vie est déjà pleine de stress, vous cherchez quelque chose pour vous soulager. Les godes sont le moyen le plus sûr, vous pouvez vous abandonner à la sensualité sans vous inquiéter des commérages sur vous en tant que salope dévergondée."
+  masturbate.t: "Soulager le stress"
+  masturbate.c: "Introduisez-le dans votre vagin"
+
+  seal_the_gates_of_hell: "Sceller les Portes de l'Enfer"
+  seal_the_gates_of_hell.desc: "Les portes de l'enfer sont ouvertes, et les démons s'apprêtent à envahir le monde des humains. Vous devez trouver un moyen de sceller les portes de l'enfer et d'empêcher les démons d'entrer dans le monde des humains."
+  seal_the_gates_of_hell.t: "Sceller les Portes de l'Enfer"
+  seal_the_gates_of_hell.c: "Sceller les Portes de l'Enfer"
+
+  alienate_people: "Aliéner les Gens"
+  alienate_people.desc: "Corrompre votre peuple. Laissez-les adorer le vrai dieu"
+  alienate_people.t: "Aliéner les Gens"
+  alienate_people.c: "Aliéner les Gens"

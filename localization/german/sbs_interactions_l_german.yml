@@ -1,0 +1,66 @@
+﻿l_german:
+  sbs_devil_dead_interaction: "Heilung"
+  sbs_devil_dead_interaction.desc: "Beseitigt alle Arten von Krankheiten, Verletzungen und alle unehrenhaften Namen"
+  stress_flag: "Stress"
+  healing_flag: "Heilung"
+  honor_flag: "Ehre"
+  dna_flag: "Gen"
+
+  sbs_devils_gift_interaction: "Geistige Zerrüttung"
+  sbs_devils_gift_interaction.desc: "Bringt [recipient.GetShortUIName] dazu, von lüsternen Gedanken heimgesucht zu werden"
+
+  sbs_devils_curse_interaction: "Fluch"
+  sbs_devils_curse_interaction.desc: "Geben Sie [recipient.GetShortUIName] einen \"Fluch\""
+
+  sbs_create_lesser_succubus_interaction: "Einen niederen Succubus erschaffen"
+  sbs_create_lesser_succubus_interaction.desc: "[recipient.GetShortUIName] wird zu einem niederen Succubus"
+  recipient_secondary_sbs_create_lesser_succubus_interaction: "Wählen eine"
+
+  sbs_create_succubus_interaction: "Einen Succubus erschaffen"
+  sbs_create_succubus_interaction.desc: "[recipient.GetShortUIName] wird zu einem Succubus"
+  recipient_secondary_sbs_create_succubus_interaction: "Wählen eine"
+
+  sbs_absorb_interaction: "Absorbieren"
+  sbs_absorb_interaction.desc: "Absorbieren Sie die Macht von [recipient.GetShortUIName] in Loyalität"
+
+  sbs_makeup_interaction: "Make-up"
+  sbs_makeup_interaction.desc: "Tragen Sie Make-up auf [recipient.GetShortUIName] auf"
+  succubus_no_horn: "Ohne Hörner"
+  succubus_horn0: "Lange, gebogene Hörner"
+  succubus_horn1: "Verdrehte Hörner"
+  succubus_horn2: "Spitze Hörner"
+  succubus_horn3: "Gebogene Hörner"
+  succubus_horn4: "Kleine Hörner"
+  succubus_no_eyes: "Ohne rauchige Augen"
+  succubus_marking_1: "Weinende rauchige Augen"
+  succubus_marking_2: "Abgeriebene rauchige Augen"
+  succubus_marking_3: "Abgeriebene rauchige Augen"
+  succubus_marking_4: "Blumige rauchige Augen"
+  succubus_marking_5: "Kleine rauchige Augen"
+  succubus_marking_6: "Minimale rauchige Augen"
+  succubus_default_eyes: "Standardaugen"
+  succubus_white_eyes: "Weiße Augen"
+  succubus_red_eyes: "Rote Augen"
+  succubus_default_hair: "Standardhaare"
+  succubus_white_hair: "Weiße Haare"
+  succubus_red_hair: "Rote Haare"
+  naked: "Nackt"
+  glass: "Glas"
+
+  sbs_deal_with_the_devil_interaction: "Pakt mit dem Teufel"
+  sbs_deal_with_the_devil_interaction.desc: "Schließe einen Pakt mit dem Teufel und erhalte, was immer du willst, zu einem \"kleinen\" Preis."
+  small_price: "Kleiner Preis"
+
+  sbs_ask_for_become_lesser_succubus_interaction: "Bitte um die Transformation zur geringeren Succubus"
+  sbs_ask_for_become_lesser_succubus_interaction.desc: "Bitte den Teufel, um eine geringere Succubus zu werden."
+  recipient_secondary_sbs_ask_for_become_lesser_succubus_interaction: "Wähle eine"
+
+  sbs_ask_for_become_succubus_interaction: "Bitte um die Transformation zur Succubus"
+  sbs_ask_for_become_succubus_interaction.desc: "Bitte den Teufel, um eine Succubus zu werden."
+  recipient_secondary_sbs_ask_for_become_succubus_interaction: "Wähle eine"
+  
+  sbs_looking_new_owner_interaction: "Suche nach einem neuen Besitzer"
+  sbs_looking_new_owner_interaction.desc: "Suche nach einem neuen Besitzer für [recipient.GetShortUIName]"
+
+  sbs_seal_the_devil_interaction: "Den Teufel versiegeln"
+  sbs_seal_the_devil_interaction.desc: "Im Namen des Schwertes Gottes werde ich diese Ketzer versiegeln, Amen."

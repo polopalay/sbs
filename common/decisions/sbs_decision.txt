@@ -1,0 +1,488 @@
+become_demon = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+	desc = become_demon.desc
+	confirm_text = become_demon.c
+	selection_tooltip = become_demon.t
+	decision_group_type = decisions
+
+	is_shown = {
+		is_ruler = yes
+		NOT = { has_trait = sbs_demon }
+		NOT = { has_global_variable = seal_the_gates_of_hell }
+		OR = {
+			has_trait = sbs_succubus
+			has_trait = sbs_seed_of_destruction
+			AND = {
+				faith.religion = religion:satanic_religion
+				faith.religious_head = root
+			}
+		}
+	}
+	is_valid = {
+		OR = {
+			AND = {
+				has_trait = sbs_succubus
+				has_trait_xp = { trait = sbs_succubus track = corruption value >= 100 }
+				has_trait_xp = { trait = sbs_succubus track = loyalty value >= 100 }
+			}
+			AND = {
+				has_trait = sbs_seed_of_destruction
+				has_trait_xp = { trait = sbs_seed_of_destruction value >= 100 }
+				primary_title.tier >= tier_kingdom
+				any_courtier = { has_trait = slave is_ai = yes count >= sbs_number_slaves_need_for_become_demon is_immortal = no is_adult = yes }
+				any_courtier = { has_trait = slave is_female = yes is_immortal = yes }
+			}
+			AND = {
+				faith.religion = religion:satanic_religion
+				faith.religious_head = root
+			}
+		}
+	}
+	effect = {
+		if = {
+			limit = { faith = faith:beelzebub faith.religious_head = root }
+			if = {
+				limit = { NOT = { dynasty = dynasty:888888 } }
+				random_living_character = {
+					limit = { faith = faith:beelzebub is_ruler = no }
+					copy_inheritable_appearance_from = character:beelzebub_character
+					save_scope_as = demon_child
+					weight = {
+						base = 0
+						modifier = { is_lowborn = no add = 1 }
+						modifier = { dynasty = dynasty:888888 add = 10000 }
+						modifier = { dynasty = dynasty:888888 is_adult = yes add = 20000 }
+					}
+				}
+				random_held_title = {
+					limit = { this = title:k_beelzebub }
+					create_title_and_vassal_change = {
+						type = usurped
+						save_scope_as = change
+						add_claim_on_loss = no
+					}
+					change_title_holder_include_vassals = {
+						holder = scope:demon_child
+						change = scope:change
+						take_baronies = no
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+			}
+		}
+		else_if = {
+			limit = { faith = faith:lilith faith.religious_head = root }
+			if = {
+				limit = { NOT = { dynasty = dynasty:666666 } }
+				random_living_character = {
+					limit = { faith = faith:lilith is_ruler = no }
+					copy_inheritable_appearance_from = character:lilith_character
+					save_scope_as = demon_child
+					weight = {
+						base = 0
+						modifier = { is_lowborn = yes add = 1 }
+						modifier = { dynasty = dynasty:666666 add = 10000 }
+						modifier = { dynasty = dynasty:666666 is_adult = yes add = 20000 }
+					}
+				}
+				random_held_title = {
+					limit = { this = title:k_lilith }
+					create_title_and_vassal_change = {
+						type = usurped
+						save_scope_as = change
+						add_claim_on_loss = no
+					}
+					change_title_holder_include_vassals = {
+						holder = scope:demon_child
+						change = scope:change
+						take_baronies = no
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+			}
+		}
+		else_if = {
+			limit = { faith = faith:abaddon faith.religious_head = root }
+			if = {
+				limit = { NOT = { dynasty = dynasty:777777 } }
+				random_living_character = {
+					limit = { faith = faith:abaddon is_ruler = no }
+					copy_inheritable_appearance_from = character:abaddon_character
+					save_scope_as = demon_child
+					weight = {
+						base = 0
+						modifier = { is_lowborn = yes add = 1 }
+						modifier = { dynasty = dynasty:777777 add = 10000 }
+						modifier = { dynasty = dynasty:777777 is_adult = yes add = 20000 }
+						modifier = { dynasty = dynasty:777777 is_female = yes add = 20000 }
+					}
+				}
+				random_held_title = {
+					limit = { this = title:k_abandon }
+					create_title_and_vassal_change = {
+						type = usurped
+						save_scope_as = change
+						add_claim_on_loss = no
+					}
+					change_title_holder_include_vassals = {
+						holder = scope:demon_child
+						change = scope:change
+						take_baronies = no
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+			}
+		}
+		else_if = {
+			limit = { faith = faith:mammon faith.religious_head = root }
+			if = {
+				limit = { NOT = { dynasty = dynasty:999999 } }
+				random_living_character = {
+					limit = { faith = faith:mammon is_ruler = no }
+					copy_inheritable_appearance_from = character:mammon_character
+					save_scope_as = demon_child
+					weight = {
+						base = 0
+						modifier = { is_lowborn = yes add = 1 }
+						modifier = { dynasty = dynasty:999999 add = 10000 }
+						modifier = { dynasty = dynasty:999999 is_adult = yes add = 20000 }
+					}
+				}
+				random_held_title = {
+					limit = { this = title:k_mammon }
+					create_title_and_vassal_change = {
+						type = usurped
+						save_scope_as = change
+						add_claim_on_loss = no
+					}
+					change_title_holder_include_vassals = {
+						holder = scope:demon_child
+						change = scope:change
+						take_baronies = no
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+			}
+		}
+		else_if = {
+			limit = { faith = faith:asmodeus faith.religious_head = root }
+			if = {
+				limit = { NOT = { dynasty = dynasty:13131313 } }
+				random_living_character = {
+					limit = { faith = faith:asmodeus is_ruler = no }
+					copy_inheritable_appearance_from = character:asmodeus_character
+					save_scope_as = demon_child
+					weight = {
+						base = 0
+						modifier = { is_lowborn = yes add = 1 }
+						modifier = { dynasty = dynasty:13131313 add = 10000 }
+						modifier = { dynasty = dynasty:13131313 is_adult = yes add = 20000 }
+					}
+				}
+				random_held_title = {
+					limit = { this = title:k_asmodeus }
+					create_title_and_vassal_change = {
+						type = usurped
+						save_scope_as = change
+						add_claim_on_loss = no
+					}
+					change_title_holder_include_vassals = {
+						holder = scope:demon_child
+						change = scope:change
+						take_baronies = no
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+			}
+		}
+		else_if = {
+			limit = { faith = faith:belial faith.religious_head = root }
+			if = {
+				limit = { NOT = { dynasty = dynasty:14814813 } }
+				random_living_character = {
+					limit = { faith = faith:belial is_ruler = no }
+					copy_inheritable_appearance_from = character:belial_character
+					save_scope_as = demon_child
+					weight = {
+						base = 0
+						modifier = { is_lowborn = yes add = 1 }
+						modifier = { dynasty = dynasty:14814813 add = 10000 }
+						modifier = { dynasty = dynasty:14814813 is_adult = yes add = 20000 }
+					}
+				}
+				random_held_title = {
+					limit = { this = title:k_belial }
+					create_title_and_vassal_change = {
+						type = usurped
+						save_scope_as = change
+						add_claim_on_loss = no
+					}
+					change_title_holder_include_vassals = {
+						holder = scope:demon_child
+						change = scope:change
+						take_baronies = no
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { exists = scope:demon_child } }
+			save_scope_as = demon_child
+		}
+		scope:demon_child = {
+			if = {
+				limit = { has_trait = sbs_seed_of_destruction }
+				every_courtier = {
+					limit = { is_ai = yes has_trait = slave is_immortal = no is_adult = yes }
+					death = {
+						death_reason = death_execution
+						killer = root
+					}
+				}
+				remove_trait = sbs_seed_of_destruction
+				every_relation = {
+					type = slave
+					limit = { is_female = yes is_immortal = yes }
+					trigger_event = sbs_slavery_event.4000
+				}
+			}
+			if = {
+				limit = { has_trait = sbs_lesser_succubus }
+				remove_trait = sbs_lesser_succubus
+			}
+			if = {
+				limit = { has_trait = sbs_succubus }
+				remove_trait = sbs_succubus
+			}
+			add_trait = sbs_demon
+			set_immortal_age = 18
+	
+			if = {
+				limit = {
+					faith.religion = religion:satanic_religion
+					faith.religious_head = root
+					culture = {
+						NOT = {
+							has_same_culture_heritage = culture:sbs_demonic
+							has_same_culture_language = culture:sbs_demonic
+						}
+					}
+				}
+				set_culture = culture:sbs_demonic
+			}
+			if = {
+				limit = { is_female = yes }
+				give_nickname = nickname_the_demon_queen
+			}
+			else = {
+				give_nickname = nickname_the_demon_king
+			}
+		}
+		if = {
+			limit = { NOT = { faith.religion = religion:satanic_religion } }
+			random_list = {
+				100 = { set_character_faith_with_conversion = faith:beelzebub }
+				100 = { set_character_faith_with_conversion = faith:lilith }
+				100 = { set_character_faith_with_conversion = faith:abaddon }
+				100 = { set_character_faith_with_conversion = faith:mammon }
+				100 = { set_character_faith_with_conversion = faith:asmodeus }
+				100 = { set_character_faith_with_conversion = faith:belial }
+			}
+		}
+	}
+	ai_potential = { always = yes }
+	ai_check_interval = 12
+	ai_will_do = { base = 100 }
+}
+
+masturbate = {
+	picture = { reference = "gfx/interface/illustrations/decisions/deviant_courtesans.dds" }
+	desc = masturbate.desc
+	confirm_text = masturbate.c
+	selection_tooltip = masturbate.t
+	decision_group_type = decisions
+	cooldown = { years = 1 }
+
+	is_shown = {
+		is_female = yes
+		stress_level >= 1
+		OR = {
+			any_character_artifact = { has_artifact_modifier = master_dildo_modifier }
+			any_character_artifact = { has_artifact_modifier = mistress_dildo_modifier }
+		}
+	}
+	effect = {
+		if = {
+			limit = { any_character_artifact = { has_artifact_modifier = master_dildo_modifier } }
+			stress_impact = { base = massive_stress_impact_loss }
+			random_artifact = {
+				limit = { has_artifact_modifier = master_dildo_modifier }
+				add_durability = -1
+			}
+		}
+		else_if = {
+			limit = { any_character_artifact = { has_artifact_modifier = mistress_dildo_modifier } }
+			stress_impact = { base = major_stress_impact_loss }
+			random_artifact = {
+				limit = { has_artifact_modifier = mistress_dildo_modifier }
+				add_durability = -1
+			}
+		}
+	}
+	ai_potential = { always = yes }
+	ai_check_interval = 12
+	ai_will_do = { base = 100 }
+}
+
+seal_the_gates_of_hell = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+	desc = seal_the_gates_of_hell.desc
+	confirm_text = seal_the_gates_of_hell.c
+	selection_tooltip = seal_the_gates_of_hell.t
+	decision_group_type = decisions
+
+	is_shown = {
+		is_ruler = yes
+		has_trait = saint
+		NOT = { has_global_variable = seal_the_gates_of_hell }
+	}
+	is_valid = {
+		province:2065.religion = religion:christianity_religion
+		province:5965.religion = religion:christianity_religion
+		province:482.religion = religion:christianity_religion
+		province:2575.religion = religion:christianity_religion
+		province:4582.religion = religion:christianity_religion
+		province:6038.religion = religion:christianity_religion
+		custom_description = { text = beelzebub_is_seal has_global_variable = seal_beelzebub }
+		custom_description = { text = lilith_is_seal has_global_variable = seal_lilith }
+		custom_description = { text = abaddon_is_seal has_global_variable = seal_abaddon }
+		custom_description = { text = mammon_is_seal has_global_variable = seal_mammon }
+		custom_description = { text = asmodeus_is_seal has_global_variable = seal_asmodeus }
+		custom_description = { text = belial_is_seal has_global_variable = seal_belial }
+	}
+	effect = {
+		faith:beelzebub.religious_head = { death = { death_reason = death_execution killer = root } }
+		faith:lilith.religious_head = { death = { death_reason = death_execution killer = root } }
+		faith:abaddon.religious_head = { death = { death_reason = death_execution killer = root } }
+		faith:mammon.religious_head = { death = { death_reason = death_execution killer = root } }
+		faith:asmodeus.religious_head = { death = { death_reason = death_execution killer = root } }
+		faith:belial.religious_head = { death = { death_reason = death_execution killer = root } }
+
+		destroy_title = title:k_beelzebub
+		destroy_title = title:k_lilith
+		destroy_title = title:k_abaddon
+		destroy_title = title:k_mammon
+		destroy_title = title:k_asmodeus
+		destroy_title = title:k_belial
+
+		custom_description = {
+			text = seal_the_gates_of_hell
+			set_global_variable = { name = seal_the_gates_of_hell value = yes }
+		}
+	}
+	ai_potential = { always = yes }
+	ai_check_interval = 12
+	ai_will_do = { base = 100 }
+}
+
+alienate_people = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds" }
+	desc = alienate_people.desc
+	confirm_text = alienate_people.c
+	selection_tooltip = alienate_people.t
+	decision_group_type = decisions
+
+	is_shown = {
+		is_ruler = yes
+		is_landed = yes
+		OR = {
+			NOT = { capital_province.culture = culture }
+			NOT = { capital_province.faith = faith }
+			any_vassal = {
+				primary_title.tier >= tier_county
+				NOR = {
+					faith = root.faith
+					capital_province.faith = root.faith
+					culture = root.culture
+					capital_province.culture = root.culture
+				}
+			}
+		}
+		OR = {
+			has_trait = sbs_demon
+			AND = {
+				has_trait_xp = { trait = sbs_succubus track = power value >= 25 }
+				has_trait_xp = { trait = sbs_succubus track = daring value >= 25 }
+			}
+		}
+	}
+	effect = {
+		if = {
+			limit = { has_trait = sbs_succubus }
+			add_trait_xp = { trait = sbs_succubus track = power value = -25 }
+			add_trait_xp = { trait = sbs_succubus track = daring value = -25 }
+		}
+		if = {
+			limit = { NOT = { capital_province.faith = root.faith } }
+			capital_province.county = {
+				set_county_faith = root.faith
+			}
+		}
+		if = {
+			limit = { NOT = { capital_province.culture = root.culture } }
+			capital_province.county = {
+				set_county_culture = root.culture
+			}
+		}
+		every_courtier = {
+			limit = { is_close_family_of = root }
+			if = {
+				limit = { NOT = { faith = root.faith } }
+				set_character_faith_with_conversion = root.faith
+			}
+			if = {
+				limit = { NOT = { culture = root.culture } }
+				set_culture = root.culture
+			}
+		}
+		every_vassal = {
+			limit = { primary_title.tier >= tier_county }
+			if = {
+				limit = { NOT = { faith = root.faith } }
+				set_culture = root.faith
+			}
+			if = {
+				limit = { NOT = { culture = root.culture } }
+				set_culture = root.culture
+			}
+			if = {
+				limit = { is_landed = yes NOT = { capital_province.faith = root.faith } }
+				capital_province.county = {
+					set_county_faith = root.faith
+				}
+			}
+			if = {
+				limit = { is_landed = yes NOT = { capital_province.culture = root.culture } }
+				capital_province.county = {
+					set_county_culture = root.culture
+				}
+			}
+			every_courtier = {
+				limit = { is_close_family_of = prev }
+				if = {
+					limit = { NOT = { faith = root.faith } }
+					set_character_faith_with_conversion = root.faith
+				}
+				if = {
+					limit = { NOT = { culture = root.culture } }
+					set_culture = root.culture
+				}
+			}
+		}
+
+	}
+	ai_potential = { always = yes }
+	ai_check_interval = 12
+	ai_will_do = { base = 100 }
+}

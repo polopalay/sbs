@@ -1,0 +1,66 @@
+﻿l_spanish:
+  sbs_devil_dead_interaction: "Curación"
+  sbs_devil_dead_interaction.desc: "Elimina todo tipo de enfermedades, lesiones y todos los nombres vergonzosos"
+  stress_flag: "Estrés"
+  healing_flag: "Curación"
+  honor_flag: "Honor"
+  dna_flag: "Gen"
+
+  sbs_devils_gift_interaction: "El regalo del Diablo"
+  sbs_devils_gift_interaction.desc: "Dar a [recipient.GetShortUIName] una \"bendición\""
+
+  sbs_devils_curse_interaction: "La maldición del Diablo"
+  sbs_devils_curse_interaction.desc: "Dar a [recipient.GetShortUIName] una \"maldición\""
+
+  sbs_create_lesser_succubus_interaction: "Crear Súcubo Menor"
+  sbs_create_lesser_succubus_interaction.desc: "[recipient.GetShortUIName] se convertirá en Súcubo Menor"
+  recipient_secondary_sbs_create_lesser_succubus_interaction: "Elegir uno"
+
+  sbs_create_succubus_interaction: "Crear Súcubo"
+  sbs_create_succubus_interaction.desc: "[recipient.GetShortUIName] se convertirá en un Súcubo"
+  recipient_secondary_sbs_create_succubus_interaction: "Elegir uno"
+
+  sbs_absorb_interaction: "Absorber"
+  sbs_absorb_interaction.desc: "Absorber el poder de [recipient.GetShortUIName] en lealtad"
+
+  sbs_makeup_interaction: "Maquillaje"
+  sbs_makeup_interaction.desc: "Aplicar maquillaje a [recipient.GetShortUIName]"
+  succubus_no_horn: "Sin Cuerno"
+  succubus_horn0: "Largos cuernos curvados"
+  succubus_horn1: "Cuernos retorcidos"
+  succubus_horn2: "Cuernos en forma de punta"
+  succubus_horn3: "Cuernos curvados"
+  succubus_horn4: "Cuernos cortos"
+  succubus_no_eyes: "Sin Ojos Ahumados"
+  succubus_marking_1: "Ojos ahumados llorosos"
+  succubus_marking_2: "Ojos ahumados arañados"
+  succubus_marking_3: "Ojos ahumados arañados"
+  succubus_marking_4: "Ojos ahumados florales"
+  succubus_marking_5: "Ojos ahumados pequeños"
+  succubus_marking_6: "Ojos ahumados diminutos"
+  succubus_default_eyes: "Ojos Predeterminados"
+  succubus_white_eyes: "Ojos Blancos"
+  succubus_red_eyes: "Ojos Rojos"
+  succubus_default_hair: "Cabello Predeterminado"
+  succubus_white_hair: "Cabello Blanco"
+  succubus_red_hair: "Cabello Rojo"
+  naked: "Desnudo"
+  glass: "Cristal"
+
+  sbs_deal_with_the_devil_interaction: "Trato con el Diablo"
+  sbs_deal_with_the_devil_interaction.desc: "Hacer un trato con el diablo, obtener lo que quieras a cambio de un \"pequeño\" precio"
+  small_price: "Pequeño Precio"
+
+  sbs_ask_for_become_lesser_succubus_interaction: "Pedir convertirse en Súcubo Menor"
+  sbs_ask_for_become_lesser_succubus_interaction.desc: "Pedir al diablo convertirse en un Súcubo Menor"
+  recipient_secondary_sbs_ask_for_become_lesser_succubus_interaction: "Elegir uno"
+
+  sbs_ask_for_become_succubus_interaction: "Pedir convertirse en Súcubo"
+  sbs_ask_for_become_succubus_interaction.desc: "Pedir al diablo convertirse en un Súcubo"
+  recipient_secondary_sbs_ask_for_become_succubus_interaction: "Elegir uno"
+
+  sbs_looking_new_owner_interaction: "Buscando un nuevo dueño"
+  sbs_looking_new_owner_interaction.desc: "Buscando un nuevo dueño para [recipient.GetShortUIName]"
+
+  sbs_seal_the_devil_interaction: "Sellar al Diablo"
+  sbs_seal_the_devil_interaction.desc: "En el nombre de la espada de Dios, sellaré a estos herejes, amén"

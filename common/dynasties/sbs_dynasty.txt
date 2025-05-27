@@ -1,0 +1,39 @@
+﻿666666 = {
+	name = "trait_sbs_succubus_neutral"
+	culture = "hebrew"
+}
+
+777777 = {
+	name = "k_abandon"
+	culture = "macedonian"
+}
+
+888888 = {
+	name = "k_beelzebub"
+	culture = "gothic"
+}
+
+999999 = {
+	name = "k_mammon"
+	culture = "hunnic"
+}
+
+13131313 = {
+	name = "k_asmodeus"
+	culture = "trojan"
+}
+
+14814813 = {
+	name = "k_belial"
+	culture = "ancient_egyptian"
+}
+
+12121212 = {
+	name = "d_darc"
+	culture = "french"
+}
+
+42424242 = {
+	name = "benincasa"
+	culture = "italian"
+}

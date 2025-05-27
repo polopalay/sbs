@@ -1,0 +1,20 @@
+﻿l_german:
+  become_demon: "Werde Dämon"
+  become_demon.desc: "Als eine von Satan und den Fürsten der Hölle gesegnete Succubus hast du alle Voraussetzungen erfüllt, um ein wahrer Dämon zu werden, indem du 100 Menschenleben opferst, um dieses heilige Ritual durchzuführen."
+  become_demon.c: "Erhalte den Segen"
+  become_demon.t: "Beginne das heilige Ritual"
+
+  masturbate: "Sich Selbstbefriedigen"
+  masturbate.desc: "Dein Leben ist bereits voller Stress, du suchst nach etwas, um dich zu entspannen. Dildos sind der sicherste Weg, du kannst dich der Sinnlichkeit hingeben, ohne dir Sorgen über das Gerede über dich als schamlose Schlampe machen zu müssen."
+  masturbate.t: "Stress abbauen"
+  masturbate.c: "Führe es in deine Vagina ein"
+
+  seal_the_gates_of_hell: "Die Tore der Hölle versiegeln"
+  seal_the_gates_of_hell.desc: "Die Tore der Hölle sind geöffnet, und die Dämonen stehen kurz davor, in die Welt der Menschen einzudringen. Du musst einen Weg finden, die Tore der Hölle zu versiegeln und die Dämonen daran zu hindern, in die Welt der Menschen einzudringen."
+  seal_the_gates_of_hell.t: "Die Tore der Hölle versiegeln"
+  seal_the_gates_of_hell.c: "Die Tore der Hölle versiegeln"
+
+  alienate_people: "Die Menschen entfremden"
+  alienate_people.desc: "Verderbe dein Volk. Lass sie den wahren Gott anbeten"
+  alienate_people.t: "Die Menschen entfremden"
+  alienate_people.c: "Die Menschen entfremden"

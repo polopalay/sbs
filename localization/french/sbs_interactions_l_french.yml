@@ -1,0 +1,66 @@
+﻿l_french:
+  sbs_devil_dead_interaction: "Guérison"
+  sbs_devil_dead_interaction.desc: "Élimine toutes sortes de maladies, blessures et tous les noms disgracieux"
+  stress_flag: "Stress"
+  healing_flag: "Guérison"
+  honor_flag: "Honneur"
+  dna_flag: "Gène"
+
+  sbs_devils_gift_interaction: "Rupture Mentale"
+  sbs_devils_gift_interaction.desc: "Amène [recipient.GetShortUIName] à être hanté par des pensées lubriques"
+
+  sbs_devils_curse_interaction: "Malédiction"
+  sbs_devils_curse_interaction.desc: "Donnez à [recipient.GetShortUIName] une \"malédiction\""
+
+  sbs_create_lesser_succubus_interaction: "Créer une Succube Inférieure"
+  sbs_create_lesser_succubus_interaction.desc: "[recipient.GetShortUIName] deviendra une Succube Inférieure"
+  recipient_secondary_sbs_create_lesser_succubus_interaction: "Choisir un"
+
+  sbs_create_succubus_interaction: "Créer une Succube"
+  sbs_create_succubus_interaction.desc: "[recipient.GetShortUIName] deviendra une Succube"
+  recipient_secondary_sbs_create_succubus_interaction: "Choisir un"
+
+  sbs_absorb_interaction: "Absorber"
+  sbs_absorb_interaction.desc: "Absorbez la puissance de [recipient.GetShortUIName] en loyauté"
+
+  sbs_makeup_interaction: "Maquillage"
+  sbs_makeup_interaction.desc: "Appliquez du maquillage à [recipient.GetShortUIName]"
+  succubus_no_horn: "Sans Corne"
+  succubus_horn0: "Longues cornes incurvées"
+  succubus_horn1: "Cornes torsadées"
+  succubus_horn2: "Cornes effilées"
+  succubus_horn3: "Cornes courbées"
+  succubus_horn4: "Petites cornes"
+  succubus_no_eyes: "Sans yeux smokey"
+  succubus_marking_1: "Yeux smokey pleurants"
+  succubus_marking_2: "Yeux smokey éraflés"
+  succubus_marking_3: "Yeux smokey éraflés"
+  succubus_marking_4: "Yeux smokey floraux"
+  succubus_marking_5: "Petits yeux smokey"
+  succubus_marking_6: "Minuscules yeux smokey"
+  succubus_default_eyes: "Yeux par défaut"
+  succubus_white_eyes: "Yeux Blancs"
+  succubus_red_eyes: "Yeux Rouges"
+  succubus_default_hair: "Cheveux par défaut"
+  succubus_white_hair: "Cheveux Blancs"
+  succubus_red_hair: "Cheveux Rouges"
+  naked: "Nue"
+  glass: "Verre"
+
+  sbs_deal_with_the_devil_interaction: "Faire un pacte avec le diable"
+  sbs_deal_with_the_devil_interaction.desc: "Faites un pacte avec le diable pour obtenir ce que vous voulez à un \"petit\" prix."
+  small_price: "Petit Prix"
+
+  sbs_ask_for_become_lesser_succubus_interaction: "Demander à devenir une Sucube inférieure"
+  sbs_ask_for_become_lesser_succubus_interaction.desc: "Demander au diable de devenir une Sucube inférieure."
+  recipient_secondary_sbs_ask_for_become_lesser_succubus_interaction: "Choisir un"
+
+  sbs_ask_for_become_succubus_interaction: "Demander à devenir Sucube"
+  sbs_ask_for_become_succubus_interaction.desc: "Demander au diable de devenir une Sucube."
+  recipient_secondary_sbs_ask_for_become_succubus_interaction: "Choisir un"
+
+  sbs_looking_new_owner_interaction: "Chercher un nouveau propriétaire"
+  sbs_looking_new_owner_interaction.desc: "Cherchez un nouveau propriétaire pour [recipient.GetShortUIName]"
+
+  sbs_seal_the_devil_interaction: "Sceller le Diable"
+  sbs_seal_the_devil_interaction.desc: "Scellez le diable dans un objet"

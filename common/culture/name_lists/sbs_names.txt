@@ -1,0 +1,74 @@
+name_list_hell = {
+	cadet_dynasty_names = {
+		"dynn_Abyss"
+		"dynn_Tartarus"
+		"dynn_Stygian"
+		"dynn_Inferno"
+		"dynn_Malebolge"
+		"dynn_Dis"
+		"dynn_Leviathan"
+		"dynn_Sheol"
+		"dynn_Gehinnom"
+		"dynn_Cocytus"
+		"dynn_Hades"
+		"dynn_Acheron"
+		"dynn_Phlegyas"
+		"dynn_Charon"
+		"dynn_Erebus"
+		"dynn_Asmodeus"
+		"dynn_Lucifer"
+		"dynn_Moloch"
+		"dynn_Belial"
+		"dynn_Baalzebub"
+		"dynn_Mammon"
+		"dynn_Azazel"
+		"dynn_Baphomet"
+		"dynn_Lilim"
+		"dynn_Abaddon"
+		"dynn_Levi"
+		"dynn_Zariel"
+		"dynn_Mephisto"
+	}
+
+	dynasty_names = {
+		"dynn_Abyss"
+		"dynn_Tartarus"
+		"dynn_Stygian"
+		"dynn_Inferno"
+		"dynn_Malebolge"
+		"dynn_Dis"
+		"dynn_Leviathan"
+		"dynn_Sheol"
+		"dynn_Gehinnom"
+		"dynn_Cocytus"
+		"dynn_Hades"
+		"dynn_Acheron"
+		"dynn_Phlegyas"
+		"dynn_Charon"
+		"dynn_Erebus"
+		"dynn_Asmodeus"
+		"dynn_Lucifer"
+		"dynn_Moloch"
+		"dynn_Belial"
+		"dynn_Baalzebub"
+		"dynn_Mammon"
+		"dynn_Azazel"
+		"dynn_Baphomet"
+		"dynn_Lilim"
+		"dynn_Abaddon"
+		"dynn_Levi"
+		"dynn_Zariel"
+		"dynn_Mephisto"
+	}
+
+	male_names = {
+    Abaddon Asmodeus Baal Belial Dantalion Fenrir Hades Iblis Leviathan Lucifer Mammon Mephistopheles Moloch Orcus Samael Satan Thanatos Zariel Azazel Behemoth Astaroth Belphegor Charon Dagon Eligor Fenris Gomory Lamashtu Legion Morax Naberius Pazuzu Rahab Raum Stolas Valefor Malphas Andras Barbatos Amon Forneus Seir Bifrons
+	}
+
+	female_names = {
+    Lilith Astarte Agrat Azura Bathsheba Jezebeth Lamashtu Leviathana Marilith Naamah Obyzuth Samaela Sitri Verin Bathin Hecate Ereshkigal Persephone Tisiphone Nyx Melinoe Mormo Hel Alecto Megaera Agrath Beelzebuba Gremory Zagan Vepar Aym Andraste Banshee Morrigan Lamia Empusa Eris Calypso Circe Pandora Medea Sycorax
+	}
+
+	
+	founder_named_dynasties = yes
+}

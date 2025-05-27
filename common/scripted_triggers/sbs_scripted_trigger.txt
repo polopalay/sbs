@@ -1,0 +1,32 @@
+is_valid_construction_alchemy3_trigger = {
+	OR = {
+		any_held_title = {
+			any_county_province = {
+				has_building_or_higher = alchemy3
+			}
+		}
+		AND = {
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = corruption
+				value >= 50
+			}
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = loyalty
+				value >= 66
+			}
+		}
+
+	}
+
+}
+
+have_devil_nicknames_trigger = {
+	OR = {
+		has_nickname = nickname_the_demon_queen
+		has_nickname = nickname_the_demon_king
+		has_nickname = nickname_the_devil_creation
+	}
+}
+

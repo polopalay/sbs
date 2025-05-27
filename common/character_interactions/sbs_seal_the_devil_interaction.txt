@@ -1,0 +1,332 @@
+sbs_seal_the_devil_interaction = {
+	desc = sbs_seal_the_devil_interaction.desc
+	category = interaction_category_hostile
+	use_diplomatic_range = no
+	common_interaction = yes
+	is_shown = {
+		scope:actor = {
+			is_ruler = yes
+			faith.religion = religion:christianity_religion
+			NOT = {
+				has_trait = sbs_demon
+				has_trait = sbs_succubus
+				has_trait = sbs_lesser_succubus
+				has_trait = sbs_seed_of_destruction
+			}
+		}
+		scope:recipient = {
+			OR = {
+				has_trait = sbs_demon
+				has_trait = sbs_succubus
+				has_trait = sbs_lesser_succubus
+				has_trait = sbs_seed_of_destruction
+			}
+		}
+	}
+	is_valid = {
+		scope:actor = {
+			OR = {
+				AND = {
+					is_landed = yes
+					capital_province.faith = faith
+				}
+				AND = {
+					is_landed = no
+					OR = {
+						province:2065.religion = religion:christianity_religion
+						province:5965.religion = religion:christianity_religion
+						province:482.religion = religion:christianity_religion
+						province:2575.religion = religion:christianity_religion
+						province:4582.religion = religion:christianity_religion
+						province:6038.religion = religion:christianity_religion
+					}
+				}
+			}
+		}
+		scope:recipient = {
+			OR = {
+				AND = {
+					faith.religious_head = scope:recipient
+					faith = faith:beelzebub
+					is_lowborn = yes
+				}
+				AND = {
+					faith.religious_head = scope:recipient
+					faith = faith:lilith
+					is_lowborn = yes
+				}
+				AND = {
+					faith.religious_head = scope:recipient
+					faith = faith:abaddon
+					is_lowborn = yes
+				}
+				AND = {
+					faith.religious_head = scope:recipient
+					faith = faith:mammon
+					is_lowborn = yes
+				}
+				AND = {
+					faith.religious_head = scope:recipient
+					faith = faith:asmodeus
+					is_lowborn = yes
+				}
+				AND = {
+					faith.religious_head = scope:recipient
+					faith = faith:belial
+					is_lowborn = yes
+				}
+				is_imprisoned_by = scope:actor
+			}
+			OR = {
+				custom_description = {
+					text = NOT_I_AM_HEAD_OF_FAITH_TRIGGER
+					NOT = { faith.religious_head = scope:recipient }
+				}
+				AND = {
+					faith.religious_head = scope:recipient
+					province:2065.religion = religion:christianity_religion
+					faith = faith:beelzebub
+					custom_description = {
+						text = beelzebub_isn_seal
+						NOT = { has_global_variable = seal_beelzebub }
+					}
+				}
+				AND = {
+					faith.religious_head = scope:recipient
+					province:5965.religion = religion:christianity_religion
+					faith = faith:lilith
+					custom_description = {
+						text = lilith_isn_seal
+						NOT = { has_global_variable = seal_lilith }
+					}
+				}
+				AND = {
+					faith.religious_head = scope:recipient
+					province:482.religion = religion:christianity_religion
+					faith = faith:abaddon
+					custom_description = {
+						text = abaddon_isn_seal
+						NOT = { has_global_variable = seal_abaddon }
+					}
+				}
+				AND = {
+					faith.religious_head = scope:recipient
+					province:2575.religion = religion:christianity_religion
+					faith = faith:mammon
+					custom_description = {
+						text = mammon_isn_seal
+						NOT = { has_global_variable = seal_mammon }
+					}
+				}
+				AND = {
+					faith.religious_head = scope:recipient
+					province:4582.religion = religion:christianity_religion
+					faith = faith:asmodeus
+					custom_description = {
+						text = asmodeus_isn_seal
+						NOT = { has_global_variable = seal_asmodeus }
+					}
+				}
+				AND = {
+					faith.religious_head = scope:recipient
+					province:6038.religion = religion:christianity_religion
+					faith = faith:belial
+					custom_description = {
+						text = belial_isn_seal
+						NOT = { has_global_variable = seal_belial }
+					}
+				}
+			}
+		}
+	}
+	on_accept = {
+		scope:recipient = {
+			if = {
+				limit = { scope:actor = { NOT = { has_trait = saint } } }
+				add_trait = saint
+				give_nickname = nick_the_saint
+			}
+			else_if = {
+				limit = { scope:actor = { NOT = { has_trait = immortal } } }
+				add_trait = immortal
+			}
+			if = {
+				limit = { faith.religious_head = scope:recipient faith = faith:beelzebub }
+				death = { death_reason = death_execution killer = scope:actor }
+				scope:actor = {
+					set_trait_rank = { trait = education_learning rank = 5 }
+				}
+				custom_description = {
+					text = seal_beelzebub
+					set_global_variable = { name = seal_beelzebub value = yes }
+				}
+			}
+			else_if = {
+				limit = { faith.religious_head = scope:recipient faith = faith:lilith }
+				death = { death_reason = death_execution killer = scope:actor }
+				scope:actor = {
+					set_trait_rank = { trait = education_intrigue rank = 5 }
+				}
+				custom_description = {
+					text = "seal_lilith"
+					set_global_variable = { name = seal_lilith value = yes }
+				}
+			}
+			else_if = {
+				limit = { faith.religious_head = scope:recipient faith = faith:abaddon }
+				death = { death_reason = death_execution killer = scope:actor }
+				scope:actor = {
+					add_trait = logistician
+					add_trait = military_engineer
+					add_trait = aggressive_attacker
+					add_trait = unyielding_defender
+					add_trait = forder
+					add_trait = flexible_leader
+					add_trait = desert_warrior
+					add_trait = jungle_stalker
+					add_trait = reaver
+					add_trait = reckless
+					add_trait = holy_warrior
+					add_trait = open_terrain_expert
+					add_trait = rough_terrain_expert
+					add_trait = forest_fighter
+					add_trait = cautious_leader
+					add_trait = organizer
+					add_trait = winter_soldier
+					add_trait = conqueror
+				}
+				custom_description = {
+					text = "seal_abaddon"
+					set_global_variable = { name = seal_abaddon value = yes }
+				}
+			}
+			else_if = {
+				limit = { faith.religious_head = scope:recipient faith = faith:mammon }
+				death = { death_reason = death_execution killer = scope:actor }
+				scope:actor = {
+					set_trait_rank = { trait = education_martial rank = 5 }
+				}
+				custom_description = {
+					text = "seal_mammon"
+					set_global_variable = { name = seal_mammon value = yes }
+				}
+			}
+			else_if = {
+				limit = { faith.religious_head = scope:recipient faith = faith:asmodeus }
+				death = { death_reason = death_execution killer = scope:actor }
+				scope:actor = {
+					set_trait_rank = { trait = education_diplomacy rank = 5 }
+				}
+				custom_description = {
+					text = "seal_asmodeus"
+					set_global_variable = { name = seal_asmodeus value = yes }
+				}
+			}
+			else_if = {
+				limit = { faith.religious_head = scope:recipient faith = faith:belial }
+				death = { death_reason = death_execution killer = scope:actor }
+				scope:actor = {
+					set_trait_rank = { trait = education_stewardship rank = 5 }
+				}
+				custom_description = {
+					text = "seal_belial"
+					set_global_variable = { name = seal_belial value = yes }
+				}
+			}
+			else_if = {
+				limit = { OR = { father = { has_trait = sbs_demon } mother = { has_trait = sbs_demon } } }
+				death = { death_reason = death_execution killer = scope:actor }
+				if = {
+					limit = { has_trait = education_learning }
+					scope:actor = {
+						if = {
+							limit = { has_trait = education_learning }
+							change_trait_rank = { trait = education_stewardship rank = 1 }
+						}
+						esle_if = {
+							add_trait = education_learning_1	
+						}
+					}
+				}
+				else_if = {
+					limit = { has_trait = education_intrigue }
+					scope:actor = {
+						if = {
+							limit = { has_trait = education_intrigue }
+							change_trait_rank = { trait = education_intrigue rank = 1 }
+						}
+						else_if = {
+							add_trait = education_intrigue_1
+						}
+					}
+				}
+				else_if = {
+					limit = { has_trait = education_martial }
+					scope:actor = {
+						if = {
+							limit = { has_trait = education_martial }
+							change_trait_rank = { trait = education_martial rank = 1 }
+						}
+						else_if = {
+							add_trait = education_martial_1
+						}
+					}
+				}
+				else_if = {
+					limit = { has_trait = education_diplomacy }
+					scope:actor = {
+						if = {
+							limit = { has_trait = education_diplomacy }
+							change_trait_rank = { trait = education_diplomacy rank = 1 }
+						}
+						else_if = {
+							add_trait = education_diplomacy_1
+						}
+					}
+				}
+				else_if = {
+					limit = { has_trait = education_stewardship }
+					scope:actor = {
+						if = {
+							limit = { has_trait = education_stewardship }
+							change_trait_rank = { trait = education_stewardship rank = 1 }
+						}
+						else_if = {
+							add_trait = education_stewardship_1
+						}
+					}
+				}
+				scope:actor = {
+					add_gold = 10000
+					add_prestige = 10000
+					add_piety = 10000
+				}
+			}
+			else = {
+				remove_trait = sbs_demon
+				remove_trait = sbs_succubus
+				remove_trait = sbs_lesser_succubus
+				remove_trait = sbs_seed_of_destruction
+				scope:actor = {
+					add_piety = 100
+				}
+			}
+		}
+	}
+	auto_accept = yes
+	ai_frequency = 6
+	ai_targets = {
+		ai_recipients = prisoners
+	}
+	ai_potential = { always = yes }
+	ai_will_do = {
+		base = 20
+		modifier = { add = -100 scope:actor = { ai_zeal < very_low_positive_ai_value } }
+		modifier = { add = -50 scope:actor = { ai_zeal < low_positive_ai_value } }
+		modifier = { add = -20 scope:actor = { ai_zeal < medium_positive_ai_value } }
+		modifier = { add = 20 scope:actor = { ai_zeal > high_positive_ai_value } }
+		modifier = { add = 50 scope:actor = { ai_zeal > very_high_positive_ai_value } }
+		modifier = { add = 100 scope:actor = { ai_zeal > dominant_positive_ai_value } }
+		modifier = { scope:actor = { has_trait = zealous } add = 100 }
+	}
+}

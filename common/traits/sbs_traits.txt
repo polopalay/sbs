@@ -1,0 +1,326 @@
+sbs_demon = {
+	category = health
+	icon = sbs_demon.dds
+
+	immortal = yes
+	no_prowess_loss_from_age = yes
+	add_commander_trait = yes
+	add_commander_trait = yes
+
+	flag = is_immortal
+	flag = immortal_visuals
+	flag = immortal_fertility
+	flag = immortal_incapability
+	flag = carn_cannot_be_enslaved
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { NOT = { exists = this } }
+				desc = sbs_demon_desc
+			}
+			desc = sbs_demon_character_desc
+		}
+	}
+	opposites = { sbs_succubus sbs_lesser_succubus sbs_seed_of_destruction incapable }
+
+	monthly_lifestyle_xp_gain_mult = -1000
+	long_reign_bonus_mult = -1000
+
+	general_opinion = 66
+	character_travel_speed = 66
+	character_travel_safety = 66
+	travel_danger = -66
+	health = 3
+	negate_health_penalty_add = 3
+	stewardship = 13
+	intrigue = 13
+	learning = 13
+	martial = 13
+	prowess = 13
+	diplomacy = 13
+	enemy_hostile_scheme_phase_duration_add = 66
+	legitimacy_baseline_add = 1.3
+	monthly_dynasty_prestige = 1.3
+	monthly_prestige = 1.3
+	men_at_arms_maintenance = -0.13
+	knight_effectivenesuccubus_mult = 0.6
+	monthly_piety = 0.6
+	no_water_crossing_penalty = yes
+	supply_duration = 0.6
+	stress_gain_mult = -0.6
+	movement_speed = 0.6
+	naval_movement_speed_mult = 0.6
+	knight_limit = 666
+
+	ruler_designer_cost = 400
+}
+
+sbs_succubus = {
+	category = health
+	icon = sbs_succubus.dds
+
+	immortal = yes
+	no_prowess_loss_from_age = yes
+	add_commander_trait = yes
+
+	flag = is_immortal
+	flag = immortal_visuals
+	flag = immortal_fertility
+	flag = immortal_incapability
+
+	valid_sex = female
+
+	ai_greed = dominant_positive_ai_value
+	ai_zeal = dominant_negative_ai_value
+
+	name = trait_sbs_succubus_neutral
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { NOT = { exists = this } }
+				desc = sbs_succubus_desc
+			}
+			desc = sbs_succubus_character_desc
+		}
+	}
+
+	opposites = { sbs_demon sbs_lesser_succubus sbs_seed_of_destruction chaste incapable }
+
+	fertility = -0.5
+	general_opinion = 5
+	monthly_lifestyle_xp_gain_mult = -1000
+	long_reign_bonus_mult = -1000
+	character_travel_speed = 5
+	travel_danger = -5
+	stewardship = 1
+	intrigue = 1
+	learning = 1
+	enemy_hostile_scheme_phase_duration_add = 10
+	martial = 1
+	prowess = 1
+	diplomacy = 1
+	stress_gain_mult = -0.1
+
+	tracks = {
+		power = {
+			33 = {
+				character_travel_speed = 5
+				travel_danger = -5
+			}
+
+			66 = {
+				character_travel_speed = 5
+				travel_danger = -5
+			}
+
+			100 = {
+				character_travel_speed = 10
+				character_travel_safety = 10
+				travel_danger = -10
+			}
+		}
+		daring = {
+			25 = {
+				general_opinion = 5
+			}
+			50 = {
+				general_opinion = 5
+			}
+			75 = {
+				general_opinion = 5
+			}
+			100 = {
+				general_opinion = 10
+			}
+		}
+		corruption = {
+			50 = {
+				health = 1
+				negate_health_penalty_add = 1
+				health = 1
+				stewardship = 4
+				intrigue = 4
+				learning = 4
+				enemy_hostile_scheme_phase_duration_add = 40
+			}
+
+			100 = {
+				health = 1
+				negate_health_penalty_add = 1
+				stewardship = 5
+				intrigue = 5
+				learning = 5
+				enemy_hostile_scheme_phase_duration_add = 50
+				legitimacy_baseline_add = 1
+				monthly_dynasty_prestige = 1
+				monthly_prestige = 1
+			}
+		}
+		loyalty = {
+			33 = {
+				martial = 2
+				prowess = 2
+				diplomacy = 2
+				men_at_arms_maintenance = -0.02
+				knight_effectivenesuccubus_mult = 0.1
+				monthly_piety = 0.1
+				stress_gain_mult = -0.2
+			}
+
+			66 = {
+				martial = 3
+				prowess = 3
+				diplomacy = 3
+				men_at_arms_maintenance = -0.03
+				knight_effectivenesuccubus_mult = 0.2
+				monthly_piety = 0.2
+			}
+
+			100 = {
+				martial = 4
+				prowess = 4
+				diplomacy = 4
+				men_at_arms_maintenance = -0.05
+				knight_effectivenesuccubus_mult = 0.2
+				monthly_piety = 0.3
+				no_water_crossing_penalty = yes
+				supply_duration = 0.5
+				stress_gain_mult = -0.5
+				movement_speed = 0.5
+				naval_movement_speed_mult = 0.5
+			}
+		}
+	}
+	ruler_designer_cost = 100
+}
+
+sbs_lesser_succubus = {
+	category = health
+	icon = sbs_lesser_succubus.dds
+
+	immortal = yes
+	no_prowess_loss_from_age = yes
+	add_commander_trait = yes
+
+	flag = is_immortal
+	flag = immortal_visuals
+	flag = immortal_fertility
+	flag = immortal_incapability
+
+	valid_sex = female
+
+	ai_greed = dominant_positive_ai_value
+	ai_zeal = dominant_negative_ai_value
+
+	opposites = { sbs_demon sbs_succubus sbs_seed_of_destruction chaste incapable }
+
+	name = trait_lesser_succubus_neutral
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = lesser_sbs_succubus_desc
+			}
+			desc = lesser_sbs_succubus_character_desc
+		}
+	}
+
+	fertility = -1
+	monthly_lifestyle_xp_gain_mult = -1000
+	long_reign_bonus_mult = -1000
+	stewardship = 1
+	diplomacy = 1
+	prowess = 1
+	martial = 1
+	intrigue = 1
+	learning = 1
+	attraction_opinion = 2
+	health = 0.1
+	negate_health_penalty_add = 0.1
+	character_travel_speed = 1
+	character_travel_safety = 1
+	enemy_hostile_scheme_phase_duration_add = 10
+
+	track = {
+		50 = {
+			stewardship = 4
+			diplomacy = 4
+			prowess = 4
+			martial = 4
+			intrigue = 4
+			learning = 4
+			attraction_opinion = 8
+			health = 0.4
+			negate_health_penalty_add = 0.4
+			character_travel_speed = 4
+			character_travel_safety = 4
+			enemy_hostile_scheme_phase_duration_add = 40
+		}
+		100 = {
+			stewardship = 5
+			diplomacy = 5
+			prowess = 5
+			martial = 5
+			intrigue = 5
+			learning = 5
+			attraction_opinion = 15
+			health = 1
+			negate_health_penalty_add = 1
+			character_travel_speed = 5
+			character_travel_safety = 5
+			enemy_hostile_scheme_phase_duration_add = 50
+		}
+	}
+	ruler_designer_cost = 50
+}
+
+sbs_seed_of_destruction = {
+	category = health
+	icon = sbs_seed_of_destruction.dds
+	
+	immortal = yes
+	no_prowess_loss_from_age = yes
+	add_commander_trait = yes
+
+	flag = is_immortal
+	flag = immortal_visuals
+	flag = immortal_fertility
+	flag = immortal_incapability
+	flag = slave_owner
+
+	valid_sex = male
+	opposites = { sbs_demon sbs_succubus sbs_lesser_succubus incapable }
+
+	ai_greed = dominant_positive_ai_value
+	ai_vengefulness = dominant_positive_ai_value
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = sbs_seed_of_destruction_desc
+			}
+			desc = sbs_seed_of_destruction_character_desc
+		}
+	}
+
+	track = {
+		50 = {
+			health = 1
+		}
+		100 = {
+			negate_health_penalty_add = 1
+		}
+	}
+
+	monthly_lifestyle_xp_gain_mult = -1000
+	long_reign_bonus_mult = -1000
+	ruler_designer_cost = 100
+}

@@ -1,0 +1,326 @@
+namespace = sbs_courtier
+
+#1440 urge to expose
+sbs_courtier.1440 = {
+	type = character_event
+	title = sbs_courtier.1440.t
+	desc = sbs_courtier.1440.a.desc
+	theme = memory_stewardship
+	right_portrait = {
+		character = root
+		animation = personality_greedy
+	}
+	cooldown = { years = 8 }
+	trigger = {
+		is_adult = yes
+		is_ruler = yes
+		is_female = yes
+		should_be_naked_trigger = no
+		every_councillor = { count > 0 }
+	}
+	option = {
+		name = sbs_courtier.1440.a
+		custom_tooltip = sbs_courtier.1440.a.tt
+		hidden_effect = {
+			random_list = {
+				10 = { trigger_event = sbs_courtier.1441 }
+				10 = { trigger_event = sbs_courtier.1442 }
+			}
+		}
+	}
+	option = {
+		name = sbs_courtier.1400.b
+		custom_tooltip = sbs_courtier.1400.b.tt
+		stress_impact = {
+			base = major_stress_impact_gain
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_succubus
+				track = daring
+				value = -1
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = -5
+			}
+		}
+	}
+}
+
+sbs_courtier.1441 = {
+	type = character_event
+	title = sbs_courtier.1441.t
+	desc = sbs_courtier.1441.a.desc
+	theme = memory_stewardship
+	right_portrait = {
+		character = root
+		animation = personality_greedy
+	}
+	option = {
+		name = sbs_courtier.1441.a
+		custom_tooltip = sbs_courtier.1441.a.tt
+		add_piety = minor_piety_loss
+		stress_impact = {
+			base = minor_stress_impact_gain
+		}
+		add_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_succubus
+				track = daring
+				value = 1
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 5
+			}
+		}
+	}
+}
+
+sbs_courtier.1442 = {
+	type = character_event
+	title = sbs_courtier.1442.t
+	desc = sbs_courtier.1442.a.desc
+	theme = memory_stewardship
+	right_portrait = {
+		character = root
+		animation = personality_greedy
+	}
+	option = {
+		name = sbs_courtier.1442.a
+		custom_tooltip = sbs_courtier.1442.a.tt
+		add_piety = medium_piety_loss
+		stress_impact = {
+			base = minor_stress_impact_loss
+		}
+		add_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_succubus
+				track = daring
+				value = 1
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 5
+			}
+			add_character_flag = { flag = pussy_cum days = 10 }
+			add_character_flag = { flag = body_cum days = 10 }
+		}
+	}
+}
+
+#1460 after a heated debate, as you sit naked on your throne, some vassls/advisors just surround you on your throne, demand to fuck their whore ruler... to adress their issues to your holes... as you made them hard...
+sbs_courtier.1460 = {
+	type = character_event
+	title = sbs_courtier.1460.t
+	desc = sbs_courtier.1460.a.desc
+	theme = memory_stewardship
+	right_portrait = {
+		character = root
+		animation = personality_greedy
+	}
+	cooldown = { years = 8 }
+	trigger = {
+		is_ruler = yes
+		is_adult = yes
+		is_female = yes
+		should_be_naked_trigger = yes
+		any_councillor = {
+			is_adult = yes
+			is_attracted_to_gender_of = root
+		}
+	}
+	immediate = {
+		random_councillor = {
+			limit = {
+				is_adult = yes
+				is_attracted_to_gender_of = root
+			}
+			save_scope_as = deviant_go_random_1
+		}
+	}
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_courtier.1460.a
+		custom_tooltip = sbs_courtier.1460.a.tt
+		hidden_effect = {
+			random_list = {
+				10 = { trigger_event = sbs_courtier.1461 }
+				10 = { trigger_event = sbs_courtier.1462 }
+			}
+		}
+	}
+	option = {
+		ai_chance = { base = 50 }
+		name = sbs_courtier.1460.b
+		custom_tooltip = sbs_courtier.1460.b.tt
+		deviant_go_random_1 = {
+			pay_short_term_gold = {
+				target = root
+				gold = root.prostitute_price_value
+			}
+		}
+		hidden_effect = {
+			random_list = {
+				10 = { trigger_event = sbs_courtier.1461 }
+				10 = { trigger_event = sbs_courtier.1462 }
+			}
+		}
+	}
+	option = {
+		name = sbs_courtier.1460.x
+		custom_tooltip = sbs_courtier.1460.x.tt
+		stress_impact = {
+			base = major_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_succubus
+				track = daring
+				value = -1
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = -5
+			}
+		}
+	}
+}
+
+#1461 side fuck while they keep debating, on the throne
+sbs_courtier.1461 = {
+	type = character_event
+	title = sbs_courtier.1461.t
+	desc = sbs_courtier.1461.a.desc
+	theme = memory_stewardship
+	right_portrait = {
+		character = root
+		animation = shame
+	}
+	left_portrait = {
+		character = scope:deviant_go_random_1
+		animation = personality_cynical
+	}
+	option = {
+		name = sbs_courtier.1461.a
+		custom_tooltip = sbs_courtier.1461.a.tt
+		stress_impact = { base = minor_stress_impact_loss }
+		every_court_position_holder = {
+			add_opinion = {
+				target = root
+				modifier = disgusted_opinion
+				opinion = -10
+			}
+		}
+		every_councillor = {
+			add_opinion = {
+				target = root
+				modifier = disgusted_opinion
+				opinion = -10
+			}
+		}
+		scope:deviant_go_random_1 = { prostitute_effect= { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance } }
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_succubus
+				track = daring
+				value = 1
+			}
+			add_trait_xp = {
+				trait = sbs_succubus
+				track = power
+				value = 1
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 10
+			}
+			add_character_flag = { flag = pussy_cum days = 10 }
+			add_character_flag = { flag = body_cum days = 10 }
+		}
+	}
+}
+
+#1462 footstool while being fucked
+sbs_courtier.1462 = {
+	type = character_event
+	title = sbs_courtier.1462.t
+	desc = sbs_courtier.1462.a.desc
+	theme = memory_stewardship
+	right_portrait = {
+		character = root
+		animation = shame
+	}
+	left_portrait = {
+		character = scope:deviant_go_random_1
+		animation = personality_cynical
+	}
+
+	option = {
+		name = sbs_courtier.1462.a
+		custom_tooltip = sbs_courtier.1462.a.tt
+		stress_impact = {
+			base = minor_stress_impact_loss
+		}
+		every_court_position_holder = {
+			add_opinion = {
+				target = root
+				modifier = disgusted_opinion
+				opinion = -10
+			}
+		}
+		every_councillor = {
+			add_opinion = {
+				target = root
+				modifier = disgusted_opinion
+				opinion = -10
+			}
+		}
+		trigger_event = sbs_courtier.1463
+	}
+}
+
+#1463 lickcum from floor after stool bukake
+sbs_courtier.1463 = {
+	type = character_event
+	title = sbs_courtier.1463.t
+	desc = sbs_courtier.1463.a.desc
+	theme = memory_stewardship
+	right_portrait = {
+		character = root
+		animation = throne_room_kneel_2
+	}
+	left_portrait = {
+		character = scope:deviant_go_random_1
+		animation = personality_cynical
+	}
+
+	option = {
+		name = sbs_courtier.1463.a
+		custom_tooltip = sbs_courtier.1463.a.tt
+		stress_impact = {
+			base = minor_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_succubus
+				track = daring
+				value = 1
+			}
+			add_trait_xp = {
+				trait = sbs_succubus
+				track = power
+				value = 1
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 10
+			}
+			add_character_flag = { flag = pussy_cum days = 10 }
+			add_character_flag = { flag = body_cum days = 10 }
+		}
+	}
+}

@@ -1,0 +1,182 @@
+﻿sbs_absorb_interaction = {
+	desc = sbs_absorb_interaction.desc
+	category = interaction_category_vassal
+	use_diplomatic_range = yes
+	common_interaction = yes
+	cooldown = { years = 1 }
+	cooldown_against_recipient = { years = 10 }
+	is_shown = {
+		scope:actor = {
+			OR = {
+				has_trait = sbs_succubus
+				has_trait = sbs_lesser_succubus
+			}
+			NOT = { is_at_war_with = scope:recipient }
+		}
+		scope:recipient = {
+			OR = {
+				has_character_flag = pussy_cum
+				has_character_flag = ass_cum
+				has_character_flag = face_cum
+				has_character_flag = body_cum
+				has_trait = sbs_demon
+			}
+		}
+	}
+	send_option = {
+		is_shown = {
+			scope:actor = { has_trait = sbs_lesser_succubus }
+			scope:recipient = {
+				OR = {
+					has_character_flag = pussy_cum
+					has_character_flag = ass_cum
+					has_character_flag = face_cum
+					has_character_flag = body_cum
+					has_trait = sbs_demon
+				}
+			}
+		}
+		flag = lesser_succubus
+		localization = "trait_track_sbs_lesser_succubus"
+	}
+	send_option = {
+		is_shown = {
+			scope:actor = { has_trait = sbs_succubus }
+			scope:recipient = {
+				OR = {
+					has_character_flag = pussy_cum
+					has_character_flag = ass_cum
+					has_trait = sbs_demon
+				}
+			}
+		}
+		flag = power
+		localization = "trait_track_power"
+	}
+	send_option = {
+		is_shown = {
+			scope:actor = { has_trait = sbs_succubus }
+			scope:recipient = {
+				OR = {
+					has_character_flag = face_cum
+					has_character_flag = body_cum
+					has_trait = sbs_demon
+				}
+			}
+		}
+		flag = daring
+		localization = "trait_track_daring"
+	}
+	send_option = {
+		is_shown = {
+			scope:actor = { has_trait = sbs_succubus }
+			scope:recipient = { has_trait = sbs_demon }
+		}
+		flag = loyalty
+		localization = "trait_track_loyalty"
+	}
+	send_option = {
+		is_shown = {
+			scope:actor = { has_trait = sbs_succubus }
+			scope:recipient = { has_trait = sbs_demon }
+		}
+		flag = corruption
+		localization = "trait_track_corruption"
+	}
+	send_options_exclusive = yes
+	on_accept = {
+		scope:actor = {
+			if = {
+				limit = { scope:lesser_succubus = yes }
+				if = {
+					limit = { scope:recipient = { has_character_flag = pussy_cum } }
+					add_trait_xp = { trait = sbs_lesser_succubus value = 4 }
+				}
+				if = {
+					limit = { scope:recipient = { has_character_flag = ass_cum } }
+					add_trait_xp = { trait = sbs_lesser_succubus value = 4 }
+				}
+				if = {
+					limit = { scope:recipient = { has_character_flag = face_cum } }
+					add_trait_xp = { trait = sbs_lesser_succubus value = 4 }
+				}
+				if = {
+					limit = { scope:recipient = { has_character_flag = body_cum } }
+					add_trait_xp = { trait = sbs_lesser_succubus value = 4 }
+				}
+				if = {
+					limit = { scope:recipient = { has_trait = sbs_demon } }
+					add_trait_xp = { trait = sbs_lesser_succubus value = 10 }
+				}
+			}
+			else_if = {
+				limit = { scope:power = yes }
+				if = {
+					limit = { scope:recipient = { has_character_flag = pussy_cum } }
+					add_trait_xp = { trait = sbs_succubus track = power value = 2 }
+				}
+				if = {
+					limit = { scope:recipient = { has_character_flag = ass_cum } }
+					add_trait_xp = { trait = sbs_succubus track = power value = 2 }
+				}
+				if = {
+					limit = { scope:recipient = { has_trait = sbs_demon } }
+					add_trait_xp = { trait = sbs_succubus track = power value = 5 }
+				}
+			}
+			else_if = {
+				limit = { scope:daring = yes }
+				if = {
+					limit = { scope:recipient = { has_character_flag = body_cum } }
+					add_trait_xp = { trait = sbs_succubus track = daring value = 2 }
+				}
+				if = {
+					limit = { scope:recipient = { has_character_flag = face_cum } }
+					add_trait_xp = { trait = sbs_succubus track = daring value = 2 }
+				}
+				if = {
+					limit = { scope:recipient = { has_trait = sbs_demon } }
+					add_trait_xp = { trait = sbs_succubus track = daring value = 5 }
+				}
+			}
+			else_if = {
+				limit = { scope:loyalty = yes }
+				add_trait_xp = { trait = sbs_succubus track = loyalty value = 5 }
+			}
+			else_if = {
+				limit = { scope:corruption = yes }
+				add_trait_xp = { trait = sbs_succubus track = corruption value = 5 }
+			}
+		}
+		scope:recipient = {
+			remove_character_flag = face_cum
+			remove_character_flag = body_cum
+			remove_character_flag = ass_cum
+			remove_character_flag = pussy_cum
+		}
+	}
+	auto_accept = {
+		scope:recipient = {
+			is_courtier_of = scope:actor
+		}
+	}
+	ai_accept = {
+		base = -20
+		opinion_modifier = {
+			opinion_target = scope:actor
+			who = scope:recipient
+			multiplier = 0.25
+		}
+		modifier = { add = 30 scope:recipient.faith = scope:actor.faith }
+		modifier = { add = 50 scope:recipient = { is_parent_of = scope:actor } }
+	}
+	ai_frequency = 12
+	ai_targets = {
+		ai_recipients = head_of_faith
+		ai_recipients = family
+		ai_recipients = courtiers
+		ai_recipients = vassals
+	}
+	ai_potential = { always = yes }
+	ai_will_do = { base = 100 }
+}

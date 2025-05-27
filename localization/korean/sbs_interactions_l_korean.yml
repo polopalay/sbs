@@ -1,0 +1,66 @@
+﻿l_korean:
+  sbs_devil_dead_interaction: "치유"
+  sbs_devil_dead_interaction.desc: "모든 종류의 질병, 부상 및 모든 불명예스러운 이름을 제거합니다."
+  stress_flag: "스트레스"
+  healing_flag: "치유"
+  honor_flag: "명예"
+  dna_flag: "유전자"
+
+  sbs_devils_gift_interaction: "정신 파괴"
+  sbs_devils_gift_interaction.desc: "[recipient.GetShortUIName]에게 음탕한 생각에 시달리게 합니다."
+
+  sbs_devils_curse_interaction: "저주"
+  sbs_devils_curse_interaction.desc: "[recipient.GetShortUIName]에게 \"저주\"를 부여합니다."
+
+  sbs_create_lesser_succubus_interaction: "하위 서큐버스 만들기"
+  sbs_create_lesser_succubus_interaction.desc: "[recipient.GetShortUIName]가 하위 서큐버스가 됩니다."
+  recipient_secondary_sbs_create_lesser_succubus_interaction: "하나 선택하기"
+
+  sbs_create_succubus_interaction: "서큐버스 만들기"
+  sbs_create_succubus_interaction.desc: "[recipient.GetShortUIName]가 서큐버스가 됩니다."
+  recipient_secondary_sbs_create_succubus_interaction: "하나 선택하기"
+
+  sbs_absorb_interaction: "흡수"
+  sbs_absorb_interaction.desc: "[recipient.GetShortUIName]의 힘을 충성도로 흡수합니다."
+
+  sbs_makeup_interaction: "메이크업"
+  sbs_makeup_interaction.desc: "[recipient.GetShortUIName]에게 메이크업을 합니다."
+  succubus_no_horn: "뿔 없음"
+  succubus_horn0: "긴 곡선 뿔"
+  succubus_horn1: "꼬인 뿔"
+  succubus_horn2: "끝이 뾰족한 뿔"
+  succubus_horn3: "곡선 뿔"
+  succubus_horn4: "짧은 뿔"
+  succubus_no_eyes: "스모키 눈 없음"
+  succubus_marking_1: "울고 있는 스모키 눈"
+  succubus_marking_2: "긁힌 스모키 눈"
+  succubus_marking_3: "긁힌 스모키 눈"
+  succubus_marking_4: "꽃 스모키 눈"
+  succubus_marking_5: "작은 스모키 눈"
+  succubus_marking_6: "아주 작은 스모키 눈"
+  succubus_default_eyes: "기본 눈"
+  succubus_white_eyes: "흰 눈"
+  succubus_red_eyes: "붉은 눈"
+  succubus_default_hair: "기본 머리"
+  succubus_white_hair: "흰 머리"
+  succubus_red_hair: "붉은 머리"
+  naked: "나체"
+  glass: "유리"
+
+  sbs_deal_with_the_devil_interaction: "악마와 거래하기"
+  sbs_deal_with_the_devil_interaction.desc: "악마와 거래하여 원하는 것을 \"작은\" 대가로 얻으세요."
+  small_price: "작은 가격"
+
+  sbs_ask_for_become_lesser_succubus_interaction: "하위 섹시한 악마가 되기를 요청하기"
+  sbs_ask_for_become_lesser_succubus_interaction.desc: "악마에게 하위 섹시한 악마가 되기를 요청하세요."
+  recipient_secondary_sbs_ask_for_become_lesser_succubus_interaction: "하나 선택하기"
+
+  sbs_ask_for_become_succubus_interaction: "섹시한 악마가 되기를 요청하기"
+  sbs_ask_for_become_succubus_interaction.desc: "악마에게 섹시한 악마가 되기를 요청하세요."
+  recipient_secondary_sbs_ask_for_become_succubus_interaction: "하나 선택하기"
+
+  sbs_looking_new_owner_interaction: "새 주인 찾기"
+  sbs_looking_new_owner_interaction.desc: "[recipient.GetShortUIName]을 위한 새 주인을 찾습니다."
+
+  sbs_seal_the_devil_interaction: "악마를 봉인하기"
+  sbs_seal_the_devil_interaction.desc: "신의 검의 이름으로, 이 이단자들을 봉인하겠습니다, 아멘"

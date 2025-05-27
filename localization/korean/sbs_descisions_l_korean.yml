@@ -1,0 +1,20 @@
+﻿l_korean:
+  become_demon: "악마가 되기"
+  become_demon.desc: "사탄과 지옥의 왕자들로부터 축복받은 섹시한 악마로서, 이 신성한 의식을 수행하기 위해 100명의 인간 생명을 희생할 조건을 모두 충족했습니다."
+  become_demon.c: "축복받기"
+  become_demon.t: "신성한 의식 시작하기"
+
+  masturbate: "자위"
+  masturbate.desc: "당신의 삶은 이미 스트레스로 가득 차 있습니다. 이를 완화할 방법을 찾고 있습니다. 딜도는 가장 안전한 방법입니다. 음란하다는 소문에 대해 걱정할 필요 없이 관능에 빠져들 수 있습니다."
+  masturbate.t: "스트레스 해소"
+  masturbate.c: "질에 넣기"
+
+  seal_the_gates_of_hell: "지옥의 문을 봉인"
+  seal_the_gates_of_hell.desc: "지옥의 문이 열렸으며, 악마들이 인간 세계로 침입하려고 합니다. 지옥의 문을 봉인하고 악마들이 인간 세계로 침입하는 것을 막을 방법을 찾아야 합니다."
+  seal_the_gates_of_hell.t: "지옥의 문을 봉인"
+  seal_the_gates_of_hell.c: "지옥의 문을 봉인"
+
+  alienate_people: "사람들을 소외시키기"
+  alienate_people.desc: "당신은 이미 악마로 변모했습니다. 이제는 인간들을 소외시키고, 당신의 힘을 더욱 강화하기 위해 다른 사람들을 더욱 더 소외시키고 싶어합니다."
+  alienate_people.t: "사람들을 소외시키기"
+  alienate_people.c: "사람들을 소외시키기"

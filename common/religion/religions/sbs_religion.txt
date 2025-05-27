@@ -1,0 +1,314 @@
+satanic_religion = {
+	family = rf_pagan
+	pagan_roots = no
+
+	doctrine = pagan_hostility_doctrine
+
+	#Main Group
+	doctrine = doctrine_spiritual_head
+	doctrine = doctrine_gender_equal
+	doctrine = doctrine_pluralism_righteous
+	doctrine = doctrine_theocracy_temporal
+
+	#Marriage
+	doctrine = doctrine_polygamy
+	doctrine = doctrine_divorce_approval
+	doctrine = doctrine_bastardry_none
+	doctrine = doctrine_consanguinity_unrestricted
+
+	#Crimes
+	doctrine = doctrine_homosexuality_accepted
+	doctrine = doctrine_adultery_men_accepted
+	doctrine = doctrine_adultery_women_accepted
+	doctrine = doctrine_kinslaying_accepted
+	doctrine = doctrine_deviancy_accepted
+	doctrine = doctrine_witchcraft_accepted
+	doctrine = carn_doctrine_same_slavery_shunned
+	doctrine = carn_doctrine_other_slavery_accepted
+	doctrine = carn_doctrine_prostitution_accepted
+
+	#Clerical Functions
+	doctrine = doctrine_clerical_function_recruitment
+	doctrine = doctrine_clerical_gender_either
+	doctrine = doctrine_clerical_marriage_allowed
+	doctrine = doctrine_clerical_succession_temporal_appointment
+
+	#Allow pilgrimages
+	doctrine = doctrine_pilgrimage_encouraged
+
+	#Funeral tradition
+	doctrine = doctrine_funeral_mummification
+
+	traits = {
+		virtues = { lustful deceitful callous sadistic vengeful greedy sbs_demon }
+		sins = { chaste honest compassionate forgiving temperate }
+	}
+	custom_faith_icons = {
+		 benevolent blessed_child bull cross_crusader_wicked midgard munificent murder_jester murder_war bacchants norse_pagan ruthless sabianism sethianism teutonic virgin war_child nocturnal khajiit_mane kynareth mephala scaled_court
+	}
+
+	holy_order_maa = { succubus_dark_amry }
+	localization = {
+		HighGodName = succubus_high_god_name
+		HighGodName2 = succubus_high_god_name_2
+		HighGodNamePossessive = succubus_high_god_name_possessive
+		HighGodNameSheHe = CHARACTER_SHEHE_HE
+		HighGodHerselfHimself = CHARACTER_HIMSELF
+		HighGodHerHis = CHARACTER_HERHIS_HIS
+		HighGodNameAlternate = succubus_high_god_name_alternate
+		HighGodNameAlternatePossessive = succubus_high_god_name_alternate_possessive
+
+		CreatorName = succubus_creator_god_name
+		CreatorNamePossessive = succubus_creator_god_name_possessive
+		CreatorSheHe = CHARACTER_SHEHE_HE
+		CreatorHerHis = CHARACTER_HERHIS_HIS
+		CreatorHerHim = CHARACTER_HERHIM_HIM
+
+		HealthGodName = succubus_health_god_name
+		HealthGodNamePossessive = succubus_health_god_name_possessive
+		HealthGodSheHe = CHARACTER_SHEHE_HE
+		HealthGodHerHis = CHARACTER_HERHIS_HIS
+		HealthGodHerHim = CHARACTER_HERHIM_HIM
+
+		FertilityGodName = succubus_fertility_god_name
+		FertilityGodNamePossessive = succubus_fertility_god_name_possessive
+		FertilityGodSheHe = CHARACTER_SHEHE_HE
+		FertilityGodHerHis = CHARACTER_HERHIS_HIS
+		FertilityGodHerHim = CHARACTER_HERHIM_HIM
+
+		WealthGodName = succubus_wealth_god_name
+		WealthGodNamePossessive = succubus_wealth_god_name_possessive
+		WealthGodSheHe = CHARACTER_SHEHE_HE
+		WealthGodHerHis = CHARACTER_HERHIS_HIS
+		WealthGodHerHim = CHARACTER_HERHIM_HIM
+
+		HouseholdGodName = succubus_household_god_name
+		HouseholdGodNamePossessive = succubus_household_god_name_possessive
+		HouseholdGodSheHe = CHARACTER_SHEHE_HE
+		HouseholdGodHerHis = CHARACTER_HERHIS_HIS
+		HouseholdGodHerHim = CHARACTER_HERHIM_HIM
+
+		FateGodName = succubus_fate_god_name
+		FateGodNamePossessive = succubus_fate_god_name_possessive
+		FateGodSheHe = CHARACTER_SHEHE_HE
+		FateGodHerHis = CHARACTER_HERHIS_HIS
+		FateGodHerHim = CHARACTER_HERHIM_HIM
+
+		KnowledgeGodName = succubus_knowledge_god_name
+		KnowledgeGodNamePossessive = succubus_knowledge_god_name_possessive
+		KnowledgeGodSheHe = CHARACTER_SHEHE_HE
+		KnowledgeGodHerHis = CHARACTER_HERHIS_HIS
+		KnowledgeGodHerHim = CHARACTER_HERHIM_HIM
+
+		WarGodName = succubus_war_god_name
+		WarGodNamePossessive = succubus_war_god_name_possessive
+		WarGodSheHe = CHARACTER_SHEHE_HE
+		WarGodHerHis = CHARACTER_HERHIS_HIS
+		WarGodHerHim = CHARACTER_HERHIM_HIM
+
+		TricksterGodName = succubus_trickster_god_name
+		TricksterGodNamePossessive = succubus_trickster_god_name_possessive
+		TricksterGodSheHe = CHARACTER_SHEHE_HE
+		TricksterGodHerHis = CHARACTER_HERHIS_HIS
+		TricksterGodHerHim = CHARACTER_HERHIM_HIM
+
+		NightGodName = succubus_night_god_name
+		NightGodNamePossessive = succubus_night_god_name_possessive
+		NightGodSheHe = CHARACTER_SHEHE_HE
+		NightGodHerHis = CHARACTER_HERHIS_HIS
+		NightGodHerHim = CHARACTER_HERHIM_HIM
+
+		WaterGodName = succubus_water_god_name
+		WaterGodNamePossessive = succubus_water_god_name_possessive
+		WaterGodSheHe = CHARACTER_SHEHE_HE
+		WaterGodHerHis = CHARACTER_HERHIS_HIS
+		WaterGodHerHim = CHARACTER_HERHIM_HIM
+
+		PantheonTerm = succubus_high_god_name
+		PantheonTerm2 = succubus_high_god_name_2
+		PantheonTerm3 = succubus_high_god_name_3
+		PantheonTermHasHave = pantheon_term_has
+		GoodGodNames = {
+			succubus_high_god_name
+			succubus_high_god_name_alternate
+			succubus_good_god_1
+			succubus_good_god_2
+		}
+		DevilName = sbs_devil_name
+		DevilNamePossessive = sbs_devil_name_possessive
+		DevilSheHe = CHARACTER_SHEHE_HE
+		DevilHerHis = CHARACTER_HERHIS_HIS
+		DevilHerHis = CHARACTER_HERHIS_HIS
+		DevilHerselfHimself = CHARACTER_HIMSELF
+		EvilGodNames = {
+			sbs_devil_name
+			succubus_evil_god_1
+		}
+		HouseOfWorship = succubus_house_of_worship
+		HouseOfWorship2 = succubus_house_of_worship_2
+		HouseOfWorship3 = succubus_house_of_worship_3
+		HouseOfWorshipPlural = succubus_house_of_worship_plural
+		ReligiousSymbol = succubus_religious_symbol
+		ReligiousSymbol2 = succubus_religious_symbol_2
+		ReligiousSymbol3 = succubus_religious_symbol_3
+		ReligiousText = succubus_religious_text
+		ReligiousText2 = succubus_religious_text_2
+		ReligiousText3 = succubus_religious_text_3
+		ReligiousHeadName = succubus_religious_head_title
+		ReligiousHeadTitleName = succubus_religious_head_title_name
+		DevoteeMale = succubus_devotee_male
+		DevoteeMalePlural = succubus_devotee_male_plural
+		DevoteeFemale = succubus_devotee_female
+		DevoteeFemalePlural = succubus_devotee_female_plural
+		DevoteeNeuter = succubus_devotee_neuter
+		DevoteeNeuterPlural = succubus_devotee_neuter_plural
+		PriestMale = succubus_priest_male
+		PriestMalePlural = succubus_priest_male_plural
+		PriestFemale = succubus_priest_male
+		PriestFemalePlural = succubus_priest_male_plural
+		PriestNeuter = succubus_priest_male
+		PriestNeuterPlural = succubus_priest_male_plural
+		AltPriestTermPlural = succubus_priest_alternate_plural
+		BishopMale = succubus_bishop
+		BishopMalePlural = succubus_bishop_plural
+		BishopFemale = succubus_bishop
+		BishopFemalePlural = succubus_bishop_plural
+		BishopNeuter = succubus_bishop
+		BishopNeuterPlural = succubus_bishop_plural
+		DivineRealm = succubus_positive_afterlife
+		DivineRealm2 = succubus_positive_afterlife_2
+		DivineRealm3 = succubus_positive_afterlife_3
+		PositiveAfterLife = succubus_positive_afterlife
+		PositiveAfterLife2 = succubus_positive_afterlife_2
+		PositiveAfterLife3 = succubus_positive_afterlife_3
+		NegativeAfterLife = succubus_negative_afterlife
+		NegativeAfterLife2 = succubus_negative_afterlife_2
+		NegativeAfterLife3 = succubus_negative_afterlife_3
+		DeathDeityName = succubus_death_deity_name
+		DeathDeityNamePossessive = succubus_death_deity_name_possessive
+		DeathDeitySheHe = CHARACTER_SHEHE_HE
+		DeathDeityHerHis = CHARACTER_HERHIS_HIS
+		DeathDeityHerHim = CHARACTER_HERHIM_HIM
+		WitchGodName = succubus_witchgodname_the_horned_god
+		WitchGodNamePossessive = succubus_witchgodname_the_horned_god_possessive
+		WitchGodHerHis = CHARACTER_HERHIS_HIS
+		WitchGodSheHe = CHARACTER_SHEHE_HE
+		WitchGodHerHim = CHARACTER_HERHIM_HIM
+		WitchGodMistressMaster = master
+		WitchGodMotherFather = father
+
+		GHWName = ghw_crusade
+		GHWNamePlural = ghw_crusades
+	}
+
+	faiths = {
+		beelzebub = {
+			religious_head = k_beelzebub
+			color = { 50 255 50 }
+			icon = clover
+
+			holy_site = lyon
+			holy_site = santiago
+			holy_site = paderborn
+			holy_site = albi
+			holy_site = kent
+
+			doctrine = tenet_natural_primitivism
+			doctrine = tenet_sanctity_of_nature
+			doctrine = tenet_megaliths
+
+			doctrine = doctrine_funeral_sky_burial
+		}
+		lilith = {
+			religious_head = k_lilith
+			color = { 238 115 221 }
+			icon = murder_rose
+
+			holy_site = jerusalem
+			holy_site = babylon
+			holy_site = sufed
+			holy_site = gerizim
+			holy_site = sinai
+
+			doctrine = tenet_carnal_exaltation
+			doctrine = tenet_divine_marriage
+			doctrine = tenet_polyamory
+
+			doctrine = doctrine_deviancy_virtuous
+			doctrine = carn_doctrine_prostitution_virtuous
+			doctrine = special_doctrine_naked_priests
+		}
+		abaddon = {
+			religious_head = k_abandon
+			color = { 139 0 0 }
+			icon = bloodthirsty
+
+			holy_site = athens
+			holy_site = rome
+			holy_site = lyon
+			holy_site = carthage
+			holy_site = constantinople
+
+			doctrine = tenet_warmonger
+			doctrine = tenet_fp3_fedayeen
+			doctrine = tenet_ritual_cannibalism
+
+			doctrine = carn_doctrine_same_slavery_accepted
+			doctrine = doctrine_funeral_cremation
+			doctrine = doctrine_pluralism_fundamentalist
+		}
+		mammon = {
+			religious_head = k_mammon
+			color = { 255 215 0 }
+			icon = munificent
+
+			holy_site = rome
+			holy_site = constantinople
+			holy_site = visoki
+			holy_site = ragusa
+			holy_site = esztergom
+
+			doctrine = tenet_hedonistic
+			doctrine = tenet_communal_possessions
+			doctrine = tenet_tax_nonbelievers
+
+			doctrine = carn_doctrine_same_slavery_accepted
+			doctrine = doctrine_funeral_cremation
+		}
+		asmodeus = {
+			religious_head = k_asmodeus
+			color = { 255 0 0 }
+			icon = family
+
+			holy_site = carthage
+			holy_site = athens
+			holy_site = constantinople
+			holy_site = alexandria
+			holy_site = antioch
+
+			doctrine = tenet_sacred_childbirth
+			doctrine = tenet_divine_marriage
+			doctrine = tenet_reincarnation
+
+			doctrine = doctrine_pluralism_fundamentalist
+		}
+		belial = {
+			religious_head = k_belial
+			color = { 247 185 238 }
+			icon = murder
+
+			holy_site = sinai
+			holy_site = jerusalem
+			holy_site = antioch
+			holy_site = alexandria
+			holy_site = aswan
+
+			doctrine = tenet_esotericism
+			doctrine = tenet_literalism
+			doctrine = tenet_astrology
+
+			doctrine = doctrine_witchcraft_virtuous
+			doctrine = doctrine_pluralism_pluralistic
+		}
+	}
+}
