@@ -1,4 +1,4 @@
-satanic_religion = {
+demonic_religion = {
 	family = rf_pagan
 	pagan_roots = no
 
@@ -202,8 +202,8 @@ satanic_religion = {
 	}
 
 	faiths = {
-		beelzebub = {
-			religious_head = k_beelzebub
+		nature = {
+			religious_head = k_nature
 			color = { 50 255 50 }
 			icon = clover
 
@@ -219,8 +219,8 @@ satanic_religion = {
 
 			doctrine = doctrine_funeral_sky_burial
 		}
-		lilith = {
-			religious_head = k_lilith
+		pleasure = {
+			religious_head = k_pleasure
 			color = { 238 115 221 }
 			icon = murder_rose
 
@@ -238,7 +238,7 @@ satanic_religion = {
 			doctrine = carn_doctrine_prostitution_virtuous
 			doctrine = special_doctrine_naked_priests
 		}
-		abaddon = {
+		violence = {
 			religious_head = k_abandon
 			color = { 139 0 0 }
 			icon = bloodthirsty
@@ -257,8 +257,8 @@ satanic_religion = {
 			doctrine = doctrine_funeral_cremation
 			doctrine = doctrine_pluralism_fundamentalist
 		}
-		mammon = {
-			religious_head = k_mammon
+		greedy = {
+			religious_head = k_greedy
 			color = { 255 215 0 }
 			icon = munificent
 
@@ -269,46 +269,11 @@ satanic_religion = {
 			holy_site = esztergom
 
 			doctrine = tenet_hedonistic
-			doctrine = tenet_communal_possessions
+			doctrine = tenet_pursuit_of_power
 			doctrine = tenet_tax_nonbelievers
 
 			doctrine = carn_doctrine_same_slavery_accepted
 			doctrine = doctrine_funeral_cremation
-		}
-		asmodeus = {
-			religious_head = k_asmodeus
-			color = { 255 0 0 }
-			icon = family
-
-			holy_site = carthage
-			holy_site = athens
-			holy_site = constantinople
-			holy_site = alexandria
-			holy_site = antioch
-
-			doctrine = tenet_sacred_childbirth
-			doctrine = tenet_divine_marriage
-			doctrine = tenet_reincarnation
-
-			doctrine = doctrine_pluralism_fundamentalist
-		}
-		belial = {
-			religious_head = k_belial
-			color = { 247 185 238 }
-			icon = murder
-
-			holy_site = sinai
-			holy_site = jerusalem
-			holy_site = antioch
-			holy_site = alexandria
-			holy_site = aswan
-
-			doctrine = tenet_esotericism
-			doctrine = tenet_literalism
-			doctrine = tenet_astrology
-
-			doctrine = doctrine_witchcraft_virtuous
-			doctrine = doctrine_pluralism_pluralistic
 		}
 	}
 }

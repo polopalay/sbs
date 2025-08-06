@@ -11,7 +11,7 @@
 		scope:actor = { has_trait = sbs_demon }
 	}
 	is_valid = {
-		scope:actor.faith.religion = religion:satanic_religion
+		scope:actor.faith.religion = religion:demonic_religion
 		scope:recipient = {
 			has_trait_xp = {
 				trait = sbs_lesser_succubus

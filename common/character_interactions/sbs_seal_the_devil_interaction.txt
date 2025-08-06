@@ -47,32 +47,22 @@ sbs_seal_the_devil_interaction = {
 			OR = {
 				AND = {
 					faith.religious_head = scope:recipient
-					faith = faith:beelzebub
+					faith = faith:nature
 					is_lowborn = yes
 				}
 				AND = {
 					faith.religious_head = scope:recipient
-					faith = faith:lilith
+					faith = faith:pleasure
 					is_lowborn = yes
 				}
 				AND = {
 					faith.religious_head = scope:recipient
-					faith = faith:abaddon
+					faith = faith:violence
 					is_lowborn = yes
 				}
 				AND = {
 					faith.religious_head = scope:recipient
-					faith = faith:mammon
-					is_lowborn = yes
-				}
-				AND = {
-					faith.religious_head = scope:recipient
-					faith = faith:asmodeus
-					is_lowborn = yes
-				}
-				AND = {
-					faith.religious_head = scope:recipient
-					faith = faith:belial
+					faith = faith:greedy
 					is_lowborn = yes
 				}
 				is_imprisoned_by = scope:actor
@@ -85,55 +75,37 @@ sbs_seal_the_devil_interaction = {
 				AND = {
 					faith.religious_head = scope:recipient
 					province:2065.religion = religion:christianity_religion
-					faith = faith:beelzebub
+					faith = faith:nature
 					custom_description = {
-						text = beelzebub_isn_seal
-						NOT = { has_global_variable = seal_beelzebub }
+						text = nature_isn_seal
+						NOT = { has_global_variable = seal_nature }
 					}
 				}
 				AND = {
 					faith.religious_head = scope:recipient
 					province:5965.religion = religion:christianity_religion
-					faith = faith:lilith
+					faith = faith:pleasure
 					custom_description = {
-						text = lilith_isn_seal
-						NOT = { has_global_variable = seal_lilith }
+						text = pleasure_isn_seal
+						NOT = { has_global_variable = seal_pleasure }
 					}
 				}
 				AND = {
 					faith.religious_head = scope:recipient
 					province:482.religion = religion:christianity_religion
-					faith = faith:abaddon
+					faith = faith:violence
 					custom_description = {
-						text = abaddon_isn_seal
-						NOT = { has_global_variable = seal_abaddon }
+						text = violence_isn_seal
+						NOT = { has_global_variable = seal_violence }
 					}
 				}
 				AND = {
 					faith.religious_head = scope:recipient
 					province:2575.religion = religion:christianity_religion
-					faith = faith:mammon
+					faith = faith:greedy
 					custom_description = {
-						text = mammon_isn_seal
-						NOT = { has_global_variable = seal_mammon }
-					}
-				}
-				AND = {
-					faith.religious_head = scope:recipient
-					province:4582.religion = religion:christianity_religion
-					faith = faith:asmodeus
-					custom_description = {
-						text = asmodeus_isn_seal
-						NOT = { has_global_variable = seal_asmodeus }
-					}
-				}
-				AND = {
-					faith.religious_head = scope:recipient
-					province:6038.religion = religion:christianity_religion
-					faith = faith:belial
-					custom_description = {
-						text = belial_isn_seal
-						NOT = { has_global_variable = seal_belial }
+						text = greedy_isn_seal
+						NOT = { has_global_variable = seal_greedy }
 					}
 				}
 			}
@@ -151,29 +123,29 @@ sbs_seal_the_devil_interaction = {
 				add_trait = immortal
 			}
 			if = {
-				limit = { faith.religious_head = scope:recipient faith = faith:beelzebub }
+				limit = { faith.religious_head = scope:recipient faith = faith:nature }
 				death = { death_reason = death_execution killer = scope:actor }
 				scope:actor = {
 					set_trait_rank = { trait = education_learning rank = 5 }
 				}
 				custom_description = {
-					text = seal_beelzebub
-					set_global_variable = { name = seal_beelzebub value = yes }
+					text = seal_nature
+					set_global_variable = { name = seal_nature value = yes }
 				}
 			}
 			else_if = {
-				limit = { faith.religious_head = scope:recipient faith = faith:lilith }
+				limit = { faith.religious_head = scope:recipient faith = faith:pleasure }
 				death = { death_reason = death_execution killer = scope:actor }
 				scope:actor = {
 					set_trait_rank = { trait = education_intrigue rank = 5 }
 				}
 				custom_description = {
-					text = "seal_lilith"
-					set_global_variable = { name = seal_lilith value = yes }
+					text = "seal_pleasure"
+					set_global_variable = { name = seal_pleasure value = yes }
 				}
 			}
 			else_if = {
-				limit = { faith.religious_head = scope:recipient faith = faith:abaddon }
+				limit = { faith.religious_head = scope:recipient faith = faith:violence }
 				death = { death_reason = death_execution killer = scope:actor }
 				scope:actor = {
 					add_trait = logistician
@@ -196,41 +168,19 @@ sbs_seal_the_devil_interaction = {
 					add_trait = conqueror
 				}
 				custom_description = {
-					text = "seal_abaddon"
-					set_global_variable = { name = seal_abaddon value = yes }
+					text = "seal_violence"
+					set_global_variable = { name = seal_violence value = yes }
 				}
 			}
 			else_if = {
-				limit = { faith.religious_head = scope:recipient faith = faith:mammon }
+				limit = { faith.religious_head = scope:recipient faith = faith:greedy }
 				death = { death_reason = death_execution killer = scope:actor }
 				scope:actor = {
 					set_trait_rank = { trait = education_martial rank = 5 }
 				}
 				custom_description = {
-					text = "seal_mammon"
-					set_global_variable = { name = seal_mammon value = yes }
-				}
-			}
-			else_if = {
-				limit = { faith.religious_head = scope:recipient faith = faith:asmodeus }
-				death = { death_reason = death_execution killer = scope:actor }
-				scope:actor = {
-					set_trait_rank = { trait = education_diplomacy rank = 5 }
-				}
-				custom_description = {
-					text = "seal_asmodeus"
-					set_global_variable = { name = seal_asmodeus value = yes }
-				}
-			}
-			else_if = {
-				limit = { faith.religious_head = scope:recipient faith = faith:belial }
-				death = { death_reason = death_execution killer = scope:actor }
-				scope:actor = {
-					set_trait_rank = { trait = education_stewardship rank = 5 }
-				}
-				custom_description = {
-					text = "seal_belial"
-					set_global_variable = { name = seal_belial value = yes }
+					text = "seal_greedy"
+					set_global_variable = { name = seal_greedy value = yes }
 				}
 			}
 			else_if = {

@@ -341,7 +341,7 @@ lilim_dna={
 	enabled=yes
 }
 
-lilith_dna={
+pleasure_dna={
 	portrait_info={
 		genes = { 		
 			hair_color={ 221 126 59 238 }
@@ -456,7 +456,7 @@ lilith_dna={
 	enabled=yes
 }
 
-abaddon_dna={
+violence_dna={
 	portrait_info={
 		genes={ 
 			hair_color={ 252 149 222 28 }
@@ -570,7 +570,7 @@ abaddon_dna={
 	enabled=yes
 }
 
-beelzebub_dna={
+nature_dna={
 	portrait_info={
 		genes={
 			hair_color={ 93 103 93 103 }
@@ -685,7 +685,7 @@ beelzebub_dna={
 	enabled=yes
 }
 
-mammon_dna={
+greedy_dna={
 	portrait_info={
 		genes={
 			hair_color={ 39 243 39 243 }

@@ -1,26 +1,18 @@
-seal_beelzebub = {
-	global = seal_beelzebub
-	first = seal_beelzebub
+seal_nature = {
+	global = seal_nature
+	first = seal_nature
 }
-seal_lilith = {
-	global = seal_lilith
-	first = seal_lilith
+seal_pleasure = {
+	global = seal_pleasure
+	first = seal_pleasure
 }
-seal_abaddon = {
-	global = seal_abaddon
-	first = seal_abaddon
+seal_violence = {
+	global = seal_violence
+	first = seal_violence
 }
-seal_mammon = {
-	global = seal_mammon
-	first = seal_mammon
-}
-seal_asmodeus = {
-	global = seal_asmodeus
-	first = seal_asmodeus
-}
-seal_belial = {
-	global = seal_belial
-	first = seal_belial
+seal_greedy = {
+	global = seal_greedy
+	first = seal_greedy
 }
 seal_the_gates_of_hell = {
 	global = seal_the_gates_of_hell

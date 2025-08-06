@@ -1,41 +1,27 @@
-﻿k_lilith = {
+﻿k_pleasure = {
 	6.1.3 = {
-		holder = lilith_character
+		holder = pleasure_character
 		government = theocracy_government
 	}
 }
 
 k_abandon = {
 	6.1.3 = {
-		holder = abaddon_character
+		holder = violence_character
 		government = theocracy_government
 	}
 }
 
-k_beelzebub = {
+k_nature = {
 	6.1.3 = {
-		holder = beelzebub_character
+		holder = nature_character
 		government = theocracy_government
 	}
 }
 
-k_mammon = {
+k_greedy = {
 	6.1.3 = {
-		holder = mammon_character
-		government = theocracy_government
-	}
-}
-
-k_belial = {
-	6.1.3 = {
-		holder = belial_character
-		government = theocracy_government
-	}
-}
-
-k_asmodeus = {
-	6.1.3 = {
-		holder = asmodeus_character
+		holder = greedy_character
 		government = theocracy_government
 	}
 }

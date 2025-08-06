@@ -66,7 +66,7 @@ name_list_hell = {
 	}
 
 	female_names = {
-    Lilith Astarte Agrat Azura Bathsheba Jezebeth Lamashtu Leviathana Marilith Naamah Obyzuth Samaela Sitri Verin Bathin Hecate Ereshkigal Persephone Tisiphone Nyx Melinoe Mormo Hel Alecto Megaera Agrath Beelzebuba Gremory Zagan Vepar Aym Andraste Banshee Morrigan Lamia Empusa Eris Calypso Circe Pandora Medea Sycorax
+    Lilith Astarte Agrat Azura Bathsheba Jezebeth Lamashtu Leviathana Marilith Naamah Obyzuth Samaela Sitri Verin Bathin Hecate Ereshkigal Persephone Tisiphone Nyx Melinoe Mormo Hel Alecto Megaera Agrath Beelzebuba Gremory Zagan Vepar Aym Andraste Banshee Morrigan Lamia Empusa Eris Calypso Circe Pandora Medea Sycorax Medusa
 	}
 
 	

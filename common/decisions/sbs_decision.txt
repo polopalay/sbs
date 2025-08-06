@@ -13,7 +13,7 @@ become_demon = {
 			has_trait = sbs_succubus
 			has_trait = sbs_seed_of_destruction
 			AND = {
-				faith.religion = religion:satanic_religion
+				faith.religion = religion:demonic_religion
 				faith.religious_head = root
 			}
 		}
@@ -33,19 +33,19 @@ become_demon = {
 				any_courtier = { has_trait = slave is_female = yes is_immortal = yes }
 			}
 			AND = {
-				faith.religion = religion:satanic_religion
+				faith.religion = religion:demonic_religion
 				faith.religious_head = root
 			}
 		}
 	}
 	effect = {
 		if = {
-			limit = { faith = faith:beelzebub faith.religious_head = root }
+			limit = { faith = faith:nature faith.religious_head = root }
 			if = {
 				limit = { NOT = { dynasty = dynasty:888888 } }
 				random_living_character = {
-					limit = { faith = faith:beelzebub is_ruler = no }
-					copy_inheritable_appearance_from = character:beelzebub_character
+					limit = { faith = faith:nature is_ruler = no }
+					copy_inheritable_appearance_from = character:nature_character
 					save_scope_as = demon_child
 					weight = {
 						base = 0
@@ -55,7 +55,7 @@ become_demon = {
 					}
 				}
 				random_held_title = {
-					limit = { this = title:k_beelzebub }
+					limit = { this = title:k_nature }
 					create_title_and_vassal_change = {
 						type = usurped
 						save_scope_as = change
@@ -71,12 +71,12 @@ become_demon = {
 			}
 		}
 		else_if = {
-			limit = { faith = faith:lilith faith.religious_head = root }
+			limit = { faith = faith:pleasure faith.religious_head = root }
 			if = {
 				limit = { NOT = { dynasty = dynasty:666666 } }
 				random_living_character = {
-					limit = { faith = faith:lilith is_ruler = no }
-					copy_inheritable_appearance_from = character:lilith_character
+					limit = { faith = faith:pleasure is_ruler = no }
+					copy_inheritable_appearance_from = character:pleasure_character
 					save_scope_as = demon_child
 					weight = {
 						base = 0
@@ -86,7 +86,7 @@ become_demon = {
 					}
 				}
 				random_held_title = {
-					limit = { this = title:k_lilith }
+					limit = { this = title:k_pleasure }
 					create_title_and_vassal_change = {
 						type = usurped
 						save_scope_as = change
@@ -102,12 +102,12 @@ become_demon = {
 			}
 		}
 		else_if = {
-			limit = { faith = faith:abaddon faith.religious_head = root }
+			limit = { faith = faith:violence faith.religious_head = root }
 			if = {
 				limit = { NOT = { dynasty = dynasty:777777 } }
 				random_living_character = {
-					limit = { faith = faith:abaddon is_ruler = no }
-					copy_inheritable_appearance_from = character:abaddon_character
+					limit = { faith = faith:violence is_ruler = no }
+					copy_inheritable_appearance_from = character:violence_character
 					save_scope_as = demon_child
 					weight = {
 						base = 0
@@ -134,12 +134,12 @@ become_demon = {
 			}
 		}
 		else_if = {
-			limit = { faith = faith:mammon faith.religious_head = root }
+			limit = { faith = faith:greedy faith.religious_head = root }
 			if = {
 				limit = { NOT = { dynasty = dynasty:999999 } }
 				random_living_character = {
-					limit = { faith = faith:mammon is_ruler = no }
-					copy_inheritable_appearance_from = character:mammon_character
+					limit = { faith = faith:greedy is_ruler = no }
+					copy_inheritable_appearance_from = character:greedy_character
 					save_scope_as = demon_child
 					weight = {
 						base = 0
@@ -149,69 +149,7 @@ become_demon = {
 					}
 				}
 				random_held_title = {
-					limit = { this = title:k_mammon }
-					create_title_and_vassal_change = {
-						type = usurped
-						save_scope_as = change
-						add_claim_on_loss = no
-					}
-					change_title_holder_include_vassals = {
-						holder = scope:demon_child
-						change = scope:change
-						take_baronies = no
-					}
-					resolve_title_and_vassal_change = scope:change
-				}
-			}
-		}
-		else_if = {
-			limit = { faith = faith:asmodeus faith.religious_head = root }
-			if = {
-				limit = { NOT = { dynasty = dynasty:13131313 } }
-				random_living_character = {
-					limit = { faith = faith:asmodeus is_ruler = no }
-					copy_inheritable_appearance_from = character:asmodeus_character
-					save_scope_as = demon_child
-					weight = {
-						base = 0
-						modifier = { is_lowborn = yes add = 1 }
-						modifier = { dynasty = dynasty:13131313 add = 10000 }
-						modifier = { dynasty = dynasty:13131313 is_adult = yes add = 20000 }
-					}
-				}
-				random_held_title = {
-					limit = { this = title:k_asmodeus }
-					create_title_and_vassal_change = {
-						type = usurped
-						save_scope_as = change
-						add_claim_on_loss = no
-					}
-					change_title_holder_include_vassals = {
-						holder = scope:demon_child
-						change = scope:change
-						take_baronies = no
-					}
-					resolve_title_and_vassal_change = scope:change
-				}
-			}
-		}
-		else_if = {
-			limit = { faith = faith:belial faith.religious_head = root }
-			if = {
-				limit = { NOT = { dynasty = dynasty:14814813 } }
-				random_living_character = {
-					limit = { faith = faith:belial is_ruler = no }
-					copy_inheritable_appearance_from = character:belial_character
-					save_scope_as = demon_child
-					weight = {
-						base = 0
-						modifier = { is_lowborn = yes add = 1 }
-						modifier = { dynasty = dynasty:14814813 add = 10000 }
-						modifier = { dynasty = dynasty:14814813 is_adult = yes add = 20000 }
-					}
-				}
-				random_held_title = {
-					limit = { this = title:k_belial }
+					limit = { this = title:k_greedy }
 					create_title_and_vassal_change = {
 						type = usurped
 						save_scope_as = change
@@ -260,7 +198,7 @@ become_demon = {
 	
 			if = {
 				limit = {
-					faith.religion = religion:satanic_religion
+					faith.religion = religion:demonic_religion
 					faith.religious_head = root
 					culture = {
 						NOT = {
@@ -280,14 +218,12 @@ become_demon = {
 			}
 		}
 		if = {
-			limit = { NOT = { faith.religion = religion:satanic_religion } }
+			limit = { NOT = { faith.religion = religion:demonic_religion } }
 			random_list = {
-				100 = { set_character_faith_with_conversion = faith:beelzebub }
-				100 = { set_character_faith_with_conversion = faith:lilith }
-				100 = { set_character_faith_with_conversion = faith:abaddon }
-				100 = { set_character_faith_with_conversion = faith:mammon }
-				100 = { set_character_faith_with_conversion = faith:asmodeus }
-				100 = { set_character_faith_with_conversion = faith:belial }
+				100 = { set_character_faith_with_conversion = faith:nature }
+				100 = { set_character_faith_with_conversion = faith:pleasure }
+				100 = { set_character_faith_with_conversion = faith:violence }
+				100 = { set_character_faith_with_conversion = faith:greedy }
 			}
 		}
 	}
@@ -354,27 +290,21 @@ seal_the_gates_of_hell = {
 		province:2575.religion = religion:christianity_religion
 		province:4582.religion = religion:christianity_religion
 		province:6038.religion = religion:christianity_religion
-		custom_description = { text = beelzebub_is_seal has_global_variable = seal_beelzebub }
-		custom_description = { text = lilith_is_seal has_global_variable = seal_lilith }
-		custom_description = { text = abaddon_is_seal has_global_variable = seal_abaddon }
-		custom_description = { text = mammon_is_seal has_global_variable = seal_mammon }
-		custom_description = { text = asmodeus_is_seal has_global_variable = seal_asmodeus }
-		custom_description = { text = belial_is_seal has_global_variable = seal_belial }
+		custom_description = { text = nature_is_seal has_global_variable = seal_nature }
+		custom_description = { text = pleasure_is_seal has_global_variable = seal_pleasure }
+		custom_description = { text = violence_is_seal has_global_variable = seal_violence }
+		custom_description = { text = greedy_is_seal has_global_variable = seal_greedy }
 	}
 	effect = {
-		faith:beelzebub.religious_head = { death = { death_reason = death_execution killer = root } }
-		faith:lilith.religious_head = { death = { death_reason = death_execution killer = root } }
-		faith:abaddon.religious_head = { death = { death_reason = death_execution killer = root } }
-		faith:mammon.religious_head = { death = { death_reason = death_execution killer = root } }
-		faith:asmodeus.religious_head = { death = { death_reason = death_execution killer = root } }
-		faith:belial.religious_head = { death = { death_reason = death_execution killer = root } }
+		faith:nature.religious_head = { death = { death_reason = death_execution killer = root } }
+		faith:pleasure.religious_head = { death = { death_reason = death_execution killer = root } }
+		faith:violence.religious_head = { death = { death_reason = death_execution killer = root } }
+		faith:greedy.religious_head = { death = { death_reason = death_execution killer = root } }
 
-		destroy_title = title:k_beelzebub
-		destroy_title = title:k_lilith
-		destroy_title = title:k_abaddon
-		destroy_title = title:k_mammon
-		destroy_title = title:k_asmodeus
-		destroy_title = title:k_belial
+		destroy_title = title:k_nature
+		destroy_title = title:k_pleasure
+		destroy_title = title:k_violence
+		destroy_title = title:k_greedy
 
 		custom_description = {
 			text = seal_the_gates_of_hell

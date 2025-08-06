@@ -1,36 +1,36 @@
 ﻿war = {
-	name = "the_expedition_of_abaddon_1"
+	name = "the_expedition_of_violence_1"
 	start_date = 866.1.1
 	end_date = 868.1.1
 	targeted_titles = {
 		k_romagna
 	}
 	casus_belli = invasion_war
-	attackers = { abaddon_character }
+	attackers = { violence_character }
 	defenders = { 30228 7853 90107 144998 90104 42018 71908 163070 163057 163071 168137 127007 }
 }
 
 war = {
-	name = "the_expedition_of_abaddon_2"
+	name = "the_expedition_of_violence_2"
 	start_date = 1065.1.1
 	end_date = 1067.1.1
 	targeted_titles = {
 		k_romagna
 	}
 	casus_belli = invasion_war
-	attackers = { abaddon_character }
+	attackers = { violence_character }
 	defenders = { 1316 2008 7757 1118 1128 214 522 1182 336 240 210 394 1416 476 8622 762 420 71285 167671 2022 1152 73318 7800 1610 73492 73604 7740 167994 180023 1119 jeanne_character catarina_character }
 }
 
 war = {
-	name = "the_expedition_of_abaddon_3"
+	name = "the_expedition_of_violence_3"
 	start_date = 1177.1.1
 	end_date = 1179.1.1
 	targeted_titles = {
 		k_burgundy
 	}
 	casus_belli = invasion_war
-	attackers = { abaddon_character lilith_character beelzebub_character mammon_character asmodeus_character belial_character lilim_character }
+	attackers = { violence_character pleasure_character nature_character greedy_character lilim_character }
 	defenders = {
 		# every king follow abarahamic religion
 		212501 71810 204500 205500 221520 219500 212600 210500 201510 207510 208500 209503 200500 202999 206500

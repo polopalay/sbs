@@ -16,11 +16,11 @@ random_ntr_on_action = {
 			is_immortal = yes
 		}
 		NOT = { has_global_variable = seal_the_gates_of_hell }
-		NOT = { faith.religion = religion:satanic_religion }
+		NOT = { faith.religion = religion:demonic_religion }
 		exists = primary_spouse
 		exists = primary_spouse.father
 		primary_spouse = {
-			NOT = { faith.religion = religion:satanic_religion }
+			NOT = { faith.religion = religion:demonic_religion }
 			NOT = {
 				has_trait = sbs_demon
 				has_trait = sbs_seed_of_destruction
@@ -32,7 +32,7 @@ random_ntr_on_action = {
 			is_ruler = yes
 			is_landed = yes
 			is_alive = yes
-			NOT = { faith.religion = religion:satanic_religion }
+			NOT = { faith.religion = religion:demonic_religion }
 			OR = {
 				AND = {
 					is_vassal_or_below_of = root

@@ -31,7 +31,7 @@ d_laamp_satan = {
 	destroy_if_invalid_heir = yes
 }
 
-k_lilith = {
+k_pleasure = {
 	color = { 225 105 180 }
 	definite_form = yes
 	ruler_uses_title_name = no
@@ -59,7 +59,7 @@ k_abandon = {
 	de_jure_drift_disabled = yes
 }
 
-k_beelzebub = {
+k_nature = {
 	color = { 154 205 50 }
 	definite_form = yes
 	ruler_uses_title_name = no
@@ -73,41 +73,13 @@ k_beelzebub = {
 	de_jure_drift_disabled = yes
 }
 
-k_mammon = {
+k_greedy = {
 	color = { 255 215 0 }
 	definite_form = yes
 	ruler_uses_title_name = no
 	landless = yes
 
 	capital = c_esztergom
-
-	destroy_if_invalid_heir = yes
-	no_automatic_claims = yes
-	always_follows_primary_heir = yes
-	de_jure_drift_disabled = yes
-}
-
-k_asmodeus = {
-	color = { 0 0 139 }
-	definite_form = yes
-	ruler_uses_title_name = no
-	landless = yes
-
-	capital = c_attica
-
-	destroy_if_invalid_heir = yes
-	no_automatic_claims = yes
-	always_follows_primary_heir = yes
-	de_jure_drift_disabled = yes
-}
-
-k_belial = {
-	color = { 255 0 0 }
-	definite_form = yes
-	ruler_uses_title_name = no
-	landless = yes
-
-	capital = c_alexandria
 
 	destroy_if_invalid_heir = yes
 	no_automatic_claims = yes

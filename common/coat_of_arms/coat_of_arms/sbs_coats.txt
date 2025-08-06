@@ -88,7 +88,7 @@
 	}
 }
 
-k_lilith={
+k_pleasure={
 	pattern="pattern_solid.dds"
 	color1=purple
 	colored_emblem={
@@ -114,7 +114,7 @@ k_abandon={
 	}
 }
 
-k_beelzebub={
+k_nature={
 	pattern="pattern_solid.dds"
 	color1=green
 	color2=white
@@ -130,7 +130,7 @@ k_beelzebub={
 	}
 }
 
-k_mammon={
+k_greedy={
 	pattern="pattern_solid.dds"
 	color1=red
 	color2=red
@@ -140,38 +140,6 @@ k_mammon={
 		color1=yellow
 		color2=black
 		texture="carn_ce_womb_71.dds"
-		instance={
-			scale={ 0.900000 0.900000 }
-		}
-	}
-}
-
-k_belial={
-	pattern="pattern_solid.dds"
-	color1=black
-	color2=blue
-	color3=white
-	color4=yellow
-	colored_emblem={
-		color1=yellow
-		color2=white
-		texture="cherilewd_ce_symbol_9.dds"
-		instance={
-			scale={ 0.900000 0.900000 }
-		}
-	}
-}
-
-k_asmodeus={
-	pattern="pattern_solid.dds"
-	color1=red
-	color2=blue
-	color3=white
-	color4=yellow
-	colored_emblem={
-		color1=yellow
-		color2=white
-		texture="cherilewd_ce_symbol_11.dds"
 		instance={
 			scale={ 0.900000 0.900000 }
 		}

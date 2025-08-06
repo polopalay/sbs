@@ -9,23 +9,13 @@
 }
 
 888888 = {
-	name = "k_beelzebub"
+	name = "k_nature"
 	culture = "gothic"
 }
 
 999999 = {
-	name = "k_mammon"
+	name = "k_greedy"
 	culture = "hunnic"
-}
-
-13131313 = {
-	name = "k_asmodeus"
-	culture = "trojan"
-}
-
-14814813 = {
-	name = "k_belial"
-	culture = "ancient_egyptian"
 }
 
 12121212 = {

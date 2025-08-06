@@ -47,7 +47,7 @@ sbs_devils_gift_interaction = {
 					}
 					modifier = {
 						scope:actor = {
-							faith.religion = religion:satanic_religion
+							faith.religion = religion:demonic_religion
 							faith.religious_head = scope:actor
 							has_trait = sbs_demon
 							is_parent_of = scope:recipient
@@ -74,7 +74,7 @@ sbs_devils_gift_interaction = {
 					}
 					modifier = {
 						scope:actor = {
-							faith.religion = religion:satanic_religion
+							faith.religion = religion:demonic_religion
 							faith.religious_head = scope:actor
 							has_trait = sbs_demon
 							is_parent_of = scope:recipient
@@ -116,10 +116,10 @@ sbs_devils_gift_interaction = {
 					set_immortal_age = 18
 				}
 				0 = {
-					modifier = {  scope:actor = { faith.religion = religion:satanic_religion faith.religious_head = scope:actor } OR = { has_trait = sbs_seed_of_destruction has_trait = sbs_lesser_succubus has_trait = sbs_succubus has_trait = sbs_demon } add = 20 }
-					modifier = {  scope:actor = { faith.religion = religion:satanic_religion faith.religious_head = scope:actor } age > 100 add = 10 }
-					modifier = {  scope:actor = { faith.religion = religion:satanic_religion faith.religious_head = scope:actor } has_character_modifier = succubus_generals add = 5 }
-					modifier = {  scope:actor = { faith.religion = religion:satanic_religion faith.religious_head = scope:actor } is_close_family_of = scope:recipient add = 5 }
+					modifier = {  scope:actor = { faith.religion = religion:demonic_religion faith.religious_head = scope:actor } OR = { has_trait = sbs_seed_of_destruction has_trait = sbs_lesser_succubus has_trait = sbs_succubus has_trait = sbs_demon } add = 20 }
+					modifier = {  scope:actor = { faith.religion = religion:demonic_religion faith.religious_head = scope:actor } age > 100 add = 10 }
+					modifier = {  scope:actor = { faith.religion = religion:demonic_religion faith.religious_head = scope:actor } has_character_modifier = succubus_generals add = 5 }
+					modifier = {  scope:actor = { faith.religion = religion:demonic_religion faith.religious_head = scope:actor } is_close_family_of = scope:recipient add = 5 }
 					modifier = { is_ruler = yes add = -100 }
 					modifier = { liege = { is_close_family_of = scope:recipient is_landed = yes primary_title.tier >= tier_duchy } add = -100 }
 					modifier = {
