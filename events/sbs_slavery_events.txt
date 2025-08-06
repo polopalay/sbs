@@ -16,10 +16,10 @@ sbs_slavery_event.0000 = {
 	immediate = {
 		liege = { save_scope_as = owner }
 		random_list = {
-			40 = {
+			50 = {
 				trigger_event = sbs_slavery_event.0100
 			}
-			10 = {
+			5 = {
 				modifier = {
 					OR = {
 						has_trait = lovers_pox
@@ -28,7 +28,7 @@ sbs_slavery_event.0000 = {
 						has_trait = leper
 						has_trait = disfigured
 					}
-					add = 90
+					add = 200
 				}
 				modifier = {
 					OR = {
@@ -41,7 +41,7 @@ sbs_slavery_event.0000 = {
 						has_trait = ill
 						has_trait = incapable
 					}
-					add = 40
+					add = 100
 				}
 				trigger_event = sbs_slavery_event.0200
 			}
@@ -89,7 +89,7 @@ sbs_slavery_event.0000 = {
 						any_relation = { type = rival is_adult = yes }
 						any_relation = { type = nemesis is_adult = yes }
 					}
-					add = 100
+					add = 200
 				}
 				trigger_event = sbs_slavery_event.0900
 			}
@@ -99,14 +99,14 @@ sbs_slavery_event.0000 = {
 						any_relation = { type = lover is_adult = yes NOT = { this = scope:owner }  }
 						any_relation = { type = soulmate is_adult = yes NOT = { this = scope:owner }  }
 					}
-					add = 100
+					add = 50
 				}
 				trigger_event = sbs_slavery_event.3000
 			}
 			0 = {
 				modifier = {
 					should_be_naked_trigger = no
-					add = 5
+					add = 2
 				}
 				trigger_event = sbs_slavery_event.5000
 			}
@@ -134,7 +134,7 @@ sbs_slavery_event.0000 = {
 			0 = {
 				modifier = {
 					has_trait = drunkard
-					add = 100
+					add = 200
 				}
 				trigger_event = sbs_slavery_event.6000
 			}
@@ -144,7 +144,7 @@ sbs_slavery_event.0000 = {
 						scheme_type = murder 
 						scheme_target_character = scope:owner
 					}
-					add = 100
+					add = 200
 				}
 				trigger_event = sbs_slavery_event.6100
 			}
@@ -155,7 +155,7 @@ sbs_slavery_event.0000 = {
 						has_trait = inappetetic
 						current_weight < -30
 					}
-					add = 100
+					add = 200
 				}
 				trigger_event = sbs_slavery_event.6200
 			}
@@ -165,7 +165,7 @@ sbs_slavery_event.0000 = {
 						has_trait = comfort_eater
 						current_weight > 30
 					}
-					add = 100
+					add = 200
 				}
 				trigger_event = sbs_slavery_event.6300
 			}
@@ -187,7 +187,7 @@ sbs_slavery_event.0000 = {
 			0 = {
 				modifier = {
 					has_character_modifier = forced_labor
-					add = 40
+					add = 60
 				}
 				trigger_event = sbs_slavery_event.6600
 			}
@@ -195,7 +195,7 @@ sbs_slavery_event.0000 = {
 				modifier = {
 					is_female = yes
 					has_character_modifier = forced_labor
-					add = 40
+					add = 60
 				}
 				trigger_event = sbs_slavery_event.6700
 			}
@@ -212,14 +212,14 @@ sbs_slavery_event.0000 = {
 							NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox }
 						}
 					}
-					add = 40
+					add = 60
 				}
 				trigger_event = sbs_slavery_event.6800
 			}
 			0 = {
 				modifier = {
 					has_character_modifier = forced_labor
-					add = 40
+					add = 60
 				}
 				trigger_event = sbs_slavery_event.6900
 			}
@@ -2987,7 +2987,7 @@ sbs_slavery_event.6511 = {
 		add_character_modifier = { modifier = stanky_modifier months = 1 }
 		if = {
 			limit = { is_pregnant = no }
-			trigger_event = { id = sbs_slavery_event.0310 months = { 1 2 } }
+			trigger_event = { id = sbs_slavery_event.6511 days = { 10 20 } }
 		}
 	}
 }
@@ -3049,9 +3049,9 @@ sbs_slavery_event.6520 = {
 	}
 	option = {
 		name = sbs_slavery_event.6520.a
+		title = sbs_slavery_event.6520.a.tt 
 		desc = sbs_
 		add_character_modifier = { modifier = forced_labor years = 5 }
-avery_event.6520.a.desc
 	}
 }
 
