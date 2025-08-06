@@ -1,0 +1,90 @@
+stress_loss_rakish_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_recruitment.dds"
+	}
+	desc = {
+		desc = stress_loss_rakish_decision_desc
+		desc = {
+			first_valid = {
+				triggered_desc = {
+					trigger = {
+						is_female = yes
+					}
+					desc = stress_loss_rakish_decision_desc_woman_ending
+				}
+				desc = stress_loss_rakish_decision_desc_man_ending
+			}
+		}
+	}
+	selection_tooltip = stress_loss_rakish_decision_tooltip
+
+	ai_check_interval = 36
+
+	cooldown = { days = 1095 }
+
+	is_shown = {
+		has_trait = rakish
+	}
+
+	is_valid_showing_failures_only = {
+		is_available = yes
+		short_term_gold >= minor_gold_value
+		is_eunuch_trigger = no
+		NOT = { has_trait = celibate }
+	}
+
+	effect = {
+		random_living_character = {
+			limit = { root = { is_attracted_to_gender_of = prev } NOT = { this = root } carn_is_working_as_prostitute_trigger = yes }
+			save_scope_as = prostitute
+			weight = {
+				base = 1
+				modifier = {
+					is_spouse_of = root
+					add = -20
+				}
+				modifier = {
+					has_trait = slave
+					add = 10
+				}
+				modifier = {
+					age < 30
+					add = 10
+				}
+			}
+		}
+		if = {
+			limit = { exists = scope:prostitute }
+			prostitute_effect = { PROSTITUTE = scope:prostitute PREGNANCY_CHANCE = pregnancy_chance }
+		}
+		else = {
+			show_as_tooltip = {
+				remove_short_term_gold = minor_gold_value
+			}
+			custom_tooltip = stress_loss_drunkard_decision_effect_tooltip
+			custom_tooltip = stress_threshold.1011.rakish.tt
+
+			save_scope_value_as = {
+				name = from_stress_loss_decision
+				value = yes
+			}
+
+			trigger_event = {
+				on_action = stress_loss_rakish
+			}
+		}
+	}
+	
+	ai_potential = {
+		has_trait = rakish
+	}
+
+	ai_will_do = {
+		base = 0
+		modifier = {
+			add = 100
+			stress >= 50
+		}
+	}
+}
+

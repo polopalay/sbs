@@ -1,0 +1,33 @@
+﻿carn_is_working_as_prostitute_trigger = {
+	is_adult = yes
+	is_in_army = no
+	OR = {
+		has_character_modifier = carn_working_as_prostitute_1_modifier
+		has_character_modifier = carn_working_as_prostitute_2_modifier
+		has_character_modifier = carn_working_as_prostitute_3_modifier
+	}
+	is_pregnant = no
+}
+
+has_valid_prostitute_trigger = {
+	OR = {
+		carn_is_working_as_prostitute_trigger = yes
+		any_courtier = { carn_is_working_as_prostitute_trigger = yes }
+	}
+}
+
+trait_is_shunned_or_criminal_in_faith_or_liege_trigger = {
+	OR = {
+		trait_is_shunned_or_criminal_in_my_or_lieges_faith_trigger = { TRAIT = $TRAIT$ GENDER_CHARACTER = this }
+		AND = {
+			$TRAIT$ = lifestyle_prostitute
+			OR = {
+				faith = { has_doctrine_parameter = carn_prostitution_illegal } 
+				faith = { has_doctrine_parameter = carn_prostitution_shunned } 
+				liege.faith = { has_doctrine_parameter = carn_prostitution_illegal } 
+				liege.faith = { has_doctrine_parameter = carn_prostitution_shunned } 
+			}
+		}
+	}
+}
+

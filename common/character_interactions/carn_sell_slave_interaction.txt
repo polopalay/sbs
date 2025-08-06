@@ -1,0 +1,101 @@
+﻿carn_sell_slave_interaction = {
+	category = interaction_category_prison
+	desc = carn_sell_slave_interaction.desc
+	common_interaction = yes
+	needs_recipient_to_open = yes
+	cooldown_against_recipient = { years = 3 }
+	send_options_exclusive = no
+	is_shown = {
+		scope:actor = {
+			is_ruler = yes
+			any_courtier = { has_trait = slave has_relation_slave_owner = scope:actor }
+		}
+		scope:recipient = {
+			is_ruler = yes
+		}
+		NOT = { scope:actor = scope:recipient }
+	}
+	populate_recipient_list = {
+		scope:actor = {
+			every_courtier = {
+				limit = {
+					has_trait = slave
+					has_relation_slave_owner = scope:actor
+				}
+				add_to_list = characters
+			}
+		}
+	}
+	on_accept = {
+		scope:actor = { save_scope_as = seller }
+		scope:recipient = { save_scope_as = buyer }
+		scope:secondary_recipient = { save_scope_as = slave }
+		carn_buy_slave_effect = { SLAVE_PRICE = scope:recipient.carn_slave_price_value }
+	}
+	ai_accept = {
+		base = 0
+		opinion_modifier = { opinion_target = scope:actor multiplier = 1 }
+		modifier = { add = 100 scope:recipient = { any_courtier = { has_trait = slave is_adult = yes count < scope:recipient.number_slaves_normal_need } } }
+		modifier = { add = -50 scope:secondary_recipient = { age >= 50 is_immortal = no } }
+		modifier = { add = 100 scope:secondary_recipient = { is_immortal = yes } }
+		modifier = { add = -5 scope:secondary_recipient = { has_trait = beauty_bad_1 } }
+		modifier = { add = -10 scope:secondary_recipient = { has_trait = beauty_bad_2 } }
+		modifier = { add = -20 scope:secondary_recipient = { has_trait = beauty_bad_3 } }
+		modifier = { add = 5 scope:secondary_recipient = { has_trait = beauty_good_1 } }
+		modifier = { add = 10 scope:secondary_recipient = { has_trait = beauty_good_2 } }
+		modifier = { add = 20 scope:secondary_recipient = { has_trait = beauty_good_3 } }
+		modifier = { add = -5 scope:secondary_recipient = { has_trait = intellect_bad_1 } }
+		modifier = { add = -8 scope:secondary_recipient = { has_trait = intellect_bad_2 } }
+		modifier = { add = -10 scope:secondary_recipient = { has_trait = intellect_bad_3 } }
+		modifier = { add = 5 scope:secondary_recipient = { has_trait = intellect_good_1 } }
+		modifier = { add = 8 scope:secondary_recipient = { has_trait = intellect_good_2 } }
+		modifier = { add = 10 scope:secondary_recipient = { has_trait = intellect_good_3 } }
+		modifier = { add = 5 scope:secondary_recipient = { has_trait = physique_bad_1 } }
+		modifier = { add = -8 scope:secondary_recipient = { has_trait = physique_bad_2 } }
+		modifier = { add = -10 scope:secondary_recipient = { has_trait = physique_bad_3 } }
+		modifier = { add = -5 scope:secondary_recipient = { has_trait = physique_good_1 } }
+		modifier = { add = 8 scope:secondary_recipient = { has_trait = physique_good_2 } }
+		modifier = { add = 10 scope:secondary_recipient = { has_trait = physique_good_3 } }
+		modifier = { add = 5 scope:secondary_recipient = { has_trait = pure_blooded } }
+		modifier = { add = 5 scope:secondary_recipient = { has_trait = strong } }
+		modifier = { add = 5 scope:secondary_recipient = { has_trait = shrewd } }
+		modifier = { add = -5 scope:secondary_recipient = { has_trait = clubfooted } }
+		modifier = { add = -5 scope:secondary_recipient = { has_trait = hunchbacked } }
+		modifier = { add = -5 scope:secondary_recipient = { has_trait = lisping } }
+		modifier = { add = -5 scope:secondary_recipient = { has_trait = stuttering } }
+		modifier = { add = -5 scope:secondary_recipient = { has_trait = dwarf } }
+		modifier = { add = -5 scope:secondary_recipient = { has_trait = giant } }
+		modifier = { add = -5 scope:secondary_recipient = { has_trait = weak } }
+		modifier = { add = -5 scope:secondary_recipient = { has_trait = dull } }
+		modifier = { add = 25 desc = carn_secondary_recipient_is_my_knight_reason scope:secondary_recipient = { is_knight_of = scope:recipient } }
+		modifier = { add = 50 desc = carn_secondary_recipient_is_my_councillor_reason scope:secondary_recipient = { is_councillor_of = scope:recipient } }
+		modifier = { add = 50 desc = carn_secondary_recipient_is_my_friend_reason scope:secondary_recipient = { has_relation_friend = scope:recipient } }
+		modifier = { add = 50 desc = carn_secondary_recipient_is_my_lover_reason scope:secondary_recipient = { has_relation_lover = scope:recipient } }
+		modifier = { add = 50 desc = carn_secondary_recipient_is_my_crush_reason scope:secondary_recipient = { has_relation_crush = scope:recipient } }
+		modifier = { add = 100 desc = carn_secondary_recipient_is_my_soulmate_reason scope:secondary_recipient = { has_relation_soulmate = scope:recipient } }
+		modifier = { add = 100 desc = carn_secondary_recipient_is_my_knight_reason scope:secondary_recipient = { is_close_or_extended_family_of = scope:recipient } }
+	}
+	ai_frequency = 12
+	ai_potential = { always = yes }
+	ai_targets = {
+		ai_recipients = liege
+		ai_recipients = vassals
+		ai_recipients = peer_vassals
+		ai_recipients = neighboring_rulers
+		ai_recipients = nearby_domicile_owners
+		max = 10
+	}
+	ai_will_do = {
+		base = 0
+		modifier = { add = 100 scope:actor = { any_courtier = { has_trait = slave count > scope:actor.number_slaves_normal_need } } }
+		modifier = { add = -1000 scope:secondary_recipient = { is_immortal = yes } }
+		modifier = { add = -50 scope:secondary_recipient = { is_child_of = scope:actor } }
+		modifier = { add = -30 scope:secondary_recipient = { is_close_family_of = scope:actor } }
+		modifier = { add = -25 scope:secondary_recipient = { is_knight_of = scope:recipient } }
+		modifier = { add = -50 scope:secondary_recipient = { is_councillor_of = scope:recipient } }
+		modifier = { add = -50 scope:secondary_recipient = { has_relation_friend = scope:recipient } }
+		modifier = { add = -50 scope:secondary_recipient = { has_relation_lover = scope:recipient } }
+		modifier = { add = -50 scope:secondary_recipient = { has_relation_crush = scope:recipient } }
+		modifier = { add = -100 scope:secondary_recipient = { has_relation_soulmate = scope:recipient } }
+	}
+}

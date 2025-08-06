@@ -1,0 +1,20 @@
+﻿l_simp_chinese:
+ game_concept_slave: "奴隶"
+ game_concept_slaves: "奴隶"
+ game_concept_slavery: "奴隶制"
+ game_concept_slave_possessive: "奴隶的"
+ game_concept_slaves_possessive: "奴隶们的"
+ game_concept_slave_desc: "$game_concept_slave$是一名被剥夺权利变成奴隶的[character|E]。他们属于一个对他们拥有[strong_hook|E]并且能够在[slave_market|E]买卖他们的[slave_owner|E]。并且，奴隶和主人间的[extramarital_sex|E]是合法的。\n\n奴隶无法持有或继承[titles|E]，并且身为奴隶的女性生下的孩子也会是奴隶。\n\n如果一名奴隶主死亡，奴隶的所有权会交接给他们的[primary_heir|E]。\n\n要想解除奴隶身份，只能由奴隶的主人使用$carn_free_slave_interaction$[character_interaction|E]。"
+
+ game_concept_slave_owner: "奴隶主"
+ game_concept_slave_owners: "奴隶主"
+ game_concept_slave_owner_possessive: "奴隶主的"
+ game_concept_slave_owners_possessive: "奴隶主们的"
+ game_concept_slave_owner_desc: "一名[character|E]可以成为一个或多个[slaves|E]的合法$game_concept_slave_owner$。奴隶主总是对其所有的奴隶有一个[strong_hook|E]，并且可以在[slave_market|E]上买卖他们。此外，奴隶与主人间的[extramarital_sex|E]是合法的。\n\n如果一名奴隶主死亡，奴隶的所有权会交接给他们的[primary_heir|E]。"
+
+ game_concept_prostitute: "娼妓"
+ game_concept_prostitutes: "娼妓"
+ game_concept_prostitution: "卖淫"
+ game_concept_prostitute_possessive: "娼妓的"
+ game_concept_prostitutes_possessive: "娼妓们的"
+ game_concept_prostitute_desc: "娼妓是指以出卖肉体换取金钱的[character|E]。只要他们的[faith|E]允许，任何角色都可以通过$carn_work_as_prostitute_decision$[decision|E]成为妓女。\n\n娼妓的表现基于他们的[diplomacy|E]、[intrigue|E]、智慧和魅力。一个特别熟练的娼妓可能晋升为一名[GetTrait('lifestyle_prostitute').GetName( GetNullCharacter )]。\n\n从事卖淫工作是合法的而且不会被视作[extramarital_sex|E]。但是如果角色不小心，还是可能导致[bastard|E]孩子或其它后果......"

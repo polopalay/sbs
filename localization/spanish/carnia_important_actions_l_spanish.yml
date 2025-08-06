@@ -1,0 +1,9 @@
+﻿l_spanish:
+  action_can_offer_prostitute_combined_group_name: "Ofrecer prostituta"
+  action_can_offer_prostitute_combined_group_label: "Puedes ofrecer prostituta"
+  action_can_offer_prostitute_combined_group_description: "Puedes ofrecer una prostituta a los personajes"
+  action_can_offer_prostitute_combined_label: "Ofrecer prostituta por [recipient.GetShortUIName|E]"
+  action_can_offer_prostitute_label: "Ofrecer prostituta por [recipient.GetShortUIName|E]"
+  action_can_offer_prostitute: "Ofrecer prostituta"
+  action_can_offer_prostitute_desc: "Ofrecerle a [recipient.GetShortUIName] servicios sexuales"
+  action_can_offer_prostitute_click: ""

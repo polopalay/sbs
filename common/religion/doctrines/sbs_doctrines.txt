@@ -1,0 +1,201 @@
+carn_doctrine_same_slavery = {
+	group = "crimes"
+
+	carn_doctrine_same_slavery_crime = {
+		piety_cost = {
+			value = faith_doctrine_cost_mid
+			if = {
+				limit = { has_doctrine = carn_doctrine_same_slavery_crime }
+				multiply = 0
+			}
+			else_if = {
+				limit = { has_doctrine = carn_doctrine_same_slavery_accepted }
+				multiply = faith_changed_doctrine_cost_mult_two_step
+			}
+		}
+		parameters = {
+			same_slavery_illegal = yes
+		}
+	}
+	carn_doctrine_same_slavery_shunned = {
+		piety_cost = {
+			value = faith_doctrine_cost_mid
+			if = {
+				limit = { has_doctrine = carn_doctrine_same_slavery_shunned }
+				multiply = 0
+			}
+		}
+		parameters = {
+			same_slavery_shunned = yes
+		}
+	}
+	carn_doctrine_same_slavery_accepted = {
+		piety_cost = {
+			value = faith_doctrine_cost_mid
+			if = {
+				limit = { has_doctrine = carn_doctrine_same_slavery_accepted }
+				multiply = 0
+			}
+			else_if = {
+				limit = { has_doctrine = carn_doctrine_same_slavery_crime }
+				multiply = faith_changed_doctrine_cost_mult_two_step
+			}
+		}
+		parameters = {
+			same_slavery_accepted = yes
+		}
+	}
+}
+
+carn_doctrine_other_slavery = {
+	group = "crimes"
+
+	carn_doctrine_other_slavery_crime = {
+		piety_cost = {
+			value = faith_doctrine_cost_mid
+			if = {
+				limit = { has_doctrine = carn_doctrine_other_slavery_crime }
+				multiply = 0
+			}
+			else_if = {
+				limit = { has_doctrine = carn_doctrine_other_slavery_accepted }
+				multiply = faith_changed_doctrine_cost_mult_two_step
+			}
+		}
+		parameters = {
+			other_slavery_illegal = yes
+		}
+	}
+	carn_doctrine_other_slavery_shunned = {
+		piety_cost = {
+			value = faith_doctrine_cost_mid
+			if = {
+				limit = { has_doctrine = carn_doctrine_other_slavery_shunned }
+				multiply = 0
+			}
+		}
+		parameters = {
+			other_slavery_shunned = yes
+		}
+	}
+	carn_doctrine_other_slavery_accepted = {
+		piety_cost = {
+			value = faith_doctrine_cost_mid
+			if = {
+				limit = { has_doctrine = carn_doctrine_other_slavery_accepted }
+				multiply = 0
+			}
+			else_if = {
+				limit = { has_doctrine = carn_doctrine_other_slavery_crime }
+				multiply = faith_changed_doctrine_cost_mult_two_step
+			}
+		}
+		parameters = {
+			other_slavery_accepted = yes
+		}
+	}
+}
+
+carn_doctrine_prostitution = {
+	group = "crimes"
+
+	carn_doctrine_prostitution_crime = {
+		piety_cost = {
+			value = faith_doctrine_cost_mid
+			if = {
+				limit = { has_doctrine = carn_doctrine_prostitution_crime }
+				multiply = faith_unchanged_doctrine_cost_mult
+			}
+			else_if = {
+				limit = { has_doctrine = carn_doctrine_prostitution_accepted }
+				multiply = faith_changed_doctrine_cost_mult_two_step
+			}
+			else_if = {
+				limit = { has_doctrine = carn_doctrine_prostitution_virtuous }
+				multiply = faith_changed_doctrine_cost_mult_three_step
+			}
+		}
+		parameters = {
+			carn_prostitution_illegal = yes
+		}
+	}
+	carn_doctrine_prostitution_shunned = {
+		piety_cost = {
+			value = faith_doctrine_cost_mid
+			if = {
+				limit = { has_doctrine = carn_doctrine_prostitution_shunned }
+				multiply = faith_unchanged_doctrine_cost_mult
+			}
+			else_if = {
+				limit = { has_doctrine = carn_doctrine_prostitution_virtuous }
+				multiply = faith_changed_doctrine_cost_mult_two_step
+			}
+		}
+		parameters = {
+			carn_prostitution_shunned = yes
+		}
+	}
+	carn_doctrine_prostitution_accepted = {
+		can_pick = {
+			custom_description = {
+				text = incompatible_with_crimes_trigger
+				NOR = {
+					doctrine:doctrine_adultery_women_crime = { is_in_list = selected_doctrines }
+					doctrine:doctrine_homosexuality_crime = { is_in_list = selected_doctrines }
+					doctrine:doctrine_adultery_men_crime = { is_in_list = selected_doctrines }
+				}
+			}
+		}
+		piety_cost = {
+			value = faith_doctrine_cost_mid
+			if = {
+				limit = { has_doctrine = carn_doctrine_prostitution_accepted }
+				multiply = faith_unchanged_doctrine_cost_mult
+			}
+			else_if = {
+				limit = { has_doctrine = carn_doctrine_prostitution_crime }
+				multiply = faith_changed_doctrine_cost_mult_two_step
+			}
+		}
+		parameters = {
+			carn_prostitution_accepted = yes
+		}
+	}
+	carn_doctrine_prostitution_virtuous = {
+		can_pick = {
+			custom_description = {
+				text = incompatible_with_crimes_trigger
+				NOR = {
+					doctrine:doctrine_adultery_women_crime = { is_in_list = selected_doctrines }
+					doctrine:doctrine_homosexuality_crime = { is_in_list = selected_doctrines }
+					doctrine:doctrine_adultery_men_crime = { is_in_list = selected_doctrines }
+				}
+				doctrine_deviancy_virtuous = { is_in_list = selected_doctrines }
+			}
+		}
+		piety_cost = {
+			value = faith_doctrine_cost_mid
+			if = {
+				limit = { has_doctrine = carn_doctrine_prostitution_virtuous }
+				multiply = faith_unchanged_doctrine_cost_mult
+			}
+			else_if = {
+				limit = { has_doctrine = carn_doctrine_prostitution_shunned }
+				multiply = faith_changed_doctrine_cost_mult_two_step
+			}
+			else_if = {
+				limit = { has_doctrine = carn_doctrine_prostitution_crime }
+				multiply = faith_changed_doctrine_cost_mult_three_step
+			}
+
+		}
+		traits = {
+			virtues = { lifestyle_prostitute lustful }
+			sins = { chaste celibate }
+		}
+		parameters = {
+			carn_prostitution_accepted = yes
+		}
+	}
+}
+

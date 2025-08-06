@@ -1,0 +1,99 @@
+﻿slave = {
+	icon = slave.dds
+	opposites = {
+		former_slave
+	}
+	category = fame
+
+	diplomacy = -5
+	general_opinion = -10
+	same_opinion = 10
+	monthly_prestige_gain_mult = -1
+	monthly_piety_gain_mult = -1
+	legitimacy_gain_mult = -1
+
+	flag = can_not_marry
+	flag = can_not_be_granted_titles
+	flag = can_not_leave_court_voluntarily
+	flag = join_factions_less
+	inheritance_blocker = all
+	claim_inheritance_blocker = all
+
+	inheritance_blocker = all
+	claim_inheritance_blocker = all
+
+	inherit_chance = 100
+	parent_inheritance_sex = female
+
+	ruler_designer_cost = -10
+}
+
+former_slave = {
+	category = fame
+	icon = former_slave.dds
+	opposites = {
+		slave
+	}
+
+	diplomacy = -1
+
+	ruler_designer_cost = 0
+
+	compatibility = {
+		slave = @pos_compat_medium
+		former_slave = @pos_compat_medium
+	}
+}
+
+lifestyle_prostitute = {
+	category = lifestyle
+	icon = prostitute.dds
+
+	minimum_age = 16
+
+	track = {
+		50 = {
+			diplomacy = 1
+			intrigue = 2
+			attraction_opinion = 10
+			seduce_scheme_phase_duration_add = -10
+		}
+		100 = {
+			diplomacy = 2
+			intrigue = 3
+			attraction_opinion = 20
+			seduce_scheme_phase_duration_add = -20
+		}
+	}
+
+	ruler_designer_cost = 10
+
+	ai_greed = medium_positive_ai_value
+	ai_sociability = medium_positive_ai_value
+	ai_honor = low_negative_ai_value
+	ai_zeal = low_negative_ai_value
+
+	triggered_opinion = {
+		parameter = carn_prostitution_illegal
+		opinion_modifier = carn_prostitution_crime_opinion
+		ignore_opinion_value_if_same_trait = yes
+	}
+
+	triggered_opinion = {
+		parameter = carn_prostitution_shunned
+		opinion_modifier = carn_prostitution_shunned_opinion
+		ignore_opinion_value_if_same_trait = yes
+	}
+
+	compatibility = {
+		lustful = @pos_compat_high
+		lifestyle_prostitute = @pos_compat_medium
+		lifestyle_reveler = @pos_compat_low
+		seducer = @pos_compat_medium
+		gregarious = @pos_compat_low
+		shy = @neg_compat_low
+		chaste = @neg_compat_high
+		celibate = @neg_compat_high
+	}
+}
+

@@ -1,0 +1,168 @@
+﻿prostitute_effect = {
+	save_scope_as = had_sex_root_character
+	$PROSTITUTE$ = { save_scope_as = prostitute }
+
+	custom_tooltip = prostitute_effect.tt
+
+	add_stress = medium_stress_loss
+	if = {
+		limit = { exists = scope:broker }
+		pay_short_term_gold = { target = scope:broker gold = scope:broker.prostitute_broker_value }
+	}
+	pay_short_term_gold = { target = scope:prostitute gold = scope:prostitute.prostitute_price_value }
+	random = {
+		chance = 10
+		opinion_modifier = {
+			opinion_target = scope:had_sex_root_character
+			who = scope:prostitute
+			multiplier = 0.1
+		}
+		modifier = { add = 20 scope:had_sex_root_character = { has_relation_friend = scope:prostitute } }
+		modifier = { add = 20 scope:had_sex_root_character = { has_trait = generous } }
+		modifier = { add = 20 scope:had_sex_root_character = { has_trait = profligate } }
+		modifier = { add = -20 scope:had_sex_root_character = { has_trait = greedy } }
+		modifier = { add = -20 scope:had_sex_root_character = { has_trait = chaste } }
+		modifier = { add = 10 scope:had_sex_root_character = { has_trait = lustful } }
+		modifier = { add = 20 scope:had_sex_root_character = { has_trait = rakish } }
+		modifier = { add = -10 scope:had_sex_root_character = { has_trait = temperate } }
+		modifier = { add = 20 scope:had_sex_root_character = { has_trait = gregarious } }
+		modifier = { add = 10 scope:had_sex_root_character = { has_trait = paranoid } }
+		modifier = { add = 10 scope:had_sex_root_character = { has_trait = trusting } }
+		modifier = { add = 10 scope:had_sex_root_character = { has_trait = arrogant } }
+		modifier = { add = 10 scope:had_sex_root_character = { has_trait = lifestyle_reveler } }
+		modifier = {
+			add = 10
+			scope:had_sex_root_character = { OR = { has_trait = deviant any_secret = { secret_type = secret_deviant } } }
+			scope:prostitute = { OR = { has_trait = deviant any_secret = { secret_type = secret_deviant } } }
+		}
+		modifier = { add = -10 scope:prostitute = { has_trait = beauty_bad_1 } }
+		modifier = { add = -25 scope:prostitute = { has_trait = beauty_bad_2 } }
+		modifier = { add = -50 scope:prostitute = { has_trait = beauty_bad_3 } }
+		modifier = { add = 10 scope:prostitute = { has_trait = beauty_good_1 } }
+		modifier = { add = 25 scope:prostitute = { has_trait = beauty_good_2 } }
+		modifier = { add = 50 scope:prostitute = { has_trait = beauty_good_3 } }
+		modifier = { add = -10 scope:prostitute = { has_trait = intellect_bad_1 } }
+		modifier = { add = -20 scope:prostitute = { has_trait = intellect_bad_2 } }
+		modifier = { add = -25 scope:prostitute = { has_trait = intellect_bad_3 } }
+		modifier = { add = 10 scope:prostitute = { has_trait = intellect_good_1 } }
+		modifier = { add = 20 scope:prostitute = { has_trait = intellect_good_2 } }
+		modifier = { add = 25 scope:prostitute = { has_trait = intellect_good_3 } }
+		modifier = { add = -10 scope:prostitute = { has_trait = physique_bad_1 } }
+		modifier = { add = -20 scope:prostitute = { has_trait = physique_bad_2 } }
+		modifier = { add = -25 scope:prostitute = { has_trait = physique_bad_3 } }
+		modifier = { add = 10 scope:prostitute = { has_trait = physique_good_1 } }
+		modifier = { add = 20 scope:prostitute = { has_trait = physique_good_2 } }
+		modifier = { add = 25 scope:prostitute = { has_trait = physique_good_3 } }
+		modifier = { add = 10 scope:prostitute = { has_trait = pure_blooded } }
+		modifier = { add = 20 scope:prostitute = { has_trait = strong } }
+		modifier = { add = 20 scope:prostitute = { has_trait = shrewd } }
+		modifier = { add = -10 scope:prostitute = { has_trait = clubfooted } }
+		modifier = { add = -10 scope:prostitute = { has_trait = hunchbacked } }
+		modifier = { add = -20 scope:prostitute = { has_trait = lisping } }
+		modifier = { add = -20 scope:prostitute = { has_trait = stuttering } }
+		modifier = { add = -25 scope:prostitute = { has_trait = dwarf } }
+		modifier = { add = -25 scope:prostitute = { has_trait = giant } }
+		modifier = { add = -10 scope:prostitute = { has_trait = weak } }
+		modifier = { add = -10 scope:prostitute = { has_trait = dull } }
+		modifier = { add = -50 scope:prostitute = { has_trait = disfigured } }
+		modifier = { add = 25 scope:prostitute = { has_trait = poet } }
+		modifier = { add = 20 scope:prostitute = { age <= 18 } }
+		modifier = { add = 10 scope:prostitute = { age <= 20 } }
+		modifier = { add = -20 scope:prostitute = { age >= 30 is_immortal = no } }
+		modifier = { add = -30 scope:prostitute = { age >= 40 is_immortal = no } }
+		modifier = { add = 25 scope:prostitute = { should_be_naked_trigger = yes } }
+		pay_short_term_gold = { target = scope:prostitute gold = scope:prostitute.prostitute_tips_value }
+	}
+
+	hidden_effect = {
+		add_opinion = {
+			target = scope:prostitute
+			modifier = have_sex_opinion
+		}
+		random = { chance = 0 modifier = { scope:prostitute = { is_female = no } add = 25 } add_character_flag = { flag = face_cum months = 6 } }
+		random = { chance = 0 modifier = { scope:prostitute = { is_female = no } add = 50 } add_character_flag = { flag = body_cum months = 6 } }
+		random = { chance = 0 modifier = { scope:prostitute = { is_female = no } add = 25 } add_character_flag = { flag = ass_cum months = 6 } }
+		random = { chance = 0 modifier = { scope:prostitute = { is_female = no } is_female = yes add = 50 } add_character_flag = { flag = pussy_cum months = 6 } }
+		if = {
+			limit = {
+				is_female = yes
+				is_adult = yes
+				$PROSTITUTE$ = { is_female = no is_adult = yes }
+				possible_pregnancy_after_sex_with_character_trigger = { CHARACTER = scope:prostitute }
+			}
+			add_to_variable_list = { name = potential_father_variable_list target = $PROSTITUTE$ }
+			random = { chance = $PREGNANCY_CHANCE$ make_pregnant = { father = $PROSTITUTE$ } }
+		}
+		else_if = {
+			limit = {
+				is_female = no
+				is_adult = yes
+				$PROSTITUTE$ = { is_female = yes is_adult = yes }
+				possible_pregnancy_after_sex_with_character_trigger = { CHARACTER = scope:prostitute }
+			}
+			$PROSTITUTE$ = {
+				add_to_variable_list = { name = potential_father_variable_list target = scope:had_sex_root_character }
+				random = { chance = $PREGNANCY_CHANCE$ make_pregnant = { father = scope:had_sex_root_character } }
+			}
+		}
+		$PROSTITUTE$ = {
+			if = {
+				limit = { has_character_modifier = recently_had_sex }
+				random = { chance = 0 modifier = { scope:had_sex_root_character = { is_female = no } add = 50 } add_character_flag = { flag = face_cum months = 6 } }
+				random = { chance = 0 modifier = { scope:had_sex_root_character = { is_female = no } add = 50 } add_character_flag = { flag = body_cum months = 6 } }
+				random = { chance = 0 modifier = { scope:had_sex_root_character = { is_female = no } add = 50 } add_character_flag = { flag = ass_cum months = 6 } }
+				random = { chance = 0 modifier = { scope:had_sex_root_character = { is_female = no } is_female = yes add = 50 } add_character_flag = { flag = pussy_cum months = 6 } }
+			}
+			else = {
+				add_character_modifier = { modifier = recently_had_sex years = 2 }
+			}
+			add_trait_xp = { trait = lifestyle_prostitute value = 10 }
+			if = {
+				limit = { OR = { has_trait_xp = { trait = lifestyle_prostitute value < 50 } NOT = { has_trait = lifestyle_prostitute } } }
+				add_character_modifier = carn_working_as_prostitute_1_modifier
+				remove_character_modifier = carn_working_as_prostitute_2_modifier
+				remove_character_modifier = carn_working_as_prostitute_3_modifier
+			}
+			else_if = {
+				limit = { has_trait_xp = { trait = lifestyle_prostitute value >=50 } has_trait_xp = { trait = lifestyle_prostitute value < 100 } }
+				add_character_modifier = carn_working_as_prostitute_2_modifier
+				remove_character_modifier = carn_working_as_prostitute_1_modifier
+				remove_character_modifier = carn_working_as_prostitute_3_modifier
+			}
+			else_if = {
+				limit = { has_trait_xp = { trait = lifestyle_prostitute value >= 100 } }
+				add_character_modifier = carn_working_as_prostitute_3_modifier
+				remove_character_modifier = carn_working_as_prostitute_1_modifier
+				remove_character_modifier = carn_working_as_prostitute_2_modifier
+			}
+			random = {
+				chance = 10
+				modifier = { any_secret = { is_known_by = scope:had_sex_root_character secret_type = secret_prostitute } add = -100 }
+				modifier = { any_secret = { secret_type = secret_prostitute count = 0 } add = -100 }
+				random_secret = {
+					limit = { secret_type = secret_prostitute }
+					reveal_to = scope:had_sex_root_character
+				}
+			}
+			random = {
+				chance = 1
+				if = {
+					limit = { is_female = yes }
+					random_list = {
+						1 = { give_nickname = nickname_the_bitch }
+						1 = { give_nickname = nickname_the_slut }
+						1 = { give_nickname = nickname_the_whore }
+						1 = { give_nickname = nickname_the_wench }
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = { scope:use_contraception = no }
+			risk_of_std_from_effect = { PARTNER = $PROSTITUTE$ }
+			$PROSTITUTE$ = { risk_of_std_from_effect = { PARTNER = scope:had_sex_root_character } }
+		}
+	}
+}
+

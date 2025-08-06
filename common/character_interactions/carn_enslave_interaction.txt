@@ -1,0 +1,192 @@
+﻿carn_enslave_interaction = {
+	desc = carn_enslave_interaction.desc
+	category = interaction_category_prison
+	common_interaction = yes
+	cooldown_against_recipient = { years = 3 }
+	is_shown = {
+		scope:recipient = {
+			OR = {
+				is_vassal_of = scope:actor
+				is_courtier_of = scope:actor
+				is_imprisoned_by = scope:actor
+			}
+			OR = {
+				NOT = { has_trait = slave }
+				AND = {
+					has_trait = slave
+					any_relation = { type = slave_owner count = 0 }
+				}
+			}
+		}
+	}
+	is_valid_showing_failures_only = {
+		scope:recipient = { is_busy_in_events_localised = yes }
+		scope:recipient = {
+			custom_description = {
+				text = "currently_being_tortured"
+				NOT = { has_character_flag = is_being_tortured }
+			}
+		}
+		scope:recipient = {
+			custom_description = {
+				text = "carn_slavery_is_illegal"
+				NOT = {
+					has_character_flag = carn_cannot_be_enslaved
+					has_trait_with_flag = carn_cannot_be_enslaved
+				}
+				OR = {
+					AND = {
+						NOT = {
+							scope:actor.faith = {
+								has_doctrine = carn_doctrine_same_slavery_crime
+								faith_hostility_level = {
+									target = scope:recipient.faith
+									value < faith_hostile_level
+								}
+							}
+						}
+						NOT = {
+							scope:actor.faith = {
+								has_doctrine = carn_doctrine_other_slavery_crime
+								faith_hostility_level = {
+									target = scope:recipient.faith
+									value >= faith_hostile_level
+								}
+							}
+						}
+					}
+					AND = {
+						has_trait = slave
+						any_relation = { type = slave_owner count = 0 }
+					}
+				}
+			}
+		}
+	}
+	ai_accept = {
+		base = 0
+		opinion_modifier = { opinion_target = scope:actor who = scope:recipient multiplier = 1 }
+		modifier = { add = { value = scope:actor.diplomacy } }
+		modifier = { add = 20 scope:recipient = { has_trait = humble } }
+		modifier = { add = 30 scope:recipient = { is_ruler = no is_lowborn = yes } }
+		modifier = { add = 50 scope:recipient = { has_trait = contrite } }
+		modifier = { add = 25 desc = INTIMIDATED_REASON scope:recipient = { has_dread_level_towards = { target = scope:actor level = 1 } } }
+		modifier = { add = 50 desc = COWED_REASON scope:recipient = { has_dread_level_towards = { target = scope:actor level = 2 } } }
+		modifier = { add = -25 desc = carn_enslave_recipient_is_noble scope:recipient = { is_lowborn = no is_ruler = yes } }
+		modifier = { add = -50 desc = carn_enslave_you_have_no_reason scope:actor = { NOT = { has_execute_reason = scope:recipient } } }
+		modifier = { add = -100 scope:recipient = { has_trait = arrogant } }
+		modifier = { add = -100 scope:recipient = { has_trait = ambitious } }
+	}
+	auto_accept = {
+		scope:recipient = {
+			OR = {
+				is_imprisoned_by = scope:actor
+				has_trait = slave
+				has_character_flag = carn_wants_to_be_a_slave
+				has_trait_with_flag = carn_wants_to_be_a_slave
+				has_opinion_modifier = {
+					target = scope:actor
+					modifier = carn_wants_to_be_your_slave_opinion
+				}
+			}
+		}
+	}
+	on_accept = {
+		scope:recipient = { trigger_event = carn_slave.0001 }
+		if = {
+			limit = { scope:recipient = { has_trait = slave } }
+			carn_enslave_effect = { SLAVE = scope:recipient OWNER = scope:actor DRAMA = no }
+		}
+		else = {
+			carn_enslave_effect = { SLAVE = scope:recipient OWNER = scope:actor DRAMA = yes }
+		}
+	}
+	ai_targets = {
+		ai_recipients = prisoners
+		ai_recipients = courtiers
+		ai_recipients = vassals
+	}
+	ai_frequency = 12
+	ai_potential = { is_at_war = no }
+	ai_will_do = {
+		base = 0
+		modifier = { add = 1000 scope:recipient = { is_ruler = no has_trait = slave any_relation = { type = slave_owner count = 0 } } }
+		opinion_modifier = { opinion_target = scope:recipient multiplier = -0.25 }
+		ai_value_modifier = {
+			ai_vengefulness = 0.25
+			ai_greed = 0.2
+			ai_compassion = -0.25
+			ai_honor = -0.1
+			ai_rationality = -0.1
+		}
+		modifier = { add = 50 scope:recipient = { is_lowborn = yes } }
+		modifier = { add = 100 scope:recipient = { has_trait = peasant_leader } }
+		modifier = { add = 100 scope:recipient = { has_trait = populist_leader } }
+		modifier = { add = -20 ai_compassion >= low_positive_ai_value scope:recipient = { is_adult = no } }
+		modifier = { add = -20 scope:actor.dynasty = scope:recipient.dynasty }
+		modifier = { add = -20 scope:recipient = { is_close_or_extended_family_of = scope:actor } }
+		modifier = { add = -50 scope:recipient = { is_spouse_of = scope:actor } }
+		modifier = { add = -50 scope:recipient = { is_child_of = scope:actor } }
+		modifier = { add = -50 scope:recipient = { is_heir_of = scope:actor } }
+		modifier = { add = -50 scope:recipient = { is_ruler = yes} }
+		modifier = {
+			add = 20
+			scope:actor = {
+				has_execute_reason = scope:recipient
+				ai_greed > 0
+				any_heir_title = {
+					exists = holder
+					holder = scope:recipient
+					place_in_line_of_succession = {
+						target = scope:actor
+						value > 2
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 20
+			scope:actor = {
+				ai_vengefulness >= medium_positive_ai_value
+				OR = {
+					has_execute_reason = scope:recipient
+					has_relation_rival = scope:recipient
+					has_relation_nemesis = scope:recipient
+					scope:recipient = {
+						is_spouse_of = scope:actor
+						exposed_cheating_on_spouse_trigger = { SPOUSE = scope:actor }
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 35
+			scope:actor = {
+				ai_greed >= very_high_positive_ai_value
+				any_heir_title = {
+					exists = holder
+					holder = scope:recipient
+					place_in_line_of_succession = {
+						target = scope:actor
+						value > 2
+					}
+				}
+			}
+		}
+		modifier = {
+			add = 35
+			scope:actor = {
+				ai_vengefulness >= very_high_positive_ai_value
+				OR = {
+					has_execute_reason = scope:recipient
+					has_relation_rival = scope:recipient
+					has_relation_nemesis = scope:recipient
+					scope:recipient = {
+						is_spouse_of = scope:actor
+						exposed_cheating_on_spouse_trigger = { SPOUSE = scope:actor }
+					}
+				}
+			}
+		}
+	}
+}

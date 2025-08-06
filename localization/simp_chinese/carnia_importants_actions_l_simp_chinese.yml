@@ -1,0 +1,9 @@
+﻿l_simp_chinese:
+ action_can_offer_prostitute_combined_group_name: "提供妓女"
+ action_can_offer_prostitute_combined_group_label: "可以提供妓女"
+ action_can_offer_prostitute_combined_group_description: "你可以向角色提供妓女"
+ action_can_offer_prostitute_combined_label: "为 [recipient.GetShortUIName|E] 提供妓女"
+ action_can_offer_prostitute_label: "为 [recipient.GetShortUIName|E] 提供妓女"
+ action_can_offer_prostitute: "提供妓女"
+ action_can_offer_prostitute_desc: "提供 [recipient.GetShortUIName] 性服务"
+ action_can_offer_prostitute_click: ""

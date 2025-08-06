@@ -1,0 +1,20 @@
+﻿l_russian:
+  game_concept_slave: "Раб"
+  game_concept_slaves: "Рабы"
+  game_concept_slavery: "Рабство"
+  game_concept_slave_possessive: "Slave's"
+  game_concept_slaves_possessive: "Slaves'"
+  game_concept_slave_desc: "$game_concept_slave$ это [character|E] который был лишен своих прав и обращен в рабство. Они принадлежат [slave_owner|E], который имеет [strong_hook|E] над ним и может покупать или продавать их на [slave_market|E]. Кроме того, [extramarital_sex|E] между рабом и его владельцем является законным.\n\nРабы не могут иметь или наследовать [titles|E],  и любые дети, рожденные от матери-рабыни, также будут рабами.\n\nЕсли рабовладелец умирает, право собственности на рабов переходит к его  [primary_heir|E].\n\nЧтобы избежать рабства, раб должен быть освобожден своим владельцем через  $carn_free_slave_interaction$ [character_interaction|E]."
+
+  game_concept_slave_owner: "Владелец"
+  game_concept_slave_owners: "Владельцы"
+  game_concept_slave_owner_possessive: "Owner's"
+  game_concept_slave_owners_possessive: "Owners'"
+  game_concept_slave_owner_desc: "[character|E] может быть юридически признанным $game_concept_slave_owner$ одного или нескольких [slaves|E]. Рабовладельцы всегда имеют [strong_hook|E] на своих рабов и могут покупать или продавать их на [slave_market|E]. Кроме того, [extramarital_sex|E] между рабом и его владельцем является законным.\n\nЕсли рабовладелец умирает, право собственности на рабов переходит к его [primary_heir|E]."
+
+  game_concept_prostitute: "Проститутка"
+  game_concept_prostitutes: "Проститутки"
+  game_concept_prostitution: "Проститутуция"
+  game_concept_prostitute_possessive: "Prostitute's"
+  game_concept_prostitutes_possessive: "Prostitutes'"
+  game_concept_prostitute_desc: "Проститутка - это [character|E] который требует плату за секс. Любой персонаж может использовать $carn_work_as_prostitute_decision$ [decision|E] чтобы стать проституткой, если только его [faith|E] позволяет ему это сделать.\n\nРабота проститутки основывается на ее [diplomacy|E], [intrigue|E], интеллекте и привлекательности. Особенно искусная проститутка может стать [GetTrait('prostitute_2').GetName( GetNullCharacter )] или даже [GetTrait('prostitute_3').GetName( GetNullCharacter )].\n\nРабота проституткой разрешена законом и не считается [extramarital_sex|E]. Однако, это все равно может привести к [bastard|E] или другим последствиям, если персонаж не будет осторожен..."

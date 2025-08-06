@@ -1,0 +1,22 @@
+namespace = carnia_slave_random
+
+carnia_slave_random.0001 = {
+	type = character_event
+	title = carn_slave.0001.t
+	desc = carn_slave.0001.desc
+	theme = laamp
+	left_portrait = {
+		character = root
+		animation = prisonhouse
+	}
+	override_background = {
+		reference = gallows
+	}
+	immediate = {
+		play_music_cue = mx_cue_stress
+	}
+	option = {
+		name = carn_slave.0001.a
+	}
+}
+

@@ -1,0 +1,119 @@
+namespace = carn_slave
+
+# 0001. You have been enslaved
+carn_slave.0001 = {
+	type = character_event
+	title = carn_slave.0001.t
+	desc = carn_slave.0001.desc
+	theme = death
+	left_portrait = {
+		character = root
+		animation = prisonhouse
+	}
+	override_background = {
+		reference = gallows
+	}
+	immediate = {
+		play_music_cue = mx_cue_stress
+	}
+	option = {
+		name = carn_slave.0001.a
+	}
+}
+
+# 0002. Slaves are freed when they gain land for any reason
+carn_slave.0002 = {
+	hidden = yes
+	trigger = {
+		has_trait = slave
+	}
+	immediate = {
+		carn_free_slave_effect = yes
+	}
+}
+
+# 0003. Slave newborns get their owner relation
+carn_slave.0003 = {
+	hidden = yes
+
+	trigger = {
+		scope:child = {
+			has_trait = slave
+		}
+	}
+
+	immediate = {
+		scope:mother = {
+			if = {
+				limit = { any_relation = { type = slave_owner } }
+				random_relation = {
+					type = slave_owner
+					save_scope_as = owner
+				}
+			}
+			else_if = {
+				limit = { exits = liege }
+				liege = { save_scope_as = owner }
+			}
+			else = {
+				location.province_owner = { save_scope_as = owner }
+			}
+			scope:owner = {
+				set_relation_slave = scope:child
+				scope:child = {
+					set_relation_slave_owner = prev
+				}
+				add_courtier = scope:child
+			}
+			scope:child = {
+				if = {
+					limit = { has_trait = slave has_trait = bastard scope:mother.house = scope:child.house }
+					remove_trait = bastard
+					add_trait = legitimized_bastard
+				}	
+			}
+		}
+	}
+}
+
+# 0004. Return slave to owner's court if slave left
+carn_slave.0004 = {
+	hidden = yes
+
+	trigger = {
+		is_ruler = no
+		has_trait = slave
+		has_relation_slave_owner = scope:old_employer
+		is_alive = yes
+	}
+
+	immediate = {
+		scope:old_employer = { add_courtier = root }
+	}
+}
+
+carn_slave.0005 = {
+	hidden = yes
+
+	trigger = {
+		is_ruler = no
+		any_relation = { type = slave }
+		is_alive = yes
+	}
+
+	immediate = {
+		every_relation = {
+			type = slave
+			if = {
+				limit = { exits = liege }
+				root = { save_scope_as = seller }
+				liege = { save_scope_as = buyer }
+				save_scope_as = slave
+				carn_buy_slave_effect = { SLAVE_PRICE = 0 }
+			}
+			else = {
+				carn_free_slave_effect = yes	
+			}
+		}
+	}
+}

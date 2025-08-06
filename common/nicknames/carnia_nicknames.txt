@@ -1,0 +1,4 @@
+nickname_the_bitch = { is_bad = yes }
+nickname_the_slut = { is_bad = yes }
+nickname_the_whore = { is_bad = yes }
+nickname_the_wench = { is_bad = yes }

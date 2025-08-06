@@ -1,0 +1,8 @@
+﻿l_german:
+  slave: "Sklave"
+  relation_slave: "Sklave"
+  relation_slave_possessive: "des Sklaven"
+
+  slave_owner: "Sklavenhalter"
+  relation_slave_owner: "Sklavenhalter"
+  relation_slave_owner_possessive: "des Sklavenhalters"

@@ -1,0 +1,20 @@
+﻿l_german:
+  game_concept_slave: "Sklave"
+  game_concept_slaves: "Sklaven"
+  game_concept_slavery: "Sklaverei"
+  game_concept_slave_possessive: "Sklaven"
+  game_concept_slaves_possessive: "Sklaven"
+  game_concept_slave_desc: "Ein $game_concept_slave$ ist ein [character|E], der seiner Rechte beraubt und versklavt wurde. Sklaven gehören einem [slave_owner|E], der einen [strong_hook|E] gegen sie hat und sie auf dem [slave_market|E] kaufen oder verkaufen kann. Außerdem ist [extramarital_sex|E] zwischen dem Besitzer und seinem Sklaven legal.\n\nSklaven dürfen [titles|E] weder besitzen noch erben, und alle Kinder, die von einer versklavten Mutter geboren werden, sind ebenfalls Sklaven.\n\nStirbt ein Sklavenbesitzer, geht das Eigentum am Sklaven auf Euren [primary_heir|E] über.\n\nUm der Sklaverei zu entkommen, muss ein Sklave von seinem Besitzer durch die $carn_free_slave_interaction$ [character_interaction|E] befreit werden."
+
+  game_concept_slave_owner: "Besitzer"
+  game_concept_slave_owners: "Besitzer"
+  game_concept_slave_owner_possessive: "Besitzers"
+  game_concept_slave_owners_possessive: "Besitzer"
+  game_concept_slave_owner_desc: "Ein [character|E] kann ein rechtlich anerkannter $game_concept_slave_owner$ von einem oder mehreren [slaves|E] sein. Sklavenbesitzer haben immer ein [strong_hook|E] gegen ihre Sklaven und können sie auf dem [slave_market|E] kaufen oder verkaufen. Außerdem ist [extramarital_sex|E] zwischen dem Besitzer und dem Sklaven legal.\n\nStirbt ein Sklavenbesitzer, geht sein Eigentum an Sklaven auf seinen [primary_heir|E] über."
+
+  game_concept_prostitute: "Prostituierte"
+  game_concept_prostitutes: "Prostituierte"
+  game_concept_prostitution: "Prostitution"
+  game_concept_prostitute_possessive: "Prostituierten"
+  game_concept_prostitutes_possessive: "Prostituierten"
+  game_concept_prostitute_desc: "Eine Prostituierte ist ein [character|E], der für Sex Geld verlangt. Jeder Charakter kann die $carn_work_as_prostitute_decision$ [decision|E] treffen und eine Prostituierte bzw. ein Prostituierter werden, solange der eigene [faith|E] das zulässt.\n\nDie Leistung einer Prostituierten basiert auf deren [diplomacy|E], [intrigue|E], Intelligenz und Attraktivität. Eine besonders qualifizierte Prostituierte kann [GetTrait('prostitute_2').GetName( GetNullCharacter )] oder sogar [GetTrait('prostitute_3').GetName( GetNullCharacter )] werden.\n\nAls Prostituierte zu arbeiten ist gesetzlich beschränkt und wird nicht als [extramarital_sex|E] angesehen. Es kann jedoch immer noch zu [bastard|E]-Kindern oder zu anderen Konsequenzen führen, wenn der Charakter nicht achtgibt."

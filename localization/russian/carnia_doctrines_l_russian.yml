@@ -1,0 +1,37 @@
+﻿l_russian:
+ carn_doctrine_same_slavery_name: "Раб Праведного Вероисповидания"
+ carn_doctrine_same_slavery_crime_name: "Преступное"
+ carn_doctrine_same_slavery_crime_desc: "Порабощение члена [ROOT.Faith.GetReligion.GetAdjectiveNoTooltip] веры - большой грех, ибо так поступать - значит объявлять себя более высоким господином, чем [ROOT.Faith.PantheonTerm]".
+ carn_doctrine_same_slavery_shunned_name: "Отверженные"
+ carn_doctrine_same_slavery_shunned_desc: "Хотя наши убеждения отличаются, все [ROOT.Faith.GetReligion.GetAdjectiveNoTooltip] верующие - братья и сестры. Глубоко несправедливо, когда к одному из нам подобным относятся как к нелюдям".
+ carn_doctrine_same_slavery_accepted_name: "Принятие"
+  carn_doctrine_same_slavery_accepted_desc: "Рабство - справедливое и подходящее наказание для [ROOT.Faith.GetAdherentNamePluralNoTooltip], которые ошибаются в своей вере. Пожизненное рабство должно быть их наказанием за их преступления".
+ doctrine_parameter_same_slavery_illegal: "Владение [slaves|E] [faith_righteous|E] или [faith_astray|E] [faiths|E] является [crime|E]".
+ doctrine_parameter_same_slavery_shunned: "Владение [slaves|E] [faith_righteous|E] или [faith_astray|E] [faiths|E] является [shunned|E]".
+ doctrine_parameter_same_slavery_accepted: "Владение [slaves|E] [faith_righteous|E] или [faith_astray|E] [faiths|E] полностью принято"
+
+ carn_doctrine_other_slavery_name: "Раб Враждебного Вероисповидания"
+ carn_doctrine_other_slavery_crime_name: "Преступное"
+ carn_doctrine_other_slavery_crime_desc: "Все люди обладают достоинством, независимо от их вероисповедания. Порабощение человека только потому, что он не верит в [ROOT.Faith.PantheonTerm], является преступлением."
+ carn_doctrine_other_slavery_shunned_name: "Отверженные"
+ carn_doctrine_other_slavery_shunned_desc: "Жестоко и отвратительно претендовать на жизнь неверного, даже если он ошибается в своих убеждениях".
+ carn_doctrine_other_slavery_accepted_name: "Принятие"
+ carn_doctrine_other_slavery_accepted_desc: "Все [ROOT.Faith.GetAdherentNamePluralNoTooltip] имеют право спасать тех, кто не принял истинную веру, даже от самих себя".
+ doctrine_parameter_other_slavery_illegal: "Владение [slaves|E] [faith_hostile|E] или [faith_evil|E] [faiths|E] является [crime|E]".
+ doctrine_parameter_other_slavery_shunned: "Владение [slaves|E] [faith_hostile|E] или [faith_evil|E] [faiths|E] является [shunned|E]".
+ doctrine_parameter_other_slavery_accepted: "Владение [slaves|E] [faith_hostile|E] или [faith_evil|E] [faiths|E] полностью принимается".
+
+ carn_doctrine_prostitution_name: "Проституция"
+ carn_doctrine_prostitution_crime_name: "Преступное"
+ carn_doctrine_prostitution_crime_desc: "Покупать и продавать секс - значит портить саму основу нашего общества. Те, кто увековечивает это зло, должны быть наказаны за свои преступления".
+ carn_doctrine_prostitution_shunned_name: "Отверженные"
+ carn_doctrine_prostitution_shunned_desc: "Хотя проституткам стыдно и унизительно продавать свое тело, в их поведении нет ничего такого, что по своей сути противоречило бы [ROOT.Faith.PantheonTerm]".
+ carn_doctrine_prostitution_accepted_name: "Принятие"
+ carn_doctrine_prostitution_accepted_desc: "Секс - естественная часть нашего общества, и торговля сексом за деньги - такой же законный бизнес, как и любой другой."
+ carn_doctrine_prostitution_virtuous_name: "Добродетельная проституция"
+ carn_doctrine_prostitution_virtuous_desc: "Проституция — это законная и почетная профессия, и те, кто ею занимается, должны быть уважаемы за свою работу".
+ doctrine_parameter_carn_prostitution_illegal: "Персонажи с любой [prostitute|E] [trait|E] являются [crime|E]".
+ doctrine_parameter_carn_prostitution_shunned: "Персонажи с любой [prostitute|E] [trait|E] являются [shunned|E]".
+ doctrine_parameter_carn_prostitution_accepted: "Персонажи с любой [prostitute|E] [trait|E] полностью приняты".
+
+ carn_slavery_is_illegal: "Ваша вера не позволяет брать [CHARACTER.GetFaith.GetAdherentNamePluralNoTooltip|U] в рабство"

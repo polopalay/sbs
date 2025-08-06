@@ -1,0 +1,10 @@
+portrait_prisoner_trigger = {
+	exists = this
+	OR = {
+		AND = {
+			is_imprisoned = yes
+			is_in_prison_type = dungeon
+		}
+		has_trait = slave
+	}
+}

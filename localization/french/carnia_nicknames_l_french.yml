@@ -1,0 +1,12 @@
+﻿l_french:
+ nickname_the_bitch: "La Chienne"
+ nickname_the_bitch_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] est une chienne en chaleur, prête à baiser sans payer."
+
+ nickname_the_slut: "La Salope"
+ nickname_the_slut_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] se déclare ouvertement prostituée, au grand dam et amusement des clients."
+
+ nickname_the_wench: "La Gueuse"
+ nickname_the_wench_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] est célèbre dans tout le royaume comme une prostituée."
+
+ nickname_the_whore: "La Prostituée"
+ nickname_the_whore_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] était autrefois noble, mais a tout abandonné pour devenir prostituée."

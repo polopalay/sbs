@@ -1,0 +1,8 @@
+﻿l_spanish:
+  slave: "[esclavo|E]"
+  relation_slave: "esclavo"
+  relation_slave_possessive: "del esclavo"
+
+  slave_owner: "[dueño_del_esclavo|E]"
+  relation_slave_owner: "dueño"
+  relation_slave_owner_possessive: "del dueño"

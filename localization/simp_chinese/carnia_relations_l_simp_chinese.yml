@@ -1,0 +1,7 @@
+﻿l_simp_chinese:
+ slave: "奴隶"
+ relation_slave: "奴隶"
+ relation_slave_possessive: "奴隶的"
+ slave_owner: "奴隶主"
+ relation_slave_owner: "奴隶主"
+ relation_slave_owner_possessive: "奴隶主的"

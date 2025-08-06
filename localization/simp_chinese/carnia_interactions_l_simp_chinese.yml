@@ -1,0 +1,46 @@
+﻿l_simp_chinese:
+ carn_enslave_interaction: "奴役"
+ carn_enslave_interaction.desc: "把[recipient.GetShortUINameNoTooltip]变为你的奴隶"
+ carn_wants_to_be_your_slave: "想要你作为他们的主人：$VALUE|=+0$"
+ carn_enslave_recipient_is_noble: "[recipient.GetShortUIName|U]是[noble|E]： $VALUE|=+0$"
+ carn_enslave_you_have_no_reason: "你不具有[execute_reason|E]：$VALUE|=+0$"
+
+ carn_buy_slave_on_market_interaction: "购买奴隶"
+ carn_buy_slave_on_market_interaction_desc: "用[gold|E]购买奴隶"
+ recipient_secondary_carn_buy_slave_on_market_interaction: "奴隶"
+
+ carn_sell_slave_interaction: "出售奴隶"
+ carn_sell_slave_interaction.desc: "在奴隶市场上以#high [gold_i]出售[recipient.GetShortUINameNoTooltip]#!"
+ recipient_secondary_carn_sell_slave_interaction: "买家"
+ carn_buyer_not_enough_gold_for_slave_price_tooltip: "支付 #high [gold_i]#!"
+ carn_secondary_recipient_is_my_knight_reason: "[secondary_recipient.GetShortUIName|U]是我的[recipient.Custom('KnightCulture')]： $VALUE|=+0$"
+ carn_secondary_recipient_is_my_councillor_reason: "[secondary_recipient.GetShortUIName|U]是我的[councillor|E]： $VALUE|=+0$"
+ carn_secondary_recipient_is_my_friend_reason: "[secondary_recipient.GetShortUIName|U]是我的[friend|E]： $VALUE|=+0$"
+ carn_secondary_recipient_is_my_lover_reason: "[secondary_recipient.GetShortUIName|U]是我的[lover|E]： $VALUE|=+0$"
+ carn_secondary_recipient_is_my_crush_reason: "[secondary_recipient.GetShortUIName|U]是我的[crush|E]： $VALUE|=+0$"
+ carn_secondary_recipient_is_my_soulmate_reason: "[secondary_recipient.GetShortUIName|U]是我的[soulmate|E]： $VALUE|=+0$"
+
+ carn_free_slave_interaction: "解放奴隶"
+ carn_free_slave_interaction.desc: "把[recipient.GetShortUINameNoTooltip]从奴隶中解放"
+
+ carnia_slave_training_interaction: "训练奴隶"
+ carnia_slave_training_interaction.desc: "训练[recipient.GetShortUINameNoTooltip]成为温顺的奴隶"
+ have_sex: "发生性关系"
+ extort_gold: "敲诈金币"
+ forced_labor: "强迫劳动"
+
+ carnia_prostitute_interaction: "买春"
+ carnia_prostitute_interaction.desc: "请求[recipient.GetShortUIName]提供性服务"
+ use_contraception: "实施避孕"
+ cant_have_sex_without_contraception: "没有避孕可不能发生性关系：$VALUE|=+0$"
+ can_have_sex_without_contraception: "性需求结果：$VALUE|=+0$"
+
+ carnia_offer_carnia_prostitute_interaction: "卖淫"
+ carnia_offer_carnia_prostitute_interaction.desc: "为[recipient.GetShortUIName]提供性服务"
+ recipient_secondary_carnia_offer_carnia_prostitute_interaction: "选一个"
+
+ carn_force_start_prostitution_interaction: "开始卖淫"
+ carn_force_start_prostitution_interaction.desc: "强迫[recipient.GetShortUINameNoTooltip]做妓女来为你赚取[gold|E]"
+
+ carn_force_stop_prostitution_interaction: "停止卖淫"
+ carn_force_stop_prostitution_interaction.desc: "停止强迫[recipient.GetShortUINameNoTooltip]做妓女来为你赚取[gold|E]"

@@ -1,0 +1,27 @@
+﻿l_simp_chinese:
+ carn_wants_to_be_your_slave_opinion: "渴求主人"
+ carn_enslaved_me_opinion: "奴役了我"
+ carn_enslaved_close_family_opinion: "至亲被奴役"
+ carn_enslaved_close_relation_opinion: "奴役朋友"
+ carn_freed_me_from_slavery_opinion: "释放了我"
+ free_slave_close_family_opinion: "释放至亲"
+ free_slave_friend_opinion: "释放朋友"
+
+ carn_working_as_prostitute_1_modifier: "作为$trait_lifestyle_prostitute$工作"
+ carn_working_as_prostitute_1_modifier_desc: "该角色恬不知耻地向任何有钱人出卖自己的身体。"
+ carn_working_as_prostitute_2_modifier: "作为$trait_lifestyle_prostitute$工作"
+ carn_working_as_prostitute_2_modifier_desc: "该角色是受到众多顾客青睐的知名娼妓。"
+ carn_working_as_prostitute_3_modifier: "作为$trait_lifestyle_prostitute$工作"
+ carn_working_as_prostitute_3_modifier_desc: "该角色每天晚上都会特别接待贵族。"
+
+ carn_prostitution_crime_opinion: "远近闻名的[GetTrait('prostitute').GetName( GetNullCharacter )]"
+ prostitute_shunned_opinion: "远近闻名的[GetTrait('prostitute').GetName( GetNullCharacter )]"
+
+ recently_had_sex: "最近发生过性行为"
+ recently_had_sex_desc: "这个角色最近发生过性行为，但一段时间内无法继续。"
+ forced_labor: "强迫劳动"
+ forced_labor_desc: "这个角色被迫违背自己的意愿工作。"
+ extortion_opinion: "敲诈我"
+ extortion_opinion_desc: "这个角色敲诈了我。"
+
+ have_sex_opinion: "和我发生性关系"

@@ -1,0 +1,27 @@
+﻿l_russian:
+ carn_wants_to_be_your_slave_opinion: "Жаждет быть вашим хозяином"
+ carn_enslaved_me_opinion: "Поработил меня"
+ carn_enslaved_close_family_opinion: "Поработил близкого члена семьи"
+ carn_enslaved_close_relation_opinion: "Поработил друга"
+ carn_freed_me_from_slavery_opinion: "Освободил меня"
+ free_slave_close_family_opinion: "Освободил близкого члена семьи"
+ free_slave_friend_opinion: "Освободил друга"
+
+ carn_working_as_prostitute_1_modifier: "Работает как $trait_lifestyle_prostitute$"
+ carn_working_as_prostitute_1_modifier_desc: "Этот персонаж бесстыдно продает свое тело любому, у кого есть деньги."
+ carn_working_as_prostitute_2_modifier: "Работает как $trait_lifestyle_prostitute$"
+ carn_working_as_prostitute_2_modifier_desc: "Этот персонаж является влиятельным проститутом, которого посещают многие клиенты."
+ carn_working_as_prostitute_3_modifier: "Работает как $trait_lifestyle_prostitute$"
+ carn_working_as_prostitute_3_modifier_desc: "Этот персонаж получает ночные визиты от дворянства и королей."
+
+ carn_prostitution_crime_opinion: "Известно, что [GetTrait('prostitute').GetName( GetNullCharacter )]"
+ prostitute_shunned_opinion: "Известно, что [GetTrait('prostitute').GetName( GetNullCharacter )]"
+
+ recently_had_sex: "Недавний секс"
+ recently_had_sex_desc: "Этот персонаж недавно имел секс и не мог продолжать в течение некоторого времени."
+ forced_labor: "Принудительный труд"
+ forced_labor_desc: "Этот персонаж вынужден работать против своей воли."
+ extortion_opinion: "Вымог меня"
+ extortion_opinion_desc: "Этот персонаж меня вымог."
+
+ have_sex_opinion: "Займись со мной сексом"

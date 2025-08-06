@@ -1,0 +1,413 @@
+carn_protitution_age_cutoff = 45
+maximum_prostitute = {
+	value = 2
+	if = {
+		limit = { primary_title.tier = tier_county is_landed = yes }
+		add = 3
+	}
+	if = {
+		limit = { primary_title.tier = tier_duchy is_landed = yes }
+		add = 2
+	}
+	if = {
+		limit = { primary_title.tier = tier_kingdom is_landed = yes }
+		add = 3
+	}
+	if = {
+		limit = { primary_title.tier = tier_empire is_landed = yes }
+		add = 2
+	}
+}
+
+prostitute_price_value = {
+	value = 3
+	if = {
+		limit = { NOT = { exists = scope:broker } }
+		add = prostitute_broker_value
+	}
+	if = {
+		limit = { has_trait = beauty_good_1 }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = beauty_good_2 }
+		add = 2
+	}
+	if = {
+		limit = { has_trait = beauty_good_3 }
+		add = 3
+	}
+	if = {
+		limit = { has_trait = beauty_bad_1 }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = beauty_bad_2 }
+		subtract = 2
+	}
+	if = {
+		limit = { has_trait = beauty_bad_3 }
+		subtract = 3
+	}
+	if = {
+		limit = { has_trait = physique_good_1 }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = physique_good_2 }
+		add = 2
+	}
+	if = {
+		limit = { has_trait = physique_good_3 }
+		add = 3
+	}
+	if = {
+		limit = { has_trait = physique_bad_1 }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = physique_bad_2 }
+		subtract = 2
+	}
+	if = {
+		limit = { has_trait = physique_bad_3 }
+		subtract = 3
+	}
+	if = {
+		limit = { has_trait = intellect_good_1 }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = intellect_good_2 }
+		add = 2
+	}
+	if = {
+		limit = { has_trait = intellect_good_3 }
+		add = 3
+	}
+	if = {
+		limit = { has_trait = intellect_bad_1 }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = intellect_bad_2 }
+		subtract = 2
+	}
+	if = {
+		limit = { has_trait = intellect_bad_3 }
+		subtract = 3
+	}
+	if = {
+		limit = { has_trait = pure_blooded }
+		add = 3
+	}
+	if = {
+		limit = { has_trait = clubfooted }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = hunchbacked }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = lisping }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = stuttering }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = inbred }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = spindly }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = scaly }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = wheezing }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = bleeder }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = depressed_1 }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = depressed_genetic }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = lunatic_1 }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = lunatic_genetic }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = possessed_1 }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = possessed_genetic }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = fecund is_visibly_fertile = yes }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = infertile is_visibly_fertile = yes }
+		subtract = 1
+	}
+
+	if = {
+		limit = { has_trait = diligent }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = humble }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = content }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = lazy }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = arrogant }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = ambitious }
+		subtract = 1
+	}
+
+	# stress traits
+	if = {
+		limit = { has_trait = drunkard }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = hashishiyah }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = rakish }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = irritable }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = contrite }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = athletic }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = strong }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = shrewd }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = weak }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = dull }
+		subtract = 1
+	}
+	if = {
+		limit = { is_female = yes has_trait = impotent is_visibly_fertile = yes }
+		subtract = 1
+	}
+	if = {
+		limit = { OR = { has_trait = sayyid has_trait = blood_of_prophet } }
+		add = 1
+	}
+	if = {
+		limit = {
+			OR = {
+				has_trait = faith_warrior
+				has_trait = berserker
+				has_trait = varangian
+				has_trait = viking
+				has_trait = reincarnation
+			}
+		}
+		add = 1
+	}
+	if = {
+		limit = { has_treatable_disease_trigger = yes }
+		subtract = 2
+	}
+	if = {
+		limit = { has_contagious_disease_trigger = yes }
+		subtract = 10
+	}
+	if = {
+		limit = { has_wounds_trigger = yes }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = maimed }
+		subtract = 5
+	}
+	if = {
+		limit = { has_trait = disfigured }
+		subtract = 5
+	}
+	if = {
+		limit = { has_trait = blind }
+		subtract = 1
+	}
+	if = {
+		limit = { is_incapable = yes }
+		subtract = 1
+	}
+	if = {
+		limit = { has_trait = sickly }
+		subtract = 1
+	}
+
+	if = {
+		limit = { is_lowborn = yes }
+		subtract = 2
+	}
+
+	if = {
+		limit = {
+			OR = {
+				has_trait = saoshyant
+				has_trait = savior
+				has_trait = augustus
+				has_trait = chakravarti
+				has_trait = greatest_of_khans
+				has_trait = paragon
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			OR = {
+				has_trait = saoshyant_descendant
+				has_trait = divine_blood
+				has_trait = saint
+				has_trait = born_in_the_purple
+				has_trait = consecrated_blood
+			}
+		}
+		add = 2
+	}
+	if = {
+		limit = {
+			has_trait_xp = {
+				trait = lifestyle_prostitute
+				value >= 100
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			has_trait_xp = {
+				trait = lifestyle_prostitute
+				value >= 50
+			}
+		}
+		add = 1
+	}
+
+	min = 3
+}
+
+prostitute_tips_value = {
+	value = 2
+
+	if = {
+		limit = { has_trait = beauty_good_3 }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = physique_good_3 }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = intellect_good_3 }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = diligent }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = athletic }
+		add = 1
+	}
+	if = {
+		limit = { has_trait = shrewd }
+		add = 1
+	}
+	if = {
+		limit = {
+			OR = {
+				has_trait = sayyid
+				has_trait = blood_of_prophet
+			}
+		}
+		add = 2
+	}
+	if = {
+		limit = {
+			OR = {
+				has_trait = saoshyant
+				has_trait = savior
+				has_trait = augustus
+				has_trait = chakravarti
+				has_trait = greatest_of_khans
+				has_trait = paragon
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			OR = {
+				has_trait = saoshyant_descendant
+				has_trait = divine_blood
+				has_trait = saint
+				has_trait = born_in_the_purple
+				has_trait = consecrated_blood
+			}
+		}
+		add = 3
+	}
+}
+
+prostitute_broker_value = {
+	value = 2
+	if = {
+		limit = { has_trait = shrewd }
+		add = 1
+	}
+}

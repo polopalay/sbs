@@ -1,0 +1,42 @@
+﻿# carn_seed_slavery_doctrines_effect
+# if game rule is off, removes slavery doctrines from all faiths
+# otherwise, seeds a faith's religious doctrines for slavery
+carn_seed_slavery_doctrines_effect = {
+	if = {
+		limit = {
+			NOR = {
+				has_doctrine = carn_doctrine_same_slavery_crime
+				has_doctrine = carn_doctrine_same_slavery_shunned
+				has_doctrine = carn_doctrine_same_slavery_accepted
+			}
+		}
+		if = {
+			limit = { religion = { is_in_family = rf_pagan } }
+			add_doctrine = carn_doctrine_same_slavery_accepted
+		}
+		else_if = {
+			limit = { religion = religion:islam_religion }
+			add_doctrine = carn_doctrine_same_slavery_shunned
+		}
+		else = {
+			add_doctrine = carn_doctrine_same_slavery_crime
+		}
+	}
+	if = {
+		limit = {
+			NOR = {
+				has_doctrine = carn_doctrine_other_slavery_crime
+				has_doctrine = carn_doctrine_other_slavery_shunned
+				has_doctrine = carn_doctrine_other_slavery_accepted
+			}
+		}
+		if = {
+			limit = { religion = { is_in_family = rf_pagan } }
+			add_doctrine = carn_doctrine_other_slavery_accepted
+		}
+		else = {
+			add_doctrine = carn_doctrine_other_slavery_shunned
+		}
+	}
+}
+

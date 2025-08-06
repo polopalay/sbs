@@ -1,0 +1,20 @@
+﻿l_french:
+ game_concept_slave: "Esclave"
+ game_concept_slaves: "Esclaves"
+ game_concept_slavery: "Esclavage"
+ game_concept_slave_possessive: "de l'esclave"
+ game_concept_slaves_possessive: "des esclaves"
+ game_concept_slave_desc: "Un esclave est un [character|El] qui a été asservi et dont les droits lui ont été retirés. Un esclave appartient à un [Concept('slave_owner', 'maître')|El], qui possède un [strong_hook|El] envers lui et peut l'acheter ou le vendre au [slave_market|El]. De plus, les [extramarital_sex|El] entre un esclave et son maître sont légales.\n\nLes esclaves ne peuvent hériter ni détenir des [titles|El], et tout enfant né d'une mêre esclave sera aussi un esclave.\n\nSi un maître d'esclave meurt, la possession de ses esclaves sera passée à son [primary_heir|El].\n\nPour se défaire de l'esclavage, un esclave doit être libéré par leur maître, via l'[interaction|El] 'Négocier la libération'."
+
+ game_concept_slave_owner: "Maître d'esclaves"
+ game_concept_slave_owners: "Maîtres"
+ game_concept_slave_owner_possessive: "du maître d'esclave"
+ game_concept_slave_owners_possessive: "des maîtres d'esclave"
+ game_concept_slave_owner_desc: "Un [character|El] peut être légalement reconnu comme étant propriétaire d'un ou plusieurs [slaves|El]. Les maîtres d'esclaves ont toujours un [strong_hook|El] envers leur esclaves et peuvent les acheter ou les vendre au [slave_market|El]. De plus, les [extramarital_sex|El] entre un esclave et son maître sont légales.\n\nSi un maître d'esclave meurt, la possession de ses esclaves sera passée à son [primary_heir|El]."
+
+  game_concept_prostitute: "Prostituée"
+  game_concept_prostitutes: "Prostituées"
+  game_concept_prostitution: "Prostitution"
+  game_concept_prostitute_possessive: "de la prostituée"
+  game_concept_prostitutes_possessive: "des prostituées"
+  game_concept_prostitute_desc: "Une prostituée est un [character|El] offrant des services sexuels contre paiement. Tout personnage peut utiliser la [decision|El] '$carn_work_as_prostitute_decision$' pour devenir un ou une prostituée, à condition que sa [faith|El] le lui permette.\n\nLa performance d'une prostituée est basée sur sa [diplomacy|El], son [intrigue|El], son intelligence, ainsi que son attractivité. Une prostituée particulièrement douée peut progresser en tant que [GetTrait('lifestyle_prostitute').GetName( GetNullCharacter )].\n\nTravailler en tant que prostituée est légalement reconnu et n'est pas considéré comme [extramarital_sex|El]. Cependant, cela peut tout de même engendrer des [bastards|El] et autres conséquences si le personnage ne fait pas attention..."

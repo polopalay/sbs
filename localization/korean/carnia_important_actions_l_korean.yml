@@ -1,0 +1,9 @@
+﻿l_korean:
+  action_can_offer_prostitute_combined_group_name: "창녀 제공"
+  action_can_offer_prostitute_combined_group_label: "창녀 제공 가능"
+  action_can_offer_prostitute_combined_group_description: "캐릭터에게 창녀를 제공할 수 있습니다"
+  action_can_offer_prostitute_combined_label: "[recipient.GetShortUIName|E]에게 창녀 제공"
+  action_can_offer_prostitute_label: "[recipient.GetShortUIName|E]에게 창녀 제공"
+  action_can_offer_prostitute: "제공 매춘부"
+  action_can_offer_prostitute_desc: "[recipient.GetShortUIName] 성적 서비스 제공"
+  action_can_offer_prostitute_click: ""

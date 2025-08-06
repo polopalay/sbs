@@ -1,0 +1,155 @@
+﻿carn_enslave_effect = {
+	$SLAVE$ = { save_temporary_scope_as = new_slave }
+	$SLAVE$ = { save_temporary_scope_as = slave }
+	$OWNER$ = { save_temporary_scope_as = new_owner }
+	$OWNER$ = { save_temporary_scope_as = slave_owner }
+
+	scope:new_slave = {
+		if = {
+			limit = { is_ruler = yes }
+			every_character_war = {
+				if = {
+					limit = { primary_attacker = scope:new_slave }
+					end_war = invalidated
+				}
+				else_if = {
+					limit = { primary_defender = scope:new_slave }
+					if = {
+						limit = { primary_attacker = scope:new_owner }
+						end_war = attacker
+					}
+					else = { end_war = invalidated }
+				}
+				else = { remove_participant = scope:new_slave }
+			}
+			depose = yes
+		}
+		every_claim = { scope:new_slave = { remove_claim = prev } }
+		remove_trait = former_slave
+		add_trait = slave
+		if = {
+			limit = {gold > 0}
+			pay_short_term_gold = { target = scope:new_owner gold = scope:new_slave.gold }
+		}
+		every_spouse = { divorce = scope:new_slave }
+		if = {
+			limit = { exists = betrothed }
+			break_betrothal = betrothed
+		}
+		every_concubine = { scope:new_slave = { remove_concubine = prev } }
+		every_relation = { type = guardian remove_relation_ward = prev }
+		add_prestige_level = -6
+		if = {
+			limit = { is_imprisoned_by = scope:new_owner }
+			release_from_prison = yes
+		}
+		add_character_flag = blocked_from_leaving
+		if = {
+			limit = { 
+				$DRAMA$ = yes
+				scope:new_slave = {
+					NOR = {
+						has_character_flag = carn_wants_to_be_a_slave
+						has_trait_with_flag = carn_wants_to_be_a_slave
+						has_opinion_modifier = {
+							target = scope:new_owner
+							modifier = carn_wants_to_be_your_slave_opinion
+						}
+					}
+				}
+			}
+			if = {
+				limit = { faith = { NOT = { has_doctrine_parameter = same_slavery_accepted } faith_hostility_level = { target = scope:slave.faith value < faith_hostile_level } } }
+				add_opinion = { target = scope:new_owner modifier = carn_enslaved_me_opinion }
+			}
+
+			if = {
+				limit = { has_character_flag =  peasant_faction_random_peasant }
+				add_character_flag = peasant_revolt_do_not_kill
+			}
+
+			every_spouse = {
+				limit = { NOT = { this = scope:new_owner } faith = { NOT = { has_doctrine_parameter = same_slavery_accepted } faith_hostility_level = { target = scope:slave.faith value < faith_hostile_level } } }
+				add_opinion = { target = scope:new_owner modifier = carn_enslaved_close_family_opinion }
+			}
+			every_close_family_member = {
+				limit = { NOT = { this = scope:new_owner is_spouse_of = scope:new_slave } faith = { NOT = { has_doctrine_parameter = same_slavery_accepted } faith_hostility_level = { target = scope:slave.faith value < faith_hostile_level } } }
+				add_opinion = { target = scope:new_owner modifier = carn_enslaved_close_family_opinion }
+			}
+			every_relation = {
+				type = friend
+				limit = { NOT = { this = scope:new_owner is_spouse_of = scope:new_slave is_close_family_of = scope:new_slave } faith = { NOT = { has_doctrine_parameter = same_slavery_accepted } faith_hostility_level = { target = scope:slave.faith value < faith_hostile_level } } }
+				add_opinion = { target = scope:new_owner modifier = carn_enslaved_close_relation_opinion }
+			}
+			every_relation = {
+				type = lover
+				limit = { NOT = { this = scope:new_owner is_spouse_of = scope:new_slave is_close_family_of = scope:new_slave has_relation_friend = scope:new_slave } faith = { NOT = { has_doctrine_parameter = same_slavery_accepted } faith_hostility_level = { target = scope:slave.faith value < faith_hostile_level } } }
+				add_opinion = { target = scope:new_owner modifier = carn_enslaved_close_relation_opinion }
+			}
+			every_relation = {
+				type = slave_owner
+				remove_relation_slave = scope:slave
+				scope:slave = { remove_relation_slave_owner = prev }
+			}
+		}
+	}
+
+	scope:new_owner = {
+		add_courtier = scope:new_slave
+	}
+	scope:new_owner = {
+		set_relation_slave = { target = scope:new_slave }
+	}
+	scope:new_slave = {
+		set_relation_slave_owner = { target = scope:new_owner }
+	}
+}
+
+carn_buy_slave_effect = {
+	save_scope_value_as = {
+		name = slave_price
+		value = $SLAVE_PRICE$
+	}
+	scope:slave = {
+		every_relation = {
+			type = slave_owner
+			remove_relation_slave = scope:slave
+			scope:slave = { remove_relation_slave_owner = prev }
+		}
+		set_relation_slave_owner = { target = scope:buyer }
+	}
+	scope:buyer = {
+		set_relation_slave = { target = scope:slave }
+	}
+	scope:buyer = {
+		pay_short_term_gold = { target = scope:seller gold = scope:slave_price }
+		add_courtier = scope:slave
+		save_scope_as = slave_owner
+	}
+}
+
+carn_free_slave_effect = {
+	every_relation = {
+		type = slave_owner
+		remove_relation_slave = prev
+		hidden_effect = {
+			add_opinion = {
+				target = prev
+				modifier = carn_former_slave_or_slave_owner_opinion
+			}
+			reverse_add_opinion = {
+				target = prev
+				modifier = carn_former_slave_or_slave_owner_opinion
+			}
+		}
+		save_scope_as = former_owner
+	}
+	hidden_effect = {
+		remove_trait = slave
+		add_trait = former_slave
+		trigger_event = {
+			on_action = carn_on_slave_freed
+		}
+	}
+	remove_character_flag = blocked_from_leaving
+}

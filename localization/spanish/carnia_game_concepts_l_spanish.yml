@@ -1,0 +1,20 @@
+﻿l_spanish:
+  game_concept_slave: "Esclavo"
+  game_concept_slaves: "Esclavos"
+  game_concept_slavery: "Esclavitud"
+  game_concept_slave_possessive: "Del Esclavo"
+  game_concept_slaves_possessive: "De los Esclavos"
+  game_concept_slave_desc: "Un $game_concept_slave$ es un [character|E] que fue despojado de sus derechos y esclavizado. Son propiedad de un [slave_owner|E], que tiene [strong_hook|E] que puede comprarlos o venderlos en [slave_market|E]. Tambien, [extramarital_sex|E] entre el esclavo y su amo es legal.\n\nLos esclavos no [titles|E], cualquier vastago nacido de una esclava sera un esclavo tambien.\n\nSi un amo muere,su [primary_heir|E] sera el nuevo amo de sus esclavos.\n\nPara escapar de la esclavitud, un esclavo debe ser liberado por su amo mediante $carn_free_slave_interaction$ [character_interaction|E]."
+
+  game_concept_slave_owner: "Amo"
+  game_concept_slave_owners: "Amos"
+  game_concept_slave_owner_possessive: "Del Amo"
+  game_concept_slave_owners_possessive: "De los Amos"
+  game_concept_slave_owner_desc: "Un [character|E] puede ser legalmente reconocido como $game_concept_slave_owner$ por uno o más [slaves|E]. Los propietarios de esclavos tienen un [strong_hook|E] sobre sus esclavos por lo que puede venderlos o comprarlos en [slave_market|E]. Tambien, [extramarital_sex|E] entre el esclavo y su amo es legal.\n\nSí un amo muere, su [primary_heir|E] sera el nuevo amo de sus esclavos."
+
+  game_concept_prostitute: "Prostituta"
+  game_concept_prostitutes: "Prostitutas"
+  game_concept_prostitution: "Prostitucin"
+  game_concept_prostitute_possessive: "De la Prostituta"
+  game_concept_prostitutes_possessive: "De las Prostitutas'"
+  game_concept_prostitute_desc: "Una prostituta es un [character|E] ofrece sexo a cambio de dinero. Cualquier personaje puede usar the $carn_work_as_prostitute_decision$ [decision|E] para prostituirse, siempre y cuando [faith|E] se lo permita.\n\nSu desempreño se basa en [diplomacy|E], [intrigue|E], inteligencia, y atractivo. Una prostituta especialmente habilidosa puede ser [GetTrait('prostitute_2').GetName( GetNullCharacter )] o incluso [GetTrait('prostitute_3').GetName( GetNullCharacter )].\n\nEjercer la prostitución es legalmente sancionado y no se considera [extramarital_sex|E]. Sin embargo, puede resultar en hijos [bastard|E] o en otras consecuencias si el personaje no es cuidadoso..."

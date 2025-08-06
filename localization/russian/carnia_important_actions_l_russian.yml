@@ -1,0 +1,9 @@
+﻿l_russian:
+  action_can_offer_prostitute_combined_group_name: "Предложить проститутку"
+  action_can_offer_prostitute_combined_group_label: "Может предложить проститутку"
+  action_can_offer_prostitute_combined_group_description: "Вы можете предложить проститутку персонажам"
+  action_can_offer_prostitute_combined_label: "Предложить проститутку для [recipient.GetShortUIName|E]"
+  action_can_offer_prostitute_label: "Предложить проститутку для [recipient.GetShortUIName|E]"
+  action_can_offer_prostitute: "Предложить проститутку"
+  action_can_offer_prostitute_desc: "Предложить [recipient.GetShortUIName] сексуальные услуги"
+  action_can_offer_prostitute_click: ""

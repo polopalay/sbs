@@ -1,0 +1,47 @@
+﻿l_french:
+  carn_enslave_interaction: "Asservir"
+  carn_enslave_interaction.desc: "Transformer [recipient.GetShortUINameNoTooltip] en votre esclave"
+  carn_wants_to_be_your_slave: "Veut que vous soyez leur Maître : $VALUE|=+0$"
+  carn_enslave_recipient_is_noble: "[recipient.GetShortUIName|U] est un [noble|E] : $VALUE|=+0$"
+  carn_enslave_you_have_no_reason: "Vous n'avez pas de [execute_reason|E] : $VALUE|=+0$"
+
+  carn_buy_slave_on_market_interaction: "Acheter un Esclave"
+  carn_buy_slave_on_market_interaction_desc: "Acheter un esclave pour [gold|E]"
+  recipient_secondary_carn_buy_slave_on_market_interaction: "Esclave"
+
+  carn_sell_slave_interaction: "Vendre un Esclave"
+  carn_sell_slave_interaction.desc: "Vendre [recipient.GetShortUINameNoTooltip] sur le marché des esclaves pour #high [gold_i]#!"
+  recipient_secondary_carn_sell_slave_interaction: "Acheteur"
+  carn_buyer_not_enough_gold_for_slave_price_tooltip: "Paie #high [gold_i]#!"
+  carn_secondary_recipient_is_my_knight_reason: "[secondary_recipient.GetShortUIName|U] est mon [recipient.Custom('KnightCulture')] : $VALUE|=+0$"
+  carn_secondary_recipient_is_my_councillor_reason: "[secondary_recipient.GetShortUIName|U] est mon [councillor|E] : $VALUE|=+0$"
+  carn_secondary_recipient_is_my_friend_reason: "[secondary_recipient.GetShortUIName|U] est mon [friend|E] : $VALUE|=+0$"
+  carn_secondary_recipient_is_my_lover_reason: "[secondary_recipient.GetShortUIName|U] est mon [lover|E] : $VALUE|=+0$"
+  carn_secondary_recipient_is_my_crush_reason: "[secondary_recipient.GetShortUIName|U] est mon [crush|E] : $VALUE|=+0$"
+  carn_secondary_recipient_is_my_soulmate_reason: "[secondary_recipient.GetShortUIName|U] est mon [soulmate|E] : $VALUE|=+0$"
+
+  carn_free_slave_interaction: "Libérer un Esclave"
+  carn_free_slave_interaction.desc: "Libérer [recipient.GetShortUINameNoTooltip] de l'esclavage"
+
+  carnia_slave_training_interaction: "Entraîner"
+  carnia_slave_training_interaction.desc: "Entraîner [recipient.GetShortUINameNoTooltip] pour être un esclave docile"
+  have_sex: "Avoir des relations sexuelles"
+  extort_gold: "Extorquer de l'Or"
+  forced_labor: "Travail Forcé"
+
+  carnia_prostitute_interaction: "Prostitution"
+  carnia_prostitute_interaction.desc: "Demander à [recipient.GetShortUIName] de fournir des services sexuels"
+  use_contraception: "Utiliser une Contraception"
+  cant_have_sex_without_contraception: "Impossible d'avoir des relations sexuelles sans utiliser de contraception : $VALUE|=+0$"
+  can_have_sex_without_contraception: "Les relations sexuelles nécessitent des résultats : $VALUE|=+0$"
+  NOT_IS_IMMORTAL_TRIGGER: "N'est pas immortel"
+
+  carnia_offer_carnia_prostitute_interaction: "Offrir des Services de Prostitution"
+  carnia_offer_carnia_prostitute_interaction.desc: "Offrir les services sexuels de [recipient.GetShortUIName]"
+  recipient_secondary_carnia_offer_carnia_prostitute_interaction: "Choisissez-en un"
+
+  carn_force_start_prostitution_interaction: "Commencer la Prostitution"
+  carn_force_start_prostitution_interaction.desc: "Forcer [recipient.GetShortUINameNoTooltip] à gagner [gold|E] pour vous en tant que prostituée"
+
+  carn_force_stop_prostitution_interaction: "Arrêter la Prostitution"
+  carn_force_stop_prostitution_interaction.desc: "Arrêter de forcer [recipient.GetShortUINameNoTooltip] à gagner [gold|E] pour vous en tant que prostituée"

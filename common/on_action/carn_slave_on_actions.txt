@@ -1,0 +1,45 @@
+on_death_relation_slave = { # fired for the slaveowner when they die
+	effect = {
+		# inheritance of slaves
+		if = {
+			limit = { exists = primary_heir }
+			primary_heir = {
+				set_relation_slave = scope:target
+				scope:target = {
+					set_relation_slave_owner = prev
+				}
+				add_courtier = scope:target
+			}
+		}
+	}
+}
+
+on_title_gain = {
+	events = {
+		carn_slave.0002
+	}
+}
+
+on_birth_child = {
+	events = {
+		carn_slave.0003
+	}
+}
+
+on_join_court = {
+	events = {
+	`	carn_slave.0004
+	}
+}
+
+on_leave_court = {
+	events = {
+		carn_slave.0004
+	}
+}
+
+on_title_lost = {
+	events = {
+		carn_slave.0005
+	}
+}

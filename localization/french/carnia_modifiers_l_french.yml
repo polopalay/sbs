@@ -1,0 +1,27 @@
+﻿l_french:
+ carn_wants_to_be_your_slave_opinion: "Désire un Maître"
+ carn_enslaved_me_opinion: "M'a asservi(e)"
+ carn_enslaved_close_family_opinion: "A asservi un membre de ma famille proche"
+ carn_enslaved_close_relation_opinion: "A asservi un(e) ami(e)"
+ carn_freed_me_from_slavery_opinion: "M'a libéré(e)"
+ free_slave_close_family_opinion: "A libéré un membre de ma famille proche"
+ free_slave_friend_opinion: "A libéré un(e) ami(e)"
+
+ carn_working_as_prostitute_1_modifier: "Travaille comme $trait_lifestyle_prostitute$"
+ carn_working_as_prostitute_1_modifier_desc: "Ce personnage vend sans honte son corps à quiconque a de l'argent."
+ carn_working_as_prostitute_2_modifier: "Travaille comme $trait_lifestyle_prostitute$"
+ carn_working_as_prostitute_2_modifier_desc: "Ce personnage est un(e) prostitué(e) influent(e) patronné(e) par de nombreux clients."
+ carn_working_as_prostitute_3_modifier: "Travaille comme $trait_lifestyle_prostitute$"
+ carn_working_as_prostitute_3_modifier_desc: "Ce personnage reçoit des visites nocturnes de la noblesse et de la royauté."
+
+ carn_prostitution_crime_opinion: "[GetTrait('prostitute').GetName( GetNullCharacter )] connu(e)"
+ prostitute_shunned_opinion: "[GetTrait('prostitute').GetName( GetNullCharacter )] connu(e)"
+
+ recently_had_sex: "A eu des Relations Sexuelles Récemment"
+ recently_had_sex_desc: "Ce personnage a eu des relations sexuelles récemment et n'a pas pu continuer depuis un moment."
+ forced_labor: "Travail Forcé"
+ forced_labor_desc: "Ce personnage est forcé de travailler contre sa volonté."
+ extortion_opinion: "M'a extorqué"
+ extortion_opinion_desc: "Ce personnage m'a extorqué."
+
+ have_sex_opinion: "Fais l'amour avec moi"

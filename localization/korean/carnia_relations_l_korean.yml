@@ -1,0 +1,8 @@
+﻿l_korean:
+  slave: "[slave|E]"
+  relation_slave: "노예"
+  relation_slave_possessive: "노예의"
+
+  slave_owner: "[slave_owner|E]"
+  relation_slave_owner: "주인"
+  relation_slave_owner_possessive: "주인의"

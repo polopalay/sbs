@@ -1,0 +1,8 @@
+﻿l_english:
+ slave: "[slave|El]"
+ relation_slave: "slave"
+ relation_slave_possessive: "slave's"
+
+ slave_owner: "Slave Owner"
+ relation_slave_owner: "owner"
+ relation_slave_owner_possessive: "owner's"
