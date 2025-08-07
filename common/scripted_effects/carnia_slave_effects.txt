@@ -38,7 +38,10 @@
 		}
 		every_concubine = { scope:new_slave = { remove_concubine = prev } }
 		every_relation = { type = guardian remove_relation_ward = prev }
+		add_piety_level = -6
 		add_prestige_level = -6
+		add_legitimacy = -1000
+		change_influence_level = -6
 		if = {
 			limit = { is_imprisoned_by = scope:new_owner }
 			release_from_prison = yes
@@ -86,11 +89,11 @@
 				limit = { NOT = { this = scope:new_owner is_spouse_of = scope:new_slave is_close_family_of = scope:new_slave has_relation_friend = scope:new_slave } faith = { NOT = { has_doctrine_parameter = same_slavery_accepted } faith_hostility_level = { target = scope:slave.faith value < faith_hostile_level } } }
 				add_opinion = { target = scope:new_owner modifier = carn_enslaved_close_relation_opinion }
 			}
-			every_relation = {
-				type = slave_owner
-				remove_relation_slave = scope:slave
-				scope:slave = { remove_relation_slave_owner = prev }
-			}
+		}
+		every_relation = {
+			type = slave_owner
+			remove_relation_slave = scope:slave
+			scope:slave = { remove_relation_slave_owner = prev }
 		}
 	}
 

@@ -742,25 +742,6 @@ sbs_ntr_event.0232 = {
 			add_trait = immortal
 			set_immortal_age = 18
 		}
-		scope:ntr_character = {
-			primary_spouse = {
-				mind_break_personality = yes
-				hidden_effect = {
-					remove_trait = sbs_succubus
-					remove_trait = sbs_demon
-					remove_trait = immortal
-					add_trait = sbs_lesser_succubus
-					set_immortal_age = 18
-					if = {
-						limit = { is_ruler = no }
-						create_landless_adventurer_title_effect = {
-							REASON = flag:voluntary
-							FLAVOR_CHAR = this
-						}
-					}
-				}
-			}
-		}
 		every_held_title = {
 			create_title_and_vassal_change = {
 				type = usurped
@@ -774,10 +755,18 @@ sbs_ntr_event.0232 = {
 			}
 			resolve_title_and_vassal_change = scope:change
 		}
+		add_trait = murderer
+		add_trait = adulterer
 		add_trait = disinherited
 		add_trait = denounced
 		add_trait = decadent
-		carn_enslave_effect = { SLAVE = root OWNER = scope:ntr_character DRAMA = yes }
+		add_trait = excommunicated
+		remove_character_modifier = matilda_of_canossa_modifier
+		add_piety_level = -6
+		add_prestige_level = -6
+		add_legitimacy = -1000
+		change_influence_level = -6
+		carn_enslave_effect = { SLAVE = root OWNER = scope:ntr_character DRAMA = no }
 	}
 	option = {
 		trigger = {
@@ -797,13 +786,6 @@ sbs_ntr_event.0232 = {
 			PREGNANCY_CHANCE = pregnancy_chance
 		}
 		mind_break_personality = yes
-		hidden_effect = {
-			remove_trait = sbs_succubus
-			remove_trait = sbs_demon
-			remove_trait = immortal
-			add_trait = sbs_lesser_succubus
-			set_immortal_age = 18
-		}
 		random_held_title = {
 			limit = { tier = tier_county }
 			save_scope_as = title
