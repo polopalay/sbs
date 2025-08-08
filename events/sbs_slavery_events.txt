@@ -48,7 +48,7 @@ sbs_slavery_event.0000 = {
 			0 = {
 				trigger_event = sbs_slavery_event.0300
 				modifier = {
-					scope:owner = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+					scope:owner = { any_courtier = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no } }
 					add = 5
 				}
 			}
@@ -213,7 +213,7 @@ sbs_slavery_event.0000 = {
 				}
 				trigger_event = sbs_slavery_event.6800
 			}
-			50 = 0
+			25 = 0
 		}
 	}
 }
@@ -1119,7 +1119,7 @@ sbs_slavery_event.0200 = {
 		}
 	}
 	option = {
-		ai_chance = { base = 40 }
+		ai_chance = { base = 10 }
 		name = sbs_slavery_event.0200.b
 		custom_tooltip = sbs_slavery_event.0200.b.tt
 		if = {
@@ -1162,7 +1162,7 @@ sbs_slavery_event.0300 = {
 		scope:owner = {
 			if = {
 				limit = { has_trait = sbs_seed_of_destruction }
-				add_trait_xp = { trait = sbs_seed_of_destruction value = 2 }
+				add_trait_xp = { trait = sbs_seed_of_destruction value = 5 }
 			}
 		}
 		if = {
@@ -1249,7 +1249,7 @@ sbs_slavery_event.0310 = {
 		scope:owner = {
 			if = {
 				limit = { has_trait = sbs_seed_of_destruction }
-				add_trait_xp = { trait = sbs_seed_of_destruction value = 1 }
+				add_trait_xp = { trait = sbs_seed_of_destruction value = 5 }
 			}
 		}
 		duel = {
@@ -1610,7 +1610,7 @@ sbs_slavery_event.0360 = {
 		scope:owner = {
 			if = {
 				limit = { has_trait = sbs_seed_of_destruction }
-				add_trait_xp = { trait = sbs_seed_of_destruction value = 1 }
+				add_trait_xp = { trait = sbs_seed_of_destruction value = 5 }
 			}
 		}
 		duel = {
@@ -1767,7 +1767,7 @@ sbs_slavery_event.0500 = {
 		scope:owner = {
 			if = {
 				limit = { has_trait = sbs_seed_of_destruction }
-				add_trait_xp = { trait = sbs_seed_of_destruction value = 2 }
+				add_trait_xp = { trait = sbs_seed_of_destruction value = 5 }
 			}
 		}
 		random_secret = {
@@ -1987,7 +1987,7 @@ sbs_slavery_event.0900 = {
 		scope:owner = {
 			if = {
 				limit = { has_trait = sbs_seed_of_destruction }
-				add_trait_xp = { trait = sbs_seed_of_destruction value = 1 }
+				add_trait_xp = { trait = sbs_seed_of_destruction value = 5 }
 			}
 		}
 		if = {
@@ -2316,7 +2316,7 @@ sbs_slavery_event.4000 = {
 		ai_chance = { base = 20 }
 		name = sbs_slavery_event.4000.a
 		custom_tooltip = sbs_slavery_event.4000.a.tt
-		add_stress = minor_stress_loss
+		add_stress = monumental_stress_loss
 		add_piety_level = -6
 		add_prestige_level = -6
 		add_legitimacy = -1000
@@ -2326,11 +2326,16 @@ sbs_slavery_event.4000 = {
 		ai_chance = { base = 20 }
 		name = sbs_slavery_event.4000.b
 		custom_tooltip = sbs_slavery_event.4000.b.tt
+		add_stress = monumental_stress_gain
 		if = {
 			limit = { has_trait = immortal }
 			remove_trait = immortal
 			add_trait = sbs_lesser_succubus
 			set_immortal_age = 18
+		}
+		if = {
+			limit = { has_character_modifier = succubus_seal }
+			remove_character_modifier = succubus_seal
 		}
 		root = { save_scope_as = slave }
 		carn_free_slave_effect = yes
@@ -2363,7 +2368,7 @@ sbs_slavery_event.5000 = {
 		scope:owner = {
 			if = {
 				limit = { has_trait = sbs_seed_of_destruction }
-				add_trait_xp = { trait = sbs_seed_of_destruction value = 1 }
+				add_trait_xp = { trait = sbs_seed_of_destruction value = 5 }
 			}
 		}
 		add_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
@@ -2419,7 +2424,7 @@ sbs_slavery_event.5100 = {
 		scope:owner = {
 			if = {
 				limit = { has_trait = sbs_seed_of_destruction }
-				add_trait_xp = { trait = sbs_seed_of_destruction value = -1 }
+				add_trait_xp = { trait = sbs_seed_of_destruction value = -2 }
 			}
 		}
 		remove_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
@@ -2506,7 +2511,7 @@ sbs_slavery_event.6000 = {
 		scope:owner = {
 			if = {
 				limit = { has_trait = sbs_seed_of_destruction }
-				add_trait_xp = { trait = sbs_seed_of_destruction value = 2 }
+				add_trait_xp = { trait = sbs_seed_of_destruction value = 5 }
 			}
 			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 			every_courtier = {
@@ -2692,7 +2697,7 @@ sbs_slavery_event.6200 = {
 		scope:owner = {
 			if = {
 				limit = { has_trait = sbs_seed_of_destruction }
-				add_trait_xp = { trait = sbs_seed_of_destruction value = 1 }
+				add_trait_xp = { trait = sbs_seed_of_destruction value = 5 }
 			}
 		}
 		if = {
@@ -2766,7 +2771,7 @@ sbs_slavery_event.6300 = {
 		scope:owner = {
 			if = {
 				limit = { has_trait = sbs_seed_of_destruction }
-				add_trait_xp = { trait = sbs_seed_of_destruction value = 2 }
+				add_trait_xp = { trait = sbs_seed_of_destruction value = 5 }
 			}
 		}
 		remove_trait = comfort_eater

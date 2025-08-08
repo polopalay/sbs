@@ -1,5 +1,3 @@
-sbs_number_slaves_need_for_become_demon = 13
-
 succubus_cost_value = {
 	value = 0
 	if = {

@@ -1,3 +1,13 @@
+pureblood_demon = {
+	icon = souls_positive
+	character_travel_speed = 666
+	character_travel_safety = 666
+	hostile_scheme_phase_duration_add = -666
+	enemy_hostile_scheme_phase_duration_add = 666
+	enemy_personal_scheme_success_chance_add = -666
+	stress_gain_mult = -13
+	stress_loss_mult = 13
+}
 succubus_buff = {
 	icon = souls_positive
 	diplomacy = 1
@@ -22,6 +32,19 @@ succubus_debuff = {
 	icon = souls_negative
 	health = -1
 	stacking = yes
+}
+
+succubus_seal = {
+	icon = souls_negative
+	diplomacy = -100
+	martial = -100
+	stewardship = -100
+	intrigue = -100
+	learning = -100
+	prowess = -100
+	hostile_scheme_phase_duration_add = -666
+	enemy_hostile_scheme_phase_duration_add = 666
+	enemy_personal_scheme_success_chance_add = -666
 }
 
 succubus_generals = {

@@ -21,11 +21,25 @@ prostitute_clothes = {
 					has_character_modifier = carn_working_as_prostitute_2_modifier
 					has_character_modifier = carn_working_as_prostitute_3_modifier
 				}
-				NOR = {
-					has_trait = sbs_succubus
-					has_trait = sbs_lesser_succubus
-					has_trait = sbs_demon
-				}
+				is_immortal = no
+			}
+		}
+	}
+	prostitute1 = {
+		dna_modifiers = {
+			morph = {
+				mode = add
+				gene = succubus_womb
+				value = 1
+				template = womb_13
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				is_female = yes
+				has_character_modifier = succubus_seal
 			}
 		}
 	}

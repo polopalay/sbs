@@ -132,6 +132,9 @@ sbs_seed_of_destruction_on_action = {
 		liege = { is_adult = yes }
 		OR = {
 			is_ai = no
+			is_immortal = yes
+			root = character:7757
+			root = character:223522
 			liege = { has_trait = sbs_seed_of_destruction }
 			liege = { has_trait = sbs_demon }
 		}

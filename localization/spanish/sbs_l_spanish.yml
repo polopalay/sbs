@@ -49,6 +49,10 @@
   succubus_buff_desc: "Esta persona ha sido bendecida por el Súcubo."
   succubus_debuff: "Maldición del Diablo"
   succubus_debuff_desc: "Esta persona ha sido maldecida por el Súcubo."
+  succubus_seal: "Sello del Diablo"
+  succubus_seal_desc: "Esta persona ha sido sellada por el Diablo."
+  pureblood_demon: "Demonio de Sangre Pura"
+  pureblood_demon_desc: "Un demonio con poder puro, nacido de la esencia del diablo."
 
   succubus_generals: "General Demonio"
   succubus_generals_desc: "Los guerreros demoníacos son convocados para servir a la amante del diablo."

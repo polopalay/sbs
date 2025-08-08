@@ -660,6 +660,7 @@ sbs_ntr_event.0231 = {
 		custom_tooltip = sbs_ntr_event.0231.a.tt
 		hidden_effect = {
 			scope:ntr_character = {
+				add_character_modifier = { modifier = succubus_generals years = 100 }
 				add_trait = sbs_seed_of_destruction
 				set_immortal_age = 45
 			}
@@ -741,6 +742,10 @@ sbs_ntr_event.0232 = {
 			remove_trait = sbs_demon
 			add_trait = immortal
 			set_immortal_age = 18
+			add_character_modifier = succubus_seal
+
+			refund_all_perks = yes
+			remove_all_perk_lifestyle_traits_effect = yes
 		}
 		every_held_title = {
 			create_title_and_vassal_change = {
@@ -759,7 +764,6 @@ sbs_ntr_event.0232 = {
 		add_trait = adulterer
 		add_trait = disinherited
 		add_trait = denounced
-		add_trait = decadent
 		add_trait = excommunicated
 		remove_character_modifier = matilda_of_canossa_modifier
 		carn_enslave_effect = { SLAVE = root OWNER = scope:ntr_character DRAMA = no }

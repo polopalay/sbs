@@ -28,9 +28,7 @@ become_demon = {
 			AND = {
 				has_trait = sbs_seed_of_destruction
 				has_trait_xp = { trait = sbs_seed_of_destruction value >= 100 }
-				primary_title.tier >= tier_kingdom
-				any_courtier = { has_trait = slave is_ai = yes count >= sbs_number_slaves_need_for_become_demon is_immortal = no is_adult = yes }
-				any_courtier = { has_trait = slave is_female = yes is_immortal = yes }
+				primary_title.tier >= tier_empire
 			}
 			AND = {
 				faith.religion = religion:demonic_religion
@@ -171,13 +169,6 @@ become_demon = {
 		scope:demon_child = {
 			if = {
 				limit = { has_trait = sbs_seed_of_destruction }
-				every_courtier = {
-					limit = { is_ai = yes has_trait = slave is_immortal = no is_adult = yes }
-					death = {
-						death_reason = death_execution
-						killer = root
-					}
-				}
 				remove_trait = sbs_seed_of_destruction
 				every_relation = {
 					type = slave

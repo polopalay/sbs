@@ -48,6 +48,10 @@
   succubus_buff_desc: "이 사람은 서큐버스의 축복을 받았습니다."
   succubus_debuff: "악마의 저주"
   succubus_debuff_desc: "이 사람은 서큐버스의 저주를 받았습니다."
+  succubus_seal: "악마의 봉인"
+  succubus_seal_desc: "이 사람은 악마에 의해 봉인되었습니다."
+  pureblood_demon: "순혈 악마"
+  pureblood_demon_desc: "악마의 본질에서 태어난 순수한 힘을 지닌 악마입니다."
 
   nature_is_alive: "벨제부브가 살아있습니다"
   nature_isn_seal: "벨제부브가 아직 봉인되지 않았습니다"
