@@ -16,7 +16,7 @@ sbs_slavery_event.0000 = {
 	immediate = {
 		liege = { save_scope_as = owner }
 		random_list = {
-			50 = {
+			20 = {
 				trigger_event = sbs_slavery_event.0100
 			}
 			5 = {
@@ -57,20 +57,16 @@ sbs_slavery_event.0000 = {
 					scope:owner.liege = { is_adult = yes is_attracted_to_gender_of = root }
 					NOT = { scope:owner.liege = scope:owner }
 					root = { is_immortal = yes }
-					add = 5
+					add = 1
 				}
 				trigger_event = sbs_slavery_event.0400
-			}
-			0 = {
-				modifier = { scope:owner = { is_landed = yes } add = 5 }
-				trigger_event = sbs_slavery_event.0800
 			}
 			0 = {
 				modifier = { any_secret = { secret_type = secret_prostitute } add = 20 }
 				trigger_event = sbs_slavery_event.0500
 			}
 			1 = {
-				modifier = { has_trait = ambitious add = 4 }
+				modifier = { has_trait = ambitious add = 20 }
 				trigger_event = sbs_slavery_event.0600
 			}
 			0 = {
@@ -89,7 +85,7 @@ sbs_slavery_event.0000 = {
 						any_relation = { type = rival is_adult = yes }
 						any_relation = { type = nemesis is_adult = yes }
 					}
-					add = 200
+					add = 400
 				}
 				trigger_event = sbs_slavery_event.0900
 			}
@@ -106,7 +102,7 @@ sbs_slavery_event.0000 = {
 			0 = {
 				modifier = {
 					should_be_naked_trigger = no
-					add = 2
+					add = 5
 				}
 				trigger_event = sbs_slavery_event.5000
 			}
@@ -120,21 +116,21 @@ sbs_slavery_event.0000 = {
 			0 = {
 				modifier = {
 					scope:owner = { any_prisoner = { NOT = { this = root } is_adult = yes is_attracted_to_gender_of = root } }
-					add = 5
+					add = 20
 				}
 				trigger_event = sbs_slavery_event.5200
 			}
 			0 = {
 				modifier = {
 					scope:owner = { any_courtier = { NOT = { this = root } is_adult = yes is_female = no has_trait = slave } }
-					add = 5
+					add = 20
 				}
 				trigger_event = sbs_slavery_event.5300
 			}
 			0 = {
 				modifier = {
 					has_trait = drunkard
-					add = 200
+					add = 500
 				}
 				trigger_event = sbs_slavery_event.6000
 			}
@@ -144,7 +140,7 @@ sbs_slavery_event.0000 = {
 						scheme_type = murder 
 						scheme_target_character = scope:owner
 					}
-					add = 200
+					add = 500
 				}
 				trigger_event = sbs_slavery_event.6100
 			}
@@ -155,7 +151,7 @@ sbs_slavery_event.0000 = {
 						has_trait = inappetetic
 						current_weight < -30
 					}
-					add = 200
+					add = 500
 				}
 				trigger_event = sbs_slavery_event.6200
 			}
@@ -165,7 +161,7 @@ sbs_slavery_event.0000 = {
 						has_trait = comfort_eater
 						current_weight > 30
 					}
-					add = 200
+					add = 500
 				}
 				trigger_event = sbs_slavery_event.6300
 			}
@@ -173,20 +169,21 @@ sbs_slavery_event.0000 = {
 				modifier = {
 					any_child = { OR = { father = scope:owner real_father = scope:owner } has_trait = slave has_relation_slave_owner = scope:owner }
 					scope:owner = { any_courtier = { is_adult = yes NOT = { this = root is_child_of = root } is_attracted_to_gender_of = root } }
-					add = 5
+					add = 1
 				}
 				trigger_event = sbs_slavery_event.6400
 			}
 			0 = {
 				modifier = {
 					NOT = { has_character_modifier = forced_labor }
-					add = 20
+					add = 2
 				}
 				trigger_event = sbs_slavery_event.6500
 			}
 			0 = {
 				modifier = {
 					has_character_modifier = forced_labor
+					is_pregnant = no
 					add = 20
 				}
 				trigger_event = sbs_slavery_event.6600
@@ -209,20 +206,14 @@ sbs_slavery_event.0000 = {
 							is_adult = yes
 							is_attracted_to_gender_of = root
 							NOT = { this = root }
-							NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox }
+							has_std_trigger = no
 						}
 					}
 					add = 20
 				}
 				trigger_event = sbs_slavery_event.6800
 			}
-			0 = {
-				modifier = {
-					has_character_modifier = forced_labor
-					add = 20
-				}
-				trigger_event = sbs_slavery_event.6900
-			}
+			50 = 0
 		}
 	}
 }
@@ -252,42 +243,40 @@ sbs_slavery_event.0100 = {
 				trigger_event = sbs_slavery_event.0110
 			}
 			5 = {
-				modifier = { scope:owner = { any_former_spouse = { this = root } } add = 1 }
 				trigger_event = sbs_slavery_event.0111
 			}
-			5 = { 
-				modifier = { is_immortal = yes scope:owner = { any_vassal = { is_adult = yes is_attracted_to_gender_of = root count = 0 } } add = -5 }
-				trigger_event = sbs_slavery_event.0112
-			}
-			5 = { 
-				modifier = { scope:owner = { any_courtier = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } count = 0 } } add = -5 }
+			0 = { 
+				modifier = { scope:owner = { any_courtier = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } } } add = 5 }
 				trigger_event = sbs_slavery_event.0113
 			}
 			0 = { 
-				modifier = { dynasty = { any_dynasty_member = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } is_vassal_or_below_of = scope:owner } } add = 5 }
+				modifier = { is_immortal = yes scope:owner = { any_vassal = { is_adult = yes is_attracted_to_gender_of = root } } add = 2 }
+				trigger_event = sbs_slavery_event.0112
+			}
+			0 = { 
+				modifier = { dynasty = { any_dynasty_member = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } is_vassal_or_below_of = scope:owner } } add = 1 }
 				trigger_event = sbs_slavery_event.0114
 			}
-			4 = {
-				modifier = { scope:owner = { any_former_spouse = { this = root } } add = 1 }
+			0 = {
+				modifier = { scope:owner = { OR = { any_former_spouse = { this = root } any_child = { any_former_spouse = { this = root } } } } add = 1 }
 				trigger_event = sbs_slavery_event.0115
 			}
 			0 = {
 				modifier = { father = { is_alive = no } scope:owner = { is_attracted_to_gender_of = root } add = 2 }
-				modifier = { has_trait = zealous father = { is_alive = no } scope:owner = { is_female = no is_adult = yes } add = 3 }
+				modifier = { has_trait = zealous father = { is_alive = no } scope:owner = { is_female = no is_adult = yes } add = 8 }
 				trigger_event = sbs_slavery_event.0116
 			}
 			0 = {
 				modifier = { is_immortal = yes add = 2 }
-				modifier = { is_immortal = yes has_trait = brave add = 3 }
+				modifier = { is_immortal = yes has_trait = brave add = 8 }
 				trigger_event = sbs_slavery_event.0117
 			}
 			0 = {
 				modifier = { NOT = { has_trait = pregnant } scope:owner = { is_female = no can_have_children = yes } add = 1 }
-				modifier = { scope:owner = { any_former_spouse = { this = root } } add = 4 }
 				trigger_event = sbs_slavery_event.0118
 			}
 			0 = {
-				modifier = { any_close_family_member = { is_alive = yes has_trait = slave is_adult = yes can_have_children = yes is_female = no NOT = { this = root } is_vassal_or_below_of = scope:owner } add = 2 }
+				modifier = { any_close_family_member = { is_alive = yes has_trait = slave is_adult = yes can_have_children = yes is_female = no NOT = { this = root } is_vassal_or_below_of = scope:owner } add = 1 }
 				trigger_event = sbs_slavery_event.0119
 			}
 		}
@@ -400,7 +389,7 @@ sbs_slavery_event.0112 = {
 		custom_tooltip = sbs_slavery_event.0112.a.tt
 		scope:owner = {
 			every_vassal = {
-				limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+				limit = { is_adult = yes is_attracted_to_gender_of = root has_std_trigger = no }
 				prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 				pay_short_term_gold = { target = scope:owner gold = root.prostitute_tips_value }
 			}
@@ -435,7 +424,7 @@ sbs_slavery_event.0113 = {
 		custom_tooltip = sbs_slavery_event.0113.a.tt
 		scope:owner = {
 			every_courtier = {
-				limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+				limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 				prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 				pay_short_term_gold = { target = scope:owner gold = root.prostitute_tips_value }
 			}
@@ -659,7 +648,7 @@ sbs_slavery_event.0120 = {
 		custom_tooltip = sbs_slavery_event.0120.a.tt
 		scope:owner = {
 			every_courtier = {
-				limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+				limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 				prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 				pay_short_term_gold = { target = scope:owner gold = root.prostitute_tips_value }
 			}
@@ -714,7 +703,7 @@ sbs_slavery_event.0121 = {
 				else = {
 					scope:owner = {
 						every_courtier = {
-							limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+							limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 							prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 						}
 					}
@@ -966,10 +955,8 @@ sbs_slavery_event.0200 = {
 				add = 200
 				OR = {
 					has_trait = leper
-					has_trait = lovers_pox
-					has_trait = early_great_pox
+					has_std_trigger = yes
 					has_trait = disfigured
-					has_trait = great_pox
 					has_trait = blind
 					has_trait = one_eyed
 					has_trait = eunuch_1
@@ -1049,7 +1036,12 @@ sbs_slavery_event.0200 = {
 			}
 			5 = {
 				modifier = { has_trait = lustful add = -5 }
-				mind_break_personality = yes
+				if = {
+					limit = { has_trait = chaste }
+					remove_trait = chaste
+					add_trait = lustful
+				}
+
 			}
 			1 = {
 				modifier = { has_trait = fecund add = -1 }
@@ -1136,7 +1128,7 @@ sbs_slavery_event.0200 = {
 		}
 		scope:owner = {
 			every_courtier = {
-				limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+				limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 				prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 			}
 		}
@@ -1179,7 +1171,7 @@ sbs_slavery_event.0300 = {
 			add_trait = diligent
 		}
 		every_courtier = {
-			limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+			limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 			pay_short_term_gold = { target = scope:owner gold = root.prostitute_tips_value }
 		}
@@ -1196,7 +1188,7 @@ sbs_slavery_event.0300 = {
 				custom_tooltip = { text = sbs_slavery_event.0300.bw.tt }
 				scope:owner = {
 					every_courtier = {
-						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 						prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 						pay_short_term_gold = { target = scope:owner gold = root.prostitute_tips_value }
 					}
@@ -1212,7 +1204,7 @@ sbs_slavery_event.0300 = {
 				custom_tooltip = { text = sbs_slavery_event.0300.bl.tt }
 				scope:owner = {
 					every_courtier = {
-						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 						prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 						pay_short_term_gold = { target = scope:owner gold = root.prostitute_tips_value }
 					}
@@ -1244,7 +1236,7 @@ sbs_slavery_event.0310 = {
 	immediate = {
 		scope:owner = {
 			random_courtier = {
-						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 				save_scope_as = owner2
 			}
 		}
@@ -1273,7 +1265,7 @@ sbs_slavery_event.0310 = {
 				custom_tooltip = { text = sbs_slavery_event.0300.bw.tt }
 				scope:owner = {
 					every_courtier = {
-						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 						prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 						pay_short_term_gold = { target = scope:owner gold = root.prostitute_tips_value }
 					}
@@ -1289,7 +1281,7 @@ sbs_slavery_event.0310 = {
 				custom_tooltip = { text = sbs_slavery_event.0300.bl.tt }
 				scope:owner = {
 					every_courtier = {
-						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 						prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 						pay_short_term_gold = { target = scope:owner gold = root.prostitute_tips_value }
 					}
@@ -1321,7 +1313,7 @@ sbs_slavery_event.0320 = {
 	immediate = {
 		scope:owner = {
 			random_courtier = {
-						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 				save_scope_as = owner2
 			}
 		}
@@ -1344,7 +1336,7 @@ sbs_slavery_event.0320 = {
 				custom_tooltip = { text = sbs_slavery_event.0300.bw.tt }
 				scope:owner = {
 					every_courtier = {
-						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 						prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 						pay_short_term_gold = { target = scope:owner gold = root.prostitute_tips_value }
 					}
@@ -1360,7 +1352,7 @@ sbs_slavery_event.0320 = {
 				custom_tooltip = { text = sbs_slavery_event.0300.bl.tt }
 				scope:owner = {
 					every_courtier = {
-						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 						prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 						pay_short_term_gold = { target = scope:owner gold = root.prostitute_tips_value }
 					}
@@ -1392,7 +1384,7 @@ sbs_slavery_event.0330 = {
 	immediate = {
 		scope:owner = {
 			random_courtier = {
-						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 				save_scope_as = owner2
 			}
 		}
@@ -1415,7 +1407,7 @@ sbs_slavery_event.0330 = {
 				custom_tooltip = { text = sbs_slavery_event.0300.bw.tt }
 				scope:owner = {
 					every_courtier = {
-						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 						prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 						pay_short_term_gold = { target = scope:owner gold = root.prostitute_tips_value }
 					}
@@ -1431,7 +1423,7 @@ sbs_slavery_event.0330 = {
 				custom_tooltip = { text = sbs_slavery_event.0300.bl.tt }
 				scope:owner = {
 					every_courtier = {
-						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 						prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 						pay_short_term_gold = { target = scope:owner gold = root.prostitute_tips_value }
 					}
@@ -1463,7 +1455,7 @@ sbs_slavery_event.0340 = {
 	immediate = {
 		scope:owner = {
 			random_courtier = {
-						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 				save_scope_as = owner2
 			}
 		}
@@ -1486,7 +1478,7 @@ sbs_slavery_event.0340 = {
 				custom_tooltip = { text = sbs_slavery_event.0300.bw.tt }
 				scope:owner = {
 					every_courtier = {
-						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 						prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 						pay_short_term_gold = { target = scope:owner gold = root.prostitute_tips_value }
 					}
@@ -1502,7 +1494,7 @@ sbs_slavery_event.0340 = {
 				custom_tooltip = { text = sbs_slavery_event.0300.bl.tt }
 				scope:owner = {
 					every_courtier = {
-						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 						prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 						pay_short_term_gold = { target = scope:owner gold = root.prostitute_tips_value }
 					}
@@ -1534,7 +1526,7 @@ sbs_slavery_event.0350 = {
 	immediate = {
 		scope:owner = {
 			random_courtier = {
-						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 				save_scope_as = owner2
 			}
 		}
@@ -1557,7 +1549,7 @@ sbs_slavery_event.0350 = {
 				custom_tooltip = { text = sbs_slavery_event.0300.bw.tt }
 				scope:owner = {
 					every_courtier = {
-						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 						prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 						pay_short_term_gold = { target = scope:owner gold = root.prostitute_tips_value }
 					}
@@ -1573,7 +1565,7 @@ sbs_slavery_event.0350 = {
 				custom_tooltip = { text = sbs_slavery_event.0300.bl.tt }
 				scope:owner = {
 					every_courtier = {
-						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 						prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 						pay_short_term_gold = { target = scope:owner gold = root.prostitute_tips_value }
 					}
@@ -1605,7 +1597,7 @@ sbs_slavery_event.0360 = {
 	immediate = {
 		scope:owner = {
 			random_courtier = {
-						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 				save_scope_as = owner2
 			}
 		}
@@ -1634,7 +1626,7 @@ sbs_slavery_event.0360 = {
 				custom_tooltip = { text = sbs_slavery_event.0300.bw.tt }
 				scope:owner = {
 					every_courtier = {
-						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 						prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 						pay_short_term_gold = { target = scope:owner gold = root.prostitute_tips_value }
 					}
@@ -1650,7 +1642,7 @@ sbs_slavery_event.0360 = {
 				custom_tooltip = { text = sbs_slavery_event.0300.bl.tt }
 				scope:owner = {
 					every_courtier = {
-						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 						prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 						pay_short_term_gold = { target = scope:owner gold = root.prostitute_tips_value }
 					}
@@ -1792,16 +1784,16 @@ sbs_slavery_event.0500 = {
 		scope:owner = {
 			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }	
 			every_courtier = {
-				limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+				limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 				prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 				pay_short_term_gold = { target = scope:owner gold = root.prostitute_tips_value }
 			}
 			every_vassal_or_below = {
-				limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+				limit = { is_adult = yes is_attracted_to_gender_of = root has_std_trigger = no }
 				prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 				pay_short_term_gold = { target = scope:owner gold = root.prostitute_tips_value }
 				every_courtier = {
-					limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+					limit = { is_adult = yes is_attracted_to_gender_of = root has_std_trigger = no }
 					prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 					pay_short_term_gold = { target = scope:owner gold = root.prostitute_tips_value }
 				}
@@ -1848,13 +1840,13 @@ sbs_slavery_event.0600 = {
 			if = {
 				limit = { is_landed = yes }
 				every_courtier = {
-					limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+					limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 					prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 				}
 				every_vassal_or_below = {
-					limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+					limit = { is_adult = yes is_attracted_to_gender_of = root has_std_trigger = no }
 					every_courtier = {
-						limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+						limit = { is_adult = yes is_attracted_to_gender_of = root has_std_trigger = no }
 						prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 					}
 				}
@@ -1866,7 +1858,7 @@ sbs_slavery_event.0600 = {
 						is_attracted_to_gender_of = root
 						in_diplomatic_range = scope:owner
 						NOT = { this = root }
-						NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox }
+						has_std_trigger = no
 					}
 					prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 				}
@@ -1950,7 +1942,7 @@ sbs_slavery_event.0800 = {
 		custom_tooltip = sbs_slavery_event.0800.a.tt
 		scope:owner2 = {
 			every_courtier = {
-				limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+				limit = { is_adult = yes is_attracted_to_gender_of = root has_std_trigger = no }
 				prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 			}
 		}
@@ -2141,7 +2133,7 @@ sbs_slavery_event.2200 = {
 		scope:owner = {
 			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 			every_courtier = {
-				limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+				limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 				prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 			}
 		}
@@ -2272,7 +2264,7 @@ sbs_slavery_event.3000 = {
 				add_trait_xp = { trait = sbs_seed_of_destruction value = 5 }
 			}
 			every_courtier = {
-				limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+				limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 				prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 			}
 		}
@@ -2299,7 +2291,7 @@ sbs_slavery_event.3000 = {
 		add_stress = minor_stress_gain
 		scope:owner = {
 			every_courtier = {
-				limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+				limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 				prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 			}
 		}
@@ -2337,7 +2329,6 @@ sbs_slavery_event.4000 = {
 		if = {
 			limit = { has_trait = immortal }
 			remove_trait = immortal
-			mind_break_personality = yes
 			add_trait = sbs_lesser_succubus
 			set_immortal_age = 18
 		}
@@ -2578,7 +2569,7 @@ sbs_slavery_event.6100 = {
 		}
 		scope:owner = {
 			every_courtier = {
-				limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+				limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 				prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 			}
 		}
@@ -2662,7 +2653,7 @@ sbs_slavery_event.6110 = {
 		custom_tooltip = sbs_slavery_event.6110.b.tt
 		scope:owner = {
 			every_courtier = {
-				limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+				limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 				prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 			}
 		}
@@ -2744,7 +2735,7 @@ sbs_slavery_event.6210 = {
 			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 			root = { change_current_weight = 5 }
 			every_courtier = {
-				limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+				limit = { is_adult = yes is_attracted_to_gender_of = root has_std_trigger = no }
 				prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 				root = { change_current_weight = 5 }
 			}
@@ -2812,7 +2803,7 @@ sbs_slavery_event.6310 = {
 		scope:owner = {
 			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 			random_courtier = {
-				limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+				limit = { is_adult = yes is_attracted_to_gender_of = root has_std_trigger = no }
 				prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 			}
 		}
@@ -2980,7 +2971,7 @@ sbs_slavery_event.6511 = {
 				is_attracted_to_gender_of = root
 				in_diplomatic_range = scope:owner
 				NOT = { this = root }
-				NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox }
+				has_std_trigger = no
 			}
 			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 		}
@@ -3117,7 +3108,7 @@ sbs_slavery_event.6800 = {
 	immediate = {
 		scope:owner = {
 			random_courtier = {
-				limit = { has_trait = slave is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+				limit = { has_trait = slave is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
 				save_scope_as = owner2
 			}
 		}
@@ -3190,22 +3181,5 @@ sbs_slavery_event.6820 = {
 		scope:owner2 = {
 			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 }
 		}
-	}
-}
-
-sbs_slavery_event.6900 = {
-	type = character_event
-	title = sbs_slavery_event.6900.t
-	desc = sbs_slavery_event.6900.desc
-	theme = secret
-	override_background = { reference = dungeon }
-	left_portrait = {
-		character = root
-		animation = thinking
-	}
-	option = {
-		name = sbs_slavery_event.6900.a
-		title = sbs_slavery_event.6900.a.tt
-		add_character_modifier = { modifier = stanky_modifier months = 1 }
 	}
 }

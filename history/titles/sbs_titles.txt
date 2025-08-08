@@ -5,7 +5,7 @@
 	}
 }
 
-k_abandon = {
+k_violence = {
 	6.1.3 = {
 		holder = violence_character
 		government = theocracy_government

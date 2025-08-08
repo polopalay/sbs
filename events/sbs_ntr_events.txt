@@ -762,10 +762,6 @@ sbs_ntr_event.0232 = {
 		add_trait = decadent
 		add_trait = excommunicated
 		remove_character_modifier = matilda_of_canossa_modifier
-		add_piety_level = -6
-		add_prestige_level = -6
-		add_legitimacy = -1000
-		change_influence_level = -6
 		carn_enslave_effect = { SLAVE = root OWNER = scope:ntr_character DRAMA = no }
 	}
 	option = {
@@ -785,7 +781,6 @@ sbs_ntr_event.0232 = {
 			CHARACTER = scope:ntr_character
 			PREGNANCY_CHANCE = pregnancy_chance
 		}
-		mind_break_personality = yes
 		random_held_title = {
 			limit = { tier = tier_county }
 			save_scope_as = title

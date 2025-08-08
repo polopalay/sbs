@@ -4,7 +4,7 @@
 }
 
 777777 = {
-	name = "k_abandon"
+	name = "k_violence"
 	culture = "macedonian"
 }
 

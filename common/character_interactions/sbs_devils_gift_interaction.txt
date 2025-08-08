@@ -87,7 +87,6 @@ sbs_devils_gift_interaction = {
 						scope:recipient.dynasty = { any_dynasty_member = { is_alive = yes is_immortal = yes count > 3 } }
 						add = -100
 					}
-					mind_break_personality = yes
 					if = {
 						limit = {
 							NOR = { has_trait = deviant any_secret = { secret_type = secret_deviant } }

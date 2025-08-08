@@ -86,7 +86,7 @@ sbs_succubus = {
 		}
 	}
 
-	opposites = { sbs_demon sbs_lesser_succubus sbs_seed_of_destruction chaste incapable }
+	opposites = { sbs_demon sbs_lesser_succubus sbs_seed_of_destruction incapable }
 
 	fertility = -0.5
 	general_opinion = 5
@@ -214,7 +214,7 @@ sbs_lesser_succubus = {
 	ai_greed = dominant_positive_ai_value
 	ai_zeal = dominant_negative_ai_value
 
-	opposites = { sbs_demon sbs_succubus sbs_seed_of_destruction chaste incapable }
+	opposites = { sbs_demon sbs_succubus sbs_seed_of_destruction incapable }
 
 	name = trait_lesser_succubus_neutral
 

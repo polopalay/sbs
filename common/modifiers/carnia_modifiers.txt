@@ -5,6 +5,7 @@ carn_working_as_prostitute_1_modifier = {
 	monthly_prestige = -0.5
 	dread_loss_mult = 1.0
 }
+
 carn_working_as_prostitute_2_modifier = {
 	icon = prostitute_positive
 	spouse_opinion = -20
@@ -20,7 +21,6 @@ carn_working_as_prostitute_3_modifier = {
 	monthly_prestige = -0.1
 }
 
-
 recently_had_sex = {
 	icon = prostitute_negative
 	health = -0.25
@@ -28,6 +28,5 @@ recently_had_sex = {
 
 forced_labor = {
 	icon = slave_negative
-	monthly_income = 0.2
 	health = -0.5
 }

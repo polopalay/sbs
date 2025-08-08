@@ -118,7 +118,7 @@ become_demon = {
 					}
 				}
 				random_held_title = {
-					limit = { this = title:k_abandon }
+					limit = { this = title:k_violence }
 					create_title_and_vassal_change = {
 						type = usurped
 						save_scope_as = change

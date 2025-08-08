@@ -428,7 +428,6 @@
 			scope:recipient = {
 				is_adult = yes
 				OR = {
-					NOT = { has_trait = lustful }
 					NOR = {
 						has_trait = deviant
 						any_secret = { secret_type = secret_deviant }
@@ -767,10 +766,6 @@
 			}
 			if = {
 				limit = { scope:small_price = yes }
-				if = {
-					limit = { NOT = { has_trait = lustful } }
-					mind_break_personality = yes
-				}
 				if = {
 					limit = { NOR = { has_trait = deviant any_secret = { secret_type = secret_deviant } } }
 					if = {

@@ -45,7 +45,7 @@ k_pleasure = {
 	de_jure_drift_disabled = yes
 }
 
-k_abandon = {
+k_violence = {
 	color = { 139 0 64 }
 	definite_form = yes
 	ruler_uses_title_name = no
