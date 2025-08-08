@@ -704,7 +704,7 @@ sbs_ntr_event.0232 = {
 		outfit_tags = { no_clothes }
 	}
 	option = {
-		ai_chance = { base = 60 }
+		ai_chance = { base = 99 }
 		name = sbs_ntr_event.0232.a
 		custom_tooltip = sbs_ntr_event.0232.a.tt
 		had_sex_with_effect = {
@@ -776,8 +776,7 @@ sbs_ntr_event.0232 = {
 			}
 		}
 		ai_chance = {
-			base = 20
-			modifier = { has_trait = ambitious add = 80 }
+			base = 0
 		}
 		name = sbs_ntr_event.0232.c
 		custom_tooltip = sbs_ntr_event.0232.c.tt
@@ -826,7 +825,7 @@ sbs_ntr_event.0232 = {
 		}
 	}
 	option = {
-		ai_chance = { base = 20 }
+		ai_chance = { base = 1 }
 		name = sbs_ntr_event.0232.d
 		custom_tooltip = sbs_ntr_event.0232.d.tt
 		if = {
