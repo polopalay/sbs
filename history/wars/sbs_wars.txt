@@ -32,7 +32,7 @@ war = {
 	casus_belli = invasion_war
 	attackers = { violence_character pleasure_character nature_character greedy_character lilim_character }
 	defenders = {
-	    32119
+	    213600
 		# every king follow abarahamic religion
 		212501 71810 204500 205500 221520 219500 212600 210500 201510 207510 208500 209503 200500 202999 206500
 		# every duke in hre

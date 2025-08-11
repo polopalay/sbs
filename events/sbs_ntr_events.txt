@@ -660,7 +660,7 @@ sbs_ntr_event.0231 = {
 		custom_tooltip = sbs_ntr_event.0231.a.tt
 		hidden_effect = {
 			scope:ntr_character = {
-				add_character_modifier = { modifier = succubus_generals years = 100 }
+				add_character_modifier = { modifier = succubus_generals years = 50 }
 				add_trait = sbs_seed_of_destruction
 				set_immortal_age = 45
 			}
