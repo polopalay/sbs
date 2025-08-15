@@ -74,6 +74,7 @@
 	ai_will_do = {
 		base = 0
 		modifier = { add = -100 scope:recipient = { OR = { has_trait = lovers_pox has_trait = early_great_pox } } }
+		modifier = { add = -25 scope:recipient = { has_character_modifier = recently_had_sex } }
 		modifier = { add = 10 scope:actor.faith = { has_doctrine = tenet_polyamory } }
 		modifier = { add = 10 scope:actor = { stress_level >= 1 } }
 		modifier = { add = -10 scope:actor = { has_trait = chaste } }

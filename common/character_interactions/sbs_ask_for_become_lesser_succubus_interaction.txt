@@ -35,7 +35,6 @@
 					is_close_or_extended_family_of = scope:recipient
 				}
 			}
-			has_trait = lustful
 			OR = {
 				has_trait = deviant
 				any_secret = { secret_type = secret_deviant }

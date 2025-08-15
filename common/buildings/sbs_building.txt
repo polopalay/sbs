@@ -1,21 +1,27 @@
 brothel1 = {
 	type_icon = "icon_brothel.dds"
-	construction_time = very_quick_construction_time
-	cost = { gold = cheap_building_tier_1_cost }
+	construction_time = slow_construction_time
+	cost = { gold = expensive_building_tier_3_cost }
 	type = duchy_capital
 
 	next_building = brothel2
 
-	is_enabled = {
+	can_construct_potential = {
 		scope:holder = {
-			has_trait = sbs_demon
-			has_trait = sbs_succubus
-			has_trait = sbs_less_succubus
-			has_trait = sbs_seed_of_destruction
-			has_trait = lustful
-			has_trait = rakish
+			OR = {
+				has_trait = sbs_demon
+				has_trait = sbs_succubus
+				has_trait = sbs_lesser_succubus
+				has_trait = sbs_seed_of_destruction
+				has_trait = lustful
+				has_trait = rakish
+				has_trait = deviant
+				has_trait = lifestyle_prostitute
+				any_secret = { secret_type = secret_prostitute }
+			}
 		}
 	}
+	show_disabled = yes
 
 	duchy_capital_county_modifier = {
 		county_opinion_add = 5
@@ -38,20 +44,25 @@ brothel1 = {
 
 brothel2 = {
 	type_icon = "icon_brothel.dds"
-	construction_time = very_quick_construction_time
-	cost = { gold = cheap_building_tier_2_cost }
+	construction_time = slow_construction_time
+	cost = { gold = expensive_building_tier_4_cost }
 	type = duchy_capital
 
 	next_building = brothel3
 
-	is_enabled = {
+	can_construct_potential = {
 		scope:holder = {
-			has_trait = sbs_demon
-			has_trait = sbs_succubus
-			has_trait = sbs_less_succubus
-			has_trait = sbs_seed_of_destruction
-			has_trait = lustful
-			has_trait = rakish
+			OR = {
+				has_trait = sbs_demon
+				has_trait = sbs_succubus
+				has_trait = sbs_lesser_succubus
+				has_trait = sbs_seed_of_destruction
+				has_trait = lustful
+				has_trait = rakish
+				has_trait = deviant
+				has_trait = lifestyle_prostitute
+				any_secret = { secret_type = secret_prostitute }
+			}
 		}
 	}
 
@@ -76,18 +87,23 @@ brothel2 = {
 
 brothel3 = {
 	type_icon = "icon_brothel.dds"
-	construction_time = cheap_building_tier_2_cost
-	cost = { gold = cheap_building_tier_3_cost }
+	construction_time = slow_construction_time
+	cost = { gold = expensive_building_tier_5_cost }
 	type = duchy_capital
 
-	is_enabled = {
+	can_construct_potential = {
 		scope:holder = {
-			has_trait = sbs_demon
-			has_trait = sbs_succubus
-			has_trait = sbs_less_succubus
-			has_trait = sbs_seed_of_destruction
-			has_trait = lustful
-			has_trait = rakish
+			OR = {
+				has_trait = sbs_demon
+				has_trait = sbs_succubus
+				has_trait = sbs_lesser_succubus
+				has_trait = sbs_seed_of_destruction
+				has_trait = lustful
+				has_trait = rakish
+				has_trait = deviant
+				has_trait = lifestyle_prostitute
+				any_secret = { secret_type = secret_prostitute }
+			}
 		}
 	}
 
@@ -112,18 +128,23 @@ brothel3 = {
 
 alchemy1 = {
 	type_icon = "icon_alchemy.dds"
-	construction_time = very_quick_construction_time
-	cost = { gold = cheap_building_tier_1_cost }
+	construction_time = slow_construction_time
+	cost = { gold = expensive_building_tier_3_cost }
 	type = duchy_capital
 
 	next_building = alchemy2
 
-	is_enabled = {
+	can_construct_potential = {
 		scope:holder = {
-			has_trait = sbs_demon
-			has_trait = sbs_succubus
-			has_trait = sbs_less_succubus
-			has_trait = sbs_seed_of_destruction
+			OR = {
+				has_trait = sbs_demon
+				has_trait = sbs_succubus
+				has_trait = sbs_seed_of_destruction
+				has_trait = sbs_lesser_succubus
+				has_trait = witch
+				has_trait = lifestyle_herbalist
+				any_secret = { secret_type = secret_witch }
+			}
 		}
 	}
 
@@ -149,18 +170,23 @@ alchemy1 = {
 
 alchemy2 = {
 	type_icon = "icon_alchemy.dds"
-	construction_time = very_quick_construction_time
-	cost = { gold = cheap_building_tier_2_cost }
+	construction_time = slow_construction_time
+	cost = { gold = expensive_building_tier_4_cost }
 	type = duchy_capital
 
 	next_building = alchemy3
 
-	is_enabled = {
+	can_construct_potential = {
 		scope:holder = {
-			has_trait = sbs_demon
-			has_trait = sbs_succubus
-			has_trait = sbs_less_succubus
-			has_trait = sbs_seed_of_destruction
+			OR = {
+				has_trait = sbs_demon
+				has_trait = sbs_succubus
+				has_trait = sbs_seed_of_destruction
+				has_trait = sbs_lesser_succubus
+				has_trait = witch
+				has_trait = lifestyle_herbalist
+				any_secret = { secret_type = secret_witch }
+			}
 		}
 	}
 
@@ -186,16 +212,21 @@ alchemy2 = {
 
 alchemy3 = {
 	type_icon = "icon_alchemy.dds"
-	construction_time = quick_construction_time
-	cost = { gold = cheap_building_tier_3_cost }
+	construction_time = slow_construction_time
+	cost = { gold = expensive_building_tier_5_cost }
 	type = duchy_capital
 
-	is_enabled = {
+	can_construct_potential = {
 		scope:holder = {
-			has_trait = sbs_demon
-			has_trait = sbs_succubus
-			has_trait = sbs_less_succubus
-			has_trait = sbs_seed_of_destruction
+			OR = {
+				has_trait = sbs_demon
+				has_trait = sbs_succubus
+				has_trait = sbs_seed_of_destruction
+				has_trait = sbs_lesser_succubus
+				has_trait = witch
+				has_trait = lifestyle_herbalist
+				any_secret = { secret_type = secret_witch }
+			}
 		}
 	}
 

@@ -279,7 +279,7 @@ sbs_devil.1310 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = corruption
-				value = 1
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_succubus
@@ -358,7 +358,7 @@ sbs_devil.1315 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = loyalty
-				value = 1
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_succubus
@@ -481,17 +481,17 @@ sbs_devil.1320 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = loyalty
-				value = 1
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
-				value = 1
+				value = 10
 			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
-				value = 1
+				value = 10
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
@@ -508,7 +508,7 @@ sbs_devil.1320 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
-				value = 1
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
@@ -556,17 +556,17 @@ sbs_devil.1325 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
-				value = 1
+				value = 10
 			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
-				value = 1
+				value = 10
 			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = corruption
-				value = 1
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
@@ -730,12 +730,12 @@ sbs_devil.1411 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = corruption
-				value = 1
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = loyalty
-				value = 1
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
@@ -765,11 +765,11 @@ sbs_devil.1412 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = corruption
-				value = 1
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 12
+				value = 25
 			}
 			add_character_flag = { flag = pussy_cum months = 1 }
 		}
@@ -795,11 +795,11 @@ sbs_devil.1413 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = loyalty
-				value = 1
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 12
+				value = 25
 			}
 			add_character_flag = { flag = pussy_cum days = 10 }
 		}
@@ -854,16 +854,16 @@ sbs_devil.1415 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
-				value = 1
+				value = 10
 			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
-				value = 1
+				value = 10
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 10
+				value = 25
 			}
 		}
 	}
@@ -926,7 +926,7 @@ sbs_devil.1417 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
-				value = 2
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
@@ -1024,7 +1024,7 @@ sbs_devil.1418 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
-				value = 2
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
@@ -1090,7 +1090,7 @@ sbs_devil.1420 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = corruption
-				value = 2
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
@@ -1143,7 +1143,7 @@ sbs_devil.1422 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = loyalty
-				value = 2
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
@@ -1197,7 +1197,7 @@ sbs_devil.5100 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
-				value = 4
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
@@ -1229,7 +1229,7 @@ sbs_devil.5100 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = corruption
-				value = -1
+				value = -2
 			}
 		}
 		trigger_event = sbs_devil.5101
@@ -1277,7 +1277,7 @@ sbs_devil.5110 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
-				value = 4
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
@@ -1296,7 +1296,7 @@ sbs_devil.5110 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
-				value = 4
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
@@ -1322,7 +1322,7 @@ sbs_devil.5110 = {
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 10
+				value = -10
 			}
 		}
 		trigger_event = sbs_devil.5111
@@ -1369,7 +1369,7 @@ sbs_devil.5120 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
-				value = 4
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
@@ -1387,7 +1387,7 @@ sbs_devil.5120 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
-				value = 4
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
@@ -1456,7 +1456,7 @@ sbs_devil.5130 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
-				value = 4
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
@@ -1536,7 +1536,7 @@ sbs_devil.5140 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
-				value = 4
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
@@ -1614,7 +1614,7 @@ sbs_devil.5150 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = corruption
-				value = 1
+				value = 2
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
@@ -1775,12 +1775,12 @@ sbs_devil.5300 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
-				value = 2
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
-				value = 2
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
@@ -1814,12 +1814,12 @@ sbs_devil.5301 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
-				value = 2
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
-				value = 2
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
@@ -1852,16 +1852,16 @@ sbs_devil.5320 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
-				value = 3
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
-				value = 3
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 25
+				value = 20
 			}
 			add_character_flag = { flag = pussy_cum months = 1 }
 			add_character_flag = { flag = ass_cum months = 1 }

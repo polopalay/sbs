@@ -27,7 +27,6 @@
 	is_valid = {
 		scope:actor.faith.religion = religion:demonic_religion
 		scope:recipient = {
-			has_trait = lustful
 			OR = {
 				has_trait = deviant
 				any_secret = { secret_type = secret_deviant }

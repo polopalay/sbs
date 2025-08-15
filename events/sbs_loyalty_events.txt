@@ -236,12 +236,12 @@ sbs_loyalty.8006 = {
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_succubus
-				track = power
-				value = 1
+				track = loyalty
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 5
+				value = 25
 			}
 			add_character_flag = { flag = face_cum months = 1 }
 			add_character_flag = { flag = body_cum months = 1 }
@@ -367,12 +367,12 @@ sbs_loyalty.8100 = {
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_succubus
-				track = daring
-				value = 1
+				track = loyalty
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 5
+				value = 25
 			}
 		}
 		scope:sbs_loyalty_random_1 = { prostitute_effect= { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance } }
@@ -403,12 +403,12 @@ sbs_loyalty.8101 = {
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_succubus
-				track = power
-				value = 1
+				track = loyalty
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 5
+				value = 25
 			}
 			add_character_flag = { flag = ass_cum days = 15 }
 		}
@@ -437,7 +437,7 @@ sbs_loyalty.8101 = {
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_succubus
-				track = power
+				track = loyalty
 				value = 1
 			}
 			add_trait_xp = {
@@ -476,12 +476,12 @@ sbs_loyalty.8102 = {
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_succubus
-				track = daring
-				value = 1
+				track = loyalty
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 5
+				value = 25
 			}
 		}
 	}
@@ -587,12 +587,12 @@ sbs_loyalty.8201 = {
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_succubus
-				track = power
-				value = 1
+				track = loyalty
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 5
+				value = 25
 			}
 		}
 	}
@@ -643,12 +643,12 @@ sbs_loyalty.8202 = {
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_succubus
-				track = daring
-				value = 1
+				track = loyalty
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 5
+				value = 25
 			}
 		}
 	}
@@ -677,11 +677,11 @@ sbs_loyalty.8202 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = loyalty
-				value = -2
+				value = -5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = -10
+				value = -25
 			}
 		}
 	}
@@ -885,12 +885,12 @@ sbs_loyalty.8209 = {
 			add_character_flag = { flag = ass_cum months = 3 }
 			add_trait_xp = {
 				trait = sbs_succubus
-				track = power
-				value = 1
+				track = loyalty
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 5
+				value = 25
 			}
 		}
 	}

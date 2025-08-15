@@ -69,11 +69,11 @@ sbs_courtier.1441 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
-				value = 1
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 5
+				value = 10
 			}
 		}
 	}
@@ -100,11 +100,11 @@ sbs_courtier.1442 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
-				value = 1
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 5
+				value = 10
 			}
 			add_character_flag = { flag = pussy_cum days = 10 }
 			add_character_flag = { flag = body_cum days = 10 }
@@ -180,11 +180,11 @@ sbs_courtier.1460 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
-				value = -1
+				value = -10
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = -5
+				value = -20
 			}
 		}
 	}
@@ -227,12 +227,12 @@ sbs_courtier.1461 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
-				value = 1
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
-				value = 1
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
@@ -308,12 +308,12 @@ sbs_courtier.1463 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
-				value = 1
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
-				value = 1
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus

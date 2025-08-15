@@ -91,7 +91,7 @@ sbs_event.0802 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
-				value = 1
+				value = 5
 			}
 		}
 	}
@@ -134,7 +134,7 @@ sbs_event.0810 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
-				value = 1
+				value = 5
 			}
 		}
 	}
@@ -175,7 +175,7 @@ sbs_event.0900 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
-				value = 1
+				value = 5
 			}
 		}
 	}
@@ -192,7 +192,7 @@ sbs_event.0900 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
-				value = 1
+				value = 5
 			}
 		}
 	}
@@ -224,7 +224,7 @@ sbs_event.0901 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
-				value = 1
+				value = 5
 			}
 		}
 	}
@@ -255,7 +255,7 @@ sbs_event.0902 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
-				value = 1
+				value = 5
 			}
 		}
 	}
