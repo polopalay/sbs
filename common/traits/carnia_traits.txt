@@ -20,9 +20,6 @@
 	inheritance_blocker = all
 	claim_inheritance_blocker = all
 
-	inheritance_blocker = all
-	claim_inheritance_blocker = all
-
 	inherit_chance = 100
 	parent_inheritance_sex = female
 

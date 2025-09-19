@@ -2321,6 +2321,7 @@ sbs_slavery_event.4000 = {
 		add_prestige_level = -6
 		add_legitimacy = -1000
 		change_influence_level = -6
+		add_character_modifier = succubus_seal
 	}
 	option = {
 		ai_chance = { base = 20 }

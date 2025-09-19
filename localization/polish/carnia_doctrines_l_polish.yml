@@ -1,0 +1,37 @@
+﻿l_polish:
+ carn_doctrine_same_slavery_name: "Niewolnictwo Prawej Wiary"
+ carn_doctrine_same_slavery_crime_name: "Przestępstwo"
+ carn_doctrine_same_slavery_crime_desc: "Zniewolenie członka [ROOT.Faith.GetReligion.GetAdjectiveNoTooltip] jest grzechem głównym, ponieważ oznacza to przypisywanie sobie wyższego pana niż [ROOT.Faith.PantheonTerm]".
+ carn_doctrine_same_slavery_shunned_name: "Odrzuceni"
+ carn_doctrine_same_slavery_shunned_desc: "Chociaż nasze przekonania się różnią, wszyscy wierni [ROOT.Faith.GetReligion.GetAdjectiveNoTooltip] są braćmi i siostrami. To głęboko niesprawiedliwe, gdy ktoś z nas jest traktowany jak ktoś gorszy od człowieka."
+ carn_doctrine_same_slavery_accepted_name: "Przyjęci"
+ carn_doctrine_same_slavery_accepted_desc: "Niewolnictwo jest sprawiedliwą i odpowiednią karą dla [ROOT.Faith.GetAdherentNamePluralNoTooltip], którzy zbłądzili. Całe życie w niewoli będzie ich pokutą za ich zbrodnie."
+ doctrine_parameter_same_slavery_illegal: "Posiadanie [slaves|E] [faith_righteous|E] lub [faith_astray|E] [faiths|E] jest [crime|E]"
+ doctrine_parameter_same_slavery_shunned: "Posiadanie [slaves|E] [faith_righteous|E] lub [faith_astray|E] [faiths|E] jest [shunned|E]"
+ doctrine_parameter_same_slavery_accepted: "Posiadanie [slaves|E] [faith_righteous|E] lub [faith_astray|E] [faiths|E] jest w pełni akceptowane"
+
+ carn_doctrine_other_slavery_name: "Wrogie niewolnictwo wiary"
+ carn_doctrine_other_slavery_crime_name: "Przestępca"
+ carn_doctrine_other_slavery_crime_desc: "Wszyscy ludzie posiadają godność, niezależnie od wyznania. Zniewolenie kogoś tylko dlatego, że nie wierzy w [ROOT.Faith.PantheonTerm], jest przestępstwem".
+ carn_doctrine_other_slavery_shunned_name: "Wykluczeni"
+ carn_doctrine_other_slavery_shunned_desc: "Roszczenie sobie prawa do życia niewiernego, nawet jeśli jego wiara jest błędna, jest okrutne i niesmaczne".
+ carn_doctrine_other_slavery_accepted_name: "Zaakceptowani"
+ carn_doctrine_other_slavery_accepted_desc: "Wszyscy [ROOT.Faith.GetAdherentNamePluralNoTooltip] mają prawo zbawić tych, którzy nie przyjęli prawdziwej wiary, nawet przed sobą".
+ doctrine_parameter_other_slavery_illegal: "Posiadanie [slaves|E] [faith_hostile|E] lub [faith_evil|E] [faiths|E] jest [crime|E]"
+ doctrine_parameter_other_slavery_shunned: "Posiadanie [slaves|E] [faith_hostile|E] lub [faith_evil|E] [faiths|E] jest [shunned|E]"
+ doctrine_parameter_other_slavery_accepted: "Posiadanie [slaves|E] [faith_hostile|E] lub [faith_evil|E] [faiths|E] jest w pełni akceptowane"
+
+ carn_doctrine_prostitution_name: "Prostytucja"
+ carn_doctrine_prostitution_crime_name: "Przestępstwo"
+ carn_doctrine_prostitution_crime_desc: "Do Kupowanie i sprzedawanie seksu to niszczenie samych fundamentów naszego społeczeństwa. Ci, którzy utrwalają to zło, muszą zostać ukarani za swoje zbrodnie."
+ carn_doctrine_prostitution_shunned_name: "Wykluczeni"
+ carn_doctrine_prostitution_shunned_desc: "Chociaż sprzedawanie swoich ciał przez prostytutki jest haniebne i poniżające, w ich zachowaniu nie ma nic, co byłoby z natury sprzeczne z [ROOT.Faith.PantheonTerm]".
+ carn_doctrine_prostitution_accepted_name: "Akceptowani"
+ carn_doctrine_prostitution_accepted_desc: "Seks jest naturalną częścią naszego społeczeństwa, a handel seksem za pieniądze jest tak samo legalnym biznesem, jak każdy inny"
+ carn_doctrine_prostitution_virtuous_name: "Cnotliwa prostytucja"
+ carn_doctrine_prostitution_virtuous_desc: "Prostytucja jest legalnym i honorowym zawodem, a osoby, które się nią zajmują, powinny być szanowane za swoją pracę."
+ doctrine_parameter_carn_prostitution_illegal: "Postacie z jakąkolwiek [prostitute|E] [trait|E] są [criminals|E]"
+ doctrine_parameter_carn_prostitution_shunned: "Postacie z jakąkolwiek [prostitute|E] [trait|E] są [shunned|E]"
+ doctrine_parameter_carn_prostitution_accepted: "Postacie z jakąkolwiek [prostitute|E] [trait|E] są w pełni akceptowane"
+
+ carn_slavery_is_illegal: "Twoja wiara nie pozwala na branie [CHARACTER.GetFaith.GetAdherentNamePluralNoTooltip|U] jako niewolników"

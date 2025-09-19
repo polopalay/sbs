@@ -743,9 +743,6 @@ sbs_ntr_event.0232 = {
 			add_trait = immortal
 			set_immortal_age = 18
 			add_character_modifier = succubus_seal
-
-			refund_all_perks = yes
-			remove_all_perk_lifestyle_traits_effect = yes
 		}
 		every_held_title = {
 			create_title_and_vassal_change = {

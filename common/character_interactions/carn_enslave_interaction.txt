@@ -120,15 +120,17 @@
 			ai_rationality = -0.1
 		}
 		modifier = { add = 50 scope:recipient = { is_lowborn = yes } }
-		modifier = { add = 100 scope:recipient = { has_trait = peasant_leader } }
-		modifier = { add = 100 scope:recipient = { has_trait = populist_leader } }
 		modifier = { add = -20 ai_compassion >= low_positive_ai_value scope:recipient = { is_adult = no } }
 		modifier = { add = -20 scope:actor.dynasty = scope:recipient.dynasty }
 		modifier = { add = -20 scope:recipient = { is_close_or_extended_family_of = scope:actor } }
 		modifier = { add = -50 scope:recipient = { is_spouse_of = scope:actor } }
 		modifier = { add = -50 scope:recipient = { is_child_of = scope:actor } }
 		modifier = { add = -50 scope:recipient = { is_heir_of = scope:actor } }
-		modifier = { add = -50 scope:recipient = { is_ruler = yes} }
+		modifier = { add = -25 scope:recipient = { is_ruler = yes } }
+		modifier = { add = -25 scope:recipient = { primary_title.tier >= tier_county } }
+		modifier = { add = -25 scope:recipient = { primary_title.tier >= tier_duchy } }
+		modifier = { add = -25 scope:recipient = { primary_title.tier >= tier_kingdom } }
+		modifier = { add = -25 scope:recipient = { primary_title.tier >= tier_empire } }
 		modifier = {
 			add = 20
 			scope:actor = {

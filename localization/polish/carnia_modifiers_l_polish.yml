@@ -1,0 +1,27 @@
+﻿l_polish:
+ carn_wants_to_be_your_slave_opinion: "Desires an Owner"
+ carn_enslaved_me_opinion: "Enslaved me"
+ carn_enslaved_close_family_opinion: "Enslaved close family member"
+ carn_enslaved_close_relation_opinion: "Enslave friend"
+ carn_freed_me_from_slavery_opinion: "Freed me"
+ free_slave_close_family_opinion: "Freed close family member"
+ free_slave_friend_opinion: "Freed friend"
+
+ carn_working_as_prostitute_1_modifier: "Working as a $trait_lifestyle_prostitute$"
+ carn_working_as_prostitute_1_modifier_desc: "This character is shamelessly selling their body to anyone with coin."
+ carn_working_as_prostitute_2_modifier: "Working as an $trait_lifestyle_prostitute$"
+ carn_working_as_prostitute_2_modifier_desc: "This character is an influential prostitute patronized by many clients."
+ carn_working_as_prostitute_3_modifier: "Working as a $trait_lifestyle_prostitute$"
+ carn_working_as_prostitute_3_modifier_desc: "This character receives nightly visits from nobility and royalty."
+
+ carn_prostitution_crime_opinion: "Known [GetTrait('prostitute').GetName( GetNullCharacter )]"
+ prostitute_shunned_opinion: "Known [GetTrait('prostitute').GetName( GetNullCharacter )]"
+
+ recently_had_sex: "Had Sex Recently"
+ recently_had_sex_desc: "This character had sex recently and hasn't been able to continue for a while."
+ forced_labor: "Forced Labor"
+ forced_labor_desc: "This character is being forced to work against their will."
+ extortion_opinion: "Extorted me"
+ extortion_opinion_desc: "This character has extorted me."
+
+ have_sex_opinion: "Have sex with me"

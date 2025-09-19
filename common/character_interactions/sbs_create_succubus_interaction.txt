@@ -19,6 +19,14 @@
 			}
 		}
 	}
+	send_option = {
+		is_shown = {
+			scope:recipient = { is_ruler = yes }
+		}
+		flag = small_price
+		localization = "small_price"
+	}
+	send_options_exclusive = no
 	populate_recipient_list = {
 		scope:recipient = {
 			is_ruler = yes
@@ -58,6 +66,31 @@
 				limit = { scope:secondary_recipient = { is_close_family_of = scope:recipient } }
 				add_trait_xp = { trait = sbs_succubus track = corruption value = 50 }
 			}
+			if = {
+				limit = { scope:small_price = yes }
+				add_opinion = { target = scope:actor modifier = carn_wants_to_be_your_slave_opinion }
+				every_vassal = {
+					limit = { primary_title.tier >= tier_county }
+					save_scope_as = recipient
+					scope:actor = { save_scope_as = actor }
+					offer_vassalization_interaction_effect = yes
+				}
+				every_held_title = {
+					create_title_and_vassal_change = {
+						type = usurped
+						save_scope_as = change
+						add_claim_on_loss = no
+					}
+					change_title_holder_include_vassals = {
+						holder = scope:actor
+						change = scope:change
+						take_baronies = no
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+
+				carn_enslave_effect = { SLAVE = this OWNER = scope:actor DRAMA = no }
+			}
 		}
 		scope:secondary_recipient = {
 			death = {
@@ -72,7 +105,7 @@
 		}
 	}
 	ai_accept = {
-		base = 10
+		base = 20
 		opinion_modifier = {
 			opinion_target = scope:actor
 			who = scope:recipient
@@ -83,6 +116,7 @@
 			who = scope:recipient
 			multiplier = -0.2
 		}
+		modifier = { add = -50 scope:small_price = yes }
 	}
 	ai_frequency = 12
 	ai_targets = {

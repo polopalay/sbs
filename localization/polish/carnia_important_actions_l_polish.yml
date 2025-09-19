@@ -1,0 +1,9 @@
+﻿l_polish:
+ action_can_offer_prostitute_combined_group_name: "Oferuj prostytutkę"
+ action_can_offer_prostitute_combined_group_label: "Mogę zaoferować prostytutkę"
+ action_can_offer_prostitute_combined_group_description: "Możesz zaoferować prostytutkę postaciom"
+ action_can_offer_prostitute_combined_label: "Oferuj prostytutkę dla [recipient.GetShortUIName|E]"
+ action_can_offer_prostitute_label: "Oferuj prostytutkę dla [recipient.GetShortUIName|E]"
+ action_can_offer_prostitute: "Oferuj prostytutkę"
+ action_can_offer_prostitute_desc: "Oferuj usługi seksualne dla [recipient.GetShortUIName]"
+ action_can_offer_prostitute_click: ""

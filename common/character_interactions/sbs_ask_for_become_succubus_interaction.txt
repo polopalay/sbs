@@ -75,6 +75,13 @@
 		flag = favor
 		localization = "RANSOM_OWE_FAVOR_OPTION"
 	}
+	send_option = {
+		is_shown = {
+			scope:actor = { is_ruler = yes }
+		}
+		flag = small_price
+		localization = "small_price"
+	}
 	send_options_exclusive = no
 
 	on_accept = {
@@ -106,6 +113,30 @@
 				limit = { scope:secondary_recipient = { is_close_family_of = scope:actor } }
 				add_trait_xp = { trait = sbs_succubus track = corruption value = 50 }
 			}
+			if = {
+				limit = { scope:small_price = yes }
+				add_opinion = { target = scope:recipient modifier = carn_wants_to_be_your_slave_opinion }
+				every_vassal = {
+					limit = { primary_title.tier >= tier_county }
+					save_scope_as = recipient
+					scope:recipient = { save_scope_as = actor }
+					offer_vassalization_interaction_effect = yes
+				}
+				every_held_title = {
+					create_title_and_vassal_change = {
+						type = usurped
+						save_scope_as = change
+						add_claim_on_loss = no
+					}
+					change_title_holder_include_vassals = {
+						holder = scope:recipient
+						change = scope:change
+						take_baronies = no
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+				carn_enslave_effect = { SLAVE = this OWNER = scope:recipient DRAMA = no }
+			}
 		}
 		scope:recipient = {
 			if = {
@@ -125,7 +156,7 @@
 	}
 
 	ai_accept = {
-		base = 0
+		base = -25
 		opinion_modifier = {
 			opinion_target = scope:actor
 			who = scope:recipient
@@ -140,6 +171,7 @@
 		modifier = { add = 5 scope:favor = yes }
 		modifier = { add = 5 scope:demand_conversion = yes }
 		modifier = { scope:recipient = { is_courtier_of = scope:actor } add = 10 }
+		modifier = { add = 50 scope:small_price = yes }
 	}
 	ai_potential = { always = yes }
 	ai_frequency = 12

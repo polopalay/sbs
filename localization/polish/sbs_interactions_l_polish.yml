@@ -1,0 +1,66 @@
+﻿l_polish:
+ sbs_devil_dead_interaction: "Healing"
+ sbs_devil_dead_interaction.desc: "Eliminates all kinds of diseases, injuries, and all disgraceful names"
+ stress_flag: "Stress"
+ healing_flag: "Healing"
+ honor_flag: "Honor"
+ dna_flag: "Gene"
+
+ sbs_devils_gift_interaction: "The Devil's gift"
+ sbs_devils_gift_interaction.desc: "Give [recipient.GetShortUIName] a \"blessing\""
+
+ sbs_devils_curse_interaction: "The Devil's curse"
+ sbs_devils_curse_interaction.desc: "Give [recipient.GetShortUIName] a \"curse\""
+
+ sbs_create_lesser_succubus_interaction: "Create Lesser Succubus"
+ sbs_create_lesser_succubus_interaction.desc: "[recipient.GetShortUIName] will become Lesser Succubus"
+ recipient_secondary_sbs_create_lesser_succubus_interaction: "Choose one"
+
+ sbs_create_succubus_interaction: "Create Succubus"
+ sbs_create_succubus_interaction.desc: "[recipient.GetShortUIName] will become a Succubus"
+ recipient_secondary_sbs_create_succubus_interaction: "Choose one"
+
+ sbs_absorb_interaction: "Absorb"
+ sbs_absorb_interaction.desc: "Absorb the power from [recipient.GetShortUIName] into loyalty"
+
+ sbs_makeup_interaction: "Makeup"
+ sbs_makeup_interaction.desc: "Apply makeup to [recipient.GetShortUIName]"
+ succubus_no_horn: "No Horn"
+ succubus_horn0: "Long curved horns"
+ succubus_horn1: "Twisted horns"
+ succubus_horn2: "Tapered horns"
+ succubus_horn3: "Curved horns"
+ succubus_horn4: "Short horns"
+ succubus_no_eyes: "No smokey Eyes"
+ succubus_marking_1: "Crying smokey eyes"
+ succubus_marking_2: "Scratched smokey eyes"
+ succubus_marking_3: "Scratched smokey eyes"
+ succubus_marking_4: "Flower smokey eyes"
+ succubus_marking_5: "Small smokey eyes"
+ succubus_marking_6: "Tiny smokey eyes"
+ succubus_default_eyes: "Default Eyes"
+ succubus_white_eyes: "White Eyes"
+ succubus_red_eyes: "Red Eyes"
+ succubus_default_hair: "Default Hair"
+ succubus_white_hair: "White Hair"
+ succubus_red_hair: "Red Hair"
+ naked: "Naked"
+ glass: "Glass"
+
+ sbs_deal_with_the_devil_interaction: "Deal with the Devil"
+ sbs_deal_with_the_devil_interaction.desc: "Make a deal with the devil, get what ever you want with a \"small\" price"
+ small_price: "Small Price"
+
+ sbs_ask_for_become_lesser_succubus_interaction: "Ask for become Lesser Succubus"
+ sbs_ask_for_become_lesser_succubus_interaction.desc: "Ask the devil to become a Lesser Succubus"
+ recipient_secondary_sbs_ask_for_become_lesser_succubus_interaction: "Choose one"
+
+ sbs_ask_for_become_succubus_interaction: "Ask for become Succubus"
+ sbs_ask_for_become_succubus_interaction.desc: "Ask the devil to become a Succubus"
+ recipient_secondary_sbs_ask_for_become_succubus_interaction: "Choose one"
+
+ sbs_looking_new_owner_interaction: "Looking for a new owner"
+ sbs_looking_new_owner_interaction.desc: "Looking for a new owner for [recipient.GetShortUIName]"
+
+ sbs_seal_the_devil_interaction: "Seal the Devil"
+ sbs_seal_the_devil_interaction.desc: "In the name of the sword of God, I will seal these heretics away, amen""

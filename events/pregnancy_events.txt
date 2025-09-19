@@ -76,10 +76,7 @@ pregnancy.0001 = {
 			2 = { #Mother dies
 				modifier = { #to keep players from dying excessively
 					add = -2
-					OR = {
-						is_ai = no
-						is_immortal = yes
-					}
+					OR = { is_ai = no is_immortal = yes }
 				}
 				add_character_flag = { #Flags blocks other birth events
 					flag = birth_mother_will_die
@@ -89,10 +86,7 @@ pregnancy.0001 = {
 			2 = { #Mother and child dies (this triggers when the birth "should" have gone down, since we don't want to create the baby)
 				modifier = { #to keep players from dying excessively
 					add = -2
-					OR = {
-						is_ai = no
-						is_immortal = yes
-					}
+					OR = { is_ai = no is_immortal = yes }
 				}
 				trigger_event = {
 					id = birth.3021

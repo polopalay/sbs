@@ -1,0 +1,20 @@
+﻿l_polish:
+ game_concept_prostitute: "Prostytutka"
+ game_concept_prostitutes: "Prostytutki"
+ game_concept_prostitution: "Prostytucja"
+ game_concept_prostitute_possessive: "Prostytutki"
+ game_concept_prostitutes_possessive: "Prostytutki"
+ game_concept_prostitute_desc: "Prostytutka to [character|E], która żąda zapłaty za seks. Każda postać może użyć $carn_work_as_prostitute_decision$ [decision|E], aby zostać prostytutką, o ile jej [faith|E] na to pozwala.\n\nSukces prostytutki zależy od jej [diplomacy|E], [intrigue|E], inteligencji i atrakcyjności. Szczególnie utalentowana prostytutka może awansować na [GetTrait('lifestyle_prostitute').GetName( GetNullCharacter )].\n\nPraca jako prostytutka jest prawnie usankcjonowana i nie jest uznawana za [extramarital_sex|E]. Może jednak nadal skutkować [bastard|E] dziećmi lub innymi konsekwencjami, jeśli postać nie będzie ostrożna..."
+
+ game_concept_slave: "Niewolnik"
+ game_concept_slaves: "Niewolnicy"
+ game_concept_slavery: "Niewolnictwo"
+ game_concept_slave_possessive: "Niewolnika"
+ game_concept_slaves_possessive: "Niewolników"
+ game_concept_slave_desc: "$game_concept_slave$ to [character|E], która została pozbawiona swoich praw i zniewolona. Należą do [slave_owner|E], który ma na nich [strong_hook|E] i może ich kupić lub Sprzedaj je na [slave_market|E]. Dodatkowo, [extramarital_sex|E] między niewolnikiem a jego właścicielem jest legalny.\n\nNiewolnicy nie mogą posiadać ani dziedziczyć [titles|E], a dzieci urodzone przez matkę niewolnicę również będą niewolnikami.\n\nJeśli właściciel niewolnika umrze, własność niewolników przejdzie na jego [primary_heir|E].\n\nAby uwolnić się z niewoli, niewolnik musi zostać uwolniony przez swojego właściciela poprzez interakcję $carn_free_slave_interaction$ [character_interaction|E]."
+
+ game_concept_slave_owner: "Właściciel"
+ game_concept_slave_owners: "Właściciele"
+ game_concept_slave_owner_possessive: "Właściciela"
+ game_concept_slave_owners_possessive: "Właścicieli"
+ game_concept_slave_owner_desc: "[character|E] może być prawnie uznanym $game_concept_slave_owner$ jednego lub więcej [slaves|E]. Właściciele niewolników zawsze mają [strong_hook|E] na swoich niewolnikach i mogą ich kupować lub sprzedawać na [slave_market|E]. Dodatkowo, [extramarital_sex|E] między niewolnikiem a jego właścicielem jest legalny.\n\nJeśli właściciel niewolnika umrze, własność niewolników przejdzie na jego [primary_heir|E]."

@@ -2206,6 +2206,23 @@ window = {
 
 								blockoverride "expand_button" {}
 							}
+							vbox_character_row_item = {
+								name = "slave_owner"
+								visible = "[GreaterThan_int32( GetDataModelSize(CharacterWindow.GetRelationsOfType( GetRelation( 'slave_owner' ) )), '(int32)0' )]"
+								layoutpolicy_vertical = expanding
+
+								blockoverride "portrait_datamodel" {
+									datamodel = "[CharacterWindow.GetRelationsOfType( GetRelation( 'slave_owner' ) )]"
+								}
+
+								blockoverride "header_text"
+								{
+									text = "[slave_owner|E]"
+									max_width = 75
+								}
+
+								blockoverride "expand_button" {}
+							}
 
 							### LOVERS 5 PORTRAITS
 							vbox_character_row_relationship_item = {
@@ -2236,7 +2253,7 @@ window = {
 
 								blockoverride "gridbox_slots"
 								{
-									maxhorizontalslots = 5
+									maxhorizontalslots = 3
 								}
 							}
 
@@ -2269,7 +2286,7 @@ window = {
 
 								blockoverride "gridbox_slots"
 								{
-									maxhorizontalslots = 4
+									maxhorizontalslots = 3
 								}
 							}
 
@@ -2423,6 +2440,7 @@ window = {
 						}
 					}
 
+
 					widget = {
 						name = "third_row"
 						layoutpolicy_horizontal = expanding
@@ -2479,7 +2497,7 @@ window = {
 								name = "victims"
 								visible = "[Not( CharacterWindow.GetCharacter.IsAdult )]"
 								layoutpolicy_vertical = expanding
-						third_row		layoutpolicy_horizontal = expanding
+								layoutpolicy_horizontal = expanding
 
 								blockoverride "portrait_datamodel" {
 									datamodel = "[CharacterWindow.GetRelationsOfType( GetRelation( 'victim' ) )]"
@@ -2522,7 +2540,6 @@ window = {
 							expand = {}
 						}
 					}
-
 					widget = {
 						name = "carnalitas_fourth_row"
 						visible = "[GreaterThan_int32( GetDataModelSize(CharacterWindow.GetRelationsOfType( GetRelation( 'slave' ) )), '(int32)0' ))]"
@@ -2558,47 +2575,6 @@ window = {
 
 								blockoverride "expand_button_inside" {
 									visible = "[GreaterThan_int32( GetDataModelSize(CharacterWindow.GetRelationsOfType( GetRelation( 'slave' ) )), '(int32)7' )]"
-									onclick = "[CharacterWindow.ToggleExpandedRelation( 'slaves' )]"
-								}
-							}
-						}
-					}
-
-					widget = {
-						name = "carnalitas_fiveth_row"
-						visible = "[GreaterThan_int32( GetDataModelSize(CharacterWindow.GetRelationsOfType( GetRelation( 'slave_owner' ) )), '(int32)0' ))]"
-						layoutpolicy_horizontal = expanding
-						layoutpolicy_vertical = expanding
-						minimumsize = { -1 110 }
-						maximumsize = { -1 110 }
-						scissor = yes
-
-						hbox = {
-							layoutpolicy_horizontal = expanding
-
-							vbox_character_row_item = {
-								name = "slaves"
-								visible = "[GreaterThan_int32( GetDataModelSize(CharacterWindow.GetRelationsOfType( GetRelation( 'slave_owner' ) )), '(int32)0' ))]"
-								layoutpolicy_vertical = expanding
-								layoutpolicy_horizontal = expanding
-
-								blockoverride "portrait_datamodel" {
-									datamodel = "[CharacterWindow.GetRelationsOfType( GetRelation( 'slave_owner' ) )]"
-								}
-
-								blockoverride "header_text"
-								{
-									text = "game_concept_slave_owners"
-								}
-
-								blockoverride "remaining_items"
-								{
-									visible = "[GreaterThan_int32( GetDataModelSize(CharacterWindow.GetRelationsOfType( GetRelation( 'slave_owner' ) )), '(int32)7' ))]"
-									text = "[GetNumberAbove_int32( GetDataModelSize(CharacterWindow.GetRelationsOfType( GetRelation( 'slave_owner' ) )), '(int32)7' )|=]"
-								}
-
-								blockoverride "expand_button_inside" {
-									visible = "[GreaterThan_int32( GetDataModelSize(CharacterWindow.GetRelationsOfType( GetRelation( 'slave_owner' ) )), '(int32)7' )]"
 									onclick = "[CharacterWindow.ToggleExpandedRelation( 'slaves' )]"
 								}
 							}
@@ -5088,3 +5064,4 @@ template Character_Window_Relation_Icon
 		}
 	}
 }
+
