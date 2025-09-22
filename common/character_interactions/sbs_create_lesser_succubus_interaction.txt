@@ -10,8 +10,8 @@
 		scope:recipient = {
 			is_female = yes
 			OR = {
-				is_immortal = no
 				has_trait = saint
+				is_immortal = no
 			}
 		}
 		scope:actor = {
