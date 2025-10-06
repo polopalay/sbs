@@ -149,7 +149,7 @@ sbs_slavery_event.0000 = {
 					OR = {
 						has_trait = temperate
 						has_trait = inappetetic
-						current_weight < -30
+						current_weight < -40
 					}
 					add = 500
 				}
@@ -159,7 +159,7 @@ sbs_slavery_event.0000 = {
 				modifier = {
 					OR = {
 						has_trait = comfort_eater
-						current_weight > 30
+						current_weight > -10
 					}
 					add = 500
 				}
@@ -965,8 +965,8 @@ sbs_slavery_event.0200 = {
 					has_trait = cancer
 					has_trait = ill
 					has_trait = incapable
-					current_weight >= 25
-					current_weight < -25
+					current_weight >= 0
+					current_weight < -40
 					has_trait = lustful
 				}
 			}
@@ -1027,11 +1027,11 @@ sbs_slavery_event.0200 = {
 				remove_trait = incapable
 			}
 			5 = {
-				modifier = { current_weight >= 25 add = 15 }
+				modifier = { current_weight >= 0 add = 20 }
 				change_current_weight = -10
 			}
 			5 = {
-				modifier = { current_weight < -25 add = 15 }
+				modifier = { current_weight < -40 add = 20 }
 				change_current_weight = 10
 			}
 			5 = {
@@ -2814,7 +2814,7 @@ sbs_slavery_event.6310 = {
 			}
 		}
 		if = {
-			limit = { current_weight > -20 }
+			limit = { current_weight > -25 }
 			change_current_weight = -5
 			trigger_event = sbs_slavery_event.6310
 		}
