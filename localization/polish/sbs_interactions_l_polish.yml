@@ -64,3 +64,6 @@
 
  sbs_seal_the_devil_interaction: "Seal the Devil"
  sbs_seal_the_devil_interaction.desc: "In the name of the sword of God, I will seal these heretics away, amen""
+
+ sbs_change_character_interaction: "Change Character"
+ sbs_change_character_interaction.desc: "Play as [recipient.GetShortUIName]"

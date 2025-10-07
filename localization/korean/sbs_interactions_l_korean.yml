@@ -64,3 +64,6 @@
 
   sbs_seal_the_devil_interaction: "악마를 봉인하기"
   sbs_seal_the_devil_interaction.desc: "신의 검의 이름으로, 이 이단자들을 봉인하겠습니다, 아멘"
+
+  sbs_change_character_interaction: "캐릭터 변경"
+  sbs_change_character_interaction.desc: "[recipient.GetShortUIName]의 캐릭터를 변경합니다."

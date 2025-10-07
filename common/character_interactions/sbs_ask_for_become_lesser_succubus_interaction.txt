@@ -12,10 +12,7 @@
 		NOT = { has_global_variable = seal_the_gates_of_hell }
 		scope:actor = {
 			is_female = yes
-			OR = {
-				has_trait = saint
-				is_immortal = no
-			}
+			has_trait = saint
 		}
 		scope:recipient = {
 			OR = {
@@ -114,7 +111,6 @@
 			}
 			remove_character_modifier = succubus_buff
 			add_trait = sbs_lesser_succubus
-			set_immortal_age = 18
 			if = {
 				limit = { scope:small_price = yes }
 				add_opinion = { target = scope:recipient modifier = carn_wants_to_be_your_slave_opinion }

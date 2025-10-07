@@ -61,7 +61,6 @@ sbs_devils_gift_interaction = {
 						add = -100
 					}
 					add_trait = sbs_seed_of_destruction
-					set_immortal_age = 18
 				}
 				0 = {
 					modifier = {
@@ -112,7 +111,6 @@ sbs_devils_gift_interaction = {
 						}
 					}
 					add_trait = sbs_lesser_succubus
-					set_immortal_age = 18
 				}
 				0 = {
 					modifier = {  scope:actor = { faith.religion = religion:demonic_religion faith.religious_head = scope:actor } OR = { has_trait = sbs_seed_of_destruction has_trait = sbs_lesser_succubus has_trait = sbs_succubus has_trait = sbs_demon } add = 20 }

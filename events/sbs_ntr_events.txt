@@ -662,7 +662,6 @@ sbs_ntr_event.0231 = {
 			scope:ntr_character = {
 				add_character_modifier = { modifier = succubus_generals years = 50 }
 				add_trait = sbs_seed_of_destruction
-				set_immortal_age = 45
 			}
 		}
 		primary_spouse = {

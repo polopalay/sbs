@@ -64,3 +64,6 @@
 
   sbs_seal_the_devil_interaction: "Запечатать дьявола"
   sbs_seal_the_devil_interaction.desc: "Во имя меча Божьего я запечатаю этих еретиков, аминь."
+
+  sbs_change_character_interaction: "Сменить персонажа"
+  sbs_change_character_interaction.desc: "Смените персонажа [recipient.GetShortUIName]"

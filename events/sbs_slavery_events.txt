@@ -2313,7 +2313,7 @@ sbs_slavery_event.4000 = {
 		animation = shame
 	}
 	option = {
-		ai_chance = { base = 20 }
+		ai_chance = { base = 99 }
 		name = sbs_slavery_event.4000.a
 		custom_tooltip = sbs_slavery_event.4000.a.tt
 		add_stress = monumental_stress_loss
@@ -2324,7 +2324,7 @@ sbs_slavery_event.4000 = {
 		add_character_modifier = succubus_seal
 	}
 	option = {
-		ai_chance = { base = 20 }
+		ai_chance = { base = 1 }
 		name = sbs_slavery_event.4000.b
 		custom_tooltip = sbs_slavery_event.4000.b.tt
 		add_stress = monumental_stress_gain
@@ -2332,7 +2332,6 @@ sbs_slavery_event.4000 = {
 			limit = { has_trait = immortal }
 			remove_trait = immortal
 			add_trait = sbs_lesser_succubus
-			set_immortal_age = 18
 		}
 		if = {
 			limit = { has_character_modifier = succubus_seal }

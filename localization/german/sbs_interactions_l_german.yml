@@ -64,3 +64,6 @@
 
   sbs_seal_the_devil_interaction: "Den Teufel versiegeln"
   sbs_seal_the_devil_interaction.desc: "Im Namen des Schwertes Gottes werde ich diese Ketzer versiegeln, Amen."
+
+  sbs_change_character_interaction: "Charakter wechseln"
+  sbs_change_character_interaction.desc: "Ändern Sie den Charakter von [recipient.GetShortUIName]"

@@ -49,6 +49,7 @@ succubus_seal = {
 
 succubus_generals = {
 	icon = souls_positive
+	life_expectancy = 100
 	diplomacy = 66
 	martial = 66
 	stewardship = 66

@@ -64,3 +64,6 @@
 
   sbs_seal_the_devil_interaction: "Sceller le Diable"
   sbs_seal_the_devil_interaction.desc: "Scellez le diable dans un objet"
+
+  sbs_change_character_interaction: "Changer de personnage"
+  sbs_change_character_interaction.desc: "Changez le personnage de [recipient.GetShortUIName]"

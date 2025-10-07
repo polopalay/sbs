@@ -64,3 +64,6 @@
 
   sbs_seal_the_devil_interaction: "Sellar al Diablo"
   sbs_seal_the_devil_interaction.desc: "En el nombre de la espada de Dios, sellaré a estos herejes, amén"
+
+  sbs_change_character_interaction: "Cambiar personaje"
+  sbs_change_character_interaction.desc: "Cambiar el personaje de [recipient.GetShortUIName]"

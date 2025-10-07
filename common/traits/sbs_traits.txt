@@ -200,14 +200,8 @@ sbs_lesser_succubus = {
 	category = health
 	icon = sbs_lesser_succubus.dds
 
-	immortal = yes
 	no_prowess_loss_from_age = yes
 	add_commander_trait = yes
-
-	flag = is_immortal
-	flag = immortal_visuals
-	flag = immortal_fertility
-	flag = immortal_incapability
 
 	valid_sex = female
 
@@ -230,17 +224,9 @@ sbs_lesser_succubus = {
 		}
 	}
 
-	fertility = -1
-	monthly_lifestyle_xp_gain_mult = -1000
-	long_reign_bonus_mult = -1000
-	stewardship = 1
-	diplomacy = 1
-	prowess = 1
-	martial = 1
-	intrigue = 1
-	learning = 1
-	attraction_opinion = 2
-	health = 0.1
+	life_expectancy = 100
+	attraction_opinion = 5
+	health = 1
 	negate_health_penalty_add = 0.1
 	character_travel_speed = 1
 	character_travel_safety = 1
@@ -248,29 +234,17 @@ sbs_lesser_succubus = {
 
 	track = {
 		50 = {
-			stewardship = 4
-			diplomacy = 4
-			prowess = 4
-			martial = 4
-			intrigue = 4
-			learning = 4
-			attraction_opinion = 8
-			health = 0.4
-			negate_health_penalty_add = 0.4
+			attraction_opinion = 10
+			health = 2
+			negate_health_penalty_add = 1
 			character_travel_speed = 4
 			character_travel_safety = 4
 			enemy_hostile_scheme_phase_duration_add = 40
 		}
 		100 = {
-			stewardship = 5
-			diplomacy = 5
-			prowess = 5
-			martial = 5
-			intrigue = 5
-			learning = 5
 			attraction_opinion = 15
-			health = 1
-			negate_health_penalty_add = 1
+			health = 2
+			negate_health_penalty_add = 2
 			character_travel_speed = 5
 			character_travel_safety = 5
 			enemy_hostile_scheme_phase_duration_add = 50
@@ -283,15 +257,8 @@ sbs_seed_of_destruction = {
 	category = health
 	icon = sbs_seed_of_destruction.dds
 	
-	immortal = yes
 	no_prowess_loss_from_age = yes
 	add_commander_trait = yes
-
-	flag = is_immortal
-	flag = immortal_visuals
-	flag = immortal_fertility
-	flag = immortal_incapability
-	flag = slave_owner
 
 	valid_sex = male
 	opposites = { sbs_demon sbs_succubus sbs_lesser_succubus incapable }
@@ -311,16 +278,18 @@ sbs_seed_of_destruction = {
 		}
 	}
 
+	life_expectancy = 100
+	health = 1
 	track = {
 		50 = {
-			health = 1
+			health = 2
+			negate_health_penalty_add = 1
 		}
 		100 = {
-			negate_health_penalty_add = 1
+			health = 2
+			negate_health_penalty_add = 2
 		}
 	}
 
-	monthly_lifestyle_xp_gain_mult = -1000
-	long_reign_bonus_mult = -1000
 	ruler_designer_cost = 100
 }
