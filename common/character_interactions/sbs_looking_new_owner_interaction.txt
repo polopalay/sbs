@@ -37,7 +37,7 @@ sbs_looking_new_owner_interaction = {
 			save_scope_as = slave
 
 			random_living_character = {
-				limit = { has_trait = sbs_seed_of_destruction is_adult = yes is_ruler = yes }
+				limit = { has_trait = sbs_seed_of_demon is_adult = yes is_ruler = yes }
 				save_scope_as = buyer
 			}
 			if = {

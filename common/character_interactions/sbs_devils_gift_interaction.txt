@@ -10,7 +10,7 @@ sbs_devils_gift_interaction = {
 			OR = {
 				has_trait = sbs_demon
 				has_trait = sbs_succubus
-				has_trait = sbs_seed_of_destruction
+				has_trait = sbs_seed_of_demon
 			}
 		}
 	}
@@ -19,7 +19,7 @@ sbs_devils_gift_interaction = {
 			OR = {
 				has_trait = sbs_demon
 				has_trait_xp = { trait = sbs_succubus track = daring value >= 10 }
-				has_trait_xp = { trait = sbs_seed_of_destruction value >= 1 }
+				has_trait_xp = { trait = sbs_seed_of_demon value >= 1 }
 			}
 		}
 	}
@@ -30,8 +30,8 @@ sbs_devils_gift_interaction = {
 				add_trait_xp = { trait = sbs_succubus track = daring value = -10 }
 			}
 			if = {
-				limit = { has_trait = sbs_seed_of_destruction }
-				add_trait_xp = { trait = sbs_seed_of_destruction value = -1 }
+				limit = { has_trait = sbs_seed_of_demon }
+				add_trait_xp = { trait = sbs_seed_of_demon value = -1 }
 			}
 		}
 		scope:recipient = {
@@ -60,7 +60,7 @@ sbs_devils_gift_interaction = {
 						scope:recipient.dynasty = { any_dynasty_member = { is_alive = yes is_immortal = yes count > 3 } }
 						add = -100
 					}
-					add_trait = sbs_seed_of_destruction
+					add_trait = sbs_seed_of_demon
 				}
 				0 = {
 					modifier = {
@@ -113,7 +113,7 @@ sbs_devils_gift_interaction = {
 					add_trait = sbs_lesser_succubus
 				}
 				0 = {
-					modifier = {  scope:actor = { faith.religion = religion:demonic_religion faith.religious_head = scope:actor } OR = { has_trait = sbs_seed_of_destruction has_trait = sbs_lesser_succubus has_trait = sbs_succubus has_trait = sbs_demon } add = 20 }
+					modifier = {  scope:actor = { faith.religion = religion:demonic_religion faith.religious_head = scope:actor } OR = { has_trait = sbs_seed_of_demon has_trait = sbs_lesser_succubus has_trait = sbs_succubus has_trait = sbs_demon } add = 20 }
 					modifier = {  scope:actor = { faith.religion = religion:demonic_religion faith.religious_head = scope:actor } age > 100 add = 10 }
 					modifier = {  scope:actor = { faith.religion = religion:demonic_religion faith.religious_head = scope:actor } has_character_modifier = succubus_generals add = 5 }
 					modifier = {  scope:actor = { faith.religion = religion:demonic_religion faith.religious_head = scope:actor } is_close_family_of = scope:recipient add = 5 }
@@ -142,8 +142,8 @@ sbs_devils_gift_interaction = {
 					add_trait_xp = { trait = sbs_lesser_succubus value = 25 }
 				}
 				0 = {
-					modifier = { has_trait = sbs_seed_of_destruction  scope:actor = { has_trait = sbs_demon } add = 50 }
-					add_trait_xp = { trait = sbs_seed_of_destruction value = 25 }
+					modifier = { has_trait = sbs_seed_of_demon  scope:actor = { has_trait = sbs_demon } add = 50 }
+					add_trait_xp = { trait = sbs_seed_of_demon value = 25 }
 				}
 				0 = {
 					modifier = { has_trait = sbs_succubus scope:actor = { has_trait = sbs_demon } add = 25 }
@@ -269,8 +269,8 @@ sbs_devils_gift_interaction = {
 					add_character_modifier = { modifier = succubus_generals years = 10 }
 				}
 				20 = {
-					modifier = { has_character_modifier = succubus_buff add = -15 }
-					add_character_modifier = { modifier = succubus_buff years = 20 }
+					modifier = { has_character_modifier = succubus_buff add = -10 }
+					add_character_modifier = succubus_buff
 				}
 			}
 		}
@@ -310,9 +310,8 @@ sbs_devils_gift_interaction = {
 	ai_potential = { always = yes }
 	ai_will_do = {
 		base = 0
-		modifier = { add = 100 scope:recipient = scope:actor scope:actor = { any_child = { is_alive = yes house = scope:actor.house count = 0 } } }
-		modifier = { add = 50 scope:recipient = { is_child_of = scope:actor } }
-		modifier = { add = 25 scope:recipient = { is_close_family_of = scope:actor } }
+		modifier = { add = 50 scope:actor = { has_trait = sbs_demon } scope:recipient = { is_child_of = scope:actor } }
+		modifier = { add = 25 scope:actor = { has_trait = sbs_demon } scope:recipient = { is_close_family_of = scope:actor } }
 		modifier = { add = 5 scope:recipient = scope:actor }
 	}
 }

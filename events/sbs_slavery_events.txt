@@ -8,7 +8,7 @@ sbs_slavery_event.0000 = {
 		liege = { is_adult = yes }
 		OR = {
 			is_ai = no
-			liege = { has_trait = sbs_seed_of_destruction }
+			liege = { has_trait = sbs_seed_of_demon }
 			liege = { has_trait = sbs_demon }
 		}
 	}
@@ -34,14 +34,27 @@ sbs_slavery_event.0000 = {
 					OR = {
 						has_trait = blind
 						has_trait = one_eyed
-						has_trait = eunuch_1
 						has_trait = scarred
 						has_trait = cancer
 						has_trait = one_legged
 						has_trait = ill
 						has_trait = incapable
+						has_trait = infirm
+						has_trait = wounded
 					}
 					add = 100
+				}
+				modifier = {
+					OR = {
+						has_trait = consumption
+						has_trait = typhus
+						has_trait = bubonic_plague
+						has_trait = smallpox
+						has_trait = measles
+						has_trait = dysentery
+						has_trait = ergotism
+					}
+					add = 30
 				}
 				trigger_event = sbs_slavery_event.0200
 			}
@@ -528,6 +541,14 @@ sbs_slavery_event.0116 = {
 					modifier = { has_trait = eccentric add = -1 }
 					add_trait = eccentric
 				}
+				5 = {
+					modifier = { OR = { has_trait = greedy has_trait = generous } add = -5 }
+					add_trait = greedy
+				}
+				5 = {
+					modifier = { OR = { has_trait = chaste has_trait = lustful } add = -5 }
+					add_trait = lust
+				}
 			}
 		}
 	}
@@ -952,19 +973,27 @@ sbs_slavery_event.0200 = {
 		ai_chance = {
 			base = 10
 			modifier = {
-				add = 200
+				add = 1000
 				OR = {
 					has_trait = leper
 					has_std_trigger = yes
 					has_trait = disfigured
 					has_trait = blind
 					has_trait = one_eyed
-					has_trait = eunuch_1
 					has_trait = scarred
 					has_trait = one_legged
 					has_trait = cancer
+					has_trait = wounded
 					has_trait = ill
 					has_trait = incapable
+					has_trait = infirm
+					has_trait = consumption
+					has_trait = typhus
+					has_trait = bubonic_plague
+					has_trait = smallpox
+					has_trait = measles
+					has_trait = dysentery
+					has_trait = ergotism
 					current_weight >= 0
 					current_weight < -40
 					has_trait = lustful
@@ -975,63 +1004,95 @@ sbs_slavery_event.0200 = {
 		custom_tooltip = sbs_slavery_event.0200.a.tt
 		random_list = {
 			0 = {
-				modifier = { OR = { has_trait = leper } add = 50 }
+				modifier = { OR = { has_trait = leper } add = 100 }
 				remove_trait = leper
 			}
 			0 = {
-				modifier = { OR = { has_trait = lovers_pox } add = 50 }
+				modifier = { OR = { has_trait = lovers_pox } add = 100 }
 				remove_trait = lovers_pox
 			}
 			0 = {
-				modifier = { OR = { has_trait = early_great_pox } add = 50 }
+				modifier = { OR = { has_trait = early_great_pox } add = 100 }
 				remove_trait = early_great_pox
 			}
 			0 = {
-				modifier = { OR = { has_trait = disfigured } add = 50 }
+				modifier = { OR = { has_trait = disfigured } add = 100 }
 				remove_trait = disfigured
 			}
 			0 = {
-				modifier = { OR = { has_trait = great_pox } add = 50 }
+				modifier = { OR = { has_trait = great_pox } add = 100 }
 				remove_trait = great_pox
 			}
 			0 = {
-				modifier = { OR = { has_trait = blind } add = 20 }
+				modifier = { OR = { has_trait = blind } add = 80 }
 				remove_trait = blind
 			}
 			0 = {
-				modifier = { OR = { has_trait = one_eyed } add = 20 }
+				modifier = { OR = { has_trait = one_eyed } add = 80 }
 				remove_trait = one_eyed
 			}
 			0 = {
-				modifier = { OR = { has_trait = eunuch_1 } add = 20 }
-				remove_trait = eunuch_1
-			}
-			0 = {
-				modifier = { OR = { has_trait = scarred } add = 20 }
+				modifier = { OR = { has_trait = scarred } add = 80 }
 				remove_trait = scarred
 			}
 			0 = {
-				modifier = { OR = { has_trait = one_legged } add = 20 }
+				modifier = { OR = { has_trait = one_legged } add = 80 }
 				remove_trait = one_legged
 			}
 			0 = {
-				modifier = { OR = { has_trait = cancer } add = 20 }
+				modifier = { OR = { has_trait = cancer } add = 80 }
 				remove_trait = cancer
 			}
 			0 = {
-				modifier = { OR = { has_trait = ill } add = 20 }
+				modifier = { OR = { has_trait = infirm } add = 50 }
+				remove_trait = infirm
+			}
+			0 = {
+				modifier = { OR = { has_trait = ill } add = 50 }
 				remove_trait = ill
+			}
+			0 = {
+				modifier = { OR = { has_trait = wounded } add = 50 }
+				change_trait_rank = { trait = wounded rank = -1 max = 1 }
 			}
 			0 = {
 				modifier = { OR = { has_trait = incapable } add = 50 }
 				remove_trait = incapable
 			}
+			0 = {
+				modifier = { OR = { has_trait = consumption } add = 20 }
+				remove_trait = consumption
+			}
+			0 = {
+				modifier = { OR = { has_trait = typhus } add = 20 }
+				remove_trait = consumption
+			}
+			0 = {
+				modifier = { OR = { has_trait = bubonic_plague } add = 20 }
+				remove_trait = consumption
+			}
+			0 = {
+				modifier = { OR = { has_trait = smallpox } add = 20 }
+				remove_trait = consumption
+			}
+			0 = {
+				modifier = { OR = { has_trait = measles } add = 20 }
+				remove_trait = consumption
+			}
+			0 = {
+				modifier = { OR = { has_trait = dysentery } add = 20 }
+				remove_trait = consumption
+			}
+			0 = {
+				modifier = { OR = { has_trait = ergotism } add = 20 }
+				remove_trait = consumption
+			}
 			5 = {
-				modifier = { current_weight >= 0 add = 20 }
+				modifier = { current_weight >= 0 add = 10 }
 				change_current_weight = -10
 			}
 			5 = {
-				modifier = { current_weight < -40 add = 20 }
+				modifier = { current_weight < -40 add = 10 }
 				change_current_weight = 10
 			}
 			5 = {
@@ -1161,8 +1222,8 @@ sbs_slavery_event.0300 = {
 		custom_tooltip = sbs_slavery_event.0300.a.tt
 		scope:owner = {
 			if = {
-				limit = { has_trait = sbs_seed_of_destruction }
-				add_trait_xp = { trait = sbs_seed_of_destruction value = 1 }
+				limit = { has_trait = sbs_seed_of_demon }
+				add_trait_xp = { trait = sbs_seed_of_demon value = 1 }
 			}
 		}
 		if = {
@@ -1248,8 +1309,8 @@ sbs_slavery_event.0310 = {
 		add_character_modifier = { modifier = stress_smelling_of_sweat years = 1 }
 		scope:owner = {
 			if = {
-				limit = { has_trait = sbs_seed_of_destruction }
-				add_trait_xp = { trait = sbs_seed_of_destruction value = 2 }
+				limit = { has_trait = sbs_seed_of_demon }
+				add_trait_xp = { trait = sbs_seed_of_demon value = 2 }
 			}
 		}
 		duel = {
@@ -1609,8 +1670,8 @@ sbs_slavery_event.0360 = {
 		add_character_modifier = { modifier = stress_smelling_of_sweat years = 1 }
 		scope:owner = {
 			if = {
-				limit = { has_trait = sbs_seed_of_destruction }
-				add_trait_xp = { trait = sbs_seed_of_destruction value = 3 }
+				limit = { has_trait = sbs_seed_of_demon }
+				add_trait_xp = { trait = sbs_seed_of_demon value = 3 }
 			}
 		}
 		duel = {
@@ -1766,8 +1827,8 @@ sbs_slavery_event.0500 = {
 		custom_tooltip = sbs_slavery_event.0500.a.tt
 		scope:owner = {
 			if = {
-				limit = { has_trait = sbs_seed_of_destruction }
-				add_trait_xp = { trait = sbs_seed_of_destruction value = 2 }
+				limit = { has_trait = sbs_seed_of_demon }
+				add_trait_xp = { trait = sbs_seed_of_demon value = 2 }
 			}
 		}
 		random_secret = {
@@ -1823,8 +1884,8 @@ sbs_slavery_event.0600 = {
 		custom_tooltip = sbs_slavery_event.0600.a.tt
 		scope:owner = {
 			if = {
-				limit = { has_trait = sbs_seed_of_destruction }
-				add_trait_xp = { trait = sbs_seed_of_destruction value = 3 }
+				limit = { has_trait = sbs_seed_of_demon }
+				add_trait_xp = { trait = sbs_seed_of_demon value = 3 }
 			}
 		}
 		add_piety_level = -6
@@ -1834,7 +1895,21 @@ sbs_slavery_event.0600 = {
 		if = {
 			limit = { has_trait = ambitious }
 			remove_trait = ambitious
-			add_trait = content
+			random_list = {
+				1 = { add_trait = content }
+				2 = {
+					modifier = { OR = { has_trait = greedy has_trait = generous } add = -5 }
+					add_trait = greedy
+				}
+				2 = {
+					modifier = { OR = { has_trait = brave has_trait = craven } add = -5 }
+					add_trait = craven
+				}
+				2 = {
+					modifier = { OR = { has_trait = chaste has_trait = lustful } add = -5 }
+					add_trait = lust
+				}
+			}
 		}
 		scope:owner = {
 			if = {
@@ -1895,8 +1970,8 @@ sbs_slavery_event.0700 = {
 		custom_tooltip = sbs_slavery_event.0700.a.tt
 		scope:owner = {
 			if = {
-				limit = { has_trait = sbs_seed_of_destruction }
-				add_trait_xp = { trait = sbs_seed_of_destruction value = 1 }
+				limit = { has_trait = sbs_seed_of_demon }
+				add_trait_xp = { trait = sbs_seed_of_demon value = 1 }
 			}
 		}
 		had_sex_with_effect = { CHARACTER = scope:owner2 PREGNANCY_CHANCE = pregnancy_chance }
@@ -1986,8 +2061,8 @@ sbs_slavery_event.0900 = {
 		custom_tooltip = sbs_slavery_event.0900.a.tt
 		scope:owner = {
 			if = {
-				limit = { has_trait = sbs_seed_of_destruction }
-				add_trait_xp = { trait = sbs_seed_of_destruction value = 2 }
+				limit = { has_trait = sbs_seed_of_demon }
+				add_trait_xp = { trait = sbs_seed_of_demon value = 2 }
 			}
 		}
 		if = {
@@ -2260,8 +2335,8 @@ sbs_slavery_event.3000 = {
 		add_stress = minor_stress_gain
 		scope:owner = {
 			if = {
-				limit = { has_trait = sbs_seed_of_destruction }
-				add_trait_xp = { trait = sbs_seed_of_destruction value = 3 }
+				limit = { has_trait = sbs_seed_of_demon }
+				add_trait_xp = { trait = sbs_seed_of_demon value = 3 }
 			}
 			every_courtier = {
 				limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } has_std_trigger = no }
@@ -2328,11 +2403,7 @@ sbs_slavery_event.4000 = {
 		name = sbs_slavery_event.4000.b
 		custom_tooltip = sbs_slavery_event.4000.b.tt
 		add_stress = monumental_stress_gain
-		if = {
-			limit = { has_trait = immortal }
-			remove_trait = immortal
-			add_trait = sbs_lesser_succubus
-		}
+		add_trait = sbs_lesser_succubus
 		if = {
 			limit = { has_character_modifier = succubus_seal }
 			remove_character_modifier = succubus_seal
@@ -2367,8 +2438,8 @@ sbs_slavery_event.5000 = {
 		custom_tooltip = sbs_slavery_event.5000.a.tt
 		scope:owner = {
 			if = {
-				limit = { has_trait = sbs_seed_of_destruction }
-				add_trait_xp = { trait = sbs_seed_of_destruction value = 2 }
+				limit = { has_trait = sbs_seed_of_demon }
+				add_trait_xp = { trait = sbs_seed_of_demon value = 2 }
 			}
 		}
 		add_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
@@ -2423,8 +2494,8 @@ sbs_slavery_event.5100 = {
 		custom_tooltip = sbs_slavery_event.5100.a.tt
 		scope:owner = {
 			if = {
-				limit = { has_trait = sbs_seed_of_destruction }
-				add_trait_xp = { trait = sbs_seed_of_destruction value = -1 }
+				limit = { has_trait = sbs_seed_of_demon }
+				add_trait_xp = { trait = sbs_seed_of_demon value = -1 }
 			}
 		}
 		remove_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
@@ -2510,8 +2581,8 @@ sbs_slavery_event.6000 = {
 		add_stress = minor_stress_gain
 		scope:owner = {
 			if = {
-				limit = { has_trait = sbs_seed_of_destruction }
-				add_trait_xp = { trait = sbs_seed_of_destruction value = 3 }
+				limit = { has_trait = sbs_seed_of_demon }
+				add_trait_xp = { trait = sbs_seed_of_demon value = 3 }
 			}
 			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 			every_courtier = {
@@ -2696,8 +2767,8 @@ sbs_slavery_event.6200 = {
 		add_stress = minor_stress_gain
 		scope:owner = {
 			if = {
-				limit = { has_trait = sbs_seed_of_destruction }
-				add_trait_xp = { trait = sbs_seed_of_destruction value = 1 }
+				limit = { has_trait = sbs_seed_of_demon }
+				add_trait_xp = { trait = sbs_seed_of_demon value = 1 }
 			}
 		}
 		if = {
@@ -2770,8 +2841,8 @@ sbs_slavery_event.6300 = {
 		custom_tooltip = sbs_slavery_event.6300.a.tt
 		scope:owner = {
 			if = {
-				limit = { has_trait = sbs_seed_of_destruction }
-				add_trait_xp = { trait = sbs_seed_of_destruction value = 2 }
+				limit = { has_trait = sbs_seed_of_demon }
+				add_trait_xp = { trait = sbs_seed_of_demon value = 2 }
 			}
 		}
 		remove_trait = comfort_eater

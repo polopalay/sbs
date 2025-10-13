@@ -10,7 +10,7 @@ sbs_devils_curse_interaction = {
 			OR = {
 				has_trait = sbs_demon
 				has_trait = sbs_succubus
-				has_trait = sbs_seed_of_destruction
+				has_trait = sbs_seed_of_demon
 			}
 		}
 		scope:recipient = {
@@ -19,7 +19,7 @@ sbs_devils_curse_interaction = {
 				has_trait = sbs_demon
 				has_trait = sbs_succubus
 				has_trait = sbs_lesser_succubus
-				has_trait = sbs_seed_of_destruction
+				has_trait = sbs_seed_of_demon
 			}
 		}
 	}
@@ -31,7 +31,7 @@ sbs_devils_curse_interaction = {
 					has_trait_xp = { trait = sbs_succubus track = daring value >= 25 }
 					has_trait_xp = { trait = sbs_succubus track = power value >= 25 }
 				}
-				has_trait_xp = { trait = sbs_seed_of_destruction value >= 1 }
+				has_trait_xp = { trait = sbs_seed_of_demon value >= 1 }
 			}
 		}
 	}
@@ -43,8 +43,8 @@ sbs_devils_curse_interaction = {
 				add_trait_xp = { trait = sbs_succubus track = power value = -50 }
 			}
 			else_if = {
-				limit = { has_trait = sbs_seed_of_destruction }
-				add_trait_xp = { trait = sbs_seed_of_destruction value = -1 }
+				limit = { has_trait = sbs_seed_of_demon }
+				add_trait_xp = { trait = sbs_seed_of_demon value = -1 }
 			}
 		}
 		scope:recipient = {
@@ -68,7 +68,7 @@ sbs_devils_curse_interaction = {
 						add = -50
 					}
 					modifier = {
-						scope:actor = { has_trait = sbs_seed_of_destruction }
+						scope:actor = { has_trait = sbs_seed_of_demon }
 						add = 45
 					}
 					add_opinion = { target = scope:actor modifier = carn_wants_to_be_your_slave_opinion }
@@ -84,10 +84,10 @@ sbs_devils_curse_interaction = {
 						add = -20
 					}
 					modifier = {
-						scope:actor = { has_trait = sbs_seed_of_destruction }
+						scope:actor = { has_trait = sbs_seed_of_demon }
 						add = 17
 					}
-					modifier = { has_trait = sbs_seed_of_destruction add = -1 }
+					modifier = { has_trait = sbs_seed_of_demon add = -1 }
 					modifier = { has_trait = sbs_lesser_succubus add = -1 }
 					carn_enslave_effect = { SLAVE = scope:recipient OWNER = scope:actor DRAMA = yes }
 				}
@@ -99,134 +99,134 @@ sbs_devils_curse_interaction = {
 				}
 				2 = {
 					modifier = { has_trait = depressed add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_destruction } add = -1 }
+					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = depressed_1
 				}
 				2 = {
 					modifier = { has_trait = depressed add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_destruction } add = -1 }
+					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = depressed_genetic
 				}
 				2 = {
 					modifier = { has_trait = lunatic add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_destruction } add = -1 }
+					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = lunatic_1
 				}
 				2 = {
 					modifier = { has_trait = lunatic add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_destruction } add = -1 }
+					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = lunatic_genetic
 				}
 				2 = {
 					modifier = { has_trait = possessed add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_destruction } add = -1 }
+					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = possessed_1
 				}
 				2 = {
 					modifier = { has_trait = possessed add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_destruction } add = -1 }
+					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = possessed_genetic
 				}
 				2 = {
 					modifier = { has_trait = ill add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_destruction } add = -1 }
+					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = ill
 				}
 				2 = {
 					modifier = { has_trait = pneumonic add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_destruction } add = -1 }
+					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = pneumonic
 				}
 				2 = {
 					modifier = { has_trait = gout_ridden add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_destruction } add = -1 }
+					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = gout_ridden
 				}
 				2 = {
 					modifier = { has_trait = typhus add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_destruction } add = -1 }
+					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = typhus
 				}
 				2 = {
 					modifier = { has_trait = consumption add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_destruction } add = -1 }
+					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = consumption
 				}
 				2 = {
 					modifier = { has_trait = cancer add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_destruction } add = -1 }
+					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = cancer
 				}
 				2 = {
 					modifier = { has_trait = great_pox add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_destruction } add = -1 }
+					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = great_pox
 				}
 				2 = {
 					modifier = { has_trait = smallpox add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_destruction } add = -1 }
+					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = smallpox
 				}
 				2 = {
 					modifier = { has_trait = bubonic_plague add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_destruction } add = -1 }
+					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = bubonic_plague
 				}
 				2 = {
 					modifier = { has_trait = lovers_pox add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_destruction } add = -1 }
+					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = lovers_pox
 				}
 				2 = {
 					modifier = { has_trait = great_pox add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_destruction } add = -1 }
+					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = great_pox
 				}
 				2 = {
 					modifier = { has_trait = bubonic_plague add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_destruction } add = -1 }
+					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = bubonic_plague
 				}
 				2 = {
 					modifier = { has_trait = measles add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_destruction } add = -1 }
+					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = measles
 				}
 				2 = {
 					modifier = { has_trait = dysentery add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_destruction } add = -1 }
+					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = dysentery
 				}
 				2 = {
 					modifier = { has_trait = ergotism add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_destruction } add = -1 }
+					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = ergotism
 				}
 				1 = {
 					modifier = { has_trait = inbred add = -1 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_destruction } add = -1 }
+					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = inbred
 				}
 				1 = {
 					modifier = { OR = { has_trait = dull has_trait = intellect_good has_trait = shrewd } add = -1 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_destruction } add = -1 }
+					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = dull
 				}
 				1 = {
 					modifier = { OR = { has_trait = weak has_trait = strong has_trait = physique_good } add = -1 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_destruction } add = -1 }
+					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = weak
 				}
 				1 = {
 					modifier = { OR = { has_trait = fecund has_trait = infertile } add = -1 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_destruction } add = -1 }
+					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = infertile
 				}
 				20 = {
 					modifier = {
 						OR = {
 							has_character_flag = succubus_debuff
-							scope:actor = { has_trait = sbs_seed_of_destruction }
+							scope:actor = { has_trait = sbs_seed_of_demon }
 						}
 						add = -18
 					}
@@ -255,96 +255,6 @@ sbs_devils_curse_interaction = {
 		modifier = { add = -25 scope:recipient = { has_relation_friend = scope:actor } }
 		modifier = { add = -50 scope:recipient = { has_relation_lover = scope:actor } }
 		modifier = { add = -50 scope:recipient = { is_close_family_of = scope:actor } }
-		modifier = {
-			add = 100
-			scope:recipient = {
-				NOT = {
-					is_spouse_of = scope:actor
-					is_extended_family_of = scope:actor
-					is_child_of = scope:actor
-					is_close_family_of = scope:actor
-					has_relation_lover = scope:actor
-					has_relation_friend = scope:actor
-					has_trait_with_flag = carn_cannot_be_enslaved
-					has_character_flag = carn_cannot_be_enslaved
-					has_trait = slave
-				}
-				age < 30
-				has_opinion_modifier = { target = scope:actor modifier = carn_wants_to_be_your_slave_opinion }
-			}
-			scope:actor = {
-				has_trait = sbs_seed_of_destruction
-				any_relation = {
-					type = slave
-					count < 13
-				}
-			}
-		}
-		modifier = {
-			add = 30
-			scope:recipient = {
-				NOT = {
-					is_spouse_of = scope:actor
-					is_extended_family_of = scope:actor
-					is_child_of = scope:actor
-					is_close_family_of = scope:actor
-					has_relation_lover = scope:actor
-					has_relation_friend = scope:actor
-					has_trait_with_flag = carn_cannot_be_enslaved
-					has_character_flag = carn_cannot_be_enslaved
-					has_trait = slave
-				}
-				OR = {
-					has_trait = beauty_good
-					has_trait = physique_good
-					has_trait = intellect_good
-					is_female = yes
-				}
-				faith = {
-					faith_hostility_level = {
-						target = scope:actor.faith
-						value >= faith_hostile_level
-					}
-				}
-				age < 30
-			}
-			scope:actor = {
-				has_trait = sbs_seed_of_destruction
-				any_relation = {
-					type = slave
-					count < 13
-				}
-			}
-		}
-		modifier = {
-			add = 20
-			scope:recipient = {
-				NOT = {
-					is_spouse_of = scope:actor
-					is_extended_family_of = scope:actor
-					is_child_of = scope:actor
-					is_close_family_of = scope:actor
-					has_relation_lover = scope:actor
-					has_relation_friend = scope:actor
-					has_trait_with_flag = carn_cannot_be_enslaved
-					has_character_flag = carn_cannot_be_enslaved
-					has_trait = slave
-				}
-				faith = {
-					faith_hostility_level = {
-						target = scope:actor.faith
-						value >= faith_hostile_level
-					}
-				}
-				age < 30
-			}
-			scope:actor = {
-				has_trait = sbs_seed_of_destruction
-				any_relation = {
-					type = slave
-					count < 13
-				}
-			}
-		}
+		modifier = { add = -50 scope:actor = { has_trait_xp = { trait = sbs_seed_of_demon value < 100 } } }
 	}
 }

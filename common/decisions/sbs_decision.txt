@@ -11,7 +11,7 @@ become_demon = {
 		NOT = { has_global_variable = seal_the_gates_of_hell }
 		OR = {
 			has_trait = sbs_succubus
-			has_trait = sbs_seed_of_destruction
+			has_trait = sbs_seed_of_demon
 			AND = {
 				faith.religion = religion:demonic_religion
 				faith.religious_head = root
@@ -26,8 +26,8 @@ become_demon = {
 				has_trait_xp = { trait = sbs_succubus track = loyalty value >= 100 }
 			}
 			AND = {
-				has_trait = sbs_seed_of_destruction
-				has_trait_xp = { trait = sbs_seed_of_destruction value >= 100 }
+				has_trait = sbs_seed_of_demon
+				has_trait_xp = { trait = sbs_seed_of_demon value >= 100 }
 				primary_title.tier >= tier_empire
 			}
 			AND = {
@@ -168,8 +168,8 @@ become_demon = {
 		}
 		scope:demon_child = {
 			if = {
-				limit = { has_trait = sbs_seed_of_destruction }
-				remove_trait = sbs_seed_of_destruction
+				limit = { has_trait = sbs_seed_of_demon }
+				remove_trait = sbs_seed_of_demon
 				every_relation = {
 					type = slave
 					limit = { is_female = yes is_immortal = yes }

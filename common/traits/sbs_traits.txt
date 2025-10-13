@@ -22,7 +22,7 @@ sbs_demon = {
 			desc = sbs_demon_character_desc
 		}
 	}
-	opposites = { sbs_succubus sbs_lesser_succubus sbs_seed_of_destruction incapable }
+	opposites = { sbs_succubus sbs_lesser_succubus sbs_seed_of_demon }
 
 	monthly_lifestyle_xp_gain_mult = -1000
 	long_reign_bonus_mult = -1000
@@ -60,14 +60,8 @@ sbs_succubus = {
 	category = health
 	icon = sbs_succubus.dds
 
-	immortal = yes
 	no_prowess_loss_from_age = yes
 	add_commander_trait = yes
-
-	flag = is_immortal
-	flag = immortal_visuals
-	flag = immortal_fertility
-	flag = immortal_incapability
 
 	valid_sex = female
 
@@ -86,12 +80,13 @@ sbs_succubus = {
 		}
 	}
 
-	opposites = { sbs_demon sbs_lesser_succubus sbs_seed_of_destruction incapable }
+	opposites = { sbs_demon sbs_lesser_succubus }
 
-	fertility = -0.5
+	life_expectancy = 222
+	years_of_fertility = 222
+	health = 1
+	negate_health_penalty_add = 1
 	general_opinion = 5
-	monthly_lifestyle_xp_gain_mult = -1000
-	long_reign_bonus_mult = -1000
 	character_travel_speed = 5
 	travel_danger = -5
 	stewardship = 1
@@ -137,8 +132,10 @@ sbs_succubus = {
 		}
 		corruption = {
 			50 = {
-				health = 1
-				negate_health_penalty_add = 1
+				health = 2
+				negate_health_penalty_add = 2
+				life_expectancy = 222
+				years_of_fertility = 222
 				health = 1
 				stewardship = 4
 				intrigue = 4
@@ -147,8 +144,10 @@ sbs_succubus = {
 			}
 
 			100 = {
-				health = 1
-				negate_health_penalty_add = 1
+				health = 3
+				negate_health_penalty_add = 3
+				life_expectancy = 222
+				years_of_fertility = 222
 				stewardship = 5
 				intrigue = 5
 				learning = 5
@@ -208,7 +207,7 @@ sbs_lesser_succubus = {
 	ai_greed = dominant_positive_ai_value
 	ai_zeal = dominant_negative_ai_value
 
-	opposites = { sbs_demon sbs_succubus sbs_seed_of_destruction incapable }
+	opposites = { sbs_demon sbs_succubus }
 
 	name = trait_lesser_succubus_neutral
 
@@ -225,6 +224,7 @@ sbs_lesser_succubus = {
 	}
 
 	life_expectancy = 100
+	years_of_fertility = 100
 	attraction_opinion = 5
 	health = 1
 	negate_health_penalty_add = 0.1
@@ -234,6 +234,8 @@ sbs_lesser_succubus = {
 
 	track = {
 		50 = {
+			life_expectancy = 50
+			years_of_fertility = 50
 			attraction_opinion = 10
 			health = 2
 			negate_health_penalty_add = 1
@@ -242,6 +244,8 @@ sbs_lesser_succubus = {
 			enemy_hostile_scheme_phase_duration_add = 40
 		}
 		100 = {
+			life_expectancy = 50
+			years_of_fertility = 50
 			attraction_opinion = 15
 			health = 2
 			negate_health_penalty_add = 2
@@ -253,15 +257,17 @@ sbs_lesser_succubus = {
 	ruler_designer_cost = 50
 }
 
-sbs_seed_of_destruction = {
+sbs_seed_of_demon = {
 	category = health
-	icon = sbs_seed_of_destruction.dds
+	icon = sbs_seed_of_demon.dds
 	
 	no_prowess_loss_from_age = yes
 	add_commander_trait = yes
 
+	flag = slave_owner
+
 	valid_sex = male
-	opposites = { sbs_demon sbs_succubus sbs_lesser_succubus incapable }
+	opposites = { sbs_demon }
 
 	ai_greed = dominant_positive_ai_value
 	ai_vengefulness = dominant_positive_ai_value
@@ -272,13 +278,14 @@ sbs_seed_of_destruction = {
 				trigger = {
 					NOT = { exists = this }
 				}
-				desc = sbs_seed_of_destruction_desc
+				desc = sbs_seed_of_demon_desc
 			}
-			desc = sbs_seed_of_destruction_character_desc
+			desc = sbs_seed_of_demon_character_desc
 		}
 	}
 
 	life_expectancy = 100
+	years_of_fertility = 100
 	health = 1
 	track = {
 		50 = {

@@ -12,6 +12,10 @@
 				has_trait = sbs_demon
 				has_trait = sbs_succubus
 				has_trait = sbs_lesser_succubus
+				AND = {
+					has_trait = sbs_seed_of_demon
+					scope:recipient = scope:actor
+				}
 			}
 		}
 		scope:recipient = {
@@ -159,6 +163,13 @@
 					value >= {
 						value = scope:recipient.succubus_cost_value
 						multiply = 2
+					}
+				}
+				has_trait_xp = {
+					trait = sbs_seed_of_demon
+					value >= {
+						value = scope:recipient.succubus_cost_value
+						multiply = 4
 					}
 				}
 			}
@@ -474,6 +485,17 @@
 						value = 0
 						subtract = scope:recipient.succubus_cost_value
 						multiply = 2
+					}
+				}
+			}
+			if = {
+				limit = { has_trait = sbs_seed_of_demon }
+				add_trait_xp = {
+					trait = sbs_seed_of_demon
+					value = {
+						value = 0
+						subtract = scope:recipient.succubus_cost_value
+						multiply = 4
 					}
 				}
 			}

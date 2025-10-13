@@ -53,6 +53,15 @@
 			opinion_target = scope:actor
 			multiplier = 1
 		}
+		modifier = {
+			scope:secondary_recipient = {
+				has_opinion_modifier = {
+					target = scope:recipient
+					modifier = carn_wants_to_be_your_slave_opinion
+				}
+			}
+			add = -100
+		}
 		modifier = { add = -100 scope:secondary_recipient = { is_immortal = yes } }
 		modifier = { add = 40 scope:secondary_recipient = { age >= 50 is_immortal = no } }
 		modifier = { add = 5 scope:secondary_recipient = { has_trait = beauty_bad_1 } }

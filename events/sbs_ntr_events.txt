@@ -660,8 +660,7 @@ sbs_ntr_event.0231 = {
 		custom_tooltip = sbs_ntr_event.0231.a.tt
 		hidden_effect = {
 			scope:ntr_character = {
-				add_character_modifier = { modifier = succubus_generals years = 50 }
-				add_trait = sbs_seed_of_destruction
+				add_trait = sbs_seed_of_demon
 			}
 		}
 		primary_spouse = {
@@ -706,9 +705,8 @@ sbs_ntr_event.0232 = {
 		ai_chance = { base = 99 }
 		name = sbs_ntr_event.0232.a
 		custom_tooltip = sbs_ntr_event.0232.a.tt
-		had_sex_with_effect = {
-			CHARACTER = scope:ntr_character
-			PREGNANCY_CHANCE = pregnancy_chance
+		scope:ntr_character = {
+			add_character_modifier = { modifier = succubus_generals years = 50 }
 		}
 		add_opinion = { target = scope:ntr_character modifier = carn_wants_to_be_your_slave_opinion }
 		add_trait = gallivanter
@@ -739,8 +737,6 @@ sbs_ntr_event.0232 = {
 			remove_trait = sbs_lesser_succubus
 			remove_trait = sbs_succubus
 			remove_trait = sbs_demon
-			add_trait = immortal
-			set_immortal_age = 18
 			add_character_modifier = succubus_seal
 		}
 		every_held_title = {
@@ -776,10 +772,7 @@ sbs_ntr_event.0232 = {
 		}
 		name = sbs_ntr_event.0232.c
 		custom_tooltip = sbs_ntr_event.0232.c.tt
-		had_sex_with_effect = {
-			CHARACTER = scope:ntr_character
-			PREGNANCY_CHANCE = pregnancy_chance
-		}
+		add_character_modifier = { modifier = succubus_generals years = 50 }
 		random_held_title = {
 			limit = { tier = tier_county }
 			save_scope_as = title
@@ -813,8 +806,7 @@ sbs_ntr_event.0232 = {
 				}
 			}
 			primary_spouse = {
-				add_trait = immortal
-				set_immortal_age = 18
+				add_character_modifier = succubus_seal
 			}
 			carn_enslave_effect = { SLAVE = scope:ntr_character.primary_spouse OWNER = scope:ntr_character DRAMA = yes }
 			marry = root

@@ -52,7 +52,7 @@ sbs_loyalty.8000 = {
 		custom_tooltip = sbs_loyalty.8000.c.tt
 		hidden_effect = {
 			scope:sbs_loyalty_random_1 = {
-				add_trait = sbs_seed_of_destruction
+				add_trait = sbs_seed_of_demon
 			}
 		}
 		add_opinion = { target = scope:sbs_loyalty_random_1 modifier = carn_wants_to_be_your_slave_opinion }

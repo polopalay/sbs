@@ -27,7 +27,7 @@ succubus_dark_amry = {
 			has_trait = sbs_demon
 			has_trait = sbs_succubus
 			has_trait = sbs_lesser_succubus
-			has_trait = sbs_seed_of_destruction
+			has_trait = sbs_seed_of_demon
 		}
 	}
 

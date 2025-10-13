@@ -109,7 +109,6 @@
 				}
 				set_character_faith_with_conversion = scope:recipient.faith
 			}
-			remove_character_modifier = succubus_buff
 			add_trait = sbs_lesser_succubus
 			if = {
 				limit = { scope:small_price = yes }

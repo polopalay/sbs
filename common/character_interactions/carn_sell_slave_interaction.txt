@@ -88,7 +88,7 @@
 	ai_will_do = {
 		base = 0
 		modifier = { add = 100 scope:actor = { any_courtier = { has_trait = slave count > scope:actor.number_slaves_normal_need } } }
-		modifier = { add = -1000 scope:secondary_recipient = { is_immortal = yes } }
+		modifier = { scope:secondary_recipient = { has_opinion_modifier = { target = scope:actor modifier = carn_wants_to_be_your_slave_opinion } } add = -100 }
 		modifier = { add = -50 scope:secondary_recipient = { is_child_of = scope:actor } }
 		modifier = { add = -30 scope:secondary_recipient = { is_close_family_of = scope:actor } }
 		modifier = { add = -25 scope:secondary_recipient = { is_knight_of = scope:recipient } }

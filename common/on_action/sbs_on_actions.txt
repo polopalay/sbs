@@ -2,7 +2,7 @@ random_yearly_everyone_pulse = {
 	on_actions = {
 		random_ntr_on_action
 		sbs_devil_on_action
-		sbs_seed_of_destruction_on_action
+		sbs_seed_of_demon_on_action
 	}
 }
 
@@ -23,7 +23,7 @@ random_ntr_on_action = {
 			NOT = { faith.religion = religion:demonic_religion }
 			NOT = {
 				has_trait = sbs_demon
-				has_trait = sbs_seed_of_destruction
+				has_trait = sbs_seed_of_demon
 			}
 		}
 		primary_spouse.father = {
@@ -124,7 +124,7 @@ sbs_devil_on_action = {
 	}
 }
 
-sbs_seed_of_destruction_on_action = {
+sbs_seed_of_demon_on_action = {
 	trigger = {
 		is_adult = yes
 		is_female = yes
@@ -135,7 +135,7 @@ sbs_seed_of_destruction_on_action = {
 			is_immortal = yes
 			root = character:7757
 			root = character:223522
-			liege = { has_trait = sbs_seed_of_destruction }
+			liege = { has_trait = sbs_seed_of_demon }
 			liege = { has_trait = sbs_demon }
 		}
 	}

@@ -108,7 +108,6 @@
 			}
 			remove_trait = sbs_lesser_succubus
 			add_trait = sbs_succubus
-			set_immortal_age = 18
 			if = {
 				limit = { scope:secondary_recipient = { is_close_family_of = scope:actor } }
 				add_trait_xp = { trait = sbs_succubus track = corruption value = 50 }
