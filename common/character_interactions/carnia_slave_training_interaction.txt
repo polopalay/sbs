@@ -108,6 +108,10 @@
 					}
 				}
 				0 = {
+					modifier = { add = 2 current_weight < 40 }
+					change_current_weight = -10
+				}
+				0 = {
 					modifier = { add = 1 has_trait_rank = { trait = wounded rank < 3 } }
 					change_trait_rank = { trait = wounded rank = 1 }
 				}

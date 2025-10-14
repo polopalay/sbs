@@ -172,7 +172,7 @@ sbs_slavery_event.0000 = {
 				modifier = {
 					OR = {
 						has_trait = comfort_eater
-						current_weight > -10
+						current_weight > 0
 					}
 					add = 500
 				}
@@ -1307,6 +1307,7 @@ sbs_slavery_event.0310 = {
 		name = sbs_slavery_event.0310.a
 		custom_tooltip = sbs_slavery_event.0310.a.tt
 		add_character_modifier = { modifier = stress_smelling_of_sweat years = 1 }
+		change_current_weight = -5
 		scope:owner = {
 			if = {
 				limit = { has_trait = sbs_seed_of_demon }
@@ -1892,6 +1893,7 @@ sbs_slavery_event.0600 = {
 		add_prestige_level = -6
 		add_legitimacy = -1000
 		change_influence_level = -6
+		change_current_weight = -10
 		if = {
 			limit = { has_trait = ambitious }
 			remove_trait = ambitious
@@ -2073,6 +2075,10 @@ sbs_slavery_event.0900 = {
 			if =  {
 				limit = { any_secret = { NOT = { is_known_by = scope:owner2 } } }
 				random_secret = { limit = { NOT = { is_known_by = scope:owner2 } } reveal_to = scope:owner2 }
+			}
+			else_if = {
+				limit = { current_weight > -40 }
+				change_current_weight = -10
 			}
 			else_if = {
 				limit = { NOT = { has_trait = wounded_1 has_trait = wounded_2 has_trait = wounded_3 } }
@@ -2630,6 +2636,10 @@ sbs_slavery_event.6100 = {
 			random_secret = { limit = { NOT = { is_known_by = scope:owner } } reveal_to = scope:owner }
 		}
 		else_if = {
+			limit = { current_weight > -40 }
+			change_current_weight = -10
+		}
+		else_if = {
 				limit = { NOT = { has_trait = wounded_1 has_trait = wounded_2 has_trait = wounded_3 } }
 				add_trait = wounded_1
 		}
@@ -2697,6 +2707,10 @@ sbs_slavery_event.6110 = {
 		if = {
 			limit = { any_secret = { NOT = { is_known_by = scope:owner } } } 
 			random_secret = { limit = { NOT = { is_known_by = scope:owner } } reveal_to = scope:owner }
+		}
+		else_if = {
+			limit = { current_weight > -40 }
+			change_current_weight = -10
 		}
 		else_if = {
 				limit = { NOT = { has_trait = wounded_1 has_trait = wounded_2 has_trait = wounded_3 } }
@@ -2884,8 +2898,8 @@ sbs_slavery_event.6310 = {
 			}
 		}
 		if = {
-			limit = { current_weight > -25 }
-			change_current_weight = -5
+			limit = { current_weight > -50 }
+			change_current_weight = -10
 			trigger_event = sbs_slavery_event.6310
 		}
 		else = {
@@ -2991,6 +3005,7 @@ sbs_slavery_event.6500 = {
 		name = sbs_slavery_event.6500.b
 		title = sbs_slavery_event.6500.b.tt
 		trigger_event = sbs_slavery_event.6520
+		change_current_weight = -10
 	}
 }
 
@@ -3083,6 +3098,10 @@ sbs_slavery_event.6512 = {
 			random_secret = { limit = { NOT = { is_known_by = scope:owner } } reveal_to = scope:owner }
 		}
 		else_if = {
+			limit = { current_weight > -40 }
+			change_current_weight = -10
+		}
+		else_if = {
 				limit = { NOT = { has_trait = wounded_1 has_trait = wounded_2 has_trait = wounded_3 } }
 				add_trait = wounded_1
 		}
@@ -3166,11 +3185,13 @@ sbs_slavery_event.6700 = {
 		name = sbs_slavery_event.6700.a
 		title = sbs_slavery_event.6700.a.tt
 		add_prestige_level = -1
+		change_current_weight = -10
 	}
 	option = {
 		name = sbs_slavery_event.6700.b
 		title = sbs_slavery_event.6700.b.tt
 		add_prestige_level = -1
+		change_current_weight = -10
 		add_character_modifier = { modifier = licentious_03_modifier months = 1 }
 	}
 }
