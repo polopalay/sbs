@@ -10,11 +10,13 @@ sbs_change_character_interaction = {
 		scope:actor = {
 			is_ai = no
 			has_trait = slave
+			has_character_modifier = succubus_seal
 		}
 		scope:recipient = {
 			is_ai = yes
 			has_trait = slave
 			is_close_family_of = scope:actor
+			NOT = { has_character_modifier = succubus_seal }
 		}
 		scope:actor.house = scope:recipient.house
 	}
@@ -22,6 +24,10 @@ sbs_change_character_interaction = {
 	on_accept = {
 		scope:actor = {
 			set_player_character = scope:recipient
+			remove_character_modifier = succubus_seal
+		}
+		scope:recipient = {
+			add_character_modifier = succubus_seal
 		}
 	}
 }

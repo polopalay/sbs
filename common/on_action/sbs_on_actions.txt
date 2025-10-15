@@ -2,7 +2,7 @@ random_yearly_everyone_pulse = {
 	on_actions = {
 		random_ntr_on_action
 		sbs_devil_on_action
-		sbs_seed_of_demon_on_action
+		sbs_slave_on_action
 	}
 }
 
@@ -124,20 +124,11 @@ sbs_devil_on_action = {
 	}
 }
 
-sbs_seed_of_demon_on_action = {
+sbs_slave_on_action = {
 	trigger = {
 		is_adult = yes
 		is_female = yes
 		has_trait = slave
-		liege = { is_adult = yes }
-		OR = {
-			is_ai = no
-			is_immortal = yes
-			root = character:7757
-			root = character:223522
-			liege = { has_trait = sbs_seed_of_demon }
-			liege = { has_trait = sbs_demon }
-		}
 	}
 	events = {
 		sbs_slavery_event.0000
