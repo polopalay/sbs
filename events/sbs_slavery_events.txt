@@ -228,7 +228,7 @@ sbs_slavery_event.0000 = {
 			0 = {
 				modifier = {
 					is_imprisoned = yes
-					add = 100
+					add = 1000
 				}
 				trigger_event = sbs_slavery_event.6900
 			}
@@ -350,12 +350,6 @@ sbs_slavery_event.0110 = {
 		ai_chance = { base = 80 }
 		name = sbs_slavery_event.0110.a
 		custom_tooltip = sbs_slavery_event.0110.a.tt
-		scope:owner = {
-			if = {
-				limit = { has_trait = sbs_seed_of_demon }
-				add_trait_xp = { trait = sbs_seed_of_demon value = 10 }
-			}
-		}
 		if = {
 			limit = { any_secret = { NOT = { is_known_by = scope:owner } } }
 			random_secret = { limit = { NOT = { is_known_by = scope:owner } } reveal_to = scope:owner }

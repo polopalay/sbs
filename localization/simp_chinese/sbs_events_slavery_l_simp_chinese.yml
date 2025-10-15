@@ -312,5 +312,5 @@
   sbs_slavery_event.6900.desc: "Despite the terrible sins I have committed, my master still accepts to forgive me if I pass the test he sets."
   sbs_slavery_event.6900.a: "Accept"
   sbs_slavery_event.6900.a.tt: "Forced to be a semen reservoir for all soldiers"
-  sbs_slavery_event.6900.a: "Resist"
-  sbs_slavery_event.6900.a.tt: "Endure brutal torture"
+  sbs_slavery_event.6900.b: "Resist"
+  sbs_slavery_event.6900.b.tt: "Endure brutal torture"
