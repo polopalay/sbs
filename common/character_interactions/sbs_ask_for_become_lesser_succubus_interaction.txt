@@ -13,6 +13,11 @@
 		scope:actor = {
 			is_female = yes
 			has_trait = saint
+			NOR = {
+				has_trait = sbs_lesser_succubus
+				has_trait = sbs_succubus
+				has_trait = sbs_demon
+			}
 		}
 		scope:recipient = {
 			OR = {
@@ -108,6 +113,10 @@
 					scope:demand_conversion = yes
 				}
 				set_character_faith_with_conversion = scope:recipient.faith
+			}
+			if = {
+				limit = { has_trait = immortal }
+				remove_trait = immortal
 			}
 			add_trait = sbs_lesser_succubus
 			if = {

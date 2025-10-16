@@ -20,19 +20,15 @@ sbs_slavery_event.0000 = {
 				}
 				trigger_event = sbs_slavery_event.0100
 			}
-			5 = {
+			0 = {
 				modifier = {
+					exists = scope:owner
 					OR = {
 						has_trait = lovers_pox
 						has_trait = early_great_pox
 						has_trait = great_pox
 						has_trait = leper
 						has_trait = disfigured
-					}
-					add = 200
-				}
-				modifier = {
-					OR = {
 						has_trait = blind
 						has_trait = one_eyed
 						has_trait = scarred
@@ -42,11 +38,6 @@ sbs_slavery_event.0000 = {
 						has_trait = incapable
 						has_trait = infirm
 						has_trait = wounded
-					}
-					add = 100
-				}
-				modifier = {
-					OR = {
 						has_trait = consumption
 						has_trait = typhus
 						has_trait = bubonic_plague
@@ -55,7 +46,7 @@ sbs_slavery_event.0000 = {
 						has_trait = dysentery
 						has_trait = ergotism
 					}
-					add = 30
+					add = 100
 				}
 				trigger_event = sbs_slavery_event.0200
 			}
@@ -152,7 +143,7 @@ sbs_slavery_event.0000 = {
 				modifier = {
 					liege = { is_adult = yes }
 					has_trait = drunkard
-					add = 500
+					add = 50
 				}
 				trigger_event = sbs_slavery_event.6000
 			}
@@ -168,22 +159,24 @@ sbs_slavery_event.0000 = {
 			}
 			0 = {
 				modifier = {
+					exists = scope:owner
 					OR = {
 						has_trait = temperate
 						has_trait = inappetetic
 						current_weight < -40
 					}
-					add = 500
+					add = 50
 				}
 				trigger_event = sbs_slavery_event.6200
 			}
 			0 = {
 				modifier = {
+					exists = scope:owner
 					OR = {
 						has_trait = comfort_eater
 						current_weight > 0
 					}
-					add = 500
+					add = 50
 				}
 				trigger_event = sbs_slavery_event.6300
 			}
@@ -200,26 +193,29 @@ sbs_slavery_event.0000 = {
 					liege = { is_adult = yes }
 					NOT = { has_character_modifier = forced_labor }
 					is_female = yes
-					add = 2
+					add = 5
 				}
 				trigger_event = sbs_slavery_event.6500
 			}
-			10 = {
+			0 = {
 				modifier = {
+					exists = scope:owner
 					has_character_modifier = forced_labor
 					add = 10
 				}
 				trigger_event = sbs_slavery_event.6600
 			}
-			10 = {
+			0 = {
 				modifier = {
+					exists = scope:owner
 					has_character_modifier = forced_labor
 					add = 10
 				}
 				trigger_event = sbs_slavery_event.6700
 			}
-			10 = {
+			0 = {
 				modifier = {
+					exists = scope:owner
 					has_character_modifier = forced_labor
 					add = 10
 				}
@@ -227,10 +223,26 @@ sbs_slavery_event.0000 = {
 			}
 			0 = {
 				modifier = {
+					exists = scope:owner
 					is_imprisoned = yes
 					add = 1000
 				}
 				trigger_event = sbs_slavery_event.6900
+			}
+			0 = {
+				modifier = {
+					NOT = { exists = scope:owner }
+					add = 1000
+				}
+				random_living_character = {
+					limit = { is_adult = yes is_ruler = yes in_diplomatic_range = root }
+					carn_enslave_effect = { SLAVE = root OWNER = this DRAMA = no }
+					weight = {
+						base = 0
+						modifier = { is_ruler = yes in_diplomatic_range = root add = 1 }
+						modifier = { is_ruler = yes has_trait = sbs_seed_of_demon add = 20000 }
+					}
+				}
 			}
 			25 = 0
 		}
@@ -585,7 +597,7 @@ sbs_slavery_event.0116 = {
 				}
 				5 = {
 					modifier = { OR = { has_trait = chaste has_trait = lustful } add = -5 }
-					add_trait = lust
+					add_trait = lustful
 				}
 			}
 		}
@@ -2023,6 +2035,10 @@ sbs_slavery_event.0900 = {
 			change_current_weight = -10
 		}
 		else_if = {
+			limit = { should_be_naked_trigger = no }
+			add_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
+		}
+		else_if = {
 			limit = { NOT = { has_trait = wounded_1 has_trait = wounded_2 has_trait = wounded_3 } }
 			add_trait = wounded_1
 		}
@@ -2336,7 +2352,10 @@ sbs_slavery_event.4000 = {
 		add_prestige_level = -6
 		add_legitimacy = -1000
 		change_influence_level = -6
-		add_character_modifier = succubus_seal
+		if = {
+			limit = { NOT = { has_character_modifier = succubus_seal } }
+			add_character_modifier = succubus_seal
+		}
 	}
 	option = {
 		ai_chance = { base = 1 }
@@ -2558,6 +2577,10 @@ sbs_slavery_event.6100 = {
 			change_current_weight = -10
 		}
 		else_if = {
+			limit = { should_be_naked_trigger = no }
+			add_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
+		}
+		else_if = {
 				limit = { NOT = { has_trait = wounded_1 has_trait = wounded_2 has_trait = wounded_3 } }
 				add_trait = wounded_1
 		}
@@ -2630,6 +2653,10 @@ sbs_slavery_event.6110 = {
 		else_if = {
 			limit = { current_weight > -40 }
 			change_current_weight = -10
+		}
+		else_if = {
+			limit = { should_be_naked_trigger = no }
+			add_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
 		}
 		else_if = {
 				limit = { NOT = { has_trait = wounded_1 has_trait = wounded_2 has_trait = wounded_3 } }
@@ -2974,6 +3001,7 @@ sbs_slavery_event.6511 = {
 			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 		}
 		add_character_modifier = { modifier = stanky_modifier months = 1 }
+		change_current_weight = -5
 		if = {
 			limit = { is_pregnant = no }
 			trigger_event = { id = sbs_slavery_event.6511 days = { 10 20 } }
@@ -3007,6 +3035,10 @@ sbs_slavery_event.6512 = {
 		else_if = {
 			limit = { current_weight > -40 }
 			change_current_weight = -10
+		}
+		else_if = {
+			limit = { should_be_naked_trigger = no }
+			add_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
 		}
 		else_if = {
 				limit = { NOT = { has_trait = wounded_1 has_trait = wounded_2 has_trait = wounded_3 } }
@@ -3043,8 +3075,8 @@ sbs_slavery_event.6520 = {
 	option = {
 		name = sbs_slavery_event.6520.a
 		title = sbs_slavery_event.6520.a.tt 
-		desc = sbs_
 		add_character_modifier = { modifier = forced_labor years = 5 }
+		change_current_weight = -10
 	}
 }
 
@@ -3062,12 +3094,14 @@ sbs_slavery_event.6600 = {
 		name = sbs_slavery_event.6600.a
 		title = sbs_slavery_event.6600.a.tt
 		add_character_modifier = { modifier = stress_smelling_of_sweat months = 1 }
+		change_current_weight = -5
 		random = { chance = 25 add_prowess_skill = 1 }
 	}
 	option = {
 		name = sbs_slavery_event.6600.b
 		title = sbs_slavery_event.6600.b.tt
 		add_character_modifier = { modifier = stress_smelling_of_sweat months = 1 }
+		change_current_weight = -10
 		random_list = {
 			1 = { add_intrigue_skill = 1 }
 			1 = { add_martial_skill = 1 }
@@ -3226,6 +3260,10 @@ sbs_slavery_event.6900 = {
 		else_if = {
 			limit = { current_weight > -40 }
 			change_current_weight = -10
+		}
+		else_if = {
+			limit = { should_be_naked_trigger = no }
+			add_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
 		}
 		else_if = {
 			limit = { NOT = { has_trait = wounded_1 has_trait = wounded_2 has_trait = wounded_3 } }

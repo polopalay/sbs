@@ -50,11 +50,6 @@ sbs_loyalty.8000 = {
 	option = {
 		name = sbs_loyalty.8000.c
 		custom_tooltip = sbs_loyalty.8000.c.tt
-		hidden_effect = {
-			scope:sbs_loyalty_random_1 = {
-				add_trait = sbs_seed_of_demon
-			}
-		}
 		add_opinion = { target = scope:sbs_loyalty_random_1 modifier = carn_wants_to_be_your_slave_opinion }
 		every_held_title = {
 			create_title_and_vassal_change = {
@@ -69,10 +64,9 @@ sbs_loyalty.8000 = {
 			}
 			resolve_title_and_vassal_change = scope:change
 		}
-		add_trait = disinherited
-		add_trait = denounced
-		random_living_character = {
-			limit = { is_ruler = yes NOT = { in_diplomatic_range = root } }
+		add_character_modifier = succubus_seal
+		scope:sbs_loyalty_random_1 = {
+			add_trait = sbs_seed_of_demon
 			carn_enslave_effect = { SLAVE = root OWNER = this DRAMA = yes }
 		}
 	}

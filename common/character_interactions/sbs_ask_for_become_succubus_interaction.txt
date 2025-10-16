@@ -106,6 +106,10 @@
 				}
 				set_character_faith_with_conversion = scope:recipient.faith
 			}
+			if = {
+				limit = { has_trait = immortal }
+				remove_trait = immortal
+			}
 			remove_trait = sbs_lesser_succubus
 			add_trait = sbs_succubus
 			if = {

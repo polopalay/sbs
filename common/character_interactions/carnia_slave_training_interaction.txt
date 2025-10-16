@@ -108,7 +108,7 @@
 					}
 				}
 				0 = {
-					modifier = { add = 2 current_weight < 40 }
+					modifier = { add = 5 current_weight < 40 }
 					change_current_weight = -10
 				}
 				0 = {
@@ -116,32 +116,8 @@
 					change_trait_rank = { trait = wounded rank = 1 }
 				}
 				0 = {
-					modifier = { add = 10 NOT = { has_character_modifier = diplomacy_majesty_4090_no_raiment_modifier } }
-					add_character_modifier = { modifier = diplomacy_majesty_4090_no_raiment_modifier years = 2 }
-				}
-				0 = {
-					modifier = { add = 10 is_pregnant = no scope:actor = { any_relation = { type = slave is_adult = yes is_attracted_to_gender_of = scope:recipient } } }
-					scope:actor = {
-						random_relation = {
-							type = slave
-							limit = { is_adult = yes is_female = no }
-							had_sex_with_effect = { CHARACTER = scope:recipient PREGNANCY_CHANCE = pregnancy_chance }
-						}
-					}
-				}
-				0 = {
-					modifier = { add = 10 is_pregnant = no any_relation = { type = rival is_adult = yes is_attracted_to_gender_of = scope:recipient } }
-					random_relation = {
-						type = rival
-						limit = { is_adult = yes is_attracted_to_gender_of = scope:recipient }
-						had_sex_with_effect = { CHARACTER = scope:recipient PREGNANCY_CHANCE = pregnancy_chance }
-						remove_relation_rival = scope:recipient
-						if = {
-							limit = { has_relation_nemesis = scope:recipient }
-							remove_relation_nemesis = scope:recipient
-						}
-					}
-
+					modifier = { add = 5 should_be_naked_trigger = no }
+					add_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
 				}
 			}
 		}

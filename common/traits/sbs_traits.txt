@@ -291,10 +291,14 @@ sbs_seed_of_demon = {
 		50 = {
 			health = 2
 			negate_health_penalty_add = 1
+			life_expectancy = 100
+			years_of_fertility = 100
 		}
 		100 = {
 			health = 2
 			negate_health_penalty_add = 2
+			life_expectancy = 100
+			years_of_fertility = 100
 		}
 	}
 

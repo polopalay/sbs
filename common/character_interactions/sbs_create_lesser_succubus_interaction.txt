@@ -9,7 +9,12 @@
 		NOT = { has_global_variable = seal_the_gates_of_hell }
 		scope:recipient = {
 			is_female = yes
-				has_trait = saint
+			has_trait = saint
+			NOR = {
+				has_trait = sbs_lesser_succubus
+				has_trait = sbs_succubus
+				has_trait = sbs_demon
+			}
 		}
 		scope:actor = {
 			OR = {
