@@ -115,6 +115,12 @@
 				set_character_faith_with_conversion = scope:recipient.faith
 			}
 			if = {
+				limit = { has_trait = saint }
+				remove_trait = saint
+				set_character_faith_with_conversion = scope:actor.faith
+				give_nickname = nick_the_betrayer
+			}
+			if = {
 				limit = { has_trait = immortal }
 				remove_trait = immortal
 			}
