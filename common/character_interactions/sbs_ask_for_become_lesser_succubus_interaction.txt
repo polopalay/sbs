@@ -32,7 +32,6 @@
 
 	is_valid = {
 		scope:actor = {
-			faith = scope:recipient.faith
 			OR = {
 				primary_title.tier >= tier_kingdom
 				AND = {
@@ -117,7 +116,7 @@
 			if = {
 				limit = { has_trait = saint }
 				remove_trait = saint
-				set_character_faith_with_conversion = scope:actor.faith
+				set_character_faith_with_conversion = scope:recruit.faith
 				give_nickname = nick_the_betrayer
 			}
 			if = {

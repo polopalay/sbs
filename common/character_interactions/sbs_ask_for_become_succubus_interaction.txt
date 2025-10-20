@@ -20,7 +20,6 @@
 	}
 	is_valid = {
 		scope:actor = {
-			faith = scope:recipient.faith
 			OR = {
 				primary_title.tier >= tier_kingdom
 				AND = {
