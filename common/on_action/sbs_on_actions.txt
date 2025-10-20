@@ -123,3 +123,14 @@ sbs_devil_on_action = {
 		50 = sbs_courtier.1460 # fuck on throne event
 	}
 }
+
+sbs_slave_on_action = {
+	trigger = {
+		is_adult = yes
+		is_female = yes
+		has_trait = slave
+	}
+	events = {
+		sbs_slavery_event.0000
+	}
+}
