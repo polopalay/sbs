@@ -207,11 +207,11 @@ demonic_religion = {
 			color = { 50 255 50 }
 			icon = clover
 
-			holy_site = lyon
-			holy_site = santiago
-			holy_site = paderborn
-			holy_site = albi
-			holy_site = kent
+			holy_site = amparita
+			holy_site = ar_kol
+			holy_site = biri_larosa
+			holy_site = sukadana
+			holy_site = angkor
 
 			doctrine = tenet_natural_primitivism
 			doctrine = tenet_sanctity_of_nature
@@ -224,11 +224,11 @@ demonic_religion = {
 			color = { 238 115 221 }
 			icon = murder_rose
 
-			holy_site = jerusalem
-			holy_site = babylon
-			holy_site = sufed
-			holy_site = gerizim
 			holy_site = sinai
+			holy_site = jerusalem
+			holy_site = alexandria
+			holy_site = carthage
+			holy_site = aksum
 
 			doctrine = tenet_carnal_exaltation
 			doctrine = tenet_divine_marriage
@@ -246,8 +246,8 @@ demonic_religion = {
 			holy_site = athens
 			holy_site = rome
 			holy_site = lyon
-			holy_site = carthage
-			holy_site = constantinople
+			holy_site = kent
+			holy_site = santiago
 
 			doctrine = tenet_warmonger
 			doctrine = tenet_fp3_fedayeen
@@ -262,11 +262,11 @@ demonic_religion = {
 			color = { 255 215 0 }
 			icon = munificent
 
-			holy_site = rome
-			holy_site = constantinople
-			holy_site = visoki
-			holy_site = ragusa
-			holy_site = esztergom
+			holy_site = babylon
+			holy_site = purang
+			holy_site = chang_an
+			holy_site = balkh
+			holy_site = c_nguu_hong
 
 			doctrine = tenet_hedonistic
 			doctrine = tenet_pursuit_of_power

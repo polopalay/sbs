@@ -24,8 +24,14 @@
 	trait = physique_good_3
 	1049.1.1 = {
 		birth = "1049.6.1"
-		set_relation_friend = character:catarina_character
-		set_relation_best_friend = character:catarina_character
+		effect = {
+			set_relation_friend = character:catarina_character
+			set_relation_best_friend = character:catarina_character
+			create_landless_adventurer_title_effect = {
+				REASON = flag:voluntary
+				FLAVOR_CHAR = character:jeanne_character
+			}
+		}
 	}
 	1065.1.1 = {
 		effect = {
@@ -106,6 +112,12 @@ catarina_character = {
 	trait = intellect_good_3
 	1049.1.1 = {
 		birth = "1049.6.1"
+		effect = {
+			create_landless_adventurer_title_effect = {
+				REASON = flag:voluntary
+				FLAVOR_CHAR = character:catarina_character
+			}
+		}
 	}
 	1065.1.1 = {
 		effect = {
@@ -157,6 +169,69 @@ catarina_character = {
 	}
 }
 
+suanggi_character = {
+	name = "Suanggi"
+	dna = suanggi_dna
+	dynasty = 888888
+	mother = nature_character
+	father = greedy_character
+	martial = 6
+	diplomacy = 13
+	intrigue = 6
+	stewardship = 13
+	learning = 13
+	prowess = 6
+	female = yes
+	sexuality = bisexual
+	religion = "nature"
+	culture = "sbs_demonic"
+	trait = greedy
+	trait = diligent
+	trait = lustful
+	trait = education_stewardship_3
+	trait = education_learning_3
+	trait = sbs_lesser_succubus
+	trait = deviant
+	trait = witch
+	850.1.1 = {
+		birth = "850.6.13"
+		effect = {
+			give_nickname = nickname_the_devil_creation
+			add_character_modifier = succubus_buff
+			add_character_flag = has_scripted_appearance
+			add_character_flag = do_not_generate_starting_family
+			create_landless_adventurer_title_effect = {
+				REASON = flag:voluntary
+				FLAVOR_CHAR = character:suanggi_character
+			}
+		}
+	}
+	850.12.13 = {
+		effect = {
+			set_landless_government_effect = yes
+			add_trait_xp = { trait = sbs_lesser_succubus value = 50 }
+		}
+	}
+	1066.1.1 = {
+		effect = {
+			remove_trait = sbs_lesser_succubus
+			add_trait = sbs_succubus
+			add_trait_xp = { trait = sbs_succubus track = corruption value = 50 }
+			add_trait_xp = { trait = sbs_succubus track = loyalty value = 33 }
+			add_trait_xp = { trait = sbs_succubus track = power value = 33 }
+			add_trait_xp = { trait = sbs_succubus track = daring value = 25 }
+		}
+	}
+	1178.1.1 = {
+		effect = {
+			add_trait_xp = { trait = sbs_succubus track = corruption value = 50 }
+			add_trait_xp = { trait = sbs_succubus track = loyalty value = 66 }
+			add_trait_xp = { trait = sbs_succubus track = power value = 33 }
+			add_trait_xp = { trait = sbs_succubus track = daring value = 25 }
+		}
+	}
+}
+
 lilim_character = {
 	name = "Lilim"
 	dna = lilim_dna
@@ -188,6 +263,10 @@ lilim_character = {
 			add_character_modifier = succubus_buff
 			add_character_flag = has_scripted_appearance
 			add_character_flag = do_not_generate_starting_family
+			create_landless_adventurer_title_effect = {
+				REASON = flag:voluntary
+				FLAVOR_CHAR = character:lilim_character
+			}
 		}
 	}
 	850.12.13 = {
@@ -381,7 +460,7 @@ violence_character = {
 			add_character_flag = do_not_generate_starting_family
 			add_piety_level = 6
 			add_prestige_level = 6
-			set_immortal_age = 40
+			set_immortal_age = 24
 			add_character_modifier = pureblood_demon
 		}
 	}
@@ -652,7 +731,7 @@ greedy_character = {
 			add_character_flag = do_not_generate_starting_family
 			add_piety_level = 6
 			add_prestige_level = 6
-			set_immortal_age = 40
+			set_immortal_age = 24
 			add_character_modifier = pureblood_demon
 		}
 	}

@@ -8,4 +8,4 @@ tags={
 	"Gameplay"
 }
 name="Succubus System"
-supported_version="1.17.*"
+supported_version="1.18.*"
