@@ -48,8 +48,8 @@
   succubus_buff_desc: "이 사람은 서큐버스의 축복을 받았습니다."
   succubus_debuff: "악마의 저주"
   succubus_debuff_desc: "이 사람은 서큐버스의 저주를 받았습니다."
-  succubus_seal: "악마의 봉인"
-  succubus_seal_desc: "이 사람은 악마에 의해 봉인되었습니다."
+  sbs_seal: "악마의 봉인"
+  sbs_seal_desc: "이 사람은 악마에 의해 봉인되었습니다."
   pureblood_demon: "순혈 악마"
   pureblood_demon_desc: "악마의 본질에서 태어난 순수한 힘을 지닌 악마입니다."
 

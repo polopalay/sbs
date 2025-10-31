@@ -236,11 +236,11 @@ sbs_devils_curse_interaction = {
 					modifier = {
 						has_trait = slave
 						is_female = yes
-						NOT = { add_character_modifier = succubus_seal }
+						NOT = { add_character_modifier = sbs_seal }
 						liege = scope:actor
 						add = 50
 					}
-					add_character_modifier = succubus_seal
+					add_character_modifier = sbs_seal
 				}
 			}
 		}
@@ -260,7 +260,7 @@ sbs_devils_curse_interaction = {
 	ai_potential = { always = yes }
 	ai_will_do = {
 		base = 0
-		modifier = { add = 100 scope:recipient = { has_trait = slave is_female = yes is_courtier_of = scope:actor NOT = { add_character_modifier = succubus_seal } } }
+		modifier = { add = 100 scope:recipient = { has_trait = slave is_female = yes is_courtier_of = scope:actor NOT = { add_character_modifier = sbs_seal } } }
 		modifier = { add = 50 scope:recipient = { has_relation_nemesis = scope:actor } }
 		modifier = { add = 25 scope:recipient = { has_relation_rival = scope:actor } }
 		modifier = { add = -25 scope:recipient = { has_relation_friend = scope:actor } }

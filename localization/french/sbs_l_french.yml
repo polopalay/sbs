@@ -48,8 +48,8 @@
  succubus_buff_desc: "Cette personne a été bénie par le Succube."
  succubus_debuff: "Malédiction du Diable"
  succubus_debuff_desc: "Cette personne a été maudite par le Succube."
- succubus_seal: "Sceau du Diable"
- succubus_seal_desc: "Cette personne a été scellée par le Diable."
+ sbs_seal: "Sceau du Diable"
+ sbs_seal_desc: "Cette personne a été scellée par le Diable."
  pureblood_demon: "Démon de Sang Pur"
   pureblood_demon_desc: "Un démon avec un pouvoir pur, né de l'essence du diable."
 

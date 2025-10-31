@@ -39,7 +39,7 @@ prostitute_clothes = {
 			modifier = {
 				add = 100
 				is_female = yes
-				has_character_modifier = succubus_seal
+				has_character_modifier = sbs_seal
 			}
 		}
 	}

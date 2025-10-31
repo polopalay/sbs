@@ -36,7 +36,7 @@ succubus_debuff = {
 	stacking = yes
 }
 
-succubus_seal = {
+sbs_seal = {
 	icon = souls_negative
 	health = 3
 	negate_health_penalty_add = 3

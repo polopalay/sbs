@@ -737,7 +737,7 @@ sbs_ntr_event.0232 = {
 			remove_trait = sbs_lesser_succubus
 			remove_trait = sbs_succubus
 			remove_trait = sbs_demon
-			add_character_modifier = succubus_seal
+			add_character_modifier = sbs_seal
 		}
 		every_held_title = {
 			create_title_and_vassal_change = {
@@ -806,7 +806,7 @@ sbs_ntr_event.0232 = {
 				}
 			}
 			primary_spouse = {
-				add_character_modifier = succubus_seal
+				add_character_modifier = sbs_seal
 			}
 			carn_enslave_effect = { SLAVE = scope:ntr_character.primary_spouse OWNER = scope:ntr_character DRAMA = yes }
 			marry = root

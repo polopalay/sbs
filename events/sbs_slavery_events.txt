@@ -61,7 +61,7 @@ sbs_slavery_event.0000 = {
 				modifier = {
 					scope:owner.liege = { is_adult = yes is_attracted_to_gender_of = root }
 					NOT = { scope:owner.liege = scope:owner }
-					root = { has_character_modifier = succubus_seal }
+					root = { has_character_modifier = sbs_seal }
 					add = 1
 				}
 				trigger_event = sbs_slavery_event.0400
@@ -2353,8 +2353,8 @@ sbs_slavery_event.4000 = {
 		add_legitimacy = -1000
 		change_influence_level = -6
 		if = {
-			limit = { NOT = { has_character_modifier = succubus_seal } }
-			add_character_modifier = succubus_seal
+			limit = { NOT = { has_character_modifier = sbs_seal } }
+			add_character_modifier = sbs_seal
 		}
 	}
 	option = {
@@ -2364,8 +2364,8 @@ sbs_slavery_event.4000 = {
 		add_stress = monumental_stress_gain
 		add_trait = sbs_lesser_succubus
 		if = {
-			limit = { has_character_modifier = succubus_seal }
-			remove_character_modifier = succubus_seal
+			limit = { has_character_modifier = sbs_seal }
+			remove_character_modifier = sbs_seal
 		}
 		root = { save_scope_as = slave }
 		carn_free_slave_effect = yes

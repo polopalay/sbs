@@ -1,8 +1,8 @@
-﻿l_polish:
+﻿ l_polish:
  slave: "[slave|El]"
- relation_slave: "slave"
- relation_slave_possessive: "slave's"
+ relation_slave: "niewolnik"
+ relation_slave_possessive: "niewolnika"
 
- slave_owner: "Slave Owner"
- relation_slave_owner: "owner"
- relation_slave_owner_possessive: "owner's"
+ slav_owner: "Właściciel niewolnika"
+ relation_slave_owner: "właściciel"
+ relation_slave_owner_possessive: "właściciela"
