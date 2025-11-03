@@ -17,3 +17,7 @@
  game_concept_prostitute_possessive: "매춘부의"
  game_concept_prostitutes_possessive: "매춘부의"
  game_concept_prostitute_desc: "매춘부는 성교를 대가로 화대를 받는 [character|E]입니다. [faith|E]이 허락하는 인물은 $carn_work_as_prostitute_decision$ [decision|E]을 통해 매춘부가 될 수 있습니다.\n\n매춘부의 접대는 [diplomacy|E], [intrigue|E], 지성, 매력에 따라 그 수준이 높아집니다. 특히 능력이 뛰어난 매춘부는 [GetTrait('lifestyle_prostitute').GetName( GetNullCharacter )]가 될 수도 있습니다.\n\n매춘부로 일하는 것은 법적으로 허가되며 [extramarital_sex|E]로 간주되지 않습니다. 그러나 주의를 기울이지 않는다면 [bastard|E] 등의 결과로 이어질 수 있습니다..."
+
+ game_concept_slave_market: "노예 시장"
+ game_concept_slave_market_desc: "[slaves|E]는 재산으로, $carn_buy_slave_directly_interaction$ 혹은 $carn_sell_slave_interaction$ [interactions|E]을 통해 다른 [characters|E]이 사고 팔 수 있습니다. 노예를 구매한 인물은 [slave_owner|E]이 됩니다.\n\n노예의 가격은 [skills|E], [traits|E], [claims|E]에 따라 달라집니다. [noble|E], 젊은 여성, [GetTrait('eunuch_1').GetName( GetNullCharacter )] 등은 특히 비싸게 팔립니다."
+

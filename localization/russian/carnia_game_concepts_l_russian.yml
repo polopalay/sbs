@@ -18,3 +18,6 @@
   game_concept_prostitute_possessive: "Prostitute's"
   game_concept_prostitutes_possessive: "Prostitutes'"
   game_concept_prostitute_desc: "Проститутка - это [character|E] который требует плату за секс. Любой персонаж может использовать $carn_work_as_prostitute_decision$ [decision|E] чтобы стать проституткой, если только его [faith|E] позволяет ему это сделать.\n\nРабота проститутки основывается на ее [diplomacy|E], [intrigue|E], интеллекте и привлекательности. Особенно искусная проститутка может стать [GetTrait('prostitute_2').GetName( GetNullCharacter )] или даже [GetTrait('prostitute_3').GetName( GetNullCharacter )].\n\nРабота проституткой разрешена законом и не считается [extramarital_sex|E]. Однако, это все равно может привести к [bastard|E] или другим последствиям, если персонаж не будет осторожен..."
+
+  game_concept_slave_market: "Рынок Рабов"
+  game_concept_slave_market_desc: "[slaves|E], являясь вещью, могут быть куплены и проданы другими [characters|E] через  $carn_buy_slave_directly_interaction$ или $carn_sell_slave_interaction$ [interactions|E]. Персонаж, купивший раба, станет его [slave_owner|E].\n\nРаб с хорошими [skills|E], [traits|E], или [claims|E] будет продаваться по более высокой цене. Особенно ценятся [noble|E], молодые женщины или [GetTrait('eunuch_1').GetName( GetNullCharacter )] is especially prized."

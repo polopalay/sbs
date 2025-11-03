@@ -5,14 +5,19 @@
  game_concept_prostitute_possessive: "売春婦の"
  game_concept_prostitutes_possessive: "売春婦たちの"
  game_concept_prostitute_desc: "売春婦とは、性行為の対価を求める[character|E]のことです。[faith|E]が許す限り、どのキャラクターでも$carn_work_as_prostitute_decision$[decision|E]を使用して売春婦になることができます。\n\n売春婦のパフォーマンスは、[diplomacy|E]、[intrigue|E]、知性、そして魅力に基づいています。特に熟練した売春婦は[GetTrait('lifestyle_prostitute').GetName( GetNullCharacter )]\n\n売春行為は法的に認められており、[extramarital_sex|E]とはみなされません。しかし、キャラクターが注意を怠ると、[bastard|E]の子供を産んだり、その他の結果を招く可能性があります…"  
+
  game_concept_slave: "奴隷"
  game_concept_slaves: "奴隷たち"
  game_concept_slavery: "奴隷制"
  game_concept_slave_possessive: "奴隷の"
  game_concept_slaves_possessive: "奴隷たちの"
  game_concept_slave_desc: "game_concept_slave_desc: $game_concept_slave$ は、権利を剥奪され奴隷化された [character|E] です。[slave_owner|E] に属し、[strong_hook|E] を持ち、[slave_market|E] で売買することができます。また、奴隷と所有者の間での [extramarital_sex|E] は合法です。\n\n奴隷は [titles|E] を保持または継承することはできず、奴隷の母親から生まれた子供も奴隷となります。\n\n奴隷所有者が死亡した場合、奴隷の所有権は[primary_heir|E]に引き継がれます。\n\n奴隷から解放されるには、所有者が $carn_free_slave_interaction$を通じて奴隷を解放する必要があります[character_interaction|E]。"
+
  game_concept_slave_owner: "所有者"
  game_concept_slave_owners: "所有者たち"
  game_concept_slave_owner_possessive: "所有者の"
  game_concept_slave_owners_possessive: "所有者たちの"
  game_concept_slave_owner_desc: "[character|E]が $game_concept_slave$ を所有している場合、そのキャラクターは奴隷の所有者です。奴隷の所有者は、奴隷を売買したり、解放したり、[extramarital_sex|E]を行うことができます。\n\n奴隷の所有者は、奴隷に対して強力なフックを持ち、奴隷の行動を制御することができます。"
+
+ game_concept_slave_market: "奴隷市場"
+ game_concept_slave_market_desc: "[slaves|E]は財産であるため、他の[characters|E]が$carn_buy_slave_directly_interaction$または$carn_sell_slave_interaction$ [interactions|E]を通じて売買できます。奴隷を購入したキャラクターは、その[slave_owner|E]になります。\n\n優れた[skills|E]、[traits|E]、[claims|E]を持つ奴隷は、はるかに高い価格で売却されます。[noble|E]、若い女性、[GetTrait('eunuch_1').GetName(GetNullCharacter)]は特に高く評価されます。"

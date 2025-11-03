@@ -18,3 +18,6 @@
  game_concept_slave_owner_possessive: "Właściciela"
  game_concept_slave_owners_possessive: "Właścicieli"
  game_concept_slave_owner_desc: "[character|E] może być prawnie uznanym $game_concept_slave_owner$ jednego lub więcej [slaves|E]. Właściciele niewolników zawsze mają [strong_hook|E] na swoich niewolnikach i mogą ich kupować lub sprzedawać na [slave_market|E]. Dodatkowo, [extramarital_sex|E] między niewolnikiem a jego właścicielem jest legalny.\n\nJeśli właściciel niewolnika umrze, własność niewolników przejdzie na jego [primary_heir|E]."
+
+ game_concept_slave_market: "Targ niewolników"
+ game_concept_slave_market_desc: "[slaves|E], będąc własnością, może być kupowane i sprzedawane przez inne [characters|E] poprzez interakcję $carn_buy_slave_directly_interaction$ lub $carn_sell_slave_interaction$ [interactions|E]. Postać, która kupi niewolnika, stanie się jego [slave_owner|E].\n\nNiewolnik z dobrymi [skills|E], [traits|E] lub [claims|E] zostanie sprzedany za znacznie wyższą cenę. Szczególnie ceniona jest [noble|E], młoda kobieta lub [GetTrait('eunuch_1').GetName( GetNullCharacter )]."

@@ -18,3 +18,7 @@
  game_concept_prostitute_possessive: "娼妓的"
  game_concept_prostitutes_possessive: "娼妓们的"
  game_concept_prostitute_desc: "娼妓是指以出卖肉体换取金钱的[character|E]。只要他们的[faith|E]允许，任何角色都可以通过$carn_work_as_prostitute_decision$[decision|E]成为妓女。\n\n娼妓的表现基于他们的[diplomacy|E]、[intrigue|E]、智慧和魅力。一个特别熟练的娼妓可能晋升为一名[GetTrait('lifestyle_prostitute').GetName( GetNullCharacter )]。\n\n从事卖淫工作是合法的而且不会被视作[extramarital_sex|E]。但是如果角色不小心，还是可能导致[bastard|E]孩子或其它后果......"
+
+ game_concept_slave_market: "奴隶市场"
+ game_concept_slave_market_desc: "[slaves|E]，作为财产，可以经由$carn_buy_slave_directly_interaction$或者$carn_sell_slave_interaction$[interactions|E]被其他[characters|E]买卖。购买了奴隶的角色会成为[slave_owner|E]。\n\n一个拥有良好[skills|E]、[traits|E]或者[claims|E]的奴隶可以卖更高的价。[noble|E]出身、年轻女人或[GetTrait('eunuch_1').GetName( GetNullCharacter )]则更为值钱。"
+
