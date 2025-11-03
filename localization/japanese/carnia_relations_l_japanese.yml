@@ -1,8 +1,8 @@
 ﻿l_japanese:
  slave: "[slave|El]"
- relation_slave: "slave"
- relation_slave_possessive: "slave's"
+ relation_slave: "スレーブ"
+ relation_slave_possessive: "スレーブの"
 
- slave_owner: "Slave Owner"
- relation_slave_owner: "owner"
- relation_slave_owner_possessive: "owner's"
+ slave_owner: "スレーブ所有者"
+ relation_slave_owner: "所有者"
+ relation_slave_owner_possessive: "所有者の"

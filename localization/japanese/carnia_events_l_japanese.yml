@@ -1,4 +1,4 @@
 ﻿l_japanese:
- carn_slave.0001.t: "Enslaved"
- carn_slave.0001.desc: "I am led into the courtyard, where my shoes are taken from me and manacles are placed around my wrists. I am resigned to my terrible fate as the sneering [actor.GetShortUIName] pronounces me a slave."
- carn_slave.0001.a: "From this day onward, I am little more than property."
+ carn_slave.0001.t: "奴隷にされた"
+ carn_slave.0001.desc: "私は中庭に連れて行かれ、鎖で繋がれました。主人は私の運命を決める権利を持っています。私はもはや自分の意志で動くことはできません。"
+ carn_slave.0001.a: "この日から、私は奴隷となりました。"

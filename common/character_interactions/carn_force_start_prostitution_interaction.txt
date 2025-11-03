@@ -88,84 +88,28 @@
 				if = {
 					limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = lifestyle_prostitute } }
 					add_secret = { type = secret_prostitute }
-					random_secret = {
-						limit = { secret_type = secret_prostitute }
-						reveal_to = scope:actor
-					}
 				}
 				else = {
 					add_trait = lifestyle_prostitute
 				}
 			}
-			else_if = {
-				limit = {
-					NOT = { has_trait = lifestyle_prostitute }
-					any_secret = { secret_type = secret_prostitute }
-					NOT = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = lifestyle_prostitute } }
-				}
-				random_secret = {
-					limit = { secret_type = secret_prostitute }
-					save_scope_as = prostitute_secret
-				}
-				if = {
-					limit = { exists = scope:prostitute_secret }
-					scope:prostitute_secret = {
-						expose_secret = scope:recipient
-					}
-				}
-
-			}
-			else_if = {
-				limit = { any_secret = { secret_type = secret_prostitute NOT = { is_known_by = scope:actor } } }
-				random_secret = {
-					limit = { secret_type = secret_prostitute }
-					reveal_to = scope:actor
-				}
-			}
 			if = {
 				limit = { OR = { has_trait_xp = { trait = lifestyle_prostitute value < 50 } NOT = { has_trait = lifestyle_prostitute } } }
-				if = {
-					limit = { NOT = { has_character_modifier = carn_working_as_prostitute_1_modifier } }
-					add_character_modifier = carn_working_as_prostitute_1_modifier
-				}
-				if = { 
-					limit = { has_character_modifier = carn_working_as_prostitute_2_modifier }
-					remove_character_modifier = carn_working_as_prostitute_2_modifier
-				}
-				if = {
-					limit = { has_character_modifier = carn_working_as_prostitute_3_modifier }
-					remove_character_modifier = carn_working_as_prostitute_3_modifier
-				}
+				add_character_modifier = carn_working_as_prostitute_1_modifier
+				remove_character_modifier = carn_working_as_prostitute_2_modifier
+				remove_character_modifier = carn_working_as_prostitute_3_modifier
 			}
 			else_if = {
 				limit = { has_trait_xp = { trait = lifestyle_prostitute value >=50 } has_trait_xp = { trait = lifestyle_prostitute value < 100 } }
-				if = {
-					limit = { NOT = { has_character_modifier = carn_working_as_prostitute_2_modifier } }
-					add_character_modifier = carn_working_as_prostitute_2_modifier
-				}
-				if = {
-					limit = { has_character_modifier = carn_working_as_prostitute_1_modifier }
-					remove_character_modifier = carn_working_as_prostitute_1_modifier
-				}
-				if = {
-					limit = { has_character_modifier = carn_working_as_prostitute_3_modifier }
-					remove_character_modifier = carn_working_as_prostitute_3_modifier
-				}
+				remove_character_modifier = carn_working_as_prostitute_1_modifier
+				add_character_modifier = carn_working_as_prostitute_2_modifier
+				remove_character_modifier = carn_working_as_prostitute_3_modifier
 			}
 			else_if = {
 				limit = { has_trait_xp = { trait = lifestyle_prostitute value >= 100 } }
-				if = {
-					limit = { NOT = { has_character_modifier = carn_working_as_prostitute_3_modifier } }
-					add_character_modifier = carn_working_as_prostitute_3_modifier
-				}
-				if = {
-					limit = { has_character_modifier = carn_working_as_prostitute_1_modifier }
-					remove_character_modifier = carn_working_as_prostitute_1_modifier
-				}
-				if = {
-					limit = { has_character_modifier = carn_working_as_prostitute_2_modifier }
-					remove_character_modifier = carn_working_as_prostitute_2_modifier
-				}
+				remove_character_modifier = carn_working_as_prostitute_1_modifier
+				remove_character_modifier = carn_working_as_prostitute_2_modifier
+				add_character_modifier = carn_working_as_prostitute_3_modifier
 			}
 			if = {
 				limit = { is_imprisoned_by = scope:actor }
@@ -188,10 +132,7 @@
 				use_hook = scope:recipient
 			}
 			if = {
-				limit = {
-					scope:forgive = yes
-					has_imprisonment_reason = scope:recipient
-				}
+				limit = { scope:forgive = yes has_imprisonment_reason = scope:recipient }
 				consume_imprisonment_reasons = scope:recipient
 			}
 		}
@@ -207,7 +148,7 @@
 	}
 
 	ai_accept = {
-		base = 0
+		base = -20
 		opinion_modifier = {
 			opinion_target = scope:actor
 			who = scope:recipient
@@ -219,7 +160,6 @@
 		modifier = { add = -20 scope:recipient = { has_trait = chaste } }
 		modifier = { add = -20 scope:recipient = { faith = { OR = { has_doctrine = doctrine_adultery_women_crime has_doctrine = doctrine_adultery_men_crime } } } }
 		modifier = { add = -10 scope:recipient = { faith = { OR = { has_doctrine = doctrine_adultery_women_shunned has_doctrine = doctrine_adultery_men_shunned } } } }
-		modifier = { add = -10 NOT = { scope:recipient = scope:actor } }
 	}
 
 	ai_frequency = 12
@@ -231,20 +171,22 @@
 	ai_potential = { always = yes }
 	ai_will_do = {
 		base = 0
-		modifier = { add = 100 scope:recipient = { has_trait = slave } }
 		modifier = { add = 40 scope:actor = { has_trait = lustful } }
 		modifier = { add = 40 scope:actor = { has_trait = greedy } }
 		modifier = { add = 40 scope:actor = { OR = { has_trait = deviant any_secret = { secret_type = secret_deviant } } } }
 		modifier = { add = 20 scope:actor = { faith = { has_doctrine = tenet_polyamory } } }
+		modifier = { add = 20 scope:actor = { faith = { has_doctrine = carn_doctrine_prostitution_virtuous } } }
+		modifier = { add = -20 scope:recipient = { primary_title.tier >= tier_county } }
+		modifier = { add = -20 scope:recipient = { primary_title.tier >= tier_duchy } }
+		modifier = { add = -40 scope:recipient = { primary_title.tier >= tier_kingdom } }
+		modifier = { add = -40 scope:recipient = { primary_title.tier >= tier_empire } }
+		modifier = { add = -25 scope:recipient = { is_close_or_extended_family_of = scope:actor } }
 		modifier = { add = -40 scope:actor = { has_trait = chaste } }
 		modifier = { add = -80 scope:actor.faith = { has_doctrine_parameter = carn_prostitution_shunned } }
 		modifier = { add = -50 scope:recipient = { is_spouse_of = scope:actor } }
-		modifier = { add = -25 scope:recipient = { is_close_or_extended_family_of = scope:actor } }
-		modifier = { add = -100 scope:recipient = { age > carn_prostitution_age_cutoff is_immortal = no } }
 		modifier = { add = -20 scope:recipient = { has_trait = beauty_bad_1 } }
 		modifier = { add = -50 scope:recipient = { has_trait = beauty_bad_2 } }
 		modifier = { add = -100 scope:recipient = { has_trait = beauty_bad_3 } }
 		modifier = { add = -100 scope:recipient = { has_trait = disfigured } }
-		modifier = { add = -100 scope:recipient = { has_trait = leper } }
 	}
 }

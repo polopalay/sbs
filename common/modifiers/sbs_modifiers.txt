@@ -51,6 +51,10 @@ sbs_seal = {
 	hostile_scheme_phase_duration_add = -666
 	enemy_hostile_scheme_phase_duration_add = 666
 	enemy_personal_scheme_success_chance_add = -666
+	monthly_prestige_gain_mult = -1
+	monthly_piety_gain_mult = -1
+	legitimacy_gain_mult = -1
+	monthly_income_mult = -1
 }
 
 succubus_generals = {

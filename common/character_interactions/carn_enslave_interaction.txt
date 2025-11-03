@@ -65,14 +65,15 @@
 	}
 	ai_accept = {
 		base = 0
-		opinion_modifier = { opinion_target = scope:actor who = scope:recipient multiplier = 1 }
-		modifier = { add = { value = scope:actor.diplomacy } }
+		opinion_modifier = { opinion_target = scope:actor who = scope:recipient multiplier = 0.2 }
 		modifier = { add = 20 scope:recipient = { has_trait = humble } }
-		modifier = { add = 30 scope:recipient = { is_ruler = no is_lowborn = yes } }
 		modifier = { add = 50 scope:recipient = { has_trait = contrite } }
 		modifier = { add = 25 desc = INTIMIDATED_REASON scope:recipient = { has_dread_level_towards = { target = scope:actor level = 1 } } }
 		modifier = { add = 50 desc = COWED_REASON scope:recipient = { has_dread_level_towards = { target = scope:actor level = 2 } } }
-		modifier = { add = -25 desc = carn_enslave_recipient_is_noble scope:recipient = { is_lowborn = no is_ruler = yes } }
+		modifier = { add = -25 desc = carn_enslave_recipient_is_noble scope:recipient = { is_lowborn = no } }
+		modifier = { add = -50 scope:recipient = { is_ruler = yes } }
+		modifier = { add = -25 scope:recipient.faith = { has_doctrine = carn_doctrine_same_slavery_shunned } }
+		modifier = { add = -50 scope:recipient.faith = { has_doctrine = carn_doctrine_same_slavery_crime } }
 		modifier = { add = -50 desc = carn_enslave_you_have_no_reason scope:actor = { NOT = { has_execute_reason = scope:recipient } } }
 		modifier = { add = -100 scope:recipient = { has_trait = arrogant } }
 		modifier = { add = -100 scope:recipient = { has_trait = ambitious } }
@@ -119,7 +120,25 @@
 			ai_honor = -0.1
 			ai_rationality = -0.1
 		}
-		modifier = { add = 50 scope:recipient = { is_lowborn = yes } }
+		modifier = {
+			add = -75
+			OR = {
+				faith = {
+					has_doctrine = carn_doctrine_same_slavery_shunned
+					faith_hostility_level = {
+						target = scope:recipient.faith
+						value < faith_hostile_level
+					}
+				}
+				faith = {
+					has_doctrine = carn_doctrine_other_slavery_shunned
+					faith_hostility_level = {
+						target = scope:recipient.faith
+						value >= faith_hostile_level
+					}
+				}
+			}
+		}
 		modifier = { add = -20 ai_compassion >= low_positive_ai_value scope:recipient = { is_adult = no } }
 		modifier = { add = -20 scope:actor.dynasty = scope:recipient.dynasty }
 		modifier = { add = -20 scope:recipient = { is_close_or_extended_family_of = scope:actor } }

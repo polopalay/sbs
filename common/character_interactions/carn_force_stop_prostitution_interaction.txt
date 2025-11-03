@@ -7,6 +7,7 @@
 
 	is_shown = {
 		scope:actor = {
+			is_ruler = yes
 			is_adult = yes
 		}
 		scope:recipient = {
@@ -17,11 +18,14 @@
 				has_character_modifier = carn_working_as_prostitute_3_modifier
 			}
 			OR = {
+				scope:actor = scope:recipient
 				AND = {
-					is_ruler = yes
-					scope:actor = scope:recipient
+					is_courtier_of = scope:actor
+					OR = {
+						any_secret = { secret_type = secret_prostitute is_known_by = scope:actor }
+						has_trait = lifestyle_prostitute
+					}
 				}
-				is_courtier_of = scope:actor
 			}
 		}
 	}
@@ -107,15 +111,14 @@
 			who = scope:recipient
 			multiplier = 0.2
 		}
-		modifier = { add = 100 scope:recipient = { age > carn_prostitution_age_cutoff is_immortal = no } }
-		modifier = { add = 50 scope:recipient = { age > 30 is_immortal = no } }
+		modifier = { add = 50 scope:forgive = yes }
 		modifier = { add = 50 scope:recipient = { has_trait = chaste } }
+		modifier = { add = 50 scope:recipient.faith = { has_doctrine_parameter = carn_prostitution_shunned } }
+		modifier = { add = 100 scope:recipient.faith = { has_doctrine_parameter = carn_prostitution_illegal } }
 		modifier = { add = -50 scope:recipient = { faith = { has_doctrine = tenet_polyamory } } }
-		modifier = { add = 25 scope:recipient = { faith = { OR = { has_doctrine = doctrine_adultery_women_crime has_doctrine = doctrine_adultery_men_crime } } } }
-		modifier = { add = 10 scope:recipient = { faith = { OR = { has_doctrine = doctrine_adultery_women_shunned has_doctrine = doctrine_adultery_men_shunned } } } }
+		modifier = { add = -50 scope:recipient = { faith = { has_doctrine = carn_doctrine_prostitution_virtuous } } }
 		modifier = { add = -10 scope:recipient = { OR = { has_trait = deviant any_secret = { secret_type = secret_deviant } } } }
 		modifier = { add = -25 scope:recipient = { has_trait = lustful } }
-		modifier = { add = 50 scope:forgive = yes }
 	}
 
 	ai_frequency = 12
@@ -126,11 +129,15 @@
 	ai_potential = { always = yes }
 	ai_will_do = {
 		base = 0
-		modifier = { add = 200 scope:recipient = { age > carn_prostitution_age_cutoff is_immortal = no } }
 		modifier = { add = -25 scope:actor = { has_trait = lustful } }
-		modifier = { add = -25 scope:actor = { has_trait = rakish } }
 		modifier = { add = -25 scope:actor = { OR = { has_trait = deviant any_secret = { secret_type = secret_deviant } } } }
 		modifier = { add = -25 scope:actor = { faith = { has_doctrine = tenet_polyamory } } }
-		modifier = { add = -50 scope:recipient = { has_trait = slave } }
+		modifier = { add = 20 scope:recipient = { primary_title.tier >= tier_county } }
+		modifier = { add = 20 scope:recipient = { primary_title.tier >= tier_duchy } }
+		modifier = { add = 40 scope:recipient = { primary_title.tier >= tier_kingdom } }
+		modifier = { add = 40 scope:recipient = { primary_title.tier >= tier_empire } }
+		modifier = { add = 40 scope:actor = { has_trait = chaste } }
+		modifier = { add = 80 scope:actor.faith = { has_doctrine_parameter = carn_prostitution_shunned } }
+		modifier = { add = 200 scope:actor.faith = { has_doctrine_parameter = carn_prostitution_illegal } }
 	}
 }
