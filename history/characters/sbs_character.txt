@@ -102,7 +102,7 @@ catarina_character = {
 	trait = chaste
 	trait = education_learning_5
 	trait = saint
-	trait = poet
+	trait = lifestyle_poet
 	trait = historical_character
 	trait = reincarnation
 	trait = journaller
@@ -187,7 +187,7 @@ suanggi_character = {
 	culture = "sbs_demonic"
 	trait = greedy
 	trait = diligent
-	trait = lustful
+	trait = zealous
 	trait = education_stewardship_3
 	trait = education_learning_3
 	trait = sbs_lesser_succubus
@@ -197,7 +197,6 @@ suanggi_character = {
 		birth = "850.6.13"
 		effect = {
 			give_nickname = nickname_the_devil_creation
-			add_character_modifier = succubus_buff
 			add_character_flag = has_scripted_appearance
 			add_character_flag = do_not_generate_starting_family
 			create_landless_adventurer_title_effect = {
@@ -225,7 +224,7 @@ suanggi_character = {
 	1178.1.1 = {
 		effect = {
 			add_trait_xp = { trait = sbs_succubus track = corruption value = 50 }
-			add_trait_xp = { trait = sbs_succubus track = loyalty value = 66 }
+			add_trait_xp = { trait = sbs_succubus track = loyalty value = 33 }
 			add_trait_xp = { trait = sbs_succubus track = power value = 33 }
 			add_trait_xp = { trait = sbs_succubus track = daring value = 25 }
 		}

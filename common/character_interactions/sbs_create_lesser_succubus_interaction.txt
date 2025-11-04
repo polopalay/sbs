@@ -31,11 +31,11 @@
 		scope:recipient = {
 			OR = {
 				has_trait = deviant
-				any_secret = { secret_type = secret_deviant }
+				any_secret = { type = secret_deviant }
 			}
 			OR = {
 				has_trait = witch
-				any_secret = { secret_type = secret_witch }
+				any_secret = { type = secret_witch }
 			}
 		}
 	}

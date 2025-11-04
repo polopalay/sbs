@@ -1,61 +1,5 @@
 ﻿l_polish:
  NOT_IS_IMMORTAL_TRIGGER: "Nie jest nieśmiertelny"
- any_prisoner_count: "Dowolni [prisoners|E]"
- any_county_province: "Dowolni [province|E]"
- COA_DESIGNER_CATEGORY_cherilewd: "Sprośny"
-
- magic_creation: "$trinket$"
- magic_creation_miscellaneous: "$trinket$"
- artifact_magic_creation: "Magiczne Stworzenie"
-
- master_dildo: "Mój Panie"
- master_dildo_desc: "Od samego patrzenia miękną kolana."
-
- mistress_dildo: "Pokorna Strażniczka"
- mistress_dildo_desc: "Od samego patrzenia pulsują kobiece części ciała."
-
- nickname_the_demon_queen: "Królowa Demonów"
- nickname_the_demon_queen_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] to istota piekielna, która przyniesie światu błogosławieństwa zła"
-
- nickname_the_demon_king: "Król Demonów"
- nickname_the_demon_king_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] to istota piekielna, która przyniesie światu błogosławieństwa zła"
-
- nickname_the_devil_creation: "Demoniczne Stworzenia"
- nickname_the_devil_creation_desc: "Dzieci zrodzone z mocy demonów, przeznaczone do sprowadzenia chaosu i zniszczenia na świat."
-
- d_laamp_saint: "Oczyszczenie Świętych"
- d_laamp_missionary: "Misjonarze Jezusa"
- d_darc: "D'Arc"
- benincasa: "Benincasa"
- d_laamp_satan: "Diabły Szatana"
- k_pleasure: "Nierządnica Lilith"
- k_violence: "Konie bojowe Abaddona"
- k_nature: "Choroba Belzebuba"
- k_greedy: "Wojownik Mammona"
- k_belial: "Naukowiec Beliatha”"
- k_asmodeus: "Dzieci Asmodeusza"
-
- succubus_dark_amry: "Armia Ciemności"
- succubus_dark_amry_flavor: "Armia Ciemności"
- succubus_death_korps: "Korpus Śmierci"
- succubus_death_korps_flavor: "Korpus Śmierci"
- succubus_zombie: "Zombie"
- succubus_zombie_flavor: "Zombie"
- succubus_skeleton: "Szkielet"
- succubus_skeleton_flavor: "Szkielet"
-
- succubus_buff: "Diabelskie Błogosławieństwo"
- succubus_buff_desc: "Ta osoba została pobłogosławiona przez diabła."
- succubus_debuff: "Klątwa diabła"
- succubus_debuff_desc: "Ta osoba została przeklęta przez diabła."
- sbs_seal: "Pieczęć diabła"
- sbs_seal_desc: "Ta osoba została zapieczętowana przez diabła."
- pureblood_demon: "Czystokrwisty Demon"
- pureblood_demon_desc: "Ta osoba jest czystokrwistym demonem, potomkiem samego diabła."
-
- succubus_generals: "Generałowie Diabła"
- succubus_generals_desc: "Ci generałowie służą bezpośrednio pod rozkazami diabła."
-
  nature_is_alive: "The essence of Beelzebub still exists"
  nature_isn_seal: "Belzebub nie jest jeszcze zapieczętowany"
  nature_is_seal: "Belzebub jest zapieczętowany"
@@ -80,9 +24,3 @@
  belial_isn_seal: "Belial nie jest jeszcze zapieczętowany"
  belial_is_seal: "Belial jest zapieczętowany"
  seal_belial: "Zapieczętuj Beliala"
-
- the_expedition_of_violence_1: "Pierwsza wyprawa Abaddona"
- the_expedition_of_violence_2: "Druga wyprawa Abaddona"
- the_expedition_of_violence_3: "Trzecia wyprawa Abaddona"
-
- be_healed_opinion: "Bądź uzdrowiony"

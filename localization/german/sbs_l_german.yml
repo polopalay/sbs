@@ -1,61 +1,5 @@
 ﻿l_german:
-  NOT_IS_IMMORTAL_TRIGGER: "Ist nicht unsterblich"
-  any_prisoner_count: "Jeder [prisoners|E]"
-  any_county_province: "Jede [province|E]"
   COA_DESIGNER_CATEGORY_cherilewd: "Lewd"
-
-  magic_creation: "$trinket$"
-  magic_creation_miscellaneous: "$trinket$"
-  artifact_magic_creation: "Magische Kreation"
-
-  master_dildo: "Mein Meister"
-  master_dildo_desc: "Allein beim Anblick werden die Knie schwach."
-
-  mistress_dildo: "Demütiger Wächter"
-  mistress_dildo_desc: "Allein beim Anblick pulsieren die weiblichen Teile."
-
-  nickname_the_demon_queen: "Die Dämonen-Königin"
-  nickname_the_demon_queen_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] ist ein Geschöpf der Hölle, das die Segnungen des Bösen in die Welt bringen wird."
-
-  nickname_the_demon_king: "Der Dämonenkönig"
-  nickname_the_demon_king_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] ist ein Geschöpf der Hölle, das die Segnungen des Bösen in die Welt bringen wird."
-
-  nickname_the_devil_creation: "Dämonische Kreaturen"
-  nickname_the_devil_creation_desc: "Kinder, die aus der Macht der Dämonen geboren wurden, dazu bestimmt, Chaos und Zerstörung in die Welt zu bringen."
-
-  d_laamp_saint: "Säuberung der Heiligen"
-  d_laamp_missionary: "Die Missionare Jesu"
-  d_darc: "D'Arc"
-  benincasa: "Benincasa"
-  d_laamp_satan: "Die Teufel von Satan"
-  k_pleasure: "Liliths Hure"
-  k_violence: "Abaddons Kriegspferde"
-  k_nature: "Die Krankheit von Beelzebub"
-  k_greedy: "Mammons Krieger"
-  k_belial: "Beliaths Wissenschaftler"
-  k_asmodeus: "Asmodeus' Kinder"
-
-  succubus_dark_amry: "Dunkle Armee"
-  succubus_dark_amry_flavor: "Dunkle Armee"
-  succubus_death_korps: "Toten-Korps"
-  succubus_death_korps_flavor: "Toten-Korps"
-  succubus_zombie: "Zombie"
-  succubus_zombie_flavor: "Zombie"
-  succubus_skeleton: "Skelett"
-  succubus_skeleton_flavor: "Skelett"
-
-  succubus_buff: "Segen des Teufels"
-  succubus_buff_desc: "Diese Person wurde von der Succubus gesegnet."
-  succubus_debuff: "Fluch des Teufels"
-  succubus_debuff_desc: "Diese Person wurde von der Succubus verflucht."
-  sbs_seal: "Siegel des Teufels"
-  sbs_seal_desc: "Diese Person wurde vom Teufel versiegelt."
-  pureblood_demon: "Reinblutdämon"
-  pureblood_demon_desc: "Ein Dämon mit reiner Macht, geboren aus der Essenz des Teufels."
-
-  succubus_generals: "Teufelsgeneral"
-  succubus_generals_desc: "Die Krieger des Teufels werden gerufen, um der Herrin des Teufels zu dienen."
-
   nature_is_alive: "Beelzebub lebt"
   nature_isn_seal: "Beelzebub ist nicht versiegelt"
   nature_is_seal: "Beelzebub ist versiegelt"
@@ -80,9 +24,3 @@
   belial_isn_seal: "Belial ist nicht versiegelt"
   belial_is_seal: "Belial ist versiegelt"
   seal_belial: "Belial versiegeln"
-
-  the_expedition_of_violence_1: "Die erste Expedition von Abaddon"
-  the_expedition_of_violence_2: "Die zweite Expedition von Abaddon"
-  the_expedition_of_violence_3: "Die dritte Expedition von Abaddon"
-
-  be_healed_opinion: "Heilung"

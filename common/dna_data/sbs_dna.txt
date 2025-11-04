@@ -1416,9 +1416,10 @@ nature_dna_v2={
 
 
 suanggi_dna={
-	genes={
-		hair_color={ 3 253 13 251 }
- 		skin_color={ 154 158 154 158 }
+	portrait_info={
+		genes={
+		hair_color={ 113 86 93 103 }
+ 		skin_color={ 161 105 161 105 }
  		eye_color={ 12 221 38 159 }
  		gene_chin_forward={ "chin_forward_pos" 140 "chin_forward_pos" 140 }
  		gene_chin_height={ "chin_height_neg" 119 "chin_height_neg" 119 }
@@ -1508,10 +1509,10 @@ suanggi_dna={
  		expression_forehead_wrinkles={ "forehead_wrinkles_01" 92 "forehead_wrinkles_01" 92 }
  		expression_other={ "cheek_wrinkles_both_01" 23 "cheek_wrinkles_both_01" 23 }
  		complexion={ "complexion_1" 41 "complexion_1" 41 }
- 		gene_height={ "normal_height" 134 "normal_height" 114 }
+ 		gene_height={ "normal_height" 148 "normal_height" 139 }
  		gene_bs_body_type={ "body_fat_head_fat_low" 119 "body_fat_head_fat_low" 119 }
  		gene_bs_body_shape={ "body_shape_hourglass_half" 117 "body_shape_average" 0 }
- 		gene_bs_bust={ "bust_clothes" 125 "bust_default" 132 }
+ 		gene_bs_bust={ "bust_clothes" 136 "bust_default" 139 }
  		gene_age={ "old_beauty_1" 88 "old_1" 88 }
  		gene_eyebrows_shape={ "avg_spacing_high_thickness" 255 "close_spacing_low_thickness" 249 }
  		gene_eyebrows_fullness={ "layer_2_avg_thickness" 255 "layer_2_avg_thickness" 156 }
@@ -1527,6 +1528,7 @@ suanggi_dna={
  		hairstyles={ "tgp_chinese_hairstyles" 50 "all_hairstyles" 0 }
  		beards={ "no_beard" 255 "no_beard" 0 }
  		clothes={ "western_bedchamber" 79 "most_clothes" 0 }
+		}
 	}
 
 	entity={ 0 0 }

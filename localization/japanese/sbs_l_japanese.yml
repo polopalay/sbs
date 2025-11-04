@@ -1,61 +1,5 @@
 ﻿l_japanese:
- NOT_IS_IMMORTAL_TRIGGER: "不死ではない"
- any_prisoner_count: "任意の[prisoners|E]"
- any_county_province: "任意の[province|E]"
  COA_DESIGNER_CATEGORY_cherilewd: "淫らな"
-
- magic_creation: "$trinket$"
- magic_creation_miscellaneous: "$trinket$"
- artifact_magic_creation: "魔法の創造"
-
- master_dildo: "我が主よ"
- master_dildo_desc: "見ているだけで膝がガクガクしそうです。"
-
- mistress_dildo: "謙虚な守護者"
- mistress_dildo_desc: "見ているだけで女性器が脈打ちます。"
-
- nickname_the_demon_queen: "悪魔の女王"
- nickname_the_demon_queen_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U]は地獄の化身であり、世界に悪の祝福をもたらす"
-
- nickname_the_demon_king: "悪魔の王"
- nickname_the_demon_king_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U]は地獄の化身であり、世界に悪の祝福をもたらす"
-
- nickname_the_devil_creation: "悪魔の生き物たち"
- nickname_the_devil_creation_desc: "悪魔の力によって生まれた子供たち。世界に混沌と破壊をもたらす運命にある"
-
- d_laamp_saint: "聖徒の浄化"
- d_laamp_missionary: "イエスの宣教師たち"
- d_darc: "ダルク"
- benincasa: "ベニンカサ"
- d_laamp_satan: "サタンの悪魔たち"
- k_pleasure: "リリスの娼婦"
- k_violence: "アバドンの軍馬"
- k_nature: "ベルゼブブの病"
- k_greedy: "マモンの戦士"
- k_belial: "ベリアスの科学者"
- k_asmodeus: "アスモデウスの子供たち"
-
- succubus_dark_amry: "闇の軍団"
- succubus_dark_amry_flavor: "闇の軍団"
- succubus_death_korps: "死の軍団"
- succubus_death_korps_flavor: "デス・コープス"
- succubus_zombie: "ゾンビ"
- succubus_zombie_flavor: "ゾンビ"
- succubus_skeleton: "スケルトン"
- succubus_skeleton_flavor: "スケルトン"
-
- succubus_buff: "悪魔の祝福"
- succubus_buff_desc: "この人物は悪魔の祝福を受けていた。"
- succubus_debuff: "悪魔の呪い"
- succubus_debuff_desc: "この人物は悪魔の呪いを受けていた。"
- sbs_seal: "悪魔の封印"
- sbs_seal_desc: "この人物は悪魔の封印を受けていた。"
- pureblood_demon: "純血の悪魔"
- pureblood_demon_desc: "悪魔のエッセンスから生まれた、純粋な力を持つ悪魔"
-
- succubus_generals: "悪魔将軍"
- succubus_generals_desc: "悪魔の戦士たちは、悪魔の女主人に仕えるために召喚される"
-
  nature_is_alive: "ベルゼブブのエッセンスはまだ存在している"
  nature_isn_seal: "ベルゼブブはまだ封印されていない"
  nature_is_seal: "ベルゼブブは封印されている"
@@ -80,9 +24,3 @@
  belial_isn_seal: "ベリアルはまだ封印されていない"
  belial_is_seal: "ベリアルは封印されている"
  seal_belial: "ベリアルを封印せよ"
-
- the_expedition_of_violence_1: "アバドンへの最初の遠征"
- the_expedition_of_violence_2: "アバドンへの第二の遠征"
- the_expedition_of_violence_3: "アバドンの第三の遠征アバドン"
-
- be_healed_opinion: "癒されよ"

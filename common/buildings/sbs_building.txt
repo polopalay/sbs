@@ -17,7 +17,7 @@ brothel1 = {
 				has_trait = rakish
 				has_trait = deviant
 				has_trait = lifestyle_prostitute
-				any_secret = { secret_type = secret_prostitute }
+				any_secret = { type = secret_prostitute }
 			}
 		}
 	}
@@ -61,7 +61,7 @@ brothel2 = {
 				has_trait = rakish
 				has_trait = deviant
 				has_trait = lifestyle_prostitute
-				any_secret = { secret_type = secret_prostitute }
+				any_secret = { type = secret_prostitute }
 			}
 		}
 	}
@@ -102,7 +102,7 @@ brothel3 = {
 				has_trait = rakish
 				has_trait = deviant
 				has_trait = lifestyle_prostitute
-				any_secret = { secret_type = secret_prostitute }
+				any_secret = { type = secret_prostitute }
 			}
 		}
 	}
@@ -143,7 +143,7 @@ alchemy1 = {
 				has_trait = sbs_lesser_succubus
 				has_trait = witch
 				has_trait = lifestyle_herbalist
-				any_secret = { secret_type = secret_witch }
+				any_secret = { type = secret_witch }
 			}
 		}
 	}
@@ -185,7 +185,7 @@ alchemy2 = {
 				has_trait = sbs_lesser_succubus
 				has_trait = witch
 				has_trait = lifestyle_herbalist
-				any_secret = { secret_type = secret_witch }
+				any_secret = { type = secret_witch }
 			}
 		}
 	}
@@ -225,7 +225,7 @@ alchemy3 = {
 				has_trait = sbs_lesser_succubus
 				has_trait = witch
 				has_trait = lifestyle_herbalist
-				any_secret = { secret_type = secret_witch }
+				any_secret = { type = secret_witch }
 			}
 		}
 	}

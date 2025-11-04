@@ -1,58 +1,5 @@
 ﻿l_korean:
-  NOT_IS_IMMORTAL_TRIGGER: "불사의 존재가 아닙니다."
-  any_prisoner_count: "모든 [prisoners|E]"
-  any_county_province: "모든 [province|E]"
   COA_DESIGNER_CATEGORY_cherilewd: "음란"
-
-  magic_creation: "$trinket$"
-  magic_creation_miscellaneous: "$trinket$"
-  artifact_magic_creation: "마법 창조"
-
-  master_dildo: "나의 주인"
-  master_dildo_desc: "그것을 보는 것만으로도 무릎이 풀릴 것 같습니다."
-
-  mistress_dildo: "겸손한 수호자"
-  mistress_dildo_desc: "그것을 보는 것만으로도 여성의 부분이 두근거립니다."
-
-  nickname_the_demon_queen: "악마 여왕"
-  nickname_the_demon_queen_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U]는 세상에 악의 축복을 가져올 지옥의 존재입니다."
-
-  nickname_the_demon_king: "악마 왕"
-  nickname_the_demon_king_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U]는 세상에 악의 축복을 가져올 지옥의 존재입니다."
-
-  nickname_the_devil_creation: "악마의 창조물"
-  nickname_the_devil_creation_desc: "악마의 힘에서 태어난 아이들로, 세상에 혼돈과 파괴를 가져올 운명을 지닌 존재입니다."
-
-  d_laamp_saint: "성도들의 정결"
-  d_laamp_missionary: "예수의 선교사"
-  d_darc: "D'Arc"
-  benincasa: "Benincasa"
-  d_laamp_satan: "사탄의 악마들"
-  k_pleasure: "릴리스의 창녀"
-  k_violence: "아바돈의 전쟁 말들"
-  k_nature: "벨제부브의 질병"
-  k_greedy: "마몬의 전사"
-  k_belial: "벨리아의 과학자"
-  k_asmodeus: "아스모데우스의 과학자"
-
-  succubus_dark_amry: "어둠의 군대"
-  succubus_dark_amry_flavor: "어둠의 군대"
-  succubus_death_korps: "죽음의 군단"
-  succubus_death_korps_flavor: "죽음의 군단"
-  succubus_zombie: "좀비"
-  succubus_zombie_flavor: "좀비"
-  succubus_skeleton: "해골"
-  succubus_skeleton_flavor: "해골"
-
-  succubus_buff: "악마의 축복"
-  succubus_buff_desc: "이 사람은 서큐버스의 축복을 받았습니다."
-  succubus_debuff: "악마의 저주"
-  succubus_debuff_desc: "이 사람은 서큐버스의 저주를 받았습니다."
-  sbs_seal: "악마의 봉인"
-  sbs_seal_desc: "이 사람은 악마에 의해 봉인되었습니다."
-  pureblood_demon: "순혈 악마"
-  pureblood_demon_desc: "악마의 본질에서 태어난 순수한 힘을 지닌 악마입니다."
-
   nature_is_alive: "벨제부브가 살아있습니다"
   nature_isn_seal: "벨제부브가 아직 봉인되지 않았습니다"
   nature_is_seal: "벨제부브가 봉인되었습니다"
@@ -77,9 +24,3 @@
   belial_isn_seal: "벨리아가 아직 봉인되지 않았습니다"
   belial_is_seal: "벨리아가 봉인되었습니다"
   belial_seal: "벨리아 봉인"
-
-  the_expedition_of_violence_1: "아바돈의 첫 원정대"
-  the_expedition_of_violence_2: "아바돈의 두 번째 원정대"
-  the_expedition_of_violence_3: "아바돈의 세 번째 원정대"
-
-  be_healed_opinion: "치유됨"

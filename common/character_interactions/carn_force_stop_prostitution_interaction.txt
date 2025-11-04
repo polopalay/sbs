@@ -22,7 +22,7 @@
 				AND = {
 					is_courtier_of = scope:actor
 					OR = {
-						any_secret = { secret_type = secret_prostitute is_known_by = scope:actor }
+						any_secret = { type = secret_prostitute is_known_by = scope:actor }
 						has_trait = lifestyle_prostitute
 					}
 				}
@@ -117,8 +117,10 @@
 		modifier = { add = 100 scope:recipient.faith = { has_doctrine_parameter = carn_prostitution_illegal } }
 		modifier = { add = -50 scope:recipient = { faith = { has_doctrine = tenet_polyamory } } }
 		modifier = { add = -50 scope:recipient = { faith = { has_doctrine = carn_doctrine_prostitution_virtuous } } }
-		modifier = { add = -10 scope:recipient = { OR = { has_trait = deviant any_secret = { secret_type = secret_deviant } } } }
+		modifier = { add = -10 scope:recipient = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } }
 		modifier = { add = -25 scope:recipient = { has_trait = lustful } }
+		modifier = { add = 50 scope:recipient = { is_female = no faith = { has_doctrine = doctrine_gender_male_dominated } } }
+		modifier = { add = 50 scope:recipient = { is_female = yes faith = { has_doctrine = doctrine_gender_female_dominated } } }
 	}
 
 	ai_frequency = 12
@@ -130,7 +132,7 @@
 	ai_will_do = {
 		base = 0
 		modifier = { add = -25 scope:actor = { has_trait = lustful } }
-		modifier = { add = -25 scope:actor = { OR = { has_trait = deviant any_secret = { secret_type = secret_deviant } } } }
+		modifier = { add = -25 scope:actor = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } }
 		modifier = { add = -25 scope:actor = { faith = { has_doctrine = tenet_polyamory } } }
 		modifier = { add = 20 scope:recipient = { primary_title.tier >= tier_county } }
 		modifier = { add = 20 scope:recipient = { primary_title.tier >= tier_duchy } }
@@ -139,5 +141,7 @@
 		modifier = { add = 40 scope:actor = { has_trait = chaste } }
 		modifier = { add = 80 scope:actor.faith = { has_doctrine_parameter = carn_prostitution_shunned } }
 		modifier = { add = 200 scope:actor.faith = { has_doctrine_parameter = carn_prostitution_illegal } }
+		modifier = { add = 50 scope:recipient = { is_female = no faith = { has_doctrine = doctrine_gender_male_dominated } } }
+		modifier = { add = 50 scope:recipient = { is_female = yes faith = { has_doctrine = doctrine_gender_female_dominated } } }
 	}
 }

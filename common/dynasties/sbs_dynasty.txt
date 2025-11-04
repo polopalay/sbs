@@ -1,21 +1,21 @@
 ﻿666666 = {
 	name = "trait_sbs_succubus_neutral"
-	culture = "hebrew"
+	culture = "sbs_demonic"
 }
 
 777777 = {
 	name = "k_violence"
-	culture = "macedonian"
+	culture = "sbs_demonic"
 }
 
 888888 = {
 	name = "k_nature"
-	culture = "gothic"
+	culture = "sbs_demonic"
 }
 
 999999 = {
 	name = "k_greedy"
-	culture = "hunnic"
+	culture = "sbs_demonic"
 }
 
 12121212 = {

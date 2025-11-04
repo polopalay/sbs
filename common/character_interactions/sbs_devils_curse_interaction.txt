@@ -52,7 +52,6 @@ sbs_devils_curse_interaction = {
 				0 = {
 					modifier = {
 						scope:recipient = { is_adult = yes is_attracted_to_gender_of = scope:actor }
-						scope:actor = { carn_is_working_as_prostitute_trigger = yes }
 						add = 20
 					}
 					had_sex_with_effect = { CHARACTER = scope:actor PREGNANCY_CHANCE = pregnancy_chance }
@@ -98,36 +97,6 @@ sbs_devils_curse_interaction = {
 					}
 				}
 				2 = {
-					modifier = { has_trait = depressed add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
-					add_trait = depressed_1
-				}
-				2 = {
-					modifier = { has_trait = depressed add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
-					add_trait = depressed_genetic
-				}
-				2 = {
-					modifier = { has_trait = lunatic add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
-					add_trait = lunatic_1
-				}
-				2 = {
-					modifier = { has_trait = lunatic add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
-					add_trait = lunatic_genetic
-				}
-				2 = {
-					modifier = { has_trait = possessed add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
-					add_trait = possessed_1
-				}
-				2 = {
-					modifier = { has_trait = possessed add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
-					add_trait = possessed_genetic
-				}
-				2 = {
 					modifier = { has_trait = ill add = -2 }
 					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = ill
@@ -138,11 +107,6 @@ sbs_devils_curse_interaction = {
 					add_trait = pneumonic
 				}
 				2 = {
-					modifier = { has_trait = gout_ridden add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
-					add_trait = gout_ridden
-				}
-				2 = {
 					modifier = { has_trait = typhus add = -2 }
 					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = typhus
@@ -151,11 +115,6 @@ sbs_devils_curse_interaction = {
 					modifier = { has_trait = consumption add = -2 }
 					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = consumption
-				}
-				2 = {
-					modifier = { has_trait = cancer add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
-					add_trait = cancer
 				}
 				2 = {
 					modifier = { has_trait = great_pox add = -2 }
@@ -181,11 +140,6 @@ sbs_devils_curse_interaction = {
 					modifier = { has_trait = great_pox add = -2 }
 					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = great_pox
-				}
-				2 = {
-					modifier = { has_trait = bubonic_plague add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
-					add_trait = bubonic_plague
 				}
 				2 = {
 					modifier = { has_trait = measles add = -2 }
@@ -231,6 +185,7 @@ sbs_devils_curse_interaction = {
 						add = -18
 					}
 					add_character_modifier = { modifier = succubus_debuff years = 10 }
+					scope:actor = { add_character_modifier = succubus_buff }
 				}
 				0 = {
 					modifier = {

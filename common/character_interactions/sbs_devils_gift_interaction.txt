@@ -55,7 +55,7 @@ sbs_devils_gift_interaction = {
 						is_female = no
 						add = 10
 					}
-					modifier = { is_immortal = yes add = -100 }
+					modifier = { OR = { has_trait = sbs_seed_of_demon has_trait = sbs_demon } add = -100 }
 					modifier = {
 						scope:recipient.dynasty = { any_dynasty_member = { is_alive = yes is_immortal = yes count > 3 } }
 						add = -100
@@ -81,30 +81,30 @@ sbs_devils_gift_interaction = {
 						is_female = yes
 						add = 10
 					}
-					modifier = { is_immortal = yes add = -100 }
+					modifier = { OR = { has_trait = sbs_succubus has_trait = sbs_lesser_succubus has_trait = sbs_demon } add = -100 }
 					modifier = {
 						scope:recipient.dynasty = { any_dynasty_member = { is_alive = yes is_immortal = yes count > 3 } }
 						add = -100
 					}
 					if = {
 						limit = {
-							NOR = { has_trait = deviant any_secret = { secret_type = secret_deviant } }
+							NOR = { has_trait = deviant any_secret = { type = secret_deviant } }
 						}
 						if = {
-							trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = deviant }
+							limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = deviant } }
 							add_secret = { type = secret_deviant }
-							random_secret = { limit = { secret_type = secret_deviant } reveal_to = scope:actor }
+							random_secret = { limit = { type = secret_deviant } reveal_to = scope:actor }
 						}
 						else = {
 							add_trait = deviant
 						}
 					}
 					if = {
-						limit = { NOR = { has_trait = witch any_secret = { secret_type = secret_witch } } }
+						limit = { NOR = { has_trait = witch any_secret = { type = secret_witch } } }
 						if = {
-							trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = witch }
+							limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = witch } }
 							add_secret = { type = secret_witch }
-							random_secret = { limit = { secret_type = secret_witch } reveal_to = scope:actor }
+							random_secret = { limit = { type = secret_witch } reveal_to = scope:actor }
 						}
 						else = {
 							add_trait = witch
@@ -127,15 +127,6 @@ sbs_devils_gift_interaction = {
 						REASON = flag:voluntary
 						FLAVOR_CHAR = scope:recipient
 					}
-				}
-				0 = {
-					modifier = {
-						scope:recipient = { is_adult = yes is_attracted_to_gender_of = scope:actor }
-						scope:actor = { is_adult = yes }
-						NOT = { scope:recipient = scope:actor }
-						add = 50
-					}
-					had_sex_with_effect = { CHARACTER = scope:actor PREGNANCY_CHANCE = pregnancy_chance }
 				}
 				0 = {
 					modifier = { has_trait = sbs_lesser_succubus scope:actor = { has_trait = sbs_demon } add = 50 }
@@ -161,38 +152,6 @@ sbs_devils_gift_interaction = {
 					modifier = { has_trait = sbs_succubus scope:actor = { has_trait = sbs_demon } add = 50 }
 					add_trait_xp = { trait = sbs_succubus track = daring value = 20 }
 				}
-				10 = {
-					modifier = { OR = { any_secret = { secret_type = secret_deviant } has_trait = deviant } is_adult = yes add = -10 }
-					if = {
-						trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = deviant }
-						add_secret = { type = secret_deviant }
-						random_secret = { limit = { secret_type = secret_deviant } reveal_to = scope:actor }
-					}
-					else = {
-						add_trait = deviant
-					}
-				}
-				10 = {
-					modifier = { OR = { any_secret = { secret_type = secret_witch } has_trait = witch } is_adult = yes add = -10 }
-					if = {
-						trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = witch }
-						add_secret = { type = secret_witch }
-						random_secret = { limit = { secret_type = secret_witch } reveal_to = scope:actor }
-					}
-					else = {
-						add_trait = witch
-					}
-				}
-				5 = {
-					modifier = { gold < 0 add = 45 }
-					add_gold = 666
-				}
-				5 = {
-					add_prestige = 666
-				}
-				5 = {
-					add_piety = 666
-				}
 				2 = {
 					modifier = { OR = { has_trait = dull has_trait = shrewd } add = -2 }
 					add_trait = shrewd
@@ -204,21 +163,6 @@ sbs_devils_gift_interaction = {
 				2 = {
 					modifier = { OR = { has_trait = fecund has_trait = infertile } add = -2 }
 					add_trait = fecund
-				}
-				2 = {
-					modifier = { has_character_modifier = very_successful_fertility_treatment add = -50 }
-					modifier = { is_immortal = yes age > 100 any_child = { is_alive = yes house = scope:recipient.house count = 0 } add = 48 }
-					add_character_modifier = { modifier = very_successful_fertility_treatment years = 4 }
-				}
-				2 = {
-					modifier = { has_character_modifier = modifier_amazing_fertility_counsel add = -50 }
-					modifier = { is_immortal = yes age > 100 any_child = { is_alive = yes house = scope:recipient.house count = 0 } add = 48 }
-					add_character_modifier = { modifier = modifier_amazing_fertility_counsel years = 4 }
-				}
-				2 = {
-					modifier = { has_character_modifier = confident_lover add = -50 }
-					modifier = { is_immortal = yes age > 100 any_child = { is_alive = yes house = scope:recipient.house count = 0} add = 48 }
-					add_character_modifier = { modifier = confident_lover years = 4 }
 				}
 				0 = {
 					modifier = { has_trait_rank = { trait = physique_good rank < 3 } add = 2 }
@@ -255,16 +199,10 @@ sbs_devils_gift_interaction = {
 					modifier = { is_adult = yes has_trait_rank = { trait = education_stewardship rank < 5 } add = 2 }
 					change_trait_rank = { trait = education_stewardship rank = 1 }
 				}
-				0 = {
+				1 = {
 					modifier = {
-						scope:actor = { has_trait = sbs_demon }
-						NOT = { has_character_modifier = succubus_generals }
-						add = 1
-					}
-					modifier = {
-						scope:actor = { has_trait = sbs_demon is_parent_of = scope:recipient }
-						NOT = { has_character_modifier = succubus_generals }
-						add = 9
+						has_character_modifier = succubus_generals
+						add = -1
 					}
 					add_character_modifier = { modifier = succubus_generals years = 10 }
 				}

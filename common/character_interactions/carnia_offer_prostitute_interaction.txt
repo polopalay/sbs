@@ -31,7 +31,7 @@
 				has_trait = profligate
 				has_trait = seducer
 				has_trait = deviant
-				any_secret = { secret_type = secret_deviant }
+				any_secret = { type = secret_deviant }
 			}
 		}
 		scope:actor = {
@@ -136,7 +136,7 @@
 			scope:recipient = {
 				NOT = {
 					has_trait = deviant
-					any_secret = { secret_type = secret_deviant }
+					any_secret = { type = secret_deviant }
 					has_trait = lustful
 					has_trait  = rakish
 					faith = { has_doctrine = tenet_polyamory }

@@ -441,11 +441,11 @@
 				OR = {
 					NOR = {
 						has_trait = deviant
-						any_secret = { secret_type = secret_deviant }
+						any_secret = { type = secret_deviant }
 					}
 					NOR = {
 						has_trait = witch
-						any_secret = { secret_type = secret_witch }
+						any_secret = { type = secret_witch }
 					}
 				}
 			}
@@ -660,10 +660,10 @@
 					}
 					remove_trait = witch
 					if = {
-						limit = { NOT = { any_secret = { any_secret = secret_witch } } }
+						limit = { NOT = { any_secret = { type = secret_witch } } }
 						add_secret = { type = secret_witch }
 						random_secret = {
-							limit = { secret_type = secret_witch }
+							type = secret_witch
 							reveal_to = scope:actor
 						}
 					}
@@ -675,10 +675,10 @@
 					}
 					remove_trait = deviant
 					if = {
-						limit = { NOT = { any_secret = { any_secret = secret_deviant } } }
+						limit = { NOT = { any_secret = { type = secret_deviant } } }
 						add_secret = { type = secret_deviant }
 						random_secret = {
-							limit = { secret_type = secret_deviant }
+							type = secret_deviant
 							reveal_to = scope:actor
 						}
 					}
@@ -690,10 +690,10 @@
 					}
 					remove_trait = cannibal
 					if = {
-						limit = { NOT = { any_secret = { any_secret = secret_cannibal } } }
+						limit = { NOT = { any_secret = { type = secret_cannibal } } }
 						add_secret = { type = secret_cannibal }
 						random_secret = {
-							limit = { secret_type = secret_cannibal }
+							type = secret_cannibal
 							reveal_to = scope:recipient
 						}
 					}
@@ -705,10 +705,10 @@
 					}
 					remove_trait = sodomite
 					if = {
-						limit = { NOT = { any_secret = { any_secret = secret_homosexual } } }
+						limit = { NOT = { any_secret = { type = secret_homosexual } } }
 						add_secret = { type = secret_homosexual }
 						random_secret = {
-							limit = { secret_type = secret_homosexual }
+							type = secret_homosexua
 							reveal_to = scope:actor
 						}
 					}
@@ -720,10 +720,10 @@
 					}
 					remove_trait = incestuous
 					if = {
-						limit = { NOT = { any_secret = { any_secret = secret_incest } } }
+						limit = { NOT = { any_secret = { type = secret_incest } } }
 						add_secret = { type = secret_incest }
 						random_secret = {
-							limit = { secret_type = secret_incest }
+							type = secret_incest
 							reveal_to = scope:actor
 						}
 					}
@@ -777,10 +777,10 @@
 					}
 					remove_trait = lifestyle_prostitute
 					if = {
-						limit = { NOT = { any_secret = { secret_type = secret_prostitute } } }
+						limit = { NOT = { any_secret = { type = secret_prostitute } } }
 						add_secret = { type = secret_prostitute }
 						random_secret = {
-							limit = { secret_type = secret_prostitute }
+							type = secret_prostitute
 							reveal_to = scope:actor
 						}
 					}
@@ -789,12 +789,12 @@
 			if = {
 				limit = { scope:small_price = yes }
 				if = {
-					limit = { NOR = { has_trait = deviant any_secret = { secret_type = secret_deviant } } }
+					limit = { NOR = { has_trait = deviant any_secret = { type = secret_deviant } } }
 					if = {
 						limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = deviant } }
 						add_secret = { type = secret_deviant }
 						random_secret = {
-							limit = { secret_type = secret_deviant }
+							type = secret_deviant
 							reveal_to = scope:actor
 						}
 					}
@@ -803,12 +803,12 @@
 					}
 				}
 				if = {
-					limit = { NOR = { has_trait = witch any_secret = { secret_type = secret_witch } } }
+					limit = { NOR = { has_trait = witch any_secret = { type = secret_witch } } }
 					if = {
 						limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = witch } }
 						add_secret = { type = secret_witch }
 						random_secret = {
-							limit = { secret_type = secret_witch }
+							type = secret_witch
 							reveal_to = scope:actor
 						}
 					}
@@ -817,16 +817,16 @@
 					}
 				}
 				if = {
-					limit = { NOR = { has_trait = lifestyle_prostitute any_secret = { secret_type = secret_prostitute } } }
+					limit = { NOR = { has_trait = lifestyle_prostitute any_secret = { type = secret_prostitute } } }
 					if = {
 						limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = lifestyle_prostitute } }
 						add_secret = { type = secret_prostitute }
 						random_secret = {
-							limit = { secret_type = secret_prostitute }
+							type = secret_prostitute
 							reveal_to = scope:actor
 						}
 					}
-					esle = {
+					else = {
 						add_trait = lifestyle_prostitute
 					}
 				}

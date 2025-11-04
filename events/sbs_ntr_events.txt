@@ -30,8 +30,8 @@ sbs_ntr_event.0100 = {
 			base = 20
 			modifier = { has_trait = lustful add = 20 }
 			modifier = { scope:ntr_character = { has_trait = shrewd } add = 20 }
-			modifier = { OR = { has_trait = deviant any_secret = { secret_type = secret_deviant } } add = 20 }
-			modifier = { OR = { has_trait = lifestyle_prostitute any_secret = { secret_type = secret_prostitute } } add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 20 }
+			modifier = { OR = { has_trait = lifestyle_prostitute any_secret = { type = secret_prostitute } } add = 20 }
 			modifier = { scope:ntr_character = { has_trait_rank = { trait = intellect_good rank = 1 } } add = 20 }
 			modifier = { scope:ntr_character = { has_trait_rank = { trait = intellect_good rank = 2 } } add = 30 }
 			modifier = { scope:ntr_character = { has_trait_rank = { trait = intellect_good rank = 3 } } add = 50 }
@@ -84,7 +84,7 @@ sbs_ntr_event.0100 = {
 		modifier = {
 			OR = {
 				has_trait = deviant
-				any_secret = { secret_type = secret_deviant }
+				any_secret = { type = secret_deviant }
 			}
 			add = -10
 		}
@@ -604,11 +604,11 @@ sbs_ntr_event.0230 = {
 		exists = primary_spouse.father
 		has_relation_lover = primary_spouse.father
 		OR = {
-			any_secret = { secret_type = secret_deviant }
+			any_secret = { type = secret_deviant }
 			has_trait = deviant
 		}
 		OR = {
-			any_secret = { secret_type = secret_prostitute }
+			any_secret = { type = secret_prostitute }
 			has_trait = lifestyle_prostitute
 		}
 		has_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
@@ -857,7 +857,7 @@ sbs_ntr_event.0240 = {
 		has_relation_lover = primary_spouse.father
 		NOR = {
 			has_trait = lifestyle_prostitute
-			any_secret = { secret_type = secret_prostitute }
+			any_secret = { type = secret_prostitute }
 		}
 	}
 	immediate = {
@@ -908,7 +908,7 @@ sbs_ntr_event.0250 = {
 		has_relation_lover = primary_spouse.father
 		NOR = {
 			has_trait = deviant
-			any_secret = { secret_type = secret_deviant }
+			any_secret = { type = secret_deviant }
 		}
 	}
 	immediate = {

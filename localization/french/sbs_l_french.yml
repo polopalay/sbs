@@ -1,61 +1,5 @@
 ﻿l_french:
- NOT_IS_IMMORTAL_TRIGGER: "N'est pas immortel"
- any_prisoner_count: "Tout [prisoners|E]"
- any_county_province: "Toute [province|E]"
  COA_DESIGNER_CATEGORY_cherilewd: "Lewd"
-
- magic_creation: "$trinket$"
- magic_creation_miscellaneous: "$trinket$"
- artifact_magic_creation: "Création Magique"
-
- master_dildo: "Mon Maître"
- master_dildo_desc: "Rien qu'à le regarder, les genoux deviennent faibles."
-
- mistress_dildo: "Gardien Humble"
- mistress_dildo_desc: "Rien qu'à le regarder, les parties féminines palpitent."
-
- nickname_the_demon_queen: "La Reine Démon"
- nickname_the_demon_queen_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] est une créature de l'enfer qui apportera les bénédictions du mal dans le monde."
-
- nickname_the_demon_king: "Le Roi Démon"
- nickname_the_demon_king_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] est une créature de l'enfer qui apportera les bénédictions du mal dans le monde."
-
- nickname_the_devil_creation: "Créatures Démons"
- nickname_the_devil_creation_desc: "Enfants nés du pouvoir des démons, destinés à apporter le chaos et la destruction dans le monde."
-
- d_laamp_saint: "Purification des Saints"
- d_laamp_missionary: "Les Missionnaires de Jésus"
- d_darc: "D'Arc"
- benincasa: "Benincasa"
- d_laamp_satan: "Les Diables de Satan"
- k_pleasure: "La Putain de Lilith"
- k_violence: "Les Chevaux de Guerre d'Abaddon"
- k_nature: "La Maladie de Beelzebub"
- k_greedy: "Le Guerrier de Mammon"
- k_belial: "Le Scientifique de Belial"
- k_asmodeus: "Le Scientifique d'Asmod"
-
- succubus_dark_amry: "Armée Sombre"
- succubus_dark_amry_flavor: "Armée Sombre"
- succubus_death_korps: "Korps de la Mort"
- succubus_death_korps_flavor: "Korps de la Mort"
- succubus_zombie: "Zombie"
- succubus_zombie_flavor: "Zombie"
- succubus_skeleton: "Squelette"
- succubus_skeleton_flavor: "Squelette"
-
- succubus_buff: "Bénédiction du Diable"
- succubus_buff_desc: "Cette personne a été bénie par le Succube."
- succubus_debuff: "Malédiction du Diable"
- succubus_debuff_desc: "Cette personne a été maudite par le Succube."
- sbs_seal: "Sceau du Diable"
- sbs_seal_desc: "Cette personne a été scellée par le Diable."
- pureblood_demon: "Démon de Sang Pur"
-  pureblood_demon_desc: "Un démon avec un pouvoir pur, né de l'essence du diable."
-
- succubus_generals: "Général du Diable"
- succubus_generals_desc: "Les guerriers du diable sont convoqués pour servir la maîtresse du diable."
-
  nature_is_alive: "Beelzebub est vivant"
  nature_isn_seal: "Beelzebub n'est pas scellé"
  nature_is_seal: "Beelzebub est scellé"
@@ -80,9 +24,3 @@
  belial_isn_seal: "Bélial n'est pas scellé"
  belial_is_seal: "Bélial est scellé"
  seal_belial: "Sceller Bélial"
-
- the_expedition_of_violence_1: "La première expédition d'Abaddon"
- the_expedition_of_violence_2: "La deuxième expédition d'Abaddon"
- the_expedition_of_violence_3: "La troisième expédition d'Abaddon"
-
- be_healed_opinion: "Être guéri"

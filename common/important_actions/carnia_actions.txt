@@ -37,7 +37,7 @@ action_can_offer_prostitute = {
 						has_trait = profligate
 						has_trait = seducer
 						has_trait = deviant
-						any_secret = { secret_type = secret_deviant }
+						any_secret = { type = secret_deviant }
 					}
 					any_in_list = {
 						list = prostitute_list

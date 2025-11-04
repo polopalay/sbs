@@ -5,6 +5,7 @@ sbs_demonic = {
 	heritage = heritage_hell
 	language = language_demon
 	martial_custom = martial_custom_equal
+	head_determination = head_determination_herd
 	traditions = {
 		tradition_diasporic
 		tradition_horse_lords

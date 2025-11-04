@@ -67,7 +67,7 @@ sbs_slavery_event.0000 = {
 				trigger_event = sbs_slavery_event.0400
 			}
 			0 = {
-				modifier = { liege = { is_adult = yes } any_secret = { secret_type = secret_prostitute } add = 20 }
+				modifier = { liege = { is_adult = yes } any_secret = { type = secret_prostitute } add = 20 }
 				trigger_event = sbs_slavery_event.0500
 			}
 			1 = {
@@ -1819,7 +1819,7 @@ sbs_slavery_event.0500 = {
 		name = sbs_slavery_event.0500.a
 		custom_tooltip = sbs_slavery_event.0500.a.tt
 		random_secret = {
-			limit = { secret_type = secret_prostitute }
+			type = secret_prostitute
 			expose_secret = root
 		}
 		add_character_modifier = { modifier = stress_smelling_of_sweat years = 1 }

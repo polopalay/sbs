@@ -1,61 +1,5 @@
 ﻿l_english:
- NOT_IS_IMMORTAL_TRIGGER: "Is not immortal"
- any_prisoner_count: "Any [prisoners|E]"
- any_county_province: "Any [province|E]"
  COA_DESIGNER_CATEGORY_cherilewd: "Lewd"
-
- magic_creation: "$trinket$"
- magic_creation_miscellaneous: "$trinket$"
- artifact_magic_creation: "Magic Creation"
-
- master_dildo: "My Master"
- master_dildo_desc: "Just looking at it makes knees feel weak."
-
- mistress_dildo: "Humble Guardian"
- mistress_dildo_desc: "Just looking at it makes lady parts pulse."
-
- nickname_the_demon_queen: "The Demon Queen"
- nickname_the_demon_queen_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] is a creature of hell who will bring the blessings of evil to the world"
-
- nickname_the_demon_king: "The Demon King"
- nickname_the_demon_king_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] is a creature of hell who will bring the blessings of evil to the world"
-
- nickname_the_devil_creation: "Demonic Creatures"
- nickname_the_devil_creation_desc: "Children born from the power of demons, destined to bring chaos and destruction to the world."
-
- d_laamp_saint: "Purification of the Saints"
- d_laamp_missionary: "The Missionaries of Jesus"
- d_darc: "D'Arc"
- benincasa: "Benincasa"
- d_laamp_satan: "Satan's Devils"
- k_pleasure: "Lilith's Whore"
- k_violence: "Abaddon's Warhorses"
- k_nature: "Beelzebub's Disease"
- k_greedy: "Mammon's Warrior"
- k_belial: "Beliath's Scientist"
- k_asmodeus: "Asmodeus's Children"
-
- succubus_dark_amry: "Dark Army"
- succubus_dark_amry_flavor: "Dark Army"
- succubus_death_korps: "Death Korps"
- succubus_death_korps_flavor: "Death Korps"
- succubus_zombie: "Zombie"
- succubus_zombie_flavor: "Zombie"
- succubus_skeleton: "Skeleton"
- succubus_skeleton_flavor: "Skeleton"
-
- succubus_buff: "Devil's Blessing"
- succubus_buff_desc: "This person had been blessed by the Devil."
- succubus_debuff: "Devil's Curse"
- succubus_debuff_desc: "This person had been cursed by the Devil."
- sbs_seal: "Devil's Seal"
- sbs_seal_desc: "This person had been sealed by the Devil."
- pureblood_demon: "Pureblood Demon"
- pureblood_demon_desc: "A demon with pure power, born from the essence of the devil."
-
- succubus_generals: "Devil General"
- succubus_generals_desc: "The devil's warriors are summoned to serve the devil's mistress."
-
  nature_is_alive: "The essence of Beelzebub still exists"
  nature_isn_seal: "Beelzebub is not sealed yet"
  nature_is_seal: "Beelzebub is sealed"
@@ -80,9 +24,3 @@
  belial_isn_seal: "Belial is not sealed yet"
  belial_is_seal: "Belial is sealed"
  seal_belial: "Seal Belial"
-
- the_expedition_of_violence_1: "The first expedition of Abaddon"
- the_expedition_of_violence_2: "The second expedition of Abaddon"
- the_expedition_of_violence_3: "The third expedition of Abaddon"
-
- be_healed_opinion: "Be healed"

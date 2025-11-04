@@ -193,7 +193,7 @@ sbs_seal_the_devil_interaction = {
 							limit = { has_trait = education_learning }
 							change_trait_rank = { trait = education_stewardship rank = 1 }
 						}
-						esle_if = {
+						else_if = {
 							add_trait = education_learning_1	
 						}
 					}
