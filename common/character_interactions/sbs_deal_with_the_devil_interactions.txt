@@ -112,7 +112,7 @@
 				}
 				AND = {
 					has_trait = lifestyle_prostitute
-					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = adulterer }
+					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = lifestyle_prostitute }
 				}
 
 				has_trait = albino
@@ -296,7 +296,7 @@
 					}
 					AND = {
 						has_trait = lifestyle_prostitute
-						trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = adulterer }
+						trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = lifestyle_prostitute }
 					}
 				}
 			}
@@ -655,7 +655,7 @@
 				if = {
 					limit = {
 						has_trait = lifestyle_prostitute
-						trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = adulterer }
+						trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = lifestyle_prostitute }
 					}
 					remove_trait = lifestyle_prostitute
 					if = {
@@ -967,7 +967,7 @@
 			add = 5
 			scope:actor = {
 				has_trait = lifestyle_prostitute
-				trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = adulterer }
+				trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = lifestyle_prostitute }
 			}
 		}
 		modifier = { add = -2 scope:demand_conversion = yes scope:actor = { primary_title.tier = tier_county } }
