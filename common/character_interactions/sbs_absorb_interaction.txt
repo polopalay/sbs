@@ -13,8 +13,6 @@
 				has_trait = sbs_seed_of_demon
 			}
 		}
-	}
-	is_valid = {
 		scope:recipient = {
 			OR = {
 				has_character_flag = pussy_cum
@@ -22,8 +20,11 @@
 				has_character_flag = face_cum
 				has_character_flag = body_cum
 				has_trait = sbs_demon
+				scope:actor = { has_trait = sbs_seed_of_demon }
 			}
 		}
+	}
+	is_valid = {
 	}
 	send_option = {
 		is_shown = {
@@ -154,7 +155,7 @@
 				limit = { scope:corruption = yes }
 				add_trait_xp = { trait = sbs_succubus track = corruption value = 10 }
 			}
-			esle_if = {
+			else_if = {
 				limit = { scope:seed_of_demon = yes }
 				add_trait_xp = { trait = sbs_seed_of_demon value = 20 }
 			}
@@ -217,8 +218,10 @@
 	}
 	auto_accept = {
 		scope:recipient = {
-			is_courtier_of = scope:actor
-			is_imprisoned_by = scope:actor
+			OR = {
+				is_courtier_of = scope:actor
+				has_relation_slave_owner = scope:actor
+			}
 		}
 	}
 	ai_accept = {

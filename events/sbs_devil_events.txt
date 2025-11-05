@@ -2454,8 +2454,8 @@ sbs_devil.0550 = {
 		name = sbs_devil.0550.c
 		custom_tooltip = sbs_devil.0550.c.tt
 		ai_chance = { base = 50 }
-		trigger = { gold >= major_gold_value }
-		remove_short_term_gold = major_gold_value
+		trigger = { gold >= medium_gold_value }
+		remove_short_term_gold = medium_gold_value
 		create_artifact = {
 			name = mistress_dildo
 			description = mistress_dildo_desc
@@ -2473,8 +2473,8 @@ sbs_devil.0550 = {
 		name = sbs_devil.0550.a
 		custom_tooltip = sbs_devil.0550.a.tt
 		ai_chance = { base = 50 }
-		trigger = { gold >= medium_gold_value }
-		remove_short_term_gold = medium_gold_value
+		trigger = { gold >= major_gold_value }
+		remove_short_term_gold = major_gold_value
 		create_artifact = {
 			name = master_dildo
 			rarity = masterwork

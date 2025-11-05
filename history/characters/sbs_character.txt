@@ -216,7 +216,6 @@ suanggi_character = {
 			remove_trait = sbs_lesser_succubus
 			add_trait = sbs_succubus
 			add_trait_xp = { trait = sbs_succubus track = corruption value = 50 }
-			add_trait_xp = { trait = sbs_succubus track = loyalty value = 33 }
 			add_trait_xp = { trait = sbs_succubus track = power value = 33 }
 			add_trait_xp = { trait = sbs_succubus track = daring value = 25 }
 		}
@@ -224,7 +223,6 @@ suanggi_character = {
 	1178.1.1 = {
 		effect = {
 			add_trait_xp = { trait = sbs_succubus track = corruption value = 50 }
-			add_trait_xp = { trait = sbs_succubus track = loyalty value = 33 }
 			add_trait_xp = { trait = sbs_succubus track = power value = 33 }
 			add_trait_xp = { trait = sbs_succubus track = daring value = 25 }
 		}
@@ -279,7 +277,6 @@ lilim_character = {
 			remove_trait = sbs_lesser_succubus
 			add_trait = sbs_succubus
 			add_trait_xp = { trait = sbs_succubus track = corruption value = 50 }
-			add_trait_xp = { trait = sbs_succubus track = loyalty value = 33 }
 			add_trait_xp = { trait = sbs_succubus track = power value = 33 }
 			add_trait_xp = { trait = sbs_succubus track = daring value = 25 }
 		}
@@ -287,23 +284,8 @@ lilim_character = {
 	1178.1.1 = {
 		effect = {
 			add_trait_xp = { trait = sbs_succubus track = corruption value = 50 }
-			add_trait_xp = { trait = sbs_succubus track = loyalty value = 33 }
 			add_trait_xp = { trait = sbs_succubus track = power value = 33 }
 			add_trait_xp = { trait = sbs_succubus track = daring value = 25 }
-			spawn_army = {
-				name = event_troop_default_name
-				men_at_arms = {
-					type = succubus_dark_amry
-					stacks = 10
-				}
-				men_at_arms = {
-					type = succubus_death_korps
-					stacks = 5
-				}
-				location = province:2608
-				origin = province:2608
-				inheritable = no
-			}
 		}
 	}
 }

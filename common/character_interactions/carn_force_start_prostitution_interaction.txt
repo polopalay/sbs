@@ -178,6 +178,8 @@
 		modifier = { add = 40 scope:actor = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } }
 		modifier = { add = 20 scope:actor = { faith = { has_doctrine = tenet_polyamory } } }
 		modifier = { add = 20 scope:actor = { faith = { has_doctrine = carn_doctrine_prostitution_virtuous } } }
+		modifier = { add = 20 scope:actor = { primary_title.tier = tier_barony } }
+		modifier = { add = 20 scope:recipient = { age >= 16 age < 25 } }
 		modifier = { add = -20 scope:recipient = { primary_title.tier >= tier_county } }
 		modifier = { add = -20 scope:recipient = { primary_title.tier >= tier_duchy } }
 		modifier = { add = -40 scope:recipient = { primary_title.tier >= tier_kingdom } }

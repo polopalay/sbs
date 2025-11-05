@@ -68,6 +68,7 @@
 					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = lifestyle_prostitute }
 				}
 				remove_trait = lifestyle_prostitute
+				add_secret = { type = secret_prostitute }
 			}
 		}
 		scope:actor = {
@@ -126,13 +127,12 @@
 		modifier = { add = -25 scope:actor = { has_trait = lustful } }
 		modifier = { add = -25 scope:actor = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } }
 		modifier = { add = -25 scope:actor = { faith = { has_doctrine = tenet_polyamory } } }
+		modifier = { add = 20 scope:recipient = { age > 25 } }
 		modifier = { add = 20 scope:recipient = { primary_title.tier >= tier_county } }
 		modifier = { add = 20 scope:recipient = { primary_title.tier >= tier_duchy } }
 		modifier = { add = 40 scope:recipient = { primary_title.tier >= tier_kingdom } }
 		modifier = { add = 40 scope:recipient = { primary_title.tier >= tier_empire } }
 		modifier = { add = 40 scope:actor = { has_trait = chaste } }
-		modifier = { add = 80 scope:actor.faith = { has_doctrine_parameter = carn_prostitution_shunned } }
-		modifier = { add = 200 scope:actor.faith = { has_doctrine_parameter = carn_prostitution_illegal } }
 		modifier = { add = 50 scope:recipient = { is_female = no faith = { has_doctrine = doctrine_gender_male_dominated } } }
 		modifier = { add = 50 scope:recipient = { is_female = yes faith = { has_doctrine = doctrine_gender_female_dominated } } }
 	}
