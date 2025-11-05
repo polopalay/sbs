@@ -12,6 +12,7 @@ sbs_demon = {
 	flag = immortal_fertility
 	flag = immortal_incapability
 	flag = carn_cannot_be_enslaved
+	flag = sbs_demon_trait
 
 	desc = {
 		first_valid = {
@@ -59,6 +60,8 @@ sbs_demon = {
 sbs_succubus = {
 	category = health
 	icon = sbs_succubus.dds
+
+	flag = sbs_demon_trait
 
 	no_prowess_loss_from_age = yes
 	add_commander_trait = yes
@@ -199,6 +202,8 @@ sbs_lesser_succubus = {
 	category = health
 	icon = sbs_lesser_succubus.dds
 
+	flag = sbs_demon_trait
+
 	no_prowess_loss_from_age = yes
 	add_commander_trait = yes
 
@@ -260,6 +265,8 @@ sbs_lesser_succubus = {
 sbs_seed_of_demon = {
 	category = health
 	icon = sbs_seed_of_demon.dds
+
+	flag = sbs_demon_trait
 	
 	no_prowess_loss_from_age = yes
 	add_commander_trait = yes

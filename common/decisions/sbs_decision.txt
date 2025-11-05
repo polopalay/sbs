@@ -27,8 +27,11 @@ become_demon = {
 			}
 			AND = {
 				has_trait = sbs_seed_of_demon
-				has_trait_xp = { trait = sbs_seed_of_demon value >= 100 }
-				primary_title.tier >= tier_empire
+				has_trait = education_intrigue_5
+				has_trait = education_diplomacy_5
+				has_trait = education_stewardship_5
+				has_trait = education_martial_5
+				has_trait = education_learning_5
 			}
 			AND = {
 				faith.religion = religion:demonic_religion
@@ -48,8 +51,9 @@ become_demon = {
 					weight = {
 						base = 0
 						modifier = { is_lowborn = no add = 1 }
-						modifier = { dynasty = dynasty:888888 add = 10000 }
-						modifier = { dynasty = dynasty:888888 is_adult = yes add = 20000 }
+						modifier = { dynasty = dynasty:888888 add = 100 }
+						modifier = { dynasty = dynasty:888888 is_female = yes is_adult = yes add = 1000 }
+						modifier = { dynasty = dynasty:888888 has_trait = sbs_demon is_adult = yes add = 10000 }
 					}
 				}
 				random_held_title = {
@@ -79,8 +83,9 @@ become_demon = {
 					weight = {
 						base = 0
 						modifier = { is_lowborn = yes add = 1 }
-						modifier = { dynasty = dynasty:666666 add = 10000 }
-						modifier = { dynasty = dynasty:666666 is_adult = yes add = 20000 }
+						modifier = { dynasty = dynasty:666666 add = 100 }
+						modifier = { dynasty = dynasty:666666 is_female = yes is_adult = yes add = 1000 }
+						modifier = { dynasty = dynasty:666666 has_trait = sbs_demon is_adult = yes add = 10000 }
 					}
 				}
 				random_held_title = {
@@ -110,9 +115,9 @@ become_demon = {
 					weight = {
 						base = 0
 						modifier = { is_lowborn = yes add = 1 }
-						modifier = { dynasty = dynasty:777777 add = 10000 }
-						modifier = { dynasty = dynasty:777777 is_adult = yes add = 20000 }
-						modifier = { dynasty = dynasty:777777 is_female = yes add = 20000 }
+						modifier = { dynasty = dynasty:777777 add = 100 }
+						modifier = { dynasty = dynasty:777777 is_female = no is_adult = yes add = 1000 }
+						modifier = { dynasty = dynasty:777777 has_trait = sbs_demon is_adult = yes add = 10000 }
 					}
 				}
 				random_held_title = {
@@ -142,8 +147,9 @@ become_demon = {
 					weight = {
 						base = 0
 						modifier = { is_lowborn = yes add = 1 }
-						modifier = { dynasty = dynasty:999999 add = 10000 }
-						modifier = { dynasty = dynasty:999999 is_adult = yes add = 20000 }
+						modifier = { dynasty = dynasty:999999 add = 100 }
+						modifier = { dynasty = dynasty:999999 is_female = no is_adult = yes add = 1000 }
+						modifier = { dynasty = dynasty:999999 has_trait = sbs_demon is_adult = yes add = 10000 }
 					}
 				}
 				random_held_title = {

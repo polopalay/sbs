@@ -12,9 +12,9 @@
   sbs_devils_curse_interaction: "Fluch"
   sbs_devils_curse_interaction.desc: "Geben Sie [recipient.GetShortUIName] einen \"Fluch\""
 
-  sbs_create_lesser_succubus_interaction: "Einen niederen Succubus erschaffen"
-  sbs_create_lesser_succubus_interaction.desc: "[recipient.GetShortUIName] wird zu einem niederen Succubus"
-  recipient_secondary_sbs_create_lesser_succubus_interaction: "Wählen eine"
+  sbs_create_lesser_demon_interaction: "Einen niederen Succubus erschaffen"
+  sbs_create_lesser_demon_interaction.desc: "[recipient.GetShortUIName] wird zu einem niederen Succubus"
+  recipient_secondary_sbs_create_lesser_demon_interaction: "Wählen eine"
 
   sbs_create_succubus_interaction: "Einen Succubus erschaffen"
   sbs_create_succubus_interaction.desc: "[recipient.GetShortUIName] wird zu einem Succubus"
@@ -51,9 +51,9 @@
   sbs_deal_with_the_devil_interaction.desc: "Schließe einen Pakt mit dem Teufel und erhalte, was immer du willst, zu einem \"kleinen\" Preis."
   small_price: "Kleiner Preis"
 
-  sbs_ask_for_become_lesser_succubus_interaction: "Bitte um die Transformation zur geringeren Succubus"
-  sbs_ask_for_become_lesser_succubus_interaction.desc: "Bitte den Teufel, um eine geringere Succubus zu werden."
-  recipient_secondary_sbs_ask_for_become_lesser_succubus_interaction: "Wähle eine"
+  sbs_ask_for_become_lesser_demon_interaction: "Bitte um die Transformation zur geringeren Succubus"
+  sbs_ask_for_become_lesser_demon_interaction.desc: "Bitte den Teufel, um eine geringere Succubus zu werden."
+  recipient_secondary_sbs_ask_for_become_lesser_demon_interaction: "Wähle eine"
 
   sbs_ask_for_become_succubus_interaction: "Bitte um die Transformation zur Succubus"
   sbs_ask_for_become_succubus_interaction.desc: "Bitte den Teufel, um eine Succubus zu werden."

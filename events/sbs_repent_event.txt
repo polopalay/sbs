@@ -1,10 +1,10 @@
-namespace = sbs_event
+namespace = sbs_repent_event
 
 #If repent your perversion, looking at your deranged body
-sbs_event.0800 = {
+sbs_repent_event.0800 = {
 	type = character_event
-	title = sbs_event.0800.t
-	desc = sbs_event.0800.desc
+	title = sbs_repent_event.0800.t
+	desc = sbs_repent_event.0800.desc
 	theme = bloody_wedding_night
 	right_portrait = {
 		character = root
@@ -14,29 +14,29 @@ sbs_event.0800 = {
 	#punish pussy
 	option = {
 		ai_chance = { base = 80 }
-		name = sbs_event.0800.a
-		custom_tooltip = sbs_event.0800.a.tt
-		trigger_event = sbs_event.0801
+		name = sbs_repent_event.0800.a
+		custom_tooltip = sbs_repent_event.0800.a.tt
+		trigger_event = sbs_repent_event.0801
 	}
 	#public shaming
 	option = {
 		ai_chance = { base = 80 }
-		name = sbs_event.0800.b
-		custom_tooltip = sbs_event.0800.b.tt
-		trigger_event = sbs_event.0900
+		name = sbs_repent_event.0800.b
+		custom_tooltip = sbs_repent_event.0800.b.tt
+		trigger_event = sbs_repent_event.0900
 	}
 	#just some minor acts of faith will do
 	option = {
-		name = sbs_event.0800.c
-		custom_tooltip = sbs_event.0800.c.tt
+		name = sbs_repent_event.0800.c
+		custom_tooltip = sbs_repent_event.0800.c.tt
 	}
 }
 
 #0801 looking at your clit like it's cancer growth
-sbs_event.0801 = {
+sbs_repent_event.0801 = {
 	type = character_event
-	title = sbs_event.0801.t
-	desc = sbs_event.0801.desc
+	title = sbs_repent_event.0801.t
+	desc = sbs_repent_event.0801.desc
 	theme = bloody_wedding_night
 	right_portrait = {
 		character = root
@@ -46,24 +46,24 @@ sbs_event.0801 = {
 	#Punish your deviant knob
 	option = {
 		ai_chance = { base = 80 }
-		name = sbs_event.0801.a
-		custom_tooltip = sbs_event.0801.a.tt
-		trigger_event = sbs_event.0802
+		name = sbs_repent_event.0801.a
+		custom_tooltip = sbs_repent_event.0801.a.tt
+		trigger_event = sbs_repent_event.0802
 	}
 	#Teach your horny flower a lesson
 	option = {
 		ai_chance = { base = 80 }
-		name = sbs_event.0801.b
-		custom_tooltip = sbs_event.0801.b.tt
-		trigger_event = sbs_event.0810
+		name = sbs_repent_event.0801.b
+		custom_tooltip = sbs_repent_event.0801.b.tt
+		trigger_event = sbs_repent_event.0810
 	}
 }
 
 #0802 clamp clit, you punishing it more for it daring to enjoy it
-sbs_event.0802 = {
+sbs_repent_event.0802 = {
 	type = character_event
-	title = sbs_event.0802.t
-	desc = sbs_event.0802.desc
+	title = sbs_repent_event.0802.t
+	desc = sbs_repent_event.0802.desc
 	theme = bloody_wedding_night
 	right_portrait = {
 		character = root
@@ -73,8 +73,8 @@ sbs_event.0802 = {
 	#no mercy
 	option = {
 		ai_chance = { base = 80 }
-		name = sbs_event.0802.a
-		custom_tooltip = sbs_event.0802.a.tt
+		name = sbs_repent_event.0802.a
+		custom_tooltip = sbs_repent_event.0802.a.tt
 		stress_impact = {
 			base = medium_stress_impact_gain
 		}
@@ -82,8 +82,8 @@ sbs_event.0802 = {
 	#masturbate
 	option = {
 		ai_chance = { base = 80 }
-		name = sbs_event.0802.b
-		custom_tooltip = sbs_event.0802.b.tt
+		name = sbs_repent_event.0802.b
+		custom_tooltip = sbs_repent_event.0802.b.tt
 		stress_impact = {
 			lustful = medium_stress_impact_loss
 		}
@@ -97,16 +97,16 @@ sbs_event.0802 = {
 	}
 	#this is enough
 	option = {
-		name = sbs_event.0802.c
-		custom_tooltip = sbs_event.0802.c.tt
+		name = sbs_repent_event.0802.c
+		custom_tooltip = sbs_repent_event.0802.c.tt
 	}
 }
 
 #0810 punishing pussy, spank/insertion
-sbs_event.0810 = {
+sbs_repent_event.0810 = {
 	type = character_event
-	title = sbs_event.0810.t
-	desc = sbs_event.0810.desc
+	title = sbs_repent_event.0810.t
+	desc = sbs_repent_event.0810.desc
 	theme = bloody_wedding_night
 	right_portrait = {
 		character = root
@@ -116,8 +116,8 @@ sbs_event.0810 = {
 	#no mercy
 	option = {
 		ai_chance = { base = 80 }
-		name = sbs_event.0810.a
-		custom_tooltip = sbs_event.0810.a.tt
+		name = sbs_repent_event.0810.a
+		custom_tooltip = sbs_repent_event.0810.a.tt
 		stress_impact = {
 			base = medium_stress_impact_gain
 		}
@@ -125,8 +125,8 @@ sbs_event.0810 = {
 	#masturbate
 	option = {
 		ai_chance = { base = 80 }
-		name = sbs_event.0810.b
-		custom_tooltip = sbs_event.0810.b.tt
+		name = sbs_repent_event.0810.b
+		custom_tooltip = sbs_repent_event.0810.b.tt
 		stress_impact = {
 			lustful = medium_stress_impact_loss
 		}
@@ -140,15 +140,15 @@ sbs_event.0810 = {
 	}
 	#this is enough
 	option = {
-		name = sbs_event.0810.c
-		custom_tooltip = sbs_event.0810.c.tt
+		name = sbs_repent_event.0810.c
+		custom_tooltip = sbs_repent_event.0810.c.tt
 	}
 }
 
-sbs_event.0900 = {
+sbs_repent_event.0900 = {
 	type = character_event
-	title = sbs_event.0900.t
-	desc = sbs_event.0900.desc
+	title = sbs_repent_event.0900.t
+	desc = sbs_repent_event.0900.desc
 	theme = bloody_wedding_night
 	override_background = { reference = gallows }
 	right_portrait = {
@@ -159,8 +159,8 @@ sbs_event.0900 = {
 	#say nothing, get the usual pillory punishment
 	option = {
 		ai_chance = { base = 80 }
-		name = sbs_event.0900.a
-		custom_tooltip = sbs_event.0900.a.tt
+		name = sbs_repent_event.0900.a
+		custom_tooltip = sbs_repent_event.0900.a.tt
 	}
 	#admit being a deviant whore who loves sex
 	option = {
@@ -168,9 +168,9 @@ sbs_event.0900 = {
 		trigger = {
 			has_trait = sbs_succubus
 		}
-		name = sbs_event.0900.b
-		custom_tooltip = sbs_event.0900.b.tt
-		trigger_event = sbs_event.0901
+		name = sbs_repent_event.0900.b
+		custom_tooltip = sbs_repent_event.0900.b.tt
+		trigger_event = sbs_repent_event.0901
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_succubus
@@ -185,9 +185,9 @@ sbs_event.0900 = {
 		trigger = {
 			has_trait = sbs_succubus
 		}
-		name = sbs_event.0900.c
-		custom_tooltip = sbs_event.0900.c.tt
-		trigger_event = sbs_event.0901
+		name = sbs_repent_event.0900.c
+		custom_tooltip = sbs_repent_event.0900.c.tt
+		trigger_event = sbs_repent_event.0901
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_succubus
@@ -198,10 +198,10 @@ sbs_event.0900 = {
 	}
 }
 #0901 fisting/washed/spanked with blessed water to clean your tainted pussy
-sbs_event.0901 = {
+sbs_repent_event.0901 = {
 	type = character_event
-	title = sbs_event.0901.t
-	desc = sbs_event.0901.desc
+	title = sbs_repent_event.0901.t
+	desc = sbs_repent_event.0901.desc
 	theme = bloody_wedding_night
 	override_background = { reference = gallows }
 	right_portrait = {
@@ -211,15 +211,15 @@ sbs_event.0901 = {
 	}
 	#endure
 	option = {
-		name = sbs_event.0901.a
-		custom_tooltip = sbs_event.0901.a.tt
+		name = sbs_repent_event.0901.a
+		custom_tooltip = sbs_repent_event.0901.a.tt
 	}
 	#beg for more
 	option = {
 		ai_chance = { base = 100 }
-		name = sbs_event.0901.b
-		custom_tooltip = sbs_event.0901.b.tt
-		trigger_event = sbs_event.0902
+		name = sbs_repent_event.0901.b
+		custom_tooltip = sbs_repent_event.0901.b.tt
+		trigger_event = sbs_repent_event.0902
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_succubus
@@ -230,10 +230,10 @@ sbs_event.0901 = {
 	}
 }
 #0902 put on a "pole of shame" pussy pole... covered in dirty things the crowd throws, for hours
-sbs_event.0902 = {
+sbs_repent_event.0902 = {
 	type = character_event
-	title = sbs_event.0902.t
-	desc = sbs_event.0902.desc
+	title = sbs_repent_event.0902.t
+	desc = sbs_repent_event.0902.desc
 	theme = bloody_wedding_night
 	override_background = { reference = gallows }
 	right_portrait = {
@@ -243,14 +243,14 @@ sbs_event.0902 = {
 	}
 	#endure
 	option = {
-		name = sbs_event.0902.a
-		custom_tooltip = sbs_event.0902.a.tt
+		name = sbs_repent_event.0902.a
+		custom_tooltip = sbs_repent_event.0902.a.tt
 	}
 	#beg for more
 	option = {
 		ai_chance = { base = 100 }
-		name = sbs_event.0902.b
-		custom_tooltip = sbs_event.0902.b.tt
+		name = sbs_repent_event.0902.b
+		custom_tooltip = sbs_repent_event.0902.b.tt
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_succubus

@@ -37,92 +37,9 @@ sbs_devils_gift_interaction = {
 		scope:recipient = {
 			random_list = {
 				0 = {
-					modifier = {
-						scope:actor = {
-							has_trait = sbs_demon
-							is_parent_of = scope:recipient
-						}
-						is_female = no
-						add = 10
-					}
-					modifier = {
-						scope:actor = {
-							faith.religion = religion:demonic_religion
-							faith.religious_head = scope:actor
-							has_trait = sbs_demon
-							is_parent_of = scope:recipient
-						}
-						is_female = no
-						add = 10
-					}
-					modifier = { OR = { has_trait = sbs_seed_of_demon has_trait = sbs_demon } add = -100 }
-					modifier = {
-						scope:recipient.dynasty = { any_dynasty_member = { is_alive = yes is_immortal = yes count > 3 } }
-						add = -100
-					}
-					add_trait = sbs_seed_of_demon
-				}
-				0 = {
-					modifier = {
-						scope:actor = {
-							has_trait = sbs_demon
-							is_parent_of = scope:recipient
-						}
-						is_female = yes
-						add = 10
-					}
-					modifier = {
-						scope:actor = {
-							faith.religion = religion:demonic_religion
-							faith.religious_head = scope:actor
-							has_trait = sbs_demon
-							is_parent_of = scope:recipient
-						}
-						is_female = yes
-						add = 10
-					}
-					modifier = { OR = { has_trait = sbs_succubus has_trait = sbs_lesser_succubus has_trait = sbs_demon } add = -100 }
-					modifier = {
-						scope:recipient.dynasty = { any_dynasty_member = { is_alive = yes is_immortal = yes count > 3 } }
-						add = -100
-					}
-					if = {
-						limit = {
-							NOR = { has_trait = deviant any_secret = { type = secret_deviant } }
-						}
-						if = {
-							limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = deviant } }
-							add_secret = { type = secret_deviant }
-							random_secret = { limit = { type = secret_deviant } reveal_to = scope:actor }
-						}
-						else = {
-							add_trait = deviant
-						}
-					}
-					if = {
-						limit = { NOR = { has_trait = witch any_secret = { type = secret_witch } } }
-						if = {
-							limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = witch } }
-							add_secret = { type = secret_witch }
-							random_secret = { limit = { type = secret_witch } reveal_to = scope:actor }
-						}
-						else = {
-							add_trait = witch
-						}
-					}
-					add_trait = sbs_lesser_succubus
-				}
-				0 = {
-					modifier = {  scope:actor = { faith.religion = religion:demonic_religion faith.religious_head = scope:actor } OR = { has_trait = sbs_seed_of_demon has_trait = sbs_lesser_succubus has_trait = sbs_succubus has_trait = sbs_demon } add = 20 }
-					modifier = {  scope:actor = { faith.religion = religion:demonic_religion faith.religious_head = scope:actor } age > 100 add = 10 }
-					modifier = {  scope:actor = { faith.religion = religion:demonic_religion faith.religious_head = scope:actor } has_character_modifier = succubus_generals add = 5 }
-					modifier = {  scope:actor = { faith.religion = religion:demonic_religion faith.religious_head = scope:actor } is_close_family_of = scope:recipient add = 5 }
+					modifier = {  scope:actor = { faith.religion = religion:demonic_religion faith.religious_head = scope:actor } add = 20 }
 					modifier = { is_ruler = yes add = -100 }
-					modifier = { liege = { is_close_family_of = scope:recipient is_landed = yes primary_title.tier >= tier_duchy } add = -100 }
-					modifier = {
-						scope:recipient.dynasty = { any_dynasty_member = { is_alive = yes is_ruler = yes count > 5 } }
-						add = -100
-					}
+					modifier = { liege = { is_close_family_of = scope:recipient is_landed = yes primary_title.tier > tier_duchy } add = -100 }
 					create_landless_adventurer_title_effect = {
 						REASON = flag:voluntary
 						FLAVOR_CHAR = scope:recipient

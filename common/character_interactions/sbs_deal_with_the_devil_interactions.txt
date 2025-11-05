@@ -136,11 +136,7 @@
 			}
 		}
 		scope:recipient = {
-			OR = {
-				has_trait = sbs_demon
-				has_trait = sbs_succubus
-				has_trait = sbs_lesser_succubus
-			}
+			has_trait_with_flag = sbs_demon_trait
 		}
 	}
 	is_valid = {
@@ -157,6 +153,13 @@
 					value >= {
 						value = scope:actor.succubus_cost_value
 						multiply = 2
+					}
+				}
+				has_trait_xp = {
+					trait = sbs_seed_of_demon
+					value >= {
+						value = scope:recipient.succubus_cost_value
+						multiply = 4
 					}
 				}
 			}
@@ -763,6 +766,17 @@
 				}
 			}
 			if = {
+				limit = { has_trait = sbs_seed_of_demon }
+				add_trait_xp = {
+					trait = sbs_seed_of_demon
+					value = {
+						value = 0
+						subtract = scope:recipient.succubus_cost_value
+						multiply = 4
+					}
+				}
+			}
+			if = {
 				limit = { scope:favor = yes }
 				add_hook = {
 					target = scope:actor
@@ -971,18 +985,5 @@
 				trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = lifestyle_prostitute }
 			}
 		}
-		modifier = { add = -2 scope:demand_conversion = yes scope:actor = { primary_title.tier = tier_county } }
-		modifier = { add = -3 scope:demand_conversion = yes scope:actor = { primary_title.tier = tier_duchy } }
-		modifier = { add = -5 scope:demand_conversion = yes scope:actor = { primary_title.tier = tier_kingdom } }
-		modifier = { add = -8 scope:demand_conversion = yes scope:actor = { primary_title.tier = tier_empire } }
-		modifier = { add = 12 scope:demand_conversion = yes scope:actor = { primary_title.tier = tier_hegemony } }
-		modifier = { add = -2 scope:demand_conversion = yes scope:actor = { ai_zeal > high_positive_ai_value } }
-		modifier = { add = -3 scope:demand_conversion = yes scope:actor = { ai_zeal > very_high_positive_ai_value } }
-		modifier = { add = -5 scope:demand_conversion = yes scope:actor = { ai_zeal > dominant_positive_ai_value } }
-		modifier = { add = 2 scope:small_price = yes scope:actor = { ai_zeal < very_low_positive_ai_value } }
-		modifier = { add = 1 scope:small_price = yes scope:actor = { ai_zeal < low_positive_ai_value } }
-		modifier = { add = -2 scope:small_price = yes scope:actor = { ai_zeal > very_high_positive_ai_value faith = { NOR = { has_doctrine = doctrine_witchcraft_accepted has_doctrine = doctrine_deviancy_accepted trait_is_sin = lustful } } } }
-		modifier = { add = -5 scope:small_price = yes scope:actor = { ai_zeal > very_high_positive_ai_value faith = { NOR = { has_doctrine = doctrine_witchcraft_accepted has_doctrine = doctrine_deviancy_accepted trait_is_sin = lustful } } } }
-		modifier = { add = -8 scope:small_price = yes scope:actor = { ai_zeal > dominant_positive_ai_value faith = { NOR = { has_doctrine = doctrine_witchcraft_accepted has_doctrine = doctrine_deviancy_accepted trait_is_sin = lustful } } } }
 	}
 }

@@ -12,9 +12,9 @@
   sbs_devils_curse_interaction: "La maldición del Diablo"
   sbs_devils_curse_interaction.desc: "Dar a [recipient.GetShortUIName] una \"maldición\""
 
-  sbs_create_lesser_succubus_interaction: "Crear Súcubo Menor"
-  sbs_create_lesser_succubus_interaction.desc: "[recipient.GetShortUIName] se convertirá en Súcubo Menor"
-  recipient_secondary_sbs_create_lesser_succubus_interaction: "Elegir uno"
+  sbs_create_lesser_demon_interaction: "Crear Súcubo Menor"
+  sbs_create_lesser_demon_interaction.desc: "[recipient.GetShortUIName] se convertirá en Súcubo Menor"
+  recipient_secondary_sbs_create_lesser_demon_interaction: "Elegir uno"
 
   sbs_create_succubus_interaction: "Crear Súcubo"
   sbs_create_succubus_interaction.desc: "[recipient.GetShortUIName] se convertirá en un Súcubo"
@@ -51,9 +51,9 @@
   sbs_deal_with_the_devil_interaction.desc: "Hacer un trato con el diablo, obtener lo que quieras a cambio de un \"pequeño\" precio"
   small_price: "Pequeño Precio"
 
-  sbs_ask_for_become_lesser_succubus_interaction: "Pedir convertirse en Súcubo Menor"
-  sbs_ask_for_become_lesser_succubus_interaction.desc: "Pedir al diablo convertirse en un Súcubo Menor"
-  recipient_secondary_sbs_ask_for_become_lesser_succubus_interaction: "Elegir uno"
+  sbs_ask_for_become_lesser_demon_interaction: "Pedir convertirse en Súcubo Menor"
+  sbs_ask_for_become_lesser_demon_interaction.desc: "Pedir al diablo convertirse en un Súcubo Menor"
+  recipient_secondary_sbs_ask_for_become_lesser_demon_interaction: "Elegir uno"
 
   sbs_ask_for_become_succubus_interaction: "Pedir convertirse en Súcubo"
   sbs_ask_for_become_succubus_interaction.desc: "Pedir al diablo convertirse en un Súcubo"

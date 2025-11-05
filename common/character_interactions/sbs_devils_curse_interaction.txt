@@ -16,10 +16,7 @@ sbs_devils_curse_interaction = {
 		scope:recipient = {
 			NOT = {
 				has_trait = saint
-				has_trait = sbs_demon
-				has_trait = sbs_succubus
-				has_trait = sbs_lesser_succubus
-				has_trait = sbs_seed_of_demon
+				has_trait_with_flag = sbs_demon_trait
 			}
 		}
 	}
@@ -49,58 +46,6 @@ sbs_devils_curse_interaction = {
 		}
 		scope:recipient = {
 			random_list = {
-				0 = {
-					modifier = {
-						scope:recipient = { is_adult = yes is_attracted_to_gender_of = scope:actor }
-						add = 20
-					}
-					had_sex_with_effect = { CHARACTER = scope:actor PREGNANCY_CHANCE = pregnancy_chance }
-				}
-				5 = {
-					modifier = {
-						OR = {
-							has_trait = slave
-							has_character_flag = carn_cannot_be_enslaved
-							has_trait_with_flag = carn_cannot_be_enslaved
-							has_opinion_modifier = { target = scope:actor modifier = carn_wants_to_be_your_slave_opinion }
-						}
-						add = -50
-					}
-					modifier = {
-						scope:actor = { has_trait = sbs_seed_of_demon }
-						add = 45
-					}
-					add_opinion = { target = scope:actor modifier = carn_wants_to_be_your_slave_opinion }
-				}
-				3 = {
-					modifier = {
-						OR = {
-							has_trait = slave
-							has_character_flag = carn_cannot_be_enslaved
-							has_trait_with_flag = carn_cannot_be_enslaved
-							NOT = { has_opinion_modifier = { target = scope:actor modifier = carn_wants_to_be_your_slave_opinion } }
-						}
-						add = -20
-					}
-					modifier = {
-						scope:actor = { has_trait = sbs_seed_of_demon }
-						add = 17
-					}
-					modifier = { has_trait = sbs_seed_of_demon add = -1 }
-					modifier = { has_trait = sbs_lesser_succubus add = -1 }
-					carn_enslave_effect = { SLAVE = scope:recipient OWNER = scope:actor DRAMA = yes }
-				}
-				3 = {
-					pay_short_term_gold = {
-						target = scope:actor
-						gold = tiny_gold_value
-					}
-				}
-				2 = {
-					modifier = { has_trait = ill add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
-					add_trait = ill
-				}
 				2 = {
 					modifier = { has_trait = pneumonic add = -2 }
 					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
@@ -117,29 +62,9 @@ sbs_devils_curse_interaction = {
 					add_trait = consumption
 				}
 				2 = {
-					modifier = { has_trait = great_pox add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
-					add_trait = great_pox
-				}
-				2 = {
-					modifier = { has_trait = smallpox add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
-					add_trait = smallpox
-				}
-				2 = {
 					modifier = { has_trait = bubonic_plague add = -2 }
 					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = bubonic_plague
-				}
-				2 = {
-					modifier = { has_trait = lovers_pox add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
-					add_trait = lovers_pox
-				}
-				2 = {
-					modifier = { has_trait = great_pox add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
-					add_trait = great_pox
 				}
 				2 = {
 					modifier = { has_trait = measles add = -2 }
@@ -156,46 +81,31 @@ sbs_devils_curse_interaction = {
 					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = ergotism
 				}
-				1 = {
-					modifier = { has_trait = inbred add = -1 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
-					add_trait = inbred
+				10 = {
+					modifier = { has_character_modifier = stanky_modifier add = -10 }
+					add_character_modifier = modifier = stanky_modifier
 				}
-				1 = {
-					modifier = { OR = { has_trait = dull has_trait = intellect_good has_trait = shrewd } add = -1 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
-					add_trait = dull
+				10 = {
+					modifier = { has_character_modifier = stanky_modifier add = -10 }
+					add_character_modifier = modifier = stanky_modifier
 				}
-				1 = {
-					modifier = { OR = { has_trait = weak has_trait = strong has_trait = physique_good } add = -1 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
-					add_trait = weak
+				10 = {
+					modifier = { has_character_modifier = possessed_by_lust_demon_modifier add = -10 }
+					add_character_modifier = modifier = possessed_by_lust_demon_modifier
 				}
-				1 = {
-					modifier = { OR = { has_trait = fecund has_trait = infertile } add = -1 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
-					add_trait = infertile
-				}
-				20 = {
-					modifier = {
-						OR = {
-							has_character_flag = succubus_debuff
-							scope:actor = { has_trait = sbs_seed_of_demon }
-						}
-						add = -18
-					}
+				2 = {
 					add_character_modifier = { modifier = succubus_debuff years = 10 }
 					scope:actor = { add_character_modifier = succubus_buff }
 				}
-				0 = {
-					modifier = {
-						has_trait = slave
-						is_female = yes
-						NOT = { add_character_modifier = sbs_seal }
-						liege = scope:actor
-						add = 50
-					}
+				1 = {
+					add_opinion = { target = scope:actor modifier = carn_wants_to_be_your_slave_opinion }
+				}
+				1 = {
+					modifier = { has_character_modifier = sbs_seal add = -100 }
+					modifier = { scope:actor = { has_character_modifier = succubus_generals } add = -100 }
+					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } scope:recipient = { has_trait = slave } add = 99 }
 					add_character_modifier = sbs_seal
+					scope:actor = { add_character_modifier = { modifier = succubus_generals years = 10 } }
 				}
 			}
 		}
@@ -215,7 +125,6 @@ sbs_devils_curse_interaction = {
 	ai_potential = { always = yes }
 	ai_will_do = {
 		base = 0
-		modifier = { add = 100 scope:recipient = { has_trait = slave is_female = yes is_courtier_of = scope:actor NOT = { add_character_modifier = sbs_seal } } }
 		modifier = { add = 50 scope:recipient = { has_relation_nemesis = scope:actor } }
 		modifier = { add = 25 scope:recipient = { has_relation_rival = scope:actor } }
 		modifier = { add = -25 scope:recipient = { has_relation_friend = scope:actor } }

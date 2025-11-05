@@ -8,15 +8,7 @@
 
 	is_shown = {
 		scope:actor = {
-			OR = {
-				has_trait = sbs_demon
-				has_trait = sbs_succubus
-				has_trait = sbs_lesser_succubus
-				AND = {
-					has_trait = sbs_seed_of_demon
-					scope:recipient = scope:actor
-				}
-			}
+			has_trait_with_flag = sbs_demon_trait
 		}
 		scope:recipient = {
 			OR = {
@@ -1051,6 +1043,5 @@
 		modifier = { add = 20 scope:recipient = { has_relation_soulmate = scope:actor } }
 		modifier = { add = 5 scope:recipient = { has_usable_hook = scope:actor } }
 		modifier = { add = 5 scope:recipient = { has_imprisonment_reason = scope:actor } scope:actor.liege = scope:recipient }
-		modifier = { add = 5 scope:demand_conversion = yes scope:recipient = { primary_title.tier >= tier_duchy } }
 	}
 }

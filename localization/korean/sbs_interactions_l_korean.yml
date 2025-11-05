@@ -12,9 +12,9 @@
   sbs_devils_curse_interaction: "저주"
   sbs_devils_curse_interaction.desc: "[recipient.GetShortUIName]에게 \"저주\"를 부여합니다."
 
-  sbs_create_lesser_succubus_interaction: "하위 서큐버스 만들기"
-  sbs_create_lesser_succubus_interaction.desc: "[recipient.GetShortUIName]가 하위 서큐버스가 됩니다."
-  recipient_secondary_sbs_create_lesser_succubus_interaction: "하나 선택하기"
+  sbs_create_lesser_demon_interaction: "하위 서큐버스 만들기"
+  sbs_create_lesser_demon_interaction.desc: "[recipient.GetShortUIName]가 하위 서큐버스가 됩니다."
+  recipient_secondary_sbs_create_lesser_demon_interaction: "하나 선택하기"
 
   sbs_create_succubus_interaction: "서큐버스 만들기"
   sbs_create_succubus_interaction.desc: "[recipient.GetShortUIName]가 서큐버스가 됩니다."
@@ -51,9 +51,9 @@
   sbs_deal_with_the_devil_interaction.desc: "악마와 거래하여 원하는 것을 \"작은\" 대가로 얻으세요."
   small_price: "작은 가격"
 
-  sbs_ask_for_become_lesser_succubus_interaction: "하위 섹시한 악마가 되기를 요청하기"
-  sbs_ask_for_become_lesser_succubus_interaction.desc: "악마에게 하위 섹시한 악마가 되기를 요청하세요."
-  recipient_secondary_sbs_ask_for_become_lesser_succubus_interaction: "하나 선택하기"
+  sbs_ask_for_become_lesser_demon_interaction: "하위 섹시한 악마가 되기를 요청하기"
+  sbs_ask_for_become_lesser_demon_interaction.desc: "악마에게 하위 섹시한 악마가 되기를 요청하세요."
+  recipient_secondary_sbs_ask_for_become_lesser_demon_interaction: "하나 선택하기"
 
   sbs_ask_for_become_succubus_interaction: "섹시한 악마가 되기를 요청하기"
   sbs_ask_for_become_succubus_interaction.desc: "악마에게 섹시한 악마가 되기를 요청하세요."

@@ -12,9 +12,9 @@
  sbs_devils_curse_interaction: "Klątwa diabła"
  sbs_devils_curse_interaction.desc: "Daj [recipient.GetShortUIName] \"klątwa\""
 
- sbs_create_lesser_succubus_interaction: "Utwórz Mniejszego Sukkuba"
- sbs_create_lesser_succubus_interaction.desc: "[recipient.GetShortUIName] stanie się Mniejszym Sukkubem"
- recipient_secondary_sbs_create_lesser_succubus_interaction: "Wybierz jeden"
+ sbs_create_lesser_demon_interaction: "Utwórz Mniejszego Sukkuba"
+ sbs_create_lesser_demon_interaction.desc: "[recipient.GetShortUIName] stanie się Mniejszym Sukkubem"
+ recipient_secondary_sbs_create_lesser_demon_interaction: "Wybierz jeden"
 
  sbs_create_succubus_interaction: "Utwórz Sukkuba"
  sbs_create_succubus_interaction.desc: "[recipient.GetShortUIName] stanie się Sukkubem"
@@ -51,9 +51,9 @@
  sbs_deal_with_the_devil_interaction.desc: "Zrób Dogadaj się z diabłem, zdobądź wszystko, czego chcesz, za \"niską\" cenę"
  small_price: "Niska cena"
 
- sbs_ask_for_become_lesser_succubus_interaction: "Poproś o zostanie Mniejszym Sukkubem"
- sbs_ask_for_become_lesser_succubus_interaction.desc: "Poproś diabła o zostanie Mniejszym Sukkubem"
- recipient_secondary_sbs_ask_for_become_lesser_succubus_interaction: "Wybierz jedno"
+ sbs_ask_for_become_lesser_demon_interaction: "Poproś o zostanie Mniejszym Sukkubem"
+ sbs_ask_for_become_lesser_demon_interaction.desc: "Poproś diabła o zostanie Mniejszym Sukkubem"
+ recipient_secondary_sbs_ask_for_become_lesser_demon_interaction: "Wybierz jedno"
 
  sbs_ask_for_become_succubus_interaction: "Poproś o zostanie Sukkubem"
  sbs_ask_for_become_succubus_interaction.desc: "Poproś diabła o zostanie Sukkubem"

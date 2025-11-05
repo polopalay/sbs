@@ -1,44 +1,97 @@
-﻿sbs_create_succubus_interaction = {
-	icon = sbs_create_succubus_interaction
-	desc = sbs_create_succubus_interaction.desc
+﻿sbs_create_lesser_demon_interaction = {
+	icon = sbs_create_lesser_demon_interaction
+	desc = sbs_create_lesser_demon_interaction.desc
 	category = interaction_category_diplomacy
 	use_diplomatic_range = yes
+	cooldown = { years = 25 }
 	common_interaction = yes
-	cooldown = { years = 50 }
 	is_shown = {
 		NOT = { has_global_variable = seal_the_gates_of_hell }
-		scope:recipient = { has_trait = sbs_lesser_succubus }
-		scope:actor = { has_trait = sbs_demon }
+		scope:recipient = {
+			NOT = { has_trait_with_flag = sbs_demon_trait }
+		}
+		scope:actor = {
+			OR = {
+				has_trait = sbs_demon
+				AND = {
+					has_trait = sbs_succubus
+					is_valid_construction_alchemy3_trigger = yes
+				}
+			}
+		}
 	}
 	is_valid = {
 		scope:recipient = {
-			has_trait_xp = {
-				trait = sbs_lesser_succubus
-				value >= 100
+			OR = {
+				has_trait = deviant
+				any_secret = { type = secret_deviant }
+			}
+			OR = {
+				has_trait = witch
+				any_secret = { type = secret_witch }
+			}
+		}
+	}
+	localization_values = {
+		RANSOM_COST = massive_gold_value
+	}
+	send_option = {
+		is_valid = { scope:recipient ?= { gold >= massive_gold_value } }
+		flag = gold
+		localization = "RANSOM_GOLD_OPTION"
+	}
+	send_option = {
+		is_valid = {
+			scope:recipient = {
+				has_usable_hook = scope:actor
+			}
+		}
+		flag = hook
+		localization = GENERIC_SPEND_A_HOOK
+	}
+	send_option = {
+		is_valid = {
+			exists = scope:recipient
+			scope:actor = {
+				can_add_hook = {
+					target = scope:recipient
+					type = favor_hook
+				}
+			}
+		}
+		flag = favor
+		localization = "RANSOM_OWE_FAVOR_OPTION"
+	}
+	send_option = {
+		flag = demand_conversion
+		localization = "RELEASE_DEMAND_CONVERSION"
+		is_shown = {
+			NOT = { scope:actor.faith = scope:recipient.faith }
+		}
+		is_valid = {
+			# Cannot ask Religious Heads to convert
+			custom_description = {
+				text = cannot_demand_religious_head_conversion
+				NOT = {
+					AND = {
+						exists = scope:recipient.faith.religious_head
+						scope:recipient.faith.religious_head = scope:recipient
+					}
+				}
+			}
+			# Cannot ask Holy Order Master to convert
+			custom_description = {
+				text = cannot_demand_holy_order_master_conversion
+				NAND = {
+					exists = scope:recipient.faith
+					scope:recipient.faith = {
+						any_faith_holy_order = { leader = scope:actor }
+					}
+				}
 			}
 		}
 	}
 	send_options_exclusive = no
-	populate_recipient_list = {
-		scope:recipient = {
-			is_ruler = yes
-			every_courtier = {
-				limit = {
-					OR = { NOT = { this = scope:recipient } }
-				}
-				add_to_list = characters
-			}
-		}
-		scope:actor = {
-			every_courtier = {
-				limit = {
-					scope:recipient = { is_ruler = no }
-					NOT = { this = scope:recipient }
-				}
-				add_to_list = characters
-			}
-		}
-	}
 	on_accept = {
 		scope:actor = {
 			if = {
@@ -60,11 +113,12 @@
 				limit = { has_trait = immortal }
 				remove_trait = immortal
 			}
-			remove_trait = sbs_lesser_succubus
-			add_trait = sbs_succubus
 			if = {
-				limit = { scope:secondary_recipient = { is_close_family_of = scope:recipient } }
-				add_trait_xp = { trait = sbs_succubus track = corruption value = 50 }
+				limit = { is_female = yes }
+				add_trait = sbs_lesser_succubus
+			}
+			else = {
+				add_trait = sbs_seed_of_demon
 			}
 			if = {
 				limit = {
@@ -82,12 +136,6 @@
 				set_character_faith_with_conversion = scope:actor.faith
 			}
 		}
-		scope:secondary_recipient = {
-			death = {
-				death_reason = death_execution
-				killer = scope:recipient
-			}
-		}
 	}
 	auto_accept = {
 		scope:recipient = {
@@ -99,12 +147,7 @@
 		opinion_modifier = {
 			opinion_target = scope:actor
 			who = scope:recipient
-			multiplier = 0.5
-		}
-		opinion_modifier = {
-			opinion_target = scope:secondary_recipient
-			who = scope:recipient
-			multiplier = -0.2
+			multiplier = 0.25
 		}
 		modifier = { add = 10 scope:actor.faith = scope:recipient.faith }
 		modifier = { add = 10 scope:actor.culture = scope:recipient.culture }
@@ -127,8 +170,9 @@
 	ai_will_do = {
 		base = 10
 		modifier = { add = 100 scope:recipient = { is_child_of = scope:actor } }
-		modifier = { add = 5 scope:recipient = { is_female = yes is_courtier_of = scope:actor } }
-		modifier = { add = 5 scope:recipient = { is_female = yes is_vassal_of = scope:actor } }
+		modifier = { add = 5 scope:recipient = { is_courtier_of = scope:actor } }
+		modifier = { add = 5 scope:recipient = { is_vassal_of = scope:actor } }
 		modifier = { add = 100 scope:recipient = { is_ai = no } }
+		modifier = { add = 100 scope:recipient = { has_trait = saint } }
 	}
 }

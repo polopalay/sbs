@@ -12,9 +12,9 @@
  sbs_devils_curse_interaction: "悪魔の呪い"
  sbs_devils_curse_interaction.desc: "[recipient.GetShortUIName]に「呪い」を与える"
 
- sbs_create_lesser_succubus_interaction: "レッサーサキュバスを作成"
- sbs_create_lesser_succubus_interaction.desc: "[recipient.GetShortUIName]はレッサーサキュバスになります"
- recipient_secondary_sbs_create_lesser_succubus_interaction: "いずれかを選択してください"
+ sbs_create_lesser_demon_interaction: "レッサーサキュバスを作成"
+ sbs_create_lesser_demon_interaction.desc: "[recipient.GetShortUIName]はレッサーサキュバスになります"
+ recipient_secondary_sbs_create_lesser_demon_interaction: "いずれかを選択してください"
 
  sbs_create_succubus_interaction: "サキュバスを作成"
  sbs_create_succubus_interaction.desc: "[recipient.GetShortUIName はサキュバスになります"
@@ -51,9 +51,9 @@
  sbs_deal_with_the_devil_interaction.desc: "悪魔と取引して、\"わずかな\"代償で欲しいものを手に入れよう"
  small_price: "わずかな代償"
 
- sbs_ask_for_become_lesser_succubus_interaction: "レッサーサキュバスになることを願う"
- sbs_ask_for_become_lesser_succubus_interaction.desc: "悪魔に下級サキュバスになるよう頼む"
- recipient_secondary_sbs_ask_for_become_lesser_succubus_interaction: "いずれかを選択してください"
+ sbs_ask_for_become_lesser_demon_interaction: "レッサーサキュバスになることを願う"
+ sbs_ask_for_become_lesser_demon_interaction.desc: "悪魔に下級サキュバスになるよう頼む"
+ recipient_secondary_sbs_ask_for_become_lesser_demon_interaction: "いずれかを選択してください"
 
  sbs_ask_for_become_succubus_interaction: "サキュバスになるよう頼む"
  sbs_ask_for_become_succubus_interaction.desc: "悪魔にサキュバスになるよう頼む"

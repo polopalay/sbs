@@ -12,9 +12,9 @@
   sbs_devils_curse_interaction: "Malédiction"
   sbs_devils_curse_interaction.desc: "Donnez à [recipient.GetShortUIName] une \"malédiction\""
 
-  sbs_create_lesser_succubus_interaction: "Créer une Succube Inférieure"
-  sbs_create_lesser_succubus_interaction.desc: "[recipient.GetShortUIName] deviendra une Succube Inférieure"
-  recipient_secondary_sbs_create_lesser_succubus_interaction: "Choisir un"
+  sbs_create_lesser_demon_interaction: "Créer une Succube Inférieure"
+  sbs_create_lesser_demon_interaction.desc: "[recipient.GetShortUIName] deviendra une Succube Inférieure"
+  recipient_secondary_sbs_create_lesser_demon_interaction: "Choisir un"
 
   sbs_create_succubus_interaction: "Créer une Succube"
   sbs_create_succubus_interaction.desc: "[recipient.GetShortUIName] deviendra une Succube"
@@ -51,9 +51,9 @@
   sbs_deal_with_the_devil_interaction.desc: "Faites un pacte avec le diable pour obtenir ce que vous voulez à un \"petit\" prix."
   small_price: "Petit Prix"
 
-  sbs_ask_for_become_lesser_succubus_interaction: "Demander à devenir une Sucube inférieure"
-  sbs_ask_for_become_lesser_succubus_interaction.desc: "Demander au diable de devenir une Sucube inférieure."
-  recipient_secondary_sbs_ask_for_become_lesser_succubus_interaction: "Choisir un"
+  sbs_ask_for_become_lesser_demon_interaction: "Demander à devenir une Sucube inférieure"
+  sbs_ask_for_become_lesser_demon_interaction.desc: "Demander au diable de devenir une Sucube inférieure."
+  recipient_secondary_sbs_ask_for_become_lesser_demon_interaction: "Choisir un"
 
   sbs_ask_for_become_succubus_interaction: "Demander à devenir Sucube"
   sbs_ask_for_become_succubus_interaction.desc: "Demander au diable de devenir une Sucube."

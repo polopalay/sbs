@@ -430,7 +430,7 @@ sbs_devil.1319 = {
 		stress_impact = {
 			base = medium_stress_impact_gain
 		}
-		trigger_event = sbs_event.0800
+		trigger_event = sbs_repent_event.0800
 	}
 }
 #1320 they fuck your ass
@@ -592,7 +592,7 @@ sbs_devil.1325 = {
 	option = {
 		name = sbs_devil.1325.d
 		custom_tooltip = sbs_devil.1325.d.tt
-		trigger_event = sbs_event.0800
+		trigger_event = sbs_repent_event.0800
 	}
 }
 
@@ -2431,7 +2431,13 @@ sbs_devil.0550 = {
 	desc = sbs_devil.0550.desc
 	cooldown = { years = 10 }
 	trigger = {
-		stress >= 25
+		is_adult = yes
+		is_female = yes
+		OR = {
+			has_trait = lustful
+			has_trait = deviant
+			any_secret = { type = secret_deviant }
+		}
 		NOT = {
 			any_character_artifact = { has_artifact_modifier = master_dildo_modifier }
 			any_character_artifact = { has_artifact_modifier = mistress_dildo_modifier }
@@ -2443,19 +2449,31 @@ sbs_devil.0550 = {
 		character = root
 		animation = lunatic
 	}
+	# you can feel it, there is one nearby
+	option = {
+		name = sbs_devil.0550.c
+		custom_tooltip = sbs_devil.0550.c.tt
+		ai_chance = { base = 50 }
+		trigger = { gold >= major_gold_value }
+		remove_short_term_gold = major_gold_value
+		create_artifact = {
+			name = mistress_dildo
+			description = mistress_dildo_desc
+			type = magic_creation
+			modifier = mistress_dildo_modifier
+			visuals = mistress_dildo
+			template = mistress_dildo_template
+			max_durability = 20
+			wealth = 10
+			quality = 10
+		}
+	}
 	# find one, at any cost
 	option = {
-		ai_chance = { base = 50 }
-		trigger = {
-			gold >= major_gold_value
-			OR = {
-				has_trait = sbs_succubus
-				has_trait = sbs_lesser_succubus
-				has_trait = sbs_demon
-			}
-		}
 		name = sbs_devil.0550.a
 		custom_tooltip = sbs_devil.0550.a.tt
+		ai_chance = { base = 50 }
+		trigger = { gold >= medium_gold_value }
 		remove_short_term_gold = medium_gold_value
 		create_artifact = {
 			name = master_dildo
@@ -2477,38 +2495,6 @@ sbs_devil.0550 = {
 		stress_impact = {
 			base = medium_stress_impact_gain
 			lustful = medium_stress_impact_gain
-		}
-	}
-	# you can feel it, there is one nearby
-	option = {
-		ai_chance = { base = 50 }
-		trigger = {
-			OR = {
-				has_trait = sbs_demon
-				has_trait_xp = { trait = sbs_succubus track = daring value >= 1 }
-				has_trait_xp = { trait = sbs_lesser_succubus value >= 10 }
-			}
-		}
-		name = sbs_devil.0550.c
-		custom_tooltip = sbs_devil.0550.c.tt
-		if = {
-			limit = { has_trait = sbs_succubus }
-			add_trait_xp = { trait = sbs_succubus track = daring value = -1 }
-		}
-		if = {
-			limit = { has_trait = sbs_lesser_succubus }
-			add_trait_xp = { trait = sbs_lesser_succubus value = -10 }
-		}
-		create_artifact = {
-			name = mistress_dildo
-			description = mistress_dildo_desc
-			type = magic_creation
-			modifier = mistress_dildo_modifier
-			visuals = mistress_dildo
-			template = mistress_dildo_template
-			max_durability = 20
-			wealth = 10
-			quality = 10
 		}
 	}
 }

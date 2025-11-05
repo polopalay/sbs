@@ -1,103 +1,13 @@
 random_yearly_everyone_pulse = {
 	on_actions = {
-		random_ntr_on_action
 		sbs_devil_on_action
-		sbs_slave_on_action
-	}
-}
-
-random_ntr_on_action = {
-	trigger = {
-		is_adult = yes
-		is_female = yes
-		NOT = {
-			has_trait = saint
-			has_trait = chaste
-			is_immortal = yes
-		}
-		NOT = { has_global_variable = seal_the_gates_of_hell }
-		NOT = { faith.religion = religion:demonic_religion }
-		exists = primary_spouse
-		exists = primary_spouse.father
-		primary_spouse = {
-			NOT = { faith.religion = religion:demonic_religion }
-			NOT = {
-				has_trait = sbs_demon
-				has_trait = sbs_seed_of_demon
-			}
-		}
-		primary_spouse.father = {
-			is_incapable = no
-			is_immortal = no
-			is_ruler = yes
-			is_landed = yes
-			is_alive = yes
-			NOT = { faith.religion = religion:demonic_religion }
-			OR = {
-				AND = {
-					is_vassal_or_below_of = root
-					root = { primary_title.tier >= tier_kingdom }
-				}
-				primary_title.tier >= tier_kingdom
-				root = { is_ai = no }
-				root = character:7757
-				root = character:223522
-			}
-			OR = {
-				is_vassal_of = root
-				has_trait = lustful
-				has_trait = ambitious
-				has_trait = deceitful
-				has_trait = greedy
-				has_trait = cynical
-				has_trait = seducer
-				has_trait = rakish
-				has_relation_lover = root
-				root = { is_ai = no }
-				root = character:7757
-				root = character:223522
-			}
-			OR = {
-				is_vassal_of = root
-				has_relation_lover = root
-				root.primary_spouse = {
-					OR = {
-						has_trait = albino
-						has_trait = dwarf
-						has_trait = infertile
-						has_trait = weak
-						has_trait = dull
-						has_trait = beauty_bad
-						has_trait = intellect_bad
-						has_trait = physique_bad
-					}
-				}
-				root = { is_ai = no }
-				root = character:7757
-				root = character:223522
-			}
-			OR = {
-				NOT = {
-					has_trait = chaste
-					has_trait = content
-					has_trait = honest
-					has_trait = brave
-					has_trait = zealous
-					has_trait = saint
-				}
-				root = { is_ai = no }
-				root = character:7757
-				root = character:223522
-			}
-		}
 	}
 	random_events = {
-		25 = sbs_ntr_event.0100
-		10 = sbs_ntr_event.0210
-		10 = sbs_ntr_event.0220
-		10 = sbs_ntr_event.0230
-		10 = sbs_ntr_event.0240
-		10 = sbs_ntr_event.0250
+		100 = 0
+		100 = carnia_slave_random.0001
+		100 = carnia_slave_random.0002
+		100 = carnia_slave_random.0003
+		100 = sbs_devil.0550
 	}
 }
 
@@ -115,22 +25,10 @@ sbs_devil_on_action = {
 		chance_to_happen = 50
 		50 = sbs_devil.1300 # special dream
 		25 = sbs_devil.1410 # gremlin fuck
-		25 = sbs_devil.0550 # devil artifact
 		50 = sbs_loyalty.8000 # loyalty event init
 		50 = sbs_loyalty.8099 # loyalty events
 		50 = sbs_loyalty.8200 # loyalty event: new recruit
 		50 = sbs_courtier.1440 # naked event
 		50 = sbs_courtier.1460 # fuck on throne event
-	}
-}
-
-sbs_slave_on_action = {
-	trigger = {
-		is_adult = yes
-		is_female = yes
-		has_trait = slave
-	}
-	events = {
-		sbs_slavery_event.0000
 	}
 }

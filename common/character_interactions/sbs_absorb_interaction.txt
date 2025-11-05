@@ -10,9 +10,11 @@
 			OR = {
 				has_trait = sbs_succubus
 				has_trait = sbs_lesser_succubus
+				has_trait = sbs_seed_of_demon
 			}
-			NOT = { is_at_war_with = scope:recipient }
 		}
+	}
+	is_valid = {
 		scope:recipient = {
 			OR = {
 				has_character_flag = pussy_cum
@@ -83,6 +85,11 @@
 		flag = corruption
 		localization = "trait_track_corruption"
 	}
+	send_option = {
+		is_shown = { scope:actor = { has_trait = sbs_seed_of_demon } }
+		flag = seed_of_demon
+		localization = "trait_sbs_seed_of_demon"
+	}
 	send_options_exclusive = yes
 	on_accept = {
 		scope:actor = {
@@ -147,17 +154,71 @@
 				limit = { scope:corruption = yes }
 				add_trait_xp = { trait = sbs_succubus track = corruption value = 10 }
 			}
+			esle_if = {
+				limit = { scope:seed_of_demon = yes }
+				add_trait_xp = { trait = sbs_seed_of_demon value = 20 }
+			}
 		}
 		scope:recipient = {
-			remove_character_flag = face_cum
-			remove_character_flag = body_cum
-			remove_character_flag = ass_cum
-			remove_character_flag = pussy_cum
+			if = {
+				limit = { scope:seed_of_demon = yes }
+				add_character_modifier = { modifier = succubus_debuff years = 10 }
+			}
+			else = {
+				remove_character_flag = face_cum
+				remove_character_flag = body_cum
+				remove_character_flag = ass_cum
+				remove_character_flag = pussy_cum
+			}
+		}
+		if = {
+			limit = { scope:seed_of_demon = yes }
+			if = {
+				limit = {
+					scope:recipient = { has_trait_rank = { trait = education_intrigue rank >= 4 }
+					scope:actor = { has_trait_rank = { trait = education_intrigue rank < 5 } } }
+				}
+				scope:recipient = { change_trait_rank = { trait = education_intrigue rank = -1 } }
+				scope:actor = { change_trait_rank = { trait = education_intrigue rank = 1 } }
+			}
+			if = {
+				limit = {
+					scope:recipient = { has_trait_rank = { trait = education_diplomacy rank >= 4 }
+					scope:actor = { has_trait_rank = { trait = education_diplomacy rank < 5 } } }
+				}
+				scope:recipient = { change_trait_rank = { trait = education_diplomacy rank = -1 } }
+				scope:actor = { change_trait_rank = { trait = education_diplomacy rank = 1 } }
+			}
+			if = {
+				limit = {
+					scope:recipient = { has_trait_rank = { trait = education_stewardship rank >= 4 }
+					scope:actor = { has_trait_rank = { trait = education_stewardship rank < 5 } } }
+				}
+				scope:recipient = { change_trait_rank = { trait = education_stewardship rank = -1 } }
+				scope:actor = { change_trait_rank = { trait = education_stewardship rank = 1 } }
+			}
+			if = {
+				limit = {
+					scope:recipient = { has_trait_rank = { trait = education_martial rank >= 4 }
+					scope:actor = { has_trait_rank = { trait = education_martial rank < 5 } } }
+				}
+				scope:recipient = { change_trait_rank = { trait = education_martial rank = -1 } }
+				scope:actor = { change_trait_rank = { trait = education_martial rank = 1 } }
+			}
+			if = {
+				limit = {
+					scope:recipient = { has_trait_rank = { trait = education_learning rank >= 4 }
+					scope:actor = { has_trait_rank = { trait = education_learning rank < 5 } } }
+				}
+				scope:recipient = { change_trait_rank = { trait = education_learning rank = -1 } }
+				scope:actor = { change_trait_rank = { trait = education_learning rank = 1 } }
+			}
 		}
 	}
 	auto_accept = {
 		scope:recipient = {
 			is_courtier_of = scope:actor
+			is_imprisoned_by = scope:actor
 		}
 	}
 	ai_accept = {
@@ -167,8 +228,12 @@
 			who = scope:recipient
 			multiplier = 0.25
 		}
-		modifier = { add = 30 scope:recipient.faith = scope:actor.faith }
-		modifier = { add = 50 scope:recipient = { is_parent_of = scope:actor } }
+		modifier = { add = 10 scope:recipient = { is_courtier_of = scope:actor } }
+		modifier = { add = 20 scope:recipient.faith = scope:actor.faith }
+		modifier = { add = 40 scope:recipient = { is_parent_of = scope:actor } }
+		modifier = { add = 10 scope:recipient = { has_dread_level_towards = { target = scope:actor level = 1 } } desc = INTIMIDATED_REASON }
+		modifier = { add = 20 scope:recipient = { has_dread_level_towards = { target = scope:actor level = 2 } } desc = COWED_REASON }
+		modifier = { add = -25 scope:seed_of_demon = yes }
 	}
 	ai_frequency = 12
 	ai_targets = {
