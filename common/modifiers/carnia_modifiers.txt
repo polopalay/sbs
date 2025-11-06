@@ -30,3 +30,23 @@ forced_labor = {
 	icon = slave_negative
 	health = -0.5
 }
+
+face_cum = {
+	icon = prostitute_positive
+	health = -0.1
+}
+
+body_cum = {
+	icon = prostitute_positive
+	health = -0.1
+}
+
+ass_cum = {
+	icon = prostitute_positive
+	health = -0.1
+}
+
+pussy_cum = {
+	icon = prostitute_positive
+	health = -0.1
+}

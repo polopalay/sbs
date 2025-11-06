@@ -16,6 +16,7 @@ sbs_devil_on_action = {
 		is_adult = yes
 		is_female = yes
 		OR = {
+			has_trait = sbs_demon
 			has_trait = sbs_succubus
 			has_trait = sbs_lesser_succubus
 		}

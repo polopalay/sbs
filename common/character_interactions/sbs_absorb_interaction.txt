@@ -15,10 +15,10 @@
 		}
 		scope:recipient = {
 			OR = {
-				has_character_flag = pussy_cum
-				has_character_flag = ass_cum
-				has_character_flag = face_cum
-				has_character_flag = body_cum
+				has_character_modifier = pussy_cum
+				has_character_modifier = ass_cum
+				has_character_modifier = face_cum
+				has_character_modifier = body_cum
 				has_trait = sbs_demon
 				scope:actor = { has_trait = sbs_seed_of_demon }
 			}
@@ -31,10 +31,10 @@
 			scope:actor = { has_trait = sbs_lesser_succubus }
 			scope:recipient = {
 				OR = {
-					has_character_flag = pussy_cum
-					has_character_flag = ass_cum
-					has_character_flag = face_cum
-					has_character_flag = body_cum
+					has_character_modifier = pussy_cum
+					has_character_modifier = ass_cum
+					has_character_modifier = face_cum
+					has_character_modifier = body_cum
 					has_trait = sbs_demon
 				}
 			}
@@ -47,8 +47,8 @@
 			scope:actor = { has_trait = sbs_succubus }
 			scope:recipient = {
 				OR = {
-					has_character_flag = pussy_cum
-					has_character_flag = ass_cum
+					has_character_modifier = pussy_cum
+					has_character_modifier = ass_cum
 					has_trait = sbs_demon
 				}
 			}
@@ -61,8 +61,8 @@
 			scope:actor = { has_trait = sbs_succubus }
 			scope:recipient = {
 				OR = {
-					has_character_flag = face_cum
-					has_character_flag = body_cum
+					has_character_modifier = face_cum
+					has_character_modifier = body_cum
 					has_trait = sbs_demon
 				}
 			}
@@ -97,19 +97,19 @@
 			if = {
 				limit = { scope:lesser_succubus = yes }
 				if = {
-					limit = { scope:recipient = { has_character_flag = pussy_cum } }
+					limit = { scope:recipient = { has_character_modifier = pussy_cum } }
 					add_trait_xp = { trait = sbs_lesser_succubus value = 10 }
 				}
 				if = {
-					limit = { scope:recipient = { has_character_flag = ass_cum } }
+					limit = { scope:recipient = { has_character_modifier = ass_cum } }
 					add_trait_xp = { trait = sbs_lesser_succubus value = 10 }
 				}
 				if = {
-					limit = { scope:recipient = { has_character_flag = face_cum } }
+					limit = { scope:recipient = { has_character_modifier = face_cum } }
 					add_trait_xp = { trait = sbs_lesser_succubus value = 10 }
 				}
 				if = {
-					limit = { scope:recipient = { has_character_flag = body_cum } }
+					limit = { scope:recipient = { has_character_modifier = body_cum } }
 					add_trait_xp = { trait = sbs_lesser_succubus value = 10 }
 				}
 				if = {
@@ -120,11 +120,11 @@
 			else_if = {
 				limit = { scope:power = yes }
 				if = {
-					limit = { scope:recipient = { has_character_flag = pussy_cum } }
+					limit = { scope:recipient = { has_character_modifier = pussy_cum } }
 					add_trait_xp = { trait = sbs_succubus track = power value = 5 }
 				}
 				if = {
-					limit = { scope:recipient = { has_character_flag = ass_cum } }
+					limit = { scope:recipient = { has_character_modifier = ass_cum } }
 					add_trait_xp = { trait = sbs_succubus track = power value = 5 }
 				}
 				if = {
@@ -135,11 +135,11 @@
 			else_if = {
 				limit = { scope:daring = yes }
 				if = {
-					limit = { scope:recipient = { has_character_flag = body_cum } }
+					limit = { scope:recipient = { has_character_modifier = body_cum } }
 					add_trait_xp = { trait = sbs_succubus track = daring value = 5 }
 				}
 				if = {
-					limit = { scope:recipient = { has_character_flag = face_cum } }
+					limit = { scope:recipient = { has_character_modifier = face_cum } }
 					add_trait_xp = { trait = sbs_succubus track = daring value = 5 }
 				}
 				if = {
@@ -166,10 +166,10 @@
 				add_character_modifier = { modifier = succubus_debuff years = 10 }
 			}
 			else = {
-				remove_character_flag = face_cum
-				remove_character_flag = body_cum
-				remove_character_flag = ass_cum
-				remove_character_flag = pussy_cum
+				remove_character_modifier = face_cum
+				remove_character_modifier = body_cum
+				remove_character_modifier = ass_cum
+				remove_character_modifier = pussy_cum
 			}
 		}
 		if = {

@@ -15,7 +15,7 @@ fucked_pussy_outfittags = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = pussy_cum
+				has_character_modifier = pussy_cum
 			}
 		}
 	}
@@ -32,7 +32,7 @@ fucked_pussy_outfittags = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = pussy_cum
+				has_character_modifier = pussy_cum
 			}
 		}
 	}
@@ -49,7 +49,7 @@ fucked_pussy_outfittags = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = pussy_cum
+				has_character_modifier = pussy_cum
 			}
 		}
 	}
@@ -66,7 +66,7 @@ fucked_pussy_outfittags = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = pussy_cum
+				has_character_modifier = pussy_cum
 			}
 		}
 	}
@@ -89,7 +89,7 @@ fucked_ass_outfittags = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = ass_cum
+				has_character_modifier = ass_cum
 			}
 		}
 	}
@@ -106,7 +106,7 @@ fucked_ass_outfittags = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = ass_cum
+				has_character_modifier = ass_cum
 			}
 		}
 	}
@@ -123,7 +123,7 @@ fucked_ass_outfittags = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = ass_cum
+				has_character_modifier = ass_cum
 			}
 		}
 	}
@@ -140,7 +140,7 @@ fucked_ass_outfittags = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = ass_cum
+				has_character_modifier = ass_cum
 			}
 		}
 	}
@@ -162,7 +162,7 @@ fucked_body_outfittags = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = body_cum
+				has_character_modifier = body_cum
 			}
 		}
 	}
@@ -179,7 +179,7 @@ fucked_body_outfittags = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = body_cum
+				has_character_modifier = body_cum
 			}
 		}
 	}
@@ -196,7 +196,7 @@ fucked_body_outfittags = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = body_cum
+				has_character_modifier = body_cum
 			}
 		}
 	}
@@ -213,7 +213,7 @@ fucked_body_outfittags = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = body_cum
+				has_character_modifier = body_cum
 			}
 		}
 	}
@@ -230,7 +230,7 @@ fucked_body_outfittags = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = body_cum
+				has_character_modifier = body_cum
 			}
 		}
 	}
@@ -252,7 +252,7 @@ fucked_face_outfittags = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = face_cum
+				has_character_modifier = face_cum
 			}
 		}
 	}
@@ -269,7 +269,7 @@ fucked_face_outfittags = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = face_cum
+				has_character_modifier = face_cum
 			}
 		}
 	}
@@ -286,7 +286,7 @@ fucked_face_outfittags = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = face_cum
+				has_character_modifier = face_cum
 			}
 		}
 	}
@@ -303,7 +303,7 @@ fucked_face_outfittags = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = face_cum
+				has_character_modifier = face_cum
 			}
 		}
 	}
@@ -320,7 +320,7 @@ fucked_face_outfittags = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = face_cum
+				has_character_modifier = face_cum
 			}
 		}
 	}

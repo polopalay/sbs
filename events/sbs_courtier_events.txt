@@ -106,8 +106,8 @@ sbs_courtier.1442 = {
 				trait = sbs_lesser_succubus
 				value = 10
 			}
-			add_character_flag = { flag = pussy_cum days = 10 }
-			add_character_flag = { flag = body_cum days = 10 }
+			add_character_modifier = { modifier = pussy_cum days = 10 }
+			add_character_modifier = { modifier = body_cum days = 10 }
 		}
 	}
 }
@@ -238,8 +238,8 @@ sbs_courtier.1461 = {
 				trait = sbs_lesser_succubus
 				value = 10
 			}
-			add_character_flag = { flag = pussy_cum days = 10 }
-			add_character_flag = { flag = body_cum days = 10 }
+			add_character_modifier = { modifier = pussy_cum days = 10 }
+			add_character_modifier = { modifier = body_cum days = 10 }
 		}
 	}
 }
@@ -319,8 +319,8 @@ sbs_courtier.1463 = {
 				trait = sbs_lesser_succubus
 				value = 10
 			}
-			add_character_flag = { flag = pussy_cum days = 10 }
-			add_character_flag = { flag = body_cum days = 10 }
+			add_character_modifier = { modifier = pussy_cum days = 10 }
+			add_character_modifier = { modifier = body_cum days = 10 }
 		}
 	}
 }

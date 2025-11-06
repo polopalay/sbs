@@ -19,7 +19,7 @@ sbs_devils_gift_interaction = {
 			OR = {
 				has_trait = sbs_demon
 				has_trait_xp = { trait = sbs_succubus track = daring value >= 10 }
-				has_trait_xp = { trait = sbs_seed_of_demon value >= 1 }
+				has_trait_xp = { trait = sbs_seed_of_demon value >= 2 }
 			}
 		}
 	}
@@ -31,15 +31,14 @@ sbs_devils_gift_interaction = {
 			}
 			if = {
 				limit = { has_trait = sbs_seed_of_demon }
-				add_trait_xp = { trait = sbs_seed_of_demon value = -1 }
+				add_trait_xp = { trait = sbs_seed_of_demon value = -2 }
 			}
 		}
 		scope:recipient = {
 			random_list = {
 				0 = {
 					modifier = {  scope:actor = { faith.religion = religion:demonic_religion faith.religious_head = scope:actor } add = 20 }
-					modifier = { is_ruler = yes add = -100 }
-					modifier = { liege = { is_close_family_of = scope:recipient is_landed = yes primary_title.tier > tier_duchy } add = -100 }
+					modifier = { is_ruler = yes add = -20 }
 					create_landless_adventurer_title_effect = {
 						REASON = flag:voluntary
 						FLAVOR_CHAR = scope:recipient
@@ -167,6 +166,6 @@ sbs_devils_gift_interaction = {
 		base = 0
 		modifier = { add = 50 scope:actor = { has_trait = sbs_demon } scope:recipient = { is_child_of = scope:actor } }
 		modifier = { add = 25 scope:actor = { has_trait = sbs_demon } scope:recipient = { is_close_family_of = scope:actor } }
-		modifier = { add = 5 scope:recipient = scope:actor }
+		modifier = { add = 50 scope:recipient = scope:actor }
 	}
 }

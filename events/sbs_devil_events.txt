@@ -275,7 +275,7 @@ sbs_devil.1310 = {
 		name = sbs_devil.1310.a
 		custom_tooltip = sbs_devil.1310.a.tt
 		hidden_effect = {
-			add_character_flag = { flag = pussy_cum months = 1 }
+			add_character_modifier = { modifier = pussy_cum months = 1 }
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = corruption
@@ -298,8 +298,8 @@ sbs_devil.1310 = {
 		name = sbs_devil.1310.b
 		custom_tooltip = sbs_devil.1310.b.tt
 		hidden_effect = {
-			add_character_flag = { flag = pussy_cum months = 1 }
-			add_character_flag = { flag = body_cum months = 1 }
+			add_character_modifier = { modifier = pussy_cum months = 1 }
+			add_character_modifier = { modifier = body_cum months = 1 }
 		}
 	}
 }
@@ -477,7 +477,7 @@ sbs_devil.1320 = {
 			lustful = medium_stress_impact_loss
 		}
 		hidden_effect = {
-			add_character_flag = { flag = ass_cum months = 1 }
+			add_character_modifier = { modifier = ass_cum months = 1 }
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = loyalty
@@ -771,7 +771,7 @@ sbs_devil.1412 = {
 				trait = sbs_lesser_succubus
 				value = 25
 			}
-			add_character_flag = { flag = pussy_cum months = 1 }
+			add_character_modifier = { modifier = pussy_cum months = 1 }
 		}
 	}
 }
@@ -801,7 +801,7 @@ sbs_devil.1413 = {
 				trait = sbs_lesser_succubus
 				value = 25
 			}
-			add_character_flag = { flag = pussy_cum days = 10 }
+			add_character_modifier = { modifier = pussy_cum days = 10 }
 		}
 	}
 }
@@ -1096,7 +1096,7 @@ sbs_devil.1420 = {
 				trait = sbs_lesser_succubus
 				value = 25
 			}
-			add_character_flag = { flag = face_cum months = 1 }
+			add_character_modifier = { modifier = face_cum months = 1 }
 		}
 	}
 }
@@ -1149,7 +1149,7 @@ sbs_devil.1422 = {
 				trait = sbs_lesser_succubus
 				value = 25
 			}
-			add_character_flag = { flag = face_cum months = 1 }
+			add_character_modifier = { modifier = face_cum months = 1 }
 		}
 	}
 }
@@ -1203,7 +1203,7 @@ sbs_devil.5100 = {
 				trait = sbs_lesser_succubus
 				value = 10
 			}
-			add_character_flag = { flag = body_cum days = 20 }
+			add_character_modifier = { modifier = body_cum days = 20 }
 			trigger_event = sbs_devil.5500
 		}
 	}
@@ -1283,7 +1283,7 @@ sbs_devil.5110 = {
 				trait = sbs_lesser_succubus
 				value = 10
 			}
-			add_character_flag = { flag = face_cum days = 20 }
+			add_character_modifier = { modifier = face_cum days = 20 }
 			trigger_event = sbs_devil.5501
 		}
 	}
@@ -1462,7 +1462,7 @@ sbs_devil.5130 = {
 				trait = sbs_lesser_succubus
 				value = 10
 			}
-			add_character_flag = { flag = face_cum months = 1 }
+			add_character_modifier = { modifier = face_cum months = 1 }
 			trigger_event = sbs_devil.5501
 		}
 	}
@@ -1542,7 +1542,7 @@ sbs_devil.5140 = {
 				trait = sbs_lesser_succubus
 				value = 10
 			}
-			add_character_flag = { flag = face_cum months = 1 }
+			add_character_modifier = { modifier = face_cum months = 1 }
 			trigger_event = sbs_devil.5501
 		}
 	}
@@ -1620,7 +1620,7 @@ sbs_devil.5150 = {
 				trait = sbs_lesser_succubus
 				value = 10
 			}
-			add_character_flag = { flag = face_cum months = 1 }
+			add_character_modifier = { modifier = face_cum months = 1 }
 		}
 		trigger_event = sbs_devil.5151
 	}
@@ -1668,7 +1668,7 @@ sbs_devil.5151 = {
 		name = sbs_devil.5151.a
 		custom_tooltip = sbs_devil.5151.a.tt
 		hidden_effect = {
-			add_character_flag = { flag = pussy_cum months = 1 }
+			add_character_modifier = { modifier = pussy_cum months = 1 }
 			trigger_event = sbs_devil.5501
 		}
 	}
@@ -1703,7 +1703,7 @@ sbs_devil.5160 = {
 				trait = sbs_lesser_succubus
 				value = 10
 			}
-			add_character_flag = { flag = body_cum months = 1 }
+			add_character_modifier = { modifier = body_cum months = 1 }
 		}
 		trigger_event = sbs_devil.5161
 	}
@@ -1786,8 +1786,8 @@ sbs_devil.5300 = {
 				trait = sbs_lesser_succubus
 				value = 20
 			}
-			add_character_flag = { flag = body_cum months = 1 }
-			add_character_flag = { flag = face_cum months = 1 }
+			add_character_modifier = { modifier = body_cum months = 1 }
+			add_character_modifier = { modifier = face_cum months = 1 }
 		}
 		trigger_event = sbs_devil.5301
 	}
@@ -1863,8 +1863,8 @@ sbs_devil.5320 = {
 				trait = sbs_lesser_succubus
 				value = 20
 			}
-			add_character_flag = { flag = pussy_cum months = 1 }
-			add_character_flag = { flag = ass_cum months = 1 }
+			add_character_modifier = { modifier = pussy_cum months = 1 }
+			add_character_modifier = { modifier = ass_cum months = 1 }
 		}
 		trigger_event = sbs_devil.5321
 	}

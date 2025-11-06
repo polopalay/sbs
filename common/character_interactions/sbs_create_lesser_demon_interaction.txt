@@ -104,21 +104,22 @@
 		}
 		scope:recipient = {
 			if = {
-				limit = { has_trait = saint }
-				remove_trait = saint
-				set_character_faith_with_conversion = scope:actor.faith
-				give_nickname = nick_the_betrayer
-			}
-			if = {
-				limit = { has_trait = immortal }
-				remove_trait = immortal
-			}
-			if = {
 				limit = { is_female = yes }
 				add_trait = sbs_lesser_succubus
 			}
 			else = {
 				add_trait = sbs_seed_of_demon
+			}
+			if = {
+				limit = { has_trait = saint }
+				remove_trait = saint
+				set_character_faith_with_conversion = scope:recipient.faith
+				give_nickname = nick_the_betrayer
+			}
+			if = {
+				limit = { has_trait = immortal }
+				remove_trait = immortal
+				add_trait_xp = { trait = sbs_lesser_succubus value = 10 }
 			}
 			if = {
 				limit = {

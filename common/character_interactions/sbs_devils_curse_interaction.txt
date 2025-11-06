@@ -28,7 +28,7 @@ sbs_devils_curse_interaction = {
 					has_trait_xp = { trait = sbs_succubus track = daring value >= 25 }
 					has_trait_xp = { trait = sbs_succubus track = power value >= 25 }
 				}
-				has_trait_xp = { trait = sbs_seed_of_demon value >= 1 }
+				has_trait_xp = { trait = sbs_seed_of_demon value >= 5 }
 			}
 		}
 	}
@@ -36,12 +36,12 @@ sbs_devils_curse_interaction = {
 		scope:actor = {
 			if = {
 				limit = { has_trait = sbs_succubus }
-				add_trait_xp = { trait = sbs_succubus track = daring value = -50 }
-				add_trait_xp = { trait = sbs_succubus track = power value = -50 }
+				add_trait_xp = { trait = sbs_succubus track = daring value = -25 }
+				add_trait_xp = { trait = sbs_succubus track = power value = -25 }
 			}
 			else_if = {
 				limit = { has_trait = sbs_seed_of_demon }
-				add_trait_xp = { trait = sbs_seed_of_demon value = -1 }
+				add_trait_xp = { trait = sbs_seed_of_demon value = -5 }
 			}
 		}
 		scope:recipient = {

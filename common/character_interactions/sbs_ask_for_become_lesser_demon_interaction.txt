@@ -113,6 +113,13 @@
 				set_character_faith_with_conversion = scope:recipient.faith
 			}
 			if = {
+				limit = { is_female = yes }
+				add_trait = sbs_lesser_succubus
+			}
+			else = {
+				add_trait = sbs_seed_of_demon
+			}
+			if = {
 				limit = { has_trait = saint }
 				remove_trait = saint
 				set_character_faith_with_conversion = scope:recipient.faith
@@ -121,13 +128,7 @@
 			if = {
 				limit = { has_trait = immortal }
 				remove_trait = immortal
-			}
-			if = {
-				limit = { is_female = yes }
-				add_trait = sbs_lesser_succubus
-			}
-			else = {
-				add_trait = sbs_seed_of_demon
+				add_trait_xp = { trait = sbs_lesser_succubus value = 10 }
 			}
 		}
 		scope:recipient = {

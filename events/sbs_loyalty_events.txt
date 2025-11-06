@@ -234,10 +234,10 @@ sbs_loyalty.8006 = {
 				trait = sbs_lesser_succubus
 				value = 25
 			}
-			add_character_flag = { flag = face_cum months = 1 }
-			add_character_flag = { flag = body_cum months = 1 }
-			add_character_flag = { flag = ass_cum months = 1 }
-			add_character_flag = { flag = pussy_cum months = 1 }
+			add_character_modifier = { modifier = face_cum months = 1 }
+			add_character_modifier = { modifier = body_cum months = 1 }
+			add_character_modifier = { modifier = ass_cum months = 1 }
+			add_character_modifier = { modifier = pussy_cum months = 1 }
 		}
 	}
 }
@@ -353,8 +353,8 @@ sbs_loyalty.8100 = {
 	option = {
 		name = sbs_loyalty.8100.b
 		custom_tooltip = sbs_loyalty.8100.b.tt
-		add_character_flag = { flag = ass_cum days = 15 }
-		add_character_flag = { flag = pussy_cum days = 15 }
+		add_character_modifier = { modifier = ass_cum days = 30 }
+		add_character_modifier = { modifier = pussy_cum days = 30 }
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_succubus
@@ -401,7 +401,7 @@ sbs_loyalty.8101 = {
 				trait = sbs_lesser_succubus
 				value = 25
 			}
-			add_character_flag = { flag = ass_cum days = 15 }
+			add_character_modifier = { modifier = ass_cum days = 15 }
 		}
 		scope:sbs_loyalty_random_1 = { prostitute_effect= { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance } }
 	}
@@ -435,7 +435,7 @@ sbs_loyalty.8101 = {
 				trait = sbs_lesser_succubus
 				value = 5
 			}
-			add_character_flag = { flag = pussy_cum days = 15 }
+			add_character_modifier = { modifier = pussy_cum days = 15 }
 		}
 		scope:sbs_loyalty_random_1 = { prostitute_effect= { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance } }
 	}
@@ -599,10 +599,10 @@ sbs_loyalty.8201 = {
 		}
 		add_legitimacy = medium_legitimacy_loss
 		hidden_effect = {
-			add_character_flag = { flag = face_cum months = 1 }
-			add_character_flag = { flag = body_cum months = 1 }
-			add_character_flag = { flag = pussy_cum months = 1 }
-			add_character_flag = { flag = ass_cum months = 1 }
+			add_character_modifier = { modifier = face_cum months = 1 }
+			add_character_modifier = { modifier = body_cum months = 1 }
+			add_character_modifier = { modifier = pussy_cum months = 1 }
+			add_character_modifier = { modifier = ass_cum months = 1 }
 		}
 	}
 }
@@ -651,10 +651,10 @@ sbs_loyalty.8202 = {
 		trigger_event = sbs_loyalty.8203
 		add_legitimacy = minor_legitimacy_loss
 		hidden_effect = {
-			add_character_flag = { flag = face_cum months = 1 }
-			add_character_flag = { flag = body_cum months = 1 }
-			add_character_flag = { flag = pussy_cum months = 1 }
-			add_character_flag = { flag = ass_cum months = 1 }
+			add_character_modifier = { modifier = face_cum months = 1 }
+			add_character_modifier = { modifier = body_cum months = 1 }
+			add_character_modifier = { modifier = pussy_cum months = 1 }
+			add_character_modifier = { modifier = ass_cum months = 1 }
 		}
 	}
 	# enough
@@ -758,10 +758,10 @@ sbs_loyalty.8205 = {
 		custom_tooltip = sbs_loyalty.8205.a.tt
 		trigger_event = sbs_loyalty.8206
 		hidden_effect = {
-			add_character_flag = { flag = face_cum months = 3 }
-			add_character_flag = { flag = body_cum months = 3 }
-			add_character_flag = { flag = pussy_cum months = 3 }
-			add_character_flag = { flag = ass_cum months = 3 }
+			add_character_modifier = { modifier = face_cum months = 3 }
+			add_character_modifier = { modifier = body_cum months = 3 }
+			add_character_modifier = { modifier = pussy_cum months = 3 }
+			add_character_modifier = { modifier = ass_cum months = 3 }
 		}
 	}
 }
@@ -842,10 +842,10 @@ sbs_loyalty.8208 = {
 			add_character_modifier = succubus_generals
 		}
 		hidden_effect = {
-			add_character_flag = { flag = face_cum months = 3 }
-			add_character_flag = { flag = body_cum months = 3 }
-			add_character_flag = { flag = pussy_cum months = 3 }
-			add_character_flag = { flag = ass_cum months = 3 }
+			add_character_modifier = { modifier = face_cum months = 3 }
+			add_character_modifier = { modifier = body_cum months = 3 }
+			add_character_modifier = { modifier = pussy_cum months = 3 }
+			add_character_modifier = { modifier = ass_cum months = 3 }
 		}
 	}
 }
@@ -870,10 +870,10 @@ sbs_loyalty.8209 = {
 		name = sbs_loyalty.8209.a
 		custom_tooltip = sbs_loyalty.8209.a.tt
 		hidden_effect = {
-			add_character_flag = { flag = face_cum months = 3 }
-			add_character_flag = { flag = body_cum months = 3 }
-			add_character_flag = { flag = pussy_cum months = 3 }
-			add_character_flag = { flag = ass_cum months = 3 }
+			add_character_modifier = { modifier = face_cum months = 3 }
+			add_character_modifier = { modifier = body_cum months = 3 }
+			add_character_modifier = { modifier = pussy_cum months = 3 }
+			add_character_modifier = { modifier = ass_cum months = 3 }
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = loyalty
