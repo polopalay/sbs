@@ -94,18 +94,18 @@ sbs_devils_curse_interaction = {
 					add_character_modifier = modifier = possessed_by_lust_demon_modifier
 				}
 				2 = {
-					add_character_modifier = { modifier = succubus_debuff years = 10 }
-					scope:actor = { add_character_modifier = succubus_buff }
+					add_character_modifier = { modifier = sbs_debuff years = 10 }
+					scope:actor = { add_character_modifier = sbs_buff }
 				}
 				1 = {
 					add_opinion = { target = scope:actor modifier = carn_wants_to_be_your_slave_opinion }
 				}
 				1 = {
 					modifier = { has_character_modifier = sbs_seal add = -100 }
-					modifier = { scope:actor = { has_character_modifier = succubus_generals } add = -100 }
+					modifier = { scope:actor = { has_character_modifier = sbs_generals } add = -100 }
 					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } scope:recipient = { has_trait = slave } add = 99 }
 					add_character_modifier = sbs_seal
-					scope:actor = { add_character_modifier = { modifier = succubus_generals years = 10 } }
+					scope:actor = { add_character_modifier = { modifier = sbs_generals years = 10 } }
 				}
 			}
 		}

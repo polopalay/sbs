@@ -162,6 +162,11 @@
 		modifier = { add = -10 scope:recipient = { faith = { OR = { has_doctrine = doctrine_adultery_women_shunned has_doctrine = doctrine_adultery_men_shunned } } } }
 		modifier = { add = -50 scope:recipient = { is_female = no faith = { has_doctrine = doctrine_gender_male_dominated } } }
 		modifier = { add = -50 scope:recipient = { is_female = yes faith = { has_doctrine = doctrine_gender_female_dominated } } }
+		modifier = { add = -10 scope:recipient = { primary_title.tier = tier_county is_landed_or_landless_administrative = yes } }
+		modifier = { add = -20 scope:recipient = { primary_title.tier = tier_duchy is_landed_or_landless_administrative = yes } }
+		modifier = { add = -30 scope:recipient = { primary_title.tier = tier_kingdom is_landed_or_landless_administrative = yes } }
+		modifier = { add = -40 scope:recipient = { primary_title.tier = tier_empire is_landed_or_landless_administrative = yes } }
+		modifier = { add = -50 scope:recipient = { primary_title.tier = tier_hegemony is_landed_or_landless_administrative = yes } }
 	}
 
 	ai_frequency = 12
@@ -179,11 +184,13 @@
 		modifier = { add = 20 scope:actor = { faith = { has_doctrine = tenet_polyamory } } }
 		modifier = { add = 20 scope:actor = { faith = { has_doctrine = carn_doctrine_prostitution_virtuous } } }
 		modifier = { add = 20 scope:actor = { primary_title.tier = tier_barony } }
+		modifier = { add = 20 scope:actor = { is_landed_or_landless_administrative = no } }
 		modifier = { add = 20 scope:recipient = { age >= 16 age < 25 } }
-		modifier = { add = -20 scope:recipient = { primary_title.tier >= tier_county } }
-		modifier = { add = -20 scope:recipient = { primary_title.tier >= tier_duchy } }
-		modifier = { add = -40 scope:recipient = { primary_title.tier >= tier_kingdom } }
-		modifier = { add = -40 scope:recipient = { primary_title.tier >= tier_empire } }
+		modifier = { add = -10 scope:recipient = { primary_title.tier = tier_county is_landed_or_landless_administrative = yes } }
+		modifier = { add = -20 scope:recipient = { primary_title.tier = tier_duchy is_landed_or_landless_administrative = yes } }
+		modifier = { add = -30 scope:recipient = { primary_title.tier = tier_kingdom is_landed_or_landless_administrative = yes } }
+		modifier = { add = -40 scope:recipient = { primary_title.tier = tier_empire is_landed_or_landless_administrative = yes } }
+		modifier = { add = -50 scope:recipient = { primary_title.tier = tier_hegemony is_landed_or_landless_administrative = yes } }
 		modifier = { add = -25 scope:recipient = { is_close_or_extended_family_of = scope:actor } }
 		modifier = { add = -40 scope:actor = { has_trait = chaste } }
 		modifier = { add = -50 scope:actor.faith = { has_doctrine_parameter = carn_prostitution_shunned } }

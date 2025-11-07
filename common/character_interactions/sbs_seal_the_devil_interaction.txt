@@ -7,12 +7,7 @@ sbs_seal_the_devil_interaction = {
 		scope:actor = {
 			is_ruler = yes
 			faith.religion = religion:christianity_religion
-			NOT = {
-				has_trait = sbs_demon
-				has_trait = sbs_succubus
-				has_trait = sbs_lesser_succubus
-				has_trait = sbs_seed_of_demon
-			}
+			NOT = { has_trait_with_flag = sbs_demon_trait }
 		}
 		scope:recipient = {
 			OR = {
@@ -112,16 +107,19 @@ sbs_seal_the_devil_interaction = {
 		}
 	}
 	on_accept = {
-		scope:recipient = {
+		scope:actor = {
 			if = {
-				limit = { scope:actor = { NOT = { has_trait = saint } } }
+				limit = { NOT = { has_trait = saint } }
 				add_trait = saint
 				give_nickname = nick_the_saint
 			}
 			else_if = {
-				limit = { scope:actor = { NOT = { has_trait = immortal } } }
+				limit = { NOT = { has_trait = immortal } }
 				add_trait = immortal
 			}
+			add_piety = 10000
+		}
+		scope:recipient = {
 			if = {
 				limit = { faith.religious_head = scope:recipient faith = faith:nature }
 				death = { death_reason = death_execution killer = scope:actor }
@@ -245,20 +243,6 @@ sbs_seal_the_devil_interaction = {
 							add_trait = education_stewardship_1
 						}
 					}
-				}
-				scope:actor = {
-					add_gold = 10000
-					add_prestige = 10000
-					add_piety = 10000
-				}
-			}
-			else = {
-				remove_trait = sbs_demon
-				remove_trait = sbs_succubus
-				remove_trait = sbs_lesser_succubus
-				remove_trait = sbs_seed_of_demon
-				scope:actor = {
-					add_piety = 100
 				}
 			}
 		}

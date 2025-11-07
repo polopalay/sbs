@@ -45,17 +45,17 @@
   succubus_skeleton: "Esqueleto"
   succubus_skeleton_flavor: "Esqueleto"
 
-  succubus_buff: "Bendición del Diablo"
-  succubus_buff_desc: "Esta persona ha sido bendecida por el Súcubo."
-  succubus_debuff: "Maldición del Diablo"
-  succubus_debuff_desc: "Esta persona ha sido maldecida por el Súcubo."
+  sbs_buff: "Bendición del Diablo"
+  sbs_buff_desc: "Esta persona ha sido bendecida por el Súcubo."
+  sbs_debuff: "Maldición del Diablo"
+  sbs_debuff_desc: "Esta persona ha sido maldecida por el Súcubo."
   sbs_seal: "Sello del Diablo"
   sbs_seal_desc: "Esta persona ha sido sellada por el Diablo."
   pureblood_demon: "Demonio de Sangre Pura"
   pureblood_demon_desc: "Un demonio con poder puro, nacido de la esencia del diablo."
 
-  succubus_generals: "General Demonio"
-  succubus_generals_desc: "Los guerreros demoníacos son convocados para servir a la amante del diablo."
+  sbs_generals: "General Demonio"
+  sbs_generals_desc: "Los guerreros demoníacos son convocados para servir a la amante del diablo."
 
   nature_is_alive: "Belcebú está vivo"
   nature_isn_seal: "Belcebú no está sellado"

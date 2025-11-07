@@ -9,7 +9,7 @@ is_valid_construction_alchemy3_trigger = {
 			has_trait_xp = {
 				trait = sbs_succubus
 				track = corruption
-				value >= 50
+				value >= 100
 			}
 			has_trait_xp = {
 				trait = sbs_succubus

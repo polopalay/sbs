@@ -26,14 +26,10 @@
 
 	is_valid = {
 		scope:actor = {
-			OR = {
-				has_trait = deviant
-				any_secret = { type = secret_deviant }
-			}
-			ON = {
-				has_trait = witch
-				any_secret = { type = secret_witch }
-			}
+			is_adult = yes
+		}
+		scope:recipient = {
+			NOT = { has_character_modifier = sbs_debuff }
 		}
 	}
 
@@ -124,11 +120,22 @@
 				remove_trait = saint
 				set_character_faith_with_conversion = scope:recipient.faith
 				give_nickname = nick_the_betrayer
+				if = {
+					limit = { has_trait = chaste }
+					remove_trait = chaste
+					add_trait = lustful
+				}
 			}
 			if = {
 				limit = { has_trait = immortal }
 				remove_trait = immortal
-				add_trait_xp = { trait = sbs_lesser_succubus value = 10 }
+				if = {
+					limit = { is_female = yes }
+					add_trait_xp = { trait = sbs_lesser_succubus value = 100 }
+				}
+				else = {
+					add_trait_xp = { trait = sbs_seed_of_demon value = 100 }
+				}
 			}
 		}
 		scope:recipient = {
@@ -139,24 +146,29 @@
 					type = fabrication_hook
 				}
 			}
+			add_character_modifier = { modifier = sbs_debuff years = 2 }
 		}
 	}
 	ai_accept = {
-		base = -25
+		base = -100
 		opinion_modifier = {
 			opinion_target = scope:actor
 			who = scope:recipient
 			multiplier = 0.25
 		}
-		modifier = { add = 5 scope:hook = yes }
-		modifier = { add = 5 scope:gold = yes }
-		modifier = { add = 5 scope:favor = yes }
+		modifier = { add = 10 scope:hook = yes }
+		modifier = { add = 10 scope:gold = yes }
+		modifier = { add = 10 scope:favor = yes }
 		modifier = { add = 10 scope:actor.faith = scope:recipient.faith }
 		modifier = { add = 10 scope:actor.culture = scope:recipient.culture }
 		modifier = { add = 10 scope:demand_conversion = yes scope:actor = { primary_title.tier = tier_kingdom } }
 		modifier = { add = 20 scope:demand_conversion = yes scope:actor = { primary_title.tier = tier_empire } }
-		modifier = { add = 30 scope:demand_conversion = yes scope:recipient = { primary_title.tier = tier_hegemony } }
+		modifier = { add = 30 scope:demand_conversion = yes scope:actor = { primary_title.tier = tier_hegemony } }
+		modifier = { add = 50 scope:actor = { is_close_or_extended_family_of = scope:recipient } }
 		modifier = { add = 50 scope:actor = { has_trait = saint } }
+		modifier = { add = 50 scope:actor = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } } 
+		modifier = { add = 50 scope:actor = { OR = { has_trait = witch any_secret = { type = secret_witch } } } }
+		modifier = { add = 50 scope:actor = { is_child_of = scope:recipient } }
 	}
 
 	ai_potential = { always = yes }
@@ -164,14 +176,8 @@
 	ai_targets = {
 		ai_recipients = family
 		ai_recipients = scripted_relations
-		ai_recipients = head_of_faith
-		ai_recipients = liege
-		ai_recipients = vassals
-		ai_recipients = peer_vassals
-		ai_recipients = courtiers
 		ai_recipients = neighboring_rulers
-		ai_recipients = nearby_domicile_owners
-		max = 5
+		max = 10
 	}
 
 	ai_will_do = {

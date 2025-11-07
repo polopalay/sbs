@@ -11,91 +11,28 @@
 				has_trait = sbs_succubus
 				has_trait = sbs_lesser_succubus
 				has_trait = sbs_seed_of_demon
+				AND = { has_trait = sbs_seed_of_demon NOT = { this = scope:recipient } }
 			}
 		}
+	}
+	is_valid = {
 		scope:recipient = {
 			OR = {
 				has_character_modifier = pussy_cum
 				has_character_modifier = ass_cum
 				has_character_modifier = face_cum
 				has_character_modifier = body_cum
+				has_character_modifier = sbs_buff
+				has_character_modifier = sbs_generals
 				has_trait = sbs_demon
 				scope:actor = { has_trait = sbs_seed_of_demon }
 			}
 		}
 	}
-	is_valid = {
-	}
-	send_option = {
-		is_shown = {
-			scope:actor = { has_trait = sbs_lesser_succubus }
-			scope:recipient = {
-				OR = {
-					has_character_modifier = pussy_cum
-					has_character_modifier = ass_cum
-					has_character_modifier = face_cum
-					has_character_modifier = body_cum
-					has_trait = sbs_demon
-				}
-			}
-		}
-		flag = lesser_succubus
-		localization = "trait_track_sbs_lesser_succubus"
-	}
-	send_option = {
-		is_shown = {
-			scope:actor = { has_trait = sbs_succubus }
-			scope:recipient = {
-				OR = {
-					has_character_modifier = pussy_cum
-					has_character_modifier = ass_cum
-					has_trait = sbs_demon
-				}
-			}
-		}
-		flag = power
-		localization = "trait_track_power"
-	}
-	send_option = {
-		is_shown = {
-			scope:actor = { has_trait = sbs_succubus }
-			scope:recipient = {
-				OR = {
-					has_character_modifier = face_cum
-					has_character_modifier = body_cum
-					has_trait = sbs_demon
-				}
-			}
-		}
-		flag = daring
-		localization = "trait_track_daring"
-	}
-	send_option = {
-		is_shown = {
-			scope:actor = { has_trait = sbs_succubus }
-			scope:recipient = { has_trait = sbs_demon }
-		}
-		flag = loyalty
-		localization = "trait_track_loyalty"
-	}
-	send_option = {
-		is_shown = {
-			scope:actor = { has_trait = sbs_succubus }
-			scope:recipient = { has_trait = sbs_demon }
-		}
-		flag = corruption
-		localization = "trait_track_corruption"
-	}
-	send_option = {
-		is_shown = { scope:actor = { has_trait = sbs_seed_of_demon } }
-		flag = seed_of_demon
-		localization = "trait_sbs_seed_of_demon"
-	}
-	send_options_exclusive = yes
 	on_accept = {
 		scope:actor = {
 			if = {
-				limit = { scope:lesser_succubus = yes }
+				limit = { has_trait = sbs_lesser_succubus }
 				if = {
 					limit = { scope:recipient = { has_character_modifier = pussy_cum } }
 					add_trait_xp = { trait = sbs_lesser_succubus value = 10 }
@@ -113,12 +50,20 @@
 					add_trait_xp = { trait = sbs_lesser_succubus value = 10 }
 				}
 				if = {
+					limit = { scope:recipient = { has_character_modifier = sbs_buff } }
+					add_trait_xp = { trait = sbs_seed_of_demon value = 20 }
+				}
+				if = {
+					limit = { scope:recipient = { has_character_modifier = sbs_generals } }
+					add_trait_xp = { trait = sbs_seed_of_demon value = 50 }
+				}
+				if = {
 					limit = { scope:recipient = { has_trait = sbs_demon } }
-					add_trait_xp = { trait = sbs_lesser_succubus value = 25 }
+					add_trait_xp = { trait = sbs_succubus track = loyalty value = 50 }
 				}
 			}
 			else_if = {
-				limit = { scope:power = yes }
+				limit = { has_trait = sbs_succubus }
 				if = {
 					limit = { scope:recipient = { has_character_modifier = pussy_cum } }
 					add_trait_xp = { trait = sbs_succubus track = power value = 5 }
@@ -128,13 +73,6 @@
 					add_trait_xp = { trait = sbs_succubus track = power value = 5 }
 				}
 				if = {
-					limit = { scope:recipient = { has_trait = sbs_demon } }
-					add_trait_xp = { trait = sbs_succubus track = power value = 10 }
-				}
-			}
-			else_if = {
-				limit = { scope:daring = yes }
-				if = {
 					limit = { scope:recipient = { has_character_modifier = body_cum } }
 					add_trait_xp = { trait = sbs_succubus track = daring value = 5 }
 				}
@@ -143,76 +81,46 @@
 					add_trait_xp = { trait = sbs_succubus track = daring value = 5 }
 				}
 				if = {
+					limit = { scope:recipient = { has_character_modifier = sbs_buff } }
+					add_trait_xp = { trait = sbs_succubus track = corruption value = 1 }
+				}
+				if = {
+					limit = { scope:recipient = { has_character_modifier = sbs_generals } }
+					add_trait_xp = { trait = sbs_succubus track = loyalty value = 2 }
+				}
+				if = {
 					limit = { scope:recipient = { has_trait = sbs_demon } }
-					add_trait_xp = { trait = sbs_succubus track = daring value = 10 }
+					add_trait_xp = { trait = sbs_succubus track = corruption value = 10 }
+					add_trait_xp = { trait = sbs_succubus track = loyalty value = 10 }
 				}
 			}
 			else_if = {
-				limit = { scope:loyalty = yes }
-				add_trait_xp = { trait = sbs_succubus track = loyalty value = 10 }
-			}
-			else_if = {
-				limit = { scope:corruption = yes }
-				add_trait_xp = { trait = sbs_succubus track = corruption value = 10 }
-			}
-			else_if = {
-				limit = { scope:seed_of_demon = yes }
+				limit = { has_trait = seed_of_demon }
 				add_trait_xp = { trait = sbs_seed_of_demon value = 20 }
+				if = {
+					limit = { scope:recipient = { has_character_modifier = sbs_buff } }
+					add_trait_xp = { trait = sbs_seed_of_demon value = 20 }
+				}
+				if = {
+					limit = { scope:recipient = { has_character_modifier = sbs_generals } }
+					add_trait_xp = { trait = sbs_seed_of_demon value = 50 }
+				}
+				if = {
+					limit = { scope:recipient = { has_trait = sbs_demon } }
+					add_trait_xp = { trait = sbs_succubus track = loyalty value = 50 }
+				}
 			}
 		}
 		scope:recipient = {
 			if = {
-				limit = { scope:seed_of_demon = yes }
-				add_character_modifier = { modifier = succubus_debuff years = 10 }
+				limit = { actor = { has_trait = seed_of_demon } }
+				add_character_modifier = { modifier = sbs_debuff years = 10 }
 			}
 			else = {
 				remove_character_modifier = face_cum
 				remove_character_modifier = body_cum
 				remove_character_modifier = ass_cum
 				remove_character_modifier = pussy_cum
-			}
-		}
-		if = {
-			limit = { scope:seed_of_demon = yes }
-			if = {
-				limit = {
-					scope:recipient = { has_trait_rank = { trait = education_intrigue rank >= 4 }
-					scope:actor = { has_trait_rank = { trait = education_intrigue rank < 5 } } }
-				}
-				scope:recipient = { change_trait_rank = { trait = education_intrigue rank = -1 } }
-				scope:actor = { change_trait_rank = { trait = education_intrigue rank = 1 } }
-			}
-			if = {
-				limit = {
-					scope:recipient = { has_trait_rank = { trait = education_diplomacy rank >= 4 }
-					scope:actor = { has_trait_rank = { trait = education_diplomacy rank < 5 } } }
-				}
-				scope:recipient = { change_trait_rank = { trait = education_diplomacy rank = -1 } }
-				scope:actor = { change_trait_rank = { trait = education_diplomacy rank = 1 } }
-			}
-			if = {
-				limit = {
-					scope:recipient = { has_trait_rank = { trait = education_stewardship rank >= 4 }
-					scope:actor = { has_trait_rank = { trait = education_stewardship rank < 5 } } }
-				}
-				scope:recipient = { change_trait_rank = { trait = education_stewardship rank = -1 } }
-				scope:actor = { change_trait_rank = { trait = education_stewardship rank = 1 } }
-			}
-			if = {
-				limit = {
-					scope:recipient = { has_trait_rank = { trait = education_martial rank >= 4 }
-					scope:actor = { has_trait_rank = { trait = education_martial rank < 5 } } }
-				}
-				scope:recipient = { change_trait_rank = { trait = education_martial rank = -1 } }
-				scope:actor = { change_trait_rank = { trait = education_martial rank = 1 } }
-			}
-			if = {
-				limit = {
-					scope:recipient = { has_trait_rank = { trait = education_learning rank >= 4 }
-					scope:actor = { has_trait_rank = { trait = education_learning rank < 5 } } }
-				}
-				scope:recipient = { change_trait_rank = { trait = education_learning rank = -1 } }
-				scope:actor = { change_trait_rank = { trait = education_learning rank = 1 } }
 			}
 		}
 	}
@@ -225,21 +133,20 @@
 		}
 	}
 	ai_accept = {
-		base = -20
+		base = -50
 		opinion_modifier = {
 			opinion_target = scope:actor
 			who = scope:recipient
 			multiplier = 0.25
 		}
-		modifier = { add = 10 scope:recipient = { is_courtier_of = scope:actor } }
 		modifier = { add = 20 scope:recipient.faith = scope:actor.faith }
 		modifier = { add = 40 scope:recipient = { is_parent_of = scope:actor } }
 		modifier = { add = 10 scope:recipient = { has_dread_level_towards = { target = scope:actor level = 1 } } desc = INTIMIDATED_REASON }
 		modifier = { add = 20 scope:recipient = { has_dread_level_towards = { target = scope:actor level = 2 } } desc = COWED_REASON }
-		modifier = { add = -25 scope:seed_of_demon = yes }
 	}
 	ai_frequency = 12
 	ai_targets = {
+		ai_recipients = self
 		ai_recipients = head_of_faith
 		ai_recipients = family
 		ai_recipients = courtiers

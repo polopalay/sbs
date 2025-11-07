@@ -12,8 +12,8 @@
  sbs_devils_curse_interaction: "The Devil's curse"
  sbs_devils_curse_interaction.desc: "Give [recipient.GetShortUIName] a \"curse\""
 
- sbs_create_lesser_demon_interaction: "Create Lesser Succubus"
- sbs_create_lesser_demon_interaction.desc: "[recipient.GetShortUIName] will become Lesser Succubus"
+ sbs_create_lesser_demon_interaction: "Create Lesser Demon"
+ sbs_create_lesser_demon_interaction.desc: "[recipient.GetShortUIName] will become Lesser Demon"
  recipient_secondary_sbs_create_lesser_demon_interaction: "Choose one"
 
  sbs_create_succubus_interaction: "Create Succubus"
@@ -51,8 +51,8 @@
  sbs_deal_with_the_devil_interaction.desc: "Make a deal with the devil, get what ever you want with a \"small\" price"
  small_price: "Small Price"
 
- sbs_ask_for_become_lesser_demon_interaction: "Ask for become Lesser Succubus"
- sbs_ask_for_become_lesser_demon_interaction.desc: "Ask the devil to become a Lesser Succubus"
+ sbs_ask_for_become_lesser_demon_interaction: "Ask for become Lesser Demon"
+ sbs_ask_for_become_lesser_demon_interaction.desc: "Ask the devil to become a Lesser Demon"
  recipient_secondary_sbs_ask_for_become_lesser_demon_interaction: "Choose one"
 
  sbs_ask_for_become_succubus_interaction: "Ask for become Succubus"

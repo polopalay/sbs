@@ -8,7 +8,7 @@ pureblood_demon = {
 	stress_gain_mult = -13
 	stress_loss_mult = 13
 }
-succubus_buff = {
+sbs_buff = {
 	icon = souls_positive
 	life_expectancy = 10
 	years_of_fertility = 10
@@ -30,7 +30,7 @@ succubus_buff = {
 	stacking = yes
 }
 
-succubus_debuff = {
+sbs_debuff = {
 	icon = souls_negative
 	health = -1
 	stacking = yes
@@ -57,7 +57,7 @@ sbs_seal = {
 	monthly_income_mult = -1
 }
 
-succubus_generals = {
+sbs_generals = {
 	icon = souls_positive
 	health = 3
 	negate_health_penalty_add = 3

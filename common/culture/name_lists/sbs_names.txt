@@ -61,13 +61,9 @@ name_list_hell = {
 		"dynn_Mephisto"
 	}
 
-	male_names = {
-    Abaddon Asmodeus Baal Belial Dantalion Fenrir Hades Iblis Leviathan Lucifer Mammon Mephistopheles Moloch Orcus Samael Satan Thanatos Zariel Azazel Behemoth Astaroth Belphegor Charon Dagon Eligor Fenris Gomory Lamashtu Legion Morax Naberius Pazuzu Rahab Raum Stolas Valefor Malphas Andras Barbatos Amon Forneus Seir Bifrons
-	}
+	male_names = { Abaddon Asmodeus Baal Belial Dantalion Fenrir Hades Iblis Leviathan Lucifer Mammon Mephistopheles Moloch Orcus Samael Satan Thanatos Zariel Azazel Behemoth Astaroth Belphegor Charon Dagon Eligor Fenris Gomory Lamashtu Legion Morax Naberius Pazuzu Rahab Raum Stolas Valefor Malphas Andras Barbatos Amon Forneus Seir Bifrons }
 
-	female_names = {
-    Lilith Astarte Agrat Azura Bathsheba Jezebeth Lamashtu Leviathana Marilith Naamah Obyzuth Samaela Sitri Verin Bathin Hecate Ereshkigal Persephone Tisiphone Nyx Melinoe Mormo Hel Alecto Megaera Agrath Beelzebuba Gremory Zagan Vepar Aym Andraste Banshee Morrigan Lamia Empusa Eris Calypso Circe Pandora Medea Sycorax Medusa
-	}
+	female_names = { Lilith Astarte Agrat Azura Bathsheba Jezebeth Lamashtu Leviathana Marilith Naamah Obyzuth Samaela Sitri Verin Bathin Hecate Ereshkigal Persephone Tisiphone Nyx Melinoe Mormo Hel Alecto Megaera Agrath Beelzebuba Gremory Zagan Vepar Aym Andraste Banshee Morrigan Lamia Empusa Eris Calypso Circe Pandora Medea Sycorax Medusa }
 
 	
 	founder_named_dynasties = yes

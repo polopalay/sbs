@@ -96,35 +96,35 @@ sbs_devils_gift_interaction = {
 					change_trait_rank = { trait = beauty_good rank = 1 }
 				}
 				0 = {
-					modifier = { is_adult = yes has_trait_rank = { trait = education_learning rank < 5 } add = 2 }
+					modifier = { is_adult = yes has_trait_rank = { trait = education_learning rank < 5 } add = 5 }
 					change_trait_rank = { trait = education_learning rank = 1 }
 				}
 				0 = {
-					modifier = { is_adult = yes has_trait_rank = { trait = education_martial rank < 5 } add = 2 }
+					modifier = { is_adult = yes has_trait_rank = { trait = education_martial rank < 5 } add = 5 }
 					change_trait_rank = { trait = education_martial rank = 1 }
 				}
 				0 = {
-					modifier = { is_adult = yes has_trait_rank = { trait = education_intrigue rank < 5 } add = 2 }
+					modifier = { is_adult = yes has_trait_rank = { trait = education_intrigue rank < 5 } add = 5 }
 					change_trait_rank = { trait = education_intrigue rank = 1 }
 				}
 				0 = {
-					modifier = { is_adult = yes has_trait_rank = { trait = education_diplomacy rank < 5 } add = 2 }
+					modifier = { is_adult = yes has_trait_rank = { trait = education_diplomacy rank < 5 } add = 5 }
 					change_trait_rank = { trait = education_diplomacy rank = 1 }
 				}
 				0 = {
-					modifier = { is_adult = yes has_trait_rank = { trait = education_stewardship rank < 5 } add = 2 }
+					modifier = { is_adult = yes has_trait_rank = { trait = education_stewardship rank < 5 } add = 5 }
 					change_trait_rank = { trait = education_stewardship rank = 1 }
 				}
 				1 = {
 					modifier = {
-						has_character_modifier = succubus_generals
+						has_character_modifier = sbs_generals
 						add = -1
 					}
-					add_character_modifier = { modifier = succubus_generals years = 10 }
+					add_character_modifier = { modifier = sbs_generals years = 10 }
 				}
 				20 = {
-					modifier = { has_character_modifier = succubus_buff add = -10 }
-					add_character_modifier = succubus_buff
+					modifier = { has_character_modifier = sbs_buff add = -10 }
+					add_character_modifier = sbs_buff
 				}
 			}
 		}

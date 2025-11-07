@@ -20,17 +20,13 @@
 	}
 	is_valid = {
 		scope:actor = {
-			OR = {
-				primary_title.tier >= tier_kingdom
-				AND = {
-					culture = scope:recipient.culture
-					is_close_or_extended_family_of = scope:recipient
-				}
-			}
 			has_trait_xp = {
 				trait = sbs_lesser_succubus
 				value >= 100
 			}
+		}
+		scope:recipient = {
+			NOT = { has_character_modifier = sbs_seal }
 		}
 	}
 
@@ -146,6 +142,7 @@
 					type = fabrication_hook
 				}
 			}
+			add_character_modifier = { modifier = sbs_seal years = 5 }
 		}
 		scope:secondary_recipient = {
 			death = {
@@ -156,7 +153,7 @@
 	}
 
 	ai_accept = {
-		base = -50
+		base = -200
 		opinion_modifier = {
 			opinion_target = scope:actor
 			who = scope:recipient
@@ -165,30 +162,27 @@
 		opinion_modifier = {
 			opinion_target = scope:secondary_recipient
 			who = scope:recipient
-			multiplier = -0.2
+			multiplier = -0.1
 		}
-		modifier = { add = 5 scope:hook = yes }
-		modifier = { add = 5 scope:gold = yes }
-		modifier = { add = 5 scope:favor = yes }
+		modifier = { add = 10 scope:hook = yes }
+		modifier = { add = 10 scope:gold = yes }
+		modifier = { add = 10 scope:favor = yes }
 		modifier = { add = 10 scope:actor.faith = scope:recipient.faith }
 		modifier = { add = 10 scope:actor.culture = scope:recipient.culture }
 		modifier = { add = 10 scope:demand_conversion = yes scope:actor = { primary_title.tier = tier_kingdom } }
 		modifier = { add = 20 scope:demand_conversion = yes scope:actor = { primary_title.tier = tier_empire } }
-		modifier = { add = 30 scope:demand_conversion = yes scope:recipient = { primary_title.tier = tier_hegemony } }
+		modifier = { add = 30 scope:demand_conversion = yes scope:actor = { primary_title.tier = tier_hegemony } }
+		modifier = { add = 50  scope:actor = { primary_title.tier >= tier_empire } }
+		modifier = { add = 50  scope:actor = { is_close_or_extended_family_of = scope:recipient } }
+		modifier = { add = 50 scope:actor = { is_child_of = scope:recipient } }
 	}
 	ai_potential = { always = yes }
 	ai_frequency = 12
 	ai_targets = {
 		ai_recipients = family
 		ai_recipients = scripted_relations
-		ai_recipients = head_of_faith
-		ai_recipients = liege
-		ai_recipients = vassals
-		ai_recipients = peer_vassals
-		ai_recipients = courtiers
 		ai_recipients = neighboring_rulers
-		ai_recipients = nearby_domicile_owners
-		max = 5
+		max = 10
 	}
 
 	ai_will_do = {
