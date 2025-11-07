@@ -118,7 +118,6 @@
 			if = {
 				limit = { has_trait = saint }
 				remove_trait = saint
-				set_character_faith_with_conversion = scope:recipient.faith
 				give_nickname = nick_the_betrayer
 				if = {
 					limit = { has_trait = chaste }
@@ -161,19 +160,24 @@
 		modifier = { add = 10 scope:favor = yes }
 		modifier = { add = 10 scope:actor.faith = scope:recipient.faith }
 		modifier = { add = 10 scope:actor.culture = scope:recipient.culture }
-		modifier = { add = 10 scope:demand_conversion = yes scope:actor = { primary_title.tier = tier_kingdom } }
-		modifier = { add = 20 scope:demand_conversion = yes scope:actor = { primary_title.tier = tier_empire } }
-		modifier = { add = 30 scope:demand_conversion = yes scope:actor = { primary_title.tier = tier_hegemony } }
+		modifier = { add = 40 scope:demand_conversion = yes scope:actor = { primary_title.tier = tier_kingdom } }
+		modifier = { add = 80 scope:demand_conversion = yes scope:actor = { primary_title.tier = tier_empire } }
+		modifier = { add = 120 scope:demand_conversion = yes scope:actor = { primary_title.tier = tier_hegemony } }
+		modifier = { add = 25  scope:actor = { has_relation_soulmate = scope:recipient } }
+		modifier = { add = 25  scope:actor = { has_relation_lover = scope:recipient } }
+		modifier = { add = 25  scope:actor = { has_relation_friend = scope:recipient } }
+		modifier = { add = 50  scope:actor = { has_relation_best_friend = scope:recipient } }
 		modifier = { add = 50 scope:actor = { is_close_or_extended_family_of = scope:recipient } }
-		modifier = { add = 50 scope:actor = { has_trait = saint } }
 		modifier = { add = 50 scope:actor = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } } 
 		modifier = { add = 50 scope:actor = { OR = { has_trait = witch any_secret = { type = secret_witch } } } }
-		modifier = { add = 50 scope:actor = { is_child_of = scope:recipient } }
+		modifier = { add = 100 scope:actor = { is_child_of = scope:recipient } }
+		modifier = { add = 100 scope:actor = { has_trait = saint } }
 	}
 
 	ai_potential = { always = yes }
 	ai_frequency = 12
 	ai_targets = {
+		ai_recipients = head_of_faith
 		ai_recipients = family
 		ai_recipients = scripted_relations
 		ai_recipients = neighboring_rulers

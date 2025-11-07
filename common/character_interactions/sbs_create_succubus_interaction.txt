@@ -103,7 +103,7 @@
 		opinion_modifier = {
 			opinion_target = scope:secondary_recipient
 			who = scope:recipient
-			multiplier = -0.1
+			multiplier = -0.5
 		}
 		modifier = { add = 10 scope:actor.faith = scope:recipient.faith }
 		modifier = { add = 10 scope:actor.culture = scope:recipient.culture }

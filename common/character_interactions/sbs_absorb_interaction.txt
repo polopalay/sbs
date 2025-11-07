@@ -112,16 +112,12 @@
 			}
 		}
 		scope:recipient = {
-			if = {
-				limit = { actor = { has_trait = seed_of_demon } }
-				add_character_modifier = { modifier = sbs_debuff years = 10 }
-			}
-			else = {
-				remove_character_modifier = face_cum
-				remove_character_modifier = body_cum
-				remove_character_modifier = ass_cum
-				remove_character_modifier = pussy_cum
-			}
+			remove_character_modifier = face_cum
+			remove_character_modifier = body_cum
+			remove_character_modifier = ass_cum
+			remove_character_modifier = pussy_cum
+			remove_character_modifier = sbs_buff
+			remove_character_modifier = sbs_generals
 		}
 	}
 	auto_accept = {
