@@ -73,8 +73,7 @@ sbs_devil.0550 = {
 		name = sbs_devil.0550.d
 		custom_tooltip = sbs_devil.0550.d.tt
 		ai_chance = { base = 50 }
-		trigger = { gold >= medium_gold_value NOT = { has_character_modifier = deviants_strangebook_modifier } }
-		remove_short_term_gold = medium_gold_value
+		add_character_modifier = deviants_strangebook_modifier
 	}
 	# sleep potion for deviant lunatic
 	option = {

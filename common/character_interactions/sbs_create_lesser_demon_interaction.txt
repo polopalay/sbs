@@ -107,6 +107,7 @@
 			}
 			else = {
 				add_trait = sbs_seed_of_demon
+				add_character_modifier = sbs_buff
 			}
 			if = {
 				limit = { has_trait = saint }
