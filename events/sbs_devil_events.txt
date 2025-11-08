@@ -22,6 +22,7 @@ sbs_devil.0550 = {
 	}
 	# find one, at any cost
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_devil.0550.a
 		custom_tooltip = sbs_devil.0550.a.tt
 		ai_chance = { base = 50 }
@@ -51,6 +52,7 @@ sbs_devil.0550 = {
 	}
 	# you can feel it, there is one nearby
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_devil.0550.c
 		custom_tooltip = sbs_devil.0550.c.tt
 		ai_chance = { base = 50 }
@@ -70,16 +72,18 @@ sbs_devil.0550 = {
 	}
 	# buy book
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_devil.0550.d
 		custom_tooltip = sbs_devil.0550.d.tt
-		ai_chance = { base = 50 }
+		trigger = { gold >= major_gold_value }
+		remove_short_term_gold = major_gold_value
 		add_character_modifier = deviants_strangebook_modifier
 	}
 	# sleep potion for deviant lunatic
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_devil.0550.e
 		custom_tooltip = sbs_devil.0550.e.tt
-		ai_chance = { base = 50 }
 		trigger = { gold >= major_gold_value is_landed = yes NOT = { has_character_modifier = deviants_strange_dildo } }
 		remove_short_term_gold = major_gold_value
 		trigger_event = sbs_go.6000
@@ -93,26 +97,11 @@ sbs_devil.1300 = {
 	cooldown = { years = 8 }
 	desc = {
 		random_valid = {
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1300.a.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1300.b.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1300.c.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1300.d.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1300.e.desc
-			}
+			desc = sbs_devil.1300.a.desc
+			desc = sbs_devil.1300.b.desc
+			desc = sbs_devil.1300.c.desc
+			desc = sbs_devil.1300.d.desc
+			desc = sbs_devil.1300.e.desc
 		}
 	}
 	theme = bloody_wedding_night
@@ -138,6 +127,7 @@ sbs_devil.1300 = {
 		name = sbs_devil.1300.a
 		custom_tooltip = sbs_devil.1300.a.tt
 		hidden_effect = {
+			add_character_modifier = sbs_buff
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
@@ -252,26 +242,11 @@ sbs_devil.1302 = {
 	title = sbs_devil.1302.t
 	desc = {
 		random_valid = {
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1302.a.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1302.b.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1302.c.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1302.d.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1302.e.desc
-			}
+			desc = sbs_devil.1302.a.desc
+			desc = sbs_devil.1302.b.desc
+			desc = sbs_devil.1302.c.desc
+			desc = sbs_devil.1302.d.desc
+			desc = sbs_devil.1302.e.desc
 		}
 	}
 	theme = bloody_wedding_night
@@ -334,26 +309,11 @@ sbs_devil.1310 = {
 	title = sbs_devil.1310.t
 	desc = {
 		random_valid = {
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1310.a.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1310.b.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1310.c.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1310.d.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1310.e.desc
-			}
+			desc = sbs_devil.1310.a.desc
+			desc = sbs_devil.1310.b.desc
+			desc = sbs_devil.1310.c.desc
+			desc = sbs_devil.1310.d.desc
+			desc = sbs_devil.1310.e.desc
 		}
 	}
 	theme = bloody_wedding_night
@@ -402,26 +362,11 @@ sbs_devil.1315 = {
 	title = sbs_devil.1315.t
 	desc = {
 		random_valid = {
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1315.a.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1315.b.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1315.c.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1315.d.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1315.e.desc
-			}
+			desc = sbs_devil.1315.a.desc
+			desc = sbs_devil.1315.b.desc
+			desc = sbs_devil.1315.c.desc
+			desc = sbs_devil.1315.d.desc
+			desc = sbs_devil.1315.e.desc
 		}
 	}
 	theme = bloody_wedding_night
@@ -478,26 +423,11 @@ sbs_devil.1319 = {
 	title = sbs_devil.1319.t
 	desc = {
 		random_valid = {
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1319.a.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1319.b.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1319.c.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1319.d.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1319.e.desc
-			}
+			desc = sbs_devil.1319.a.desc
+			desc = sbs_devil.1319.b.desc
+			desc = sbs_devil.1319.c.desc
+			desc = sbs_devil.1319.d.desc
+			desc = sbs_devil.1319.e.desc
 		}
 	}
 	theme = bloody_wedding_night
@@ -537,26 +467,11 @@ sbs_devil.1320 = {
 	title = sbs_devil.1320.t
 	desc = {
 		random_valid = {
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1320.a.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1320.b.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1320.c.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1320.d.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1320.e.desc
-			}
+			desc = sbs_devil.1320.a.desc
+			desc = sbs_devil.1320.b.desc
+			desc = sbs_devil.1320.c.desc
+			desc = sbs_devil.1320.d.desc
+			desc = sbs_devil.1320.e.desc
 		}
 	}
 	theme = bloody_wedding_night
@@ -621,18 +536,9 @@ sbs_devil.1325 = {
 	title = sbs_devil.1325.t
 	desc = {
 		random_valid = {
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1325.a.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1325.b.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1325.c.desc
-			}
+			desc = sbs_devil.1325.a.desc
+			desc = sbs_devil.1325.b.desc
+			desc = sbs_devil.1325.c.desc
 		}
 	}
 	theme = bloody_wedding_night
@@ -750,6 +656,7 @@ sbs_devil.1410 = {
 		custom_tooltip = sbs_devil.1410.a.tt
 		add_piety = medium_piety_loss
 		remove_short_term_gold = massive_gold_value
+		hidden_effect = { add_character_modifier = sbs_buff }
 		trigger_event = sbs_devil.1411
 	}
 	# beg for sex
@@ -767,6 +674,7 @@ sbs_devil.1410 = {
 		name = sbs_devil.1410.b
 		custom_tooltip = sbs_devil.1410.b.tt
 		add_piety = medium_piety_loss
+		hidden_effect = { add_character_modifier = sbs_buff }
 		trigger_event = sbs_devil.1412
 	}
 	# stay still
@@ -1997,22 +1905,10 @@ sbs_devil.5500 = {
 	title = sbs_devil.5500.t
 	desc = {
 		random_valid = {
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.5500.a.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.5500.b.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.5500.c.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.5500.d.desc
-			}
+			desc = sbs_devil.5500.a.desc
+			desc = sbs_devil.5500.b.desc
+			desc = sbs_devil.5500.c.desc
+			desc = sbs_devil.5500.d.desc
 		}
 	}
 	trigger = {
@@ -2075,22 +1971,10 @@ sbs_devil.5501 = {
 	title = sbs_devil.5501.t
 	desc = {
 		random_valid = {
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.5501.a.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.5501.b.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.5501.c.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.5501.d.desc
-			}
+			desc = sbs_devil.5501.a.desc
+			desc = sbs_devil.5501.b.desc
+			desc = sbs_devil.5501.c.desc
+			desc = sbs_devil.5501.d.desc
 		}
 	}
 	trigger = {
@@ -2159,22 +2043,10 @@ sbs_devil.5502 = {
 	title = sbs_devil.5502.t
 	desc = {
 		random_valid = {
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.5502.a.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.5502.b.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.5502.c.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.5502.d.desc
-			}
+			desc = sbs_devil.5502.a.desc
+			desc = sbs_devil.5502.b.desc
+			desc = sbs_devil.5502.c.desc
+			desc = sbs_devil.5502.d.desc
 		}
 	}
 	trigger = {

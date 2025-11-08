@@ -1,4 +1,4 @@
-namespace = sbs_go_event
+namespace = sbs_go
 
 #0501 basic exploratory dildo fuck, that escalates quickly
 sbs_go.0501 = { 
@@ -30,6 +30,7 @@ sbs_go.0501 = {
 	}
 	# pass out
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_go.0501.a
 		custom_tooltip = sbs_go.0501.a.tt
 		stress_impact = {
@@ -53,6 +54,7 @@ sbs_go.0501 = {
 	}		
 	# I can't live without it.
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_go.0501.b
 		custom_tooltip = sbs_go.0501.b.tt
 		stress_impact = {
@@ -123,6 +125,7 @@ sbs_go.5000 = {
 	}
 	# yes
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_go.5000.a
 		custom_tooltip = sbs_go.5000.a.tt
 		stress_impact = {
@@ -156,6 +159,7 @@ sbs_go.5010 = {
 	}
 	# yes
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_go.5010.a
 		custom_tooltip = sbs_go.5010.a.tt
 		stress_impact = {
@@ -205,6 +209,7 @@ sbs_go.5100 = {
 	}
 	# accept his offer
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_go.5100.a
 		custom_tooltip = sbs_go.5100.a.tt
 		stress_impact = {
@@ -248,12 +253,14 @@ sbs_go.5110 = {
 	}
 	# love cock
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_go.5110.a
 		custom_tooltip = sbs_go.5110.a.tt
 		trigger_event = sbs_go.5111
 	}	
 	# ask finger
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_go.5110.b
 		custom_tooltip = sbs_go.5110.b.tt
 		trigger_event = sbs_go.5112
@@ -262,6 +269,9 @@ sbs_go.5110 = {
 	option = {
 		name = sbs_go.5110.c
 		custom_tooltip = sbs_go.5110.c.tt
+		hidden_effect = {
+			add_character_modifier = sbs_buff
+		}
 		trigger_event = sbs_go.5200
 	}
 }
@@ -318,7 +328,7 @@ sbs_go.5112 = {
 			base = minor_stress_impact_loss
 			lustful = medium_stress_impact_loss
 		}
-		scope:random_go = { prostitute_effect= { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:random_go = { prostitute_effect= { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
 		trigger_event = sbs_go.5200
 	}	
 }
@@ -347,6 +357,7 @@ sbs_go.5200 = {
 	}
 	# 
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_go.5200.a
 		custom_tooltip = sbs_go.5200.a.tt
 		stress_impact = {
@@ -415,7 +426,7 @@ sbs_go.5210 = {
 			base = medium_stress_impact_loss
 			lustful = major_stress_impact_loss
 		}
-		scope:knight = { prostitute_effect= { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:knight = { prostitute_effect= { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
 		trigger_event = sbs_go.5211
 	}	
 }
@@ -445,7 +456,7 @@ sbs_go.5211 = {
 			base = major_stress_impact_loss
 			lustful = major_stress_impact_loss
 		}
-		scope:knight = { prostitute_effect= { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:knight = { prostitute_effect= { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
 	}	
 }
 
@@ -463,6 +474,7 @@ sbs_go.5219 = {
 	}
 	# 
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_go.5219.a
 		custom_tooltip = sbs_go.5219.a.tt
 		add_character_modifier = { modifier = licentious_04_modifier months = 1 }
@@ -499,12 +511,14 @@ sbs_go.6000 = {
 	}	
 	# drink all of it
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_go.6000.a
 		custom_tooltip = sbs_go.6000.a.tt	
 		trigger_event = sbs_go.6001
 	}	
 	# just a drop, one each night
 	option = {
+		ai_chance = { base = 5 }
 		name = sbs_go.6000.b
 		custom_tooltip = sbs_go.6000.b.tt	
 		stress_impact = {
@@ -533,12 +547,14 @@ sbs_go.6001 = {
 	}	
 	# seek pleasure
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_go.6001.a
 		custom_tooltip = sbs_go.6001.a.tt	
 		trigger_event = sbs_go.6010
 	}	
 	#
 	option = {
+		ai_chance = { base = 2 }
 		name = sbs_go.6001.b
 		custom_tooltip = sbs_go.6001.b.tt	
 		random_list = {
@@ -577,12 +593,14 @@ sbs_go.6010 = {
 	}	
 	# seek pleasure
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_go.6010.a
 		custom_tooltip = sbs_go.6010.a.tt	
 		trigger_event = sbs_go.6020
 	}	
 	# 
 	option = {
+		ai_chance = { base = 2 }
 		name = sbs_go.6010.b
 		custom_tooltip = sbs_go.6010.b.tt	
 		random_list = {
@@ -623,6 +641,7 @@ sbs_go.6020 = {
 	}	
 	# fuck yeah
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_go.6020.a
 		custom_tooltip = sbs_go.6020.a.tt	
 		trigger_event = sbs_go.6030
@@ -666,6 +685,7 @@ sbs_go.6030 = {
 	}
 	# 
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_go.6030.a
 		custom_tooltip = sbs_go.6030.a.tt	
 		trigger_event = sbs_go.6040
@@ -702,8 +722,9 @@ sbs_go.6040 = {
 		name = sbs_go.6040.a
 		custom_tooltip = sbs_go.6040.a.tt	
 		trigger_event = sbs_go.6050
-		scope:random_man = { prostitute_effect= { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance } } 
+		scope:random_man = { prostitute_effect= { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } } 
 		hidden_effect = {
+			add_character_modifier = sbs_buff
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
@@ -731,12 +752,14 @@ sbs_go.6050 = {
 	}
 	# heehhehehhhe
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_go.6050.a
 		custom_tooltip = sbs_go.6050.a.tt	
 		add_character_modifier = { modifier = licentious_05_modifier months = 1 }
 	}	
 	# repent, repent
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_go.6050.a
 		custom_tooltip = sbs_go.6050.a.tt	
 		trigger_event = sbs_repent_event.0800
