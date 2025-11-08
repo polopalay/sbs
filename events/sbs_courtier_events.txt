@@ -17,6 +17,13 @@ sbs_courtier.1440 = {
 		is_female = yes
 		should_be_naked_trigger = no
 		every_councillor = { count > 0 }
+		OR = {
+			has_trait = sbs_demon
+			has_trait = sbs_succubus
+			has_trait = sbs_lesser_succubus
+			has_trait = deviant
+			any_secret = { type = secret_deviant }
+		}
 	}
 	option = {
 		name = sbs_courtier.1440.a
@@ -132,6 +139,13 @@ sbs_courtier.1460 = {
 			is_adult = yes
 			is_attracted_to_gender_of = root
 		}
+		OR = {
+			has_trait = sbs_demon
+			has_trait = sbs_succubus
+			has_trait = sbs_lesser_succubus
+			has_trait = deviant
+			any_secret = { type = secret_deviant }
+		}
 	}
 	immediate = {
 		random_councillor = {
@@ -157,7 +171,7 @@ sbs_courtier.1460 = {
 		ai_chance = { base = 50 }
 		name = sbs_courtier.1460.b
 		custom_tooltip = sbs_courtier.1460.b.tt
-		deviant_go_random_1 = {
+		scope:deviant_go_random_1 = {
 			pay_short_term_gold = {
 				target = root
 				gold = root.prostitute_price_value

@@ -1,5 +1,92 @@
 namespace = sbs_devil
 
+#0550 if has no dildo at max addiction...
+sbs_devil.0550 = {
+	type = character_event
+	title = sbs_devil.0550.t
+	desc = sbs_devil.0550.desc
+	cooldown = { years = 10 }
+	trigger = {
+		is_adult = yes
+		is_female = yes
+		OR = {
+			has_trait = deviant
+			any_secret = { type = secret_deviant }
+		}
+	}
+	theme = bloody_wedding_night
+	override_background = { reference = bedchamber }
+	right_portrait = {
+		character = root
+		animation = lunatic
+	}
+	# find one, at any cost
+	option = {
+		name = sbs_devil.0550.a
+		custom_tooltip = sbs_devil.0550.a.tt
+		ai_chance = { base = 50 }
+		trigger = { gold >= major_gold_value }
+		remove_short_term_gold = major_gold_value
+		create_artifact = {
+			name = master_dildo
+			rarity = masterwork
+			description = master_dildo_desc
+			type = magic_creation
+			modifier = master_dildo_modifier
+			visuals = master_dildo
+			template = master_dildo_template
+			max_durability = 20
+			wealth = 10
+			quality = 10
+		}
+	}
+	# try to endure
+	option = {
+		name = sbs_devil.0550.b
+		custom_tooltip = sbs_devil.0550.b.tt
+		stress_impact = {
+			base = medium_stress_impact_gain
+			lustful = medium_stress_impact_gain
+		}
+	}
+	# you can feel it, there is one nearby
+	option = {
+		name = sbs_devil.0550.c
+		custom_tooltip = sbs_devil.0550.c.tt
+		ai_chance = { base = 50 }
+		trigger = { gold >= minor_gold_value }
+		remove_short_term_gold = minor_gold_value
+		create_artifact = {
+			name = mistress_dildo
+			description = mistress_dildo_desc
+			type = magic_creation
+			modifier = mistress_dildo_modifier
+			visuals = mistress_dildo
+			template = mistress_dildo_template
+			max_durability = 20
+			wealth = 10
+			quality = 10
+		}
+	}
+	# buy book
+	option = {
+		name = sbs_devil.0550.d
+		custom_tooltip = sbs_devil.0550.d.tt
+		ai_chance = { base = 50 }
+		trigger = { gold >= medium_gold_value NOT = { has_character_modifier = deviants_strangebook_modifier } }
+		remove_short_term_gold = medium_gold_value
+	}
+	# sleep potion for deviant lunatic
+	option = {
+		name = sbs_devil.0550.e
+		custom_tooltip = sbs_devil.0550.e.tt
+		ai_chance = { base = 50 }
+		trigger = { gold >= major_gold_value is_landed = yes NOT = { has_character_modifier = deviants_strange_dildo } }
+		remove_short_term_gold = major_gold_value
+		trigger_event = sbs_go.6000
+	}
+}
+
 #1300 initial thing comes to you, manifests in different ways, varinants
 sbs_devil.1300 = {
 	type = character_event
@@ -36,14 +123,19 @@ sbs_devil.1300 = {
 		outfit_tags = { no_clothes }
 	}
 	trigger = {
+		OR = {
+			has_trait = sbs_demon
+			has_trait = sbs_succubus
+			has_trait = sbs_lesser_succubus
+			has_trait = deviant
+			any_secret = { type = secret_deviant }
+		}
 		is_female = yes
 		is_adult = yes
 	}
 	# submit
 	option = {
-		ai_chance = {
-			base = 10
-		}
+		ai_chance = { base = 100 }
 		name = sbs_devil.1300.a
 		custom_tooltip = sbs_devil.1300.a.tt
 		hidden_effect = {
@@ -61,6 +153,7 @@ sbs_devil.1300 = {
 	}
 	# fight it
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_devil.1300.b
 		custom_tooltip = sbs_devil.1300.b.tt
 		duel = {
@@ -107,6 +200,7 @@ sbs_devil.1300 = {
 	}
 	# escape, by any means
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_devil.1300.c
 		custom_tooltip = sbs_devil.1300.c.tt
 		add_piety = minor_piety_gain
@@ -222,7 +316,7 @@ sbs_devil.1303 = {
 	}
 	# offer ass
 	option = {
-		ai_chance = { base = 100 }
+		ai_chance = { base = 20 }
 		name = sbs_devil.1303.a
 		custom_tooltip = sbs_devil.1303.a.tt
 		trigger_event = sbs_devil.1320
@@ -419,8 +513,13 @@ sbs_devil.1319 = {
 		name = sbs_devil.1319.a
 		custom_tooltip = sbs_devil.1319.a.tt
 		random_living_character = {
-			limit = { has_trait = sbs_demon is_female = no is_adult = yes }
 			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 100 }
+			weight = {
+				base = 0
+				modifier = { in_diplomatic_range = root is_female = no is_adult = yes add = 1 }
+				modifier = { is_courtier_of = root is_female = no is_adult = yes add = 1000 }
+				modifier = { has_trait = sbs_seed_of_demon is_adult = yes add = 10000 }
+			}
 		}
 	}
 	# this is wrong, go repent
@@ -620,10 +719,7 @@ sbs_devil.1410 = {
 			}
 			triggered_desc = {
 				trigger = {
-					OR = {
-						has_trait_xp = { trait = sbs_succubus track = corruption value >= 50 }
-						has_trait = sbs_lesser_succubus
-					}
+					is_female = yes
 				}
 				desc = sbs_devil.1410.c.desc
 			}
@@ -636,8 +732,11 @@ sbs_devil.1410 = {
 	}
 	trigger = {
 		OR = {
+			has_trait = sbs_demon
 			has_trait = sbs_succubus
 			has_trait = sbs_lesser_succubus
+			has_trait = deviant
+			any_secret = { type = secret_deviant }
 		}
 		is_female = yes
 		age >= 18
@@ -2421,80 +2520,5 @@ sbs_devil.5703 = {
 		custom_tooltip = sbs_devil.5703.c.tt
 		add_piety = major_piety_loss
 		add_prestige = major_prestige_loss
-	}
-}
-
-#0550 if has no dildo at max addiction...
-sbs_devil.0550 = {
-	type = character_event
-	title = sbs_devil.0550.t
-	desc = sbs_devil.0550.desc
-	cooldown = { years = 10 }
-	trigger = {
-		is_adult = yes
-		is_female = yes
-		OR = {
-			has_trait = lustful
-			has_trait = deviant
-			any_secret = { type = secret_deviant }
-		}
-		NOT = {
-			any_character_artifact = { has_artifact_modifier = master_dildo_modifier }
-			any_character_artifact = { has_artifact_modifier = mistress_dildo_modifier }
-		}
-	}
-	theme = bloody_wedding_night
-	override_background = { reference = bedchamber }
-	right_portrait = {
-		character = root
-		animation = lunatic
-	}
-	# you can feel it, there is one nearby
-	option = {
-		name = sbs_devil.0550.c
-		custom_tooltip = sbs_devil.0550.c.tt
-		ai_chance = { base = 50 }
-		trigger = { gold >= medium_gold_value }
-		remove_short_term_gold = medium_gold_value
-		create_artifact = {
-			name = mistress_dildo
-			description = mistress_dildo_desc
-			type = magic_creation
-			modifier = mistress_dildo_modifier
-			visuals = mistress_dildo
-			template = mistress_dildo_template
-			max_durability = 20
-			wealth = 10
-			quality = 10
-		}
-	}
-	# find one, at any cost
-	option = {
-		name = sbs_devil.0550.a
-		custom_tooltip = sbs_devil.0550.a.tt
-		ai_chance = { base = 50 }
-		trigger = { gold >= major_gold_value }
-		remove_short_term_gold = major_gold_value
-		create_artifact = {
-			name = master_dildo
-			rarity = masterwork
-			description = master_dildo_desc
-			type = magic_creation
-			modifier = master_dildo_modifier
-			visuals = master_dildo
-			template = master_dildo_template
-			max_durability = 20
-			wealth = 10
-			quality = 10
-		}
-	}
-	# try to endure
-	option = {
-		name = sbs_devil.0550.b
-		custom_tooltip = sbs_devil.0550.b.tt
-		stress_impact = {
-			base = medium_stress_impact_gain
-			lustful = medium_stress_impact_gain
-		}
 	}
 }

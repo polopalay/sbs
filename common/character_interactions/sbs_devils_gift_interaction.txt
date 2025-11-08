@@ -37,61 +37,77 @@ sbs_devils_gift_interaction = {
 		scope:recipient = {
 			random_list = {
 				0 = {
-					modifier = {  scope:actor = { faith.religion = religion:demonic_religion faith.religious_head = scope:actor } add = 20 }
+					modifier = { scope:actor = { is_female = yes has_trait = sbs_demon this = scope:recipient } add = 10 }
+					random_living_character = {
+						limit = { has_trait = sbs_demon is_female = no is_adult = yes }
+						save_scope_as = father
+					}
+					create_character = {
+						age = 0
+						location = scope:actor.location
+						mother = scope:actor
+						father = scope:father
+						dynasty_house = scope:actor.house
+						culture = scope:actor.culture
+						faith = scope:actor.faith
+						gender_female_chance = 50
+						liege = scope:actor
+						save_scope_as = child
+					}
+					add_courtier = scope:child
+				}
+				0 = {
+					modifier = { scope:actor = { is_female = no has_trait = sbs_demon this = scope:recipient } add = 10 }
+					random_living_character = {
+						limit = { has_trait = sbs_demon is_female = yes is_adult = yes }
+						save_scope_as = mother
+					}
+					create_character = {
+						age = 0
+						location = scope:actor.location
+						mother = scope:mother
+						father = scope:actor
+						dynasty_house = scope:actor.house
+						culture = scope:actor.culture
+						faith = scope:actor.faith
+						gender_female_chance = 50
+						liege = scope:actor
+						save_scope_as = child
+					}
+					add_courtier = scope:child
+				}
+				0 = {
+					modifier = {  scope:actor = { is_female = no has_trait = sbs_demon is_head_of_faith = yes } add = 10 }
 					modifier = { is_ruler = yes add = -20 }
 					create_landless_adventurer_title_effect = {
 						REASON = flag:voluntary
 						FLAVOR_CHAR = scope:recipient
 					}
 				}
-				0 = {
-					modifier = { has_trait = sbs_lesser_succubus scope:actor = { has_trait = sbs_demon } add = 50 }
-					add_trait_xp = { trait = sbs_lesser_succubus value = 25 }
-				}
-				0 = {
-					modifier = { has_trait = sbs_seed_of_demon  scope:actor = { has_trait = sbs_demon } add = 50 }
-					add_trait_xp = { trait = sbs_seed_of_demon value = 25 }
-				}
-				0 = {
-					modifier = { has_trait = sbs_succubus scope:actor = { has_trait = sbs_demon } add = 25 }
-					add_trait_xp = { trait = sbs_succubus track = corruption value = 10 }
-				}
-				0 = {
-					modifier = { has_trait = sbs_succubus scope:actor = { has_trait = sbs_demon } add = 25 }
-					add_trait_xp = { trait = sbs_succubus track = loyalty value = 10 }
-				}
-				0 = {
-					modifier = { has_trait = sbs_succubus scope:actor = { has_trait = sbs_demon } add = 50 }
-					add_trait_xp = { trait = sbs_succubus track = power value = 20 }
-				}
-				0 = {
-					modifier = { has_trait = sbs_succubus scope:actor = { has_trait = sbs_demon } add = 50 }
-					add_trait_xp = { trait = sbs_succubus track = daring value = 20 }
-				}
-				2 = {
-					modifier = { OR = { has_trait = dull has_trait = shrewd } add = -2 }
+				1 = {
+					modifier = { OR = { has_trait = dull has_trait = shrewd } add = -1 }
 					add_trait = shrewd
 				}
-				2 = {
-					modifier = { OR = { has_trait = weak has_trait = strong } add = -2 }
+				1 = {
+					modifier = { OR = { has_trait = weak has_trait = strong } add = -1 }
 					add_trait = strong
 				}
-				2 = {
-					modifier = { OR = { has_trait = fecund has_trait = infertile } add = -2 }
+				1 = {
+					modifier = { OR = { has_trait = fecund has_trait = infertile } add = -1 }
 					add_trait = fecund
 				}
 				0 = {
-					modifier = { has_trait_rank = { trait = physique_good rank < 3 } add = 2 }
+					modifier = { has_trait_rank = { trait = physique_good rank < 3 } add = 1 }
 					set_trait_rank = { trait = physique_bad rank = 0 }
 					change_trait_rank = { trait = physique_good rank = 1 }
 				}
 				0 = {
-					modifier = { has_trait_rank = { trait = intellect_good rank < 3 } add = 2 }
+					modifier = { has_trait_rank = { trait = intellect_good rank < 3 } add = 1 }
 					set_trait_rank = { trait = intellect_bad rank = 0 }
 					change_trait_rank = { trait = intellect_good rank = 1 }
 				}
 				0 = {
-					modifier = { has_trait_rank = { trait = beauty_good rank < 3 } add = 2 }
+					modifier = { has_trait_rank = { trait = beauty_good rank < 3 } add = 1 }
 					set_trait_rank = { trait = beauty_bad rank = 0 }
 					change_trait_rank = { trait = beauty_good rank = 1 }
 				}
@@ -116,14 +132,11 @@ sbs_devils_gift_interaction = {
 					change_trait_rank = { trait = education_stewardship rank = 1 }
 				}
 				1 = {
-					modifier = {
-						has_character_modifier = sbs_generals
-						add = -1
-					}
+					modifier = { has_character_modifier = sbs_generals add = -1 }
 					add_character_modifier = { modifier = sbs_generals years = 10 }
 				}
-				20 = {
-					modifier = { has_character_modifier = sbs_buff add = -10 }
+				5 = {
+					modifier = { has_character_modifier = sbs_buff add = -2 }
 					add_character_modifier = sbs_buff
 				}
 			}
@@ -135,24 +148,8 @@ sbs_devils_gift_interaction = {
 		opinion_modifier = {
 			opinion_target = scope:actor
 			who = scope:recipient
-			multiplier = 0.1
+			multiplier = 0.25
 		}
-		modifier = { add = -2 scope:recipient.faith = { NOR = { has_doctrine = doctrine_witchcraft_accepted has_doctrine = doctrine_witchcraft_virtuous  } } }
-		modifier = { add = -3 scope:recipient = { ai_zeal > high_positive_ai_value faith = { NOR = { has_doctrine = doctrine_witchcraft_accepted has_doctrine = doctrine_witchcraft_virtuous  } } } }
-		modifier = { add = -5 scope:recipient = { ai_zeal > very_high_positive_ai_value faith = { NOR = { has_doctrine = doctrine_witchcraft_accepted has_doctrine = doctrine_witchcraft_virtuous } } } }
-		modifier = { add = -10 scope:recipient = { ai_zeal > dominant_positive_ai_value faith = { NOR = { has_doctrine = doctrine_witchcraft_accepted has_doctrine = doctrine_witchcraft_virtuous } } } }
-		modifier = { add = -2 scope:recipient.faith = { NOR = { has_doctrine = doctrine_deviancy_accepted has_doctrine = doctrine_deviancy_virtuous  } } }
-		modifier = { add = -3 scope:recipient = { ai_zeal > high_positive_ai_value faith = { NOR = { has_doctrine = doctrine_deviancy_accepted has_doctrine = doctrine_deviancy_virtuous  } } } }
-		modifier = { add = -5 scope:recipient = { ai_zeal > very_high_positive_ai_value faith = { NOR = { has_doctrine = doctrine_deviancy_accepted has_doctrine = doctrine_deviancy_virtuous } } } }
-		modifier = { add = -10 scope:recipient = { ai_zeal > dominant_positive_ai_value faith = { NOR = { has_doctrine = doctrine_deviancy_accepted has_doctrine = doctrine_deviancy_virtuous } } } }
-		modifier = { add = 2 scope:recipient.faith = { has_doctrine = doctrine_witchcraft_virtuous  } }
-		modifier = { add = 3 scope:recipient = { ai_zeal > high_positive_ai_value faith = { has_doctrine = doctrine_witchcraft_virtuous  } } }
-		modifier = { add = 5 scope:recipient = { ai_zeal > very_high_positive_ai_value faith = { has_doctrine = doctrine_witchcraft_virtuous } } }
-		modifier = { add = 10 scope:recipient = { ai_zeal > dominant_positive_ai_value faith = { has_doctrine = doctrine_witchcraft_virtuous } } }
-		modifier = { add = 2 scope:recipient.faith = { has_doctrine = doctrine_deviancy_virtuous  } }
-		modifier = { add = 3 scope:recipient = { ai_zeal > high_positive_ai_value faith = { has_doctrine = doctrine_deviancy_virtuous  } } }
-		modifier = { add = 5 scope:recipient = { ai_zeal > very_high_positive_ai_value faith = { has_doctrine = doctrine_deviancy_virtuous } } }
-		modifier = { add = 10 scope:recipient = { ai_zeal > dominant_positive_ai_value faith = { has_doctrine = doctrine_deviancy_virtuous } } }
 	}
 	ai_frequency = 6
 	ai_targets = {

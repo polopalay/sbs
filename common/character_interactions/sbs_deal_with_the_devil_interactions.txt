@@ -791,7 +791,7 @@
 		opinion_modifier = {
 			opinion_target = scope:actor
 			who = scope:recipient
-			multiplier = 0.05
+			multiplier = 0.1
 		}
 		modifier = {
 			scope:actor.succubus_cost_value > 0
@@ -817,9 +817,6 @@
 		modifier = { add = -10 scope:actor = {  primary_title.tier = tier_duchy is_ai = yes } }
 	}
 
-	auto_accept = {
-		scope:recipient = { is_courtier_of = scope:actor }
-	}
 	ai_potential = { always = yes }
 	ai_frequency = 12
 	ai_targets = {
@@ -829,7 +826,7 @@
 		ai_recipients = courtiers
 		ai_recipients = neighboring_rulers
 		ai_recipients = nearby_domicile_owners
-		max = 5
+		max = 10
 	}
 
 	ai_will_do = {

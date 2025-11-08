@@ -28,7 +28,8 @@ recently_had_sex = {
 
 forced_labor = {
 	icon = slave_negative
-	health = -0.5
+	monthly_income = 0.1
+	health = -0.1
 }
 
 face_cum = {

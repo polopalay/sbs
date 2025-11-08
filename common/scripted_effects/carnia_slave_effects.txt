@@ -47,6 +47,7 @@
 			release_from_prison = yes
 		}
 		add_character_flag = blocked_from_leaving
+		set_to_lowborn = yes
 		if = {
 			limit = { 
 				$DRAMA$ = yes

@@ -102,10 +102,8 @@ sbs_devils_curse_interaction = {
 				}
 				1 = {
 					modifier = { has_character_modifier = sbs_seal add = -100 }
-					modifier = { scope:actor = { has_character_modifier = sbs_generals } add = -100 }
 					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } scope:recipient = { has_trait = slave } add = 99 }
 					add_character_modifier = sbs_seal
-					scope:actor = { add_character_modifier = { modifier = sbs_generals years = 10 } }
 				}
 			}
 		}

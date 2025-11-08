@@ -2,8 +2,7 @@
 	category = interaction_category_prison
 	desc = carnia_slave_training_interaction.desc
 	common_interaction = yes
-	cooldown = { months = 6 }
-	cooldown_against_recipient = { months = 12 }
+	cooldown_against_recipient = { years = 1 }
 	is_shown = {
 		scope:actor = {
 			is_adult = yes
@@ -14,110 +13,43 @@
 			is_courtier_of = scope:actor
 		}
 	}
-	send_option = {
-		flag = have_sex	
-		localization = have_sex
-		is_shown = {
-			scope:actor = {
-				is_adult = yes
-				is_attracted_to_gender_of = scope:recipient
-			}
-			scope:recipient = {
-				is_adult = yes
-			}
-		}
-	}
-	send_option = {
-		flag = extort_gold
-		localization = extort_gold
-		is_shown = {
-			scope:recipient.gold > 0
-		}
-	}
-	send_option = {
-		flag = forced_labor
-		localization = forced_labor
-		is_shown = {
-			scope:recipient = {
-				NOT = { has_character_modifier = forced_labor }
-			}
-		}
-	}
-	send_option = {
-		flag = demand_conversion
-		localization = "RELEASE_DEMAND_CONVERSION"
-		is_shown = {
-			NOT = { scope:actor.faith = scope:recipient.faith }
-		}
-		is_valid = {
-			# Cannot ask Religious Heads to convert
-			custom_description = {
-				text = cannot_demand_religious_head_conversion
-				NOT = {
-					AND = {
-						exists = scope:recipient.faith.religious_head
-						scope:recipient.faith.religious_head = scope:recipient
-					}
-				}
-			}
-			# Cannot ask Holy Order Master to convert
-			custom_description = {
-				text = cannot_demand_holy_order_master_conversion
-				NAND = {
-					exists = scope:recipient.faith
-					scope:recipient.faith = {
-						any_faith_holy_order = { leader = scope:recipient }
-					}
-				}
-			}
-		}
-	}
-	send_options_exclusive = no
 	on_accept = {
-		scope:actor = {
-			if = {
-				limit = { scope:have_sex = yes }
-				prostitute_effect = { PROSTITUTE = scope:recipient PREGNANCY_CHANCE = pregnancy_chance }
-			}
-		}
 		scope:recipient = {
-			if = {
-				limit = { scope:extort_gold = yes }
-				pay_short_term_gold = { target = scope:actor gold = gold }
-				add_opinion = { target = scope:actor modifier = extortion_opinion }
-			}
-			if = {
-				limit = { scope:forced_labor = yes }
-				add_character_modifier = { modifier = forced_labor years = 2 }
-			}
-			if = {
-				limit = { scope:demand_conversion = yes }
-				set_character_faith_with_conversion = scope:actor.faith
-			}
 			random_list = {
-				20 = 0
-				0 = {
-					modifier = { add = 50 any_secret = { NOT = { is_known_by = scope:actor } } }
-					random_secret = { limit = { NOT = { is_known_by = scope:actor } } reveal_to = scope:actor }
-				}
-				0 = {
-					modifier = { add = 50 any_scheme = { scheme_type = murder scheme_target_character = scope:actor } }
-					every_scheme = {
-						limit = { scheme_type = murder scheme_target_character = scope:owner }
-						end_scheme = yes
-					}
-				}
-				0 = {
-					modifier = { add = 5 current_weight < 40 }
-					change_current_weight = -10
-				}
+				1 = 0
 				0 = {
 					modifier = { add = 1 has_trait_rank = { trait = wounded rank < 3 } }
 					change_trait_rank = { trait = wounded rank = 1 }
 				}
 				0 = {
-					modifier = { add = 5 should_be_naked_trigger = no }
+					modifier = { add = 2 should_be_naked_trigger = no }
 					add_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
+				}
+				0 = {
+					modifier = { add = 2 NOT = { has_character_modifier = stress_smelling_of_sweat } }
+					add_character_modifier = stress_smelling_of_sweat
+				}
+				0 = {
+					modifier = { add = 4 gold > 50 }
+					pay_short_term_gold = { target = scope:actor gold = gold }
+					add_opinion = { target = scope:actor modifier = extortion_opinion }
+				}
+				0 = {
+					modifier = { add = 4 NOT = { scope:actor.faith = scope:recipient.faith } }
+					set_character_faith_with_conversion = scope:actor.faith
+				}
+				0 = {
+					modifier = { add = 8 current_weight < 40 }
+					add_character_modifier = { modifier = forced_labor years = 2 }
+					change_current_weight = -10
+				}
+				0 = {
+					modifier = { add = 8 is_female = yes is_adult = yes }
+					random_living_character = {
+						limit = { is_lowborn = yes is_ruler = no is_female = no is_adult = yes add = 1 in_diplomatic_range = scope:actor }
+						prostitute_effect = { PROSTITUTE = scope:recipient PREGNANCY_CHANCE = 100 }
+						pay_short_term_gold = { target = scope:actor gold = tiny_gold_value }
+					}
 				}
 			}
 		}
@@ -125,9 +57,9 @@
 	auto_accept = yes
 	ai_targets = { ai_recipients = courtiers }
 	ai_potential = { always = yes }
-	ai_frequency = 6
+	ai_frequency = 2
 	ai_will_do = {
-		base = 0
+		base = 10
 		ai_value_modifier = {
 			ai_vengefulness = 1
 			ai_greed = 0.5
@@ -135,7 +67,7 @@
 			ai_honor = -0.5
 			ai_rationality = -0.1
 		}
-		modifier = { add = 25 NOT = { scope:recipient.faith = scope:actor.faith } }
+		modifier = { add = 10 NOT = { scope:recipient.faith = scope:actor.faith } }
 		modifier = { add = -50 scope:recipient = { has_relation_friend = scope:actor } }
 		modifier = { add = -50 scope:recipient = { has_relation_lover = scope:actor } }
 		modifier = { add = -100 scope:recipient = { has_relation_soulmate = scope:actor } }

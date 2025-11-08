@@ -10,23 +10,23 @@ pureblood_demon = {
 }
 sbs_buff = {
 	icon = souls_positive
-	life_expectancy = 10
-	years_of_fertility = 10
-	diplomacy = 1
-	martial = 1
-	stewardship = 1
-	intrigue = 1
-	learning = 1
-	prowess = 1
-	movement_speed = 0.1
-	retreat_losses = -0.1
-	embarkation_cost_mult = -0.1
-	naval_movement_speed_mult = 0.1
-	siege_phase_time = -0.1
-	siege_morale_loss = 0.1
-	hard_casualty_modifier = -0.1
-	supply_duration = 0.1
-	supply_limit_mult = 0.1
+	life_expectancy = 25
+	years_of_fertility = 25
+	diplomacy = 2
+	martial = 2
+	stewardship = 2
+	intrigue = 2
+	learning = 2
+	prowess = 2
+	movement_speed = 0.2
+	retreat_losses = -0.2
+	embarkation_cost_mult = -0.2
+	naval_movement_speed_mult = 0.2
+	siege_phase_time = -0.2
+	siege_morale_loss = 0.2
+	hard_casualty_modifier = -0.2
+	supply_duration = 0.2
+	supply_limit_mult = 0.2
 	stacking = yes
 }
 
@@ -78,6 +78,11 @@ sbs_generals = {
 	hard_casualty_modifier = -1.3
 	supply_duration = 1.3
 	supply_limit_mult = 1.3
+}
+
+deviants_strangebook_modifier = {
+	icon = learning_negative
+    stress_loss_mult = 0.05
 }
 
 master_dildo_modifier = {

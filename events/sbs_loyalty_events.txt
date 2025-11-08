@@ -19,6 +19,7 @@ sbs_loyalty.8000 = {
 		is_ruler = yes
 		is_female = yes
 		is_adult = yes
+		carn_is_working_as_prostitute_trigger = yes
 		any_knight = {
 			is_adult = yes
 			is_attracted_to_gender_of = root
@@ -43,11 +44,13 @@ sbs_loyalty.8000 = {
 		trigger_event = sbs_loyalty.8001
 	}
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_loyalty.8000.b
 		custom_tooltip = sbs_loyalty.8000.b.tt
 		remove_short_term_gold = massive_gold_value
 	}
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_loyalty.8000.c
 		custom_tooltip = sbs_loyalty.8000.c.tt
 		add_opinion = { target = scope:sbs_loyalty_random_1 modifier = carn_wants_to_be_your_slave_opinion }
@@ -118,6 +121,7 @@ sbs_loyalty.8002 = {
 		name = sbs_loyalty.8002.a
 		custom_tooltip = sbs_loyalty.8002.a.tt
 		scope:succubus_randoman_1 = { prostitute_effect= { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance } }
+		add_character_modifier = { modifier = sbs_buff years = 10 }
 		trigger_event = sbs_loyalty.8003
 	}
 }
@@ -147,6 +151,7 @@ sbs_loyalty.8003 = {
 		name = sbs_loyalty.8003.a
 		custom_tooltip = sbs_loyalty.8003.a.tt
 		scope:succubus_randoman_1 = { prostitute_effect= { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance } }
+		add_character_modifier = { modifier = sbs_buff years = 10 }
 		trigger_event = sbs_loyalty.8004
 	}
 }
@@ -198,7 +203,8 @@ sbs_loyalty.8005 = {
 				modifier = amused_opinion
 				opinion = 20
 			}
-			scope:succubus_randoman_1 = { prostitute_effect= { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance } }
+			prostitute_effect= { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance }
+			add_character_modifier = { modifier = sbs_buff years = 10 }
 		}
 		trigger_event = sbs_loyalty.8006
 	}
@@ -258,11 +264,7 @@ sbs_loyalty.8099 = {
 	}
 	cooldown = { years = 2 }
 	trigger = {
-		has_trait_xp = {
-			trait = sbs_succubus
-			track = loyalty
-			value >= 1
-		}
+		carn_is_working_as_prostitute_trigger = yes
 		is_adult = yes
 		is_ruler = yes
 		is_female = yes
@@ -490,6 +492,11 @@ sbs_loyalty.8200 = {
 		is_adult = yes
 		is_ruler = yes
 		is_female = yes
+		OR = {
+			has_trait = sbs_demon
+			has_trait = sbs_succubus
+			has_trait = sbs_lesser_succubus
+		}
 		any_knight = {
 			is_adult = yes
 			is_attracted_to_gender_of = root

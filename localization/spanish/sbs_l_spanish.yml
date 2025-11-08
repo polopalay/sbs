@@ -1,13 +1,9 @@
 ﻿l_spanish:
-  NOT_IS_IMMORTAL_TRIGGER: "No es inmortal"
-  any_prisoner_count: "Cualquier [prisoners|E]"
-  any_county_province: "Cualquier [province|E]"
   COA_DESIGNER_CATEGORY_cherilewd: "Lewd"
 
   magic_creation: "$trinket$"
   magic_creation_miscellaneous: "$trinket$"
   artifact_magic_creation: "Creación Mágica"
-
 
   master_dildo: "Mi Maestro"
   master_dildo_desc: "Solo mirarlo hace que las rodillas se debiliten."
@@ -53,9 +49,10 @@
   sbs_seal_desc: "Esta persona ha sido sellada por el Diablo."
   pureblood_demon: "Demonio de Sangre Pura"
   pureblood_demon_desc: "Un demonio con poder puro, nacido de la esencia del diablo."
-
   sbs_generals: "General Demonio"
   sbs_generals_desc: "Los guerreros demoníacos son convocados para servir a la amante del diablo."
+  deviants_strangebook_modifier: "Libro pervertido"
+  deviants_strangebook_modifier_desc: "Contiene un libro sobre una mujer y sus aficiones pervertidas."
 
   nature_is_alive: "Belcebú está vivo"
   nature_isn_seal: "Belcebú no está sellado"
@@ -81,9 +78,5 @@
   belial_isn_seal: "Belial no está sellado"
   belial_is_seal: "Belial está sellado"
   seal_belial: "Sellar Belial"
-
-  the_expedition_of_violence_1: "La primera expedición de Abaddon"
-  the_expedition_of_violence_2: "La segunda expedición de Abaddon"
-  the_expedition_of_violence_3: "La tercera expedición de Abaddon"
 
   be_healed_opinion: "Ser sanado"

@@ -29,6 +29,7 @@
 			is_adult = yes
 		}
 		scope:recipient = {
+			faith.religion = religion:demonic_religion
 			NOT = { has_character_modifier = sbs_debuff }
 		}
 	}
@@ -167,10 +168,11 @@
 		modifier = { add = 25  scope:actor = { has_relation_lover = scope:recipient } }
 		modifier = { add = 25  scope:actor = { has_relation_friend = scope:recipient } }
 		modifier = { add = 50  scope:actor = { has_relation_best_friend = scope:recipient } }
-		modifier = { add = 50 scope:actor = { is_close_or_extended_family_of = scope:recipient } }
 		modifier = { add = 50 scope:actor = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } } 
 		modifier = { add = 50 scope:actor = { OR = { has_trait = witch any_secret = { type = secret_witch } } } }
-		modifier = { add = 100 scope:actor = { is_child_of = scope:recipient } }
+		modifier = { add = 20 scope:actor = { is_extended_family_of = scope:recipient } }
+		modifier = { add = 40 scope:actor = { is_close_family_of = scope:recipient } }
+		modifier = { add = 80 scope:actor = { is_child_of = scope:recipient } }
 		modifier = { add = 100 scope:actor = { has_trait = saint } }
 	}
 
