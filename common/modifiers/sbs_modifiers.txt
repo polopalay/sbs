@@ -10,6 +10,8 @@ pureblood_demon = {
 }
 sbs_buff = {
 	icon = souls_positive
+	health = 2
+	negate_health_penalty_add = 2
 	life_expectancy = 25
 	years_of_fertility = 25
 	diplomacy = 2
@@ -33,6 +35,9 @@ sbs_buff = {
 sbs_debuff = {
 	icon = souls_negative
 	health = -1
+	negate_health_penalty_add = -1
+	life_expectancy = -10
+	years_of_fertility = -10
 	stacking = yes
 }
 

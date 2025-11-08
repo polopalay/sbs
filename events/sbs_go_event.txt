@@ -426,7 +426,7 @@ sbs_go.5210 = {
 			base = medium_stress_impact_loss
 			lustful = major_stress_impact_loss
 		}
-		scope:knight = { prostitute_effect= { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:random_knight = { prostitute_effect= { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
 		trigger_event = sbs_go.5211
 	}	
 }
@@ -456,7 +456,7 @@ sbs_go.5211 = {
 			base = major_stress_impact_loss
 			lustful = major_stress_impact_loss
 		}
-		scope:knight = { prostitute_effect= { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:random_knight = { prostitute_effect= { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
 	}	
 }
 
