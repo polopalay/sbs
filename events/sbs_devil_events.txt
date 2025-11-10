@@ -442,7 +442,7 @@ sbs_devil.1319 = {
 		name = sbs_devil.1319.a
 		custom_tooltip = sbs_devil.1319.a.tt
 		random_living_character = {
-			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 100 }
+			had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance }
 			weight = {
 				base = 0
 				modifier = { in_diplomatic_range = root is_female = no is_adult = yes add = 1 }

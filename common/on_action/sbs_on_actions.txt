@@ -1,6 +1,16 @@
 random_yearly_everyone_pulse = {
 	on_actions = {
+		delay = { days = { 1 30 } }
 		sbs_devil_on_action
+		delay = { days = { 2 31 } }
+		sbs_prostitutute_on_action
+	}
+}
+
+random_yearly_playable_pulse = {
+	on_actions = {
+		delay = { days = { 3 32 } }
+		sbs_prostitutute_init_on_action
 	}
 }
 
@@ -18,7 +28,7 @@ sbs_devil_on_action = {
 		is_imprisoned = no
 	}
 	random_events = {
-		chance_to_happen = 80
+		chance_to_happen = 50
 		50 = sbs_devil.0550 # max addiction
 		50 = sbs_devil.1300 # special dream
 		50 = sbs_devil.1410 # gremlin fuck
@@ -29,5 +39,52 @@ sbs_devil_on_action = {
 		50 = sbs_courtier.1460 # fuck on throne event
 		50 = sbs_go.0501 # basic exploratory dildo fuck
 		50 = sbs_go.5000 # you sweating in your study
+	}
+}
+
+sbs_prostitutute_on_action = {
+	trigger = {
+		is_adult = yes
+		is_female = yes
+		OR = {
+			has_trait = lifestyle_prostitute
+			any_secret = { type = secret_prostitute }
+		}
+		is_imprisoned = no
+	}
+	random_events = {
+		chance_to_happen = 25
+		50 = sbs_prostitution.9000 # coming of age male
+		50 = sbs_prostitution.9010 # a married couple
+		50 = sbs_prostitution.9030 # older man
+		50 = sbs_prostitution.9040 # noble woman
+		50 = sbs_prostitution.9200 # decide to be a nude waitress
+		50 = sbs_prostitution.9220 # only decoration aviable
+		50 = sbs_prostitution.9230 # rich merchant
+		25 = sbs_prostitution.9260 # harsh anal dp gangbang
+	}
+}
+
+sbs_prostitutute_init_on_action = {
+	trigger = {
+		is_adult = yes
+		is_female = yes
+		OR = {
+			has_trait = sbs_demon
+			has_trait = sbs_succubus
+			has_trait = sbs_lesser_succubus
+			has_trait = deviant
+			any_secret = { type = secret_deviant }
+			has_trait = lustful
+		}
+		NOT = {
+			has_trait = lifestyle_prostitute
+			any_secret = { type = secret_prostitute }
+		}
+		is_imprisoned = no
+	}
+	random_events = {
+		chance_to_happen = 25
+		50 = sbs_prostitution.0099 # voluntary whore options
 	}
 }

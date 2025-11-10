@@ -330,7 +330,7 @@ sbs_go.5112 = {
 			base = minor_stress_impact_loss
 			lustful = medium_stress_impact_loss
 		}
-		scope:random_go = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:random_go = { had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = 0 } }
 		trigger_event = sbs_go.5200
 	}	
 }
@@ -428,7 +428,7 @@ sbs_go.5210 = {
 			base = medium_stress_impact_loss
 			lustful = major_stress_impact_loss
 		}
-		scope:random_knight = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:random_knight = { had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = 0 } }
 		trigger_event = sbs_go.5211
 	}	
 }
@@ -458,7 +458,7 @@ sbs_go.5211 = {
 			base = major_stress_impact_loss
 			lustful = major_stress_impact_loss
 		}
-		scope:random_knight = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:random_knight = { had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = 0 } }
 	}	
 }
 
@@ -729,7 +729,7 @@ sbs_go.6040 = {
 		name = sbs_go.6040.a
 		custom_tooltip = sbs_go.6040.a.tt	
 		trigger_event = sbs_go.6050
-		scope:random_man = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } } 
+		scope:random_man = { had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = 0 } } 
 		hidden_effect = {
 			add_character_modifier = sbs_buff
 			add_trait_xp = {
