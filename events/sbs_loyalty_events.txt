@@ -70,7 +70,7 @@ sbs_loyalty.8000 = {
 		add_character_modifier = sbs_seal
 		scope:sbs_loyalty_random_1 = {
 			add_trait = sbs_seed_of_demon
-			carn_enslave_effect = { SLAVE = root OWNER = this DRAMA = yes }
+			carn_enslave_effect = { SLAVE = root OWNER = this DRAMA = no }
 		}
 	}
 }

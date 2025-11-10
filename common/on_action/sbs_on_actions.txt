@@ -18,7 +18,7 @@ sbs_devil_on_action = {
 		is_imprisoned = no
 	}
 	random_events = {
-		chance_to_happen = 50
+		chance_to_happen = 80
 		50 = sbs_devil.0550 # max addiction
 		50 = sbs_devil.1300 # special dream
 		50 = sbs_devil.1410 # gremlin fuck
@@ -27,7 +27,7 @@ sbs_devil_on_action = {
 		50 = sbs_loyalty.8200 # loyalty event: new recruit
 		50 = sbs_courtier.1440 # naked event
 		50 = sbs_courtier.1460 # fuck on throne event
-		50 = sbs_go.0501 #0501 basic exploratory dildo fuck
-		50 = sbs_go.5000 #5000 you sweating in your study
+		50 = sbs_go.0501 # basic exploratory dildo fuck
+		50 = sbs_go.5000 # you sweating in your study
 	}
 }
