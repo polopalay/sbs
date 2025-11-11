@@ -10,7 +10,6 @@ sbs_courtier.1440 = {
 		character = root
 		animation = personality_greedy
 	}
-	cooldown = { years = 8 }
 	trigger = {
 		is_adult = yes
 		is_ruler = yes
@@ -18,7 +17,6 @@ sbs_courtier.1440 = {
 		should_be_naked_trigger = no
 		every_councillor = { count > 0 }
 		OR = {
-			has_trait = sbs_demon
 			has_trait = sbs_succubus
 			has_trait = sbs_lesser_succubus
 			has_trait = deviant
@@ -129,7 +127,6 @@ sbs_courtier.1460 = {
 		character = root
 		animation = personality_greedy
 	}
-	cooldown = { years = 8 }
 	trigger = {
 		is_ruler = yes
 		is_adult = yes
@@ -140,7 +137,6 @@ sbs_courtier.1460 = {
 			is_attracted_to_gender_of = root
 		}
 		OR = {
-			has_trait = sbs_demon
 			has_trait = sbs_succubus
 			has_trait = sbs_lesser_succubus
 			has_trait = deviant

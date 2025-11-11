@@ -13,6 +13,13 @@ sbs_repent_event.0800 = {
 	}
 	#punish pussy
 	option = {
+		trigger = {
+			OR = {
+				has_trait = lustful
+				has_trait = deviant
+				any_secret = { type = secret_deviant }
+			}
+		}
 		ai_chance = { base = 80 }
 		name = sbs_repent_event.0800.a
 		custom_tooltip = sbs_repent_event.0800.a.tt
@@ -21,14 +28,23 @@ sbs_repent_event.0800 = {
 	#public shaming
 	option = {
 		ai_chance = { base = 80 }
+		trigger = {
+			OR = {
+				has_trait = deviant
+				any_secret = { type = secret_deviant }
+			}
+		}
 		name = sbs_repent_event.0800.b
 		custom_tooltip = sbs_repent_event.0800.b.tt
 		trigger_event = sbs_repent_event.0900
 	}
 	#just some minor acts of faith will do
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_repent_event.0800.c
 		custom_tooltip = sbs_repent_event.0800.c.tt
+		remove_short_term_gold = minor_gold_value
+		add_piety = minor_piety_gain
 	}
 }
 
@@ -166,7 +182,10 @@ sbs_repent_event.0900 = {
 	option = {
 		ai_chance = { base = 80 }
 		trigger = {
-			has_trait = sbs_succubus
+			OR = {
+				has_trait = deviant
+				any_secret = { type = secret_deviant }
+			}
 		}
 		name = sbs_repent_event.0900.b
 		custom_tooltip = sbs_repent_event.0900.b.tt
@@ -183,7 +202,10 @@ sbs_repent_event.0900 = {
 	option = {
 		ai_chance = { base = 80 }
 		trigger = {
-			has_trait = sbs_succubus
+			OR = {
+				has_trait = deviant
+				any_secret = { type = secret_deviant }
+			}
 		}
 		name = sbs_repent_event.0900.c
 		custom_tooltip = sbs_repent_event.0900.c.tt

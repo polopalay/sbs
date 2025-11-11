@@ -37,7 +37,7 @@ sbs_devils_gift_interaction = {
 		scope:recipient = {
 			random_list = {
 				0 = {
-					modifier = { scope:actor = { is_female = yes has_trait = sbs_demon this = scope:recipient } add = 10 }
+					modifier = { scope:actor = { is_female = yes has_trait = sbs_demon this = scope:recipient } add = 12 }
 					random_living_character = {
 						limit = { has_trait = sbs_demon is_female = no is_adult = yes }
 						save_scope_as = father
@@ -57,7 +57,7 @@ sbs_devils_gift_interaction = {
 					add_courtier = scope:child
 				}
 				0 = {
-					modifier = { scope:actor = { is_female = no has_trait = sbs_demon this = scope:recipient } add = 10 }
+					modifier = { scope:actor = { is_female = no has_trait = sbs_demon this = scope:recipient } add = 12 }
 					random_living_character = {
 						limit = { has_trait = sbs_demon is_female = yes is_adult = yes }
 						save_scope_as = mother
@@ -77,7 +77,7 @@ sbs_devils_gift_interaction = {
 					add_courtier = scope:child
 				}
 				0 = {
-					modifier = {  scope:actor = { is_female = no has_trait = sbs_demon is_head_of_faith = yes } add = 10 }
+					modifier = {  scope:actor = { is_female = no has_trait = sbs_demon is_head_of_faith = yes } add = 12 }
 					modifier = { is_ruler = yes add = -20 }
 					create_landless_adventurer_title_effect = {
 						REASON = flag:voluntary

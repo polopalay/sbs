@@ -5,11 +5,13 @@ sbs_devil.0550 = {
 	type = character_event
 	title = sbs_devil.0550.t
 	desc = sbs_devil.0550.desc
-	cooldown = { years = 10 }
 	trigger = {
 		is_adult = yes
 		is_female = yes
 		OR = {
+			has_trait = sbs_succubus
+			has_trait = sbs_lesser_succubus
+			has_trait = lustful
 			has_trait = deviant
 			any_secret = { type = secret_deviant }
 		}
@@ -26,8 +28,8 @@ sbs_devil.0550 = {
 		name = sbs_devil.0550.a
 		custom_tooltip = sbs_devil.0550.a.tt
 		ai_chance = { base = 50 }
-		trigger = { gold >= major_gold_value }
-		remove_short_term_gold = major_gold_value
+		trigger = { gold >= minor_gold_value }
+		remove_short_term_gold = minor_gold_value
 		create_artifact = {
 			name = master_dildo
 			rarity = masterwork
@@ -43,6 +45,7 @@ sbs_devil.0550 = {
 	}
 	# try to endure
 	option = {
+		ai_chance = { base = 1 }
 		name = sbs_devil.0550.b
 		custom_tooltip = sbs_devil.0550.b.tt
 		stress_impact = {
@@ -56,8 +59,8 @@ sbs_devil.0550 = {
 		name = sbs_devil.0550.c
 		custom_tooltip = sbs_devil.0550.c.tt
 		ai_chance = { base = 50 }
-		trigger = { gold >= minor_gold_value }
-		remove_short_term_gold = minor_gold_value
+		trigger = { gold >= tiny_gold_value }
+		remove_short_term_gold = tiny_gold_value
 		create_artifact = {
 			name = mistress_dildo
 			description = mistress_dildo_desc
@@ -72,15 +75,24 @@ sbs_devil.0550 = {
 	}
 	# buy book
 	option = {
+		trigger = {
+			is_ruler = yes
+		}
 		ai_chance = { base = 10 }
 		name = sbs_devil.0550.d
 		custom_tooltip = sbs_devil.0550.d.tt
-		trigger = { gold >= major_gold_value NOT = { has_character_modifier = deviants_strangebook_modifier } }
-		remove_short_term_gold = major_gold_value
+		trigger = { gold >= medium_gold_value NOT = { has_character_modifier = deviants_strangebook_modifier } }
+		remove_short_term_gold = medium_gold_value
 		add_character_modifier = { modifier = deviants_strangebook_modifier years = 10 }
 	}
 	# sleep potion for deviant lunatic
 	option = {
+		trigger = {
+			OR = {
+				has_trait = deviant
+				any_secret = { type = secret_deviant }
+			}
+		}
 		ai_chance = { base = 10 }
 		name = sbs_devil.0550.e
 		custom_tooltip = sbs_devil.0550.e.tt
@@ -94,7 +106,6 @@ sbs_devil.0550 = {
 sbs_devil.1300 = {
 	type = character_event
 	title = sbs_devil.1300.t
-	cooldown = { years = 8 }
 	desc = {
 		random_valid = {
 			desc = sbs_devil.1300.a.desc
@@ -112,11 +123,9 @@ sbs_devil.1300 = {
 	}
 	trigger = {
 		OR = {
-			has_trait = sbs_demon
 			has_trait = sbs_succubus
 			has_trait = sbs_lesser_succubus
 			has_trait = deviant
-			any_secret = { type = secret_deviant }
 		}
 		is_female = yes
 		is_adult = yes
@@ -442,12 +451,13 @@ sbs_devil.1319 = {
 		name = sbs_devil.1319.a
 		custom_tooltip = sbs_devil.1319.a.tt
 		random_living_character = {
-			had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance }
+			limit = { is_adult = yes is_female = no }
+			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 			weight = {
 				base = 0
-				modifier = { in_diplomatic_range = root is_female = no is_adult = yes add = 1 }
-				modifier = { is_courtier_of = root is_female = no is_adult = yes add = 1000 }
-				modifier = { has_trait = sbs_seed_of_demon is_adult = yes add = 10000 }
+				modifier = { in_diplomatic_range = root add = 1 }
+				modifier = { is_courtier_of = root add = 1000 }
+				modifier = { has_trait = sbs_seed_of_demon add = 10000 }
 			}
 		}
 	}
@@ -603,7 +613,6 @@ sbs_devil.1325 = {
 sbs_devil.1410 = {
 	type = character_event
 	title = sbs_devil.1410.t
-	cooldown = { years = 5 }
 	desc = {
 		first_valid = {
 			triggered_desc = {
@@ -637,21 +646,18 @@ sbs_devil.1410 = {
 	}
 	trigger = {
 		OR = {
-			has_trait = sbs_demon
 			has_trait = sbs_succubus
 			has_trait = sbs_lesser_succubus
 			has_trait = deviant
 			any_secret = { type = secret_deviant }
 		}
 		is_female = yes
-		age >= 18
+		is_adult = yes
 	}
 	# pay gold
 	option = {
 		ai_chance = { base = 5 }
-		trigger = {
-			gold >= massive_gold_value
-		}
+		trigger = { gold >= minor_gold_value }
 		name = sbs_devil.1410.a
 		custom_tooltip = sbs_devil.1410.a.tt
 		add_piety = medium_piety_loss
@@ -728,6 +734,7 @@ sbs_devil.1411 = {
 	right_portrait = {
 		character = root
 		animation = personality_greedy
+		outfit_tags = { no_clothes }
 	}
 	option = {
 		name = sbs_devil.1411.a
@@ -759,6 +766,7 @@ sbs_devil.1412 = {
 	right_portrait = {
 		character = root
 		animation = personality_coward
+		outfit_tags = { no_clothes }
 	}
 	option = {
 		name = sbs_devil.1412.a
@@ -847,6 +855,7 @@ sbs_devil.1415 = {
 	right_portrait = {
 		character = root
 		animation = frontend_right_idle
+		outfit_tags = { no_clothes }
 	}
 	option = {
 		name = sbs_devil.1415.a
@@ -919,6 +928,7 @@ sbs_devil.1417 = {
 	right_portrait = {
 		character = root
 		animation = wedding_priest
+		outfit_tags = { no_clothes }
 	}
 	# pass out
 	option = {
@@ -983,6 +993,7 @@ sbs_devil.1418 = {
 	right_portrait = {
 		character = root
 		animation = eccentric
+		outfit_tags = { no_clothes }
 	}
 	# see how long you can endure
 	option = {
@@ -1064,10 +1075,10 @@ sbs_devil.1419 = {
 				10 = { trigger_event = sbs_devil.5120 }
 				10 = { trigger_event = sbs_devil.5130 }
 				10 = { trigger_event = sbs_devil.5140 }
-				10 = { trigger_event = sbs_devil.5150 }
-				10 = { trigger_event = sbs_devil.5160 }
+				20 = { trigger_event = sbs_devil.5150 }
+				20 = { trigger_event = sbs_devil.5160 }
 				10 = { trigger_event = sbs_devil.5300 }
-				10 = { trigger_event = sbs_devil.5320 }
+				20 = { trigger_event = sbs_devil.5320 }
 			}
 		}
 	}
@@ -1082,6 +1093,7 @@ sbs_devil.1420 = {
 	right_portrait = {
 		character = root
 		animation = war_over_win
+		outfit_tags = { no_clothes }
 	}
 	# pass out
 	option = {
@@ -1115,6 +1127,7 @@ sbs_devil.1421 = {
 	right_portrait = {
 		character = root
 		animation = war_over_loss
+		outfit_tags = { no_clothes }
 	}
 	# pass out
 	option = {
@@ -1135,6 +1148,7 @@ sbs_devil.1422 = {
 	right_portrait = {
 		character = root
 		animation = war_over_win
+		outfit_tags = { no_clothes }
 	}
 	# pass out
 	option = {
@@ -1168,6 +1182,7 @@ sbs_devil.1423 = {
 	right_portrait = {
 		character = root
 		animation = war_over_loss
+		outfit_tags = { no_clothes }
 	}
 	# pass out
 	option = {
@@ -1189,6 +1204,7 @@ sbs_devil.5100 = {
 	right_portrait = {
 		character = root
 		animation = personality_content
+		outfit_tags = { no_clothes }
 	}
 	# promise to do better
 	option = {
@@ -1268,6 +1284,7 @@ sbs_devil.5110 = {
 	right_portrait = {
 		character = root
 		animation = drink
+		outfit_tags = { no_clothes }
 	}
 	# drink it all
 	option = {
@@ -1343,6 +1360,7 @@ sbs_devil.5111 = {
 	right_portrait = {
 		character = root
 		animation = disbelief
+		outfit_tags = { no_clothes }
 	}
 	# pass out
 	option = {
@@ -1361,6 +1379,7 @@ sbs_devil.5120 = {
 	right_portrait = {
 		character = root
 		animation = disbelief
+		outfit_tags = { no_clothes }
 	}
 	# run faster
 	option = {
@@ -1430,6 +1449,7 @@ sbs_devil.5121 = {
 	right_portrait = {
 		character = root
 		animation = stress
+		outfit_tags = { no_clothes }
 	}
 	# pass out
 	option = {
@@ -1448,6 +1468,7 @@ sbs_devil.5130 = {
 	right_portrait = {
 		character = root
 		animation = personality_bold
+		outfit_tags = { no_clothes }
 	}
 	# moan as you cum
 	option = {
@@ -1510,6 +1531,7 @@ sbs_devil.5131 = {
 	right_portrait = {
 		character = root
 		animation = personality_content
+		outfit_tags = { no_clothes }
 	}
 	# pass out
 	option = {
@@ -1528,6 +1550,7 @@ sbs_devil.5140 = {
 	right_portrait = {
 		character = root
 		animation = personality_content
+		outfit_tags = { no_clothes }
 	}
 	# swallow as much as you can
 	option = {
@@ -1588,6 +1611,7 @@ sbs_devil.5141 = {
 	right_portrait = {
 		character = root
 		animation = personality_callous
+		outfit_tags = { no_clothes }
 	}
 	# pass out
 	option = {
@@ -1603,9 +1627,26 @@ sbs_devil.5150 = {
 	title = sbs_devil.5150.t
 	desc = sbs_devil.5150.a.desc
 	theme = memory_intrigue
+	trigger = {
+		any_knight = {
+			is_adult = yes
+			is_female = no
+		}
+	}
+	immediate = {
+		random_knight = {
+			limit = { is_adult = yes is_female = no }
+			save_scope_as = knight
+		}
+	}
 	right_portrait = {
 		character = root
-		animation = personality_callous
+		animation = shame
+		outfit_tags = { no_clothes }
+	}
+	left_portrait = {
+		character = scope:knight
+		animation = shock
 	}
 	# act like a sex demon
 	option = {
@@ -1668,11 +1709,13 @@ sbs_devil.5151 = {
 	right_portrait = {
 		character = root
 		animation = personality_dishonorable
+		outfit_tags = { no_clothes }
 	}
 	# pass out
 	option = {
 		name = sbs_devil.5151.a
 		custom_tooltip = sbs_devil.5151.a.tt
+		scope:knight = { had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance } }
 		hidden_effect = {
 			add_character_modifier = { modifier = pussy_cum months = 1 }
 			trigger_event = sbs_devil.5501
@@ -1685,10 +1728,27 @@ sbs_devil.5160 = {
 	type = character_event
 	title = sbs_devil.5160.t
 	desc = sbs_devil.5160.a.desc
+	trigger = {
+		any_courtier = {
+			is_adult = yes
+			is_female = no
+		}
+	}
+	immediate = {
+		random_courtier = {
+			limit = { is_adult = yes is_female = no }
+			save_scope_as = courtier
+		}
+	}
 	theme = memory_intrigue
 	right_portrait = {
 		character = root
 		animation = personality_greedy
+		outfit_tags = { no_clothes }
+	}
+	left_portrait = {
+		character = scope:courtier
+		animation = shock
 	}
 	# act like a sex demon
 	option = {
@@ -1756,6 +1816,7 @@ sbs_devil.5161 = {
 		name = sbs_devil.5161.a
 		custom_tooltip = sbs_devil.5161.a.tt
 		trigger_event = sbs_devil.5501
+		scope:courtier = { had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance } }
 	}
 }
 
@@ -1768,6 +1829,7 @@ sbs_devil.5300 = {
 	right_portrait = {
 		character = root
 		animation = personality_callous
+		outfit_tags = { no_clothes }
 	}
 	# work hard
 	option = {
@@ -1807,6 +1869,7 @@ sbs_devil.5301 = {
 	right_portrait = {
 		character = root
 		animation = personality_greedy
+		outfit_tags = { no_clothes }
 	}
 	# work hard
 	option = {
@@ -1842,9 +1905,13 @@ sbs_devil.5320 = {
 	title = sbs_devil.5320.t
 	desc = sbs_devil.5320.a.desc
 	theme = memory_intrigue
+	trigger = {
+		any_prisoner = { is_adult = yes is_female = yes }
+	}
 	right_portrait = {
 		character = root
 		animation = thinking
+		outfit_tags = { no_clothes }
 	}
 	# introduce yourself
 	option = {
@@ -1884,6 +1951,7 @@ sbs_devil.5321 = {
 	right_portrait = {
 		character = root
 		animation = personality_greedy
+		outfit_tags = { no_clothes }
 	}
 	#
 	option = {
@@ -1892,6 +1960,11 @@ sbs_devil.5321 = {
 		stress_impact = {
 			base = medium_stress_impact_loss
 			lustful = medium_stress_impact_loss
+		}
+		every_prisoner = {
+			limit = { is_adult = yes is_female = yes }
+			had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance }
+
 		}
 		trigger_event = sbs_devil.5501
 	}
@@ -1941,8 +2014,7 @@ sbs_devil.5500 = {
 	option = {
 		name = sbs_devil.5500.c
 		custom_tooltip = sbs_devil.5500.c.tt
-		remove_short_term_gold = minor_gold_value
-		add_piety = minor_piety_gain
+		trigger_event = sbs_repent_event.0800
 	}
 	after =	{
 		hidden_effect = {
@@ -2007,8 +2079,7 @@ sbs_devil.5501 = {
 	option = {
 		name = sbs_devil.5501.c
 		custom_tooltip = sbs_devil.5501.c.tt
-		remove_short_term_gold = minor_gold_value
-		add_piety = minor_piety_gain
+		trigger_event = sbs_repent_event.0800
 	}
 	after =	{
 		hidden_effect = {
@@ -2079,8 +2150,7 @@ sbs_devil.5502 = {
 	option = {
 		name = sbs_devil.5502.c
 		custom_tooltip = sbs_devil.5502.c.tt
-		remove_short_term_gold = minor_gold_value
-		add_piety = minor_piety_gain
+		trigger_event = sbs_repent_event.0800
 	}
 }
 

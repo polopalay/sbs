@@ -1,16 +1,20 @@
-random_yearly_everyone_pulse = {
-	on_actions = {
-		delay = { days = { 1 30 } }
-		sbs_devil_on_action
-		delay = { days = { 2 31 } }
-		sbs_prostitutute_on_action
+on_game_start = {
+	effect = {
+		set_global_variable = {
+			name = sbs_active
+			value = yes
+		}
 	}
 }
-
-random_yearly_playable_pulse = {
+random_yearly_everyone_pulse = {
 	on_actions = {
-		delay = { days = { 3 32 } }
-		sbs_prostitutute_init_on_action
+		delay = { days = { 10 30 } }
+		sbs_devil_on_action
+		delay = { days = { 100 300 } }
+		sbs_prostitutute_on_action
+	}
+	events = {
+		sbs_prostitution.0099 # voluntary whore options
 	}
 }
 
@@ -19,9 +23,7 @@ sbs_devil_on_action = {
 		is_adult = yes
 		is_female = yes
 		OR = {
-			has_trait = sbs_demon
-			has_trait = sbs_succubus
-			has_trait = sbs_lesser_succubus
+			has_trait = lustful
 			has_trait = deviant
 			any_secret = { type = secret_deviant }
 		}
@@ -61,30 +63,6 @@ sbs_prostitutute_on_action = {
 		50 = sbs_prostitution.9200 # decide to be a nude waitress
 		50 = sbs_prostitution.9220 # only decoration aviable
 		50 = sbs_prostitution.9230 # rich merchant
-		25 = sbs_prostitution.9260 # harsh anal dp gangbang
-	}
-}
-
-sbs_prostitutute_init_on_action = {
-	trigger = {
-		is_adult = yes
-		is_female = yes
-		OR = {
-			has_trait = sbs_demon
-			has_trait = sbs_succubus
-			has_trait = sbs_lesser_succubus
-			has_trait = deviant
-			any_secret = { type = secret_deviant }
-			has_trait = lustful
-		}
-		NOT = {
-			has_trait = lifestyle_prostitute
-			any_secret = { type = secret_prostitute }
-		}
-		is_imprisoned = no
-	}
-	random_events = {
-		chance_to_happen = 25
-		50 = sbs_prostitution.0099 # voluntary whore options
+		50 = sbs_prostitution.9260 # harsh anal dp gangbang
 	}
 }

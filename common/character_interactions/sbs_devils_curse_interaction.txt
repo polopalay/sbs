@@ -105,6 +105,14 @@ sbs_devils_curse_interaction = {
 					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } scope:recipient = { has_trait = slave } add = 99 }
 					add_character_modifier = sbs_seal
 				}
+				0 = {
+					modifier = { has_trait = chaste is_adult = yes is_female = yes add = 100 }
+					random_list = {
+						10 = { trigger_event = { id = sbs_go.5010 days = 10 } }
+						10 = { trigger_event = { id = sbs_devil.1419 days = 10 } }
+						10 = { trigger_event = { id = sbs_prostitution.9260 days = 10 } }
+					}
+				}
 			}
 		}
 	}

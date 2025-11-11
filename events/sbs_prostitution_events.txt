@@ -18,6 +18,24 @@ sbs_prostitution.0099 = {
 		}
 		desc = sbs_prostitution.0099.a.desc
 	}
+	trigger = {
+		is_adult = yes
+		is_female = yes
+		is_ruler = yes
+		OR = {
+			has_trait = sbs_demon
+			has_trait = sbs_succubus
+			has_trait = sbs_lesser_succubus
+			has_trait = deviant
+			any_secret = { type = secret_deviant }
+			has_trait = lustful
+		}
+		NOT = {
+			has_trait = lifestyle_prostitute
+			any_secret = { type = secret_prostitute }
+		}
+		is_imprisoned = no
+	}
 	theme = scheme
 	override_background = { reference = alley_night }
 	right_portrait = {
@@ -26,18 +44,21 @@ sbs_prostitution.0099 = {
 	}	
 	#look at the wanted posters
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_prostitution.0099.a
 		custom_tooltip = sbs_prostitution.0099.a.tt
 		trigger_event = sbs_prostitution.0100
 	}	
 	#Any commoner brothel will do
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_prostitution.0099.b
 		custom_tooltip = sbs_prostitution.0099.b.tt
 		trigger_event = sbs_prostitution.9220
 	}
 	# just fuck some guy
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_prostitution.0099.c
 		custom_tooltip = sbs_prostitution.0099.c.tt
 		trigger_event = sbs_go.5010
@@ -68,6 +89,7 @@ sbs_prostitution.0100 = {
 	}
 	# go to meet the woner with the other finalists
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_prostitution.0100.a
 		custom_tooltip = sbs_prostitution.0100.a.tt
 		trigger_event = sbs_prostitution.0101
@@ -91,6 +113,7 @@ sbs_prostitution.0101 = {
 	}
 	# go to meet the woner with the other finalists
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_prostitution.0101.a
 		custom_tooltip = sbs_prostitution.0101.a.tt
 		trigger_event = sbs_prostitution.0102
@@ -114,6 +137,7 @@ sbs_prostitution.0102 = {
 	}
 	# go to meet the woner with the other finalists
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_prostitution.0102.a
 		custom_tooltip = sbs_prostitution.0102.a.tt
 		trigger_event = sbs_prostitution.0103
@@ -137,6 +161,7 @@ sbs_prostitution.0103 = {
 	}
 	# agree to be owned by him
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_prostitution.0103.a
 		custom_tooltip = sbs_prostitution.0103.a.tt
 		if = {
@@ -145,6 +170,24 @@ sbs_prostitution.0103 = {
 		}
 		else = {
 			add_trait = lifestyle_prostitute
+		}
+		if = {
+			limit = { OR = { has_trait_xp = { trait = lifestyle_prostitute value < 50 } NOT = { has_trait = lifestyle_prostitute } } }
+			add_character_modifier = carn_working_as_prostitute_1_modifier
+			remove_character_modifier = carn_working_as_prostitute_2_modifier
+			remove_character_modifier = carn_working_as_prostitute_3_modifier
+		}
+		else_if = {
+			limit = { has_trait_xp = { trait = lifestyle_prostitute value >=50 } has_trait_xp = { trait = lifestyle_prostitute value < 100 } }
+			remove_character_modifier = carn_working_as_prostitute_1_modifier
+			add_character_modifier = carn_working_as_prostitute_2_modifier
+			remove_character_modifier = carn_working_as_prostitute_3_modifier
+		}
+		else_if = {
+			limit = { has_trait_xp = { trait = lifestyle_prostitute value >= 100 } }
+			remove_character_modifier = carn_working_as_prostitute_1_modifier
+			remove_character_modifier = carn_working_as_prostitute_2_modifier
+			add_character_modifier = carn_working_as_prostitute_3_modifier
 		}
 	}	
 	# leave
@@ -184,7 +227,7 @@ sbs_prostitution.9000 = {
 		animation = shame
 	}
 	option = {
-		ai_chance = { base = 100 }
+		ai_chance = { base = 10 }
 		name = sbs_prostitution.9000.a
 		custom_tooltip = sbs_prostitution.9000.a.tt
 		hidden_effect = {
@@ -1920,14 +1963,10 @@ sbs_prostitution.9260 = {
 	type = character_event
 	title = sbs_prostitution.9260.t
     desc = sbs_prostitution.9260.a.desc
-		theme = seduction
+	theme = seduction
 	trigger = {
 		is_adult = yes
 		is_female = yes
-		OR = {
-			has_trait = lifestyle_prostitute
-			any_secret = { type = secret_prostitute }
-		}
 	}
 	immediate = {
 		random_living_character = {
@@ -1972,99 +2011,6 @@ sbs_prostitution.9260 = {
 			}
 			save_scope_as = random_noble_4
 		}
-		random_living_character = {
-			limit = {
-				in_diplomatic_range = root
-				is_adult = yes
-				is_female = no
-				is_knight = yes
-				NOT = { this = scope:random_noble_1 }
-				NOT = { this = scope:random_noble_2 }
-				NOT = { this = scope:random_noble_3 }
-				NOT = { this = scope:random_noble_4 }
-			}
-			save_scope_as = random_noble_5
-		}
-		random_living_character = {
-			limit = {
-				in_diplomatic_range = root
-				is_adult = yes
-				is_female = no
-				is_knight = yes
-				NOT = { this = scope:random_noble_1 }
-				NOT = { this = scope:random_noble_2 }
-				NOT = { this = scope:random_noble_3 }
-				NOT = { this = scope:random_noble_4 }
-				NOT = { this = scope:random_noble_5 }
-			}
-			save_scope_as = random_noble_6
-		}
-		random_living_character = {
-			limit = {
-				in_diplomatic_range = root
-				is_adult = yes
-				is_female = no
-				is_knight = yes
-				NOT = { this = scope:random_noble_1 }
-				NOT = { this = scope:random_noble_2 }
-				NOT = { this = scope:random_noble_3 }
-				NOT = { this = scope:random_noble_4 }
-				NOT = { this = scope:random_noble_5 }
-				NOT = { this = scope:random_noble_6 }
-			}
-			save_scope_as = random_noble_7
-		}
-		random_living_character = {
-			limit = {
-				in_diplomatic_range = root
-				is_adult = yes
-				is_female = no
-				is_knight = yes
-				NOT = { this = scope:random_noble_1 }
-				NOT = { this = scope:random_noble_2 }
-				NOT = { this = scope:random_noble_3 }
-				NOT = { this = scope:random_noble_4 }
-				NOT = { this = scope:random_noble_5 }
-				NOT = { this = scope:random_noble_6 }
-				NOT = { this = scope:random_noble_7 }
-			}
-			save_scope_as = random_noble_8
-		}
-		random_living_character = {
-			limit = {
-				in_diplomatic_range = root
-				is_adult = yes
-				is_female = no
-				is_knight = yes
-				NOT = { this = scope:random_noble_1 }
-				NOT = { this = scope:random_noble_2 }
-				NOT = { this = scope:random_noble_3 }
-				NOT = { this = scope:random_noble_4 }
-				NOT = { this = scope:random_noble_5 }
-				NOT = { this = scope:random_noble_6 }
-				NOT = { this = scope:random_noble_7 }
-				NOT = { this = scope:random_noble_8 }
-			}
-			save_scope_as = random_noble_9
-		}
-		random_living_character = {
-			limit = {
-				in_diplomatic_range = root
-				is_adult = yes
-				is_female = no
-				is_knight = yes
-				NOT = { this = scope:random_noble_1 }
-				NOT = { this = scope:random_noble_2 }
-				NOT = { this = scope:random_noble_3 }
-				NOT = { this = scope:random_noble_4 }
-				NOT = { this = scope:random_noble_5 }
-				NOT = { this = scope:random_noble_6 }
-				NOT = { this = scope:random_noble_7 }
-				NOT = { this = scope:random_noble_8 }
-				NOT = { this = scope:random_noble_9 }
-			}
-			save_scope_as = random_noble_10
-		}
 	}
 	right_portrait = {
 		character = root
@@ -2108,12 +2054,6 @@ sbs_prostitution.9260 = {
 		scope:random_noble_2 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
 		scope:random_noble_3 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
 		scope:random_noble_4 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
-		scope:random_noble_5 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
-		scope:random_noble_6 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
-		scope:random_noble_7 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
-		scope:random_noble_8 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
-		scope:random_noble_9 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
-		scope:random_noble_10 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
 	}	
 }
 

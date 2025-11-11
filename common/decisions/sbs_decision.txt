@@ -174,15 +174,6 @@ become_demon = {
 		}
 		scope:demon_child = {
 			if = {
-				limit = { has_trait = sbs_seed_of_demon }
-				remove_trait = sbs_seed_of_demon
-				every_relation = {
-					type = slave
-					limit = { is_female = yes is_immortal = yes }
-					trigger_event = sbs_slavery_event.4000
-				}
-			}
-			if = {
 				limit = { has_trait = sbs_lesser_succubus }
 				remove_trait = sbs_lesser_succubus
 			}

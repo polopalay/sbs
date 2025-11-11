@@ -4,7 +4,7 @@
 	use_diplomatic_range = yes
 	common_interaction = yes
 	cooldown = { years = 1 }
-	cooldown_against_recipient = { years = 10 }
+	cooldown_against_recipient = { years = 2 }
 	is_shown = {
 		scope:actor = {
 			OR = {
@@ -12,14 +12,30 @@
 				has_trait = sbs_lesser_succubus
 				has_trait = sbs_seed_of_demon
 			}
+		}
+	}
+	is_valid = {
+		trigger_if = {
+			scope:actor = { OR = { has_trait = sbs_succubus has_trait = sbs_lesser_succubus } }
+				has_character_modifier = pussy_cum
+				has_character_modifier = ass_cum
+				has_character_modifier = face_cum
+				has_character_modifier = body_cum
+		}
+		trigger_if = {
+			scope:actor = { sbs_seed_of_demon }
 			NOT = { this = scope:recipient }
+			OR = {
+				NOT = { has_character_modifier = sbs_debuff }
+				has_character_modifier = sbs_generals
+				has_character_modifier = sbs_buff
+			}
 		}
 	}
 	on_accept = {
 		scope:actor = {
 			if = {
 				limit = { has_trait = sbs_lesser_succubus }
-				add_trait_xp = { trait = sbs_lesser_succubus value = 5 }
 				if = {
 					limit = { scope:recipient = { has_character_modifier = pussy_cum } }
 					add_trait_xp = { trait = sbs_lesser_succubus value = 20 }
@@ -35,75 +51,32 @@
 				if = {
 					limit = { scope:recipient = { has_character_modifier = body_cum } }
 					add_trait_xp = { trait = sbs_lesser_succubus value = 20 }
-				}
-				if = {
-					limit = { scope:recipient = { has_character_modifier = sbs_buff } }
-					add_trait_xp = { trait = sbs_lesser_succubus value = 25 }
-				}
-				if = {
-					limit = { scope:recipient = { has_character_modifier = sbs_generals } }
-					add_trait_xp = { trait = sbs_lesser_succubus value = 50 }
-				}
-				if = {
-					limit = { scope:recipient = { has_trait = sbs_demon } }
-					add_trait_xp = { trait = sbs_lesser_succubus value = 50 }
 				}
 			}
 			else_if = {
 				limit = { has_trait = sbs_succubus }
-				add_trait_xp = { trait = sbs_succubus track = power value = 2 }
 				if = {
 					limit = { scope:recipient = { has_character_modifier = pussy_cum } }
-					add_trait_xp = { trait = sbs_succubus track = power value = 5 }
+					add_trait_xp = { trait = sbs_succubus track = corruption value = 5 }
 				}
 				if = {
 					limit = { scope:recipient = { has_character_modifier = ass_cum } }
-					add_trait_xp = { trait = sbs_succubus track = power value = 5 }
+					add_trait_xp = { trait = sbs_succubus track = loyalty value = 5 }
 				}
 				if = {
 					limit = { scope:recipient = { has_character_modifier = body_cum } }
-					add_trait_xp = { trait = sbs_succubus track = daring value = 5 }
+					add_trait_xp = { trait = sbs_succubus track = power value = 10 }
 				}
 				if = {
 					limit = { scope:recipient = { has_character_modifier = face_cum } }
-					add_trait_xp = { trait = sbs_succubus track = daring value = 5 }
-				}
-				if = {
-					limit = { scope:recipient = { has_character_modifier = sbs_buff } }
-					add_trait_xp = { trait = sbs_succubus track = corruption value = 1 }
-				}
-				if = {
-					limit = { scope:recipient = { has_character_modifier = sbs_generals } }
-					add_trait_xp = { trait = sbs_succubus track = loyalty value = 10 }
-				}
-				if = {
-					limit = { scope:recipient = { has_trait = sbs_demon } }
-					add_trait_xp = { trait = sbs_succubus track = corruption value = 10 }
-					add_trait_xp = { trait = sbs_succubus track = loyalty value = 10 }
+					add_trait_xp = { trait = sbs_succubus track = daring value = 10 }
 				}
 			}
 			else_if = {
 				limit = { has_trait = sbs_seed_of_demon }
-				add_trait_xp = { trait = sbs_seed_of_demon value = 5 }
 				if = {
-					limit = { scope:recipient = { has_character_modifier = pussy_cum } }
-					add_trait_xp = { trait = sbs_seed_of_demon value = 10 }
-				}
-				if = {
-					limit = { scope:recipient = { has_character_modifier = ass_cum } }
-					add_trait_xp = { trait = sbs_seed_of_demon value = 10 }
-				}
-				if = {
-					limit = { scope:recipient = { has_character_modifier = face_cum } }
-					add_trait_xp = { trait = sbs_seed_of_demon value = 10 }
-				}
-				if = {
-					limit = { scope:recipient = { has_character_modifier = body_cum } }
-					add_trait_xp = { trait = sbs_seed_of_demon value = 10 }
-				}
-				if = {
-					limit = { scope:recipient = { has_character_modifier = sbs_buff } }
-					add_trait_xp = { trait = sbs_seed_of_demon value = 20 }
+					limit = { scope:recipient = { NOT = { has_character_modifier = sbs_debuff } } }
+					add_trait_xp = { trait = sbs_seed_of_demon value = 25 }
 				}
 				if = {
 					limit = { scope:recipient = { has_character_modifier = sbs_buff } }
@@ -113,38 +86,37 @@
 					limit = { scope:recipient = { has_character_modifier = sbs_generals } }
 					add_trait_xp = { trait = sbs_seed_of_demon value = 50 }
 				}
-				if = {
-					limit = { scope:recipient = { has_trait = sbs_demon } }
-					add_trait_xp = { trait = sbs_seed_of_demon value = 50 }
-				}
 			}
 		}
 		scope:recipient = {
 			if = {
-				limit = { has_character_modifier = face_cum }
+				limit = { OR = { has_trait = sbs_succubus has_trait = sbs_lesser_succubus } has_character_modifier = face_cum }
 				remove_character_modifier = face_cum
 			}
 			if = {
-				limit = { has_character_modifier = body_cum }
+				limit = { OR = { has_trait = sbs_succubus has_trait = sbs_lesser_succubus } has_character_modifier = body_cum }
 				remove_character_modifier = body_cum
 			}
 			if = {
-				limit = { has_character_modifier = ass_cum }
+				limit = { OR = { has_trait = sbs_succubus has_trait = sbs_lesser_succubus } has_character_modifier = ass_cum }
 				remove_character_modifier = ass_cum
 			}
 			if = {
-				limit = { has_character_modifier = pussy_cum }
+				limit = { OR = { has_trait = sbs_succubus has_trait = sbs_lesser_succubus } has_character_modifier = pussy_cum }
 				remove_character_modifier = pussy_cum
 			}
 			if = {
-				limit = { has_character_modifier = sbs_buff }
+				limit = { scope:actor = { has_trait = sbs_seed_of_demon } has_character_modifier = sbs_buff }
 				remove_character_modifier = sbs_buff
 			}
 			if = {
-				limit = { has_character_modifier = sbs_buff }
+				limit = { scope:actor = { has_trait = sbs_seed_of_demon } has_character_modifier = sbs_buff }
 				remove_character_modifier = sbs_generals
 			}
-			add_character_modifier = { modifier = sbs_debuff years = 1 }
+			if = {
+				limit = { scope:actor = { has_trait = sbs_seed_of_demon } }
+				add_character_modifier = { modifier = sbs_debuff years = 1 }
+			}
 		}
 	}
 	auto_accept = {

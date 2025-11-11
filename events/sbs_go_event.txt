@@ -6,7 +6,6 @@ sbs_go.0501 = {
 	title = sbs_go.0501.t
 	desc = sbs_go.0501.desc
 	theme = family
-	cooldown = { years = 8 }
 	override_background = { reference = bedchamber }
 	right_portrait = {
 		character = root
@@ -17,7 +16,6 @@ sbs_go.0501 = {
 		is_adult = yes
 		is_female = yes
 		OR = {
-			has_trait = sbs_demon
 			has_trait = sbs_succubus
 			has_trait = sbs_lesser_succubus
 			has_trait = deviant
@@ -106,7 +104,6 @@ sbs_go.5000 = {
 	title = sbs_go.5000.t
 	desc = sbs_go.5000.a.desc
 	theme = secret
-	cooldown = { years = 10 }
 	override_background = { reference = study }
 	right_portrait = {
 		character = root
@@ -117,9 +114,9 @@ sbs_go.5000 = {
 		is_adult = yes
 		is_female = yes
 		OR = {
-			has_trait = sbs_demon
 			has_trait = sbs_succubus
 			has_trait = sbs_lesser_succubus
+			has_trait = lustful
 			has_trait = deviant
 			any_secret = { type = secret_deviant }
 		}
@@ -139,6 +136,7 @@ sbs_go.5000 = {
 	}	
 	# no no no
 	option = {
+		ai_chance = { base = 1 }
 		name = sbs_go.5000.b
 		custom_tooltip = sbs_go.5000.b.tt
 		remove_character_modifier = deviants_strangebook_modifier
@@ -763,6 +761,16 @@ sbs_go.6050 = {
 		name = sbs_go.6050.a
 		custom_tooltip = sbs_go.6050.a.tt	
 		add_character_modifier = { modifier = licentious_05_modifier months = 1 }
+		if = {
+			limit = { NOT = { has_trait = deviant any_secret = { type = secret_deviant } } }
+			if = {
+				limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = deviant } }
+				add_secret = { type = secret_deviant }
+			}
+			else = {
+				add_trait = deviant
+			}
+		}
 	}	
 	# repent, repent
 	option = {

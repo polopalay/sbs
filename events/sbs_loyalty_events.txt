@@ -14,7 +14,6 @@ sbs_loyalty.8000 = {
 		animation = scheme
 		outfit_tags = { military_outfit }
 	}
-	cooldown = { years = 8 }
 	trigger = {
 		is_ruler = yes
 		is_female = yes
@@ -263,12 +262,11 @@ sbs_loyalty.8099 = {
 		character = scope:sbs_loyalty_random_1
 		animation = chancellor
 	}
-	cooldown = { years = 2 }
 	trigger = {
-		carn_is_working_as_prostitute_trigger = yes
 		is_adult = yes
 		is_ruler = yes
 		is_female = yes
+		carn_is_working_as_prostitute_trigger = yes
 		any_knight = {
 			is_adult = yes
 			is_attracted_to_gender_of = root
@@ -488,7 +486,6 @@ sbs_loyalty.8200 = {
 	desc = sbs_loyalty.8200.a.desc
 	theme = realm
 	override_background = { reference = army_camp }
-	cooldown = { years = 8 }
 	trigger = {
 		is_adult = yes
 		is_ruler = yes
