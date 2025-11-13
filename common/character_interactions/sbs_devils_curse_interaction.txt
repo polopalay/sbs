@@ -7,13 +7,11 @@ sbs_devils_curse_interaction = {
 	is_shown = {
 		NOT = { scope:recipient = scope:actor }
 		scope:actor = {
-			OR = {
-				has_trait = sbs_demon
-				has_trait = sbs_succubus
-				has_trait = sbs_seed_of_demon
-			}
+			is_adult = yes
+			has_trait_with_flag = sbs_demon_trait
 		}
 		scope:recipient = {
+			is_adult = yes
 			NOT = {
 				has_trait = saint
 				has_trait_with_flag = sbs_demon_trait
@@ -24,11 +22,9 @@ sbs_devils_curse_interaction = {
 		scope:actor = {
 			OR = {
 				has_trait = sbs_demon
-				AND = {
-					has_trait_xp = { trait = sbs_succubus track = daring value >= 25 }
-					has_trait_xp = { trait = sbs_succubus track = power value >= 25 }
-				}
-				has_trait_xp = { trait = sbs_seed_of_demon value >= 5 }
+				has_trait_xp = { trait = sbs_succubus track = daring value >= 25 }
+				has_trait_xp = { trait = sbs_lesser_demon value >= 50 }
+				has_trait_xp = { trait = sbs_lesser_succubus value >= 100 }
 			}
 		}
 	}
@@ -37,81 +33,65 @@ sbs_devils_curse_interaction = {
 			if = {
 				limit = { has_trait = sbs_succubus }
 				add_trait_xp = { trait = sbs_succubus track = daring value = -25 }
-				add_trait_xp = { trait = sbs_succubus track = power value = -25 }
 			}
 			else_if = {
-				limit = { has_trait = sbs_seed_of_demon }
-				add_trait_xp = { trait = sbs_seed_of_demon value = -5 }
+				limit = { has_trait = sbs_lesser_demon }
+				add_trait_xp = { trait = sbs_lesser_demon value = -50 }
+			}
+			else_if = {
+				limit = { has_trait = sbs_lesser_succubus }
+				add_trait_xp = { trait = sbs_lesser_succubus value = -100 }
 			}
 		}
 		scope:recipient = {
 			random_list = {
+				5 = {
+					modifier = { has_character_modifier = stanky_modifier add = -5 }
+					add_character_modifier = stanky_modifier
+				}
+				5 = {
+					modifier = { has_character_modifier = possessed_by_lust_demon_modifier add = -5 }
+					add_character_modifier = possessed_by_lust_demon_modifier
+				}
+				5 = {
+					add_character_modifier = { modifier = sbs_debuff years = 10 }
+					scope:actor = { add_character_modifier = sbs_buff }
+				}
 				2 = {
 					modifier = { has_trait = pneumonic add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = pneumonic
 				}
 				2 = {
 					modifier = { has_trait = typhus add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = typhus
 				}
 				2 = {
 					modifier = { has_trait = consumption add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = consumption
 				}
 				2 = {
 					modifier = { has_trait = bubonic_plague add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = bubonic_plague
 				}
 				2 = {
 					modifier = { has_trait = measles add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = measles
 				}
 				2 = {
 					modifier = { has_trait = dysentery add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = dysentery
 				}
 				2 = {
 					modifier = { has_trait = ergotism add = -2 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } add = -1 }
 					add_trait = ergotism
 				}
-				10 = {
-					modifier = { has_character_modifier = stanky_modifier add = -10 }
-					add_character_modifier = modifier = stanky_modifier
-				}
-				10 = {
-					modifier = { has_character_modifier = stanky_modifier add = -10 }
-					add_character_modifier = modifier = stanky_modifier
-				}
-				10 = {
-					modifier = { has_character_modifier = possessed_by_lust_demon_modifier add = -10 }
-					add_character_modifier = modifier = possessed_by_lust_demon_modifier
-				}
-				2 = {
-					add_character_modifier = { modifier = sbs_debuff years = 10 }
-					scope:actor = { add_character_modifier = sbs_buff }
-				}
-				1 = {
-					add_opinion = { target = scope:actor modifier = carn_wants_to_be_your_slave_opinion }
-				}
-				1 = {
-					modifier = { has_character_modifier = sbs_seal add = -100 }
-					modifier = { scope:actor = { has_trait = sbs_seed_of_demon } scope:recipient = { has_trait = slave } add = 99 }
+				0 = {
+					modifier = { scope:recipient = { has_trait = slave NOT = { has_character_modifier = sbs_seal } } add = 100 }
 					add_character_modifier = sbs_seal
 				}
 				0 = {
-					modifier = { has_trait = chaste is_adult = yes is_female = yes add = 100 }
-					random_list = {
-						10 = { trigger_event = { id = sbs_go.5010 days = 10 } }
-						10 = { trigger_event = { id = sbs_devil.1419 days = 10 } }
-						10 = { trigger_event = { id = sbs_prostitution.9260 days = 10 } }
-					}
+					modifier = { scope:actor = { has_trait = sbs_lesser_succubus } add = 100 }
+					sbs_steal_body = { VICTIM = scope:recipient STEALER = scope:actor }	
 				}
 			}
 		}
@@ -131,11 +111,7 @@ sbs_devils_curse_interaction = {
 	ai_potential = { always = yes }
 	ai_will_do = {
 		base = 0
-		modifier = { add = 50 scope:recipient = { has_relation_nemesis = scope:actor } }
-		modifier = { add = 25 scope:recipient = { has_relation_rival = scope:actor } }
-		modifier = { add = -25 scope:recipient = { has_relation_friend = scope:actor } }
-		modifier = { add = -50 scope:recipient = { has_relation_lover = scope:actor } }
-		modifier = { add = -50 scope:recipient = { is_close_family_of = scope:actor } }
-		modifier = { add = -50 scope:actor = { has_trait_xp = { trait = sbs_seed_of_demon value < 100 } } }
+		modifier = { add = 100 scope:actor = { has_trait = sbs_lesser_demon has_relation_slave = scope:recipient } }
+		modifier = { add = 25 scope:actor = { has_trait = sbs_lesser_succubus primary_title.tier <= scope:recipient.primary_title.tier } }
 	}
 }

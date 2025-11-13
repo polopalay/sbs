@@ -25,8 +25,8 @@
   trait_track_sbs_lesser_succubus: "Poder"
   trait_track_sbs_lesser_succubus_desc: "Ella sirve como una prostituta barata, sirviendo a hombres para obtener su semen."
 
-  trait_sbs_seed_of_demon: "Semilla del demonio"
-  sbs_seed_of_demon_desc: "[ROOT.GetCharacter.GetName] es dado por el diablo, es un signo de destrucción y caos."
-  sbs_seed_of_demon_character_desc: "Los sirvientes de Abaddon, que traen la destrucción y el caos al mundo."
-  trait_track_sbs_seed_of_demon: "Corrupción"
-  trait_track_sbs_seed_of_demon_desc: "Las semillas de la destrucción necesitan tiempo para germinar."
+  trait_sbs_lesser_demon: "Demonio menor"
+  sbs_lesser_demon_desc: "[ROOT.GetCharacter.GetName] es dado por el diablo, es un signo de destrucción y caos."
+  sbs_lesser_demon_character_desc: "Los sirvientes de Abaddon, que traen la destrucción y el caos al mundo."
+  trait_track_sbs_lesser_demon: "Corrupción"
+  trait_track_sbs_lesser_demon_desc: "Las semillas de la destrucción necesitan tiempo para germinar."

@@ -3,15 +3,11 @@ sbs_devils_gift_interaction = {
 	category = interaction_category_hostile
 	use_diplomatic_range = yes
 	cooldown = { years = 1 }
-	cooldown_against_recipient = { years = 3 }
+	cooldown_against_recipient = { years = 2 }
 	common_interaction = yes
 	is_shown = {
 		scope:actor = {
-			OR = {
-				has_trait = sbs_demon
-				has_trait = sbs_succubus
-				has_trait = sbs_seed_of_demon
-			}
+			has_trait_with_flag = sbs_demon_trait
 		}
 	}
 	is_valid = {
@@ -19,7 +15,8 @@ sbs_devils_gift_interaction = {
 			OR = {
 				has_trait = sbs_demon
 				has_trait_xp = { trait = sbs_succubus track = daring value >= 10 }
-				has_trait_xp = { trait = sbs_seed_of_demon value >= 2 }
+				has_trait_xp = { trait = sbs_lesser_demon value >= 2 }
+				has_trait_xp = { trait = sbs_lesser_succubus value >= 25 }
 			}
 		}
 	}
@@ -29,87 +26,57 @@ sbs_devils_gift_interaction = {
 				limit = { has_trait = sbs_succubus }
 				add_trait_xp = { trait = sbs_succubus track = daring value = -10 }
 			}
-			if = {
-				limit = { has_trait = sbs_seed_of_demon }
-				add_trait_xp = { trait = sbs_seed_of_demon value = -2 }
+			else_if = {
+				limit = { has_trait = sbs_lesser_demon }
+				add_trait_xp = { trait = sbs_lesser_demon value = -2 }
+			}
+			else_if = {
+				limit = { has_trait = sbs_lesser_succubus }
+				add_trait_xp = { trait = sbs_lesser_succubus value = -25 }
 			}
 		}
 		scope:recipient = {
 			random_list = {
 				0 = {
-					modifier = { scope:actor = { is_female = yes has_trait = sbs_demon this = scope:recipient } add = 12 }
-					random_living_character = {
-						limit = { has_trait = sbs_demon is_female = no is_adult = yes }
+					modifier = { scope:actor = { has_trait = sbs_demon this = scope:recipient } add = 20 }
+					if = {
+						limit = { is_female = yes }
+						save_scope_as = mother
+						random_living_character = {
+							limit = { has_trait = sbs_demon is_female = no is_adult = yes }
+							save_scope_as = father
+						}
+					}
+					else = {
 						save_scope_as = father
+						random_living_character = {
+							limit = { has_trait = sbs_demon is_female = yes is_adult = yes }
+							save_scope_as = mother
+						}
 					}
 					create_character = {
 						age = 0
+						employer = scope:actor
 						location = scope:actor.location
-						mother = scope:actor
+						mother = scope:mother
 						father = scope:father
 						dynasty_house = scope:actor.house
 						culture = scope:actor.culture
 						faith = scope:actor.faith
 						gender_female_chance = 50
 						liege = scope:actor
-						save_scope_as = child
 					}
-					add_courtier = scope:child
 				}
 				0 = {
-					modifier = { scope:actor = { is_female = no has_trait = sbs_demon this = scope:recipient } add = 12 }
-					random_living_character = {
-						limit = { has_trait = sbs_demon is_female = yes is_adult = yes }
-						save_scope_as = mother
-					}
-					create_character = {
-						age = 0
-						location = scope:actor.location
-						mother = scope:mother
-						father = scope:actor
-						dynasty_house = scope:actor.house
-						culture = scope:actor.culture
-						faith = scope:actor.faith
-						gender_female_chance = 50
-						liege = scope:actor
-						save_scope_as = child
-					}
-					add_courtier = scope:child
-				}
-				0 = {
-					modifier = {  scope:actor = { is_female = no has_trait = sbs_demon is_head_of_faith = yes } add = 12 }
-					modifier = { is_ruler = yes add = -20 }
+					modifier = { scope:actor = { has_trait = sbs_demon is_head_of_faith = yes } is_ruler = no add = 20 }
 					create_landless_adventurer_title_effect = {
 						REASON = flag:voluntary
 						FLAVOR_CHAR = scope:recipient
 					}
 				}
-				1 = {
-					modifier = { OR = { has_trait = dull has_trait = shrewd } add = -1 }
-					add_trait = shrewd
-				}
-				1 = {
-					modifier = { OR = { has_trait = weak has_trait = strong } add = -1 }
-					add_trait = strong
-				}
-				1 = {
-					modifier = { OR = { has_trait = fecund has_trait = infertile } add = -1 }
-					add_trait = fecund
-				}
 				0 = {
-					modifier = { has_trait_rank = { trait = physique_good rank < 3 } add = 1 }
-					set_trait_rank = { trait = physique_bad rank = 0 }
-					change_trait_rank = { trait = physique_good rank = 1 }
-				}
-				0 = {
-					modifier = { has_trait_rank = { trait = intellect_good rank < 3 } add = 1 }
-					set_trait_rank = { trait = intellect_bad rank = 0 }
-					change_trait_rank = { trait = intellect_good rank = 1 }
-				}
-				0 = {
-					modifier = { has_trait_rank = { trait = beauty_good rank < 3 } add = 1 }
-					set_trait_rank = { trait = beauty_bad rank = 0 }
-					change_trait_rank = { trait = beauty_good rank = 1 }
+					modifier = { scope:actor = { has_trait = sbs_lesser_succubus } NOT = { scope:actor = scope:recipient } add = 100 }
+					scope:actor = { copy_inheritable_appearance_from = scope:recipient }
 				}
 				0 = {
 					modifier = { is_adult = yes has_trait_rank = { trait = education_learning rank < 5 } add = 5 }
@@ -133,24 +100,16 @@ sbs_devils_gift_interaction = {
 				}
 				1 = {
 					modifier = { has_character_modifier = sbs_generals add = -1 }
-					add_character_modifier = { modifier = sbs_generals years = 10 }
+					add_character_modifier = { modifier = sbs_generals years = 25 }
 				}
-				5 = {
-					modifier = { has_character_modifier = sbs_buff add = -2 }
+				2 = {
+					modifier = { has_character_modifier = sbs_buff add = -1 }
 					add_character_modifier = sbs_buff
 				}
 			}
 		}
 	}
-	auto_accept = { scope:recipient = scope:actor }
-	ai_accept = {
-		base = 5
-		opinion_modifier = {
-			opinion_target = scope:actor
-			who = scope:recipient
-			multiplier = 0.25
-		}
-	}
+	auto_accept = yes
 	ai_frequency = 6
 	ai_targets = {
 		ai_recipients = self
@@ -161,8 +120,11 @@ sbs_devils_gift_interaction = {
 	ai_potential = { always = yes }
 	ai_will_do = {
 		base = 0
-		modifier = { add = 50 scope:actor = { has_trait = sbs_demon } scope:recipient = { is_child_of = scope:actor } }
 		modifier = { add = 25 scope:actor = { has_trait = sbs_demon } scope:recipient = { is_close_family_of = scope:actor } }
+		modifier = { add = 50 scope:actor = { has_trait = sbs_demon } scope:recipient = { is_child_of = scope:actor } }
+		modifier = { add = 25 scope:actor = { has_trait_xp = { trait = sbs_succubus track = daring value >= 50 } } scope:recipient = { is_close_family_of = scope:actor } }
+		modifier = { add = 50 scope:actor = { has_trait_xp = { trait = sbs_succubus track = daring value >= 50 } } scope:recipient = { is_child_of = scope:actor } }
 		modifier = { add = 50 scope:recipient = scope:actor }
+		modifier = { add = 50 scope:recipient = { has_trait = sbs_lesser_demon } }
 	}
 }

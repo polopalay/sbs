@@ -1,0 +1,301 @@
+﻿sbs_steal_body = {
+	$VICTIM$ = { save_scope_as = victim }
+	$STEALER$ = { save_scope_as = stealer }
+	if = {
+		limit = { scope:victim = { is_female = yes } }
+		scope:victim = {
+			clear_traits = yes
+			copy_traits = scope:stealer
+			if = {
+				limit = { scope:stealer = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } }
+				add_secret = { type = secret_deviant }
+			}
+			save_scope_as = demon
+		}
+	}
+	else = {
+		create_character = {
+			faith = scope:victim.faith
+			culture = scope:victim.culture
+			father = scope:victim.father
+			mother = scope:victim.mother
+			age = scope:victim.age
+			gender = female
+			random_traits = no
+			after_creation = {
+				change_first_name = { template_character = scope:victim }
+				set_house = scope:victim.house
+				copy_inheritable_appearance_from = scope:victim
+				clear_traits = yes
+				copy_traits = scope:stealer
+				if = {
+					limit = { scope:stealer = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } }
+					add_secret = { type = secret_deviant }
+				}
+			}
+			save_scope_as = demon
+		}
+		scope:victim = {
+			every_held_title = {
+				create_title_and_vassal_change = {
+					type = usurped
+					save_scope_as = change
+					add_claim_on_loss = no
+				}
+				change_title_holder_include_vassals = {
+					holder = scope:demon
+					change = scope:change
+					take_baronies = no
+				}
+				resolve_title_and_vassal_change = scope:change
+			}
+		}
+	}
+
+	scope:stealer = {
+		set_player_character = scope:demon
+		clear_traits = yes
+		copy_traits = scope:victim
+		if = {
+			limit = { any_relation = { type = slave_owner } }
+			add_trait = slave
+		}
+		if = {
+			limit = { scope:demon = { has_trait = pregnant } }
+			scope:demon = { remove_trait = pregnant }
+			add_trait = pregnant
+		}
+	}
+	scope:victim = {
+		if = {
+			limit = { is_female = no }
+			death = { death_reason = death_vanished }	
+		}
+	}
+}
+
+deal_with_the_devil_healing = {
+	$DEALER$ = { save_scope_as = dealer }
+	$DEVIL$ = { save_scope_as = devil }
+	scope:dealer = {
+		if = {
+			limit = { OR = { $STRESS$ = yes $AI$ = { is_ai = yes } } }
+			remove_trait = drunkard
+			remove_trait = hashishiyah
+			remove_trait = rakish
+			remove_trait = reclusive
+			remove_trait = irritable
+			remove_trait = flagellant
+			remove_trait = profligate
+			remove_trait = improvident
+			remove_trait = contrite
+			remove_trait = comfort_eater
+			remove_trait = inappetetic
+			stress_impact = { base = massive_stress_impact_loss }
+		}
+
+		if = {
+			limit = { OR = { $HEALING$ = yes $AI$ = { is_ai = yes } } }
+			remove_trait = depressed_1
+			remove_trait = depressed_genetic
+			remove_trait = lunatic_1
+			remove_trait = lunatic_genetic
+			remove_trait = possessed_1
+			remove_trait = possessed_genetic
+			remove_trait = one_eyed
+			remove_trait = scarred
+			remove_trait = maimed
+			remove_trait = one_legged
+			remove_trait = disfigured
+			remove_trait = eunuch_1
+			remove_trait = beardless_eunuch
+			remove_trait = blind
+			remove_trait = sickly
+			remove_trait = infirm
+			remove_trait = incapable
+			remove_trait = leper
+			remove_trait = wounded_1
+			remove_trait = wounded_2
+			remove_trait = wounded_3
+			remove_trait = early_great_pox
+			recover_from_disease_effect = { DISEASE = ill }
+			recover_from_disease_effect = { DISEASE = pneumonic }
+			recover_from_disease_effect = { DISEASE = gout_ridden }
+			recover_from_disease_effect = { DISEASE = typhus }
+			recover_from_disease_effect = { DISEASE = consumption }
+			recover_from_disease_effect = { DISEASE = measles }
+			recover_from_disease_effect = { DISEASE = cancer }
+			recover_from_disease_effect = { DISEASE = great_pox }
+			recover_from_disease_effect = { DISEASE = smallpox }
+			recover_from_disease_effect = { DISEASE = bubonic_plague }
+			recover_from_disease_effect = { DISEASE = lovers_pox }
+			recover_from_disease_effect = { DISEASE = bubonic_plague }
+			recover_from_disease_effect = { DISEASE = dysentery }
+			recover_from_disease_effect = { DISEASE = ergotism }
+
+			if = {
+				limit = { OR = { current_weight >= 25 current_weight <= -25 } }
+				change_current_weight = -200
+				change_current_weight = 100
+			}
+		}
+
+		if = {
+			limit = { OR = { $DNA$ = yes $AI$ = { is_ai = yes } } }
+			remove_trait = albino
+			remove_trait = lisping
+			remove_trait = stuttering
+			remove_trait = giant
+			remove_trait = scaly
+			remove_trait = clubfooted
+			remove_trait = dwarf
+			remove_trait = hunchbacked
+			remove_trait = infertile
+			remove_trait = wheezing
+			remove_trait = spindly
+			remove_trait = bleeder
+			remove_trait = weak
+			remove_trait = dull
+			set_trait_rank = { trait = beauty_bad rank = 0 }
+			set_trait_rank = { trait = intellect_bad rank = 0 }
+			set_trait_rank = { trait = physique_bad rank = 0 }
+			remove_trait = inbred
+		}
+
+		if = {
+			limit = { OR = { $HONOR$ = yes $AI$ = { is_ai = yes } } }
+			if = {
+				limit = {
+					has_trait = witch
+					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = witch }
+				}
+				remove_trait = witch
+				if = {
+					limit = { NOT = { any_secret = { type = secret_witch } } }
+					add_secret = { type = secret_witch }
+					random_secret = {
+						type = secret_witch
+						reveal_to = scope:devil
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_trait = deviant
+					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = deviant }
+				}
+				remove_trait = deviant
+				if = {
+					limit = { NOT = { any_secret = { type = secret_deviant } } }
+					add_secret = { type = secret_deviant }
+					random_secret = {
+						type = secret_deviant
+						reveal_to = scope:devil
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_trait = cannibal
+					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = cannibal }
+				}
+				remove_trait = cannibal
+				if = {
+					limit = { NOT = { any_secret = { type = secret_cannibal } } }
+					add_secret = { type = secret_cannibal }
+					random_secret = {
+						type = secret_cannibal
+						reveal_to = scope:devil
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_trait = sodomite
+					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = sodomite }
+				}
+				remove_trait = sodomite
+				if = {
+					limit = { NOT = { any_secret = { type = secret_homosexual } } }
+					add_secret = { type = secret_homosexual }
+					random_secret = {
+						type = secret_homosexual
+						reveal_to = scope:devil
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_trait = incestuous
+					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = incestuous }
+				}
+				remove_trait = incestuous
+				if = {
+					limit = { NOT = { any_secret = { type = secret_incest } } }
+					add_secret = { type = secret_incest }
+					random_secret = {
+						type = secret_incest
+						reveal_to = scope:devil
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_trait = adulterer
+					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = adulterer }
+				}
+				remove_trait = adulterer
+			}
+			if = {
+				limit = {
+					has_trait = fornicator
+					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = fornicator }
+				}
+				remove_trait = fornicator
+			}
+			if = {
+				limit = {
+					has_trait = kinslayer_1
+					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = kinslayer_1 }
+				}
+				remove_trait = kinslayer_1
+			}
+			if = {
+				limit = {
+					has_trait = kinslayer_2
+					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = kinslayer_2 }
+				}
+				remove_trait = kinslayer_2
+			}
+			if = {
+				limit = {
+					has_trait = kinslayer_3
+					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = kinslayer_3 }
+				}
+				remove_trait = kinslayer_3
+			}
+			if = {
+				limit = {
+					has_trait = murderer
+					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = murderer }
+				}
+				remove_trait = murderer
+			}
+			if = {
+				limit = {
+					has_trait = lifestyle_prostitute
+					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = lifestyle_prostitute }
+				}
+				remove_trait = lifestyle_prostitute
+				if = {
+					limit = { NOT = { any_secret = { type = secret_prostitute } } }
+					add_secret = { type = secret_prostitute }
+					random_secret = {
+						type = secret_prostitute
+						reveal_to = scope:recipient
+					}
+				}
+			}
+		}
+	}	
+}

@@ -106,18 +106,18 @@
 				add_trait = sbs_lesser_succubus
 			}
 			else = {
-				add_trait = sbs_seed_of_demon
+				add_trait = sbs_lesser_demon
 				add_character_modifier = sbs_buff
 			}
 			if = {
 				limit = { has_trait = saint }
 				remove_trait = saint
 				give_nickname = nick_the_betrayer
-				if = {
-					limit = { has_trait = chaste }
-					remove_trait = chaste
-					add_trait = lustful
-				}
+			}
+			if = {
+				limit = { has_trait = chaste }
+				remove_trait = chaste
+				add_trait = lustful
 			}
 			if = {
 				limit = { has_trait = immortal }

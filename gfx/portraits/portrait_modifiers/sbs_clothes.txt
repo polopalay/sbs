@@ -21,7 +21,7 @@ prostitute_clothes = {
 					has_character_modifier = carn_working_as_prostitute_2_modifier
 					has_character_modifier = carn_working_as_prostitute_3_modifier
 				}
-				is_immortal = no
+				NOT = { has_trait_with_flag = sbs_demon_trait }
 			}
 		}
 	}

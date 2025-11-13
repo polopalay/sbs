@@ -15,7 +15,7 @@ sbs_courtier.1440 = {
 		is_ruler = yes
 		is_female = yes
 		should_be_naked_trigger = no
-		every_councillor = { count > 0 }
+		any_councillor = { is_female = no }
 		OR = {
 			has_trait = sbs_succubus
 			has_trait = sbs_lesser_succubus
@@ -128,14 +128,10 @@ sbs_courtier.1460 = {
 		animation = personality_greedy
 	}
 	trigger = {
-		is_ruler = yes
 		is_adult = yes
 		is_female = yes
 		should_be_naked_trigger = yes
-		any_councillor = {
-			is_adult = yes
-			is_attracted_to_gender_of = root
-		}
+		any_councillor = { is_female = no }
 		OR = {
 			has_trait = sbs_succubus
 			has_trait = sbs_lesser_succubus
@@ -232,7 +228,7 @@ sbs_courtier.1461 = {
 				opinion = -10
 			}
 		}
-		scope:deviant_go_random_1 = { had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:deviant_go_random_1 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_succubus

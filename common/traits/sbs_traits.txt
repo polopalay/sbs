@@ -24,7 +24,7 @@ sbs_demon = {
 			desc = sbs_demon_character_desc
 		}
 	}
-	opposites = { sbs_succubus sbs_lesser_succubus sbs_seed_of_demon }
+	opposites = { sbs_succubus sbs_lesser_succubus sbs_lesser_demon }
 
 	monthly_lifestyle_xp_gain_mult = -1000
 	long_reign_bonus_mult = -1000
@@ -247,9 +247,9 @@ sbs_lesser_succubus = {
 	ruler_designer_cost = 50
 }
 
-sbs_seed_of_demon = {
+sbs_lesser_demon = {
 	category = health
-	icon = sbs_seed_of_demon.dds
+	icon = sbs_lesser_demon.dds
 
 	flag = sbs_demon_trait
 	
@@ -270,9 +270,9 @@ sbs_seed_of_demon = {
 				trigger = {
 					NOT = { exists = this }
 				}
-				desc = sbs_seed_of_demon_desc
+				desc = sbs_lesser_demon_desc
 			}
-			desc = sbs_seed_of_demon_character_desc
+			desc = sbs_lesser_demon_character_desc
 		}
 	}
 

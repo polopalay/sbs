@@ -12,19 +12,12 @@ sbs_go.0501 = {
 		animation = lunatic
 	}
 	trigger = {
-		is_ruler = yes
-		is_adult = yes
-		is_female = yes
-		OR = {
-			has_trait = sbs_succubus
-			has_trait = sbs_lesser_succubus
-			has_trait = deviant
-			any_secret = { type = secret_deviant }
-		}
 		stress_level >= 1
-		OR = {
-			any_character_artifact = { has_artifact_modifier = master_dildo_modifier }
-			any_character_artifact = { has_artifact_modifier = mistress_dildo_modifier }
+		any_character_artifact = {
+			OR = {
+				has_artifact_modifier = master_dildo_modifier
+				has_artifact_modifier = mistress_dildo_modifier
+			}
 		}
 	}
 	# pass out
@@ -110,16 +103,8 @@ sbs_go.5000 = {
 		animation = chancellor
 	}
 	trigger = {
-		is_ruler = yes
 		is_adult = yes
 		is_female = yes
-		OR = {
-			has_trait = sbs_succubus
-			has_trait = sbs_lesser_succubus
-			has_trait = lustful
-			has_trait = deviant
-			any_secret = { type = secret_deviant }
-		}
 		has_character_modifier = deviants_strangebook_modifier
 	}
 	# yes
@@ -328,7 +313,7 @@ sbs_go.5112 = {
 			base = minor_stress_impact_loss
 			lustful = medium_stress_impact_loss
 		}
-		scope:random_go = { had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = 0 } }
+		scope:random_go = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 0 } }
 		trigger_event = sbs_go.5200
 	}	
 }
@@ -426,7 +411,7 @@ sbs_go.5210 = {
 			base = medium_stress_impact_loss
 			lustful = major_stress_impact_loss
 		}
-		scope:random_knight = { had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = 0 } }
+		scope:random_knight = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 0 } }
 		trigger_event = sbs_go.5211
 	}	
 }
@@ -456,7 +441,7 @@ sbs_go.5211 = {
 			base = major_stress_impact_loss
 			lustful = major_stress_impact_loss
 		}
-		scope:random_knight = { had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = 0 } }
+		scope:random_knight = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 0 } }
 	}	
 }
 
@@ -673,7 +658,7 @@ sbs_go.6030 = {
 				base = 0
 				modifier = { in_diplomatic_range = root is_female = no is_adult = yes add = 1 }
 				modifier = { is_courtier_of = root is_female = no is_adult = yes add = 1000 }
-				modifier = { has_trait = sbs_seed_of_demon is_adult = yes add = 10000 }
+				modifier = { has_trait = sbs_lesser_demon is_adult = yes add = 10000 }
 			}
 		}
 	}	
@@ -727,7 +712,7 @@ sbs_go.6040 = {
 		name = sbs_go.6040.a
 		custom_tooltip = sbs_go.6040.a.tt	
 		trigger_event = sbs_go.6050
-		scope:random_man = { had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = 0 } } 
+		scope:random_man = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } } 
 		hidden_effect = {
 			add_character_modifier = sbs_buff
 			add_trait_xp = {
@@ -762,14 +747,11 @@ sbs_go.6050 = {
 		custom_tooltip = sbs_go.6050.a.tt	
 		add_character_modifier = { modifier = licentious_05_modifier months = 1 }
 		if = {
-			limit = { NOT = { has_trait = deviant any_secret = { type = secret_deviant } } }
-			if = {
-				limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = deviant } }
-				add_secret = { type = secret_deviant }
-			}
-			else = {
-				add_trait = deviant
-			}
+			limit = { NOT = { has_trait_with_flag = sbs_demon_trait } }
+			add_trait = sbs_lesser_succubus
+		}
+		else = {
+			add_character_modifier = sbs_buff
 		}
 	}	
 	# repent, repent

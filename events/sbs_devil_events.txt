@@ -9,8 +9,6 @@ sbs_devil.0550 = {
 		is_adult = yes
 		is_female = yes
 		OR = {
-			has_trait = sbs_succubus
-			has_trait = sbs_lesser_succubus
 			has_trait = lustful
 			has_trait = deviant
 			any_secret = { type = secret_deviant }
@@ -419,9 +417,9 @@ sbs_devil.1315 = {
 		}
 	}
 	after =	{
-		trigger_event = {
-			id = sbs_devil.1319
-			days = 1
+		if = {
+			limit = { is_ruler = yes }
+			trigger_event = { id = sbs_devil.1319 days = 1 }
 		}
 	}
 }
@@ -457,7 +455,7 @@ sbs_devil.1319 = {
 				base = 0
 				modifier = { in_diplomatic_range = root add = 1 }
 				modifier = { is_courtier_of = root add = 1000 }
-				modifier = { has_trait = sbs_seed_of_demon add = 10000 }
+				modifier = { has_trait = sbs_lesser_demon add = 10000 }
 			}
 		}
 	}
@@ -1070,15 +1068,26 @@ sbs_devil.1419 = {
 		}
 		hidden_effect = {
 			random_list = {
-				10 = { trigger_event = sbs_devil.5100 }
+				10 = {
+					trigger_event = sbs_devil.5100
+				}
 				10 = { trigger_event = sbs_devil.5110 }
 				10 = { trigger_event = sbs_devil.5120 }
 				10 = { trigger_event = sbs_devil.5130 }
 				10 = { trigger_event = sbs_devil.5140 }
-				20 = { trigger_event = sbs_devil.5150 }
-				20 = { trigger_event = sbs_devil.5160 }
+				0 = {
+					modifier = { any_knight = { is_adult = yes is_female = no } add = 20 }
+					trigger_event = sbs_devil.5150
+				}
+				0 = {
+					modifier = { any_courtier = { is_adult = yes is_female = no } add = 20 }
+					trigger_event = sbs_devil.5160
+				}
 				10 = { trigger_event = sbs_devil.5300 }
-				20 = { trigger_event = sbs_devil.5320 }
+				0 = {
+					modifier = { any_prisoner = { is_adult = yes is_female = yes } add = 20 }
+					trigger_event = sbs_devil.5320
+				}
 			}
 		}
 	}
@@ -1711,11 +1720,16 @@ sbs_devil.5151 = {
 		animation = personality_dishonorable
 		outfit_tags = { no_clothes }
 	}
+	left_portrait = {
+		character = scope:knight
+		animation = shock
+		outfit_tags = { no_clothes }
+	}
 	# pass out
 	option = {
 		name = sbs_devil.5151.a
 		custom_tooltip = sbs_devil.5151.a.tt
-		scope:knight = { had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:knight = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
 		hidden_effect = {
 			add_character_modifier = { modifier = pussy_cum months = 1 }
 			trigger_event = sbs_devil.5501
@@ -1810,13 +1824,19 @@ sbs_devil.5161 = {
 	right_portrait = {
 		character = root
 		animation = personality_bold
+		outfit_tags = { no_clothes }
+	}
+	left_portrait = {
+		character = scope:courtier
+		animation = personality_dishonorable
+		outfit_tags = { no_clothes }
 	}
 	# pass out
 	option = {
 		name = sbs_devil.5161.a
 		custom_tooltip = sbs_devil.5161.a.tt
 		trigger_event = sbs_devil.5501
-		scope:courtier = { had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:courtier = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
 	}
 }
 
@@ -1963,7 +1983,7 @@ sbs_devil.5321 = {
 		}
 		every_prisoner = {
 			limit = { is_adult = yes is_female = yes }
-			had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance }
+			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 
 		}
 		trigger_event = sbs_devil.5501
@@ -2017,21 +2037,14 @@ sbs_devil.5500 = {
 		trigger_event = sbs_repent_event.0800
 	}
 	after =	{
-		hidden_effect = {
-			random_list = {
-				10 = {
-					trigger_event = {
-						id = sbs_devil.5700
-						days = 1
-					}
+		if = {
+			limit = { is_ruler = yes }
+			hidden_effect = {
+				random_list = {
+					10 = { trigger_event = { id = sbs_devil.5700 days = 1 } }
+					10 = { trigger_event = { id = sbs_devil.5703 days = 1 } }
+					20 = { }
 				}
-				10 = {
-					trigger_event = {
-						id = sbs_devil.5703
-						days = 1
-					}
-				}
-				20 = { }
 			}
 		}
 	}
@@ -2082,27 +2095,15 @@ sbs_devil.5501 = {
 		trigger_event = sbs_repent_event.0800
 	}
 	after =	{
-		hidden_effect = {
-			random_list = {
-				10 = {
-					trigger_event = {
-						id = sbs_devil.5701
-						days = 1
-					}
+		if = {
+			limit = { is_ruler = yes }
+			hidden_effect = {
+				random_list = {
+					10 = { trigger_event = { id = sbs_devil.5701 days = 1 } }
+					10 = { trigger_event = { id = sbs_devil.5702 days = 1 } }
+					10 = { trigger_event = { id = sbs_devil.5703 days = 1 } }
+					20 = { }
 				}
-				10 = {
-					trigger_event = {
-						id = sbs_devil.5702
-						days = 1
-					}
-				}
-				10 = {
-					trigger_event = {
-						id = sbs_devil.5703
-						days = 1
-					}
-				}
-				10 = { }
 			}
 		}
 	}

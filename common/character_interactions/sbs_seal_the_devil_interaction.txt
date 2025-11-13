@@ -14,7 +14,7 @@ sbs_seal_the_devil_interaction = {
 				has_trait = sbs_demon
 				has_trait = sbs_succubus
 				has_trait = sbs_lesser_succubus
-				has_trait = sbs_seed_of_demon
+				has_trait = sbs_lesser_demon
 			}
 		}
 	}
@@ -117,7 +117,9 @@ sbs_seal_the_devil_interaction = {
 				limit = { NOT = { has_trait = immortal } }
 				add_trait = immortal
 			}
-			add_piety = 10000
+			else = {
+				add_piety = 10000
+			}
 		}
 		scope:recipient = {
 			if = {

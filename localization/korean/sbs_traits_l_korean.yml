@@ -25,8 +25,8 @@
   trait_track_sbs_lesser_succubus: "힘"
   trait_track_sbs_lesser_succubus_desc: "그녀는 저렴한 매춘부로서 남성들에게 그들의 정액을 얻기 위해 봉사한다."
 
-  trait_sbs_seed_of_demon: "악마의 씨앗"
-  sbs_seed_of_demon_desc: "[ROOT.GetCharacter.GetName]은(는) 악마로부터 권력을 받았으며, 파괴와 혼돈의 징후이다."
-  sbs_seed_of_demon_character_desc: "파괴와 혼돈을 세계로 가져오는 아바돈의 하인들."
-  trait_track_sbs_seed_of_demon: "타락"
-  trait_track_sbs_seed_of_demon_desc: "파괴의 씨앗은 발아하는 데 시간이 필요하다."
+  trait_sbs_lesser_demon: "하급 악마"
+  sbs_lesser_demon_desc: "[ROOT.GetCharacter.GetName]은(는) 악마로부터 권력을 받았으며, 파괴와 혼돈의 징후이다."
+  sbs_lesser_demon_character_desc: "파괴와 혼돈을 세계로 가져오는 아바돈의 하인들."
+  trait_track_sbs_lesser_demon: "타락"
+  trait_track_sbs_lesser_demon_desc: "파괴의 씨앗은 발아하는 데 시간이 필요하다."

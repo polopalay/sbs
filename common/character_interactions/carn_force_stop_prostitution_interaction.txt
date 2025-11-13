@@ -9,6 +9,7 @@
 		scope:actor = {
 			is_ruler = yes
 			is_adult = yes
+			faith = { NOT = { has_doctrine_parameter = carn_prostitution_illegal } }
 		}
 		scope:recipient = {
 			is_adult = yes
@@ -42,19 +43,6 @@
 		flag = hook
 		localization = GENERIC_SPEND_A_HOOK
 	}
-	send_option = {
-		is_shown = {
-			NOT = { scope:actor = scope:recipient }
-			scope:recipient.liege = scope:actor
-		}
-		is_valid = {
-			scope:actor = {
-				has_imprisonment_reason = scope:recipient
-			}
-		}
-		flag = forgive
-		localization = forgive_interaction
-	}
 	send_options_exclusive = no
 
 	on_accept = {
@@ -74,13 +62,6 @@
 		scope:actor = {
 			if = {
 				limit = {
-					scope:forgive = yes
-					has_imprisonment_reason = scope:recipient
-				}
-				consume_imprisonment_reasons = scope:recipient
-			}
-			if = {
-				limit = {
 					scope:hook = yes
 					has_hook = scope:recipient
 				}
@@ -94,7 +75,6 @@
 			scope:recipient = scope:actor
 			scope:recipient = { has_trait = slave }
 			scope:hook = yes
-			scope:forgive = yes
 		}
 	}
 	ai_accept = {
@@ -104,7 +84,6 @@
 			who = scope:recipient
 			multiplier = 0.2
 		}
-		modifier = { add = 50 scope:forgive = yes }
 		modifier = { add = 50 scope:recipient = { has_trait = chaste } }
 		modifier = { add = 50 scope:recipient.faith = { has_doctrine_parameter = carn_prostitution_shunned } }
 		modifier = { add = 100 scope:recipient.faith = { has_doctrine_parameter = carn_prostitution_illegal } }

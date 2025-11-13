@@ -10,25 +10,30 @@
 			OR = {
 				has_trait = sbs_succubus
 				has_trait = sbs_lesser_succubus
-				has_trait = sbs_seed_of_demon
+				has_trait = sbs_lesser_demon
 			}
 		}
 	}
 	is_valid = {
 		trigger_if = {
-			scope:actor = { OR = { has_trait = sbs_succubus has_trait = sbs_lesser_succubus } }
-				has_character_modifier = pussy_cum
-				has_character_modifier = ass_cum
-				has_character_modifier = face_cum
-				has_character_modifier = body_cum
+			limit = { scope:actor = { OR = { has_trait = sbs_succubus has_trait = sbs_lesser_succubus } } }
+			scope:recipient = {
+				OR = {
+					has_character_modifier = pussy_cum
+					has_character_modifier = ass_cum
+					has_character_modifier = face_cum
+					has_character_modifier = body_cum
+				}
+			}
 		}
 		trigger_if = {
-			scope:actor = { sbs_seed_of_demon }
-			NOT = { this = scope:recipient }
-			OR = {
-				NOT = { has_character_modifier = sbs_debuff }
-				has_character_modifier = sbs_generals
-				has_character_modifier = sbs_buff
+			limit = { scope:actor = { sbs_lesser_demon NOT = { this = scope:recipient } } }
+			scope:recipient = {
+				OR = {
+					NOT = { has_character_modifier = sbs_debuff }
+					has_character_modifier = sbs_generals
+					has_character_modifier = sbs_buff
+				}
 			}
 		}
 	}
@@ -73,18 +78,18 @@
 				}
 			}
 			else_if = {
-				limit = { has_trait = sbs_seed_of_demon }
+				limit = { has_trait = sbs_lesser_demon }
 				if = {
 					limit = { scope:recipient = { NOT = { has_character_modifier = sbs_debuff } } }
-					add_trait_xp = { trait = sbs_seed_of_demon value = 25 }
+					add_trait_xp = { trait = sbs_lesser_demon value = 25 }
 				}
 				if = {
 					limit = { scope:recipient = { has_character_modifier = sbs_buff } }
-					add_trait_xp = { trait = sbs_seed_of_demon value = 25 }
+					add_trait_xp = { trait = sbs_lesser_demon value = 25 }
 				}
 				if = {
 					limit = { scope:recipient = { has_character_modifier = sbs_generals } }
-					add_trait_xp = { trait = sbs_seed_of_demon value = 50 }
+					add_trait_xp = { trait = sbs_lesser_demon value = 50 }
 				}
 			}
 		}
@@ -106,15 +111,15 @@
 				remove_character_modifier = pussy_cum
 			}
 			if = {
-				limit = { scope:actor = { has_trait = sbs_seed_of_demon } has_character_modifier = sbs_buff }
+				limit = { scope:actor = { has_trait = sbs_lesser_demon } has_character_modifier = sbs_buff }
 				remove_character_modifier = sbs_buff
 			}
 			if = {
-				limit = { scope:actor = { has_trait = sbs_seed_of_demon } has_character_modifier = sbs_buff }
+				limit = { scope:actor = { has_trait = sbs_lesser_demon } has_character_modifier = sbs_generals }
 				remove_character_modifier = sbs_generals
 			}
 			if = {
-				limit = { scope:actor = { has_trait = sbs_seed_of_demon } }
+				limit = { scope:actor = { has_trait = sbs_lesser_demon } }
 				add_character_modifier = { modifier = sbs_debuff years = 1 }
 			}
 		}

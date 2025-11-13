@@ -15,25 +15,20 @@ sbs_loyalty.8000 = {
 		outfit_tags = { military_outfit }
 	}
 	trigger = {
-		is_ruler = yes
 		is_female = yes
 		is_adult = yes
+		is_ruler = yes
 		carn_is_working_as_prostitute_trigger = yes
 		any_knight = {
-			is_adult = yes
-			is_attracted_to_gender_of = root
+			is_female = no
 			has_character_modifier = sbs_buff
 			count = 0
-		}
-		any_knight = {
-			is_adult = yes
-			is_attracted_to_gender_of = root
 		}
 	}
 	immediate = {
 		random_knight = {
 			save_scope_as = sbs_loyalty_random_1
-			limit = { is_adult = yes is_attracted_to_gender_of = root }
+			limit = { is_female = no }
 		}
 	}
 	option = {
@@ -52,7 +47,6 @@ sbs_loyalty.8000 = {
 		ai_chance = { base = 10 }
 		name = sbs_loyalty.8000.c
 		custom_tooltip = sbs_loyalty.8000.c.tt
-		add_opinion = { target = scope:sbs_loyalty_random_1 modifier = carn_wants_to_be_your_slave_opinion }
 		every_held_title = {
 			create_title_and_vassal_change = {
 				type = usurped
@@ -67,8 +61,9 @@ sbs_loyalty.8000 = {
 			resolve_title_and_vassal_change = scope:change
 		}
 		add_character_modifier = sbs_seal
+		add_opinion = { target = scope:sbs_loyalty_random_1 modifier = carn_wants_to_be_your_slave_opinion }
 		scope:sbs_loyalty_random_1 = {
-			add_trait = sbs_seed_of_demon
+			add_trait = sbs_lesser_demon
 			carn_enslave_effect = { SLAVE = root OWNER = this DRAMA = no }
 		}
 	}
@@ -101,25 +96,25 @@ sbs_loyalty.8002 = {
 	title = sbs_loyalty.8002.t
 	desc = sbs_loyalty.8002.a.desc
 	theme = court
+	immediate = {
+		random_knight = {
+			limit = { is_female = no }
+			save_scope_as = succubus_randoman_2
+		}
+	}
 	right_portrait = {
 		character = root
 		animation = personality_greedy
 		outfit_tags = { no_clothes }
 	}
 	left_portrait = {
-		character = scope:succubus_randoman_1
+		character = scope:succubus_randoman_2
 		animation = scheme
-	}
-	immediate = {
-		random_knight = {
-			limit = { is_adult = yes is_female = no }
-			save_scope_as = succubus_randoman_1
-		}
 	}
 	option = {
 		name = sbs_loyalty.8002.a
 		custom_tooltip = sbs_loyalty.8002.a.tt
-		scope:succubus_randoman_1 = { had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:succubus_randoman_2 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
 		add_character_modifier = { modifier = sbs_buff years = 10 }
 		trigger_event = sbs_loyalty.8003
 	}
@@ -131,25 +126,25 @@ sbs_loyalty.8003 = {
 	title = sbs_loyalty.8003.t
 	desc = sbs_loyalty.8003.a.desc
 	theme = court
+	immediate = {
+		random_knight = {
+			limit = { is_female = no }
+			save_scope_as = succubus_randoman_2
+		}
+	}
 	right_portrait = {
 		character = root
 		animation = personality_greedy
 		outfit_tags = { no_clothes }
 	}
 	left_portrait = {
-		character = scope:succubus_randoman_1
+		character = scope:succubus_randoman_2
 		animation = scheme
-	}
-	immediate = {
-		random_knight = {
-			limit = { is_adult = yes is_female = no }
-			save_scope_as = succubus_randoman_1
-		}
 	}
 	option = {
 		name = sbs_loyalty.8003.a
 		custom_tooltip = sbs_loyalty.8003.a.tt
-		scope:succubus_randoman_1 = { had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:succubus_randoman_2 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
 		add_character_modifier = { modifier = sbs_buff years = 10 }
 		trigger_event = sbs_loyalty.8004
 	}
@@ -203,7 +198,7 @@ sbs_loyalty.8005 = {
 				modifier = amused_opinion
 				opinion = 20
 			}
-			had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance }
+			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 			add_character_modifier = { modifier = sbs_buff years = 10 }
 		}
 		trigger_event = sbs_loyalty.8006
@@ -268,15 +263,14 @@ sbs_loyalty.8099 = {
 		is_female = yes
 		carn_is_working_as_prostitute_trigger = yes
 		any_knight = {
-			is_adult = yes
-			is_attracted_to_gender_of = root
+			is_female = no
 			has_character_modifier = sbs_buff
 		}
 	}
 	immediate = {
 		random_knight = {
 			save_scope_as = sbs_loyalty_random_1
-			limit = { is_adult = yes is_attracted_to_gender_of = root has_character_modifier = sbs_buff }
+			limit = { is_female = no has_character_modifier = sbs_buff }
 		}
 	}
 	option = {
@@ -367,7 +361,7 @@ sbs_loyalty.8100 = {
 				value = 25
 			}
 		}
-		scope:sbs_loyalty_random_1 = { had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:sbs_loyalty_random_1 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
 	}
 }
 
@@ -404,7 +398,7 @@ sbs_loyalty.8101 = {
 			}
 			add_character_modifier = { modifier = ass_cum days = 15 }
 		}
-		scope:sbs_loyalty_random_1 = { had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:sbs_loyalty_random_1 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
 	}
 	option = {
 		name = sbs_loyalty.8101.b
@@ -438,7 +432,7 @@ sbs_loyalty.8101 = {
 			}
 			add_character_modifier = { modifier = pussy_cum days = 15 }
 		}
-		scope:sbs_loyalty_random_1 = { had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:sbs_loyalty_random_1 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
 	}
 }
 
@@ -456,7 +450,7 @@ sbs_loyalty.8102 = {
 	option = {
 		name = sbs_loyalty.8102.a
 		custom_tooltip = sbs_loyalty.8102.a.tt
-		scope:sbs_loyalty_random_1 = { had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:sbs_loyalty_random_1 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
 	}
 	option = {
 		name = sbs_loyalty.8102.b
@@ -488,8 +482,8 @@ sbs_loyalty.8200 = {
 	override_background = { reference = army_camp }
 	trigger = {
 		is_adult = yes
-		is_ruler = yes
 		is_female = yes
+		is_ruler = yes
 		OR = {
 			has_trait = sbs_demon
 			has_trait = sbs_succubus
@@ -497,12 +491,7 @@ sbs_loyalty.8200 = {
 		}
 		carn_is_working_as_prostitute_trigger = yes
 		any_knight = {
-			is_adult = yes
-			is_attracted_to_gender_of = root
-		}
-		any_knight = {
-			is_adult = yes
-			is_attracted_to_gender_of = root
+			is_female = no
 			has_character_modifier = sbs_generals
 			count = 0
 		}
@@ -517,10 +506,7 @@ sbs_loyalty.8200 = {
 	}
 	immediate = {
 		random_knight = {
-			limit = {
-				is_adult = yes
-				is_attracted_to_gender_of = root
-			}
+			limit = { is_female = no }
 			save_scope_as = deviant_go_random_1
 		}
 	}

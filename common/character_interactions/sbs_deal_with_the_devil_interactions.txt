@@ -156,7 +156,7 @@
 					}
 				}
 				has_trait_xp = {
-					trait = sbs_seed_of_demon
+					trait = sbs_lesser_demon
 					value >= {
 						value = scope:recipient.succubus_cost_value
 						multiply = 4
@@ -408,15 +408,9 @@
 			NOT = { scope:actor = scope:recipient }
 			scope:actor = {
 				is_adult = yes
-				OR = {
-					NOR = {
-						has_trait = deviant
-						any_secret = { type = secret_deviant }
-					}
-					NOR = {
-						has_trait = witch
-						any_secret = { type = secret_witch }
-					}
+				NOR = {
+					has_trait = deviant
+					any_secret = { type = secret_deviant }
 				}
 			}
 		}
@@ -433,245 +427,16 @@
 	send_options_exclusive = no
 
 	on_accept = {
+		deal_with_the_devil_healing = {
+			DEALER = scope:actor
+			DEVIL = scope:recipient
+			STRESS = scope:stress
+			HEALING = scope:healing
+			DNA = scope:dna
+			HONOR = scope:honor
+			AI = scope:recipient
+		}
 		scope:actor = {
-			if = {
-				limit = { OR = { scope:stress = yes scope:actor = { is_ai = yes } } }
-				remove_trait = drunkard
-				remove_trait = hashishiyah
-				remove_trait = rakish
-				remove_trait = reclusive
-				remove_trait = irritable
-				remove_trait = flagellant
-				remove_trait = profligate
-				remove_trait = improvident
-				remove_trait = contrite
-				remove_trait = comfort_eater
-				remove_trait = inappetetic
-				stress_impact = { base = massive_stress_impact_loss }
-			}
-
-			if = {
-				limit = { OR = { scope:healing = yes scope:actor = { is_ai = yes } } }
-				remove_trait = depressed_1
-				remove_trait = depressed_genetic
-				remove_trait = lunatic_1
-				remove_trait = lunatic_genetic
-				remove_trait = possessed_1
-				remove_trait = possessed_genetic
-				remove_trait = one_eyed
-				remove_trait = scarred
-				remove_trait = maimed
-				remove_trait = one_legged
-				remove_trait = disfigured
-				remove_trait = eunuch_1
-				remove_trait = beardless_eunuch
-				remove_trait = blind
-				remove_trait = sickly
-				remove_trait = infirm
-				remove_trait = incapable
-				remove_trait = leper
-				remove_trait = wounded_1
-				remove_trait = wounded_2
-				remove_trait = wounded_3
-				recover_from_disease_effect = { DISEASE = ill }
-				recover_from_disease_effect = { DISEASE = pneumonic }
-				recover_from_disease_effect = { DISEASE = gout_ridden }
-				recover_from_disease_effect = { DISEASE = typhus }
-				recover_from_disease_effect = { DISEASE = consumption }
-				recover_from_disease_effect = { DISEASE = measles }
-				recover_from_disease_effect = { DISEASE = cancer }
-				recover_from_disease_effect = { DISEASE = great_pox }
-				recover_from_disease_effect = { DISEASE = smallpox }
-				recover_from_disease_effect = { DISEASE = bubonic_plague }
-				recover_from_disease_effect = { DISEASE = lovers_pox }
-				recover_from_disease_effect = { DISEASE = early_great_pox }
-				recover_from_disease_effect = { DISEASE = bubonic_plague }
-				recover_from_disease_effect = { DISEASE = dysentery }
-				recover_from_disease_effect = { DISEASE = ergotism }
-
-				if = {
-					limit = {
-						OR = {
-							current_weight >= 25
-							current_weight <= -25
-						}
-					}
-					change_current_weight = -200
-					change_current_weight = 100
-				}
-			}
-
-			if = {
-				limit = { OR = { scope:dna = yes scope:actor = { is_ai = yes } } }
-				remove_trait = albino
-				remove_trait = lisping
-				remove_trait = stuttering
-				remove_trait = giant
-				remove_trait = scaly
-				remove_trait = clubfooted
-				remove_trait = dwarf
-				remove_trait = hunchbacked
-				remove_trait = infertile
-				remove_trait = wheezing
-				remove_trait = spindly
-				remove_trait = bleeder
-				remove_trait = weak
-				remove_trait = dull
-				if = {
-					limit = { OR = { has_trait = beauty_bad_1 has_trait = beauty_bad_2 has_trait = beauty_bad_3 } }
-					remove_trait = beauty_bad_1
-					remove_trait = beauty_bad_2
-					remove_trait = beauty_bad_3
-					hidden_effect = {
-							add_trait = beauty_good_1
-							remove_trait = beauty_good_1
-					}
-				}
-				remove_trait = intellect_bad_1
-				remove_trait = intellect_bad_2
-				remove_trait = intellect_bad_3
-				remove_trait = physique_bad_1
-				remove_trait = physique_bad_2
-				remove_trait = physique_bad_3
-				remove_trait = inbred
-			}
-
-			if = {
-				limit = { OR = { scope:honor = yes scope:actor = { is_ai = yes } } }
-				if = {
-					limit = {
-						has_trait = witch
-						trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = witch }
-					}
-					remove_trait = witch
-					if = {
-						limit = { NOT = { any_secret = { type = secret_witch } } }
-						add_secret = { type = secret_witch }
-						random_secret = {
-							type = secret_witch
-							reveal_to = scope:recipient
-						}
-					}
-				}
-				if = {
-					limit = {
-						has_trait = deviant
-						trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = deviant }
-					}
-					remove_trait = deviant
-					if = {
-						limit = { NOT = { any_secret = { type = secret_deviant } } }
-						add_secret = { type = secret_deviant }
-						random_secret = {
-							type = secret_deviant
-							reveal_to = scope:recipient
-						}
-					}
-				}
-				if = {
-					limit = {
-						has_trait = cannibal
-						trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = cannibal }
-					}
-					remove_trait = cannibal
-					if = {
-						limit = { NOT = { any_secret = { type = secret_cannibal } } }
-						add_secret = { type = secret_cannibal }
-						random_secret = {
-							type = secret_cannibal
-							reveal_to = scope:recipient
-						}
-					}
-				}
-				if = {
-					limit = {
-						has_trait = sodomite
-						trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = sodomite }
-					}
-					remove_trait = sodomite
-					if = {
-						limit = { NOT = { any_secret = { type = secret_homosexual } } }
-						add_secret = { type = secret_homosexual }
-						random_secret = {
-							type = secret_homosexual
-							reveal_to = scope:recipient
-						}
-					}
-				}
-				if = {
-					limit = {
-						has_trait = incestuous
-						trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = incestuous }
-					}
-					remove_trait = incestuous
-					if = {
-						limit = { NOT = { any_secret = { type = secret_incest } } }
-						add_secret = { type = secret_incest }
-						random_secret = {
-							type = secret_incest
-							reveal_to = scope:recipient
-						}
-					}
-				}
-				if = {
-					limit = {
-						has_trait = adulterer
-						trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = adulterer }
-					}
-					remove_trait = adulterer
-				}
-				if = {
-					limit = {
-						has_trait = fornicator
-						trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = fornicator }
-					}
-					remove_trait = fornicator
-				}
-				if = {
-					limit = {
-						has_trait = kinslayer_1
-						trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = kinslayer_1 }
-					}
-					remove_trait = kinslayer_1
-				}
-				if = {
-					limit = {
-						has_trait = kinslayer_2
-						trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = kinslayer_2 }
-					}
-					remove_trait = kinslayer_2
-				}
-				if = {
-					limit = {
-						has_trait = kinslayer_3
-						trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = kinslayer_3 }
-					}
-					remove_trait = kinslayer_3
-				}
-				if = {
-					limit = {
-						has_trait = murderer
-						trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = murderer }
-					}
-					remove_trait = murderer
-				}
-				if = {
-					limit = {
-						has_trait = lifestyle_prostitute
-						trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = lifestyle_prostitute }
-					}
-					remove_trait = lifestyle_prostitute
-					if = {
-						limit = { NOT = { any_secret = { type = secret_prostitute } } }
-						add_secret = { type = secret_prostitute }
-						random_secret = {
-							type = secret_prostitute
-							reveal_to = scope:recipient
-						}
-					}
-				}
-			}
-
 			if = {
 				limit = {
 					scope:hook = yes
@@ -703,34 +468,6 @@
 					}
 					else = {
 						add_trait = deviant
-					}
-				}
-				if = {
-					limit = { NOR = { has_trait = witch any_secret = { type = secret_witch } } }
-					if = {
-						limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = witch } }
-						add_secret = { type = secret_witch }
-						random_secret = {
-							type = secret_witch
-							reveal_to = scope:recipient
-						}
-					}
-					else = {
-						add_trait = witch
-					}
-				}
-				if = {
-					limit = { NOR = { has_trait = lifestyle_prostitute any_secret = { type = secret_prostitute } } }
-					if = {
-						limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = lifestyle_prostitute } }
-						add_secret = { type = secret_prostitute }
-						random_secret = {
-							type = secret_prostitute
-							reveal_to = scope:recipient
-						}
-					}
-					else = {
-						add_trait = lifestyle_prostitute
 					}
 				}
 			}
@@ -766,9 +503,9 @@
 				}
 			}
 			if = {
-				limit = { has_trait = sbs_seed_of_demon }
+				limit = { has_trait = sbs_lesser_demon }
 				add_trait_xp = {
-					trait = sbs_seed_of_demon
+					trait = sbs_lesser_demon
 					value = {
 						value = 0
 						subtract = scope:recipient.succubus_cost_value
@@ -787,7 +524,7 @@
 	}
 
 	ai_accept = {
-		base = 0
+		base = -25
 		opinion_modifier = {
 			opinion_target = scope:actor
 			who = scope:recipient
@@ -802,19 +539,19 @@
 				multiply = 10
 			}
 		}
-		modifier = { add = 30 scope:hook = yes }
-		modifier = { add = 10 scope:favor = yes scope:actor = {  primary_title.tier >= tier_county } }
-		modifier = { add = 25 scope:gold = yes }
+		modifier = { add = 5 scope:expose_secret = yes }
+		modifier = { add = 10 scope:small_price = yes }
+		modifier = { add = 10 scope:favor = yes }
+		modifier = { add = 10 scope:hook = yes }
+		modifier = { add = 20 scope:gold = yes }
 		modifier = { add = 5 scope:demand_conversion = yes scope:actor = { primary_title.tier = tier_county } }
 		modifier = { add = 10 scope:demand_conversion = yes scope:actor = { primary_title.tier = tier_duchy } }
 		modifier = { add = 25 scope:demand_conversion = yes scope:actor = { primary_title.tier = tier_kingdom } }
 		modifier = { add = 50 scope:demand_conversion = yes scope:actor = { primary_title.tier = tier_empire } }
 		modifier = { add = 80 scope:demand_conversion = yes scope:recipient = { primary_title.tier = tier_hegemony } }
-		modifier = { add = 30 scope:small_price = yes scope:actor = {  primary_title.tier >= tier_county } }
-		modifier = { add = 25 scope:expose_secret = yes scope:actor = {  primary_title.tier >= tier_county } }
-		modifier = { add = -50 scope:actor = {  primary_title.tier < tier_county is_ai = yes } }
-		modifier = { add = -25 scope:actor = {  primary_title.tier = tier_county is_ai = yes } }
-		modifier = { add = -10 scope:actor = {  primary_title.tier = tier_duchy is_ai = yes } }
+		modifier = { add = -50 scope:actor = {  primary_title.tier < tier_county } }
+		modifier = { add = -25 scope:actor = {  primary_title.tier = tier_county } }
+		modifier = { add = -10 scope:actor = {  primary_title.tier = tier_duchy } }
 	}
 
 	ai_potential = { always = yes }
@@ -830,8 +567,14 @@
 	}
 
 	ai_will_do = {
-		base = 1
-		modifier = { add = 25 scope:recipient = { is_courtier_of = scope:actor } }
+		base = 0
+		modifier = {
+			add = -10
+			scope:actor = {
+				has_trait = witch
+				trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = witch }
+			}
+		}
 		modifier = { add = 1 scope:actor = { stress_level = 1 } }
 		modifier = { add = 2 scope:actor = { stress_level = 2 } }
 		modifier = { add = 3 scope:actor = { stress_level = 3 } }

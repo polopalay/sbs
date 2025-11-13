@@ -25,8 +25,8 @@ lesser_sbs_succubus_character_desc: "ほとんどの人がそれを見、誰も�
 trait_track_sbs_lesser_succubus: "力"
 trait_track_sbs_lesser_succubus_desc: "彼女は安っぽい娼婦として、男たちの精液を得るために仕えている。"
 
-trait_sbs_seed_of_demon: "悪魔の種"
-sbs_seed_of_demon_desc: "[ROOT.GetCharacter.GetName]は悪魔から力を与えられ、破壊と混沌の象徴である。"
-sbs_seed_of_demon_character_desc: "世界に破壊と混沌をもたらす、暴力のしもべたち。"
-trait_track_sbs_seed_of_demon: "腐敗"
-trait_track_sbs_seed_of_demon_desc: "破壊の種が発芽するには時間が必要だ。"
+trait_sbs_lesser_demon: "下級悪魔"
+sbs_lesser_demon_desc: "[ROOT.GetCharacter.GetName]は悪魔から力を与えられ、破壊と混沌の象徴である。"
+sbs_lesser_demon_character_desc: "世界に破壊と混沌をもたらす、暴力のしもべたち。"
+trait_track_sbs_lesser_demon: "腐敗"
+trait_track_sbs_lesser_demon_desc: "破壊の種が発芽するには時間が必要だ。"

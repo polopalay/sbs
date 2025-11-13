@@ -25,8 +25,8 @@
   trait_track_sbs_lesser_succubus: "Сила"
   trait_track_sbs_lesser_succubus_desc: "Она служит дешевой проституткой, обслуживая мужчин для получения их семени."
 
-  trait_sbs_seed_of_demon: "Семя Демона"
-  sbs_seed_of_demon_desc: "[ROOT.GetCharacter.GetName] дано дьяволом, это знак разрушения и хаоса."
-  sbs_seed_of_demon_character_desc: "Слуги Абаддона, которые приносят разрушение и хаос в мир."
-  trait_track_sbs_seed_of_demon: "Коррупция"
-  trait_track_sbs_seed_of_demon_desc: "Семена разрушения нуждаются во времени для прорастания."
+  trait_sbs_lesser_demon: "Низший Демон"
+  sbs_lesser_demon_desc: "[ROOT.GetCharacter.GetName] дано дьяволом, это знак разрушения и хаоса."
+  sbs_lesser_demon_character_desc: "Слуги Абаддона, которые приносят разрушение и хаос в мир."
+  trait_track_sbs_lesser_demon: "Коррупция"
+  trait_track_sbs_lesser_demon_desc: "Семена разрушения нуждаются во времени для прорастания."

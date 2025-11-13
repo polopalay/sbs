@@ -25,8 +25,8 @@
  trait_track_sbs_lesser_succubus: "Power"
  trait_track_sbs_lesser_succubus_desc: "She serves as a cheap prostitute, serving men in order to obtain their semen"
 
- trait_sbs_seed_of_demon: "Seed of Demon"
- sbs_seed_of_demon_desc: "[ROOT.GetCharacter.GetName] is given power by the devil, is a sign of destruction and chaos."
- sbs_seed_of_demon_character_desc: "The servants of violence, who bring destruction and chaos to the world."
- trait_track_sbs_seed_of_demon: "Corruption"
- trait_track_sbs_seed_of_demon_desc: "The seeds of destruction need time to germinate."
+ trait_sbs_lesser_demon: "Lesser Demon"
+ sbs_lesser_demon_desc: "[ROOT.GetCharacter.GetName] is given power by the devil, is a sign of destruction and chaos."
+ sbs_lesser_demon_character_desc: "The servants of violence, who bring destruction and chaos to the world."
+ trait_track_sbs_lesser_demon: "Corruption"
+ trait_track_sbs_lesser_demon_desc: "The seeds of destruction need time to germinate."

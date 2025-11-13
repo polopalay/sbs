@@ -62,19 +62,6 @@
 		flag = hook
 		localization = GENERIC_SPEND_A_HOOK
 	}
-	send_option = {
-		is_shown = {
-			NOT = { scope:actor = scope:recipient }
-			scope:recipient.liege = scope:actor
-		}
-		is_valid = {
-			scope:actor = {
-				has_imprisonment_reason = scope:recipient
-			}
-		}
-		flag = forgive
-		localization = forgive_interaction
-	}
 	send_options_exclusive = no
 
 	on_accept = {
@@ -131,10 +118,6 @@
 				}
 				use_hook = scope:recipient
 			}
-			if = {
-				limit = { scope:forgive = yes has_imprisonment_reason = scope:recipient }
-				consume_imprisonment_reasons = scope:recipient
-			}
 		}
 	}
 
@@ -143,7 +126,6 @@
 			scope:recipient = scope:actor
 			scope:recipient = { has_trait = slave }
 			scope:hook = yes
-			scope:forgive = yes
 		}
 	}
 

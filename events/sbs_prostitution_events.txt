@@ -36,7 +36,7 @@ sbs_prostitution.0099 = {
 		}
 		is_imprisoned = no
 	}
-	theme = scheme
+	theme = seduction
 	override_background = { reference = alley_night }
 	right_portrait = {
 		character = root
@@ -206,14 +206,11 @@ sbs_prostitution.9000 = {
 	trigger = {
 		is_adult = yes
 		is_female = yes
-		OR = {
-			has_trait = lifestyle_prostitute
-			any_secret = { type = secret_prostitute }
-		}
+		carn_is_working_as_prostitute_trigger = yes
 	}
 	immediate = {
 		random_living_character = {
-			limit = { in_diplomatic_range = root is_adult = yes is_female = no age < 20 }
+			limit = { in_diplomatic_range = root is_adult = yes is_female = no is_lowborn = no age <= 18 }
 			save_scope_as = random_noble
 		}
 	}
@@ -327,8 +324,7 @@ sbs_prostitution.9010 = {
 	trigger = {
 		is_adult = yes
 		is_female = yes
-		has_trait = lifestyle_prostitute
-		any_secret = { type = secret_prostitute }
+		carn_is_working_as_prostitute_trigger = yes
 	}
 	immediate = {
 		random_living_character = {
@@ -392,7 +388,7 @@ sbs_prostitution.9011 = {
 		name = sbs_prostitution.9011.a
 		custom_tooltip = sbs_prostitution.9011.a.tt
 		scope:random_noble = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
-		scope:random_noble = { had_sex_with_effect = { CHARACTER = scope:random_noble.primary_spouse PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:random_noble = { prostitute_effect = { PROSTITUTE = scope:random_noble.primary_spouse PREGNANCY_CHANCE = pregnancy_chance } }
 	}
 }
 #9012 33% chance, timid wife
@@ -822,8 +818,7 @@ sbs_prostitution.9030 = {
 	trigger = {
 		is_adult = yes
 		is_female = yes
-		has_trait = lifestyle_prostitute
-		any_secret = { type = secret_prostitute }
+		carn_is_working_as_prostitute_trigger = yes
 	}
 	theme = seduction
 	immediate = {
@@ -1100,8 +1095,8 @@ sbs_prostitution.9040 = {
 	trigger = {
 		is_adult = yes
 		is_female = yes
-		has_trait = lifestyle_prostitute
-		any_secret = { type = secret_prostitute }
+		is_lowborn = no
+		carn_is_working_as_prostitute_trigger = yes
 	}
 	theme = seduction
 	immediate = {
@@ -1139,7 +1134,6 @@ sbs_prostitution.9040 = {
 	option = {
 		name = sbs_prostitution.9040.b
 		custom_tooltip = sbs_prostitution.9040.b.tt
-		scope:random_noble = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
 	}
 }
 
@@ -1325,8 +1319,7 @@ sbs_prostitution.9200 = {
 	trigger = {
 		is_adult = yes
 		is_female = yes
-		has_trait = lifestyle_prostitute
-		any_secret = { type = secret_prostitute }
+		carn_is_working_as_prostitute_trigger = yes
 	}
 	theme = realm
 	right_portrait = {
@@ -1698,8 +1691,7 @@ sbs_prostitution.9220 = {
 	trigger = {
 		is_adult = yes
 		is_female = yes
-		has_trait = lifestyle_prostitute
-		any_secret = { type = secret_prostitute }
+		carn_is_working_as_prostitute_trigger = yes
 	}
 	theme = host_dinner
 	right_portrait = {
@@ -1810,8 +1802,7 @@ sbs_prostitution.9230 = {
 	trigger = {
 		is_adult = yes
 		is_female = yes
-		has_trait = lifestyle_prostitute
-		any_secret = { type = secret_prostitute }
+		carn_is_working_as_prostitute_trigger = yes
 	}
 	theme = tournament_locale_tavern
 	immediate = {
@@ -1967,6 +1958,7 @@ sbs_prostitution.9260 = {
 	trigger = {
 		is_adult = yes
 		is_female = yes
+		carn_is_working_as_prostitute_trigger = yes
 	}
 	immediate = {
 		random_living_character = {
