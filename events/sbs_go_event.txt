@@ -747,8 +747,23 @@ sbs_go.6050 = {
 		custom_tooltip = sbs_go.6050.a.tt	
 		add_character_modifier = { modifier = licentious_05_modifier months = 1 }
 		if = {
-			limit = { NOT = { has_trait_with_flag = sbs_demon_trait } }
+			limit = { NOT = { has_trait_with_flag = sbs_demon_trait } is_ruler = yes is_lowborn = no has_character_modifier = sbs_buff }
 			add_trait = sbs_lesser_succubus
+			if = {
+				limit = { has_trait = saint }
+				remove_trait = saint
+				give_nickname = nick_the_betrayer
+			}
+			if = {
+				limit = { has_trait = chaste }
+				remove_trait = chaste
+				add_trait = lustful
+			}
+			if = {
+				limit = { has_trait = immortal }
+				remove_trait = immortal
+				add_trait_xp = { trait = sbs_lesser_succubus value = 100 }
+			}
 		}
 		else = {
 			add_character_modifier = sbs_buff

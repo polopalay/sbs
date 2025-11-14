@@ -14,11 +14,7 @@ sbs_repent_event.0800 = {
 	#punish pussy
 	option = {
 		trigger = {
-			OR = {
-				has_trait = lustful
-				has_trait = deviant
-				any_secret = { type = secret_deviant }
-			}
+			has_trait = lustful
 		}
 		ai_chance = { base = 80 }
 		name = sbs_repent_event.0800.a
@@ -29,10 +25,7 @@ sbs_repent_event.0800 = {
 	option = {
 		ai_chance = { base = 80 }
 		trigger = {
-			OR = {
-				has_trait = deviant
-				any_secret = { type = secret_deviant }
-			}
+			should_be_naked_trigger = yes
 		}
 		name = sbs_repent_event.0800.b
 		custom_tooltip = sbs_repent_event.0800.b.tt
