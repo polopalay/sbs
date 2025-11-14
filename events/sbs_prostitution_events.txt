@@ -169,7 +169,7 @@ sbs_prostitution.0103 = {
 			add_secret = { type = secret_prostitute }
 		}
 		else = {
-			add_trait = lifestyle_prostitute
+			add_trait_force_tooltip = lifestyle_prostitute
 		}
 		if = {
 			limit = { OR = { has_trait_xp = { trait = lifestyle_prostitute value < 50 } NOT = { has_trait = lifestyle_prostitute } } }

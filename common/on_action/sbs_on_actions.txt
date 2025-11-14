@@ -117,3 +117,35 @@ sbs_prostitutute_on_action = {
 		50 = sbs_prostitution.9260 # harsh anal dp gangbang
 	}
 }
+
+on_travel_plan_movement = {
+	trigger = {
+		is_adult = yes
+		is_female = yes
+		is_ruler = yes
+		is_landed = yes
+	}
+	on_actions = {
+		delay = { days = { 2 4 } }
+		sbs_travel_events
+	}
+}
+
+sbs_travel_events = {
+	random_events = {
+		chance_to_happen = 5
+		100 = sbs_travel.0100 # spot a bound woman having a witch trial
+		100 = sbs_travel.0101 # bound person is blocking your path
+		100 = sbs_travel.0102
+		100 = sbs_travel.0103
+		100 = sbs_travel.0104
+		100 = sbs_travel.0105
+		100 = sbs_travel.0106
+		100 = sbs_travel.0107
+		100 = sbs_travel.0108
+		100 = sbs_travel.0110 # bandit attack if female
+		100 = sbs_travel.0200 # spot woman fucking a dog
+		10 = sbs_travel.1000 # lustful female only perverted inn
+		10 = sbs_travel.2000 # lustful female only perverted inn
+	}
+}

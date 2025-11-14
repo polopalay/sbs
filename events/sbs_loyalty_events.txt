@@ -64,7 +64,7 @@ sbs_loyalty.8000 = {
 		add_character_modifier = sbs_seal
 		add_opinion = { target = scope:sbs_loyalty_random_1 modifier = carn_wants_to_be_your_slave_opinion }
 		scope:sbs_loyalty_random_1 = {
-			add_trait = sbs_lesser_demon
+			add_trait_force_tooltip = sbs_lesser_demon
 			carn_enslave_effect = { SLAVE = root OWNER = this DRAMA = no }
 		}
 	}
@@ -504,13 +504,13 @@ sbs_loyalty.8200 = {
 		animation = chaplain
 	}
 	left_portrait = {
-		character = scope:deviant_go_random_1
+		character = scope:sbs_random_1
 		animation = scheme
 	}
 	immediate = {
 		random_knight = {
 			limit = { is_female = no is_incapable = no }
-			save_scope_as = deviant_go_random_1
+			save_scope_as = sbs_random_1
 		}
 	}
 	# fine
@@ -525,7 +525,7 @@ sbs_loyalty.8200 = {
 	option = {
 		name = sbs_loyalty.8200.b
 		custom_tooltip = sbs_loyalty.8200.b.tt
-		scope:deviant_go_random_1 = {
+		scope:sbs_random_1 = {
 			add_opinion = {
 				target = root
 				modifier = disappointed_opinion
@@ -558,7 +558,7 @@ sbs_loyalty.8201 = {
 		outfit_tags = { no_clothes }
 	}
 	left_portrait = {
-		character = scope:deviant_go_random_1
+		character = scope:sbs_random_1
 		animation = aggressive_sword
 	}
 	# constraint
@@ -614,7 +614,7 @@ sbs_loyalty.8202 = {
 		outfit_tags = { no_clothes }
 	}
 	left_portrait = {
-		character = scope:deviant_go_random_1
+		character = scope:sbs_random_1
 		animation = map_ecstasy
 	}
 	# proceed
@@ -685,7 +685,7 @@ sbs_loyalty.8203 = {
 		outfit_tags = { no_clothes }
 	}
 	left_portrait = {
-		character = scope:deviant_go_random_1
+		character = scope:sbs_random_1
 		animation = aggressive_sword
 	}
 	# proceed
@@ -709,7 +709,7 @@ sbs_loyalty.8204 = {
 		outfit_tags = { no_clothes }
 	}
 	left_portrait = {
-		character = scope:deviant_go_random_1
+		character = scope:sbs_random_1
 		animation = map_ecstasy
 	}
 	#
@@ -744,7 +744,7 @@ sbs_loyalty.8205 = {
 		outfit_tags = { no_clothes }
 	}
 	left_portrait = {
-		character = scope:deviant_go_random_1
+		character = scope:sbs_random_1
 		animation = map_disgust
 	}
 	#
@@ -773,7 +773,7 @@ sbs_loyalty.8206 = {
 		outfit_tags = { no_clothes }
 	}
 	left_portrait = {
-		character = scope:deviant_go_random_1
+		character = scope:sbs_random_1
 		animation = map_disgust
 	}
 	#
@@ -795,7 +795,7 @@ sbs_loyalty.8207 = {
 		outfit_tags = { no_clothes }
 	}
 	left_portrait = {
-		character = scope:deviant_go_random_1
+		character = scope:sbs_random_1
 		animation = map_disgust
 	}
 
@@ -826,14 +826,14 @@ sbs_loyalty.8208 = {
 		outfit_tags = { no_clothes }
 	}
 	left_portrait = {
-		character = scope:deviant_go_random_1
+		character = scope:sbs_random_1
 		animation = map_disgust
 	}
 	#
 	option = {
 		name = sbs_loyalty.8208.a
 		custom_tooltip = sbs_loyalty.8208.a.tt
-		scope:deviant_go_random_1 = {
+		scope:sbs_random_1 = {
 			add_character_modifier = sbs_generals
 		}
 		hidden_effect = {
@@ -857,7 +857,7 @@ sbs_loyalty.8209 = {
 		outfit_tags = { no_clothes }
 	}
 	left_portrait = {
-		character = scope:deviant_go_random_1
+		character = scope:sbs_random_1
 		animation = map_disgust
 	}
 	#

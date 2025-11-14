@@ -30,31 +30,34 @@ sbs_blackmail.1000 = {
 				NOT = { is_close_family_of = root }
 			}
 			weight = { base = 1 modifier = { add = prowess } }
-			save_scope_as = deviant_go_random_1
+			save_scope_as = sbs_random_1
 		}
 	}
     # deliver the gold yourself and fuck
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.1000.a
 		custom_tooltip = sbs_blackmail.1000.a.tt
 		trigger_event = sbs_blackmail.1001
 	}	
 	# just pay the gold
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.1000.b
 		custom_tooltip = sbs_blackmail.1000.b.tt
 		pay_short_term_gold = {
-			target = scope:deviant_go_random_1
+			target = scope:sbs_random_1
 			gold = minor_gold_value
 		}
 	}		
 	# ignore, get rumors spread... 
 	option = {
+		ai_chance = { base = 2 }
 		name = sbs_blackmail.1000.c
 		custom_tooltip = sbs_blackmail.1000.c.tt
 		random_secret = {
 			type = secret_deviant
-			expose_secret = scope:deviant_go_random_1
+			expose_secret = scope:sbs_random_1
 		}
 	}				
 }
@@ -71,26 +74,29 @@ sbs_blackmail.1001 = {
 	}
     # obey
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.1001.a
 		custom_tooltip = sbs_blackmail.1001.a.tt
 		trigger_event = sbs_blackmail.1002
 	}	
 	# just pay the gold instead and leave
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.1001.b
 		custom_tooltip = sbs_blackmail.1001.b.tt
 		pay_short_term_gold = {
-			target = scope:deviant_go_random_1
+			target = scope:sbs_random_1
 			gold = major_gold_value
 		}
 	}		
 	# going too far, leave, get rumors spread... 
 	option = {
+		ai_chance = { base = 2 }
 		name = sbs_blackmail.1001.c
 		custom_tooltip = sbs_blackmail.1001.c.tt
 		random_secret = {
 			type = secret_deviant
-			expose_secret = scope:deviant_go_random_1
+			expose_secret = scope:sbs_random_1
 		}
 	}				
 }
@@ -112,6 +118,7 @@ sbs_blackmail.1002 = {
 	}
     # be fucked
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.1002.a
 		custom_tooltip = sbs_blackmail.1002.a.tt
 		trigger_event = sbs_blackmail.1003
@@ -120,7 +127,7 @@ sbs_blackmail.1002 = {
             sadistic = miniscule_stress_impact_gain
             lustful = medium_stress_impact_loss
         }
-		scope:deviant_go_random_1 = {
+		scope:sbs_random_1 = {
 			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }	
 		}
 	}					
@@ -142,11 +149,12 @@ sbs_blackmail.1003 = {
 		outfit_tags = { no_clothes }
 	}
 	left_portrait = {
-		character = scope:deviant_go_random_1
+		character = scope:sbs_random_1
 		animation = personality_dishonorable 
 	}
     # accept
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.1003.a
 		custom_tooltip = sbs_blackmail.1003.a.tt
         stress_impact = {
@@ -156,11 +164,12 @@ sbs_blackmail.1003 = {
         }
 		set_relation_lover = { 
 			reason = lover_shared_deviancy
-			target = scope:deviant_go_random_1 
+			target = scope:sbs_random_1 
 		}
 	}	
 	#refuse	
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.1003.b
 		custom_tooltip = sbs_blackmail.1003.b.tt
         stress_impact = {
@@ -169,13 +178,14 @@ sbs_blackmail.1003 = {
             lustful = major_stress_impact_loss
         }
 		had_sex_with_effect = {
-			PROSTITUTE = scope:deviant_go_random_1
+			PROSTITUTE = scope:sbs_random_1
 			PREGNANCY_CHANCE = pregnancy_chance
 		}
 		trigger_event = sbs_blackmail.1110
 	}		
 	#beg him to accept gold instead
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.1003.c
 		custom_tooltip = sbs_blackmail.1003.c.tt
         stress_impact = {
@@ -184,7 +194,7 @@ sbs_blackmail.1003 = {
             lustful = medium_stress_impact_loss
         }
 		pay_short_term_gold = {
-			target = scope:deviant_go_random_1
+			target = scope:sbs_random_1
 			gold = major_gold_value
 		}
 	}
@@ -201,7 +211,7 @@ sbs_blackmail.1100 = {
 		animation = disapproval
 	}
 	left_portrait = {
-		character = scope:deviant_go_random_1
+		character = scope:sbs_random_1
 		animation = scheme
 	}
 	trigger = {
@@ -225,12 +235,12 @@ sbs_blackmail.1100 = {
 				NOT = { is_close_family_of = root }
 				has_relation_lover = root
 			}
-			save_scope_as = deviant_go_random_1
+			save_scope_as = sbs_random_1
 		}
 	}
 	# kneel before him for a discount
 	option = {
-		ai_chance = { base = 100 }
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.1100.a
 		custom_tooltip = sbs_blackmail.1100.a.tt
 		stress_impact = {
@@ -239,11 +249,11 @@ sbs_blackmail.1100 = {
 			sadistic = minor_stress_impact_gain
 		}
 		pay_short_term_gold = {
-			target = scope:deviant_go_random_1
+			target = scope:sbs_random_1
 			gold = minor_gold_value
 		}
 		reverse_add_opinion = {
-			target = scope:deviant_go_random_1
+			target = scope:sbs_random_1
 			modifier = dismissive_opinion
 			opinion = -10
 		}
@@ -262,21 +272,23 @@ sbs_blackmail.1100 = {
 	}
 	# just pay the gold
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.1100.b
 		custom_tooltip = sbs_blackmail.1100.b.tt
 		pay_short_term_gold = {
-			target = scope:deviant_go_random_1
+			target = scope:sbs_random_1
 			gold = medium_gold_value
 		}
 		trigger_event = sbs_blackmail.1120
 	}
 	# ignore, get rumors spread...
 	option = {
+		ai_chance = { base = 2 }
 		name = sbs_blackmail.1100.c
 		custom_tooltip = sbs_blackmail.1100.c.tt
 		random_secret = {
 			type = secret_deviant
-			expose_secret = scope:deviant_go_random_1
+			expose_secret = scope:sbs_random_1
 		}
 	}
 }
@@ -293,11 +305,12 @@ sbs_blackmail.1110 = {
 		outfit_tags = { no_clothes }
 	}
 	left_portrait = {
-		character = scope:deviant_go_random_1
+		character = scope:sbs_random_1
 		animation = scheme
 	}
 	#Go deal with the mess
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.1110.a
 		custom_tooltip = sbs_blackmail.1110.a.tt
 	}
@@ -315,15 +328,16 @@ sbs_blackmail.1120 = {
 		outfit_tags = { no_clothes }
 	}
 	left_portrait = {
-		character = scope:deviant_go_random_1
+		character = scope:sbs_random_1
 		animation = scheme
 	}
 	#endure
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.1120.a
 		custom_tooltip = sbs_blackmail.1120.a.tt
 		reverse_add_opinion = {
-			target = scope:deviant_go_random_1
+			target = scope:sbs_random_1
 			modifier = dismissive_opinion
 			opinion = -10
 		}
@@ -341,7 +355,7 @@ sbs_blackmail.1200 = {
 		animation = disapproval
 	}
 	left_portrait = {
-		character = scope:deviant_go_random_1
+		character = scope:sbs_random_1
 		animation = scheme
 	}
 	trigger = {
@@ -365,12 +379,12 @@ sbs_blackmail.1200 = {
 				NOT = { is_close_family_of = root }
 				has_relation_lover = root
 			}
-			save_scope_as = deviant_go_random_1
+			save_scope_as = sbs_random_1
 		}
 	}
 	# let him keep groping you for a discount, some notice odd behavior even as he tries to avoid it
 	option = {
-		ai_chance = { base = 100 }
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.1200.a
 		custom_tooltip = sbs_blackmail.1200.a.tt
 		stress_impact = {
@@ -379,16 +393,16 @@ sbs_blackmail.1200 = {
 			sadistic = minor_stress_impact_gain
 		}
 		pay_short_term_gold = {
-			target = scope:deviant_go_random_1
+			target = scope:sbs_random_1
 			gold = medium_gold_value
 		}
 		add_piety = minor_piety_loss
 		reverse_add_opinion = {
-			target = scope:deviant_go_random_1
+			target = scope:sbs_random_1
 			modifier = dismissive_opinion
 			opinion = -10
 		}
-		scope:deviant_go_random_1 = {
+		scope:sbs_random_1 = {
 			stress_impact = {
 				base = minor_stress_impact_loss
 				lustful = minor_stress_impact_loss
@@ -410,24 +424,27 @@ sbs_blackmail.1200 = {
 	}
 	# just pay the gold
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.1200.b
 		custom_tooltip = sbs_blackmail.1200.b.tt
 		pay_short_term_gold = {
-			target = scope:deviant_go_random_1
+			target = scope:sbs_random_1
 			gold = major_gold_value
 		}
 	}
 	# Command him to stop, get rumors spread...
 	option = {
+		ai_chance = { base = 2 }
 		name = sbs_blackmail.1200.c
 		custom_tooltip = sbs_blackmail.1200.c.tt
 		random_secret = {
 			type = secret_deviant
-			expose_secret = scope:deviant_go_random_1
+			expose_secret = scope:sbs_random_1
 		}
 	}
 	# agree to fuck
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.1200.d
 		custom_tooltip = sbs_blackmail.1200.d.tt
 		trigger_event = sbs_blackmail.1201
@@ -445,11 +462,12 @@ sbs_blackmail.1201 = {
 		animation = worry
 	}
 	left_portrait = {
-		character = scope:deviant_go_random_1
+		character = scope:sbs_random_1
 		animation = ecstasy
 	}
 	# beg him to accept gold instead, so he cums on your clothes instead
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.1201.a
 		custom_tooltip = sbs_blackmail.1201.a.tt
 		stress_impact = {
@@ -458,15 +476,15 @@ sbs_blackmail.1201 = {
 			sadistic = minor_stress_impact_gain
 		}
 		pay_short_term_gold = {
-			target = scope:deviant_go_random_1
+			target = scope:sbs_random_1
 			gold = massive_gold_value
 		}
 		reverse_add_opinion = {
-			target = scope:deviant_go_random_1
+			target = scope:sbs_random_1
 			modifier = dismissive_opinion
 			opinion = -20
 		}
-		scope:deviant_go_random_1 = {
+		scope:sbs_random_1 = {
 			stress_impact = {
 				base = minor_stress_impact_loss
 				lustful = minor_stress_impact_loss
@@ -487,6 +505,7 @@ sbs_blackmail.1201 = {
 	}
 	# just give the major hook, and he won't even cum and leaves
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.1201.b
 		custom_tooltip = sbs_blackmail.1201.b.tt
 		stress_impact = {
@@ -494,7 +513,7 @@ sbs_blackmail.1201 = {
 			lustful = minor_stress_impact_gain
 			sadistic = minor_stress_impact_gain
 		}
-		scope:deviant_go_random_1 = {
+		scope:sbs_random_1 = {
 			add_hook = {
 				type = strong_hook
 				target = root
@@ -503,6 +522,7 @@ sbs_blackmail.1201 = {
 	}
 	# refuse, he cum in
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.1201.c
 		custom_tooltip = sbs_blackmail.1201.c.tt
 		stress_impact = {
@@ -511,11 +531,11 @@ sbs_blackmail.1201 = {
 			sadistic = medium_stress_impact_gain
 		}
 		reverse_add_opinion = {
-			target = scope:deviant_go_random_1
+			target = scope:sbs_random_1
 			modifier = amused_opinion
 			opinion = 10
 		}
-		scope:deviant_go_random_1 = {
+		scope:sbs_random_1 = {
 			stress_impact = {
 				base = medium_stress_impact_loss
 				lustful = medium_stress_impact_loss
@@ -523,7 +543,7 @@ sbs_blackmail.1201 = {
 			}
 		}
 		trigger_event = sbs_blackmail.1110
-		scope:deviant_go_random_1 = { prostitute_effect= { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:sbs_random_1 = { prostitute_effect= { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
@@ -536,7 +556,6 @@ sbs_blackmail.1201 = {
 				value = 5
 			}
 		}
-		ai_chance = { base = 100 }
 	}
 }
 
@@ -551,7 +570,7 @@ sbs_blackmail.1300 = {
 		animation = disapproval
 	}
 	left_portrait = {
-		character = scope:deviant_go_random_1
+		character = scope:sbs_random_1
 		animation = scheme
 	}
 	trigger = {
@@ -569,7 +588,7 @@ sbs_blackmail.1300 = {
 			is_adult = yes
 			is_incapable = no
 			is_imprisoned = no
-			NOT = { this = scope:deviant_go_random_1 }
+			NOT = { this = scope:sbs_random_1 }
 			count > 4
 		}
 	}
@@ -582,23 +601,23 @@ sbs_blackmail.1300 = {
 				NOT = { is_close_family_of = root }
 				has_relation_lover = root
 			}
-			save_scope_as = deviant_go_random_1
+			save_scope_as = sbs_random_1
 		}
 	}
 	# attend
 	option = {
-		ai_chance = { base = 100 }
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.1300.a
 		custom_tooltip = sbs_blackmail.1300.a.tt
 		trigger_event = sbs_blackmail.1301
 	}
 	# pay gold and apoligies on your knees for not attending the party...
 	option = {
-		ai_chance = { base = 100 }
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.1300.b
 		custom_tooltip = sbs_blackmail.1300.b.tt
 		pay_short_term_gold = {
-			target = scope:deviant_go_random_1
+			target = scope:sbs_random_1
 			gold = medium_gold_value
 		}
 		stress_impact = {
@@ -607,7 +626,7 @@ sbs_blackmail.1300 = {
 			sadistic = medium_stress_impact_gain
 		}
 		reverse_add_opinion = {
-			target = scope:deviant_go_random_1
+			target = scope:sbs_random_1
 			modifier = disgusted_opinion
 			opinion = -30
 		}
@@ -625,11 +644,12 @@ sbs_blackmail.1300 = {
 	}
 	# ignore, get rumors spread...
 	option = {
+		ai_chance = { base = 2 }
 		name = sbs_blackmail.1300.c
 		custom_tooltip = sbs_blackmail.1300.c.tt
 		random_secret = {
 			type = secret_deviant
-			expose_secret = scope:deviant_go_random_1
+			expose_secret = scope:sbs_random_1
 		}
 	}
 }
@@ -646,19 +666,19 @@ sbs_blackmail.1301 = {
 		outfit_tags = { no_clothes }
 	}
 	right_portrait = {
-		character = scope:deviant_go_random_1
+		character = scope:sbs_random_1
 		animation = scheme
 	}
 	left_portrait = {
-		character = scope:deviant_go_random_2
+		character = scope:sbs_random_2
 		animation = throne_room_applaud_1
 	}
 	lower_left_portrait = {
-		character = scope:deviant_go_random_3
+		character = scope:sbs_random_3
 		animation = throne_room_applaud_1
 	}
 	lower_right_portrait = {
-		character = scope:deviant_go_random_4
+		character = scope:sbs_random_4
 		animation = throne_room_applaud_1
 	}
 	immediate = {
@@ -669,10 +689,10 @@ sbs_blackmail.1301 = {
 				is_imprisoned = no
 				in_diplomatic_range = root
 				is_female = no
-				primary_title.tier <= scope:deviant_go_random_1.primary_title.tier
-				NOT = { this = scope:deviant_go_random_1 }
+				primary_title.tier <= scope:sbs_random_1.primary_title.tier
+				NOT = { this = scope:sbs_random_1 }
 			}
-			save_scope_as = deviant_go_random_2
+			save_scope_as = sbs_random_2
 		}
 		random_ruler  = {
 			limit = {
@@ -681,11 +701,11 @@ sbs_blackmail.1301 = {
 				is_imprisoned = no
 				in_diplomatic_range = root
 				is_female = no
-				primary_title.tier <= scope:deviant_go_random_1.primary_title.tier
-				NOT = { this = scope:deviant_go_random_1 }
-				NOT = { this = scope:deviant_go_random_2 }
+				primary_title.tier <= scope:sbs_random_1.primary_title.tier
+				NOT = { this = scope:sbs_random_1 }
+				NOT = { this = scope:sbs_random_2 }
 			}
-			save_scope_as = deviant_go_random_3
+			save_scope_as = sbs_random_3
 		}
 		random_ruler  = {
 			limit = {
@@ -694,12 +714,12 @@ sbs_blackmail.1301 = {
 				is_imprisoned = no
 				in_diplomatic_range = root
 				is_female = no
-				primary_title.tier <= scope:deviant_go_random_1.primary_title.tier
-				NOT = { this = scope:deviant_go_random_1 }
-				NOT = { this = scope:deviant_go_random_2 }
-				NOT = { this = scope:deviant_go_random_3 }
+				primary_title.tier <= scope:sbs_random_1.primary_title.tier
+				NOT = { this = scope:sbs_random_1 }
+				NOT = { this = scope:sbs_random_2 }
+				NOT = { this = scope:sbs_random_3 }
 			}
-			save_scope_as = deviant_go_random_4
+			save_scope_as = sbs_random_4
 		}
 	}
 	# endure
@@ -708,7 +728,7 @@ sbs_blackmail.1301 = {
 		custom_tooltip = sbs_blackmail.1301.a.tt
 		add_piety = minor_piety_loss
 		add_prestige = minor_prestige_loss
-		scope:deviant_go_random_1 = {
+		scope:sbs_random_1 = {
 			stress_impact = {
 				base = minor_stress_impact_loss
 				lustful = medium_stress_impact_loss
@@ -743,7 +763,7 @@ sbs_blackmail.1400 = {
 		animation = disapproval
 	}
 	left_portrait = {
-		character = scope:deviant_go_random_1
+		character = scope:sbs_random_1
 		animation = scheme
 	}
 	trigger = {
@@ -770,17 +790,17 @@ sbs_blackmail.1400 = {
 				NOT = { is_close_family_of = root }
 				has_relation_lover = root
 			}
-			save_scope_as = deviant_go_random_1
+			save_scope_as = sbs_random_1
 		}
 	}
 	# agree to marry
 	option = {
-		ai_chance = { base = 100 }
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.1400.a
 		custom_tooltip = sbs_blackmail.1400.a.tt
-		marry = scope:deviant_go_random_1
+		marry = scope:sbs_random_1
 		reverse_add_opinion = {
-			target = scope:deviant_go_random_1
+			target = scope:sbs_random_1
 			modifier = grateful_opinion
 			opinion = 30
 		}
@@ -788,38 +808,41 @@ sbs_blackmail.1400 = {
 	}
 	# pay gold and beg on your knees to marry matrilinearily
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.1400.b
 		custom_tooltip = sbs_blackmail.1400.b.tt
 		pay_short_term_gold = {
-			target = scope:deviant_go_random_1
+			target = scope:sbs_random_1
 			gold = massive_gold_value
 		}
-		marry_matrilineal = scope:deviant_go_random_1
+		marry_matrilineal = scope:sbs_random_1
 		stress_impact = {
 			base = medium_stress_impact_gain
 			lustful = major_stress_impact_loss
 			sadistic = medium_stress_impact_gain
 		}
 		reverse_add_opinion = {
-			target = scope:deviant_go_random_1
+			target = scope:sbs_random_1
 			modifier = disgusted_opinion
 			opinion = -30
 		}
 	}
 	# ignore, get rumors spread...
 	option = {
+		ai_chance = { base = 2 }
 		name = sbs_blackmail.1400.c
 		custom_tooltip = sbs_blackmail.1400.c.tt
 		random_secret = {
 			type = secret_deviant
-			expose_secret = scope:deviant_go_random_1
+			expose_secret = scope:sbs_random_1
 		}
 	}
 	# beg to be his sex toy instead
 	option = {
+		ai_chance = { base = 25 }
 		name = sbs_blackmail.1400.d
 		custom_tooltip = sbs_blackmail.1400.d.tt
-		scope:deviant_go_random_1 = { make_concubine = root }
+		scope:sbs_random_1 = { make_concubine = root }
 		trigger_event = sbs_blackmail.1110
 	}
 }
@@ -835,11 +858,11 @@ sbs_blackmail.2000 = {
 		animation = disapproval
 	}
 	left_portrait = {
-		character = scope:deviant_go_random_2
+		character = scope:sbs_random_2
 		animation = throne_room_conversation_1
 	}
 	lower_right_portrait = {
-		character = scope:deviant_go_random_1
+		character = scope:sbs_random_1
 		animation = scheme
 	}
 	trigger = {
@@ -864,19 +887,19 @@ sbs_blackmail.2000 = {
 				NOT = { is_close_family_of = root }
 				has_relation_lover = root
 			}
-			save_scope_as = deviant_go_random_1
+			save_scope_as = sbs_random_1
 		}
 		primary_spouse = {
-			save_scope_as = deviant_go_random_2
+			save_scope_as = sbs_random_2
 		}
 	}
 	# let him grope, while you are talking to your spouse
 	option = {
-		ai_chance = { base = 80 }
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.2000.a
 		custom_tooltip = sbs_blackmail.2000.a.tt
 		reverse_add_opinion = {
-			target = scope:deviant_go_random_1
+			target = scope:sbs_random_1
 			modifier = amused_opinion
 			opinion = 10
 		}
@@ -885,7 +908,7 @@ sbs_blackmail.2000 = {
 			lustful = minor_stress_impact_loss
 		}
 		reverse_add_opinion = {
-			target = scope:deviant_go_random_2
+			target = scope:sbs_random_2
 			modifier = suspicion_opinion
 			opinion = -10
 		}
@@ -904,7 +927,7 @@ sbs_blackmail.2000 = {
 	}
 	# agree to go do sex in the council chamber
 	option = {
-		ai_chance = { base = 80 }
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.2000.b
 		custom_tooltip = sbs_blackmail.2000.b.tt
 		hidden_effect = {
@@ -916,6 +939,7 @@ sbs_blackmail.2000 = {
 	}
 	# Get up and leave.
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.2000.c
 		custom_tooltip = sbs_blackmail.2000.c.tt
 		stress_impact = {
@@ -924,7 +948,7 @@ sbs_blackmail.2000 = {
 	}
 	# grope him back... until he cums
 	option = {
-		ai_chance = { base = 80 }
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.2000.d
 		custom_tooltip = sbs_blackmail.2000.d.tt
 		stress_impact = {
@@ -934,16 +958,16 @@ sbs_blackmail.2000 = {
 		}
 		add_piety = medium_piety_loss
 		reverse_add_opinion = {
-			target = scope:deviant_go_random_1
+			target = scope:sbs_random_1
 			modifier = flustered_opinion
 			opinion = 10
 		}
 		reverse_add_opinion = {
-			target = scope:deviant_go_random_2
+			target = scope:sbs_random_2
 			modifier = suspicion_opinion
 			opinion = -10
 		}
-		scope:deviant_go_random_1 = {
+		scope:sbs_random_1 = {
 			stress_impact = {
 				base = minor_stress_impact_loss
 				lustful = medium_stress_impact_loss
@@ -972,11 +996,11 @@ sbs_blackmail.2010 = {
 	override_background = { reference = council_chamber }
 	theme = diplomacy
 	right_portrait = {
-		character = scope:deviant_go_random_1
+		character = scope:sbs_random_1
 		animation = scheme
 	}
 	left_portrait = {
-		character = scope:deviant_go_random_2
+		character = scope:sbs_random_2
 		animation = throne_room_conversation_1
 	}
 	lower_right_portrait = {
@@ -985,7 +1009,7 @@ sbs_blackmail.2010 = {
 	}
 	# suck as fast as you can
 	option = {
-		ai_chance = { base = 80 }
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.2010.a
 		custom_tooltip = sbs_blackmail.2010.a.tt
 		add_prestige = minor_prestige_loss
@@ -995,7 +1019,7 @@ sbs_blackmail.2010 = {
 			sadistic = minor_stress_impact_gain
 		}
 		reverse_add_opinion = {
-			target = scope:deviant_go_random_1
+			target = scope:sbs_random_1
 			modifier = amused_opinion
 			opinion = 10
 		}
@@ -1011,7 +1035,7 @@ sbs_blackmail.2010 = {
 			}
 		}
 		reverse_add_opinion = {
-			target = scope:deviant_go_random_2
+			target = scope:sbs_random_2
 			modifier = suspicion_opinion
 			opinion = -10
 		}
@@ -1019,7 +1043,7 @@ sbs_blackmail.2010 = {
 	}
 	# tell the husband it's fine and keep sucking...
 	option = {
-		ai_chance = { base = 80 }
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.2010.b
 		custom_tooltip = sbs_blackmail.2010.b.tt
 		add_piety = medium_piety_loss
@@ -1028,12 +1052,12 @@ sbs_blackmail.2010 = {
 			lustful = major_stress_impact_loss
 		}
 		reverse_add_opinion = {
-			target = scope:deviant_go_random_2
+			target = scope:sbs_random_2
 			modifier = disgusted_opinion
 			opinion = -20
 		}
 		reverse_add_opinion = {
-			target = scope:deviant_go_random_1
+			target = scope:sbs_random_1
 			modifier = confusion_opinion
 			opinion = 20
 		}
@@ -1051,6 +1075,7 @@ sbs_blackmail.2010 = {
 	}
 	# I can't do this, get out...
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.2010.c
 		custom_tooltip = sbs_blackmail.2010.c.tt
 		add_piety = minor_piety_loss
@@ -1058,14 +1083,14 @@ sbs_blackmail.2010 = {
 			base = medium_stress_impact_gain
 		}
 		reverse_add_opinion = {
-			target = scope:deviant_go_random_2
+			target = scope:sbs_random_2
 			modifier = disgusted_opinion
 			opinion = -40
 		}
 	}
 	# take your time and keep sucking after he cums
 	option = {
-		ai_chance = { base = 80 }
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.2010.d
 		custom_tooltip = sbs_blackmail.2010.d.tt
 		stress_impact = {
@@ -1075,12 +1100,12 @@ sbs_blackmail.2010 = {
 		}
 		add_prestige = minor_prestige_loss
 		reverse_add_opinion = {
-			target = scope:deviant_go_random_2
+			target = scope:sbs_random_2
 			modifier = suspicion_opinion
 			opinion = -20
 		}
 		reverse_add_opinion = {
-			target = scope:deviant_go_random_1
+			target = scope:sbs_random_1
 			modifier = flustered_opinion
 			opinion = 20
 		}
@@ -1115,16 +1140,16 @@ sbs_blackmail.2020 = {
 		outfit_tags = { no_clothes }
 	}
 	right_portrait = {
-		character = scope:deviant_go_random_1
+		character = scope:sbs_random_1
 		animation = ecstasy
 	}
 	lower_left_portrait = {
-		character = scope:deviant_go_random_2
+		character = scope:sbs_random_2
 		animation = thinking
 	}
 	# let him cum in...
 	option = {
-		ai_chance = { base = 80 }
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.2020.a
 		custom_tooltip = sbs_blackmail.2020.a.tt
 		trigger_event = sbs_blackmail.1110
@@ -1132,7 +1157,7 @@ sbs_blackmail.2020 = {
 			base = medium_stress_impact_gain
 		}
 		reverse_add_opinion = {
-			target = scope:deviant_go_random_1
+			target = scope:sbs_random_1
 			modifier = amused_opinion
 			opinion = 10
 		}
@@ -1153,7 +1178,7 @@ sbs_blackmail.2020 = {
 			}
 		}
 		reverse_add_opinion = {
-			target = scope:deviant_go_random_2
+			target = scope:sbs_random_2
 			modifier = suspicion_opinion
 			opinion = -20
 		}
@@ -1161,6 +1186,7 @@ sbs_blackmail.2020 = {
 	}
 	# tell the husband how you are being fucked against the door, and you love it
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.2020.b
 		custom_tooltip = sbs_blackmail.2020.b.tt
 		add_piety = medium_piety_loss
@@ -1169,12 +1195,12 @@ sbs_blackmail.2020 = {
 			lustful = major_stress_impact_loss
 		}
 		reverse_add_opinion = {
-			target = scope:deviant_go_random_2
+			target = scope:sbs_random_2
 			modifier = disgusted_opinion
 			opinion = -20
 		}
 		reverse_add_opinion = {
-			target = scope:deviant_go_random_1
+			target = scope:sbs_random_1
 			modifier = confusion_opinion
 			opinion = 20
 		}
@@ -1197,6 +1223,7 @@ sbs_blackmail.2020 = {
 	}
 	# I can't do this, get out...
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.2020.c
 		custom_tooltip = sbs_blackmail.2020.c.tt
 		add_piety = major_piety_loss
@@ -1204,14 +1231,14 @@ sbs_blackmail.2020 = {
 			base = major_stress_impact_gain
 		}
 		reverse_add_opinion = {
-			target = scope:deviant_go_random_2
+			target = scope:sbs_random_2
 			modifier = disgusted_opinion
 			opinion = -30
 		}
 	}
 	# talk to your husband as much as possible to keep him there as you fuck, and slip the cock in your ass
 	option = {
-		ai_chance = { base = 80 }
+		ai_chance = { base = 10 }
 		name = sbs_blackmail.2020.d
 		custom_tooltip = sbs_blackmail.2020.d.tt
 		stress_impact = {
@@ -1221,16 +1248,16 @@ sbs_blackmail.2020 = {
 		}
 		add_prestige = minor_prestige_loss
 		reverse_add_opinion = {
-			target = scope:deviant_go_random_2
+			target = scope:sbs_random_2
 			modifier = suspicion_opinion
 			opinion = -20
 		}
 		reverse_add_opinion = {
-			target = scope:deviant_go_random_1
+			target = scope:sbs_random_1
 			modifier = flustered_opinion
 			opinion = 20
 		}
-		scope:deviant_go_random_1 = {
+		scope:sbs_random_1 = {
 			stress_impact = {
 				base = minor_stress_impact_loss
 				lustful = medium_stress_impact_loss

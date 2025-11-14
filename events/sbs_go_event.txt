@@ -748,7 +748,7 @@ sbs_go.6050 = {
 		add_character_modifier = { modifier = licentious_05_modifier months = 1 }
 		if = {
 			limit = { NOT = { has_trait_with_flag = sbs_demon_trait } is_ruler = yes is_lowborn = no has_character_modifier = sbs_buff }
-			add_trait = sbs_lesser_succubus
+			add_trait_force_tooltip = sbs_lesser_succubus
 			if = {
 				limit = { has_trait = saint }
 				remove_trait = saint
@@ -757,7 +757,7 @@ sbs_go.6050 = {
 			if = {
 				limit = { has_trait = chaste }
 				remove_trait = chaste
-				add_trait = lustful
+				add_trait_force_tooltip = lustful
 			}
 			if = {
 				limit = { has_trait = immortal }

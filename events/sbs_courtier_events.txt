@@ -145,7 +145,7 @@ sbs_courtier.1460 = {
 				is_adult = yes
 				is_attracted_to_gender_of = root
 			}
-			save_scope_as = deviant_go_random_1
+			save_scope_as = sbs_random_1
 		}
 	}
 	option = {
@@ -163,7 +163,7 @@ sbs_courtier.1460 = {
 		ai_chance = { base = 50 }
 		name = sbs_courtier.1460.b
 		custom_tooltip = sbs_courtier.1460.b.tt
-		scope:deviant_go_random_1 = {
+		scope:sbs_random_1 = {
 			pay_short_term_gold = {
 				target = root
 				gold = root.prostitute_price_value
@@ -207,7 +207,7 @@ sbs_courtier.1461 = {
 		animation = shame
 	}
 	left_portrait = {
-		character = scope:deviant_go_random_1
+		character = scope:sbs_random_1
 		animation = personality_cynical
 	}
 	option = {
@@ -228,7 +228,7 @@ sbs_courtier.1461 = {
 				opinion = -10
 			}
 		}
-		scope:deviant_go_random_1 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:sbs_random_1 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_succubus
@@ -261,7 +261,7 @@ sbs_courtier.1462 = {
 		animation = shame
 	}
 	left_portrait = {
-		character = scope:deviant_go_random_1
+		character = scope:sbs_random_1
 		animation = personality_cynical
 	}
 
@@ -300,7 +300,7 @@ sbs_courtier.1463 = {
 		animation = throne_room_kneel_2
 	}
 	left_portrait = {
-		character = scope:deviant_go_random_1
+		character = scope:sbs_random_1
 		animation = personality_cynical
 	}
 
