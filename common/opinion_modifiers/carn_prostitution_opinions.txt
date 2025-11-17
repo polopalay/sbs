@@ -7,9 +7,3 @@ carn_prostitution_crime_opinion = {
 carn_prostitution_shunned_opinion = {
 	opinion = -15
 }
-
-have_sex_opinion = {
-	opinion = 25
-	decaying = yes
-	years = 2
-}

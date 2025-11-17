@@ -257,7 +257,6 @@ lilim_character = {
 		birth = "850.6.13"
 		effect = {
 			give_nickname = nickname_the_devil_creation
-			add_character_modifier = sbs_buff
 			add_character_flag = has_scripted_appearance
 			add_character_flag = do_not_generate_starting_family
 			create_landless_adventurer_title_effect = {

@@ -45,6 +45,7 @@ sbs_devils_curse_interaction = {
 		}
 		scope:recipient = {
 			random_list = {
+				5 = 0
 				5 = {
 					modifier = { has_character_modifier = stanky_modifier add = -5 }
 					add_character_modifier = stanky_modifier
@@ -112,6 +113,6 @@ sbs_devils_curse_interaction = {
 	ai_will_do = {
 		base = 0
 		modifier = { add = 100 scope:actor = { has_trait = sbs_lesser_demon has_relation_slave = scope:recipient } }
-		modifier = { add = 25 scope:actor = { has_trait = sbs_lesser_succubus primary_title.tier <= scope:recipient.primary_title.tier } }
+		modifier = { add = 25 scope:actor = { has_trait = sbs_lesser_succubus primary_title.tier <= scope:recipient.primary_title.tier } scope:recipient = { is_landed = yes } }
 	}
 }

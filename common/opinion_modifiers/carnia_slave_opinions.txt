@@ -34,18 +34,6 @@ free_slave_friend_opinion = {
 	decaying = yes
 }
 
-extortion_opinion = {
-	opinion = -25
-	years = 10
-	decaying = yes
-}
-
-forced_labor_opinion = {
-	opinion = -50
-	years = 10
-	decaying = yes
-}
-
 carn_wants_to_be_your_slave_opinion = {
 	opinion = 10
 }

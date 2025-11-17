@@ -21,8 +21,6 @@
   recently_had_sex_desc: "Este personaje tuvo sexo recientemente y no ha podido continuar durante un tiempo."
   forced_labor: "Trabajo Forzado"
   forced_labor_desc: "Este personaje está siendo forzado a trabajar en contra de su voluntad."
-  extortion_opinion: "Me extorsionó"
-  extortion_opinion_desc: "Este personaje me ha extorsionado."
 
   face_cum: "Esperma en el rostro" 
   face_cum_desc: "Este personaje quiere recibir el esperma en el rostro." 
@@ -35,5 +33,3 @@
 
   pussy_cum: "Esperma en la vagina" 
   pussy_cum_desc: "Este personaje quiere recibir el esperma en la vagina."
-
-  have_sex_opinion: "Ten sexo conmigo"

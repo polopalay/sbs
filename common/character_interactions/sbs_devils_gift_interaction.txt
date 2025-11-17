@@ -98,12 +98,13 @@ sbs_devils_gift_interaction = {
 					modifier = { is_adult = yes has_trait_rank = { trait = education_stewardship rank < 5 } add = 5 }
 					change_trait_rank = { trait = education_stewardship rank = 1 }
 				}
+				2 = 0
 				1 = {
 					modifier = { has_character_modifier = sbs_generals add = -1 }
 					add_character_modifier = { modifier = sbs_generals years = 25 }
 				}
-				2 = {
-					modifier = { has_character_modifier = sbs_buff add = -1 }
+				5 = {
+					modifier = { has_character_modifier = sbs_buff add = -4 }
 					add_character_modifier = sbs_buff
 				}
 			}

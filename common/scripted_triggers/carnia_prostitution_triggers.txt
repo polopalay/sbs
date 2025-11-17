@@ -1,6 +1,5 @@
 ﻿carn_is_working_as_prostitute_trigger = {
 	is_adult = yes
-	is_in_army = no
 	OR = {
 		has_character_modifier = carn_working_as_prostitute_1_modifier
 		has_character_modifier = carn_working_as_prostitute_2_modifier
@@ -30,4 +29,3 @@ trait_is_shunned_or_criminal_in_faith_or_liege_trigger = {
 		}
 	}
 }
-

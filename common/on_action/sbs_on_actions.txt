@@ -10,7 +10,7 @@ random_yearly_everyone_pulse = {
 	on_actions = {
 		delay = { days = { 10 30 } }
 		sbs_devil_on_action
-		delay = { days = { 100 300 } }
+		delay = { days = { 20 40 } }
 		sbs_prostitutute_on_action
 	}
 	events = {
@@ -23,7 +23,6 @@ sbs_devil_on_action = {
 		is_adult = yes
 		is_female = yes
 		OR = {
-			has_trait = lustful
 			has_trait = deviant
 			any_secret = { type = secret_deviant }
 		}
@@ -31,35 +30,35 @@ sbs_devil_on_action = {
 	}
 	effect = {
 		random_list = {
-			10 = {
+			5 = 0
+			5 = {
 				trigger_event = sbs_devil.0550 # max addiction
 			}
 			0 = {
-				modifier = { OR = { has_trait = sbs_succubus has_trait = sbs_lesser_succubus has_trait = deviant } add = 10 }
+				modifier = { OR = { has_trait = sbs_succubus has_trait = sbs_lesser_succubus } add = 2 }
 				trigger_event = sbs_devil.1300 # special dream
 			}
-			0 = {
-				modifier = { OR = { has_trait = sbs_succubus has_trait = sbs_lesser_succubus has_trait = deviant any_secret = { type = secret_deviant } } add = 10 }
+			5 = {
 				trigger_event = sbs_devil.1410 # gremlin fuck
 			}
 			0 = {
-				modifier = { is_ruler = yes carn_is_working_as_prostitute_trigger = yes any_knight = { is_incapable = no is_female = no has_character_modifier = sbs_buff count = 0 } add = 10 }
+				modifier = { carn_is_working_as_prostitute_trigger = yes any_knight = { count > 0 } any_knight = { is_female = no has_character_modifier = sbs_buff count = 0 } add = 2 }
 				trigger_event = sbs_loyalty.8000 # loyalty event init
 			}
 			0 = {
-				modifier = { is_ruler = yes carn_is_working_as_prostitute_trigger = yes any_knight = { is_incapable = no is_female = no has_character_modifier = sbs_buff } add = 10 }
+				modifier = { carn_is_working_as_prostitute_trigger = yes any_knight = { is_female = no has_character_modifier = sbs_buff } add = 2 }
 				trigger_event = sbs_loyalty.8099 # loyalty events
 			}
 			0 = {
-				modifier = { is_ruler = yes has_trait_with_flag = sbs_demon_trait any_knight = { is_incapable = no is_female = no has_character_modifier = sbs_generals count = 0 } add = 10 }
+				modifier = { carn_is_working_as_prostitute_trigger = yes has_trait_with_flag = sbs_demon_trait any_knight = { count > 0 } any_knight = { is_female = no has_character_modifier = sbs_generals count = 0 } add = 2 }
 				trigger_event = sbs_loyalty.8200 # loyalty event: new recruit
 			}
 			0 = {
-				modifier = { should_be_naked_trigger = no any_councillor = { is_female = no } add = 10 }
+				modifier = { should_be_naked_trigger = no any_councillor = { is_female = no } add = 2 }
 				trigger_event = sbs_courtier.1440 # naked event
 			}
 			0 = {
-				modifier = { should_be_naked_trigger = yes any_councillor = { is_female = no } add = 10 }
+				modifier = { should_be_naked_trigger = yes any_councillor = { is_female = no } add = 2 }
 				trigger_event = sbs_courtier.1460 # fuck on throne event
 			}
 			0 = {
@@ -67,32 +66,32 @@ sbs_devil_on_action = {
 				trigger_event = sbs_go.0501 # basic exploratory dildo fuck
 			}
 			0 = {
-				modifier = { has_character_modifier = deviants_strangebook_modifier add = 10 }
+				modifier = { has_character_modifier = deviants_strangebook_modifier add = 2 }
 				trigger_event = sbs_go.5000 # you sweating in your study
 			}
 			0 = {
-				modifier = { any_secret = { type = secret_deviant } any_vassal = { has_trait = lustful is_female = no is_adult = yes NOT = { is_close_family_of = root } } add = 10 }
-				sbs_blackmail.1000 # letter to come in room to pay major gold
+				modifier = { any_secret = { type = secret_deviant } any_vassal = { has_trait = lustful is_female = no is_adult = yes NOT = { is_close_family_of = root has_relation_lover = root } } add = 2 }
+				trigger_event = sbs_blackmail.1000 # letter to come in room to pay major gold
 			}
 			0 = {
-				modifier = { any_secret = { type = secret_deviant } any_vassal = { has_trait = lustful is_female = no is_adult = yes NOT = { is_close_family_of = root } has_relation_lover = root } add = 10 }
-				sbs_blackmail.1100 # he comes to you in private
+				modifier = { any_secret = { type = secret_deviant } any_vassal = { has_trait = lustful is_female = no is_adult = yes NOT = { is_close_family_of = root } has_relation_lover = root } add = 2 }
+				trigger_event = sbs_blackmail.1100 # he comes to you in private
 			}
 			0 = {
-				modifier = { any_secret = { type = secret_deviant } any_vassal = { has_trait = lustful is_female = no is_adult = yes NOT = { is_close_family_of = root } has_relation_lover = root } add = 10 }
-				sbs_blackmail.1200 # he comes to you in public
+				modifier = { any_secret = { type = secret_deviant } any_vassal = { has_trait = lustful is_female = no is_adult = yes NOT = { is_close_family_of = root } has_relation_lover = root } add = 2 }
+				trigger_event = sbs_blackmail.1200 # he comes to you in public
 			}
 			0 = {
-				modifier = { any_secret = { type = secret_deviant } any_vassal = { has_trait = lustful is_female = no is_adult = yes NOT = { is_close_family_of = root } has_relation_lover = root } add = 10 }
-				sbs_blackmail.1300 # inviting to be party decoration or pay major gold or favor hook
+				modifier = { any_secret = { type = secret_deviant } any_vassal = { has_trait = lustful is_female = no is_adult = yes NOT = { is_close_family_of = root } has_relation_lover = root } add = 2 }
+				trigger_event = sbs_blackmail.1300 # inviting to be party decoration or pay major gold or favor hook
 			}
 			0 = {
 				modifier = { is_concubine = no is_married = no any_secret = { type = secret_deviant } any_vassal = { has_trait = lustful is_female = no is_adult = yes NOT = { is_close_family_of = root } has_relation_lover = root } add = 10 }
-				sbs_blackmail.1400 # if both unmarried, forcing you to marry him
+				trigger_event = sbs_blackmail.1400 # if both unmarried, forcing you to marry him
 			}
 			0 = {
-				modifier = { is_married = yes any_secret = { type = secret_deviant } any_vassal = { has_trait = lustful is_female = no is_adult = yes NOT = { is_close_family_of = root } has_relation_lover = root } add = 10 }
-				sbs_blackmail.2000 # if you have spouse
+				modifier = { is_married = yes any_secret = { type = secret_deviant } any_vassal = { has_trait = lustful is_female = no is_adult = yes NOT = { is_close_family_of = root } has_relation_lover = root } add = 2 }
+				trigger_event = sbs_blackmail.2000 # if you have spouse
 			}
 		}
 	}
@@ -101,12 +100,12 @@ sbs_devil_on_action = {
 sbs_prostitutute_on_action = {
 	trigger = {
 		is_adult = yes
+		is_ruler = yes
 		is_female = yes
 		carn_is_working_as_prostitute_trigger = yes
-		is_imprisoned = no
 	}
 	random_events = {
-		chance_to_happen = 100
+		chance_to_happen = 25
 		50 = sbs_prostitution.9000 # coming of age male
 		50 = sbs_prostitution.9010 # a married couple
 		50 = sbs_prostitution.9030 # older man
@@ -124,6 +123,7 @@ on_travel_plan_movement = {
 		is_female = yes
 		is_ruler = yes
 		is_landed = yes
+		primary_title.tier >= tier_duchy
 	}
 	on_actions = {
 		delay = { days = { 2 4 } }

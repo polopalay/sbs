@@ -13,6 +13,12 @@ sbs_devil.0550 = {
 			has_trait = deviant
 			any_secret = { type = secret_deviant }
 		}
+		NOR = {
+			any_character_artifact { has_artifact_modifier = master_dildo_modifier }
+			any_character_artifact { has_artifact_modifier = mistress_dildo_modifier }
+			has_character_modifier = deviants_strangebook_modifier
+			has_trait_with_flag = sbs_demon_trait
+		}
 	}
 	theme = bloody_wedding_night
 	override_background = { reference = bedchamber }
@@ -23,10 +29,10 @@ sbs_devil.0550 = {
 	# find one, at any cost
 	option = {
 		ai_chance = { base = 10 }
+		trigger = { gold >= minor_gold_value }
 		name = sbs_devil.0550.a
 		custom_tooltip = sbs_devil.0550.a.tt
 		ai_chance = { base = 50 }
-		trigger = { gold >= minor_gold_value }
 		remove_short_term_gold = minor_gold_value
 		create_artifact = {
 			name = master_dildo
@@ -54,10 +60,10 @@ sbs_devil.0550 = {
 	# you can feel it, there is one nearby
 	option = {
 		ai_chance = { base = 10 }
+		trigger = { gold >= tiny_gold_value }
 		name = sbs_devil.0550.c
 		custom_tooltip = sbs_devil.0550.c.tt
 		ai_chance = { base = 50 }
-		trigger = { gold >= tiny_gold_value }
 		remove_short_term_gold = tiny_gold_value
 		create_artifact = {
 			name = mistress_dildo
@@ -73,28 +79,21 @@ sbs_devil.0550 = {
 	}
 	# buy book
 	option = {
-		trigger = {
-			is_ruler = yes
-		}
 		ai_chance = { base = 10 }
+		trigger = { gold >= medium_gold_value is_ruler = yes NOT = { has_character_modifier = deviants_strangebook_modifier } }
 		name = sbs_devil.0550.d
 		custom_tooltip = sbs_devil.0550.d.tt
-		trigger = { gold >= medium_gold_value NOT = { has_character_modifier = deviants_strangebook_modifier } }
 		remove_short_term_gold = medium_gold_value
 		add_character_modifier = { modifier = deviants_strangebook_modifier years = 10 }
 	}
 	# sleep potion for deviant lunatic
 	option = {
-		trigger = {
-			OR = {
-				has_trait = deviant
-				any_secret = { type = secret_deviant }
-			}
-		}
 		ai_chance = { base = 10 }
+		trigger = {
+			NOT = { has_trait_with_flag = sbs_demon_trait }
+		}
 		name = sbs_devil.0550.e
 		custom_tooltip = sbs_devil.0550.e.tt
-		trigger = { gold >= major_gold_value is_landed = yes NOT = { has_character_modifier = deviants_strange_dildo } }
 		remove_short_term_gold = major_gold_value
 		trigger_event = sbs_go.6000
 	}
@@ -134,7 +133,6 @@ sbs_devil.1300 = {
 		name = sbs_devil.1300.a
 		custom_tooltip = sbs_devil.1300.a.tt
 		hidden_effect = {
-			add_character_modifier = sbs_buff
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
@@ -660,14 +658,10 @@ sbs_devil.1410 = {
 		custom_tooltip = sbs_devil.1410.a.tt
 		add_piety = medium_piety_loss
 		remove_short_term_gold = massive_gold_value
-		hidden_effect = { add_character_modifier = sbs_buff }
 		trigger_event = sbs_devil.1411
 	}
 	# beg for sex
 	option = {
-		trigger = {
-			has_trait = lustful
-		}
 		ai_chance = {
 			base = 5
 			modifier = {
@@ -675,10 +669,10 @@ sbs_devil.1410 = {
 				has_trait_xp = { trait = sbs_succubus track = corruption value >= 100 }
 			}
 		}
+		trigger = { has_trait = lustful }
 		name = sbs_devil.1410.b
 		custom_tooltip = sbs_devil.1410.b.tt
 		add_piety = medium_piety_loss
-		hidden_effect = { add_character_modifier = sbs_buff }
 		trigger_event = sbs_devil.1412
 	}
 	# stay still
@@ -697,7 +691,7 @@ sbs_devil.1410 = {
 	}
 	# ask gold from it instead
 	option = {
-		ai_chance = { base = 0 }
+		ai_chance = { base = 1 }
 		add_piety = major_piety_loss
 		name = sbs_devil.1410.d
 		custom_tooltip = sbs_devil.1410.d.tt
@@ -738,6 +732,7 @@ sbs_devil.1411 = {
 		name = sbs_devil.1411.a
 		custom_tooltip = sbs_devil.1411.a.tt
 		hidden_effect = {
+			add_character_modifier = sbs_buff
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = corruption

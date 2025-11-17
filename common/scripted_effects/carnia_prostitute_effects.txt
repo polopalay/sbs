@@ -75,10 +75,6 @@
 	}
 
 	hidden_effect = {
-		add_opinion = {
-			target = scope:prostitute
-			modifier = have_sex_opinion
-		}
 		random = { chance = 0 modifier = { scope:prostitute = { is_female = no } add = 25 } add_character_modifier = { modifier = face_cum months = 6 } }
 		random = { chance = 0 modifier = { scope:prostitute = { is_female = no } add = 50 } add_character_modifier = { modifier = body_cum months = 6 } }
 		random = { chance = 0 modifier = { scope:prostitute = { is_female = no } add = 25 } add_character_modifier = { modifier = ass_cum months = 6 } }

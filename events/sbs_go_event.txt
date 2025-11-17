@@ -254,9 +254,6 @@ sbs_go.5110 = {
 	option = {
 		name = sbs_go.5110.c
 		custom_tooltip = sbs_go.5110.c.tt
-		hidden_effect = {
-			add_character_modifier = sbs_buff
-		}
 		trigger_event = sbs_go.5200
 	}
 }
@@ -764,9 +761,6 @@ sbs_go.6050 = {
 				remove_trait = immortal
 				add_trait_xp = { trait = sbs_lesser_succubus value = 100 }
 			}
-		}
-		else = {
-			add_character_modifier = sbs_buff
 		}
 	}	
 	# repent, repent

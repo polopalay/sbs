@@ -8,7 +8,7 @@ sbs_loyalty.8000 = {
 	immediate = {
 		random_knight = {
 			save_scope_as = sbs_loyalty_random_1
-			limit = { is_female = no is_incapable = no }
+			limit = { is_female = no }
 		}
 	}
 	right_portrait = {
@@ -25,9 +25,9 @@ sbs_loyalty.8000 = {
 		is_adult = yes
 		is_ruler = yes
 		carn_is_working_as_prostitute_trigger = yes
+		any_knight = { count > 0 }
 		any_knight = {
 			is_incapable = no
-			is_female = no
 			has_character_modifier = sbs_buff
 			count = 0
 		}
@@ -99,7 +99,7 @@ sbs_loyalty.8002 = {
 	theme = court
 	immediate = {
 		random_knight = {
-			limit = { is_female = no is_incapable = no }
+			limit = { is_female = no }
 			save_scope_as = succubus_randoman_2
 		}
 	}
@@ -129,7 +129,7 @@ sbs_loyalty.8003 = {
 	theme = court
 	immediate = {
 		random_knight = {
-			limit = { is_female = no is_incapable = no }
+			limit = { is_female = no }
 			save_scope_as = succubus_randoman_2
 		}
 	}
@@ -193,7 +193,7 @@ sbs_loyalty.8005 = {
 		name = sbs_loyalty.8005.a
 		custom_tooltip = sbs_loyalty.8005.a.tt
 		every_knight = {
-			limit = { is_adult = yes is_female = no is_incapable = no }
+			limit = { is_adult = yes is_female = no }
 			add_opinion = {
 				target = root
 				modifier = amused_opinion
@@ -263,15 +263,11 @@ sbs_loyalty.8099 = {
 		is_ruler = yes
 		is_female = yes
 		carn_is_working_as_prostitute_trigger = yes
-		any_knight = {
-			is_incapable = no
-			is_female = no
-			has_character_modifier = sbs_buff
-		}
+		any_knight = { is_female = no has_character_modifier = sbs_buff }
 	}
 	immediate = {
 		random_knight = {
-			limit = { is_female = no has_character_modifier = sbs_buff is_incapable = no }
+			limit = { is_female = no has_character_modifier = sbs_buff }
 			save_scope_as = sbs_loyalty_random_1
 		}
 	}
@@ -486,14 +482,10 @@ sbs_loyalty.8200 = {
 		is_adult = yes
 		is_female = yes
 		is_ruler = yes
-		OR = {
-			has_trait = sbs_demon
-			has_trait = sbs_succubus
-			has_trait = sbs_lesser_succubus
-		}
+		has_trait_with_flag = sbs_demon_trait
 		carn_is_working_as_prostitute_trigger = yes
+		any_knight = { count > 0 }
 		any_knight = {
-			is_incapable = no
 			is_female = no
 			has_character_modifier = sbs_generals
 			count = 0
@@ -509,7 +501,7 @@ sbs_loyalty.8200 = {
 	}
 	immediate = {
 		random_knight = {
-			limit = { is_female = no is_incapable = no }
+			limit = { is_female = no }
 			save_scope_as = sbs_random_1
 		}
 	}

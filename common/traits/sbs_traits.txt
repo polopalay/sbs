@@ -88,36 +88,19 @@ sbs_succubus = {
 
 	life_expectancy = 222
 	years_of_fertility = 222
-	health = 1
-	negate_health_penalty_add = 1
-	general_opinion = 5
-	character_travel_speed = 5
-	travel_danger = -5
-	stewardship = 1
-	intrigue = 1
-	learning = 1
-	enemy_hostile_scheme_phase_duration_add = 10
-	martial = 1
-	prowess = 1
-	diplomacy = 1
-	stress_gain_mult = -0.1
 
 	tracks = {
 		power = {
 			33 = {
 				character_travel_speed = 5
-				travel_danger = -5
 			}
 
 			66 = {
 				character_travel_speed = 5
-				travel_danger = -5
 			}
 
 			100 = {
 				character_travel_speed = 10
-				character_travel_safety = 10
-				travel_danger = -10
 			}
 		}
 		daring = {
@@ -136,61 +119,27 @@ sbs_succubus = {
 		}
 		corruption = {
 			50 = {
+				life_expectancy = 222
+			}
+
+			100 = {
+				life_expectancy = 222
+			}
+		}
+		loyalty = {
+			33 = {
+				health = 1
+				negate_health_penalty_add = 1
+			}
+
+			66 = {
 				health = 2
 				negate_health_penalty_add = 2
-				life_expectancy = 222
-				health = 1
-				stewardship = 4
-				intrigue = 4
-				learning = 4
-				enemy_hostile_scheme_phase_duration_add = 40
 			}
 
 			100 = {
 				health = 3
 				negate_health_penalty_add = 3
-				life_expectancy = 222
-				stewardship = 5
-				intrigue = 5
-				learning = 5
-				enemy_hostile_scheme_phase_duration_add = 50
-				legitimacy_baseline_add = 1
-				monthly_dynasty_prestige = 1
-				monthly_prestige = 1
-			}
-		}
-		loyalty = {
-			33 = {
-				martial = 2
-				prowess = 2
-				diplomacy = 2
-				men_at_arms_maintenance = -0.02
-				knight_effectivenesuccubus_mult = 0.1
-				monthly_piety = 0.1
-				stress_gain_mult = -0.2
-			}
-
-			66 = {
-				martial = 3
-				prowess = 3
-				diplomacy = 3
-				men_at_arms_maintenance = -0.03
-				knight_effectivenesuccubus_mult = 0.2
-				monthly_piety = 0.2
-			}
-
-			100 = {
-				martial = 4
-				prowess = 4
-				diplomacy = 4
-				men_at_arms_maintenance = -0.05
-				knight_effectivenesuccubus_mult = 0.2
-				monthly_piety = 0.3
-				no_water_crossing_penalty = yes
-				supply_duration = 0.5
-				stress_gain_mult = -0.5
-				movement_speed = 0.5
-				naval_movement_speed_mult = 0.5
 			}
 		}
 	}
@@ -228,18 +177,15 @@ sbs_lesser_succubus = {
 	}
 
 	life_expectancy = 100
-	attraction_opinion = 5
 
 	track = {
 		50 = {
 			life_expectancy = 50
-			attraction_opinion = 10
 			health = 2
 			negate_health_penalty_add = 1
 		}
 		100 = {
 			life_expectancy = 50
-			attraction_opinion = 15
 			health = 2
 			negate_health_penalty_add = 2
 		}

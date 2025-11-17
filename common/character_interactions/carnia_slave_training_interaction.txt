@@ -32,7 +32,6 @@
 				0 = {
 					modifier = { add = 4 gold > 50 }
 					pay_short_term_gold = { target = scope:actor gold = gold }
-					add_opinion = { target = scope:actor modifier = extortion_opinion }
 				}
 				0 = {
 					modifier = { add = 4 NOT = { scope:actor.faith = scope:recipient.faith } }
