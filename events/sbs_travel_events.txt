@@ -320,7 +320,7 @@ sbs_travel.0103 = {
 			age = { 20 30 }
 			gender_female_chance = 100
 			dynasty = none
-			trait = beauty_good_3
+			trait = beauty_good_1
 			save_scope_as = sbs_random_1
 		}
 	}
