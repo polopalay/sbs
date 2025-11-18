@@ -102,16 +102,10 @@
 			}
 		}
 		$PROSTITUTE$ = {
-			if = {
-				limit = { has_character_modifier = recently_had_sex }
-				random = { chance = 0 modifier = { scope:had_sex_root_character = { is_female = no } add = 50 } add_character_modifier = { modifier = face_cum months = 6 } }
-				random = { chance = 0 modifier = { scope:had_sex_root_character = { is_female = no } add = 50 } add_character_modifier = { modifier = body_cum months = 6 } }
-				random = { chance = 0 modifier = { scope:had_sex_root_character = { is_female = no } add = 50 } add_character_modifier = { modifier = ass_cum months = 6 } }
-				random = { chance = 0 modifier = { scope:had_sex_root_character = { is_female = no } is_female = yes add = 50 } add_character_modifier = { modifier = pussy_cum months = 6 } }
-			}
-			else = {
-				add_character_modifier = { modifier = recently_had_sex years = 2 }
-			}
+			random = { chance = 0 modifier = { scope:had_sex_root_character = { is_female = no } add = 50 } add_character_modifier = { modifier = face_cum months = 6 } }
+			random = { chance = 0 modifier = { scope:had_sex_root_character = { is_female = no } add = 50 } add_character_modifier = { modifier = body_cum months = 6 } }
+			random = { chance = 0 modifier = { scope:had_sex_root_character = { is_female = no } add = 50 } add_character_modifier = { modifier = ass_cum months = 6 } }
+			random = { chance = 0 modifier = { scope:had_sex_root_character = { is_female = no } is_female = yes add = 50 } add_character_modifier = { modifier = pussy_cum months = 6 } }
 			add_trait_xp = { trait = lifestyle_prostitute value = 10 }
 			if = {
 				limit = { OR = { has_trait_xp = { trait = lifestyle_prostitute value < 50 } NOT = { has_trait = lifestyle_prostitute } } }

@@ -39,7 +39,6 @@
 				}
 				0 = {
 					modifier = { add = 8 current_weight < 40 }
-					add_character_modifier = { modifier = forced_labor years = 2 }
 					change_current_weight = -10
 				}
 				0 = {

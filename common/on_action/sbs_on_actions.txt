@@ -123,7 +123,6 @@ on_travel_plan_movement = {
 		is_female = yes
 		is_ruler = yes
 		is_landed = yes
-		is_ai = no
 	}
 	on_actions = {
 		delay = { days = { 2 4 } }

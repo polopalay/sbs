@@ -21,17 +21,6 @@ carn_working_as_prostitute_3_modifier = {
 	monthly_prestige = -0.1
 }
 
-recently_had_sex = {
-	icon = prostitute_negative
-	health = -0.25
-}
-
-forced_labor = {
-	icon = slave_negative
-	monthly_income = 0.1
-	health = -0.1
-}
-
 face_cum = {
 	icon = prostitute_positive
 	health = -0.1

@@ -25,9 +25,6 @@
 
  carnia_slave_training_interaction: "训练奴隶"
  carnia_slave_training_interaction.desc: "训练[recipient.GetShortUINameNoTooltip]成为温顺的奴隶"
- have_sex: "发生性关系"
- extort_gold: "敲诈金币"
- forced_labor: "强迫劳动"
 
  carnia_prostitute_interaction: "买春"
  carnia_prostitute_interaction.desc: "请求[recipient.GetShortUIName]提供性服务"

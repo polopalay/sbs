@@ -17,11 +17,6 @@
  carn_prostitution_crime_opinion: "Известно, что [GetTrait('prostitute').GetName( GetNullCharacter )]"
  prostitute_shunned_opinion: "Известно, что [GetTrait('prostitute').GetName( GetNullCharacter )]"
 
- recently_had_sex: "Недавний секс"
- recently_had_sex_desc: "Этот персонаж недавно имел секс и не мог продолжать в течение некоторого времени."
- forced_labor: "Принудительный труд"
- forced_labor_desc: "Этот персонаж вынужден работать против своей воли."
-
  face_cum: "Сперма на лице" 
  face_cum_desc: "Этот персонаж хочет получить сперму на лице." 
 

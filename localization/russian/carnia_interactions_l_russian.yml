@@ -23,20 +23,8 @@
   carn_free_slave_interaction: "Освободить раба"
   carn_free_slave_interaction.desc: "Освободите [recipient.GetShortUINameNoTooltip] от рабства."
 
-  forced_labor_interaction: "Принудительный труд"
-  forced_labor_interaction.desc: "[recipient.GetShortUINameNoTooltip] был вынужден работать слишком усердно."
-
-  ordinary_labor_interaction: "Обычный труд"
-  ordinary_labor_interaction.desc: "[recipient.GetShortUIName] работает умеренно, что подходит для здоровья."
-
-  extortion_interaction: "Вымогать"
-  extortion_interaction.desc: "Вымогать [recipient.GetShortUINameNoTooltip] [gold|E]."
-
   carnia_slave_training_interaction: "Обучение раба"
   carnia_slave_training_interaction.desc: "Обучение [recipient.GetShortUINameNoTooltip] быть послушным рабом"
-  have_sex: "Заниматься сексом"
-  extort_gold: "Вымогать золото"
-  forced_labor: "Принудительный труд"
 
   carnia_prostitute_interaction: "Проституция"
   carnia_prostitute_interaction.desc: "Запросите [recipient.GetShortUIName] предоставить сексуальные услуги."

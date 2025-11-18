@@ -25,9 +25,6 @@
 
  carnia_slave_training_interaction: "奴隷を訓練する"
  carnia_slave_training_interaction.desc: "[recipient.GetShortUINameNoTooltip]を従順な奴隷になるように訓練する"
- have_sex: "セックスをする"
- extort_gold: "金をゆすり取る"
- forced_labor: "強制労働"
 
  carnia_prostitute_interaction: "売春"
  carnia_prostitute_interaction.desc: "[recipient.GetShortUIName]に性的サービスの提供を依頼する"

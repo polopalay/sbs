@@ -25,9 +25,6 @@
 
  carnia_slave_training_interaction: "Wyszkol niewolnika"
  carnia_slave_training_interaction.desc: "Wyszkol [recipient.GetShortUINameNoTooltip] być potulnym niewolnikiem"
- have_sex: "Uprawiać seks"
- extort_gold: "Wyłudzać złoto"
-forced_labor: "Praca przymusowa"
 
 carnia_prostitute_interaction: "Prostytucja"
 carnia_prostitute_interaction.desc: "Poproś [recipient.GetShortUIName] o świadczenie usług seksualnych"

@@ -25,9 +25,6 @@
 
  carnia_slave_training_interaction: "Train Slave"
  carnia_slave_training_interaction.desc: "Train [recipient.GetShortUINameNoTooltip] to be a docile slave"
- have_sex: "Have Sex"
- extort_gold: "Extort Gold"
- forced_labor: "Forced Labor"
 
  carnia_prostitute_interaction: "Prostituting"
  carnia_prostitute_interaction.desc: "Request [recipient.GetShortUIName] to provide sexual services"

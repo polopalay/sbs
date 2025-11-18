@@ -17,11 +17,6 @@
  carn_prostitution_crime_opinion: "远近闻名的[GetTrait('prostitute').GetName( GetNullCharacter )]"
  prostitute_shunned_opinion: "远近闻名的[GetTrait('prostitute').GetName( GetNullCharacter )]"
 
- recently_had_sex: "最近发生过性行为"
- recently_had_sex_desc: "这个角色最近发生过性行为，但一段时间内无法继续。"
- forced_labor: "强迫劳动"
- forced_labor_desc: "这个角色被迫违背自己的意愿工作。"
-
  face_cum: "脸上的精子"
  face_cum_desc: "此角色接收面部精子。"
 

@@ -17,11 +17,6 @@
  carn_prostitution_crime_opinion: "Znana [GetTrait('prostitute').GetName( GetNullCharacter )]"
  prostitute_shunned_opinion: "Znana [GetTrait('prostitute').GetName( GetNullCharacter )]"
 
- recently_had_sex: "Uprawiała ostatnio seks"
- recently_had_sex_desc: "Ta postać uprawiała ostatnio seks i od jakiegoś czasu nie jest w stanie kontynuować."
- forced_labor: "Praca przymusowa"
- forced_labor_desc: "Ta postać jest zmuszana do pracy wbrew swojej woli."
-
  face_cum: "Sperme sur le visage" 
  face_cum_desc: "Ce personnage aime recevoir du sperme sur le visage." 
 

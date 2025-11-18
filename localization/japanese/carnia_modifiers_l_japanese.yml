@@ -17,11 +17,6 @@
  carn_prostitution_crime_opinion: "[GetTrait('prostitute').GetName( GetNullCharacter )]として認識されています"
  prostitute_shunned_opinion: "[GetTrait('prostitute').GetName( GetNullCharacter )]として認識されています"
 
- recently_had_sex: "最近セックスをした"
- recently_had_sex_desc: "このキャラクターは最近セックスをしましたが、しばらく継続できていません"
- forced_labor: "強制労働"
- forced_labor_desc: "このキャラクターは自分の意志に反して労働を強制されています"
-
  face_cum: "精子の外観"
  face_cum_desc: "この人物は、外見上の精子を受け取ります。"
 

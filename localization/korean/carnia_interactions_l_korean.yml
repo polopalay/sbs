@@ -25,9 +25,6 @@
 
  carnia_slave_training_interaction: "노예 훈련"
  carnia_slave_training_interaction.desc: "[recipient.GetShortUINameNoTooltip]을 온순한 노예로 훈련"
- have_sex: "성관계"
- extort_gold: "금을 갈취"
- forced_labor: "강제 노동"
 
  carnia_prostitute_interaction: "매춘"
  carnia_prostitute_interaction.desc: "[recipient.GetShortUIName]에게 성 서비스를 요청합니다."
