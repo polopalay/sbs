@@ -319,7 +319,6 @@ pleasure_character = {
 			add_piety_level = 6
 			add_prestige_level = 6
 			set_immortal_age = 18
-			add_character_modifier = pureblood_demon
 		}
 	}
 	6.1.3 = {
@@ -441,7 +440,6 @@ violence_character = {
 			add_piety_level = 6
 			add_prestige_level = 6
 			set_immortal_age = 24
-			add_character_modifier = pureblood_demon
 		}
 	}
 	6.1.3 = {
@@ -611,7 +609,6 @@ nature_character = {
 			add_piety_level = 6
 			add_prestige_level = 6
 			set_immortal_age = 18
-			add_character_modifier = pureblood_demon
 		}
 	}
 	6.1.3 = {
@@ -712,7 +709,6 @@ greedy_character = {
 			add_piety_level = 6
 			add_prestige_level = 6
 			set_immortal_age = 24
-			add_character_modifier = pureblood_demon
 		}
 	}
 	6.1.3 = {

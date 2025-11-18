@@ -223,9 +223,7 @@ sbs_loyalty.8006 = {
 	option = {
 		name = sbs_loyalty.8006.a
 		custom_tooltip = sbs_loyalty.8006.a.tt
-		scope:sbs_loyalty_random_1 = {
-			add_character_modifier = sbs_buff
-		}
+		scope:sbs_loyalty_random_1 = { add_character_modifier = sbs_buff }
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_succubus

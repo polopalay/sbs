@@ -10,7 +10,7 @@ random_yearly_everyone_pulse = {
 	on_actions = {
 		delay = { days = { 10 30 } }
 		sbs_devil_on_action
-		delay = { days = { 20 40 } }
+		delay = { days = { 60 90 } }
 		sbs_prostitutute_on_action
 	}
 	events = {

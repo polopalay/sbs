@@ -123,6 +123,7 @@ sbs_devil.1300 = {
 			has_trait = sbs_succubus
 			has_trait = sbs_lesser_succubus
 			has_trait = deviant
+			any_secret = { type = secret_deviant }
 		}
 		is_female = yes
 		is_adult = yes

@@ -1,34 +1,9 @@
-pureblood_demon = {
-	icon = souls_positive
-	character_travel_speed = 666
-	character_travel_safety = 666
-	hostile_scheme_phase_duration_add = -666
-	enemy_hostile_scheme_phase_duration_add = 666
-	enemy_personal_scheme_success_chance_add = -666
-	stress_gain_mult = -13
-	stress_loss_mult = 13
-}
 sbs_buff = {
 	icon = souls_positive
-	health = 1
-	negate_health_penalty_add = 1
+	health = 0.1
+	negate_health_penalty_add = 0.1
 	life_expectancy = 10
 	years_of_fertility = 10
-	diplomacy = 1
-	martial = 1
-	stewardship = 1
-	intrigue = 1
-	learning = 1
-	prowess = 1
-	movement_speed = 0.1
-	retreat_losses = -0.1
-	embarkation_cost_mult = -0.1
-	naval_movement_speed_mult = 0.1
-	siege_phase_time = -0.1
-	siege_morale_loss = 0.1
-	hard_casualty_modifier = -0.1
-	supply_duration = 0.1
-	supply_limit_mult = 0.1
 	stacking = yes
 }
 
