@@ -6,7 +6,6 @@ become_demon = {
 	decision_group_type = decisions
 
 	is_shown = {
-		is_ruler = yes
 		NOT = { has_trait = sbs_demon }
 		NOT = { has_global_variable = seal_the_gates_of_hell }
 		OR = {
@@ -21,12 +20,13 @@ become_demon = {
 	is_valid = {
 		OR = {
 			AND = {
-				has_trait = sbs_succubus
+				has_trait_xp = { trait = sbs_succubus track = daring value >= 100 }
+				has_trait_xp = { trait = sbs_succubus track = power value >= 100 }
 				has_trait_xp = { trait = sbs_succubus track = corruption value >= 100 }
 				has_trait_xp = { trait = sbs_succubus track = loyalty value >= 100 }
 			}
 			AND = {
-				has_trait = sbs_lesser_demon
+				has_trait_xp = { trait = sbs_lesser_demon value >= 100 }
 				has_trait = education_intrigue_5
 				has_trait = education_diplomacy_5
 				has_trait = education_stewardship_5

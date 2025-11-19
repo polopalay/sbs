@@ -6,6 +6,7 @@
 
 	capital = c_sinai
 
+	landless = yes
 	destroy_if_invalid_heir = yes
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
@@ -20,6 +21,7 @@ k_violence = {
 
 	capital = c_roma
 
+	landless = yes
 	destroy_if_invalid_heir = yes
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
@@ -34,6 +36,7 @@ k_nature = {
 
 	capital = c_SuMa_ajatappareng
 
+	landless = yes
 	destroy_if_invalid_heir = yes
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
@@ -48,6 +51,7 @@ k_greedy = {
 
 	capital = c_kufa
 
+	landless = yes
 	destroy_if_invalid_heir = yes
 	no_automatic_claims = yes
 	always_follows_primary_heir = yes
