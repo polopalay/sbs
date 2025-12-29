@@ -333,6 +333,16 @@ sbs_devil.1310 = {
 		ai_chance = { base = 100 }
 		name = sbs_devil.1310.a
 		custom_tooltip = sbs_devil.1310.a.tt
+		random_living_character = {
+			limit = { is_adult = yes is_female = no }
+			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
+			weight = {
+				base = 0
+				modifier = { in_diplomatic_range = root add = 1 }
+				modifier = { is_courtier_of = root add = 1000 }
+				modifier = { has_trait = sbs_lesser_demon add = 10000 }
+			}
+		}
 		hidden_effect = {
 			add_character_modifier = { modifier = pussy_cum months = 1 }
 			add_trait_xp = {
@@ -414,12 +424,7 @@ sbs_devil.1315 = {
 				value = 25
 			}
 		}
-	}
-	after =	{
-		if = {
-			limit = { is_ruler = yes }
-			trigger_event = { id = sbs_devil.1319 days = 1 }
-		}
+		trigger_event = sbs_devil.1319
 	}
 }
 
@@ -447,14 +452,29 @@ sbs_devil.1319 = {
 		ai_chance = { base = 100 }
 		name = sbs_devil.1319.a
 		custom_tooltip = sbs_devil.1319.a.tt
-		random_living_character = {
-			limit = { is_adult = yes is_female = no }
-			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
-			weight = {
-				base = 0
-				modifier = { in_diplomatic_range = root add = 1 }
-				modifier = { is_courtier_of = root add = 1000 }
-				modifier = { has_trait = sbs_lesser_demon add = 10000 }
+		random_list = {
+			1 = {
+				modifier = { add = -1 OR = { has_trait = dull has_trait = intellect_good has_trait = shrewd } }
+				add_trait_force_tooltip = dull
+			}
+			1 = {
+				modifier = { add = -1 OR = { has_trait = weak has_trait = strong has_trait = physique_good } }
+				add_trait_force_tooltip = weak
+			}
+			1 = {
+				modifier = { add = -1 has_trait = lisping }
+				add_trait_force_tooltip = lisping
+			}
+			1 = {
+				modifier = { add = -1 has_trait = stuttering }
+				add_trait_force_tooltip = stuttering
+			}
+			1 = {
+				modifier = { add = -1 OR = { has_trait = fecund has_trait = infertile } }
+				add_trait_force_tooltip = fecund
+			}
+			15 = {
+				add_character_modifier = sbs_buff
 			}
 		}
 	}
@@ -653,7 +673,7 @@ sbs_devil.1410 = {
 	}
 	# pay gold
 	option = {
-		ai_chance = { base = 5 }
+		ai_chance = { base = 10 }
 		trigger = { gold >= minor_gold_value }
 		name = sbs_devil.1410.a
 		custom_tooltip = sbs_devil.1410.a.tt
@@ -664,9 +684,9 @@ sbs_devil.1410 = {
 	# beg for sex
 	option = {
 		ai_chance = {
-			base = 5
+			base = 2
 			modifier = {
-				subtract = 5
+				subtract = 2
 				has_trait_xp = { trait = sbs_succubus track = corruption value >= 100 }
 			}
 		}
@@ -679,9 +699,9 @@ sbs_devil.1410 = {
 	# stay still
 	option = {
 		ai_chance = {
-			base = 5
+			base = 1
 			modifier = {
-				subtract = 5
+				subtract = 1
 				has_trait_xp = { trait = sbs_succubus track = loyalty value >= 100 }
 			}
 		}

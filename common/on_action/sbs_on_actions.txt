@@ -66,7 +66,7 @@ sbs_devil_on_action = {
 				trigger_event = sbs_go.0501 # basic exploratory dildo fuck
 			}
 			0 = {
-				modifier = { has_character_modifier = deviants_strangebook_modifier add = 2 }
+				modifier = { has_character_modifier = deviants_strangebook_modifier NOT = { any_secret = { type = secret_prostitute } has_trait = lifestyle_prostitute } add = 2 }
 				trigger_event = sbs_go.5000 # you sweating in your study
 			}
 			0 = {

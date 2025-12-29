@@ -5,6 +5,7 @@ demonic_religion = {
 	doctrine = pagan_hostility_doctrine
 
 	#Main Group
+	doctrine = doctrine_monotheist
 	doctrine = doctrine_spiritual_head
 	doctrine = doctrine_gender_equal
 	doctrine = doctrine_pluralism_righteous
@@ -38,6 +39,9 @@ demonic_religion = {
 
 	#Funeral tradition
 	doctrine = doctrine_funeral_mummification
+	
+	#Coronation tradition
+	doctrine = doctrine_no_anointment
 
 	traits = {
 		virtues = { lustful deceitful callous sadistic vengeful greedy sbs_demon }
@@ -217,6 +221,7 @@ demonic_religion = {
 			doctrine = tenet_sanctity_of_nature
 			doctrine = tenet_megaliths
 
+			doctrine = doctrine_witchcraft_virtuous
 			doctrine = doctrine_funeral_sky_burial
 		}
 		pleasure = {
