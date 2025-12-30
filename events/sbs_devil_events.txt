@@ -473,6 +473,10 @@ sbs_devil.1319 = {
 				modifier = { add = -1 OR = { has_trait = fecund has_trait = infertile } }
 				add_trait_force_tooltip = fecund
 			}
+			1 = {
+				modifier = { add = -1 has_trait_with_flag = sbs_demon_trait }
+				add_trait_force_tooltip = sbs_lesser_succubus
+			}
 			15 = {
 				add_character_modifier = sbs_buff
 			}

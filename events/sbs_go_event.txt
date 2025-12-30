@@ -328,7 +328,7 @@ sbs_go.5200 = {
 	}
 	theme = secret
 	override_background = { reference = alley_night }
-	right_portrait = {
+	left_portrait = {
 		character = scope:random_knight
 		animation = anger
 	}
@@ -367,7 +367,7 @@ sbs_go.5201 = {
     desc = sbs_go.5201.a.desc
 	theme = secret
 	override_background = { reference = alley_night }
-	right_portrait = {
+	left_portrait = {
 		character = scope:random_knight
 		animation = ecstasy
 	}
@@ -391,7 +391,7 @@ sbs_go.5210 = {
     desc = sbs_go.5210.a.desc
 	theme = secret
 	override_background = { reference = alley_night }
-	right_portrait = {
+	left_portrait = {
 		character = scope:random_knight
 		animation = ecstasy
 	}
@@ -420,7 +420,7 @@ sbs_go.5211 = {
     desc = sbs_go.5211.a.desc
 	theme = secret
 	override_background = { reference = alley_night }
-	right_portrait = {
+	left_portrait = {
 		character = scope:random_knight
 		animation = ecstasy
 	}
@@ -756,7 +756,7 @@ sbs_go.6050 = {
 					add_trait_xp = { trait = sbs_lesser_succubus value = 100 }
 				}
 			}
-			esle = {
+			else = {
 				random_list = {
 				 9 = { add_character_modifier = sbs_buff }
 				 1 = { add_trait_force_tooltip = sbs_lesser_succubus }
