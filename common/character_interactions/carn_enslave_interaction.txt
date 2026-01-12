@@ -146,10 +146,10 @@
 		modifier = { add = -50 scope:recipient = { is_child_of = scope:actor } }
 		modifier = { add = -50 scope:recipient = { is_heir_of = scope:actor } }
 		modifier = { add = -25 scope:recipient = { is_ruler = yes } }
-		modifier = { add = -25 scope:recipient = { primary_title.tier >= tier_county } }
-		modifier = { add = -25 scope:recipient = { primary_title.tier >= tier_duchy } }
-		modifier = { add = -25 scope:recipient = { primary_title.tier >= tier_kingdom } }
-		modifier = { add = -25 scope:recipient = { primary_title.tier >= tier_empire } }
+		modifier = { add = -25 scope:recipient.primary_title.tier >= tier_county }
+		modifier = { add = -25 scope:recipient.primary_title.tier >= tier_duchy }
+		modifier = { add = -25 scope:recipient.primary_title.tier >= tier_kingdom }
+		modifier = { add = -25 scope:recipient.primary_title.tier >= tier_empire }
 		modifier = {
 			add = 20
 			scope:actor = {

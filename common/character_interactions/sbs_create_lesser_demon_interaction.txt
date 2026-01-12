@@ -154,9 +154,9 @@
 		modifier = { add = -5 scope:gold = yes }
 		modifier = { add = -5 scope:favor = yes }
 		modifier = { add = -20 scope:demand_conversion = yes scope:recipient = { has_trait = zealous } }
-		modifier = { add = -20 scope:demand_conversion = yes scope:recipient = { primary_title.tier = tier_kingdom } }
-		modifier = { add = -40 scope:demand_conversion = yes scope:recipient = { primary_title.tier = tier_empire } }
-		modifier = { add = -80 scope:demand_conversion = yes scope:recipient = { primary_title.tier = tier_hegemony } }
+		modifier = { add = -20 scope:demand_conversion = yes scope:recipient.primary_title.tier = tier_kingdom }
+		modifier = { add = -40 scope:demand_conversion = yes scope:recipient.primary_title.tier = tier_empire }
+		modifier = { add = -80 scope:demand_conversion = yes scope:recipient.primary_title.tier = tier_hegemony }
 	}
 	ai_frequency = 12
 	ai_targets = {

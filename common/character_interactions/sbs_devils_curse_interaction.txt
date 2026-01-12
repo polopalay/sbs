@@ -5,7 +5,7 @@ sbs_devils_curse_interaction = {
 	cooldown = { years = 1 }
 	common_interaction = yes
 	is_shown = {
-		NOT = { scope:recipient = scope:actor }
+		scope:recipient != scope:actor
 		scope:actor = {
 			is_adult = yes
 			has_trait_with_flag = sbs_demon_trait

@@ -63,8 +63,12 @@ sbs_go.0511 = {
 	type = character_event
 	title = sbs_go.0511.t
 	desc = sbs_go.0511.desc
-	theme = deviantsmaskgo
-	override_background = { reference = deviantbasicdildofuckontop }
+	theme = secret
+	override_background = { reference = study }
+	right_portrait = {
+		character = root
+		animation = ecstasy
+	}
 	# pass out
 	option = {
 		name = sbs_go.0511.a

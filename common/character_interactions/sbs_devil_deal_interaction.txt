@@ -445,7 +445,6 @@
 			HEALING = scope:healing
 			DNA = scope:dna
 			HONOR = scope:honor
-			AI = scope:actor
 		}
 		scope:actor = {
 			if = {
@@ -711,11 +710,11 @@
 		modifier = { add = -10 scope:favor = yes }
 		modifier = { add = -5 scope:demand_conversion = yes }
 		modifier = { add = -2 scope:expose_secret = yes }
-		modifier = { add = -5 scope:demand_conversion = yes scope:recipient = { primary_title.tier = tier_county } }
-		modifier = { add = -10 scope:demand_conversion = yes scope:recipient = { primary_title.tier = tier_duchy } }
-		modifier = { add = -20 scope:demand_conversion = yes scope:recipient = { primary_title.tier = tier_kingdom } }
-		modifier = { add = -40 scope:demand_conversion = yes scope:recipient = { primary_title.tier = tier_empire } }
-		modifier = { add = -80 scope:demand_conversion = yes scope:recipient = { primary_title.tier = tier_hegemony } }
+		modifier = { add = -5 scope:demand_conversion = yes scope:recipient.primary_title.tier = tier_county }
+		modifier = { add = -10 scope:demand_conversion = yes scope:recipient.primary_title.tier = tier_duchy }
+		modifier = { add = -20 scope:demand_conversion = yes scope:recipient.primary_title.tier = tier_kingdom }
+		modifier = { add = -40 scope:demand_conversion = yes scope:recipient.primary_title.tier = tier_empire }
+		modifier = { add = -80 scope:demand_conversion = yes scope:recipient.primary_title.tier = tier_hegemony }
 		modifier = { add = -5 scope:demand_conversion = yes scope:recipient = { ai_zeal > high_positive_ai_value } }
 		modifier = { add = -10 scope:demand_conversion = yes scope:recipient = { ai_zeal > very_high_positive_ai_value } }
 		modifier = { add = -25 scope:demand_conversion = yes scope:recipient = { ai_zeal > dominant_positive_ai_value } }

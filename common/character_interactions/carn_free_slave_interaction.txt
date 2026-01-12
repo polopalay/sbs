@@ -15,7 +15,7 @@
 	}
 	send_option = {
 		is_shown = {
-			NOT = { scope:recipient = scope:actor }
+			scope:recipient != scope:actor
 			scope:recipient ?= { gold >= scope:recipient.carn_slave_price_value }
 		}
 		flag = gold
@@ -23,7 +23,7 @@
 	}
 	send_option = {
 		is_shown = {
-			NOT = { scope:recipient = scope:actor }
+			scope:recipient != scope:actor
 			scope:recipient ?= { gold >= 1 gold < scope:recipient.carn_slave_price_value }
 		}
 		flag = current_gold
@@ -33,7 +33,7 @@
 		flag = demand_conversion
 		localization = "RELEASE_DEMAND_CONVERSION"
 		is_shown = {
-			NOT = { scope:recipient = scope:actor }
+			scope:recipient != scope:actor
 		}
 		is_valid = {
 			NOT = { scope:recipient.faith = scope:actor.faith }
@@ -52,7 +52,7 @@
 	
 	send_option = {
 		is_shown = {
-			NOT = { scope:recipient = scope:actor }
+			scope:recipient != scope:actor
 		}
 		flag = gain_hook
 		localization = "RELEASE_GAIN_HOOK"

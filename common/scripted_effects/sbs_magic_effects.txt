@@ -79,7 +79,7 @@ deal_with_the_devil_healing = {
 	$DEVIL$ = { save_scope_as = devil }
 	scope:dealer = {
 		if = {
-			limit = { OR = { $STRESS$ = yes $AI$ = { is_ai = yes } } }
+			limit = { OR = { $STRESS$ = yes scope:actor = { is_ai = yes } } }
 			remove_trait = drunkard
 			remove_trait = hashishiyah
 			remove_trait = rakish
@@ -95,7 +95,7 @@ deal_with_the_devil_healing = {
 		}
 
 		if = {
-			limit = { OR = { $HEALING$ = yes $AI$ = { is_ai = yes } } }
+			limit = { OR = { $HEALING$ = yes scope:actor = { is_ai = yes } } }
 			remove_trait = depressed_1
 			remove_trait = depressed_genetic
 			remove_trait = lunatic_1
@@ -141,7 +141,7 @@ deal_with_the_devil_healing = {
 		}
 
 		if = {
-			limit = { OR = { $DNA$ = yes $AI$ = { is_ai = yes } } }
+			limit = { OR = { $DNA$ = yes scope:actor = { is_ai = yes } } }
 			remove_trait = albino
 			remove_trait = lisping
 			remove_trait = stuttering
@@ -163,7 +163,7 @@ deal_with_the_devil_healing = {
 		}
 
 		if = {
-			limit = { OR = { $HONOR$ = yes $AI$ = { is_ai = yes } } }
+			limit = { OR = { $HONOR$ = yes scope:actor = { is_ai = yes } } }
 			if = {
 				limit = {
 					has_trait = witch
