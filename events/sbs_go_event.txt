@@ -715,7 +715,6 @@ sbs_go.6040 = {
 		trigger_event = sbs_go.6050
 		scope:random_man = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } } 
 		hidden_effect = {
-			add_character_modifier = sbs_buff
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
@@ -748,34 +747,32 @@ sbs_go.6050 = {
 		custom_tooltip = sbs_go.6050.a.tt	
 		add_character_modifier = { modifier = licentious_05_modifier months = 1 }
 		if = {
-			limit = { NOT = { has_trait_with_flag = sbs_demon_trait } is_ruler = yes is_lowborn = no has_character_modifier = sbs_buff }
+			limit = { has_trait = saint }
+			remove_trait = saint
+			give_nickname = nick_the_betrayer
+			add_trait_force_tooltip = sbs_lesser_succubus
 			if = {
-				limit = { has_trait = saint }
-				remove_trait = saint
-				give_nickname = nick_the_betrayer
-				add_trait_force_tooltip = sbs_lesser_succubus
-				if = {
-					limit = { has_trait = immortal }
-					remove_trait = immortal
-					add_trait_xp = { trait = sbs_lesser_succubus value = 100 }
-				}
+				limit = { has_trait = immortal }
+				remove_trait = immortal
+				add_trait_xp = { trait = sbs_lesser_succubus value = 100 }
 			}
-			else = {
-				random_list = {
-				 9 = { add_character_modifier = sbs_buff }
-				 1 = { add_trait_force_tooltip = sbs_lesser_succubus }
-				}
+		}
+		else = {
+			random_list = {
+			 5 = 0
+			 4 = { add_character_modifier = sbs_buff }
+			 1 = { add_trait_force_tooltip = sbs_lesser_succubus }
 			}
-			if = {
-				limit = { has_trait = chaste }
-				remove_trait = chaste
-				add_trait_force_tooltip = lustful
-			}
+		}
+		if = {
+			limit = { has_trait = chaste }
+			remove_trait = chaste
+			add_trait_force_tooltip = lustful
 		}
 	}	
 	# repent, repent
 	option = {
-		ai_chance = { base = 10 }
+		ai_chance = { base = 1 }
 		name = sbs_go.6050.a
 		custom_tooltip = sbs_go.6050.a.tt	
 		trigger_event = sbs_repent_event.0800

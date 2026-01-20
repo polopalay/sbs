@@ -178,6 +178,10 @@ become_demon = {
 				remove_trait = sbs_lesser_succubus
 			}
 			if = {
+				limit = { has_trait = sbs_lesser_demon }
+				remove_trait = sbs_lesser_demon
+			}
+			if = {
 				limit = { has_trait = sbs_succubus }
 				remove_trait = sbs_succubus
 			}

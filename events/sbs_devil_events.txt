@@ -477,7 +477,7 @@ sbs_devil.1319 = {
 				modifier = { add = -1 has_trait_with_flag = sbs_demon_trait }
 				add_trait_force_tooltip = sbs_lesser_succubus
 			}
-			15 = {
+			4 = {
 				add_character_modifier = sbs_buff
 			}
 		}
@@ -678,7 +678,7 @@ sbs_devil.1410 = {
 	# pay gold
 	option = {
 		ai_chance = { base = 10 }
-		trigger = { gold >= minor_gold_value }
+		trigger = { gold >= massive_gold_value }
 		name = sbs_devil.1410.a
 		custom_tooltip = sbs_devil.1410.a.tt
 		add_piety = medium_piety_loss

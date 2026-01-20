@@ -119,7 +119,6 @@ sbs_loyalty.8002 = {
 		name = sbs_loyalty.8002.a
 		custom_tooltip = sbs_loyalty.8002.a.tt
 		scope:succubus_randoman_2 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
-		add_character_modifier = { modifier = sbs_buff years = 10 }
 		trigger_event = sbs_loyalty.8003
 	}
 }
@@ -149,7 +148,6 @@ sbs_loyalty.8003 = {
 		name = sbs_loyalty.8003.a
 		custom_tooltip = sbs_loyalty.8003.a.tt
 		scope:succubus_randoman_2 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
-		add_character_modifier = { modifier = sbs_buff years = 10 }
 		trigger_event = sbs_loyalty.8004
 	}
 }
@@ -203,7 +201,6 @@ sbs_loyalty.8005 = {
 				opinion = 20
 			}
 			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
-			add_character_modifier = { modifier = sbs_buff years = 10 }
 		}
 		trigger_event = sbs_loyalty.8006
 	}

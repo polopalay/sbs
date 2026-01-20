@@ -137,6 +137,10 @@
 			multiplier = 0.2
 		}
 		modifier = { add = 5 scope:recipient.faith = scope:actor.faith scope:recipient.faith.religion = religion:demonic_religion }
+		modifier = { add = 5  scope:actor = { has_relation_lover = scope:recipient } }
+		modifier = { add = 5  scope:actor = { has_relation_friend = scope:recipient } }
+		modifier = { add = 10  scope:actor = { has_relation_best_friend = scope:recipient } }
+		modifier = { add = 10  scope:actor = { has_relation_soulmate = scope:recipient } }
 		modifier = { add = 10 scope:recipient = { is_extended_family_of = scope:actor } }
 		modifier = { add = 20 scope:recipient = { is_close_family_of = scope:actor } }
 		modifier = { add = 30 scope:recipient = { is_parent_of = scope:actor } }

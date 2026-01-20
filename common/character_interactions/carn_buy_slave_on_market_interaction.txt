@@ -26,13 +26,42 @@
 			}
 		}
 	}
+	localization_values = {
+		RANSOM_COST = tiny_gold_value
+	}
+	send_option = {
+		is_valid = { scope:actor ?= { gold >= scope:secondary_recipient.carn_slave_price_value } }
+		flag = gold
+		localization = "RANSOM_GOLD_OPTION"
+	}
+	send_option = {
+		is_valid = { scope:actor = { has_usable_hook = scope:recipient } }
+		flag = hook
+		localization = GENERIC_SPEND_A_HOOK
+	}
 	on_accept = {
 		carn_buy_slave_effect = {
 			SELLER = scope:recipient
 			BUYER = scope:actor
 			SLAVE = scope:secondary_recipient
 		}
-		scope:actor = { save_scope_as = buyer }
+		scope:actor = {
+			if = {
+				limit = { scope:gold = yes }
+				pay_short_term_gold = {
+					target = scope:recipient
+					gold = tiny_gold_value
+				}
+			}
+			if = {
+				limit = {
+					scope:hook = yes
+					has_hook = scope:recipient
+				}
+				use_hook = scope:recipient
+			}
+			save_scope_as = buyer
+		}
 		scope:recipient = { save_scope_as = seller }
 		scope:secondary_recipient = { save_scope_as = slave }
 		carn_buy_slave_effect = { SLAVE_PRICE = scope:recipient.carn_slave_price_value }
@@ -93,6 +122,8 @@
 		modifier = { add = 5 scope:secondary_recipient = { has_trait = giant } }
 		modifier = { add = 5 scope:secondary_recipient = { has_trait = weak } }
 		modifier = { add = 5 scope:secondary_recipient = { has_trait = dull } }
+		modifier = { add = 5 scope:gold = yes }
+		modifier = { add = 10 scope:hook = yes }
 		modifier = { add = -25 desc = carn_secondary_recipient_is_my_knight_reason scope:secondary_recipient = { is_knight_of = scope:recipient } }
 		modifier = { add = -50 desc = carn_secondary_recipient_is_my_councillor_reason scope:secondary_recipient = { is_councillor_of = scope:recipient } }
 		modifier = { add = -50 desc = carn_secondary_recipient_is_my_friend_reason scope:secondary_recipient = { has_relation_friend = scope:recipient } }

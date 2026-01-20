@@ -44,7 +44,7 @@
 	}
 	send_option = {
 		is_valid = {
-			scope:recipient ?= { gold >= major_gold_value }
+			scope:actor ?= { gold >= major_gold_value }
 		}
 		flag = gold
 		localization = "RANSOM_GOLD_OPTION"
