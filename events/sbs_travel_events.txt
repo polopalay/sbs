@@ -1920,8 +1920,8 @@ sbs_travel.2021 = {
 	#refuse	
 	option = {
 		ai_chance = { base = 10 }
-		name = sbs_travel.2021.a
-		custom_tooltip = sbs_travel.2021.a.tt
+		name = sbs_travel.2021.b
+		custom_tooltip = sbs_travel.2021.b.tt
 	}	
 }
 

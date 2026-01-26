@@ -13,7 +13,6 @@ sbs_blackmail.1000 = {
     trigger = { 
 		is_female = yes
 		is_adult = yes
-		any_secret = { type = secret_deviant }
         any_vassal = {
             is_female = no
             is_adult = yes
@@ -217,7 +216,6 @@ sbs_blackmail.1100 = {
 	trigger = {
     	is_female = yes
 		is_adult = yes
-		any_secret = { type = secret_deviant }
         any_vassal = {
             is_female = no
             is_adult = yes
@@ -361,7 +359,6 @@ sbs_blackmail.1200 = {
 	trigger = {
     	is_female = yes
 		is_adult = yes
-		any_secret = { type = secret_deviant }
         any_vassal = {
             is_female = no
             is_adult = yes
@@ -576,7 +573,6 @@ sbs_blackmail.1300 = {
 	trigger = {
     	is_female = yes
 		is_adult = yes
-		any_secret = { type = secret_deviant }
         any_vassal = {
             is_female = no
             is_adult = yes
@@ -770,7 +766,6 @@ sbs_blackmail.1400 = {
 		is_married = no
     	is_female = yes
 		is_adult = yes
-		any_secret = { type = secret_deviant }
 		is_concubine = no
         any_vassal = {
             is_female = no
@@ -869,7 +864,6 @@ sbs_blackmail.2000 = {
     	is_female = yes
 		is_adult = yes
 		is_married = yes
-		any_secret = { type = secret_deviant }
         any_vassal = {
             is_female = no
             is_adult = yes

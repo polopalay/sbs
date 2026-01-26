@@ -23,8 +23,8 @@ sbs_devils_curse_interaction = {
 			OR = {
 				has_trait = sbs_demon
 				has_trait_xp = { trait = sbs_succubus track = daring value >= 25 }
-				has_trait_xp = { trait = sbs_lesser_demon value >= 50 }
-				has_trait_xp = { trait = sbs_lesser_succubus value >= 100 }
+				has_trait_xp = { trait = sbs_lesser_succubus value >= 50 }
+				has_trait_xp = { trait = sbs_lesser_demon value >= 100 }
 			}
 		}
 	}
@@ -79,8 +79,8 @@ sbs_devils_curse_interaction = {
 		localization = sbs_seal
 	}
 	send_option = {
-		is_shown = { scope:recipient = { is_ai = yes } }
-		flag = MAPMODE_PLAYERS_LABEL
+		is_shown = { scope:actor = { is_ai = no } scope:recipient = { is_ai = yes } }
+		flag = player
 		localization = MAPMODE_PLAYERS_LABEL
 	}
 	send_options_exclusive = no
@@ -92,12 +92,12 @@ sbs_devils_curse_interaction = {
 				add_trait_xp = { trait = sbs_succubus track = daring value = -25 }
 			}
 			else_if = {
-				limit = { has_trait = sbs_lesser_demon }
-				add_trait_xp = { trait = sbs_lesser_demon value = -50 }
+				limit = { has_trait = sbs_lesser_succubus }
+				add_trait_xp = { trait = sbs_lesser_succubus value = -50 }
 			}
 			else_if = {
-				limit = { has_trait = sbs_lesser_succubus }
-				add_trait_xp = { trait = sbs_lesser_succubus value = -100 }
+				limit = { has_trait = sbs_lesser_demon }
+				add_trait_xp = { trait = sbs_lesser_demon value = -100 }
 			}
 		}
 		scope:recipient = {
@@ -147,7 +147,7 @@ sbs_devils_curse_interaction = {
 					add_character_modifier = sbs_seal
 				}
 				0 = {
-					modifier = { scope:MAPMODE_PLAYERS_LABEL = yes add = 100 }
+					modifier = { scope:player = yes add = 100 }
 					sbs_steal_body = { VICTIM = scope:recipient STEALER = scope:actor }	
 				}
 				1 = {

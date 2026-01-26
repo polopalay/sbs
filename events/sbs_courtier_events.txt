@@ -15,13 +15,7 @@ sbs_courtier.1440 = {
 		is_ruler = yes
 		is_female = yes
 		should_be_naked_trigger = no
-		any_councillor = { is_female = no }
-		OR = {
-			has_trait = sbs_succubus
-			has_trait = sbs_lesser_succubus
-			has_trait = deviant
-			any_secret = { type = secret_deviant }
-		}
+		any_councillor = { is_female = no NOT = { is_spouse_of = root } }
 	}
 	option = {
 		name = sbs_courtier.1440.a
@@ -131,20 +125,11 @@ sbs_courtier.1460 = {
 		is_adult = yes
 		is_female = yes
 		should_be_naked_trigger = yes
-		any_councillor = { is_female = no }
-		OR = {
-			has_trait = sbs_succubus
-			has_trait = sbs_lesser_succubus
-			has_trait = deviant
-			any_secret = { type = secret_deviant }
-		}
+		any_councillor = { is_female = no NOT = { is_spouse_of = root } }
 	}
 	immediate = {
 		random_councillor = {
-			limit = {
-				is_adult = yes
-				is_attracted_to_gender_of = root
-			}
+			limit = { is_female = no NOT = { is_spouse_of = root } }
 			save_scope_as = sbs_random_1
 		}
 	}
@@ -329,4 +314,122 @@ sbs_courtier.1463 = {
 			add_character_modifier = { modifier = body_cum days = 10 }
 		}
 	}
+}
+
+#2000urge to masturbate, middle of a meeting... pick when to do it... try to do it now is an intrigue challenge... diplo to excsue the meeting without issue, it's an important matter, or at least others seem to think os, endure is stress add...
+sbs_courtier.2000 = { 
+	type = character_event
+	title = sbs_courtier.2000.t
+	desc = sbs_courtier.2000.desc
+	theme = secret 
+	override_background = { reference = council_chamber }
+	right_portrait = {
+		character = root
+		animation = boredom  
+	}
+    trigger = {
+		OR = {
+			has_trait = deviant
+			any_secret = { type = secret_deviant }
+		}
+		is_ruler = yes
+		is_adult = yes
+	}
+	# dimsiss the meeting
+	option = {
+		name = sbs_courtier.2000.a
+		custom_tooltip = sbs_courtier.2000.a.tt
+        duel = {
+			skill = diplomacy
+			value = 10
+			# you convince everyone that you need to go pray, right now...
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = 3.5
+						min = -49
+				}
+				custom_tooltip = {
+					text = sbs_courtier.2000.aw.tt
+				}	
+				add_piety = minor_piety_gain
+				stress_impact = {
+					base = major_stress_impact_loss
+				}	
+			}
+			# 
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = -3.5
+						min = -49
+				}	
+				custom_tooltip = {
+					text = sbs_courtier.2000.al.tt
+				}		
+				add_prestige = minor_prestige_loss	
+				stress_impact = {
+					base = medium_stress_impact_loss
+				}				
+			}
+		}
+	}		
+	# do it now, 
+	option = {
+		name = sbs_courtier.2000.b
+		custom_tooltip = sbs_courtier.2000.b.tt
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_succubus
+				track = deviant
+				value = 1
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 10
+			}
+		}
+        duel = {
+			skill = intrigue
+			value = 10
+			# nobdy will notice, and the others even think you are focusing really inetntlys
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = 3.5
+						min = -49
+				}
+				custom_tooltip = {
+					text = sbs_courtier.2000.bw.tt
+				}		
+				add_prestige = miniscule_prestige_gain
+				stress_impact = {
+					base = major_stress_impact_loss
+				}
+			}
+			# bad rumours, that you act weird during meetings
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = -3.5
+						min = -49
+				}	
+				custom_tooltip = {
+					text = sbs_courtier.2000.bl.tt
+				}	
+				add_piety = minor_piety_loss	
+				stress_impact = {
+					base = minor_stress_impact_gain
+				}				
+			}
+		}
+	}	
+	# resist 
+	option = {
+		name = sbs_courtier.2000.c
+		custom_tooltip = sbs_courtier.2000.c.tt
+		stress_impact = {
+			base = major_stress_impact_gain
+		}
+	}			
 }

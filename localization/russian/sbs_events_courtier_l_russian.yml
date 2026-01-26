@@ -109,6 +109,19 @@
  sbs_courtier.1463.a: "More seed, please."  
  sbs_courtier.1463.a.tt: "Eventually the men depart, leaving you to roll in your sweet shame."
 
+ sbs_courtier.2000.t: "Meeting Urges"
+ sbs_courtier.2000.desc: "You barely manage to hide your boredom as you listen to explanations about the tax codes of other rulers. The speaker is sure that there is a point in their words, somewhere but you start to feel the burning of your loins. You know from experience that if nothing is done right now, it will only get worse."
+ sbs_courtier.2000.a: "I need to pray." 
+ sbs_courtier.2000.a.tt: "If I word it right, nobody will think I'm using an excuse to escape from a boring meeting."
+ sbs_courtier.2000.aw.tt: "Everybody understands your need and some even take the chance to go pray themselves."
+ sbs_courtier.2000.al.tt: "Some people think that you would even use your faith to avoid your duties."
+ sbs_courtier.2000.b: "Do it now." 
+ sbs_courtier.2000.b.tt: "And by that I mean, slip my hand down to my crotch and start rubbing under the table."
+ sbs_courtier.2000.bw.tt: "You manage to finish with an oddly tense satisfaction, and the others even think you looked extra focused today."
+ sbs_courtier.2000.bl.tt: "Odd rumors spread around you, mostly about you making odd faces during meetings."
+ sbs_courtier.2000.c: "Resist your impulses." 
+ sbs_courtier.2000.c.tt: "Not now, but right after the meeting but by then, who knows how much your nerves have suffered as every second feels like an eternity of pent-up frustration."
+
  sbs_courtier.7000.t: "For Looking the Other Way"
  sbs_courtier.7000.a.desc: "[sbs_random_1.GetName] has come to me with a letter that had been sealed and signed by my liege's insignia as proof of its authenticity. In it, I'm reprimanded for employing a courtesan who looks almost like me and using her to my benefit.\n\nThough I'm also offered a remedy to make sure that [sbs_random_2.GetName] keeps looking the other way. [sbs_random_1.GetName] has accomplished some merits and I'm asked to reward them. Either with a monetary compensation or by offering my courtesan's services.\n\n[sbs_random_1.GetFirstName] tells me to send the whore into their guest room, ready to serve if I agree. Or simply have the money delivered if I don't want to escalate the complaints about my questionable behavior."
  sbs_courtier.7000.a: "She will be there."
@@ -119,7 +132,7 @@
  sbs_courtier.7000.c.tt: "Even if sternly written letters about your behavior is sent to who knows where, you will not be blackmailed in such a way."
 
  sbs_courtier.7001.t: "Final Options"
- sbs_courtier.7001.a.desc: "[sbs_random_1.GetFirstName] sits in a chair and tells me to strip when I enter the room. There is also a group of male guards present. As I hesitate to follow the order, I'm told that my whole purpose here is to reward all the brave men here for their great service.\n\n\"If you're too shy to do such a simple task despite being a deviant whore, then [ROOT.GetCharacter.GetName] better pay for compensation for employing such a disappointment\" [sbs_random_1.GetFirstName] states while the guards move to block the door. \"Or if you refuse, we might need to discipline you on your owner's behalf.\n\n\"So be a good slut and strip to present your cunt to us, and call yourself what you are while you are at it,\" one of the guards muse.\"
+ sbs_courtier.7001.a.desc: "[sbs_random_1.GetFirstName] sits in a chair and tells me to strip when I enter the room. There is also a group of male guards present. As I hesitate to follow the order, I'm told that my whole purpose here is to reward all the brave men here for their great service.\n\n\"If you're too shy to do such a simple task despite being a deviant whore, then [ROOT.GetCharacter.GetName] better pay for compensation for employing such a disappointment\" [sbs_random_1.GetFirstName] states while the guards move to block the door. \"Or if you refuse, we might need to discipline you on your owner's behalf.\n\n\"So be a good slut and strip to present your cunt to us, and call yourself what you are while you are at it,\" one of the guards muse."
  sbs_courtier.7001.a: "I'm a horny slut!"
  sbs_courtier.7001.a.tt: "You start removing your clothes, surrounded by leering men."
  sbs_courtier.7001.b: "Payment will be made."

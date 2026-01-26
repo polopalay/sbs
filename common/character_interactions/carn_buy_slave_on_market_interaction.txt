@@ -27,7 +27,7 @@
 		}
 	}
 	localization_values = {
-		RANSOM_COST = tiny_gold_value
+		RANSOM_COST = minor_gold_value
 	}
 	send_option = {
 		is_valid = { scope:actor ?= { gold >= scope:secondary_recipient.carn_slave_price_value } }
@@ -50,7 +50,7 @@
 				limit = { scope:gold = yes }
 				pay_short_term_gold = {
 					target = scope:recipient
-					gold = tiny_gold_value
+					gold = minor_gold_value
 				}
 			}
 			if = {
@@ -132,7 +132,7 @@
 		modifier = { add = -100 desc = carn_secondary_recipient_is_my_soulmate_reason scope:secondary_recipient = { has_relation_soulmate = scope:recipient } }
 	}
 	ai_will_do = {
-		base = 0
+		base = 10
 		modifier = { add = 10 scope:recipient = { any_courtier = { has_trait = slave count > scope:recipient.number_slaves_normal_need } } }
 		modifier = { add = 50 scope:secondary_recipient = { is_child_of = scope:actor } }
 		modifier = { add = 30 scope:secondary_recipient = { is_close_family_of = scope:actor } }

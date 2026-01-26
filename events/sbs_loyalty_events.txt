@@ -48,7 +48,7 @@ sbs_loyalty.8000 = {
 		trigger = {
 			NOT = { has_trait_with_flag = carn_cannot_be_enslaved }
 		}
-		ai_chance = { base = 1 }
+		ai_chance = { base = 0 }
 		name = sbs_loyalty.8000.c
 		custom_tooltip = sbs_loyalty.8000.c.tt
 		every_held_title = {

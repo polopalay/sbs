@@ -307,7 +307,7 @@ sbs_prostitution.9003 = {
 	option = {
 		name = sbs_prostitution.9003.a
 		custom_tooltip = sbs_prostitution.9003.a.tt
-		add_gold = 10
+		add_gold = tiny_gold_value
 		stress_impact = {
 			lustful = medium_stress_impact_loss
 		}
@@ -497,8 +497,12 @@ sbs_prostitution.9013 = {
 	option = {
 		name = sbs_prostitution.9013.a
 		custom_tooltip = sbs_prostitution.9013.a.tt
-		add_gold = 2
+		add_gold = tiny_gold_value
 		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 2
+			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
@@ -558,7 +562,7 @@ sbs_prostitution.9015 = {
 	option = {
 		name = sbs_prostitution.9015.a
 		custom_tooltip = sbs_prostitution.9015.a.tt
-		add_gold = 2
+		add_gold = tiny_gold_value
 	}
 }
 #9016 if lose intrigue challenge
@@ -693,8 +697,12 @@ sbs_prostitution.9021 = {
 	option = {
 		name = sbs_prostitution.9021.a
 		custom_tooltip = sbs_prostitution.9021.a.tt
-		add_gold = 2
+		add_gold = tiny_gold_value
 		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 2
+			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
@@ -753,8 +761,12 @@ sbs_prostitution.9023 = {
 	option = {
 		name = sbs_prostitution.9023.a
 		custom_tooltip = sbs_prostitution.9023.a.tt
-		add_gold = 1
+		add_gold = tiny_gold_value
 		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 2
+			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
@@ -852,9 +864,13 @@ sbs_prostitution.9031 = {
 	option = {
 		name = sbs_prostitution.9031.a
 		custom_tooltip = sbs_prostitution.9031.a.tt
-		add_gold = 2
+		add_gold = tiny_gold_value
 		scope:random_noble = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
 		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 2
+			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
@@ -974,8 +990,12 @@ sbs_prostitution.9033 = {
 	option = {
 		name = sbs_prostitution.9033.a
 		custom_tooltip = sbs_prostitution.9033.a.tt
-		add_gold = 5
+		add_gold = minor_gold_value
 		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 2
+			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
@@ -1003,7 +1023,7 @@ sbs_prostitution.9034 = {
 	option = {
 		name = sbs_prostitution.9034.a
 		custom_tooltip = sbs_prostitution.9034.a.tt
-		add_gold = 1
+		add_gold = tiny_gold_value
 	}
 }
 #9035 if win intrigue
@@ -1025,8 +1045,12 @@ sbs_prostitution.9035 = {
 	option = {
 		name = sbs_prostitution.9035.a
 		custom_tooltip = sbs_prostitution.9035.a.tt
-		add_gold = 5
+		add_gold = minor_gold_value
 		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 2
+			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
@@ -1125,8 +1149,12 @@ sbs_prostitution.9041 = {
 	option = {
 		name = sbs_prostitution.9041.a
 		custom_tooltip = sbs_prostitution.9041.a.tt
-		add_gold = 1
+		add_gold = tiny_gold_value
 		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 2
+			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
@@ -1154,8 +1182,12 @@ sbs_prostitution.9042 = {
 	option = {
 		name = sbs_prostitution.9042.a
 		custom_tooltip = sbs_prostitution.9042.a.tt
-		add_gold = 2
+		add_gold = tiny_gold_value
 		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 2
+			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
@@ -1183,8 +1215,12 @@ sbs_prostitution.9043 = {
 	option = {
 		name = sbs_prostitution.9043.a
 		custom_tooltip = sbs_prostitution.9043.a.tt
-		add_gold = 2
+		add_gold = tiny_gold_value
 		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 2
+			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
@@ -1212,8 +1248,12 @@ sbs_prostitution.9044 = {
 	option = {
 		name = sbs_prostitution.9044.a
 		custom_tooltip = sbs_prostitution.9044.a.tt
-		add_gold = 2
+		add_gold = tiny_gold_value
 		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 2
+			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
@@ -1241,8 +1281,12 @@ sbs_prostitution.9045 = {
 	option = {
 		name = sbs_prostitution.9045.a
 		custom_tooltip = sbs_prostitution.9045.a.tt
-		add_gold = 1
+		add_gold = tiny_gold_value
 		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 2
+			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
@@ -1270,8 +1314,12 @@ sbs_prostitution.9046 = {
 	option = {
 		name = sbs_prostitution.9046.a
 		custom_tooltip = sbs_prostitution.9046.a.tt
-		add_gold = 2
+		add_gold = tiny_gold_value
 		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 2
+			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
@@ -1330,9 +1378,9 @@ sbs_prostitution.9201 = {
 		name = sbs_prostitution.9201.a
 		custom_tooltip = sbs_prostitution.9201.a.tt
 		random_list = {
-			1 = { add_gold = 1 }
-			1 = { add_gold = 2 }
-			1 = { add_gold = 4 }
+			1 = { add_gold = tiny_gold_value }
+			1 = { add_gold = minor_gold_value }
+			1 = { add_gold = medium_gold_value }
 		}
 	}
 }
@@ -1476,12 +1524,16 @@ sbs_prostitution.9202 = {
 		custom_tooltip = sbs_prostitution.9202.d.tt
 		hidden_effect = {
 			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = -2
+			}
+			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
 				value = -1
 			}
 		}
-		add_gold = 1
+		add_gold = tiny_gold_value
 	}
 }
 #9203 seduce pay win
@@ -1505,12 +1557,16 @@ sbs_prostitution.9203 = {
 		scope:random_noble = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
 		hidden_effect = {
 			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 2
+			}
+			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
 				value = 1
 			}
 		}
-		add_gold = 2
+		add_gold = medium_gold_value
 	}
 }
 #9204 seduce pay lose
@@ -1531,7 +1587,7 @@ sbs_prostitution.9204 = {
 	option = {
 		name = sbs_prostitution.9204.a
 		custom_tooltip = sbs_prostitution.9204.a.tt
-		add_gold = 1
+		add_gold = tiny_gold_value
 	}
 }
 #9205 suck right there win
@@ -1555,12 +1611,16 @@ sbs_prostitution.9205 = {
 		scope:random_noble = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 0 } }
 		hidden_effect = {
 			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 2
+			}
+			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
 				value = 1
 			}
 		}
-		add_gold = 2
+		add_gold = medium_gold_value
 	}
 }
 #9206 suck right there lose
@@ -1581,7 +1641,7 @@ sbs_prostitution.9206 = {
 	option = {
 		name = sbs_prostitution.9206.a
 		custom_tooltip = sbs_prostitution.9206.a.tt
-		add_gold = 1
+		add_gold = tiny_gold_value
 	}
 }
 #9207 anal ride right there on his lap win
@@ -1605,12 +1665,16 @@ sbs_prostitution.9207 = {
 		scope:random_noble = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 0 } }
 		hidden_effect = {
 			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 2
+			}
+			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
 				value = 1
 			}
 		}
-		add_gold = 2
+		add_gold = minor_gold_value
 	}
 }
 #9208 can't take it, get vaginal fucked, right there lose
@@ -1631,7 +1695,7 @@ sbs_prostitution.9208 = {
 	option = {
 		name = sbs_prostitution.9208.a
 		custom_tooltip = sbs_prostitution.9208.a.tt
-		add_gold = 1
+		add_gold = tiny_gold_value
 	}
 }
 
@@ -1686,12 +1750,16 @@ sbs_prostitution.9221 = {
 		custom_tooltip = sbs_prostitution.9221.a.tt
 		hidden_effect = {
 			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 2
+			}
+			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
 				value = 1
 			}
 		}
-		add_gold = 1
+		add_gold = tiny_gold_value
 	}
 }
 #9222 variant two, Art Exhibit Decoration, the painting
@@ -1710,12 +1778,16 @@ sbs_prostitution.9222 = {
 		custom_tooltip = sbs_prostitution.9222.a.tt
 		hidden_effect = {
 			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 2
+			}
+			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
 				value = 1
 			}
 		}
-		add_gold = 1
+		add_gold = tiny_gold_value
 	}
 }
 #9223 variant three, front door handle
@@ -1734,12 +1806,16 @@ sbs_prostitution.9223 = {
 		custom_tooltip = sbs_prostitution.9223.a.tt
 		hidden_effect = {
 			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 2
+			}
+			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
 				value = 1
 			}
 		}
-		add_gold = 1
+		add_gold = tiny_gold_value
 	}
 }
 
@@ -1862,13 +1938,17 @@ sbs_prostitution.9233 = {
 		custom_tooltip = sbs_prostitution.9233.a.tt
 		hidden_effect = {
 			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 2
+			}
+			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
 				value = 1
 			}
 		}
 		scope:random_noble = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
-		add_gold = minor_gold_value
+		add_gold = medium_gold_value
 	}
 }
 #9234 if won't try
@@ -1889,7 +1969,7 @@ sbs_prostitution.9234 = {
 	option = {
 		name = sbs_prostitution.9234.a
 		custom_tooltip = sbs_prostitution.9234.a.tt
-		add_gold = 1
+		add_gold = tiny_gold_value
 		stress_impact = {
 			base = minor_stress_impact_gain
 			lustful = minor_stress_impact_gain
@@ -1983,12 +2063,16 @@ sbs_prostitution.9260 = {
 		custom_tooltip = sbs_prostitution.9260.a.tt	
 		hidden_effect = {
 			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 100
+			}
+			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
 				value = 50
 			}
 		}
-		add_gold = { 100 200 }
+		add_gold = { 50 300 }
 		scope:random_noble_1 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
 		scope:random_noble_2 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
 		scope:random_noble_3 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }

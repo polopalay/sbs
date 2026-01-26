@@ -196,8 +196,21 @@ sbs_repent_event.0900 = {
 		ai_chance = { base = 80 }
 		trigger = {
 			OR = {
-				has_trait = deviant
-				any_secret = { type = secret_deviant }
+				has_character_modifier = horse_story_modifier
+				has_character_modifier = horse_strength_modifier
+				has_character_modifier = horse_agility_modifier
+				has_character_modifier = horse_endurance_modifier
+				has_character_modifier = horse_fierceness_modifier
+				has_character_modifier = horse_strength_strength_modifier
+				has_character_modifier = horse_agility_strength_modifier
+				has_character_modifier = horse_agility_agility_modifier
+				has_character_modifier = horse_endurance_strength_modifier
+				has_character_modifier = horse_endurance_agility_modifier
+				has_character_modifier = horse_endurance_endurance_modifier
+				has_character_modifier = horse_fierceness_strength_modifier
+				has_character_modifier = horse_fierceness_agility_modifier
+				has_character_modifier = horse_fierceness_endurance_modifier
+				has_character_modifier = horse_fierceness_fierceness_modifier
 			}
 		}
 		name = sbs_repent_event.0900.c

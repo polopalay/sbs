@@ -9,16 +9,14 @@ sbs_devil.0550 = {
 		is_adult = yes
 		is_female = yes
 		OR = {
-			has_trait = lustful
 			has_trait = deviant
 			any_secret = { type = secret_deviant }
 		}
-		NOR = {
-			any_character_artifact { has_artifact_modifier = master_dildo_modifier }
-			any_character_artifact { has_artifact_modifier = mistress_dildo_modifier }
-			has_character_modifier = deviants_strangebook_modifier
-			has_trait_with_flag = sbs_demon_trait
+		OR = {
+			any_character_artifact { has_artifact_modifier = master_dildo_modifier count = 0 }
+			any_character_artifact { has_artifact_modifier = mistress_dildo_modifier count = 0 }
 		}
+		gold >= minor_gold_value
 	}
 	theme = bloody_wedding_night
 	override_background = { reference = bedchamber }
@@ -29,7 +27,7 @@ sbs_devil.0550 = {
 	# find one, at any cost
 	option = {
 		ai_chance = { base = 10 }
-		trigger = { gold >= minor_gold_value }
+		trigger = { gold >= minor_gold_value any_character_artifact { has_artifact_modifier = master_dildo_modifier count = 0 } }
 		name = sbs_devil.0550.a
 		custom_tooltip = sbs_devil.0550.a.tt
 		ai_chance = { base = 50 }
@@ -60,7 +58,7 @@ sbs_devil.0550 = {
 	# you can feel it, there is one nearby
 	option = {
 		ai_chance = { base = 10 }
-		trigger = { gold >= tiny_gold_value }
+		trigger = { gold >= tiny_gold_value any_character_artifact { has_artifact_modifier = mistress_dildo_modifier count = 0 } }
 		name = sbs_devil.0550.c
 		custom_tooltip = sbs_devil.0550.c.tt
 		ai_chance = { base = 50 }
@@ -79,7 +77,7 @@ sbs_devil.0550 = {
 	}
 	# buy book
 	option = {
-		ai_chance = { base = 10 }
+		ai_chance = { base = 2 }
 		trigger = { gold >= medium_gold_value is_ruler = yes NOT = { has_character_modifier = deviants_strangebook_modifier } }
 		name = sbs_devil.0550.d
 		custom_tooltip = sbs_devil.0550.d.tt
@@ -88,8 +86,9 @@ sbs_devil.0550 = {
 	}
 	# sleep potion for deviant lunatic
 	option = {
-		ai_chance = { base = 10 }
+		ai_chance = { base = 2 }
 		trigger = {
+		 	gold >= major_gold_value
 			NOT = { has_trait_with_flag = sbs_demon_trait }
 		}
 		name = sbs_devil.0550.e
@@ -477,7 +476,7 @@ sbs_devil.1319 = {
 				modifier = { add = -1 has_trait_with_flag = sbs_demon_trait }
 				add_trait_force_tooltip = sbs_lesser_succubus
 			}
-			4 = {
+			1 = {
 				add_character_modifier = sbs_buff
 			}
 		}
@@ -688,7 +687,7 @@ sbs_devil.1410 = {
 	# beg for sex
 	option = {
 		ai_chance = {
-			base = 2
+			base = 1
 			modifier = {
 				subtract = 2
 				has_trait_xp = { trait = sbs_succubus track = corruption value >= 100 }
