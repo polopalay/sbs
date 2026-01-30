@@ -161,6 +161,9 @@
 	ai_frequency = 12
 	ai_targets = {
 		ai_recipients = family
+		max = 10
+	}
+	ai_targets = {
 		ai_recipients = scripted_relations
 		ai_recipients = neighboring_rulers
 		max = 10

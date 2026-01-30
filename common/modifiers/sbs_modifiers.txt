@@ -16,6 +16,17 @@ sbs_debuff = {
 	stacking = yes
 }
 
+sbs_true_form = {
+	icon = souls_positive
+	health = -3
+	tyranny_gain_mult = -1
+	dread_gain_mult = 1
+	dread_decay_mult = -1
+	dread_baseline_add = 666
+	general_opinion = -100
+	prowess = 100
+}
+
 sbs_seal = {
 	icon = souls_negative
 	health = 3

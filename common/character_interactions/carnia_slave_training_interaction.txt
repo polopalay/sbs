@@ -18,8 +18,8 @@
 	}
 	send_option = {
 		is_shown = { scope:recipient = { should_be_naked_trigger = no } }
-		flag = diplomacy_majesty_4090_no_raiment_modifier
-		localization = naked
+		flag = naked
+		localization = diplomacy_majesty_4090_no_raiment_modifier
 	}
 	send_option = {
 		is_shown = { scope:recipient.gold > 0 }
@@ -41,7 +41,7 @@
 		flag = prostitute
 		localization = "carnia_prostitute_interaction"
 	}
-	send_options_exclusive = no
+	send_options_exclusive = yes
 	on_accept = {
 		scope:recipient = {
 			random_list = {
@@ -77,7 +77,7 @@
 					modifier = { scope:actor = { is_ai = yes } is_female = yes is_adult = yes add = 10 }
 					modifier = { scope:prostitute = yes add = 10 }
 					random_living_character = {
-						limit = { is_lowborn = yes is_ruler = no is_female = no is_adult = yes add = 1 in_diplomatic_range = scope:actor }
+						limit = { is_lowborn = yes is_ruler = no is_female = no is_adult = yes in_diplomatic_range = scope:actor }
 						prostitute_effect = { PROSTITUTE = scope:recipient PREGNANCY_CHANCE = 100 }
 						pay_short_term_gold = { target = scope:actor gold = tiny_gold_value }
 					}

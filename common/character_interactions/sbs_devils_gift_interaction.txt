@@ -65,7 +65,17 @@ sbs_devils_gift_interaction = {
 		flag = sbs_seal
 		localization = sbs_seal
 	}
-	send_options_exclusive = no
+	send_option = {
+		is_shown = { scope:recipient = { NOT = { has_character_modifier = sbs_generals has_trait_with_flag = sbs_demon_trait } } }
+		flag = sbs_generals
+		localization = sbs_generals
+	}
+	send_option = {
+		is_shown = { scope:recipient = { NOT = { has_character_modifier = sbs_buff } } }
+		flag = sbs_buff
+		localization = sbs_buff
+	}
+	send_options_exclusive = yes
 	on_accept = {
 		scope:actor = {
 			if = {
@@ -153,15 +163,18 @@ sbs_devils_gift_interaction = {
 					change_trait_rank = { trait = education_stewardship rank = 1 }
 				}
 				1 = {
-					modifier = { has_character_modifier = sbs_generals add = -1 }
+					modifier = { has_character_modifier = sbs_seal add = -1 }
+					modifier = { scope:sbs_seal = yes add = 100 }
 					remove_character_modifier = sbs_seal
 				}
 				1 = {
-					modifier = { has_character_modifier = sbs_generals add = -1 }
+					modifier = { OR = { has_character_modifier = sbs_generals has_trait_with_flag = sbs_demon_trait } add = -1 }
+					modifier = { scope:sbs_generals = yes add = 100 }
 					add_character_modifier = { modifier = sbs_generals years = 25 }
 				}
 				2 = {
 					modifier = { has_character_modifier = sbs_buff is_immortal = no add = -1 }
+					modifier = { scope:sbs_buff = yes add = 100 }
 					add_character_modifier = sbs_buff
 				}
 			}
@@ -171,9 +184,11 @@ sbs_devils_gift_interaction = {
 	ai_frequency = 6
 	ai_targets = {
 		ai_recipients = self
+	}
+	ai_targets = {
 		ai_recipients = family
 		ai_recipients = courtiers
-		max = 5
+		max = 20
 	}
 	ai_potential = { always = yes }
 	ai_will_do = {

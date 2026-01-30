@@ -105,7 +105,7 @@ jeanne_dna={
  		eye_accessory={ "normal_eyes" 1 "normal_eyes" 1 }
  		teeth_accessory={ "normal_teeth" 0 "normal_teeth" 0 }
  		eyelashes_accessory={ "normal_eyelashes" 250 "normal_eyelashes" 250 }
- 		beards={ "western_beards_straight" 255 "no_beard" 0 }
+ 		beards={ "sp2_beards_straight" 255 "no_beard" 0 }
  		hairstyles={ "western_hairstyles_straight" 212 "all_hairstyles" 0 }
  		}
  	}
@@ -222,7 +222,7 @@ catarina_dna={
  			eyelashes_accessory={ "normal_eyelashes" 96 "normal_eyelashes" 96 }
  			horns={ "no_horns" 0 "no_horns" 0 }
  			hairstyles={ "western_hairstyles_wavy" 56 "all_hairstyles" 0 }
- 			beards={ "no_beard" 255 "no_beard" 0 }
+ 			beards={ "sp2_beards_straight" 255 "no_beard" 0 }
 		}
 	}
 }

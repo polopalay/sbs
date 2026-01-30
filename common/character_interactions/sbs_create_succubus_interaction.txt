@@ -120,10 +120,13 @@
 	ai_targets = {
 		ai_recipients = family
 		ai_recipients = courtiers
+		max = 10
+	}
+	ai_targets = {
 		ai_recipients = scripted_relations
 		ai_recipients = neighboring_rulers
 		ai_recipients = nearby_domicile_owners
-		max = 5
+		max = 10
 	}
 	ai_potential = { always = yes }
 	ai_will_do = {

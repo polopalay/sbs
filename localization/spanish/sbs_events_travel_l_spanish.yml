@@ -27,8 +27,8 @@
  sbs_travel.0102.b.tt: "How about adding a gag, and writing sodomite on him a couple of times with charcoal. And let the local peasants take care of the rest."
  sbs_travel.0102.c: "Just ignore the pleas." 
  sbs_travel.0102.c.tt: "As you move along, you notice a bag of coins on a rock."
- sbs_travel.0103.t: "Maiden For Sale"
 
+ sbs_travel.0103.t: "Maiden For Sale"
  sbs_travel.0103.desc: "A group of commoners moves to block your path as they see you approach. They are offering to sell you the most beautiful virgin maiden their village has. She is pushed to step before you like to plead her case or to present the merchandise.\n\n\"Please show mercy on us, I can cook or clean or do anything else you want. I'm willing to offer all I have as long as you help my village.\""
  sbs_travel.0103.a: "Buy her." 
  sbs_travel.0103.a.tt: "[sbs_random_1.GetFirstName] thanks you and follows you but she does not seem that eager to do so."

@@ -35,6 +35,10 @@ stress_loss_rakish_decision = {
 
 	effect = {
 		random_living_character = {
+			weight = {
+				base = 1
+				modifier = { in_diplomatic_range = root add = 1000 }
+			}
 			limit = { root = { is_attracted_to_gender_of = prev } NOT = { this = root } carn_is_working_as_prostitute_trigger = yes }
 			save_scope_as = prostitute
 			weight = {

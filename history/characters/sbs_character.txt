@@ -395,7 +395,7 @@ pleasure_character = {
 
 violence_character = {
 	name = "Abaddon"
-	dna = violence_dna
+	dna = 102531_harald_hardrade
 	dynasty = 777777
 	martial = 40
 	diplomacy = 13

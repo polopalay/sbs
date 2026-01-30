@@ -45,6 +45,8 @@
   sbs_buff_desc: "Esta persona ha sido bendecida por el Súcubo."
   sbs_debuff: "Maldición del Diablo"
   sbs_debuff_desc: "Esta persona ha sido maldecida por el Súcubo."
+  sbs_true_form: "Verdadera Forma"
+  sbs_true_form_desc: "Esta persona ha revelado su verdadera forma demoníaca."
   sbs_seal: "Sello del Diablo"
   sbs_seal_desc: "Esta persona ha sido sellada por el Diablo."
   sbs_generals: "General Demonio"

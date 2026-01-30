@@ -3,6 +3,8 @@
  sbs_buff_desc: "Cette personne a été bénie par le Succube."
  sbs_debuff: "Malédiction du Diable"
  sbs_debuff_desc: "Cette personne a été maudite par le Succube."
+ sbs_true_form: "Vraie Forme"
+ sbs_true_form_desc: "Cette personne a révélé sa véritable forme diabolique."
  sbs_seal: "Sceau du Diable"
  sbs_seal_desc: "Cette personne a été scellée par le Diable."
  sbs_generals: "Général du Diable"

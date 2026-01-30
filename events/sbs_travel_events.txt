@@ -22,7 +22,7 @@ sbs_travel.0100 = {
 			culture = location.culture
 			location = root.location
 			faith = location.faith
-			age = { 19 25 }
+			template = experienced_courtesan_character
 			gender_female_chance = 100
 			dynasty = none
 			save_scope_as = sbs_random_1
@@ -88,6 +88,7 @@ sbs_travel.0100 = {
 						opinion = 100
 					}
 				}
+				add_courtier = scope:sbs_random_1
 			}
 			# they manage to fight you off, most of your escort refusing to take part
 			50 = {
@@ -147,7 +148,7 @@ sbs_travel.0101 = {
 			culture = location.culture
 			location = root.location
 			faith = location.faith
-			age = { 20 30 }
+			template = wandering_knight_character
 			gender_female_chance = 0
 			dynasty = none
 			save_scope_as = sbs_random_1
@@ -238,7 +239,6 @@ sbs_travel.0102 = {
 			location = root.location
 			culture = location.culture
 			faith = location.faith
-			age = { 20 30 }
 			gender_female_chance = 0
 			dynasty = none
 			save_scope_as = sbs_random_1
@@ -293,7 +293,6 @@ sbs_travel.0102 = {
 				opinion = -50
 			}
 			stress_impact = { base = massive_stress_impact_gain }
-			hidden_effect = { death = { death_reason = death_vanished } }
 		}
 	}
 }
@@ -317,10 +316,9 @@ sbs_travel.0103 = {
 			location = root.location
 			culture = location.culture
 			faith = location.faith
-			age = { 20 30 }
+			template = cunning_courtesan_character
 			gender_female_chance = 100
 			dynasty = none
-			trait = beauty_good_1
 			save_scope_as = sbs_random_1
 		}
 	}
@@ -349,7 +347,10 @@ sbs_travel.0103 = {
 				opinion = -100
 			}
 			stress_impact = { base = massive_stress_impact_gain }
-			death = { death_reason = death_vanished }
+		}
+		random_living_character = {
+			limit = { is_lowborn = yes is_ruler = no is_female = no is_adult = yes add = 1 in_diplomatic_range = root }
+			prostitute_effect = { PROSTITUTE = scope:sbs_random_1 PREGNANCY_CHANCE = 100 }
 		}
 		current_travel_plan = { delay_travel_plan = { days = 1 } }
 	}
@@ -358,11 +359,6 @@ sbs_travel.0103 = {
 		ai_chance = { base = 10 }
 		name = sbs_travel.0103.c
 		custom_tooltip = sbs_travel.0103.c.tt
-		hidden_effect = {
-			scope:sbs_random_1 = {
-				death = { death_reason = death_vanished }
-			}
-		}
 	}
 }
 #0104 you spot a naked woman dancing for a group of men... "Please go, I don't need a bigger audeince" merchant woman who is giving a bonys to the hired guards she hired. watch the show, ignore or as sadist, pay the men to spank her Or as lustful, pay her to fuck you
@@ -386,7 +382,7 @@ sbs_travel.0104 = {
 			culture = location.culture
 			location = root.location
 			faith = location.faith
-			age = { 20 30 }
+			template = funny_courtesan_character
 			gender_female_chance = 100
 			dynasty = none
 			save_scope_as = sbs_random_1
@@ -407,9 +403,10 @@ sbs_travel.0104 = {
 			stress_impact = {
 				base = massive_stress_impact_gain
 			}
-			hidden_effect = {
-				death = { death_reason = death_vanished }
-			}
+		}
+		random_living_character = {
+			limit = { is_lowborn = yes is_ruler = no is_female = no is_adult = yes add = 1 in_diplomatic_range = root }
+			prostitute_effect = { PROSTITUTE = scope:sbs_random_1 PREGNANCY_CHANCE = 100 }
 		}
 		current_travel_plan = {
 			delay_travel_plan = { days = 5 }
@@ -435,6 +432,10 @@ sbs_travel.0104 = {
 				opinion = -50
 			}
 			stress_impact = { base = medium_stress_impact_gain }
+		}
+		random_living_character = {
+			limit = { is_lowborn = yes is_ruler = no is_female = no is_adult = yes add = 1 in_diplomatic_range = root }
+			prostitute_effect = { PROSTITUTE = scope:sbs_random_1 PREGNANCY_CHANCE = 100 }
 		}
 	}
 	# ignore
@@ -553,7 +554,7 @@ sbs_travel.0106 = {
 			culture = location.culture
 			location = root.location
 			faith = location.faith
-			age = { 20 30 }
+			template = fearsome_courtesan_character
 			gender_female_chance = 100
 			dynasty = none
 			save_scope_as = sbs_random_1
@@ -574,9 +575,7 @@ sbs_travel.0106 = {
 			stress_impact = {
 				base = massive_stress_impact_gain
 			}
-			hidden_effect = {
-				death = { death_reason = death_vanished }
-			}
+			add_prestige_level = -6
 		}
 		current_travel_plan = {
 			delay_travel_plan = { days = 1 }
@@ -650,11 +649,7 @@ sbs_travel.0106 = {
 					stress_impact = {
 						base = medium_stress_impact_gain
 					}
-					hidden_effect = {
-						death = {
-							death_reason = death_disappearance
-						}
-					}
+					add_prestige_level = -1
 				}
 				current_travel_plan = { delay_travel_plan = { days = 10 } }
 			}
@@ -668,6 +663,7 @@ sbs_travel.0106 = {
 		hidden_effect = {
 			scope:sbs_random_1 = {
 				death = { death_reason = death_disappearance }
+				add_prestige_level = -1
 			}
 		}
 	}
@@ -689,11 +685,10 @@ sbs_travel.0107 = {
 	}
 	immediate = {
 		create_character = {
-			template = scholar_character
 			location = root.location
 			culture = location.culture
 			faith = location.faith
-			age = { 20 30 }
+			template = wise_woman_character
 			gender_female_chance = 100
 			dynasty = none
 			save_scope_as = sbs_random_1
@@ -836,7 +831,7 @@ sbs_travel.0110 = {
 			culture = location.culture
 			faith = location.faith
 			location = root.location
-			age = { 20 45 }
+			template = criminal_brawn_character
 			gender_female_chance = 0
 			dynasty = none
 			save_scope_as = sbs_random_1
@@ -1046,6 +1041,10 @@ sbs_travel.0122 = {
 		character = root
 		animation = thinking
 	}
+	right_portrait = {
+		character = root
+		animation = thinking
+	}
 	immediate = {
 		stress_impact = {
 			base = major_stress_impact_gain
@@ -1055,6 +1054,7 @@ sbs_travel.0122 = {
 			culture = location.culture
 			faith = location.faith
 			location = root.location
+			template = criminal_brains_character
 			gender_female_chance = 0
 			dynasty = none
 			save_scope_as = sbs_random_man_1
@@ -1090,6 +1090,7 @@ sbs_travel.0123 = {
 			culture = location.culture
 			faith = location.faith
 			location = root.location
+			template = criminal_brawn_character
 			gender_female_chance = 0
 			dynasty = none
 			save_scope_as = sbs_random_man_1
@@ -1098,6 +1099,7 @@ sbs_travel.0123 = {
 			culture = location.culture
 			faith = location.faith
 			location = root.location
+			template = criminal_fingers_character
 			gender_female_chance = 0
 			dynasty = none
 			save_scope_as = sbs_random_man_2
@@ -1106,6 +1108,7 @@ sbs_travel.0123 = {
 			culture = location.culture
 			faith = location.faith
 			location = root.location
+			template = bandit_character
 			gender_female_chance = 0
 			dynasty = none
 			save_scope_as = sbs_random_man_3
@@ -1114,6 +1117,7 @@ sbs_travel.0123 = {
 			culture = location.culture
 			faith = location.faith
 			location = root.location
+			template = bandit_character_generic
 			gender_female_chance = 0
 			dynasty = none
 			save_scope_as = sbs_random_man_4
@@ -1577,7 +1581,7 @@ sbs_travel.1000 = {
 	}
 	# burn this inn
 	option = {
-		ai_chance = { base = 5 }
+		ai_chance = { base = 1 }
 		name = sbs_travel.1000.b
 		custom_tooltip = sbs_travel.1000.b.tt
 		add_dread = minor_dread_gain
@@ -1911,7 +1915,7 @@ sbs_travel.2021 = {
 	}
 	#accept
 	option = {
-		ai_chance = { base = 2 }
+		ai_chance = { base = 1 }
 		name = sbs_travel.2021.a
 		custom_tooltip = sbs_travel.2021.a.tt
 		current_travel_plan = { delay_travel_plan = { days = 10 } }
@@ -1919,7 +1923,7 @@ sbs_travel.2021 = {
 	}	
 	#refuse	
 	option = {
-		ai_chance = { base = 10 }
+		ai_chance = { base = 1 }
 		name = sbs_travel.2021.b
 		custom_tooltip = sbs_travel.2021.b.tt
 	}	

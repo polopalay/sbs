@@ -3,6 +3,8 @@
  sbs_buff_desc: "Ta osoba została pobłogosławiona przez diabła."
  sbs_debuff: "Klątwa diabła"
  sbs_debuff_desc: "Ta osoba została przeklęta przez diabła."
+ sbs_true_form: "Prawdziwa Forma"
+ sbs_true_form_desc: "Ta osoba ujawniła swoją prawdziwą diabelską formę."
  sbs_seal: "Pieczęć diabła"
  sbs_seal_desc: "Ta osoba została zapieczętowana przez diabła."
  sbs_generals: "Generałowie Diabła"

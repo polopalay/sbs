@@ -3,6 +3,8 @@
   sbs_buff_desc: "이 사람은 서큐버스의 축복을 받았습니다."
   sbs_debuff: "악마의 저주"
   sbs_debuff_desc: "이 사람은 서큐버스의 저주를 받았습니다."
+  sbs_true_form: "진정한 모습"
+  sbs_true_form_desc: "이 사람은 자신의 진정한 악마의 모습을 드러냈습니다."
   sbs_seal: "악마의 봉인"
   sbs_seal_desc: "이 사람은 악마에 의해 봉인되었습니다."
   sbs_generals: "악마 장군"

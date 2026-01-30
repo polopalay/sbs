@@ -149,18 +149,21 @@
 	ai_frequency = 12
 	ai_targets = {
 		ai_recipients = liege
+	}
+	ai_targets = {
 		ai_recipients = vassals
 		ai_recipients = peer_vassals
-		ai_recipients = courtiers
+		max = 20
+	}
+	ai_targets = {
 		ai_recipients = neighboring_rulers
 		ai_recipients = nearby_domicile_owners
-		max = 25
+		max = 20
 	}
 
 	ai_will_do = {
 		base = 50
 		modifier = { add = 50 scope:actor = { faith = { has_doctrine = tenet_polyamory } } }
 		modifier = { add = -50 scope:recipient = { has_std_trigger = yes } }
-		modifier = { add = -50 scope:actor = scope:secondary_recipient scope:actor = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = adulterer } } }
 	}
 }

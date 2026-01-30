@@ -52,7 +52,7 @@ horn_clothes = {
 	horn0 = {
 		dna_modifiers = {
 			accessory = {
-				mode = replace
+				mode = add
 				gene = horns
 				template = horn_0
 				range = { 0 1 }
@@ -62,14 +62,16 @@ horn_clothes = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = succubus_horn0
+				has_trait = sbs_demon
+				has_character_modifier = sbs_true_form
+				age >= 666
 			}
 		}
 	}
 	horn1 = {
 		dna_modifiers = {
 			accessory = {
-				mode = replace
+				mode = add
 				gene = horns
 				template = horn_1
 				value = 1
@@ -79,14 +81,16 @@ horn_clothes = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = succubus_horn1
+				has_trait = sbs_demon
+				has_character_modifier = sbs_true_form
+				age < 666
 			}
 		}
 	}
 	horn2 = {
 		dna_modifiers = {
 			accessory = {
-				mode = replace
+				mode = add
 				gene = horns
 				template = horn_2
 				value = 1
@@ -96,14 +100,15 @@ horn_clothes = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = succubus_horn2
+				has_trait = sbs_lesser_demon
+				has_character_modifier = sbs_true_form
 			}
 		}
 	}
 	horn3 = {
 		dna_modifiers = {
 			accessory = {
-				mode = replace
+				mode = add
 				gene = horns
 				template = horn_3
 				value = 1
@@ -113,14 +118,15 @@ horn_clothes = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = succubus_horn3
+				has_trait = sbs_succubus
+				has_character_modifier = sbs_true_form
 			}
 		}
 	}
 	horn4 = {
 		dna_modifiers = {
 			accessory = {
-				mode = replace
+				mode = add
 				gene = horns
 				template = horn_4
 				value = 1
@@ -130,7 +136,8 @@ horn_clothes = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = succubus_horn4
+				has_trait = sbs_lesser_succubus
+				has_character_modifier = sbs_true_form
 			}
 		}
 	}
@@ -143,7 +150,7 @@ marking_clothes = {
 	marking1 = {
 		dna_modifiers = {
 			morph = {
-				mode = replace
+				mode = add
 				gene = succubus_marking
 				value = 1
 				template = marking_1
@@ -153,14 +160,15 @@ marking_clothes = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = succubus_marking_1
+				has_trait = sbs_lesser_succubus
+				has_character_modifier = sbs_true_form
 			}
 		}
 	}
 	marking2 = {
 		dna_modifiers = {
 			morph = {
-				mode = replace
+				mode = add
 				gene = succubus_marking
 				value = 1
 				template = marking_2
@@ -170,14 +178,15 @@ marking_clothes = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = succubus_marking_2
+				has_trait = sbs_lesser_demon
+				has_character_modifier = sbs_true_form
 			}
 		}
 	}
 	marking3 = {
 		dna_modifiers = {
 			morph = {
-				mode = replace
+				mode = add
 				gene = succubus_marking
 				value = 1
 				template = marking_3
@@ -187,14 +196,15 @@ marking_clothes = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = succubus_marking_3
+				has_trait = sbs_demon
+				has_character_modifier = sbs_true_form
 			}
 		}
 	}
 	marking4 = {
 		dna_modifiers = {
 			morph = {
-				mode = replace
+				mode = add
 				gene = succubus_marking
 				value = 1
 				template = marking_4
@@ -204,14 +214,15 @@ marking_clothes = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = succubus_marking_4
+				has_trait = sbs_succubus
+				has_character_modifier = sbs_true_form
 			}
 		}
 	}
 	marking5 = {
 		dna_modifiers = {
 			morph = {
-				mode = replace
+				mode = add
 				gene = succubus_marking
 				value = 1
 				template = marking_5
@@ -221,14 +232,15 @@ marking_clothes = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = succubus_marking_5
+				is_female = yes
+				has_trait = slave
 			}
 		}
 	}
 	marking6 = {
 		dna_modifiers = {
 			morph = {
-				mode = replace
+				mode = add
 				gene = succubus_marking
 				value = 1
 				template = marking_6
@@ -238,7 +250,8 @@ marking_clothes = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = succubus_marking_6
+				is_female = yes
+				has_character_modifier = sbs_seal
 			}
 		}
 	}
@@ -260,7 +273,8 @@ eyes_color_clothes = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = succubus_white_eyes
+				is_female = yes
+				has_character_modifier = sbs_true_form
 			}
 		}
 	}
@@ -277,7 +291,8 @@ eyes_color_clothes = {
 			base = 0
 			modifier = {
 				add = 100
-				has_character_flag = succubus_red_eyes
+				is_female = no
+				has_character_modifier = sbs_true_form
 			}
 		}
 	}

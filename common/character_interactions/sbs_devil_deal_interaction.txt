@@ -727,9 +727,17 @@
 	ai_frequency = 1
 	ai_targets = {
 		ai_recipients = self
+	}
+	ai_targets = {
 		ai_recipients = family
+		max = 10
+	}
+	ai_targets = {
 		ai_recipients = liege
 		ai_recipients = vassals
+		max = 10
+	}
+	ai_targets = {
 		ai_recipients = neighboring_rulers
 		max = 10
 	}

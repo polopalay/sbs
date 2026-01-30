@@ -68,19 +68,28 @@
 	}
 	ai_targets = {
 		ai_recipients = liege
+	}
+	ai_targets = {
 		ai_recipients = vassals
 		ai_recipients = peer_vassals
+		max = 10
+	}
+	ai_targets = {
 		ai_recipients = neighboring_rulers
 		ai_recipients = nearby_domicile_owners
 		max = 10
 	}
 	ai_potential = { always = yes }
-	ai_frequency = 12
+	ai_frequency = 36
 	ai_accept = {
 		base = 0
 		opinion_modifier = {
 			opinion_target = scope:actor
-			multiplier = 1
+			multiplier = 0.1
+		}
+		opinion_modifier = {
+			opinion_target = scope:secondary_recipient
+			multiplier = -0.1
 		}
 		modifier = {
 			scope:secondary_recipient = {
@@ -91,8 +100,6 @@
 			}
 			add = -100
 		}
-		modifier = { add = -100 scope:secondary_recipient = { is_immortal = yes } }
-		modifier = { add = 40 scope:secondary_recipient = { age >= 50 is_immortal = no } }
 		modifier = { add = 5 scope:secondary_recipient = { has_trait = beauty_bad_1 } }
 		modifier = { add = 10 scope:secondary_recipient = { has_trait = beauty_bad_2 } }
 		modifier = { add = 20 scope:secondary_recipient = { has_trait = beauty_bad_3 } }
@@ -122,22 +129,18 @@
 		modifier = { add = 5 scope:secondary_recipient = { has_trait = giant } }
 		modifier = { add = 5 scope:secondary_recipient = { has_trait = weak } }
 		modifier = { add = 5 scope:secondary_recipient = { has_trait = dull } }
-		modifier = { add = 5 scope:gold = yes }
+		modifier = { add = 10 scope:gold = yes }
 		modifier = { add = 10 scope:hook = yes }
-		modifier = { add = -25 desc = carn_secondary_recipient_is_my_knight_reason scope:secondary_recipient = { is_knight_of = scope:recipient } }
-		modifier = { add = -50 desc = carn_secondary_recipient_is_my_councillor_reason scope:secondary_recipient = { is_councillor_of = scope:recipient } }
-		modifier = { add = -50 desc = carn_secondary_recipient_is_my_friend_reason scope:secondary_recipient = { has_relation_friend = scope:recipient } }
-		modifier = { add = -50 desc = carn_secondary_recipient_is_my_lover_reason scope:secondary_recipient = { has_relation_lover = scope:recipient } }
-		modifier = { add = -50 desc = carn_secondary_recipient_is_my_crush_reason scope:secondary_recipient = { has_relation_crush = scope:recipient } }
-		modifier = { add = -100 desc = carn_secondary_recipient_is_my_soulmate_reason scope:secondary_recipient = { has_relation_soulmate = scope:recipient } }
+		modifier = { add = -10 desc = carn_secondary_recipient_is_my_knight_reason scope:secondary_recipient = { is_knight_of = scope:recipient } }
+		modifier = { add = -10 desc = carn_secondary_recipient_is_my_councillor_reason scope:secondary_recipient = { is_councillor_of = scope:recipient } }
+		modifier = { add = -10 desc = carn_secondary_recipient_is_my_friend_reason scope:secondary_recipient = { has_relation_friend = scope:recipient } }
+		modifier = { add = -20 desc = carn_secondary_recipient_is_my_lover_reason scope:secondary_recipient = { has_relation_lover = scope:recipient } }
+		modifier = { add = -10 desc = carn_secondary_recipient_is_my_crush_reason scope:secondary_recipient = { has_relation_crush = scope:recipient } }
+		modifier = { add = -20 desc = carn_secondary_recipient_is_my_soulmate_reason scope:secondary_recipient = { has_relation_soulmate = scope:recipient } }
 	}
 	ai_will_do = {
-		base = 10
-		modifier = { add = 10 scope:recipient = { any_courtier = { has_trait = slave count > scope:recipient.number_slaves_normal_need } } }
-		modifier = { add = 50 scope:secondary_recipient = { is_child_of = scope:actor } }
-		modifier = { add = 30 scope:secondary_recipient = { is_close_family_of = scope:actor } }
-		modifier = { add = 10 scope:secondary_recipient = { has_relation_friend = scope:actor } }
-		modifier = { add = 10 scope:secondary_recipient = { has_relation_lover = scope:actor } }
-		modifier = { add = 100 scope:secondary_recipient = { has_relation_soulmate = scope:actor } }
+		base = 0
+		modifier = { add = 10 scope:recipient = { any_relation = { type = slave count > 5 } } }
+		modifier = { add = 100 scope:recipient = { is_ai = yes any_relation = { type = slave count > 5 } } }
 	}
 }

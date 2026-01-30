@@ -3,6 +3,8 @@
   sbs_buff_desc: "Diese Person wurde von der Succubus gesegnet."
   sbs_debuff: "Fluch des Teufels"
   sbs_debuff_desc: "Diese Person wurde von der Succubus verflucht."
+  sbs_true_form: "Wahre Gestalt"
+  sbs_true_form_desc: "Diese Person hat ihre wahre teuflische Gestalt enthüllt."
   sbs_seal: "Siegel des Teufels"
   sbs_seal_desc: "Diese Person wurde vom Teufel versiegelt."
   sbs_generals: "Teufelsgeneral"

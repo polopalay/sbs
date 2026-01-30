@@ -130,11 +130,11 @@
 		}
 	}
 	ai_accept = {
-		base = -25
+		base = -20
 		opinion_modifier = {
 			opinion_target = scope:actor
 			who = scope:recipient
-			multiplier = 0.2
+			multiplier = 0.25
 		}
 		modifier = { add = 5 scope:recipient.faith = scope:actor.faith scope:recipient.faith.religion = religion:demonic_religion }
 		modifier = { add = 5  scope:actor = { has_relation_lover = scope:recipient } }
@@ -151,9 +151,12 @@
 	ai_targets = {
 		ai_recipients = self
 		ai_recipients = head_of_faith
+	}
+	ai_targets = {
 		ai_recipients = family
 		ai_recipients = courtiers
 		ai_recipients = vassals
+		max = 10
 	}
 	ai_potential = { always = yes }
 	ai_will_do = { base = 100 }

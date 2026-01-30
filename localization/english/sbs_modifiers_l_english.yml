@@ -3,6 +3,8 @@
  sbs_buff_desc: "This person had been blessed by the Devil."
  sbs_debuff: "Devil's Curse"
  sbs_debuff_desc: "This person had been cursed by the Devil."
+ sbs_true_form: "True Form"
+ sbs_true_form_desc: "This person has revealed their true devilish form."
  sbs_seal: "Devil's Seal"
  sbs_seal_desc: "This person had been sealed by the Devil."
  sbs_generals: "Devil General"
