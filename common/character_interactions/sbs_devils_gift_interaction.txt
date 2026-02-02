@@ -21,7 +21,7 @@ sbs_devils_gift_interaction = {
 		}
 	}
 	send_option = {
-		is_shown = { scope:actor = { has_trait = sbs_demon dynasty ?= { any_dynasty_member = { count < 13 } } this = scope:recipient } }
+		is_shown = { scope:actor = { is_adult = yes has_trait = sbs_demon dynasty ?= { any_dynasty_member = { count < 13 } } this = scope:recipient } }
 		flag = child
 		localization = nick_the_child
 	}
@@ -98,14 +98,14 @@ sbs_devils_gift_interaction = {
 						limit = { is_female = yes }
 						save_scope_as = mother
 						random_living_character = {
-							limit = { has_trait = sbs_demon is_female = no is_adult = yes }
+							limit = { has_trait_with_flag = sbs_demon_trait is_female = no is_adult = yes }
 							save_scope_as = father
 						}
 					}
 					else = {
 						save_scope_as = father
 						random_living_character = {
-							limit = { has_trait = sbs_demon is_female = yes is_adult = yes }
+							limit = { has_trait_with_flag = sbs_demon_trait is_female = yes is_adult = yes }
 							save_scope_as = mother
 						}
 					}
