@@ -93,7 +93,7 @@ sbs_devils_gift_interaction = {
 			random_list = {
 				10 = 0
 				0 = {
-					modifier = { scope:child = yes add = 10 }
+					modifier = { scope:child = yes add = 5 }
 					if = {
 						limit = { is_female = yes }
 						save_scope_as = mother
@@ -123,7 +123,7 @@ sbs_devils_gift_interaction = {
 					}
 				}
 				0 = {
-					modifier = { scope:game_concept_ruler = yes add = 10 }
+					modifier = { scope:game_concept_ruler = yes add = 5 }
 					create_landless_adventurer_title_effect = {
 						REASON = flag:voluntary
 						FLAVOR_CHAR = scope:recipient
@@ -159,7 +159,7 @@ sbs_devils_gift_interaction = {
 				}
 				0 = {
 					modifier = { scope:sbs_buff = yes add = 30 }
-					add_character_modifier = sbs_buff
+					add_character_modifier = { modifier = sbs_buff years = 25 }
 				}
 				0 = {
 					modifier = { scope:sbs_generals = yes add = 30 }

@@ -42,10 +42,6 @@
 		add_prestige_level = -6
 		add_legitimacy = -1000
 		change_influence_level = -6
-		if = {
-			limit = { is_imprisoned_by = scope:new_owner }
-			release_from_prison = yes
-		}
 		add_character_flag = blocked_from_leaving
 		set_to_lowborn = yes
 		if = {
@@ -106,6 +102,17 @@
 	}
 	scope:new_slave = {
 		set_relation_slave_owner = { target = scope:new_owner }
+	}
+	hidden_effect = {
+		scope:new_slave = {
+			if = {
+				limit = { is_imprisoned_by = scope:new_owner }
+				release_from_prison = yes
+			}
+			trigger_event = {
+				on_action = carn_on_slave_enslaved
+			}
+		}
 	}
 }
 

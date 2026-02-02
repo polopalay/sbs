@@ -107,7 +107,7 @@
 			}
 			else = {
 				add_trait = sbs_lesser_demon
-				add_character_modifier = sbs_buff
+				add_character_modifier = { modifier = sbs_buff years = 100 }
 			}
 			if = {
 				limit = { has_trait = saint }

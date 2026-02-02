@@ -70,11 +70,11 @@
 				}
 				if = {
 					limit = { scope:recipient = { has_character_modifier = body_cum } }
-					add_trait_xp = { trait = sbs_succubus track = power value = 25 }
+					add_trait_xp = { trait = sbs_succubus track = power value = 20 }
 				}
 				if = {
 					limit = { scope:recipient = { has_character_modifier = face_cum } }
-					add_trait_xp = { trait = sbs_succubus track = daring value = 50 }
+					add_trait_xp = { trait = sbs_succubus track = daring value = 40 }
 				}
 			}
 			else_if = {

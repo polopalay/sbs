@@ -886,7 +886,7 @@ sbs_go.6050 = {
 		else = {
 			random_list = {
 			 5 = 0
-			 4 = { add_character_modifier = sbs_buff }
+			 4 = { add_character_modifier = { modifier = sbs_buff years = 100 } }
 			 1 = { add_trait_force_tooltip = sbs_lesser_succubus }
 			}
 		}

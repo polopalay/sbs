@@ -127,7 +127,7 @@
 	auto_accept = yes
 	ai_targets = { ai_recipients = courtiers }
 	ai_potential = { always = yes }
-	ai_frequency = 6
+	ai_frequency = 12
 	ai_will_do = {
 		base = 10
 		ai_value_modifier = {
