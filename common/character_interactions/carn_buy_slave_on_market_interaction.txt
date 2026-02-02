@@ -82,7 +82,7 @@
 	ai_potential = { always = yes }
 	ai_frequency = 36
 	ai_accept = {
-		base = 0
+		base = 5
 		opinion_modifier = {
 			opinion_target = scope:actor
 			multiplier = 0.1

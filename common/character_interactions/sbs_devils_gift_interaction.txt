@@ -21,12 +21,12 @@ sbs_devils_gift_interaction = {
 		}
 	}
 	send_option = {
-		is_shown = { scope:actor = { has_trait = sbs_demon this = scope:recipient } }
+		is_shown = { scope:actor = { has_trait = sbs_demon dynasty ?= { any_dynasty_member = { count < 13 } } this = scope:recipient } }
 		flag = child
 		localization = nick_the_child
 	}
 	send_option = {
-		is_shown = { scope:actor = { has_trait = sbs_demon } scope:recipient = { is_ruler = no } }
+		is_shown = { scope:actor = { has_trait = sbs_demon } scope:recipient = { is_ruler = no has_trait_with_flag = sbs_demon_trait } }
 		flag = game_concept_ruler
 		localization = game_concept_ruler
 	}
@@ -66,14 +66,12 @@ sbs_devils_gift_interaction = {
 		localization = sbs_seal
 	}
 	send_option = {
-		is_shown = { scope:recipient = { NOT = { has_character_modifier = sbs_generals has_trait_with_flag = sbs_demon_trait } } }
-		flag = sbs_generals
-		localization = sbs_generals
-	}
-	send_option = {
-		is_shown = { scope:recipient = { NOT = { has_character_modifier = sbs_buff } } }
 		flag = sbs_buff
 		localization = sbs_buff
+	}
+	send_option = {
+		flag = sbs_generals
+		localization = sbs_generals
 	}
 	send_options_exclusive = yes
 	on_accept = {
@@ -93,10 +91,9 @@ sbs_devils_gift_interaction = {
 		}
 		scope:recipient = {
 			random_list = {
-				10= 0
+				10 = 0
 				0 = {
-					modifier = { scope:actor = { is_ai = yes has_trait = sbs_demon is_parent_of = scope:recipient } add = 40 }
-					modifier = { scope:child = yes add = 100 }
+					modifier = { scope:child = yes add = 10 }
 					if = {
 						limit = { is_female = yes }
 						save_scope_as = mother
@@ -126,56 +123,47 @@ sbs_devils_gift_interaction = {
 					}
 				}
 				0 = {
-					modifier = { scope:actor = { is_ai = yes has_trait = sbs_demon is_parent_of = scope:recipient } is_ruler = no add = 40 }
-					modifier = { scope:game_concept_ruler = yes add = 100 }
+					modifier = { scope:game_concept_ruler = yes add = 10 }
 					create_landless_adventurer_title_effect = {
 						REASON = flag:voluntary
 						FLAVOR_CHAR = scope:recipient
 					}
 				}
 				0 = {
-					modifier = { scope:dna = yes add = 100 }
+					modifier = { scope:dna = yes add = 40 }
 					scope:actor = { copy_inheritable_appearance_from = scope:recipient }
 				}
 				0 = {
-					modifier = { scope:actor = { is_ai = yes } is_adult = yes has_trait_rank = { trait = education_learning rank < 5 } add = 50 }
-					modifier = { scope:education_learning = yes add = 100 }
+					modifier = { scope:education_learning = yes add = 20 }
 					change_trait_rank = { trait = education_learning rank = 1 }
 				}
 				0 = {
-					modifier = { scope:actor = { is_ai = yes } is_adult = yes has_trait_rank = { trait = education_martial rank < 5 } add = 50 }
-					modifier = { scope:education_martial = yes add = 100 }
+					modifier = { scope:education_martial = yes add = 20 }
 					change_trait_rank = { trait = education_martial rank = 1 }
 				}
 				0 = {
-					modifier = { scope:actor = { is_ai = yes } is_adult = yes has_trait_rank = { trait = education_intrigue rank < 5 } add = 50 }
-					modifier = { scope:education_intrigue = yes add = 100 }
+					modifier = { scope:education_intrigue = yes add = 20 }
 					change_trait_rank = { trait = education_intrigue rank = 1 }
 				}
 				0 = {
-					modifier = { scope:actor = { is_ai = yes } is_adult = yes has_trait_rank = { trait = education_diplomacy rank < 5 } add = 50 }
-					modifier = { scope:education_diplomacy = yes add = 100 }
+					modifier = { scope:education_diplomacy = yes add = 20 }
 					change_trait_rank = { trait = education_diplomacy rank = 1 }
 				}
 				0 = {
-					modifier = { scope:actor = { is_ai = yes } is_adult = yes has_trait_rank = { trait = education_stewardship rank < 5 } add = 50 }
-					modifier = { scope:education_stewardship = yes add = 100 }
+					modifier = { scope:education_stewardship = yes add = 20 }
 					change_trait_rank = { trait = education_stewardship rank = 1 }
 				}
-				1 = {
-					modifier = { has_character_modifier = sbs_seal add = -1 }
-					modifier = { scope:sbs_seal = yes add = 100 }
+				0 = {
+					modifier = { scope:sbs_seal = yes add = 40 }
 					remove_character_modifier = sbs_seal
 				}
-				1 = {
-					modifier = { OR = { has_character_modifier = sbs_generals has_trait_with_flag = sbs_demon_trait } add = -1 }
-					modifier = { scope:sbs_generals = yes add = 100 }
-					add_character_modifier = { modifier = sbs_generals years = 25 }
-				}
-				2 = {
-					modifier = { has_character_modifier = sbs_buff is_immortal = no add = -1 }
-					modifier = { scope:sbs_buff = yes add = 100 }
+				0 = {
+					modifier = { scope:sbs_buff = yes add = 30 }
 					add_character_modifier = sbs_buff
+				}
+				0 = {
+					modifier = { scope:sbs_generals = yes add = 30 }
+					add_character_modifier = { modifier = sbs_generals years = 5 }
 				}
 			}
 		}
@@ -195,9 +183,6 @@ sbs_devils_gift_interaction = {
 		base = 0
 		modifier = { add = 25 scope:actor = { has_trait = sbs_demon } scope:recipient = { is_close_family_of = scope:actor } }
 		modifier = { add = 50 scope:actor = { has_trait = sbs_demon } scope:recipient = { is_child_of = scope:actor } }
-		modifier = { add = 25 scope:actor = { has_trait_xp = { trait = sbs_succubus track = daring value >= 50 } } scope:recipient = { is_close_family_of = scope:actor } }
-		modifier = { add = 50 scope:actor = { has_trait_xp = { trait = sbs_succubus track = daring value >= 50 } } scope:recipient = { is_child_of = scope:actor } }
 		modifier = { add = 50 scope:recipient = scope:actor }
-		modifier = { add = 50 scope:recipient = { has_trait = sbs_lesser_demon } }
 	}
 }

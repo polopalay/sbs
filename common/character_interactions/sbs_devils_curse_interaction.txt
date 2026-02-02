@@ -29,6 +29,21 @@ sbs_devils_curse_interaction = {
 		}
 	}
 	send_option = {
+		is_shown = { scope:recipient = {  NOT = { has_character_modifier = sbs_seal } is_lowborn = yes is_ruler = no } }
+		flag = sbs_seal
+		localization = sbs_seal
+	}
+	send_option = {
+		is_shown = { scope:actor = { is_ai = no } scope:recipient = { is_ai = yes } }
+		flag = player
+		localization = MAPMODE_PLAYERS_LABEL
+	}
+	send_option = {
+		is_shown = { scope:recipient = {  NOT = { has_character_modifier = sbs_debuff } } }
+		flag = sbs_debuff
+		localization = sbs_debuff
+	}
+	send_option = {
 		is_shown = { scope:actor = { NOT = { has_character_modifier = stanky_modifier } } }
 		flag = stanky_modifier
 		localization = stanky_modifier
@@ -73,16 +88,6 @@ sbs_devils_curse_interaction = {
 		flag = ergotism
 		localization = trait_ergotism
 	}
-	send_option = {
-		is_shown = { scope:recipient = {  NOT = { has_character_modifier = sbs_seal } is_lowborn = yes is_ruler = no } }
-		flag = sbs_seal
-		localization = sbs_seal
-	}
-	send_option = {
-		is_shown = { scope:actor = { is_ai = no } scope:recipient = { is_ai = yes } }
-		flag = player
-		localization = MAPMODE_PLAYERS_LABEL
-	}
 	send_options_exclusive = yes
 
 	on_accept = {
@@ -104,55 +109,52 @@ sbs_devils_curse_interaction = {
 			random_list = {
 				5 = 0
 				0 = {
-					modifier = { scope:actor = { is_ai = yes } NOT = { has_character_modifier = stanky_modifier } add = 5 }
-					modifier = { scope:stanky_modifier = yes add = 100 }
-					add_character_modifier = stanky_modifier
-				}
-				0 = {
-					modifier = { scope:actor = { is_ai = yes } NOT = { has_character_modifier = possessed_by_lust_demon_modifier } add = 5 }
-					modifier = { scope:possessed_by_lust_demon_modifier = yes add = 100 }
-					add_character_modifier = possessed_by_lust_demon_modifier
-				}
-				0 = {
-					modifier = { scope:pneumonic = yes add = 100 }
-					add_trait = pneumonic
-				}
-				0 = {
-					modifier = { scope:typhus = yes add = 100 }
-					add_trait = typhus
-				}
-				0 = {
-					modifier = { scope:consumption = yes add = 100 }
-					add_trait = consumption
-				}
-				0 = {
-					modifier = { scope:bubonic_plague = yes add = 100 }
-					add_trait = bubonic_plague
-				}
-				0 = {
-					modifier = { scope:measles = yes add = 100 }
-					add_trait = measles
-				}
-				0 = {
-					modifier = { scope:dysentery = yes add = 100 }
-					add_trait = dysentery
-				}
-				0 = {
-					modifier = { scope:ergotism = yes add = 100 }
-					add_trait = ergotism
-				}
-				0 = {
-					modifier = { scope:actor = { is_ai = yes } has_trait = slave NOT = { has_character_modifier = sbs_seal } add = 100 }
-					modifier = { scope:sbs_seal = yes add = 100 }
+					modifier = { scope:sbs_seal = yes add = 15 }
 					add_character_modifier = sbs_seal
 				}
 				0 = {
-					modifier = { scope:player = yes add = 100 }
+					modifier = { scope:player = yes add = 5 }
 					sbs_steal_body = { VICTIM = scope:recipient STEALER = scope:actor }	
 				}
-				1 = {
-					scope:actor = { add_character_modifier = sbs_buff }
+				0 = {
+					modifier = { scope:sbs_debuff = yes add = 15 }
 					add_character_modifier = { modifier = sbs_debuff years = 10 }
+				}
+				0 = {
+					modifier = { scope:stanky_modifier = yes add = 20 }
+					add_character_modifier = { modifier =  stanky_modifier years = 1 }
+				}
+				0 = {
+					modifier = { scope:possessed_by_lust_demon_modifier = yes add = 20 }
+					add_character_modifier = possessed_by_lust_demon_modifier
+				}
+				0 = {
+					modifier = { scope:pneumonic = yes add = 5 }
+					add_trait = pneumonic
+				}
+				0 = {
+					modifier = { scope:typhus = yes add = 5 }
+					add_trait = typhus
+				}
+				0 = {
+					modifier = { scope:consumption = yes add = 5 }
+					add_trait = consumption
+				}
+				0 = {
+					modifier = { scope:bubonic_plague = yes add = 5 }
+					add_trait = bubonic_plague
+				}
+				0 = {
+					modifier = { scope:measles = yes add = 5 }
+					add_trait = measles
+				}
+				0 = {
+					modifier = { scope:dysentery = yes add = 5 }
+					add_trait = dysentery
+				}
+				0 = {
+					modifier = { scope:ergotism = yes add = 5 }
+					add_trait = ergotism
 				}
 			}
 		}

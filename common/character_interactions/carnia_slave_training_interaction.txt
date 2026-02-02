@@ -17,6 +17,16 @@
 		RANSOM_COST = scope:recipient.gold
 	}
 	send_option = {
+		is_shown = {  scope:recipient = { is_female = yes is_adult = yes } }
+		flag = prostitute
+		localization = "carnia_prostitute_interaction"
+	}
+	send_option = {
+		is_shown = {  scope:actor = { is_attracted_to_gender_of = scope:recipient OR = { has_trait = deviant has_trait = lustful any_secret = { type = secret_deviant } } } }
+		flag = had_sex
+		localization = "trait_deviant"
+	}
+	send_option = {
 		is_shown = { scope:recipient = { should_be_naked_trigger = no } }
 		flag = naked
 		localization = diplomacy_majesty_4090_no_raiment_modifier
@@ -36,51 +46,80 @@
 		flag = torture
 		localization = "torture_interaction"
 	}
-	send_option = {
-		is_shown = {  scope:recipient = { is_female = yes is_adult = yes } }
-		flag = prostitute
-		localization = "carnia_prostitute_interaction"
-	}
 	send_options_exclusive = yes
 	on_accept = {
 		scope:recipient = {
 			random_list = {
-				1 = {
-					if = {
-						limit = { current_weight < 40 }
-						change_current_weight = -10
+				0 = {
+					modifier = { scope:actor = { is_ai = yes } is_female = yes add = 50 }
+					modifier = { scope:prostitute = yes add = 1 }
+					scope:actor = {
+						save_scope_as = broker
+						add_piety = miniscule_piety_loss
 					}
-					else = {
-						add_character_modifier = { modifier =  stress_smelling_of_sweat years = 1 }
-					}
-				}
-				0 = {
-					modifier = { scope:torture = yes add = 1 }
-					change_trait_rank = { trait = wounded rank = 1 }
-				}
-				0 = {
-					modifier = { scope:actor = { is_ai = yes } should_be_naked_trigger = no add = 2 }
-					modifier = { scope:naked = yes add = 10 }
-					add_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
-				}
-				0 = {
-					modifier = { scope:actor = { is_ai = yes } gold > 50 add = 4 }
-					modifier = { scope:gold = yes add = 10 }
-					pay_short_term_gold = { target = scope:actor gold = gold }
-				}
-				0 = {
-					modifier = { scope:actor = { is_ai = yes } scope:actor.faith != scope:recipient.faith add = 4 }
-					modifier = { scope:conversion = yes add = 10 }
-					set_character_faith_with_conversion = scope:actor.faith
-				}
-				0 = {
-					modifier = { scope:actor = { is_ai = yes } is_female = yes is_adult = yes add = 10 }
-					modifier = { scope:prostitute = yes add = 10 }
 					random_living_character = {
 						limit = { is_lowborn = yes is_ruler = no is_female = no is_adult = yes in_diplomatic_range = scope:actor }
 						prostitute_effect = { PROSTITUTE = scope:recipient PREGNANCY_CHANCE = 100 }
 						pay_short_term_gold = { target = scope:actor gold = tiny_gold_value }
 					}
+				}
+				0 = {
+					modifier = { scope:had_sex = yes add = 1 }
+					had_sex_with_effect = { CHARACTER = scope:actor PREGNANCY_CHANCE = pregnancy_chance }
+					scope:actor = {
+						add_piety = minor_piety_loss
+						stress_impact = {
+							base = minor_stress_impact_loss
+							lustful = miniscule_stress_impact_loss
+							chaste = medium_stress_impact_gain
+						}
+					}
+				}
+				0 = {
+					modifier = { scope:naked = yes add = 1 }
+					add_character_modifier = { modifier =  diplomacy_majesty_4090_no_raiment_modifier years = 10 }
+					scope:actor = { add_tyranny = 1 }
+				}
+				0 = {
+					modifier = { scope:gold = yes add = 1 }
+					pay_short_term_gold = { target = scope:actor gold = gold }
+					scope:actor = { add_tyranny = 5 }
+				}
+				0 = {
+					modifier = { scope:conversion = yes add = 1 }
+					set_character_faith_with_conversion = scope:actor.faith
+					scope:actor = { add_tyranny = 10 }
+				}
+				0 = {
+					modifier = { scope:torture = yes add = 1 }
+					if = {
+						limit = { current_weight < -60 }
+						change_current_weight = -10
+					}
+					else_if = {
+						limit = { NOT = { has_character_modifier = aging_gracefully_modifier } }
+						add_character_modifier = { modifier =  aging_gracefully_modifier years = 5 }
+					}
+					else_if = {
+						limit = { NOT = { has_character_modifier = stress_smelling_of_sweat } }
+						add_character_modifier = { modifier =  stress_smelling_of_sweat years = 1 }
+					}
+					else_if = {
+						limit = { NOT = { has_character_modifier = exhausted_modifier } }
+						add_character_modifier = { modifier =  exhausted_modifier months = 1 }
+					}
+					else = {
+						change_trait_rank = { trait = wounded rank = 1 }
+					}
+					stress_impact = {
+						base = minor_stress_impact_loss
+						sadistic = medium_stress_impact_loss
+						vengeful = minor_stress_impact_loss
+						callous = miniscule_stress_impact_loss
+						compassionate = minor_stress_impact_gain
+						forgiving = miniscule_stress_impact_gain
+					}
+					scope:actor = { add_tyranny = 20 }
 				}
 			}
 		}
@@ -88,9 +127,9 @@
 	auto_accept = yes
 	ai_targets = { ai_recipients = courtiers }
 	ai_potential = { always = yes }
-	ai_frequency = 2
+	ai_frequency = 6
 	ai_will_do = {
-		base = 25
+		base = 10
 		ai_value_modifier = {
 			ai_vengefulness = 1
 			ai_greed = 0.5
@@ -98,9 +137,8 @@
 			ai_honor = -0.5
 			ai_rationality = -0.1
 		}
-		modifier = { add = -50 scope:recipient = { has_relation_friend = scope:actor } }
-		modifier = { add = -50 scope:recipient = { has_relation_lover = scope:actor } }
-		modifier = { add = -100 scope:recipient = { has_relation_soulmate = scope:actor } }
-		modifier = { add = -100 scope:recipient = { is_adult = no } }
+		modifier = { add = -5 scope:recipient = { tyranny > low_tyranny } }
+		modifier = { add = -10 scope:recipient = { tyranny > medium_tyranny } }
+		modifier = { add = -20 scope:recipient = { tyranny > high_tyranny } }
 	}
 }
