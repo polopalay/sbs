@@ -112,6 +112,7 @@
 	ai_will_do = {
 		base = 0
 		modifier = { add = 1000 scope:recipient = { is_ruler = no has_trait = slave any_relation = { type = slave_owner count = 0 } } }
+		modifier = { add = 50 scope:recipient = { is_ruler = no is_lowborn = yes is_imprisoned_by = scope:actor } }
 		opinion_modifier = { opinion_target = scope:recipient multiplier = -0.25 }
 		ai_value_modifier = {
 			ai_vengefulness = 0.25

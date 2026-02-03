@@ -17,7 +17,7 @@
 		RANSOM_COST = scope:recipient.gold
 	}
 	send_option = {
-		is_shown = {  scope:recipient = { is_female = yes is_adult = yes } }
+		is_shown = {  scope:recipient = { has_std_trigger = no is_female = yes is_adult = yes } }
 		flag = prostitute
 		localization = "carnia_prostitute_interaction"
 	}

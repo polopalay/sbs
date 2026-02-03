@@ -8,13 +8,7 @@ sbs_makeup_interaction = {
 		scope:actor = {
 			has_trait_with_flag = sbs_demon_trait
 		}
-		scope:recipient = {
-			OR = {
-				this = scope:actor
-				is_vassal_of = scope:actor
-				is_courtier_of = scope:actor
-			}
-		}
+		scope:recipient = scope:actor
 	}
 	is_valid = {
 		scope:actor = {
@@ -343,7 +337,7 @@ sbs_makeup_interaction = {
 			multiplier = 1
 		}
 	}
-	ai_frequency = 24
+	ai_frequency = 36
 	ai_targets = {
 		ai_recipients = self
 		ai_recipients = vassals
@@ -355,7 +349,11 @@ sbs_makeup_interaction = {
 		base = 0
 		modifier = { add = 5 scope:naked = yes scope:recipient = { carn_is_working_as_prostitute_trigger = yes should_be_naked_trigger = no } }
 		modifier = { add = 5 scope:naked = yes scope:recipient = { carn_is_working_as_prostitute_trigger = no has_character_modifier = diplomacy_majesty_4090_no_raiment_modifier } }
-		modifier = { add = 100 scope:true_form = yes scope:recipient = { is_at_war = yes NOT = { has_character_modifier = sbs_true_form } } scope:recipient = scope:actor }
-		modifier = { add = 100 scope:true_form = yes scope:recipient = { is_at_war = no has_character_modifier = sbs_true_form } scope:recipient = scope:actor }
+		modifier = { add = 100 scope:true_form = yes scope:recipient = { is_at_war = no has_character_modifier = sbs_true_form } }
+		modifier = { add = 50 scope:true_form = yes scope:recipient = { is_at_war = yes NOT = { has_character_modifier = sbs_true_form } } }
+		modifier = { add = 100 scope:true_form = yes scope:recipient = { health <= poor_health NOT = { has_character_modifier = sbs_true_form } } }
+		modifier = { add = -100 scope:true_form = yes scope:recipient = { health <= poor_health has_character_modifier = sbs_true_form } }
+		modifier = { add = 100 scope:true_form = yes scope:recipient = { health <= poor_health NOT = { has_character_modifier = sbs_true_form } } }
+		modifier = { add = -100 scope:true_form = yes scope:recipient = { health <= poor_health has_character_modifier = sbs_true_form } }
 	}
 }

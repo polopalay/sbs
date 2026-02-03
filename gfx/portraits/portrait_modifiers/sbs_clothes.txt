@@ -64,7 +64,7 @@ horn_clothes = {
 				add = 100
 				has_trait = sbs_demon
 				has_character_modifier = sbs_true_form
-				age >= 666
+				is_female = yes
 			}
 		}
 	}
@@ -83,7 +83,7 @@ horn_clothes = {
 				add = 100
 				has_trait = sbs_demon
 				has_character_modifier = sbs_true_form
-				age < 666
+				is_female = no
 			}
 		}
 	}

@@ -128,6 +128,11 @@
 		modifier = { add = -25 scope:recipient = { has_trait = beauty_bad_1 } }
 		modifier = { add = -50 scope:recipient = { has_trait = beauty_bad_2 } }
 		modifier = { add = -100 scope:recipient = { has_trait = beauty_bad_3 } }
+		modifier = { add = -50 scope:recipient = { has_trait = scaly } }
+		modifier = { add = -50 scope:recipient = { has_trait = albino } }
+		modifier = { add = -50 scope:recipient = { has_trait = dwarf } }
+		modifier = { add = -50 scope:recipient = { has_trait = giant } }
+		modifier = { add = -50 scope:recipient = { has_trait = hunchbacked } }
 		modifier = { add = -100 scope:recipient = { has_trait = disfigured } }
 		modifier = { add = -50 scope:recipient = { is_female = no faith = { has_doctrine = doctrine_gender_male_dominated } } }
 		modifier = { add = -50 scope:recipient = { is_female = yes faith = { has_doctrine = doctrine_gender_female_dominated } } }

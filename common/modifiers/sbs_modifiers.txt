@@ -18,13 +18,21 @@ sbs_debuff = {
 
 sbs_true_form = {
 	icon = souls_positive
-	health = -3
-	tyranny_gain_mult = -1
+	tyranny_gain_mult = 1
+	tyranny_loss_mult = -1
 	dread_gain_mult = 1
 	dread_decay_mult = -1
 	dread_baseline_add = 666
 	general_opinion = -100
+	health = 3
+	negate_health_penalty_add = 3
+	stewardship = -13
+	intrigue = -13
+	learning = -13
+	martial = 13
 	prowess = 100
+	life_expectancy = 666
+	years_of_fertility = -666
 }
 
 sbs_seal = {

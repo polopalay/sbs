@@ -49,7 +49,7 @@ k_greedy = {
 	ruler_uses_title_name = no
 	landless = yes
 
-	capital = c_kufa
+	capital = c_jingzhao
 
 	landless = yes
 	destroy_if_invalid_heir = yes

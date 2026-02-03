@@ -398,55 +398,45 @@ accessory_genes = {
 		horn_0 = {
 			index = 1
 			male = {
-				1 = empty
+				1 = female_horns_0
 			}
-			female = {
-				100 = female_horns_0
-			}
+			female = male
 			boy = male
-			girl = female
+			girl = male
 		}
 		horn_1 = {
 			index = 2
 			male = {
-				1 = empty
-			}
-			female = {
 				1 = female_horns_1
 			}
+			female = male
 			boy = male
 			girl = female
 		}
 		horn_2 = {
 			index = 3
 			male = {
-				1 = empty
-			}
-			female = {
 				1 = female_horns_2
 			}
+			female = male
 			boy = male
 			girl = female
 		}
 		horn_3 = {
 			index = 4
 			male = {
-				1 = empty
-			}
-			female = {
 				1 = female_horns_3
 			}
+			female = male
 			boy = male
 			girl = female
 		}
 		horn_4 = {
 			index = 5
 			male = {
-				1 = empty
-			}
-			female = {
 				1 = female_horns_4
 			}
+			female = male
 			boy = male
 			girl = female
 		}

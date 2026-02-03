@@ -107,25 +107,25 @@ sbs_devils_curse_interaction = {
 		}
 		scope:recipient = {
 			random_list = {
-				5 = 0
+				10 = 0
 				0 = {
-					modifier = { scope:sbs_seal = yes add = 15 }
+					modifier = { scope:sbs_seal = yes add = 30 }
 					add_character_modifier = sbs_seal
 				}
 				0 = {
-					modifier = { scope:player = yes add = 5 }
+					modifier = { scope:player = yes add = 10 }
 					sbs_steal_body = { VICTIM = scope:recipient STEALER = scope:actor }	
 				}
 				0 = {
-					modifier = { scope:sbs_debuff = yes add = 15 }
+					modifier = { scope:sbs_debuff = yes add = 10 }
 					add_character_modifier = { modifier = sbs_debuff years = 10 }
 				}
 				0 = {
-					modifier = { scope:stanky_modifier = yes add = 20 }
+					modifier = { scope:stanky_modifier = yes add = 30 }
 					add_character_modifier = { modifier =  stanky_modifier years = 1 }
 				}
 				0 = {
-					modifier = { scope:possessed_by_lust_demon_modifier = yes add = 20 }
+					modifier = { scope:possessed_by_lust_demon_modifier = yes add = 40 }
 					add_character_modifier = possessed_by_lust_demon_modifier
 				}
 				0 = {

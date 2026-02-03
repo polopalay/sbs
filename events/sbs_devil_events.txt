@@ -467,7 +467,7 @@ sbs_devil.1319 = {
 				add_trait_force_tooltip = fecund
 			}
 			1 = {
-				modifier = { add = -1 has_trait_with_flag = sbs_demon_trait }
+				modifier = { add = -1 OR = { has_trait_with_flag = sbs_demon_trait primary_title.tier < tier_duchy } }
 				add_trait_force_tooltip = sbs_lesser_succubus
 			}
 			4 = {
