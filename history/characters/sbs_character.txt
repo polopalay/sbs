@@ -219,6 +219,17 @@ suanggi_character = {
 			add_trait_xp = { trait = sbs_succubus track = corruption value = 50 }
 			add_trait_xp = { trait = sbs_succubus track = power value = 33 }
 			add_trait_xp = { trait = sbs_succubus track = daring value = 25 }
+			create_artifact = {
+				name = mistress_dildo
+				description = mistress_dildo_desc
+				type = magic_creation
+				modifier = mistress_dildo_modifier
+				visuals = mistress_dildo
+				template = mistress_dildo_template
+				max_durability = 20
+				wealth = 10
+				quality = 10
+			}
 		}
 	}
 	1178.1.1 = {
@@ -226,6 +237,18 @@ suanggi_character = {
 			add_trait_xp = { trait = sbs_succubus track = corruption value = 50 }
 			add_trait_xp = { trait = sbs_succubus track = power value = 33 }
 			add_trait_xp = { trait = sbs_succubus track = daring value = 25 }
+			create_artifact = {
+				name = master_dildo
+				rarity = masterwork
+				description = master_dildo_desc
+				type = magic_creation
+				modifier = master_dildo_modifier
+				visuals = master_dildo
+				template = master_dildo_template
+				max_durability = 20
+				wealth = 10
+				quality = 10
+			}
 		}
 	}
 }
@@ -280,6 +303,17 @@ lilim_character = {
 			add_trait_xp = { trait = sbs_succubus track = corruption value = 50 }
 			add_trait_xp = { trait = sbs_succubus track = power value = 33 }
 			add_trait_xp = { trait = sbs_succubus track = daring value = 25 }
+			create_artifact = {
+				name = mistress_dildo
+				description = mistress_dildo_desc
+				type = magic_creation
+				modifier = mistress_dildo_modifier
+				visuals = mistress_dildo
+				template = mistress_dildo_template
+				max_durability = 20
+				wealth = 10
+				quality = 10
+			}
 		}
 	}
 	1178.1.1 = {
@@ -287,6 +321,18 @@ lilim_character = {
 			add_trait_xp = { trait = sbs_succubus track = corruption value = 50 }
 			add_trait_xp = { trait = sbs_succubus track = power value = 33 }
 			add_trait_xp = { trait = sbs_succubus track = daring value = 25 }
+			create_artifact = {
+				name = master_dildo
+				rarity = masterwork
+				description = master_dildo_desc
+				type = magic_creation
+				modifier = master_dildo_modifier
+				visuals = master_dildo
+				template = master_dildo_template
+				max_durability = 20
+				wealth = 10
+				quality = 10
+			}
 		}
 	}
 }
@@ -337,6 +383,8 @@ pleasure_character = {
     }
     666.1.1 = {
 		effect = {
+			carn_start_working_as_prostitute_effect = yes
+			had_sex_with_effect = { CHARACTER = character:violence_character PREGNANCY_CHANCE = pregnancy_chance }
 			spawn_army = {
 				name = event_troop_default_name
 				men_at_arms = {
@@ -635,6 +683,7 @@ nature_character = {
     }
 	666.1.1 = {
 		effect = {
+			had_sex_with_effect = { CHARACTER = character:greedy_character PREGNANCY_CHANCE = pregnancy_chance }
 			spawn_army = {
 				name = event_troop_default_name
 				men_at_arms = {

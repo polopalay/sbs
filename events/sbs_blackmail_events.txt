@@ -177,7 +177,7 @@ sbs_blackmail.1003 = {
             lustful = major_stress_impact_loss
         }
 		had_sex_with_effect = {
-			PROSTITUTE = scope:sbs_random_1
+			CHARACTER = scope:sbs_random_1
 			PREGNANCY_CHANCE = pregnancy_chance
 		}
 		trigger_event = sbs_blackmail.1110

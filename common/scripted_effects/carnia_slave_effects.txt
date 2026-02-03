@@ -1,8 +1,6 @@
 ﻿carn_enslave_effect = {
 	$SLAVE$ = { save_temporary_scope_as = new_slave }
-	$SLAVE$ = { save_temporary_scope_as = slave }
 	$OWNER$ = { save_temporary_scope_as = new_owner }
-	$OWNER$ = { save_temporary_scope_as = slave_owner }
 
 	scope:new_slave = {
 		if = {
@@ -59,7 +57,7 @@
 				}
 			}
 			if = {
-				limit = { faith = { NOT = { has_doctrine_parameter = same_slavery_accepted } faith_hostility_level = { target = scope:slave.faith value < faith_hostile_level } } }
+				limit = { faith = { NOT = { has_doctrine_parameter = same_slavery_accepted } faith_hostility_level = { target = scope:new_slave.faith value < faith_hostile_level } } }
 				add_opinion = { target = scope:new_owner modifier = carn_enslaved_me_opinion }
 			}
 
@@ -69,28 +67,28 @@
 			}
 
 			every_spouse = {
-				limit = { NOT = { this = scope:new_owner } faith = { NOT = { has_doctrine_parameter = same_slavery_accepted } faith_hostility_level = { target = scope:slave.faith value < faith_hostile_level } } }
+				limit = { NOT = { this = scope:new_owner } faith = { NOT = { has_doctrine_parameter = same_slavery_accepted } faith_hostility_level = { target = scope:new_slave.faith value < faith_hostile_level } } }
 				add_opinion = { target = scope:new_owner modifier = carn_enslaved_close_family_opinion }
 			}
 			every_close_family_member = {
-				limit = { NOT = { this = scope:new_owner is_spouse_of = scope:new_slave } faith = { NOT = { has_doctrine_parameter = same_slavery_accepted } faith_hostility_level = { target = scope:slave.faith value < faith_hostile_level } } }
+				limit = { NOT = { this = scope:new_owner is_spouse_of = scope:new_slave } faith = { NOT = { has_doctrine_parameter = same_slavery_accepted } faith_hostility_level = { target = scope:new_slave.faith value < faith_hostile_level } } }
 				add_opinion = { target = scope:new_owner modifier = carn_enslaved_close_family_opinion }
 			}
 			every_relation = {
 				type = friend
-				limit = { NOT = { this = scope:new_owner is_spouse_of = scope:new_slave is_close_family_of = scope:new_slave } faith = { NOT = { has_doctrine_parameter = same_slavery_accepted } faith_hostility_level = { target = scope:slave.faith value < faith_hostile_level } } }
+				limit = { NOT = { this = scope:new_owner is_spouse_of = scope:new_slave is_close_family_of = scope:new_slave } faith = { NOT = { has_doctrine_parameter = same_slavery_accepted } faith_hostility_level = { target = scope:new_slave.faith value < faith_hostile_level } } }
 				add_opinion = { target = scope:new_owner modifier = carn_enslaved_close_relation_opinion }
 			}
 			every_relation = {
 				type = lover
-				limit = { NOT = { this = scope:new_owner is_spouse_of = scope:new_slave is_close_family_of = scope:new_slave has_relation_friend = scope:new_slave } faith = { NOT = { has_doctrine_parameter = same_slavery_accepted } faith_hostility_level = { target = scope:slave.faith value < faith_hostile_level } } }
+				limit = { NOT = { this = scope:new_owner is_spouse_of = scope:new_slave is_close_family_of = scope:new_slave has_relation_friend = scope:new_slave } faith = { NOT = { has_doctrine_parameter = same_slavery_accepted } faith_hostility_level = { target = scope:new_slave.faith value < faith_hostile_level } } }
 				add_opinion = { target = scope:new_owner modifier = carn_enslaved_close_relation_opinion }
 			}
 		}
 		every_relation = {
 			type = slave_owner
-			remove_relation_slave = scope:slave
-			scope:slave = { remove_relation_slave_owner = prev }
+			remove_relation_slave = scope:new_slave
+			scope:new_slave = { remove_relation_slave_owner = prev }
 		}
 	}
 

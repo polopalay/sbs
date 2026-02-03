@@ -1,0 +1,20 @@
+﻿l_spanish:
+ carnx_enslaved_memory: "Esclavizado"
+  carnx_enslaved_desc_1: "Fui esclavizado por [enslaver.GetTitledFirstName]"
+ carnx_enslaved_desc_second_perspective_1: "Fuiste esclavizado por [enslaver.GetTitledFirstName]"
+ carnx_enslaved_desc_third_perspective_1: "[owner.GetName] fue esclavizado por [enslaver.GetTitledFirstName]"
+
+ carnx_freed_memory: "Liberado"
+ carnx_freed_desc_1: "Fui liberado de la esclavitud por [emancipator.GetTitledFirstName]"
+ carnx_freed_desc_second_perspective_1: "Fuiste liberado de la esclavitud por [emancipator.GetTitledFirstName]"
+ carnx_freed_desc_third_perspective_1: "[owner.GetName] fue liberado de la esclavitud por [emancipator.GetTitledFirstName]"
+
+ carnia_start_prostitute: "Empecé a trabajar como prostituta"
+ carnia_start_prostitute_desc_1: "Empecé a trabajar como prostituta"
+ carnia_start_prostitute_desc_second_perspective_1: "Empezaste a trabajar como prostituta"
+ carnia_start_prostitute_desc_third_perspective_1: "[owner.GetName] empezó a trabajar como prostituta"
+
+ carnia_stop_prostitute: "Dejó de trabajar como prostituta"
+ carnia_stop_prostitute_desc_1: "Dejé de trabajar como prostituta"
+ carnia_stop_prostitute_desc_second_perspective_1: "Dejaste de trabajar como prostituta"
+ carnia_stop_prostitute_desc_third_perspective_1: "[owner.GetName] dejó de ejercer la prostitución"

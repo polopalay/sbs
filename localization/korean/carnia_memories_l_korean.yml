@@ -1,0 +1,20 @@
+﻿l_korean:
+ carnx_enslaved_memory: "노예 상태"
+ carnx_enslaved_desc_1: "저는 [노예 소유주.GetTitledFirstName]에게 노예로 잡혀 있었습니다."
+ carnx_enslaved_desc_second_perspective_1: "당신은 [노예 소유주.GetTitledFirstName]에게 노예로 잡혀 있었습니다."
+ carnx_enslaved_desc_third_perspective_1: "[owner.GetName]은 [노예 소유주.GetTitledFirstName]에게 노예로 잡혀 있었습니다."
+
+ carnx_freed_memory: "해방됨"
+ carnx_freed_desc_1: "저는 [해방자.GetTitledFirstName]에 의해 노예 상태에서 해방되었습니다."
+ carnx_freed_desc_second_perspective_1: "당신은 [해방자.GetTitledFirstName]에 의해 노예 상태에서 해방되었습니다."
+ carnia_freed_desc_third_perspective_1: "[owner.GetName]은 [emancipator.GetTitledFirstName]에 의해 노예에서 해방되었습니다."
+
+ carnia_start_prostitute: "매춘부로 일하기 시작했습니다."
+ carnia_start_prostitute_desc_1: "저는 매춘부로 일하기 시작했습니다."
+ carnia_start_prostitute_desc_second_perspective_1: "당신은 매춘부로 일하기 시작했습니다."
+ carnia_start_prostitute_desc_third_perspective_1: "[owner.GetName]은 매춘부로 일하기 시작했습니다."
+
+ carnia_stop_prostitute: "매춘부 일을 그만두었습니다."
+ carnia_stop_prostitute_desc_1: "저는 매춘부 일을 그만두었습니다."
+ carnia_stop_prostitute_desc_second_perspective_1: "당신은 매춘부 일을 그만두었습니다."
+ carnia_stop_prostitute_desc_third_perspective_1: "[owner.GetName] 매춘부 일을 그만뒀다.

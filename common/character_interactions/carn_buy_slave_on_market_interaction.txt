@@ -140,7 +140,6 @@
 	}
 	ai_will_do = {
 		base = 0
-		modifier = { add = 10 scope:recipient = { any_relation = { type = slave count > 5 } } }
-		modifier = { add = 100 scope:recipient = { is_ai = yes any_relation = { type = slave count > 5 } } }
+		modifier = { add = 100 scope:recipient = { any_relation = { type = slave count > 5 } } }
 	}
 }

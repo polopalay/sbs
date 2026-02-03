@@ -1,0 +1,101 @@
+carnx_enslaved_memory = {
+	categories = { negative prison }
+	icon = "prison.dds"
+	description = {
+		random_valid = {
+			desc = carnx_enslaved_desc_1
+		}
+	}
+
+	second_perspective_description = {
+		random_valid = {
+			desc = carnx_enslaved_desc_second_perspective_1
+		}
+	}
+
+	third_perspective_description = {
+		random_valid = {
+			desc = carnx_enslaved_desc_third_perspective_1
+		}
+	}
+
+	participants = { enslaver }
+
+	duration = {
+		years = memory_default_duration
+	}
+}
+
+carnx_freed_memory = {
+	categories = { poistive prison }
+	icon = "prison.dds"
+	description = {
+		random_valid = {
+			desc = carnx_freed_desc_1
+		}
+	}
+
+	second_perspective_description = {
+		random_valid = {
+			desc = carnx_freed_desc_second_perspective_1
+		}
+	}
+
+	third_perspective_description = {
+		random_valid = {
+			desc = carnx_freed_desc_third_perspective_1
+		}
+	}
+
+	participants = { emancipator }
+
+	duration = {
+		years = memory_default_duration
+	}
+}
+
+carnia_start_prostitute = {
+	categories = { positive relationships private intimate }
+	icon = "intimate.dds"
+	description = {
+		random_valid = {
+			desc = carnia_start_prostitute_desc_1
+		}
+	}
+	second_perspective_description = {
+		random_valid = {
+			desc = carnia_start_prostitute_desc_second_perspective_1
+		}
+	}
+	third_perspective_description = {
+		random_valid = {
+			desc = carnia_start_prostitute_desc_third_perspective_1
+		}
+	}
+	duration = {
+		years = memory_default_duration
+	}
+}
+
+carnia_stop_prostitute = {
+	categories = { positive relationships private intimate }
+	icon = "intimate.dds"
+	description = {
+		random_valid = {
+			desc = carnia_stop_prostitute_desc_1
+		}
+	}
+	second_perspective_description = {
+		random_valid = {
+			desc = carnia_stop_prostitute_desc_second_perspective_1
+		}
+	}
+	third_perspective_description = {
+		random_valid = {
+			desc = carnia_stop_prostitute_desc_third_perspective_1
+		}
+	}
+	duration = {
+		years = memory_default_duration
+	}
+}

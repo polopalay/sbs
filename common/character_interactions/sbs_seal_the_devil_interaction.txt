@@ -256,13 +256,12 @@ sbs_seal_the_devil_interaction = {
 	}
 	ai_potential = { always = yes }
 	ai_will_do = {
-		base = 20
-		modifier = { add = -100 scope:actor = { ai_zeal < very_low_positive_ai_value } }
-		modifier = { add = -50 scope:actor = { ai_zeal < low_positive_ai_value } }
+		base = 50
+		modifier = { add = -80 scope:actor = { ai_zeal < very_low_positive_ai_value } }
+		modifier = { add = -40 scope:actor = { ai_zeal < low_positive_ai_value } }
 		modifier = { add = -20 scope:actor = { ai_zeal < medium_positive_ai_value } }
 		modifier = { add = 20 scope:actor = { ai_zeal > high_positive_ai_value } }
-		modifier = { add = 50 scope:actor = { ai_zeal > very_high_positive_ai_value } }
-		modifier = { add = 100 scope:actor = { ai_zeal > dominant_positive_ai_value } }
-		modifier = { scope:actor = { has_trait = zealous } add = 100 }
+		modifier = { add = 40 scope:actor = { ai_zeal > very_high_positive_ai_value } }
+		modifier = { add = 80 scope:actor = { ai_zeal > dominant_positive_ai_value } }
 	}
 }

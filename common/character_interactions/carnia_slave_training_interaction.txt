@@ -59,7 +59,7 @@
 					}
 					random_living_character = {
 						limit = { is_lowborn = yes is_ruler = no is_female = no is_adult = yes in_diplomatic_range = scope:actor }
-						prostitute_effect = { PROSTITUTE = scope:recipient PREGNANCY_CHANCE = 100 }
+						had_sex_with_effect = { CHARACTER = scope:recipient PREGNANCY_CHANCE = pregnancy_chance }
 						pay_short_term_gold = { target = scope:actor gold = tiny_gold_value }
 					}
 				}
@@ -129,7 +129,7 @@
 	ai_potential = { always = yes }
 	ai_frequency = 12
 	ai_will_do = {
-		base = 10
+		base = 25
 		ai_value_modifier = {
 			ai_vengefulness = 1
 			ai_greed = 0.5
@@ -137,8 +137,5 @@
 			ai_honor = -0.5
 			ai_rationality = -0.1
 		}
-		modifier = { add = -5 scope:recipient = { tyranny > low_tyranny } }
-		modifier = { add = -10 scope:recipient = { tyranny > medium_tyranny } }
-		modifier = { add = -20 scope:recipient = { tyranny > high_tyranny } }
 	}
 }

@@ -1,0 +1,26 @@
+carn_on_start_working_as_prostitute = {
+	effect = {
+		create_character_memory = {
+			type = carnia_start_prostitute
+		}
+	}
+}
+
+carn_on_stop_working_as_prostitute = {
+	effect = {
+		create_character_memory = {
+			type = carnia_stop_prostitute
+		}
+	}
+}
+
+carnia_on_prostitute = {
+	effect = {
+		create_character_memory = {
+			type = had_sex
+			participants = {
+				sex_partner = scope:prostitute
+			}
+		}
+	}
+}

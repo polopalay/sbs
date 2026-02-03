@@ -1,5 +1,9 @@
 carn_on_slave_enslaved = {
 	effect = {
+		random_relation = {
+			type = slave_owner
+			save_scope_as = new_owner
+		}
 		create_character_memory = {
 			type = carnx_enslaved_memory
 			participants = {

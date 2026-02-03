@@ -1,0 +1,20 @@
+﻿l_german:
+ carnx_enslaved_memory: "Versklavt"
+ carnx_enslaved_desc_1: "Ich wurde von [enslaver.GetTitledFirstName] versklavt"
+ carnx_enslaved_desc_second_perspective_1: "Du wurdest von [enslaver.GetTitledFirstName] versklavt"
+ carnx_enslaved_desc_third_perspective_1: "[owner.GetName] wurde von [enslaver.GetTitledFirstName] versklavt"
+
+ carnx_freed_memory: "Befreit"
+ carnx_freed_desc_1: "Ich wurde von [emancipator.GetTitledFirstName] aus der Sklaverei befreit"
+ carnx_freed_desc_second_perspective_1: "Du wurdest von [emancipator.GetTitledFirstName] aus der Sklaverei befreit"
+ carnx_freed_desc_third_perspective_1: "[owner.GetName] wurde von [emancipator.GetTitledFirstName] aus der Sklaverei befreit."
+
+ carnia_start_prostitute: "Begann als Prostituierte zu arbeiten."
+ carnia_start_prostitute_desc_1: "Ich begann als Prostituierte zu arbeiten."
+ carnia_start_prostitute_desc_second_perspective_1: "Du hast als Prostituierte angefangen zu arbeiten."
+ carnia_start_prostitute_desc_third_perspective_1: "[owner.GetName] begann als Prostituierte zu arbeiten."
+
+ carnia_stop_prostitute: "Hörte auf, als Prostituierte zu arbeiten."
+ carnia_stop_prostitute_desc_1: "Ich hörte auf, als Prostituierte zu arbeiten."
+ carnia_stop_prostitute_desc_second_perspective_1: "Du hast aufgehört, als Prostituierte zu arbeiten."
+ carnia_stop_prostitute_desc_third_perspective_1: "[owner.GetName] hat aufgehört, als Prostituierte zu arbeiten"

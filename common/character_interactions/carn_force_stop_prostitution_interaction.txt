@@ -20,13 +20,7 @@
 			}
 			OR = {
 				scope:actor = scope:recipient
-				AND = {
-					is_courtier_of = scope:actor
-					OR = {
-						any_secret = { type = secret_prostitute is_known_by = scope:actor }
-						has_trait = lifestyle_prostitute
-					}
-				}
+				is_courtier_of = scope:actor
 			}
 		}
 	}
@@ -47,17 +41,7 @@
 
 	on_accept = {
 		scope:recipient = {
-			remove_character_modifier = carn_working_as_prostitute_1_modifier
-			remove_character_modifier = carn_working_as_prostitute_2_modifier
-			remove_character_modifier = carn_working_as_prostitute_3_modifier
-			if = {
-				limit = {
-					has_trait = lifestyle_prostitute
-					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = lifestyle_prostitute }
-				}
-				remove_trait = lifestyle_prostitute
-				add_secret = { type = secret_prostitute }
-			}
+			carn_stop_working_as_prostitute_effect = yes
 		}
 		scope:actor = {
 			if = {
@@ -82,20 +66,19 @@
 		opinion_modifier = {
 			opinion_target = scope:actor
 			who = scope:recipient
-			multiplier = 0.2
+			multiplier = 0.25
 		}
 		modifier = { add = 50 scope:recipient = { has_trait = chaste } }
 		modifier = { add = 50 scope:recipient.faith = { has_doctrine_parameter = carn_prostitution_shunned } }
-		modifier = { add = 100 scope:recipient.faith = { has_doctrine_parameter = carn_prostitution_illegal } }
-		modifier = { add = -50 scope:recipient = { faith = { has_doctrine = tenet_polyamory } } }
-		modifier = { add = -50 scope:recipient = { faith = { has_doctrine = carn_doctrine_prostitution_virtuous } } }
-		modifier = { add = -10 scope:recipient = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } }
-		modifier = { add = -25 scope:recipient = { has_trait = lustful } }
+		modifier = { add = 50 scope:recipient.faith = { has_doctrine_parameter = carn_prostitution_illegal } }
+		modifier = { add = -10 scope:recipient = { has_trait = lustful } }
+		modifier = { add = -20 scope:recipient = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } }
+		modifier = { add = -20 scope:recipient = { faith = { has_doctrine = carn_doctrine_prostitution_virtuous } } }
 		modifier = { add = 50 scope:recipient = { is_female = no faith = { has_doctrine = doctrine_gender_male_dominated } } }
 		modifier = { add = 50 scope:recipient = { is_female = yes faith = { has_doctrine = doctrine_gender_female_dominated } } }
 	}
 
-	ai_frequency = 12
+	ai_frequency = 36
 	ai_targets = {
 		ai_recipients = self
 		ai_recipients = courtiers
@@ -103,17 +86,20 @@
 	ai_potential = { always = yes }
 	ai_will_do = {
 		base = 0
-		modifier = { add = -25 scope:actor = { has_trait = lustful } }
-		modifier = { add = -25 scope:actor = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } }
-		modifier = { add = -25 scope:actor = { faith = { has_doctrine = tenet_polyamory } } }
-		modifier = { add = 20 scope:recipient = { age > 25 } }
-		modifier = { add = 10 scope:recipient = { primary_title.tier = tier_county is_landed_or_landless_administrative = yes } }
-		modifier = { add = 20 scope:recipient = { primary_title.tier = tier_duchy is_landed_or_landless_administrative = yes } }
-		modifier = { add = 30 scope:recipient = { primary_title.tier = tier_kingdom is_landed_or_landless_administrative = yes } }
-		modifier = { add = 40 scope:recipient = { primary_title.tier = tier_empire is_landed_or_landless_administrative = yes} }
-		modifier = { add = 50 scope:recipient = { primary_title.tier = tier_hegemony is_landed_or_landless_administrative = yes} }
+		modifier = { add = -5 scope:actor = { has_trait = greedy } }
+		modifier = { add = -10 scope:actor = { has_trait = lustful } }
+		modifier = { add = -10 scope:actor = { faith = { has_doctrine = carn_doctrine_prostitution_virtuous } } }
+		modifier = { add = -20 scope:actor = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } }
+		modifier = { add = 10 scope:recipient = { age > 25 } }
+		modifier = { add = 20 scope:recipient = { age > 40 } }
 		modifier = { add = 40 scope:actor = { has_trait = chaste } }
+		modifier = { add = 5 scope:recipient = { primary_title.tier = tier_duchy } }
+		modifier = { add = 10 scope:recipient = { primary_title.tier = tier_kingdom } }
+		modifier = { add = 20 scope:recipient = { primary_title.tier = tier_empire } }
+		modifier = { add = 40 scope:recipient = { primary_title.tier = tier_hegemony } }
 		modifier = { add = 50 scope:recipient = { is_female = no faith = { has_doctrine = doctrine_gender_male_dominated } } }
 		modifier = { add = 50 scope:recipient = { is_female = yes faith = { has_doctrine = doctrine_gender_female_dominated } } }
+		modifier = { add = 50 scope:recipient = { is_female = no culture = { has_cultural_pillar = martial_custom_male_only } } }
+		modifier = { add = 50 scope:recipient = { is_female = yes culture = { has_cultural_pillar = martial_custom_female_only } } }
 	}
 }

@@ -1,0 +1,20 @@
+﻿l_simp_chinese:
+ carnx_enslaved_memory: "被奴役"
+ carnx_enslaved_desc_1: "我被[enslaver.GetTitledFirstName]奴役"
+ carnx_enslaved_desc_second_perspective_1: "你被[enslaver.GetTitledFirstName]奴役"
+ carnx_enslaved_desc_third_perspective_1: "[owner.GetName]被[enslaver.GetTitledFirstName]奴役"
+
+ carnx_freed_memory: "获得自由"
+ carnx_freed_desc_1: "我被[emancipator.GetTitledFirstName]解放"
+ carnx_freed_desc_second_perspective_1: "你被[emancipator.GetTitledFirstName]解放"
+ carnx_freed_desc_third_perspective_1: "[owner.GetName] 被 [emancipator.GetTitledFirstName] 解放了"
+
+ carnia_start_prostitute: "开始从事卖淫活动"
+ carnia_start_prostitute_desc_1: "我开始从事卖淫活动"
+ carnia_start_prostitute_desc_second_perspective_1: "你开始从事卖淫活动"
+ carnia_start_prostitute_desc_third_perspective_1: "[owner.GetName] 开始从事卖淫活动"
+
+ carnia_stop_prostitute: "停止从事卖淫活动"
+ carnia_stop_prostitute_desc_1: "我停止从事卖淫活动"
+ carnia_stop_prostitute_desc_second_perspective_1: "你停止从事卖淫活动"
+ carnia_stop_prostitute_desc_third_perspective_1: "[owner.GetName] 停止从事卖淫活动"

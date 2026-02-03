@@ -1,0 +1,20 @@
+﻿l_russian:
+ carnx_enslaved_memory: "Zniewolony"
+ carnx_enslaved_desc_1: "Zostałem zniewolony przez [enslaver.GetTitledFirstName]"
+ carnx_enslaved_desc_second_perspective_1: "Zostałeś zniewolony przez [enslaver.GetTitledFirstName]"
+ carnx_enslaved_desc_third_perspective_1: "[owner.GetName] został zniewolony przez [enslaver.GetTitledFirstName]"
+
+ carnx_freed_memory: "Uwolniony"
+ carnx_freed_desc_1: "Zostałem uwolniony z niewoli przez [emancipator.GetTitledFirstName]"
+ carnx_freed_desc_second_perspective_1: "Zostałeś uwolniony z niewoli przez [emancipator.GetTitledFirstName]"
+ carnx_freed_desc_third_perspective_1: "[owner.GetName] został uwolniony z niewoli przez [emancipator.GetTitledFirstName]"
+
+ carnia_start_prostitute: "Zaczęłam pracować jako prostytutka"
+ carnia_start_prostitute_desc_1: "Zaczęłam pracować jako prostytutka"
+ carnia_start_prostitute_desc_second_perspective_1: "Zaczęłaś pracować jako prostytutka"
+ carnia_start_prostitute_desc_third_perspective_1: "[owner.GetName] zaczął pracować jako prostytutka"
+
+ carnia_stop_prostitute: "Przestałem pracować jako prostytutka"
+ carnia_stop_prostitute_desc_1: "Przestałem pracować jako prostytutka"
+ carnia_stop_prostitute_desc_second_perspective_1: "Przestałaś pracować jako prostytutka"
+ carnia_stop_prostitute_desc_third_perspective_1: "[owner.GetName] przestała pracować jako prostytutka"

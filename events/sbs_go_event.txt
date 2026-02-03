@@ -31,7 +31,7 @@ sbs_go.4000 = {
 	}	
 }
 
-#4010inspecting the cock in private
+#4010 inspecting the cock in private
 sbs_go.4010 = { 
 	type = character_event
 	title = sbs_go.4010.t

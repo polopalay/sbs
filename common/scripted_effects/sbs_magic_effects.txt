@@ -4,12 +4,6 @@
 	if = {
 		limit = { scope:victim = { is_female = yes } }
 		scope:victim = {
-			clear_traits = yes
-			copy_traits = scope:stealer
-			if = {
-				limit = { scope:stealer = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } }
-				add_secret = { type = secret_deviant }
-			}
 			save_scope_as = demon
 		}
 	}
@@ -29,8 +23,8 @@
 				clear_traits = yes
 				copy_traits = scope:stealer
 				if = {
-					limit = { scope:stealer = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } }
-					add_secret = { type = secret_deviant }
+					limit = { has_trait = pregnant }
+					remove_trait = pregnant
 				}
 			}
 			save_scope_as = demon
@@ -57,19 +51,22 @@
 		clear_traits = yes
 		copy_traits = scope:victim
 		if = {
-			limit = { any_relation = { type = slave_owner } }
-			add_trait = slave
-		}
-		if = {
-			limit = { scope:demon = { has_trait = pregnant } }
-			scope:demon = { remove_trait = pregnant }
-			add_trait = pregnant
+			limit = { has_trait = pregnant }
+			remove_trait = pregnant
 		}
 	}
 	scope:victim = {
 		if = {
 			limit = { is_female = no }
 			death = { death_reason = death_vanished }	
+		}
+		else = {
+			clear_traits = yes
+			copy_traits = scope:demon
+			if = {
+				limit = { has_trait = pregnant }
+				remove_trait = pregnant
+			}
 		}
 	}
 }

@@ -1,4 +1,89 @@
-﻿prostitute_effect = {
+﻿carn_start_working_as_prostitute_effect = {
+	if = {
+		limit = { has_trait = celibate }
+		remove_trait = celibate
+	}
+	if = {
+		limit = { NOT = { has_trait = lifestyle_prostitute any_secret = { type = secret_prostitute } } }
+		if = {
+			limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = lifestyle_prostitute } }
+			add_secret = { type = secret_prostitute }
+		}
+		else = {
+			add_trait = lifestyle_prostitute
+		}
+	}
+	carn_update_working_as_prostitute_modifier_effect = yes
+	trigger_event = { on_action = carn_on_start_working_as_prostitute }
+}
+
+carn_stop_working_as_prostitute_effect = {
+	if = {
+		limit = { has_character_modifier = carn_working_as_prostitute_1_modifier }
+		remove_character_modifier = carn_working_as_prostitute_1_modifier
+	}
+	if = {
+		limit = { has_character_modifier = carn_working_as_prostitute_2_modifier }
+		remove_character_modifier = carn_working_as_prostitute_2_modifier
+	}
+	if = {
+		limit = { has_character_modifier = carn_working_as_prostitute_3_modifier }
+		remove_character_modifier = carn_working_as_prostitute_3_modifier
+	}
+	if = {
+		limit = {
+			has_trait = lifestyle_prostitute
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = lifestyle_prostitute }
+		}
+		remove_trait = lifestyle_prostitute
+		add_secret = { type = secret_prostitute }
+	}
+	trigger_event = { on_action = carn_on_stop_working_as_prostitute }
+}
+
+carn_update_working_as_prostitute_modifier_effect = {
+	if = {
+		limit = { has_character_modifier = carn_working_as_prostitute_1_modifier }
+		remove_character_modifier = carn_working_as_prostitute_1_modifier
+	}
+	if = {
+		limit = { has_character_modifier = carn_working_as_prostitute_2_modifier }
+		remove_character_modifier = carn_working_as_prostitute_2_modifier
+	}
+	if = {
+		limit = { has_character_modifier = carn_working_as_prostitute_3_modifier }
+		remove_character_modifier = carn_working_as_prostitute_3_modifier
+	}
+	if = {
+		limit = {
+			has_trait_xp = {
+				trait = lifestyle_prostitute
+				value >= 100
+			}
+		}
+		add_character_modifier = {
+			modifier = carn_working_as_prostitute_3_modifier
+		}
+	}
+	else_if = {
+		limit = {
+			has_trait_xp = {
+				trait = lifestyle_prostitute
+				value >= 50
+			}
+		}
+		add_character_modifier = {
+			modifier = carn_working_as_prostitute_2_modifier
+		}
+	}
+	else = {
+		add_character_modifier = {
+			modifier = carn_working_as_prostitute_1_modifier
+		}
+	}
+}
+
+prostitute_effect = {
 	save_scope_as = had_sex_root_character
 	$PROSTITUTE$ = { save_scope_as = prostitute }
 
@@ -154,5 +239,6 @@
 			$PROSTITUTE$ = { risk_of_std_from_effect = { PARTNER = scope:had_sex_root_character } }
 		}
 	}
+	trigger_event = { on_action = carnia_on_prostitute }
 }
 
