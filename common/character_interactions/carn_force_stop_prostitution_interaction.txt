@@ -90,7 +90,7 @@
 		modifier = { add = -10 scope:actor = { has_trait = lustful } }
 		modifier = { add = -10 scope:actor = { faith = { has_doctrine = carn_doctrine_prostitution_virtuous } } }
 		modifier = { add = -20 scope:actor = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } }
-		modifier = { add = 10 scope:recipient = { age > 25 } }
+		modifier = { add = -10 scope:recipient = { age > 25 } }
 		modifier = { add = 20 scope:recipient = { age > 40 } }
 		modifier = { add = 40 scope:actor = { has_trait = chaste } }
 		modifier = { add = 5 scope:recipient = { primary_title.tier = tier_duchy } }

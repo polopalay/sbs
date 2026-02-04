@@ -52,7 +52,7 @@
 					type = favor_hook
 				}
 			}
-			add_character_modifier = { modifier = sbs_seal years = 5 }
+			add_character_modifier = { modifier = sbs_seal years = 25 }
 		}
 		scope:recipient = {
 			if = {

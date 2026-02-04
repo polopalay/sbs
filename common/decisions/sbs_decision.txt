@@ -24,6 +24,8 @@ become_demon = {
 				has_trait_xp = { trait = sbs_succubus track = power value >= 100 }
 				has_trait_xp = { trait = sbs_succubus track = corruption value >= 100 }
 				has_trait_xp = { trait = sbs_succubus track = loyalty value >= 100 }
+				has_character_modifier = sbs_buff
+				has_character_modifier = sbs_generals
 			}
 			AND = {
 				has_trait_xp = { trait = sbs_lesser_demon value >= 100 }
@@ -32,6 +34,8 @@ become_demon = {
 				has_trait = education_stewardship_5
 				has_trait = education_martial_5
 				has_trait = education_learning_5
+				has_character_modifier = sbs_buff
+				has_character_modifier = sbs_generals
 			}
 			AND = {
 				faith.religion = religion:demonic_religion

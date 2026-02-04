@@ -1785,10 +1785,6 @@ sbs_prostitution.9222 = {
 			if = {
 				limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = deviant } }
 				add_secret = { type = secret_deviant }
-				random_secret = {
-					type = secret_deviant
-					reveal_to = scope:recipient
-				}
 			}
 			else = {
 				add_trait_force_tooltip = deviant

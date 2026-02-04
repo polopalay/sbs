@@ -14,13 +14,7 @@
 			NOT = { has_trait_with_flag = sbs_demon_trait }
 		}
 		scope:recipient = {
-			OR = {
-				has_trait = sbs_demon
-				AND = {
-					has_trait = sbs_succubus
-					is_valid_construction_alchemy3_trigger = yes
-				}
-			}
+			has_trait = sbs_demon
 		}
 	}
 
@@ -112,6 +106,7 @@
 			if = {
 				limit = { is_female = yes }
 				add_trait = sbs_lesser_succubus
+				sbs_mind_break_effect = yes
 			}
 			else = {
 				add_trait = sbs_lesser_demon
@@ -121,11 +116,6 @@
 				limit = { has_trait = saint }
 				remove_trait = saint
 				give_nickname = nick_the_betrayer
-			}
-			if = {
-				limit = { has_trait = chaste }
-				remove_trait = chaste
-				add_trait = lustful
 			}
 			if = {
 				limit = { has_trait = immortal }
@@ -147,7 +137,7 @@
 					type = fabrication_hook
 				}
 			}
-			add_character_modifier = { modifier = sbs_debuff years = 2 }
+			add_character_modifier = { modifier = sbs_debuff years = 25 }
 		}
 	}
 	ai_accept = {

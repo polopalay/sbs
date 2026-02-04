@@ -61,6 +61,10 @@ sbs_devils_gift_interaction = {
 		localization = trait_education_stewardship
 	}
 	send_option = {
+		flag = sbs_generals
+		localization = sbs_generals
+	}
+	send_option = {
 		is_shown = { scope:recipient = { has_character_modifier = sbs_seal } }
 		flag = sbs_seal
 		localization = sbs_seal
@@ -68,10 +72,6 @@ sbs_devils_gift_interaction = {
 	send_option = {
 		flag = sbs_buff
 		localization = sbs_buff
-	}
-	send_option = {
-		flag = sbs_generals
-		localization = sbs_generals
 	}
 	send_options_exclusive = yes
 	on_accept = {
@@ -155,16 +155,16 @@ sbs_devils_gift_interaction = {
 					change_trait_rank = { trait = education_stewardship rank = 1 }
 				}
 				0 = {
+					modifier = { scope:sbs_generals = yes add = 5 }
+					add_character_modifier = { modifier = sbs_generals years = 50 }
+				}
+				0 = {
 					modifier = { scope:sbs_seal = yes add = 40 }
 					remove_character_modifier = sbs_seal
 				}
 				0 = {
 					modifier = { scope:sbs_buff = yes add = 30 }
 					add_character_modifier = { modifier = sbs_buff years = 50 }
-				}
-				0 = {
-					modifier = { scope:sbs_generals = yes add = 5 }
-					add_character_modifier = { modifier = sbs_generals years = 50 }
 				}
 			}
 		}

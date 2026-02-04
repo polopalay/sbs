@@ -112,12 +112,12 @@
 		base = 0
 		modifier = { add = 1 scope:actor = { has_trait = physique_good } }
 		modifier = { add = 2 scope:actor = { has_trait = beauty_good } }
-		modifier = { add = 5 scope:actor = { has_trait = greedy } }
-		modifier = { add = 10 scope:actor = { faith = { has_doctrine = carn_doctrine_prostitution_virtuous } } }
+		modifier = { add = 3 scope:actor = { has_trait = greedy } }
+		modifier = { add = 4 scope:recipient = { primary_title.tier = tier_barony } }
+		modifier = { add = 5 scope:actor = { faith = { has_doctrine = carn_doctrine_prostitution_virtuous } } }
 		modifier = { add = 10 scope:actor = { has_trait = lustful } }
 		modifier = { add = 20 scope:actor = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } }
-		modifier = { add = -50 scope:recipient = { age > 40 } }
-		modifier = { add = 10 scope:recipient = { primary_title.tier = tier_barony } }
+		modifier = { add = -10 scope:recipient = { age > 40 } }
 		modifier = { add = -10 scope:recipient = { primary_title.tier = tier_county } }
 		modifier = { add = -20 scope:recipient = { primary_title.tier = tier_duchy } }
 		modifier = { add = -30 scope:recipient = { primary_title.tier = tier_kingdom } }
@@ -128,6 +128,8 @@
 		modifier = { add = -25 scope:recipient = { has_trait = beauty_bad_1 } }
 		modifier = { add = -50 scope:recipient = { has_trait = beauty_bad_2 } }
 		modifier = { add = -100 scope:recipient = { has_trait = beauty_bad_3 } }
+		modifier = { add = -25 scope:recipient = { has_trait = lisping } }
+		modifier = { add = -25 scope:recipient = { has_trait = stuttering } }
 		modifier = { add = -50 scope:recipient = { has_trait = scaly } }
 		modifier = { add = -50 scope:recipient = { has_trait = albino } }
 		modifier = { add = -50 scope:recipient = { has_trait = dwarf } }

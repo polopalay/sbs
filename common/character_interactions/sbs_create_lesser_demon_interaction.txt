@@ -11,13 +11,7 @@
 			NOT = { has_trait_with_flag = sbs_demon_trait }
 		}
 		scope:actor = {
-			OR = {
-				has_trait = sbs_demon
-				AND = {
-					has_trait = sbs_succubus
-					is_valid_construction_alchemy3_trigger = yes
-				}
-			}
+			has_trait = sbs_demon
 		}
 	}
 	is_valid = {
@@ -98,12 +92,13 @@
 					type = favor_hook
 				}
 			}
-			add_character_modifier = { modifier = sbs_debuff years = 2 }
+			add_character_modifier = { modifier = sbs_debuff years = 25 }
 		}
 		scope:recipient = {
 			if = {
 				limit = { is_female = yes }
 				add_trait = sbs_lesser_succubus
+				sbs_mind_break_effect = yes
 			}
 			else = {
 				add_trait = sbs_lesser_demon

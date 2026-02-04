@@ -28,7 +28,7 @@ action_can_offer_prostitute = {
 					is_imprisoned = no
 					NOT = { is_at_war_with = root }
 					NOT = { has_trait = celibate }
-					NOT = { has_trait = lovers_pox has_trait = early_great_pox }
+					has_std_trigger = no
 					stress_level >= 1
 					OR = {
 						has_trait = rakish

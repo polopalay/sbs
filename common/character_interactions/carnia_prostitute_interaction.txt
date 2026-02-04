@@ -73,22 +73,19 @@
 	ai_targets = {
 		ai_recipients = neighboring_rulers
 		ai_recipients = nearby_domicile_owners
+		ai_recipients = realm_characters
 		max = 20
 	}
 	ai_will_do = {
 		base = 0
-		modifier = { add = -100 scope:recipient = { OR = { has_trait = lovers_pox has_trait = early_great_pox } } }
+		modifier = { add = -10 scope:actor = { has_trait = chaste } }
 		modifier = { add = 10 scope:actor.faith = { has_doctrine = tenet_polyamory } }
 		modifier = { add = 10 scope:actor = { stress_level >= 1 } }
-		modifier = { add = -10 scope:actor = { has_trait = chaste } }
 		modifier = { add = 5 scope:actor = { has_trait = lustful } }
 		modifier = { add = 5 scope:actor = { has_trait = rakish } }
 		modifier = { add = 5 scope:actor = { has_trait = deviant } }
 		modifier = { add = 5 scope:actor = { any_secret = { type = secret_deviant } } }
-		modifier = { add = 1 scope:actor = { has_trait = gluttonous } }
-		modifier = { add = 1 scope:actor = { has_trait = profligate } }
 		modifier = { add = 1 scope:actor = { has_trait = seducer } }
-		modifier = { add = 1 scope:actor = { has_trait = paranoid } }
 		modifier = { add = -5 scope:recipient = { is_lowborn = yes } }
 		modifier = { add = -5 scope:recipient = { has_trait = beauty_bad_1 } }
 		modifier = { add = -10 scope:recipient = { has_trait = beauty_bad_2 } }
@@ -115,6 +112,7 @@
 		modifier = { add = -5 scope:recipient = { has_trait = hunchbacked } }
 		modifier = { add = -5 scope:recipient = { has_trait = lisping } }
 		modifier = { add = -5 scope:recipient = { has_trait = stuttering } }
+		modifier = { add = -5 scope:recipient = { has_trait = albino } }
 		modifier = { add = -5 scope:recipient = { has_trait = dwarf } }
 		modifier = { add = -5 scope:recipient = { has_trait = giant } }
 		modifier = { add = -5 scope:recipient = { has_trait = weak } }
