@@ -28,7 +28,6 @@
 				has_trait = lustful
 				has_trait = deviant
 				any_secret = { type = secret_deviant }
-				scope:actor = { faith = { has_doctrine = tenet_polyamory } }
 			}
 			has_std_trigger = no
 			is_attracted_to_gender_of = scope:recipient
@@ -79,7 +78,6 @@
 	ai_will_do = {
 		base = 0
 		modifier = { add = -10 scope:actor = { has_trait = chaste } }
-		modifier = { add = 10 scope:actor.faith = { has_doctrine = tenet_polyamory } }
 		modifier = { add = 10 scope:actor = { stress_level >= 1 } }
 		modifier = { add = 5 scope:actor = { has_trait = lustful } }
 		modifier = { add = 5 scope:actor = { has_trait = rakish } }
@@ -119,12 +117,11 @@
 		modifier = { add = -5 scope:recipient = { has_trait = dull } }
 		modifier = { add = 10 scope:recipient = { age < 18 } }
 		modifier = { add = 10 scope:recipient = { age < 20 } }
-		modifier = { add = -5 scope:recipient = { age > 30 } }
-		modifier = { add = -10 scope:recipient = { age > 40 } }
+		modifier = { add = -10 scope:recipient = { age > 30 } }
+		modifier = { add = -20 scope:recipient = { age > 40 } }
 		modifier = { add = -10 scope:recipient = { has_trait = disfigured } }
 		modifier = { add = 10 scope:recipient = { should_be_naked_trigger = yes } }
 		modifier = { add = 5 scope:actor = {  NOR = { has_trait = deviant any_secret = { type = secret_deviant } } } scope:use_contraception = yes }
 		modifier = { add = -20 scope:actor = { is_close_family_of = scope:recipient faith = { NOT = { has_doctrine = tenet_divine_marriage } } } }
-		modifier = { add = 10 scope:actor = { faith = { has_doctrine = tenet_polyamory } } }
 	}
 }

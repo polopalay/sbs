@@ -61,10 +61,6 @@ sbs_devils_gift_interaction = {
 		localization = trait_education_stewardship
 	}
 	send_option = {
-		flag = sbs_generals
-		localization = sbs_generals
-	}
-	send_option = {
 		is_shown = { scope:recipient = { has_character_modifier = sbs_seal } }
 		flag = sbs_seal
 		localization = sbs_seal
@@ -155,16 +151,16 @@ sbs_devils_gift_interaction = {
 					change_trait_rank = { trait = education_stewardship rank = 1 }
 				}
 				0 = {
-					modifier = { scope:sbs_generals = yes add = 5 }
-					add_character_modifier = { modifier = sbs_generals years = 50 }
+					modifier = { scope:sbs_buff = yes add = 2 }
+					add_character_modifier = { modifier = sbs_generals years = 10 }
+				}
+				0 = {
+					modifier = { scope:sbs_buff = yes add = 10 }
+					add_character_modifier = { modifier = sbs_buff years = 100 }
 				}
 				0 = {
 					modifier = { scope:sbs_seal = yes add = 40 }
 					remove_character_modifier = sbs_seal
-				}
-				0 = {
-					modifier = { scope:sbs_buff = yes add = 30 }
-					add_character_modifier = { modifier = sbs_buff years = 50 }
 				}
 			}
 		}
@@ -182,7 +178,7 @@ sbs_devils_gift_interaction = {
 	ai_potential = { always = yes }
 	ai_will_do = {
 		base = 0
-		modifier = { add = 5 scope:recipient = scope:actor }
+		modifier = { add = 5 scope:recipient = scope:actor scope:actor = { NOT = { has_trait = sbs_demon } } }
 		modifier = { add = 25 scope:actor = { has_trait = sbs_demon } scope:recipient.dynasty = scope:actor.dynasty }
 		modifier = { add = 25 scope:actor = { has_trait = sbs_demon } scope:recipient = scope:actor }
 		modifier = { add = 25 scope:recipient = { has_trait = sbs_lesser_demon } }

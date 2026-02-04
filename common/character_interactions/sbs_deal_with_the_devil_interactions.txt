@@ -24,6 +24,7 @@
 				has_trait = comfort_eater
 				has_trait = inappetetic
 				stress_level >= 1
+				has_character_modifier = rejected_from_marriage_bed_modifier
 
 				has_trait = depressed_1
 				has_trait = depressed_genetic
@@ -193,6 +194,7 @@
 					has_trait = comfort_eater
 					has_trait = inappetetic
 					stress_level >= 1
+					has_character_modifier = rejected_from_marriage_bed_modifier
 				}
 			}
 		}
@@ -523,20 +525,11 @@
 	}
 
 	ai_accept = {
-		base = -25
+		base = -5
 		opinion_modifier = {
 			opinion_target = scope:actor
 			who = scope:recipient
 			multiplier = 0.1
-		}
-		modifier = {
-			scope:actor.succubus_cost_value > 0
-			scope:actor = scope:actor
-			add = {
-				value = 0
-				subtract = scope:actor.succubus_cost_value
-				multiply = 10
-			}
 		}
 		modifier = { add = 5 scope:expose_secret = yes }
 		modifier = { add = 10 scope:small_price = yes }
@@ -579,6 +572,7 @@
 				trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = witch }
 			}
 		}
+		modifier = { add = 1 scope:recipient = { has_character_modifier = rejected_from_marriage_bed_modifier } }
 		modifier = { add = 1 scope:actor = { stress_level = 1 } }
 		modifier = { add = 2 scope:actor = { stress_level = 2 } }
 		modifier = { add = 3 scope:actor = { stress_level = 3 } }

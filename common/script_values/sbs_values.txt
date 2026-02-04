@@ -23,6 +23,10 @@ succubus_cost_value = {
 succubus_const_dealing_with_stress_value = {
 	value = 0
 	if = {
+		limit = { has_character_modifier = rejected_from_marriage_bed_modifier }
+		add = 1
+	}
+	if = {
 		limit = { stress_level = 1 }
 		add = 1
 	}

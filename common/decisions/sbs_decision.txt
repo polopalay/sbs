@@ -18,13 +18,13 @@ become_demon = {
 		}
 	}
 	is_valid = {
+		faith.religion = religion:demonic_religion
 		OR = {
 			AND = {
 				has_trait_xp = { trait = sbs_succubus track = daring value >= 100 }
 				has_trait_xp = { trait = sbs_succubus track = power value >= 100 }
 				has_trait_xp = { trait = sbs_succubus track = corruption value >= 100 }
 				has_trait_xp = { trait = sbs_succubus track = loyalty value >= 100 }
-				has_character_modifier = sbs_buff
 				has_character_modifier = sbs_generals
 			}
 			AND = {
@@ -34,7 +34,6 @@ become_demon = {
 				has_trait = education_stewardship_5
 				has_trait = education_martial_5
 				has_trait = education_learning_5
-				has_character_modifier = sbs_buff
 				has_character_modifier = sbs_generals
 			}
 			AND = {

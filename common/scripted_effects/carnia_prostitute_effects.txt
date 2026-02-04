@@ -30,14 +30,6 @@ carn_stop_working_as_prostitute_effect = {
 		limit = { has_character_modifier = carn_working_as_prostitute_3_modifier }
 		remove_character_modifier = carn_working_as_prostitute_3_modifier
 	}
-	if = {
-		limit = {
-			has_trait = lifestyle_prostitute
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = lifestyle_prostitute }
-		}
-		remove_trait = lifestyle_prostitute
-		add_secret = { type = secret_prostitute }
-	}
 	trigger_event = { on_action = carn_on_stop_working_as_prostitute }
 }
 

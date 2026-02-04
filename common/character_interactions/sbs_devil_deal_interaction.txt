@@ -24,6 +24,7 @@
 				has_trait = comfort_eater
 				has_trait = inappetetic
 				stress_level >= 1
+				has_character_modifier = rejected_from_marriage_bed_modifier
 
 				AND = {
 					has_trait = witch
@@ -195,6 +196,7 @@
 					has_trait = comfort_eater
 					has_trait = inappetetic
 					stress_level >= 1
+					has_character_modifier = rejected_from_marriage_bed_modifier
 				}
 			}
 		}
@@ -538,6 +540,7 @@
 			who = scope:recipient
 			multiplier = 0.1
 		}
+		modifier = { add = 1 scope:recipient = { has_character_modifier = rejected_from_marriage_bed_modifier } }
 		modifier = { add = 5 scope:recipient = { stress_level = 1 } scope:stress = yes }
 		modifier = { add = 10 scope:recipient = { stress_level = 2 } scope:stress = yes }
 		modifier = { add = 15 scope:recipient = { stress_level = 3 } scope:stress = yes }

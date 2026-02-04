@@ -9,7 +9,6 @@
 		scope:actor = {
 			is_ruler = yes
 			is_adult = yes
-			faith = { NOT = { has_doctrine_parameter = carn_prostitution_illegal } }
 		}
 		scope:recipient = {
 			is_adult = yes
@@ -93,10 +92,12 @@
 		modifier = { add = -10 scope:recipient = { age > 25 } }
 		modifier = { add = 20 scope:recipient = { age > 40 } }
 		modifier = { add = 40 scope:actor = { has_trait = chaste } }
-		modifier = { add = 5 scope:recipient = { primary_title.tier = tier_duchy } }
-		modifier = { add = 10 scope:recipient = { primary_title.tier = tier_kingdom } }
-		modifier = { add = 20 scope:recipient = { primary_title.tier = tier_empire } }
-		modifier = { add = 40 scope:recipient = { primary_title.tier = tier_hegemony } }
+		modifier = { add = 5 scope:recipient = { primary_title.tier = tier_duchy is_landless_ruler = no } }
+		modifier = { add = 10 scope:recipient = { primary_title.tier = tier_kingdom is_landless_ruler = no } }
+		modifier = { add = 20 scope:recipient = { primary_title.tier = tier_empire is_landless_ruler = no } }
+		modifier = { add = 40 scope:recipient = { primary_title.tier = tier_hegemony is_landless_ruler = no } }
+		modifier = { add = 25 scope:recipient = { faith = { has_doctrine = carn_doctrine_prostitution_crime } } }
+		modifier = { add = 50 scope:recipient = { faith = { has_doctrine = carn_doctrine_prostitution_shunned } } }
 		modifier = { add = 50 scope:recipient = { is_female = no faith = { has_doctrine = doctrine_gender_male_dominated } } }
 		modifier = { add = 50 scope:recipient = { is_female = yes faith = { has_doctrine = doctrine_gender_female_dominated } } }
 		modifier = { add = 50 scope:recipient = { is_female = no culture = { has_cultural_pillar = martial_custom_male_only } } }
