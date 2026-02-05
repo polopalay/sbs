@@ -151,8 +151,8 @@ sbs_devils_gift_interaction = {
 					change_trait_rank = { trait = education_stewardship rank = 1 }
 				}
 				0 = {
-					modifier = { scope:sbs_buff = yes add = 2 }
-					add_character_modifier = { modifier = sbs_generals years = 10 }
+					modifier = { scope:sbs_buff = yes add = 5 }
+					add_character_modifier = { modifier = sbs_generals years = 50 }
 				}
 				0 = {
 					modifier = { scope:sbs_buff = yes add = 10 }
@@ -178,7 +178,7 @@ sbs_devils_gift_interaction = {
 	ai_potential = { always = yes }
 	ai_will_do = {
 		base = 0
-		modifier = { add = 5 scope:recipient = scope:actor scope:actor = { NOT = { has_trait = sbs_demon } } }
+		modifier = { add = 25 scope:recipient = scope:actor scope:actor = { NOT = { has_trait = sbs_demon } } }
 		modifier = { add = 25 scope:actor = { has_trait = sbs_demon } scope:recipient.dynasty = scope:actor.dynasty }
 		modifier = { add = 25 scope:actor = { has_trait = sbs_demon } scope:recipient = scope:actor }
 		modifier = { add = 25 scope:recipient = { has_trait = sbs_lesser_demon } }

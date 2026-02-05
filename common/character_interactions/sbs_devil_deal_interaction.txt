@@ -534,197 +534,29 @@
 	}
 	auto_accept = { scope:actor = scope:recipient }
 	ai_accept = {
-		base = 0
+		base = 10
 		opinion_modifier = {
 			opinion_target = scope:actor
 			who = scope:recipient
 			multiplier = 0.1
 		}
-		modifier = { add = 1 scope:recipient = { has_character_modifier = rejected_from_marriage_bed_modifier } }
-		modifier = { add = 5 scope:recipient = { stress_level = 1 } scope:stress = yes }
-		modifier = { add = 10 scope:recipient = { stress_level = 2 } scope:stress = yes }
-		modifier = { add = 15 scope:recipient = { stress_level = 3 } scope:stress = yes }
-		modifier = { add = 20 scope:recipient = { stress_level = 4 } scope:stress = yes }
-		modifier = { add = 25 scope:recipient = { stress_level = 5 } scope:stress = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = drunkard } scope:stress = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = hashishiyah } scope:stress = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = rakish } scope:stress = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = reclusive } scope:stress = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = irritable } scope:stress = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = flagellant } scope:stress = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = profligate } scope:stress = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = improvident } scope:stress = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = contrite } scope:stress = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = comfort_eater } scope:stress = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = inappetetic } scope:stress = yes }
-
-		modifier = {
-			add = 20
-			scope:honor = yes
-			scope:recipient = {
-				has_trait = witch
-				trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = witch }
-			}
-		}
-		modifier = {
-			add = 20
-			scope:honor = yes
-			scope:recipient = {
-				has_trait = deviant
-				trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = deviant }
-			}
-		}
-		modifier = {
-			add = 20
-			scope:honor = yes
-			scope:recipient = {
-				has_trait = cannibal
-				trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = cannibal }
-			}
-		}
-		modifier = {
-			add = 10
-			scope:honor = yes
-			scope:recipient = {
-				has_trait = sodomite
-				trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = sodomite }
-			}
-		}
-		modifier = {
-			add = 10
-			scope:honor = yes
-			scope:recipient = {
-				has_trait = adulterer
-				trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = adulterer }
-			}
-		}
-		modifier = {
-			add = 10
-			scope:honor = yes
-			scope:recipient = {
-				has_trait = fornicator
-				trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = fornicator }
-			}
-		}
-		modifier = {
-			add = 20
-			scope:honor = yes
-			scope:recipient = {
-				has_trait = kinslayer_1
-				trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = kinslayer_1 }
-			}
-		}
-		modifier = {
-			add = 15
-			scope:honor = yes
-			scope:recipient = {
-				has_trait = kinslayer_2
-				trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = kinslayer_2 }
-			}
-		}
-		modifier = {
-			add = 10
-			scope:honor = yes
-			scope:recipient = {
-				has_trait = kinslayer_3
-				trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = kinslayer_3 }
-			}
-		}
-		modifier = {
-			add = 5
-			scope:honor = yes
-			scope:recipient = {
-				has_trait = murderer
-				trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = murderer }
-			}
-		}
-		modifier = {
-			add = 5
-			scope:honor = yes
-			scope:recipient = {
-				has_trait = lifestyle_prostitute
-				trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = lifestyle_prostitute }
-			}
-		}
-
-		modifier = { add = 5 scope:recipient = { has_trait = depressed_1 } scope:healing = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = depressed_genetic } scope:healing = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = lunatic_1 } scope:healing = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = lunatic_genetic } scope:healing = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = possessed_1 } scope:healing = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = possessed_genetic } scope:healing = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = scarred } scope:healing = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = sickly } scope:healing = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = wounded_1 } scope:healing = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = ill } scope:healing = yes }
-		modifier = { add = 10 scope:recipient = { has_trait = one_eyed } scope:healing = yes }
-		modifier = { add = 10 scope:recipient = { has_trait = maimed } scope:healing = yes }
-		modifier = { add = 10 scope:recipient = { has_trait = one_legged } scope:healing = yes }
-		modifier = { add = 10 scope:recipient = { has_trait = blind } scope:healing = yes }
-		modifier = { add = 10 scope:recipient = { has_trait = infirm } scope:healing = yes }
-		modifier = { add = 10 scope:recipient = { has_trait = wounded_2 } scope:healing = yes }
-		modifier = { add = 10 scope:recipient = { has_trait = gout_ridden } scope:healing = yes }
-		modifier = { add = 10 scope:recipient = { has_trait = great_pox } scope:healing = yes }
-		modifier = { add = 10 scope:recipient = { has_trait = smallpox } scope:healing = yes }
-		modifier = { add = 10 scope:recipient = { has_trait = lovers_pox } scope:healing = yes }
-		modifier = { add = 10 scope:recipient = { has_trait = early_great_pox } scope:healing = yes }
-		modifier = { add = 20 scope:recipient = { has_trait = eunuch } scope:healing = yes }
-		modifier = { add = 20 scope:recipient = { has_trait = disfigured } scope:healing = yes }
-		modifier = { add = 20 scope:recipient = { has_trait = incapable } scope:healing = yes }
-		modifier = { add = 20 scope:recipient = { has_trait = leper } scope:healing = yes }
-		modifier = { add = 20 scope:recipient = { has_trait = wounded_3 } scope:healing = yes }
-		modifier = { add = 20 scope:recipient = { has_trait = pneumonic } scope:healing = yes }
-		modifier = { add = 20 scope:recipient = { has_trait = typhus } scope:healing = yes }
-		modifier = { add = 20 scope:recipient = { has_trait = consumption } scope:healing = yes }
-		modifier = { add = 20 scope:recipient = { has_trait = cancer } scope:healing = yes }
-		modifier = { add = 20 scope:recipient = { has_trait = bubonic_plague } scope:healing = yes }
-		modifier = { add = 20 scope:recipient = { has_trait = bubonic_plague } scope:healing = yes }
-		modifier = { add = 20 scope:recipient = { has_trait = dysentery } scope:healing = yes }
-		modifier = { add = 20 scope:recipient = { has_trait = ergotism } scope:healing = yes }
-		modifier = { add = 10 scope:recipient = { has_character_modifier = obese_modifier } scope:healing = yes }
-		modifier = { add = 10 scope:recipient = { has_character_modifier = malnourished_modifier } scope:healing = yes }
-
-		modifier = { add = 5 scope:recipient = { has_trait = albino } scope:dna = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = lisping } scope:dna = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = stuttering } scope:dna = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = giant } scope:dna = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = scaly } scope:dna = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = clubfooted } scope:dna = yes }
-		modifier = { add = 10 scope:recipient = { has_trait = dwarf } scope:dna = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = hunchbacked } scope:dna = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = infertile } scope:dna = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = wheezing } scope:dna = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = spindly } scope:dna = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = bleeder } scope:dna = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = weak } scope:dna = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = dull } scope:dna = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = beauty_bad_1 } scope:dna = yes }
-		modifier = { add = 10 scope:recipient = { has_trait = beauty_bad_2 } scope:dna = yes }
-		modifier = { add = 25 scope:recipient = { has_trait = beauty_bad_3 } scope:dna = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = intellect_bad_1 } scope:dna = yes }
-		modifier = { add = 10 scope:recipient = { has_trait = intellect_bad_2 } scope:dna = yes }
-		modifier = { add = 25 scope:recipient = { has_trait = intellect_bad_3 } scope:dna = yes }
-		modifier = { add = 5 scope:recipient = { has_trait = physique_bad_1 } scope:dna = yes }
-		modifier = { add = 10 scope:recipient = { has_trait = physique_bad_2 } scope:dna = yes }
-		modifier = { add = 25 scope:recipient = { has_trait = physique_bad_3 } scope:dna = yes }
-		modifier = { add = 25 scope:recipient = { has_trait = inbred } scope:dna = yes }
 		modifier = { add = -10 scope:gold = yes }
 		modifier = { add = -10 scope:hook = yes }
 		modifier = { add = -10 scope:favor = yes }
 		modifier = { add = -5 scope:demand_conversion = yes }
 		modifier = { add = -2 scope:expose_secret = yes }
-		modifier = { add = -5 scope:demand_conversion = yes scope:recipient.primary_title.tier = tier_county }
-		modifier = { add = -10 scope:demand_conversion = yes scope:recipient.primary_title.tier = tier_duchy }
-		modifier = { add = -20 scope:demand_conversion = yes scope:recipient.primary_title.tier = tier_kingdom }
-		modifier = { add = -40 scope:demand_conversion = yes scope:recipient.primary_title.tier = tier_empire }
-		modifier = { add = -80 scope:demand_conversion = yes scope:recipient.primary_title.tier = tier_hegemony }
-		modifier = { add = -5 scope:demand_conversion = yes scope:recipient = { ai_zeal > high_positive_ai_value } }
-		modifier = { add = -10 scope:demand_conversion = yes scope:recipient = { ai_zeal > very_high_positive_ai_value } }
-		modifier = { add = -25 scope:demand_conversion = yes scope:recipient = { ai_zeal > dominant_positive_ai_value } }
-		modifier = { add = -5 scope:small_price = yes }
-		modifier = { add = -10 scope:small_price = yes scope:recipient = { ai_zeal > very_high_positive_ai_value faith = { NOR = { has_doctrine = doctrine_witchcraft_accepted has_doctrine = doctrine_deviancy_accepted trait_is_sin = lustful } } } }
-		modifier = { add = -25 scope:small_price = yes scope:recipient = { ai_zeal > very_high_positive_ai_value faith = { NOR = { has_doctrine = doctrine_witchcraft_accepted has_doctrine = doctrine_deviancy_accepted trait_is_sin = lustful } } } }
-		modifier = { add = -50 scope:small_price = yes scope:recipient = { ai_zeal > dominant_positive_ai_value faith = { NOR = { has_doctrine = doctrine_witchcraft_accepted has_doctrine = doctrine_deviancy_accepted trait_is_sin = lustful } } } }
+		modifier = { add = -2 scope:demand_conversion = yes scope:recipient.primary_title.tier = tier_county }
+		modifier = { add = -5 scope:demand_conversion = yes scope:recipient.primary_title.tier = tier_duchy }
+		modifier = { add = -10 scope:demand_conversion = yes scope:recipient.primary_title.tier = tier_kingdom }
+		modifier = { add = -15 scope:demand_conversion = yes scope:recipient.primary_title.tier = tier_empire }
+		modifier = { add = -18 scope:demand_conversion = yes scope:recipient.primary_title.tier = tier_hegemony }
+		modifier = { add = -2 scope:demand_conversion = yes scope:recipient = { ai_zeal > high_positive_ai_value } }
+		modifier = { add = -4 scope:demand_conversion = yes scope:recipient = { ai_zeal > very_high_positive_ai_value } }
+		modifier = { add = -8 scope:demand_conversion = yes scope:recipient = { ai_zeal > dominant_positive_ai_value } }
+		modifier = { add = -2 scope:small_price = yes }
+		modifier = { add = -4 scope:small_price = yes scope:recipient = { ai_zeal > very_high_positive_ai_value faith = { NOR = { has_doctrine = doctrine_witchcraft_accepted has_doctrine = doctrine_deviancy_accepted trait_is_sin = lustful } } } }
+		modifier = { add = -8 scope:small_price = yes scope:recipient = { ai_zeal > very_high_positive_ai_value faith = { NOR = { has_doctrine = doctrine_witchcraft_accepted has_doctrine = doctrine_deviancy_accepted trait_is_sin = lustful } } } }
+		modifier = { add = -10 scope:small_price = yes scope:recipient = { ai_zeal > dominant_positive_ai_value faith = { NOR = { has_doctrine = doctrine_witchcraft_accepted has_doctrine = doctrine_deviancy_accepted trait_is_sin = lustful } } } }
 	}
 	ai_frequency = 12
 	ai_frequency = 1
