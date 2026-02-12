@@ -525,22 +525,24 @@
 	}
 
 	ai_accept = {
-		base = -10
-		opinion_modifier = {
-			opinion_target = scope:actor
-			who = scope:recipient
-			multiplier = 0.1
+		base = 0
+		modifier = {
+			add = {
+				value = 0
+				subtract = scope:actor.succubus_cost_value
+			}
+			desc = AI_CONTRACT_BALANCE
 		}
+		modifier = { add = 1 scope:small_price = yes }
 		modifier = { add = 2 scope:expose_secret = yes }
-		modifier = { add = 2 scope:small_price = yes }
-		modifier = { add = 5 scope:favor = yes }
-		modifier = { add = 5 scope:hook = yes }
+		modifier = { add = 3 scope:favor = yes }
+		modifier = { add = 3 scope:hook = yes }
 		modifier = { add = 5 scope:gold = yes }
-		modifier = { add = 5 scope:demand_conversion = yes scope:actor.primary_title.tier = tier_county }
+		modifier = { add = 2 scope:demand_conversion = yes scope:actor.primary_title.tier = tier_county }
 		modifier = { add = 5 scope:demand_conversion = yes scope:actor.primary_title.tier = tier_duchy }
 		modifier = { add = 10 scope:demand_conversion = yes scope:actor.primary_title.tier = tier_kingdom }
 		modifier = { add = 15 scope:demand_conversion = yes scope:actor.primary_title.tier = tier_empire }
-		modifier = { add = 20 scope:demand_conversion = yes scope:recipient.primary_title.tier = tier_hegemony }
+		modifier = { add = 18 scope:demand_conversion = yes scope:recipient.primary_title.tier = tier_hegemony }
 	}
 
 	ai_potential = { always = yes }

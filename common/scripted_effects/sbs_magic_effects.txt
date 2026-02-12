@@ -89,7 +89,10 @@ deal_with_the_devil_healing = {
 			remove_trait = comfort_eater
 			remove_trait = inappetetic
 			stress_impact = { base = massive_stress_impact_loss }
-			remove_character_modifier = rejected_from_marriage_bed_modifier
+			if = {
+				limit = { has_character_modifier = rejected_from_marriage_bed_modifier }
+				remove_character_modifier = rejected_from_marriage_bed_modifier
+			}
 		}
 
 		if = {

@@ -83,23 +83,8 @@
 	ai_frequency = 36
 	ai_accept = {
 		base = 5
-		opinion_modifier = {
-			opinion_target = scope:actor
-			multiplier = 0.1
-		}
-		opinion_modifier = {
-			opinion_target = scope:secondary_recipient
-			multiplier = -0.1
-		}
-		modifier = {
-			scope:secondary_recipient = {
-				has_opinion_modifier = {
-					target = scope:recipient
-					modifier = carn_wants_to_be_your_slave_opinion
-				}
-			}
-			add = -100
-		}
+		opinion_modifier = { opinion_target = scope:actor multiplier = 0.1 }
+		opinion_modifier = { opinion_target = scope:secondary_recipient multiplier = -0.2 }
 		modifier = { add = 5 scope:secondary_recipient = { has_trait = beauty_bad_1 } }
 		modifier = { add = 10 scope:secondary_recipient = { has_trait = beauty_bad_2 } }
 		modifier = { add = 20 scope:secondary_recipient = { has_trait = beauty_bad_3 } }

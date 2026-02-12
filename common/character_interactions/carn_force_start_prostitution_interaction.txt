@@ -125,20 +125,20 @@
 		modifier = { add = -50 scope:recipient = { primary_title.tier = tier_hegemony is_landless_ruler = no } }
 		modifier = { add = -20 scope:actor = { has_trait = chaste } }
 		modifier = { add = -25 scope:actor.faith = { has_doctrine_parameter = carn_prostitution_shunned } }
-		modifier = { add = -25 scope:recipient = { has_trait = beauty_bad_1 } }
-		modifier = { add = -50 scope:recipient = { has_trait = beauty_bad_2 } }
-		modifier = { add = -100 scope:recipient = { has_trait = beauty_bad_3 } }
-		modifier = { add = -25 scope:recipient = { has_trait = lisping } }
-		modifier = { add = -25 scope:recipient = { has_trait = stuttering } }
-		modifier = { add = -50 scope:recipient = { has_trait = scaly } }
-		modifier = { add = -50 scope:recipient = { has_trait = albino } }
-		modifier = { add = -50 scope:recipient = { has_trait = dwarf } }
-		modifier = { add = -50 scope:recipient = { has_trait = giant } }
-		modifier = { add = -50 scope:recipient = { has_trait = hunchbacked } }
-		modifier = { add = -100 scope:recipient = { has_trait = disfigured } }
-		modifier = { add = -50 scope:recipient = { is_female = no faith = { has_doctrine = doctrine_gender_male_dominated } } }
-		modifier = { add = -50 scope:recipient = { is_female = yes faith = { has_doctrine = doctrine_gender_female_dominated } } }
-		modifier = { add = -50 scope:recipient = { is_female = no culture = { has_cultural_pillar = martial_custom_male_only } } }
-		modifier = { add = -50 scope:recipient = { is_female = yes culture = { has_cultural_pillar = martial_custom_female_only } } }
+		modifier = { add = -10 scope:recipient = { has_trait = beauty_bad_1 } }
+		modifier = { add = -20 scope:recipient = { has_trait = beauty_bad_2 } }
+		modifier = { add = -40 scope:recipient = { has_trait = beauty_bad_3 } }
+		modifier = { add = -20 scope:recipient = { has_trait = lisping } }
+		modifier = { add = -20 scope:recipient = { has_trait = stuttering } }
+		modifier = { add = -30 scope:recipient = { has_trait = scaly } }
+		modifier = { add = -30 scope:recipient = { has_trait = albino } }
+		modifier = { add = -30 scope:recipient = { has_trait = dwarf } }
+		modifier = { add = -30 scope:recipient = { has_trait = giant } }
+		modifier = { add = -30 scope:recipient = { has_trait = hunchbacked } }
+		modifier = { add = -30 scope:recipient = { has_trait = disfigured } }
+		modifier = { add = -25 scope:recipient = { is_female = no faith = { has_doctrine = doctrine_gender_male_dominated } } }
+		modifier = { add = -25 scope:recipient = { is_female = yes faith = { has_doctrine = doctrine_gender_female_dominated } } }
+		modifier = { add = -25 scope:recipient = { is_female = no culture = { has_cultural_pillar = martial_custom_male_only } } }
+		modifier = { add = -25 scope:recipient = { is_female = yes culture = { has_cultural_pillar = martial_custom_female_only } } }
 	}
 }

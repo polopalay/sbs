@@ -154,7 +154,7 @@
 	}
 
 	ai_accept = {
-		base = -200
+		base = -120
 		opinion_modifier = {
 			opinion_target = scope:actor
 			who = scope:recipient

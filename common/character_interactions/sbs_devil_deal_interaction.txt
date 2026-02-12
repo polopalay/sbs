@@ -534,17 +534,16 @@
 	}
 	auto_accept = { scope:actor = scope:recipient }
 	ai_accept = {
-		base = 10
-		opinion_modifier = {
-			opinion_target = scope:actor
-			who = scope:recipient
-			multiplier = 0.1
+		base = 0
+		modifier = {
+			add = scope:recipient.succubus_cost_value
+			desc = AI_CONTRACT_BALANCE
 		}
-		modifier = { add = -10 scope:gold = yes }
-		modifier = { add = -10 scope:hook = yes }
-		modifier = { add = -10 scope:favor = yes }
-		modifier = { add = -5 scope:demand_conversion = yes }
 		modifier = { add = -2 scope:expose_secret = yes }
+		modifier = { add = -3 scope:hook = yes }
+		modifier = { add = -3 scope:favor = yes }
+		modifier = { add = -5 scope:gold = yes }
+		modifier = { add = -5 scope:demand_conversion = yes }
 		modifier = { add = -2 scope:demand_conversion = yes scope:recipient.primary_title.tier = tier_county }
 		modifier = { add = -5 scope:demand_conversion = yes scope:recipient.primary_title.tier = tier_duchy }
 		modifier = { add = -10 scope:demand_conversion = yes scope:recipient.primary_title.tier = tier_kingdom }
@@ -553,10 +552,10 @@
 		modifier = { add = -2 scope:demand_conversion = yes scope:recipient = { ai_zeal > high_positive_ai_value } }
 		modifier = { add = -4 scope:demand_conversion = yes scope:recipient = { ai_zeal > very_high_positive_ai_value } }
 		modifier = { add = -8 scope:demand_conversion = yes scope:recipient = { ai_zeal > dominant_positive_ai_value } }
-		modifier = { add = -2 scope:small_price = yes }
-		modifier = { add = -4 scope:small_price = yes scope:recipient = { ai_zeal > very_high_positive_ai_value faith = { NOR = { has_doctrine = doctrine_witchcraft_accepted has_doctrine = doctrine_deviancy_accepted trait_is_sin = lustful } } } }
-		modifier = { add = -8 scope:small_price = yes scope:recipient = { ai_zeal > very_high_positive_ai_value faith = { NOR = { has_doctrine = doctrine_witchcraft_accepted has_doctrine = doctrine_deviancy_accepted trait_is_sin = lustful } } } }
-		modifier = { add = -10 scope:small_price = yes scope:recipient = { ai_zeal > dominant_positive_ai_value faith = { NOR = { has_doctrine = doctrine_witchcraft_accepted has_doctrine = doctrine_deviancy_accepted trait_is_sin = lustful } } } }
+		modifier = { add = -1 scope:small_price = yes }
+		modifier = { add = -2 scope:small_price = yes scope:recipient = { ai_zeal > very_high_positive_ai_value faith = { NOR = { has_doctrine = doctrine_witchcraft_accepted has_doctrine = doctrine_deviancy_accepted trait_is_sin = lustful } } } }
+		modifier = { add = -3 scope:small_price = yes scope:recipient = { ai_zeal > very_high_positive_ai_value faith = { NOR = { has_doctrine = doctrine_witchcraft_accepted has_doctrine = doctrine_deviancy_accepted trait_is_sin = lustful } } } }
+		modifier = { add = -4 scope:small_price = yes scope:recipient = { ai_zeal > dominant_positive_ai_value faith = { NOR = { has_doctrine = doctrine_witchcraft_accepted has_doctrine = doctrine_deviancy_accepted trait_is_sin = lustful } } } }
 	}
 	ai_frequency = 12
 	ai_frequency = 1

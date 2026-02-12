@@ -88,29 +88,31 @@
 			who = scope:recipient
 			multiplier = 0.1
 		}
-		modifier = { add = -50 scope:recipient = { has_trait = chaste } }
-		modifier = { add = -25 scope:recipient = { is_close_family_of = scope:secondary_recipient faith = { NOT = { has_doctrine = doctrine_consanguinity_unrestricted } } } }
+		modifier = { add = 2 scope:recipient = { stress_level >= 1 } }
+		modifier = { add = 4 scope:recipient = { stress_level >= 2 } }
+		modifier = { add = 8 scope:recipient = { stress_level >= 3 } }
 		modifier = { add = 15 scope:recipient = { has_trait = lustful } }
 		modifier = { add = 15 scope:recipient = { has_trait = rakish } }
-		modifier = { add = -5 scope:secondary_recipient = { is_lowborn = yes } }
+		modifier = { add = -25 scope:recipient = { has_trait = chaste } }
+		modifier = { add = -25 scope:recipient = { is_close_family_of = scope:secondary_recipient faith = { NOT = { has_doctrine = tenet_divine_marriage } } } }
 		modifier = { add = 5 scope:secondary_recipient = { has_trait = beauty_good_1 } }
 		modifier = { add = 10 scope:secondary_recipient = { has_trait = beauty_good_2 } }
 		modifier = { add = 20 scope:secondary_recipient = { has_trait = beauty_good_3 } }
 		modifier = { add = -5 scope:secondary_recipient = { has_trait = beauty_bad_1 } }
 		modifier = { add = -10 scope:secondary_recipient = { has_trait = beauty_bad_2 } }
 		modifier = { add = -20 scope:secondary_recipient = { has_trait = beauty_bad_3 } }
-		modifier = { add = -5 scope:secondary_recipient = { has_trait = intellect_bad_1 } }
-		modifier = { add = -8 scope:secondary_recipient = { has_trait = intellect_bad_2 } }
-		modifier = { add = -10 scope:secondary_recipient = { has_trait = intellect_bad_3 } }
 		modifier = { add = 5 scope:secondary_recipient = { has_trait = intellect_good_1 } }
 		modifier = { add = 8 scope:secondary_recipient = { has_trait = intellect_good_2 } }
 		modifier = { add = 10 scope:secondary_recipient = { has_trait = intellect_good_3 } }
+		modifier = { add = -5 scope:secondary_recipient = { has_trait = intellect_bad_1 } }
+		modifier = { add = -8 scope:secondary_recipient = { has_trait = intellect_bad_2 } }
+		modifier = { add = -10 scope:secondary_recipient = { has_trait = intellect_bad_3 } }
+		modifier = { add = 5 scope:secondary_recipient = { has_trait = physique_good_1 } }
+		modifier = { add = 8 scope:secondary_recipient = { has_trait = physique_good_2 } }
+		modifier = { add = 10 scope:secondary_recipient = { has_trait = physique_good_3 } }
 		modifier = { add = 5 scope:secondary_recipient = { has_trait = physique_bad_1 } }
 		modifier = { add = -8 scope:secondary_recipient = { has_trait = physique_bad_2 } }
 		modifier = { add = -10 scope:secondary_recipient = { has_trait = physique_bad_3 } }
-		modifier = { add = -5 scope:secondary_recipient = { has_trait = physique_good_1 } }
-		modifier = { add = 8 scope:secondary_recipient = { has_trait = physique_good_2 } }
-		modifier = { add = 10 scope:secondary_recipient = { has_trait = physique_good_3 } }
 		modifier = { add = 5 scope:secondary_recipient = { has_trait = pure_blooded } }
 		modifier = { add = 5 scope:secondary_recipient = { has_trait = strong } }
 		modifier = { add = 5 scope:secondary_recipient = { has_trait = shrewd } }
@@ -124,7 +126,6 @@
 		modifier = { add = -5 scope:secondary_recipient = { has_trait = weak } }
 		modifier = { add = -5 scope:secondary_recipient = { has_trait = dull } }
 		modifier = { add = -10 scope:secondary_recipient = { has_trait = disfigured } }
-		modifier = { add = -50 scope:secondary_recipient = { has_std_trigger = yes } }
 		modifier = { add = 10 scope:secondary_recipient = { age < 18 } }
 		modifier = { add = 10 scope:secondary_recipient = { age < 20 } }
 		modifier = { add = -5 scope:secondary_recipient = { age > 25 } }
@@ -138,8 +139,6 @@
 					has_trait = deviant
 					any_secret = { type = secret_deviant }
 					has_trait = lustful
-					has_trait  = rakish
-					faith = { has_doctrine = tenet_polyamory }
 				}
 			}
 			scope:use_contraception = no

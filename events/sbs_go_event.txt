@@ -36,7 +36,7 @@ sbs_go.4010 = {
 	type = character_event
 	title = sbs_go.4010.t
 	desc = sbs_go.4010.a.desc
-	theme = deviantsmaskgo
+	theme = seduction
 	override_background = { reference = courtyard }	
 	right_portrait = {
 		character = root
@@ -62,7 +62,7 @@ sbs_go.4020 = {
 	type = character_event
 	title = sbs_go.4020.t
 	desc = sbs_go.4020.a.desc
-	theme = deviantsmaskgo
+	theme = seduction
 	override_background = { reference = courtyard }	
 	right_portrait = {
 		character = root
@@ -95,8 +95,8 @@ sbs_go.4030 = {
 	type = character_event
 	title = sbs_go.4030.t
 	desc = sbs_go.4030.a.desc
-	theme = deviantsmaskgo
-	override_background = { reference = devianthorsecockcreampie }	
+	theme = seduction
+	override_background = { reference = courtyard }	
 	right_portrait = {
 		character = root
 		animation = ecstasy

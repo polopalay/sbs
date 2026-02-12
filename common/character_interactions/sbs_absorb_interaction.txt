@@ -95,19 +95,19 @@
 		}
 		scope:recipient = {
 			if = {
-				limit = { OR = { has_trait = sbs_succubus has_trait = sbs_lesser_succubus } has_character_modifier = face_cum }
+				limit = { scope:actor = { OR = { has_trait = sbs_succubus has_trait = sbs_lesser_succubus } } has_character_modifier = face_cum }
 				remove_character_modifier = face_cum
 			}
 			if = {
-				limit = { OR = { has_trait = sbs_succubus has_trait = sbs_lesser_succubus } has_character_modifier = body_cum }
+				limit = { scope:actor = { OR = { has_trait = sbs_succubus has_trait = sbs_lesser_succubus } } has_character_modifier = body_cum }
 				remove_character_modifier = body_cum
 			}
 			if = {
-				limit = { OR = { has_trait = sbs_succubus has_trait = sbs_lesser_succubus } has_character_modifier = ass_cum }
+				limit = { scope:actor = { OR = { has_trait = sbs_succubus has_trait = sbs_lesser_succubus } } has_character_modifier = ass_cum }
 				remove_character_modifier = ass_cum
 			}
 			if = {
-				limit = { OR = { has_trait = sbs_succubus has_trait = sbs_lesser_succubus } has_character_modifier = pussy_cum }
+				limit = { scope:actor = { OR = { has_trait = sbs_succubus has_trait = sbs_lesser_succubus } } has_character_modifier = pussy_cum }
 				remove_character_modifier = pussy_cum
 			}
 			if = {
