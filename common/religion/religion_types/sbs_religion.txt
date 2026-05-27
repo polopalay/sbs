@@ -255,8 +255,12 @@ demonic_religion = {
 			holy_site = santiago
 
 			doctrine = tenet_warmonger
-			doctrine = tenet_fp3_fedayeen
 			doctrine = tenet_ritual_cannibalism
+			doctrine_selection_pair = {
+				requires_dlc_flag = all_under_heaven
+				doctrine = tenet_cranial_trophies
+				fallback_doctrine = tenet_human_sacrifice
+			}
 
 			doctrine = carn_doctrine_same_slavery_accepted
 			doctrine = doctrine_funeral_cremation

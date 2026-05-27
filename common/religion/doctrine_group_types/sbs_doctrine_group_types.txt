@@ -1,0 +1,31 @@
+carn_doctrine_same_slavery = {
+	category = "crimes"
+
+	doctrine_types = {
+		carn_doctrine_same_slavery_crime
+		carn_doctrine_same_slavery_shunned
+		carn_doctrine_same_slavery_accepted
+	}
+}
+
+carn_doctrine_other_slavery = {
+	category = "crimes"
+
+	doctrine_types = {
+		carn_doctrine_other_slavery_crime
+		carn_doctrine_other_slavery_shunned
+		carn_doctrine_other_slavery_accepted
+	}
+}
+
+carn_doctrine_prostitution = {
+	category = "crimes"
+
+	doctrine_types = {
+		carn_doctrine_prostitution_crime
+		carn_doctrine_prostitution_shunned
+		carn_doctrine_prostitution_accepted
+		carn_doctrine_prostitution_virtuous
+	}
+}
+

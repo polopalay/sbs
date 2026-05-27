@@ -18,7 +18,6 @@ become_demon = {
 		}
 	}
 	is_valid = {
-		faith.religion = religion:demonic_religion
 		OR = {
 			AND = {
 				has_trait_xp = { trait = sbs_succubus track = daring value >= 100 }
@@ -210,15 +209,6 @@ become_demon = {
 			}
 			else = {
 				give_nickname = nickname_the_demon_king
-			}
-		}
-		if = {
-			limit = { NOT = { faith.religion = religion:demonic_religion } }
-			random_list = {
-				100 = { set_character_faith_with_conversion = faith:nature }
-				100 = { set_character_faith_with_conversion = faith:pleasure }
-				100 = { set_character_faith_with_conversion = faith:violence }
-				100 = { set_character_faith_with_conversion = faith:greedy }
 			}
 		}
 	}

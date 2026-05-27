@@ -454,15 +454,15 @@ sbs_devil.1319 = {
 				modifier = { add = -1 OR = { has_trait = weak has_trait = strong has_trait = physique_good } }
 				add_trait_force_tooltip = weak
 			}
-			1 = {
+			2 = {
 				modifier = { add = -1 has_trait = lisping }
 				add_trait_force_tooltip = lisping
 			}
-			1 = {
+			2 = {
 				modifier = { add = -1 has_trait = stuttering }
 				add_trait_force_tooltip = stuttering
 			}
-			1 = {
+			3 = {
 				modifier = { add = -1 OR = { has_trait = fecund has_trait = infertile } }
 				add_trait_force_tooltip = fecund
 			}
@@ -470,7 +470,7 @@ sbs_devil.1319 = {
 				modifier = { add = -1 OR = { has_trait_with_flag = sbs_demon_trait primary_title.tier < tier_duchy } }
 				add_trait_force_tooltip = sbs_lesser_succubus
 			}
-			4 = {
+			20 = {
 				add_character_modifier = { modifier = sbs_buff years = 100 }
 			}
 		}

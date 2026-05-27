@@ -1,4 +1,4 @@
-version="0.1"
+version="0.3"
 tags={
 	"Decisions"
 	"Events"
@@ -8,4 +8,4 @@ tags={
 	"Gameplay"
 }
 name="Succubus System"
-supported_version="1.18.*"
+supported_version="1.19.*"

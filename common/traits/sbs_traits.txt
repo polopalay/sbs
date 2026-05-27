@@ -59,6 +59,7 @@ sbs_demon = {
 	knight_limit = 666
 
 	ruler_designer_cost = 400
+	shown_in_ruler_designer = no
 }
 
 sbs_succubus = {
@@ -147,6 +148,7 @@ sbs_succubus = {
 		}
 	}
 	ruler_designer_cost = 100
+	shown_in_ruler_designer = no
 }
 
 sbs_lesser_succubus = {
@@ -191,7 +193,7 @@ sbs_lesser_succubus = {
 			negate_health_penalty_add = 2
 		}
 	}
-	ruler_designer_cost = 50
+	ruler_designer_cost = 200
 }
 
 sbs_lesser_demon = {
@@ -239,5 +241,5 @@ sbs_lesser_demon = {
 		}
 	}
 
-	ruler_designer_cost = 100
+	ruler_designer_cost = 200
 }
