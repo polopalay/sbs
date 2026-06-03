@@ -49,25 +49,6 @@ horn_clothes = {
 	usage = game
 	priority = 10
 
-	horn0 = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = horns
-				template = horn_0
-				range = { 0 1 }
-			}
-		}
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				has_trait = sbs_demon
-				has_character_modifier = sbs_true_form
-				is_female = yes
-			}
-		}
-	}
 	horn1 = {
 		dna_modifiers = {
 			accessory = {
@@ -83,7 +64,6 @@ horn_clothes = {
 				add = 100
 				has_trait = sbs_demon
 				has_character_modifier = sbs_true_form
-				is_female = no
 			}
 		}
 	}

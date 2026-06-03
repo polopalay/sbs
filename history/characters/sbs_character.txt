@@ -190,10 +190,7 @@ suanggi_character = {
 	trait = zealous
 	trait = education_stewardship_3
 	trait = education_learning_3
-	trait = sbs_lesser_succubus
-	trait = deviant
-	trait = witch
-	850.1.1 = {
+	840.1.1 = {
 		birth = "850.6.13"
 		effect = {
 			add_character_modifier = sbs_buff
@@ -206,37 +203,20 @@ suanggi_character = {
 			}
 		}
 	}
-	850.12.13 = {
+	860.12.13 = {
 		effect = {
 			set_landless_government_effect = yes
-			add_trait_xp = { trait = sbs_lesser_succubus value = 50 }
+			add_trait = sbs_lesser_succubus
 		}
 	}
 	1066.1.1 = {
 		effect = {
-			remove_trait = sbs_lesser_succubus
-			add_trait = sbs_succubus
-			add_trait_xp = { trait = sbs_succubus track = corruption value = 50 }
-			add_trait_xp = { trait = sbs_succubus track = power value = 33 }
-			add_trait_xp = { trait = sbs_succubus track = daring value = 25 }
-			create_artifact = {
-				name = mistress_dildo
-				description = mistress_dildo_desc
-				type = magic_creation
-				modifier = mistress_dildo_modifier
-				visuals = mistress_dildo
-				template = mistress_dildo_template
-				max_durability = 20
-				wealth = 10
-				quality = 10
-			}
-		}
-	}
-	1178.1.1 = {
-		effect = {
-			add_trait_xp = { trait = sbs_succubus track = corruption value = 50 }
-			add_trait_xp = { trait = sbs_succubus track = power value = 33 }
-			add_trait_xp = { trait = sbs_succubus track = daring value = 25 }
+			add_trait_xp = { trait = sbs_lesser_succubus track = corruption value = 100 }
+			add_trait_xp = { trait = sbs_lesser_succubus track = power value = 100 }
+			add_trait_xp = { trait = sbs_lesser_succubus track = daring value = 100 }
+			change_trait_rank = { trait = education_stewardship rank = 1 }
+			change_trait_rank = { trait = education_learning rank = 1 }
+			add_character_modifier = sbs_true_form
 			create_artifact = {
 				name = master_dildo
 				rarity = masterwork
@@ -245,10 +225,20 @@ suanggi_character = {
 				modifier = master_dildo_modifier
 				visuals = master_dildo
 				template = master_dildo_template
-				max_durability = 20
-				wealth = 10
-				quality = 10
+				max_durability = 100
+				wealth = 100
+				quality = 100
 			}
+		}
+	}
+	1178.1.1 = {
+		effect = {
+			remove_character_modifier = sbs_true_form
+			change_trait_rank = { trait = education_stewardship rank = 1 }
+			change_trait_rank = { trait = education_learning rank = 1 }
+			remove_trait = sbs_lesser_succubus
+			add_trait = sbs_succubus
+			set_immortal_age = 18
 		}
 	}
 }
@@ -274,10 +264,7 @@ lilim_character = {
 	trait = lustful
 	trait = education_martial_3
 	trait = education_intrigue_3
-	trait = sbs_lesser_succubus
-	trait = deviant
-	trait = witch
-	850.1.1 = {
+	840.1.1 = {
 		birth = "850.6.13"
 		effect = {
 			add_character_modifier = sbs_buff
@@ -290,37 +277,20 @@ lilim_character = {
 			}
 		}
 	}
-	850.12.13 = {
+	860.12.13 = {
 		effect = {
 			set_landless_government_effect = yes
-			add_trait_xp = { trait = sbs_lesser_succubus value = 50 }
+			add_trait = sbs_lesser_succubus
 		}
 	}
 	1066.1.1 = {
 		effect = {
-			remove_trait = sbs_lesser_succubus
-			add_trait = sbs_succubus
-			add_trait_xp = { trait = sbs_succubus track = corruption value = 50 }
-			add_trait_xp = { trait = sbs_succubus track = power value = 33 }
-			add_trait_xp = { trait = sbs_succubus track = daring value = 25 }
-			create_artifact = {
-				name = mistress_dildo
-				description = mistress_dildo_desc
-				type = magic_creation
-				modifier = mistress_dildo_modifier
-				visuals = mistress_dildo
-				template = mistress_dildo_template
-				max_durability = 20
-				wealth = 10
-				quality = 10
-			}
-		}
-	}
-	1178.1.1 = {
-		effect = {
-			add_trait_xp = { trait = sbs_succubus track = corruption value = 50 }
-			add_trait_xp = { trait = sbs_succubus track = power value = 33 }
-			add_trait_xp = { trait = sbs_succubus track = daring value = 25 }
+			add_trait_xp = { trait = sbs_lesser_succubus track = corruption value = 100 }
+			add_trait_xp = { trait = sbs_lesser_succubus track = power value = 100 }
+			add_trait_xp = { trait = sbs_lesser_succubus track = daring value = 100 }
+			change_trait_rank = { trait = education_martial rank = 1 }
+			change_trait_rank = { trait = education_intrigue rank = 1 }
+			add_character_modifier = sbs_true_form
 			create_artifact = {
 				name = master_dildo
 				rarity = masterwork
@@ -329,10 +299,20 @@ lilim_character = {
 				modifier = master_dildo_modifier
 				visuals = master_dildo
 				template = master_dildo_template
-				max_durability = 20
-				wealth = 10
-				quality = 10
+				max_durability = 100
+				wealth = 100
+				quality = 100
 			}
+		}
+	}
+	1178.1.1 = {
+		effect = {
+			remove_character_modifier = sbs_true_form
+			change_trait_rank = { trait = education_martial rank = 1 }
+			change_trait_rank = { trait = education_intrigue rank = 1 }
+			remove_trait = sbs_lesser_succubus
+			add_trait = sbs_succubus
+			set_immortal_age = 18
 		}
 	}
 }
@@ -359,7 +339,7 @@ pleasure_character = {
 	trait = education_stewardship_5
 	trait = education_diplomacy_5
 	trait = education_intrigue_5
-	trait = sbs_demon
+	trait = sbs_succubus
 	trait = deviant
 	trait = witch
 	1.1.1 = {
@@ -384,7 +364,6 @@ pleasure_character = {
     666.1.1 = {
 		effect = {
 			carn_start_working_as_prostitute_effect = yes
-			had_sex_with_effect = { CHARACTER = character:violence_character PREGNANCY_CHANCE = pregnancy_chance }
 			spawn_army = {
 				name = event_troop_default_name
 				men_at_arms = {
@@ -661,7 +640,7 @@ nature_character = {
 	trait = education_stewardship_5
 	trait = education_diplomacy_5
 	trait = education_intrigue_5
-	trait = sbs_demon
+	trait = sbs_succubus
 	trait = deviant
 	trait = witch
 	1.1.1 = {
@@ -683,7 +662,6 @@ nature_character = {
     }
 	666.1.1 = {
 		effect = {
-			had_sex_with_effect = { CHARACTER = character:greedy_character PREGNANCY_CHANCE = pregnancy_chance }
 			spawn_army = {
 				name = event_troop_default_name
 				men_at_arms = {

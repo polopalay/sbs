@@ -1,7 +1,5 @@
 sbs_buff = {
 	icon = souls_positive
-	health = 0.1
-	negate_health_penalty_add = 0.1
 	life_expectancy = 10
 	years_of_fertility = 10
 	stacking = yes
@@ -22,18 +20,20 @@ sbs_true_form = {
 	tyranny_loss_mult = -1
 	dread_gain_mult = 1
 	dread_decay_mult = -1
-	dread_baseline_add = 666
-	general_opinion = -100
 	health = 3
 	negate_health_penalty_add = 3
+	dread_baseline_add = 666
+	general_opinion = -13
 	diplomacy = -13
 	stewardship = -13
 	intrigue = -13
 	learning = -13
-	martial = 13
+	martial = 1
 	prowess = 44
-	life_expectancy = 666
-	years_of_fertility = -666
+	health = 3
+	negate_health_penalty_add = 3
+	life_expectancy = 100
+	years_of_fertility = 100
 }
 
 sbs_seal = {
@@ -61,14 +61,10 @@ sbs_generals = {
 	icon = souls_positive
 	health = 3
 	negate_health_penalty_add = 3
-	life_expectancy = 100
-	years_of_fertility = 100
-	diplomacy = 13
-	martial = 13
-	stewardship = 13
-	intrigue = 13
-	learning = 13
-	prowess = 13
+	life_expectancy = 25
+	years_of_fertility = 25
+	martial = 1
+	prowess = 44
 	movement_speed = 1.3
 	retreat_losses = -1.3
 	embarkation_cost_mult = -1.3
@@ -78,7 +74,6 @@ sbs_generals = {
 	hard_casualty_modifier = -1.3
 	supply_duration = 1.3
 	supply_limit_mult = 1.3
-	stacking = yes
 }
 
 deviants_strangebook_modifier = {
@@ -92,8 +87,8 @@ master_dildo_modifier = {
 	stress_gain_mult = -1
 	health = 1
 	negate_health_penalty_add = 1
-	life_expectancy = 666
-	years_of_fertility = 666
+	life_expectancy = 100
+	years_of_fertility = 100
 }
 
 mistress_dildo_modifier = {
@@ -102,5 +97,5 @@ mistress_dildo_modifier = {
 	stress_gain_mult = -0.1
 	health = 0.1
 	negate_health_penalty_add = 0.1
-	life_expectancy = 666
+	life_expectancy = 10
 }

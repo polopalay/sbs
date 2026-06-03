@@ -11,12 +11,15 @@
 			NOT = { has_trait_with_flag = sbs_demon_trait }
 		}
 		scope:actor = {
-			has_trait = sbs_demon
+			OR = {
+				has_trait = sbs_demon
+				has_trait = sbs_succubus
+			}
 		}
 	}
 	is_valid = {
 		scope:recipient = {
-			is_adult = yes
+			age >= 18
 		}
 		scope:actor = {
 			faith.religion = religion:demonic_religion

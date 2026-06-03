@@ -46,7 +46,7 @@ sbs_blackmail.1000 = {
 		custom_tooltip = sbs_blackmail.1000.b.tt
 		pay_short_term_gold = {
 			target = scope:sbs_random_1
-			gold = minor_gold_value
+			gold = major_gold_value
 		}
 	}		
 	# ignore, get rumors spread... 
@@ -176,10 +176,7 @@ sbs_blackmail.1003 = {
             sadistic = miniscule_stress_impact_gain
             lustful = major_stress_impact_loss
         }
-		had_sex_with_effect = {
-			CHARACTER = scope:sbs_random_1
-			PREGNANCY_CHANCE = pregnancy_chance
-		}
+		prostitute_effect = { PROSTITUTE = scope:sbs_random_1 PREGNANCY_CHANCE = pregnancy_chance }
 		trigger_event = sbs_blackmail.1110
 	}		
 	#beg him to accept gold instead
@@ -248,7 +245,7 @@ sbs_blackmail.1100 = {
 		}
 		pay_short_term_gold = {
 			target = scope:sbs_random_1
-			gold = minor_gold_value
+			gold = medium_gold_value
 		}
 		reverse_add_opinion = {
 			target = scope:sbs_random_1
@@ -258,10 +255,6 @@ sbs_blackmail.1100 = {
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 10
-			}
-			add_trait_xp = {
-				trait = sbs_succubus
 				track = daring
 				value = 5
 			}
@@ -275,7 +268,7 @@ sbs_blackmail.1100 = {
 		custom_tooltip = sbs_blackmail.1100.b.tt
 		pay_short_term_gold = {
 			target = scope:sbs_random_1
-			gold = medium_gold_value
+			gold = major_gold_value
 		}
 		trigger_event = sbs_blackmail.1120
 	}
@@ -410,10 +403,6 @@ sbs_blackmail.1200 = {
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 10
-			}
-			add_trait_xp = {
-				trait = sbs_succubus
 				track = power
 				value = 5
 			}
@@ -491,10 +480,6 @@ sbs_blackmail.1201 = {
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 10
-			}
-			add_trait_xp = {
-				trait = sbs_succubus
 				track = daring
 				value = 5
 			}
@@ -544,11 +529,6 @@ sbs_blackmail.1201 = {
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				track = daring
-				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_succubus
 				track = daring
 				value = 5
 			}
@@ -614,7 +594,7 @@ sbs_blackmail.1300 = {
 		custom_tooltip = sbs_blackmail.1300.b.tt
 		pay_short_term_gold = {
 			target = scope:sbs_random_1
-			gold = medium_gold_value
+			gold = major_gold_value
 		}
 		stress_impact = {
 			base = medium_stress_impact_gain
@@ -629,10 +609,6 @@ sbs_blackmail.1300 = {
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 10
-			}
-			add_trait_xp = {
-				trait = sbs_succubus
 				track = daring
 				value = 5
 			}
@@ -736,10 +712,6 @@ sbs_blackmail.1301 = {
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 10
-			}
-			add_trait_xp = {
-				trait = sbs_succubus
 				track = daring
 				value = 5
 			}
@@ -909,10 +881,6 @@ sbs_blackmail.2000 = {
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 10
-			}
-			add_trait_xp = {
-				trait = sbs_succubus
 				track = daring
 				value = 5
 			}
@@ -971,10 +939,6 @@ sbs_blackmail.2000 = {
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 10
-			}
-			add_trait_xp = {
-				trait = sbs_succubus
 				track = daring
 				value = 5
 			}
@@ -1019,13 +983,9 @@ sbs_blackmail.2010 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = daring
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 10
 			}
 		}
 		reverse_add_opinion = {
@@ -1057,13 +1017,9 @@ sbs_blackmail.2010 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = power
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 10
 			}
 		}
 	}
@@ -1106,15 +1062,11 @@ sbs_blackmail.2010 = {
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 20
-			}
-			add_trait_xp = {
-				trait = sbs_succubus
 				track = power
 				value = 5
 			}
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = daring
 				value = 5
 			}
@@ -1158,15 +1110,11 @@ sbs_blackmail.2020 = {
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 10
-			}
-			add_trait_xp = {
-				trait = sbs_succubus
 				track = daring
 				value = 3
 			}
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = power
 				value = 2
 			}
@@ -1201,15 +1149,11 @@ sbs_blackmail.2020 = {
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 10
-			}
-			add_trait_xp = {
-				trait = sbs_succubus
 				track = daring
 				value = 3
 			}
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = power
 				value = 2
 			}
@@ -1261,15 +1205,11 @@ sbs_blackmail.2020 = {
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 10
-			}
-			add_trait_xp = {
-				trait = sbs_succubus
 				track = daring
 				value = 3
 			}
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = power
 				value = 2
 			}

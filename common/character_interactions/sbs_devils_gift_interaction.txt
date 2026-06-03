@@ -14,19 +14,19 @@ sbs_devils_gift_interaction = {
 		scope:actor = {
 			OR = {
 				has_trait = sbs_demon
-				has_trait_xp = { trait = sbs_succubus track = daring value >= 25 }
-				has_trait_xp = { trait = sbs_lesser_succubus value >= 50 }
+				has_trait = sbs_succubus
+				has_trait_xp = { trait = sbs_lesser_succubus track = daring value >= 25 }
 				has_trait_xp = { trait = sbs_lesser_demon value >= 100 }
 			}
 		}
 	}
 	send_option = {
-		is_shown = { scope:actor = { is_adult = yes has_trait = sbs_demon dynasty ?= { any_dynasty_member = { count < 13 } } this = scope:recipient } }
+		is_shown = { scope:actor = { is_adult = yes OR = { has_trait = sbs_demon has_trait = sbs_succubus } dynasty ?= { any_dynasty_member = { count < 4 is_alive = yes } } this = scope:recipient } }
 		flag = child
 		localization = nick_the_child
 	}
 	send_option = {
-		is_shown = { scope:actor = { has_trait = sbs_demon } scope:recipient = { is_ruler = no has_trait_with_flag = sbs_demon_trait } }
+		is_shown = { scope:actor = { OR = { has_trait = sbs_demon has_trait = sbs_succubus } } scope:recipient = { is_ruler = no has_trait_with_flag = sbs_demon_trait } }
 		flag = game_concept_ruler
 		localization = game_concept_ruler
 	}
@@ -73,8 +73,8 @@ sbs_devils_gift_interaction = {
 	on_accept = {
 		scope:actor = {
 			if = {
-				limit = { has_trait = sbs_succubus }
-				add_trait_xp = { trait = sbs_succubus track = daring value = -10 }
+				limit = { has_trait = sbs_lesser_succubus }
+				add_trait_xp = { trait = sbs_lesser_succubus track = daring value = -10 }
 			}
 			else_if = {
 				limit = { has_trait = sbs_lesser_succubus }
@@ -89,7 +89,7 @@ sbs_devils_gift_interaction = {
 			random_list = {
 				10 = 0
 				0 = {
-					modifier = { scope:child = yes add = 5 }
+					modifier = { scope:child = yes add = 10 }
 					desc = nick_the_child
 					if = {
 						limit = { is_female = yes }
@@ -120,7 +120,7 @@ sbs_devils_gift_interaction = {
 					}
 				}
 				0 = {
-					modifier = { scope:game_concept_ruler = yes add = 5 }
+					modifier = { scope:game_concept_ruler = yes add = 10 }
 					create_landless_adventurer_title_effect = {
 						REASON = flag:voluntary
 						FLAVOR_CHAR = scope:recipient

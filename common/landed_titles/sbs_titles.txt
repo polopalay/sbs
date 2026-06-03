@@ -4,7 +4,7 @@
 	ruler_uses_title_name = no
 	landless = yes
 
-	capital = c_sinai
+	capital = c_daura
 
 	landless = yes
 	destroy_if_invalid_heir = yes

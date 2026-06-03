@@ -144,17 +144,11 @@
 		scope:recipient = {
 			OR = {
 				has_trait = sbs_demon
-				has_trait_xp = {
-					trait = sbs_succubus
-					track = power
-					value >= scope:actor.succubus_cost_value
-				}
+				has_trait = sbs_succubus
 				has_trait_xp = {
 					trait = sbs_lesser_succubus
-					value >= {
-						value = scope:actor.succubus_cost_value
-						multiply = 2
-					}
+					track = power
+					value >= scope:actor.succubus_cost_value
 				}
 				has_trait_xp = {
 					trait = sbs_lesser_demon
@@ -482,24 +476,13 @@
 		}
 		scope:recipient = {
 			if = {
-				limit = { has_trait = sbs_succubus }
+				limit = { has_trait = sbs_lesser_succubus }
 				add_trait_xp = {
-					trait = sbs_succubus
+					trait = sbs_lesser_succubus
 					track = power
 					value = {
 						value = 0
 						subtract = scope:actor.succubus_cost_value
-					}
-				}
-			}
-			if = {
-				limit = { has_trait = sbs_lesser_succubus }
-				add_trait_xp = {
-					trait = sbs_lesser_succubus
-					value = {
-						value = 0
-						subtract = scope:actor.succubus_cost_value
-						multiply = 2
 					}
 				}
 			}

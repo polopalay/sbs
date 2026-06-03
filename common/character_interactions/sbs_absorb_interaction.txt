@@ -8,7 +8,6 @@
 	is_shown = {
 		scope:actor = {
 			OR = {
-				has_trait = sbs_succubus
 				has_trait = sbs_lesser_succubus
 				has_trait = sbs_lesser_demon
 			}
@@ -16,7 +15,7 @@
 	}
 	is_valid = {
 		trigger_if = {
-			limit = { scope:actor = { OR = { has_trait = sbs_succubus has_trait = sbs_lesser_succubus } } }
+			limit = { scope:actor = { has_trait = sbs_lesser_succubus } }
 			scope:recipient = {
 				OR = {
 					has_character_modifier = pussy_cum
@@ -43,38 +42,19 @@
 				limit = { has_trait = sbs_lesser_succubus }
 				if = {
 					limit = { scope:recipient = { has_character_modifier = pussy_cum } }
-					add_trait_xp = { trait = sbs_lesser_succubus value = 20 }
+					add_trait_xp = { trait = sbs_lesser_succubus track = corruption value = 5 }
 				}
 				if = {
 					limit = { scope:recipient = { has_character_modifier = ass_cum } }
-					add_trait_xp = { trait = sbs_lesser_succubus value = 20 }
-				}
-				if = {
-					limit = { scope:recipient = { has_character_modifier = face_cum } }
-					add_trait_xp = { trait = sbs_lesser_succubus value = 20 }
+					add_trait_xp = { trait = sbs_lesser_succubus track = loyalty value = 5 }
 				}
 				if = {
 					limit = { scope:recipient = { has_character_modifier = body_cum } }
-					add_trait_xp = { trait = sbs_lesser_succubus value = 20 }
-				}
-			}
-			else_if = {
-				limit = { has_trait = sbs_succubus }
-				if = {
-					limit = { scope:recipient = { has_character_modifier = pussy_cum } }
-					add_trait_xp = { trait = sbs_succubus track = corruption value = 5 }
-				}
-				if = {
-					limit = { scope:recipient = { has_character_modifier = ass_cum } }
-					add_trait_xp = { trait = sbs_succubus track = loyalty value = 5 }
-				}
-				if = {
-					limit = { scope:recipient = { has_character_modifier = body_cum } }
-					add_trait_xp = { trait = sbs_succubus track = power value = 10 }
+					add_trait_xp = { trait = sbs_lesser_succubus track = power value = 10 }
 				}
 				if = {
 					limit = { scope:recipient = { has_character_modifier = face_cum } }
-					add_trait_xp = { trait = sbs_succubus track = daring value = 10 }
+					add_trait_xp = { trait = sbs_lesser_succubus track = daring value = 10 }
 				}
 			}
 			else_if = {
@@ -95,19 +75,19 @@
 		}
 		scope:recipient = {
 			if = {
-				limit = { scope:actor = { OR = { has_trait = sbs_succubus has_trait = sbs_lesser_succubus } } has_character_modifier = face_cum }
+				limit = { scope:actor = {  has_trait = sbs_lesser_succubus } has_character_modifier = face_cum }
 				remove_character_modifier = face_cum
 			}
 			if = {
-				limit = { scope:actor = { OR = { has_trait = sbs_succubus has_trait = sbs_lesser_succubus } } has_character_modifier = body_cum }
+				limit = {  scope:actor = {  has_trait = sbs_lesser_succubus } has_character_modifier = body_cum }
 				remove_character_modifier = body_cum
 			}
 			if = {
-				limit = { scope:actor = { OR = { has_trait = sbs_succubus has_trait = sbs_lesser_succubus } } has_character_modifier = ass_cum }
+				limit = {  scope:actor = {  has_trait = sbs_lesser_succubus } has_character_modifier = ass_cum }
 				remove_character_modifier = ass_cum
 			}
 			if = {
-				limit = { scope:actor = { OR = { has_trait = sbs_succubus has_trait = sbs_lesser_succubus } } has_character_modifier = pussy_cum }
+				limit = {  scope:actor = {  has_trait = sbs_lesser_succubus } has_character_modifier = pussy_cum }
 				remove_character_modifier = pussy_cum
 			}
 			if = {

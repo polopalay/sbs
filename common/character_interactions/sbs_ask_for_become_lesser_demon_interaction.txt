@@ -14,13 +14,16 @@
 			NOT = { has_trait_with_flag = sbs_demon_trait }
 		}
 		scope:recipient = {
-			has_trait = sbs_demon
+			OR = {
+				has_trait = sbs_demon
+				has_trait = sbs_succubus
+			}
 		}
 	}
 
 	is_valid = {
 		scope:actor = {
-			is_adult = yes
+			age >= 18
 		}
 		scope:recipient = {
 			faith.religion = religion:demonic_religion
@@ -165,6 +168,7 @@
 		modifier = { add = 40 scope:actor = { is_close_family_of = scope:recipient } }
 		modifier = { add = 80 scope:actor = { is_child_of = scope:recipient } }
 		modifier = { add = 100 scope:actor = { has_trait = saint } }
+		modifier = { add = 50 scope:actor = { is_ai = no } }
 	}
 
 	ai_potential = { always = yes }

@@ -35,13 +35,9 @@ sbs_courtier.1440 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = daring
 				value = -1
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = -5
 			}
 		}
 	}
@@ -66,13 +62,9 @@ sbs_courtier.1441 = {
 		add_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = daring
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 10
 			}
 		}
 	}
@@ -97,13 +89,9 @@ sbs_courtier.1442 = {
 		add_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = daring
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 10
 			}
 			add_character_modifier = { modifier = pussy_cum days = 10 }
 			add_character_modifier = { modifier = body_cum days = 10 }
@@ -169,13 +157,9 @@ sbs_courtier.1460 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = daring
 				value = -10
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = -20
 			}
 		}
 	}
@@ -216,18 +200,14 @@ sbs_courtier.1461 = {
 		scope:sbs_random_1 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = daring
 				value = 5
 			}
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = power
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 10
 			}
 			add_character_modifier = { modifier = pussy_cum days = 10 }
 			add_character_modifier = { modifier = body_cum days = 10 }
@@ -297,18 +277,14 @@ sbs_courtier.1463 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = daring
 				value = 5
 			}
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = power
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 10
 			}
 			add_character_modifier = { modifier = pussy_cum days = 10 }
 			add_character_modifier = { modifier = body_cum days = 10 }
@@ -380,13 +356,9 @@ sbs_courtier.2000 = {
 		custom_tooltip = sbs_courtier.2000.b.tt
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = deviant
 				value = 1
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 10
 			}
 		}
         duel = {

@@ -6,10 +6,9 @@ become_demon = {
 	decision_group_type = decisions
 
 	is_shown = {
-		NOT = { has_trait = sbs_demon }
 		NOT = { has_global_variable = seal_the_gates_of_hell }
 		OR = {
-			has_trait = sbs_succubus
+			has_trait = sbs_lesser_succubus
 			has_trait = sbs_lesser_demon
 			AND = {
 				faith.religion = religion:demonic_religion
@@ -20,10 +19,10 @@ become_demon = {
 	is_valid = {
 		OR = {
 			AND = {
-				has_trait_xp = { trait = sbs_succubus track = daring value >= 100 }
-				has_trait_xp = { trait = sbs_succubus track = power value >= 100 }
-				has_trait_xp = { trait = sbs_succubus track = corruption value >= 100 }
-				has_trait_xp = { trait = sbs_succubus track = loyalty value >= 100 }
+				has_trait_xp = { trait = sbs_lesser_succubus track = daring value >= 100 }
+				has_trait_xp = { trait = sbs_lesser_succubus track = power value >= 100 }
+				has_trait_xp = { trait = sbs_lesser_succubus track = corruption value >= 100 }
+				has_trait_xp = { trait = sbs_lesser_succubus track = loyalty value >= 100 }
 				has_character_modifier = sbs_generals
 			}
 			AND = {
@@ -176,40 +175,17 @@ become_demon = {
 		}
 		scope:demon_child = {
 			if = {
-				limit = { has_trait = sbs_lesser_succubus }
-				remove_trait = sbs_lesser_succubus
-			}
-			if = {
-				limit = { has_trait = sbs_lesser_demon }
-				remove_trait = sbs_lesser_demon
-			}
-			if = {
-				limit = { has_trait = sbs_succubus }
-				remove_trait = sbs_succubus
-			}
-			add_trait = sbs_demon
-			set_immortal_age = 18
-	
-			if = {
-				limit = {
-					faith.religion = religion:demonic_religion
-					faith.religious_head = root
-					culture = {
-						NOT = {
-							has_same_culture_heritage = culture:sbs_demonic
-							has_same_culture_language = culture:sbs_demonic
-						}
-					}
-				}
-				set_culture = culture:sbs_demonic
-			}
-			if = {
 				limit = { is_female = yes }
 				give_nickname = nickname_the_demon_queen
+				remove_trait = sbs_lesser_succubus
+				add_trait = sbs_succubus
 			}
 			else = {
 				give_nickname = nickname_the_demon_king
+				remove_trait = sbs_lesser_demon
+				add_trait = sbs_demon
 			}
+			set_immortal_age = 18
 		}
 	}
 	ai_potential = { always = yes }
@@ -326,18 +302,10 @@ alienate_people = {
 		}
 		OR = {
 			has_trait = sbs_demon
-			AND = {
-				has_trait_xp = { trait = sbs_succubus track = power value >= 25 }
-				has_trait_xp = { trait = sbs_succubus track = daring value >= 25 }
-			}
+			has_trait = sbs_succubus
 		}
 	}
 	effect = {
-		if = {
-			limit = { has_trait = sbs_succubus }
-			add_trait_xp = { trait = sbs_succubus track = power value = -25 }
-			add_trait_xp = { trait = sbs_succubus track = daring value = -25 }
-		}
 		if = {
 			limit = { NOT = { capital_province.faith = root.faith } }
 			capital_province.county = {

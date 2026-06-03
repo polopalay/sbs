@@ -2,9 +2,10 @@ sbs_demon = {
 	category = health
 	icon = sbs_demon.dds
 
+	valid_sex = male
+
 	immortal = yes
 	no_prowess_loss_from_age = yes
-	add_commander_trait = yes
 	add_commander_trait = yes
 	can_have_children = no
 
@@ -15,6 +16,12 @@ sbs_demon = {
 	flag = carn_cannot_be_enslaved
 	flag = sbs_demon_trait
 
+	monthly_lifestyle_xp_gain_mult = -1000
+	long_reign_bonus_mult = -1000
+
+	ai_honor = dominant_positive_ai_value
+	ai_vengefulness = dominant_positive_ai_value
+
 	desc = {
 		first_valid = {
 			triggered_desc = {
@@ -24,41 +31,10 @@ sbs_demon = {
 			desc = sbs_demon_character_desc
 		}
 	}
-	opposites = { sbs_succubus sbs_lesser_succubus sbs_lesser_demon }
 
-	monthly_lifestyle_xp_gain_mult = -1000
-	long_reign_bonus_mult = -1000
+	opposites = { sbs_lesser_demon }
 
-	general_opinion = 66
-	character_travel_speed = 66
-	character_travel_safety = 66
-	travel_danger = -66
-	health = 3
-	negate_health_penalty_add = 3
-	stewardship = 13
-	intrigue = 13
-	learning = 13
-	martial = 13
-	prowess = 13
-	diplomacy = 13
-	hostile_scheme_phase_duration_add = -666
-	enemy_hostile_scheme_phase_duration_add = 666
-	enemy_personal_scheme_success_chance_add = -666
-	legitimacy_baseline_add = 1.3
-	monthly_dynasty_prestige = 1.3
-	monthly_prestige = 1.3
-	men_at_arms_maintenance = -0.13
-	knight_effectivenesuccubus_mult = 0.6
-	monthly_piety = 0.6
-	no_water_crossing_penalty = yes
-	supply_duration = 0.6
-	stress_gain_mult = -0.6
-	stress_loss_mult = 0.6
-	movement_speed = 0.6
-	naval_movement_speed_mult = 0.6
-	knight_limit = 666
-
-	ruler_designer_cost = 400
+	ruler_designer_cost = 1000
 	shown_in_ruler_designer = no
 }
 
@@ -66,12 +42,22 @@ sbs_succubus = {
 	category = health
 	icon = sbs_succubus.dds
 
-	flag = sbs_demon_trait
+	valid_sex = female
 
+	immortal = yes
 	no_prowess_loss_from_age = yes
 	add_commander_trait = yes
+	can_have_children = no
 
-	valid_sex = female
+	flag = is_immortal
+	flag = immortal_visuals
+	flag = immortal_fertility
+	flag = immortal_incapability
+	flag = carn_cannot_be_enslaved
+	flag = sbs_demon_trait
+
+	monthly_lifestyle_xp_gain_mult = -1000
+	long_reign_bonus_mult = -1000
 
 	ai_greed = dominant_positive_ai_value
 	ai_zeal = dominant_negative_ai_value
@@ -88,66 +74,9 @@ sbs_succubus = {
 		}
 	}
 
-	opposites = { sbs_demon sbs_lesser_succubus }
+	opposites = { sbs_lesser_succubus }
 
-	life_expectancy = 222
-	years_of_fertility = 222
-
-	tracks = {
-		power = {
-			33 = {
-				character_travel_speed = 5
-			}
-
-			66 = {
-				character_travel_speed = 5
-			}
-
-			100 = {
-				character_travel_speed = 10
-			}
-		}
-		daring = {
-			25 = {
-				general_opinion = 5
-			}
-			50 = {
-				general_opinion = 5
-			}
-			75 = {
-				general_opinion = 5
-			}
-			100 = {
-				general_opinion = 10
-			}
-		}
-		corruption = {
-			50 = {
-				life_expectancy = 222
-			}
-
-			100 = {
-				life_expectancy = 222
-			}
-		}
-		loyalty = {
-			33 = {
-				health = 1
-				negate_health_penalty_add = 1
-			}
-
-			66 = {
-				health = 2
-				negate_health_penalty_add = 2
-			}
-
-			100 = {
-				health = 3
-				negate_health_penalty_add = 3
-			}
-		}
-	}
-	ruler_designer_cost = 100
+	ruler_designer_cost = 1000
 	shown_in_ruler_designer = no
 }
 
@@ -158,14 +87,15 @@ sbs_lesser_succubus = {
 	flag = sbs_demon_trait
 
 	no_prowess_loss_from_age = yes
-	add_commander_trait = yes
 
 	valid_sex = female
+	minimum_age = 18
 
+	ai_honor = dominant_positive_ai_value
 	ai_greed = dominant_positive_ai_value
-	ai_zeal = dominant_negative_ai_value
 
-	opposites = { sbs_demon sbs_succubus }
+	monthly_lifestyle_xp_gain_mult = -0.9
+	long_reign_bonus_mult = -0.9
 
 	name = trait_lesser_succubus_neutral
 
@@ -181,18 +111,58 @@ sbs_lesser_succubus = {
 		}
 	}
 
-	track = {
-		50 = {
-			life_expectancy = 50
-			health = 2
-			negate_health_penalty_add = 1
+	tracks = {
+		power = {
+			33 = {
+				life_expectancy = 5
+			}
+
+			66 = {
+				life_expectancy = 5
+			}
+
+			100 = {
+				life_expectancy = 5
+			}
 		}
-		100 = {
-			life_expectancy = 50
-			health = 2
-			negate_health_penalty_add = 2
+		daring = {
+			25 = {
+				life_expectancy = 2
+			}
+			50 = {
+				life_expectancy = 2
+			}
+			75 = {
+				life_expectancy = 3
+			}
+			100 = {
+				life_expectancy = 3
+			}
+		}
+		corruption = {
+			50 = {
+				life_expectancy = 25
+			}
+			100 = {
+				years_of_fertility = 50
+			}
+		}
+		loyalty = {
+			33 = {
+				years_of_fertility = 25
+			}
+
+			66 = {
+				years_of_fertility = 25
+			}
+
+			100 = {
+				years_of_fertility = 50
+			}
 		}
 	}
+
+	opposites = { sbs_succubus }
 	ruler_designer_cost = 200
 }
 
@@ -200,17 +170,19 @@ sbs_lesser_demon = {
 	category = health
 	icon = sbs_lesser_demon.dds
 
-	flag = sbs_demon_trait
-	
 	no_prowess_loss_from_age = yes
-	add_commander_trait = yes
 
+	flag = sbs_demon_trait
 	flag = slave_owner
 
+	monthly_lifestyle_xp_gain_mult = -0.9
+	long_reign_bonus_mult = -0.9
+
 	valid_sex = male
+	minimum_age = 18
 	opposites = { sbs_demon }
 
-	ai_greed = dominant_positive_ai_value
+	ai_honor = dominant_positive_ai_value
 	ai_vengefulness = dominant_positive_ai_value
 
 	desc = {
@@ -225,21 +197,21 @@ sbs_lesser_demon = {
 		}
 	}
 
-	health = 1
 	track = {
+		25 = {
+			life_expectancy = 50
+		}
 		50 = {
-			health = 2
-			negate_health_penalty_add = 1
-			life_expectancy = 100
-			years_of_fertility = 100
+			years_of_fertility = 50
+		}
+		75 = {
+			life_expectancy = 50
 		}
 		100 = {
-			health = 2
-			negate_health_penalty_add = 2
-			life_expectancy = 100
-			years_of_fertility = 100
+			years_of_fertility = 50
 		}
 	}
 
 	ruler_designer_cost = 200
 }
+

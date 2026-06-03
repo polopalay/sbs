@@ -14,8 +14,8 @@ sbs_makeup_interaction = {
 		scope:actor = {
 			OR = {
 				has_trait = sbs_demon
-				has_trait_xp = { trait = sbs_succubus track = daring value >= 5 }
-				has_trait_xp = { trait = sbs_lesser_succubus value >= 10 }
+				has_trait = sbs_succubus
+				has_trait_xp = { trait = sbs_lesser_succubus track = daring value >= 5 }
 				has_trait_xp = { trait = sbs_lesser_demon value >= 20 }
 			}
 		}
@@ -315,12 +315,8 @@ sbs_makeup_interaction = {
 
 		scope:actor = {
 			if = {
-				limit = { has_trait = sbs_succubus }
-				add_trait_xp = { trait = sbs_succubus track = daring value = -5 }
-			}
-			else_if = {
 				limit = { has_trait = sbs_lesser_succubus }
-				add_trait_xp = { trait = sbs_lesser_succubus value = -10 }
+				add_trait_xp = { trait = sbs_lesser_succubus track = daring value = -5 }
 			}
 			else_if = {
 				limit = { has_trait = sbs_lesser_demon }
@@ -350,10 +346,8 @@ sbs_makeup_interaction = {
 		modifier = { add = 5 scope:naked = yes scope:recipient = { carn_is_working_as_prostitute_trigger = yes should_be_naked_trigger = no } }
 		modifier = { add = 5 scope:naked = yes scope:recipient = { carn_is_working_as_prostitute_trigger = no has_character_modifier = diplomacy_majesty_4090_no_raiment_modifier } }
 		modifier = { add = 100 scope:true_form = yes scope:recipient = { is_at_war = no has_character_modifier = sbs_true_form } }
-		modifier = { add = 50 scope:true_form = yes scope:recipient = { is_at_war = yes NOT = { has_character_modifier = sbs_true_form } } }
-		modifier = { add = 100 scope:true_form = yes scope:recipient = { health <= poor_health NOT = { has_character_modifier = sbs_true_form } } }
-		modifier = { add = -100 scope:true_form = yes scope:recipient = { health <= poor_health has_character_modifier = sbs_true_form } }
-		modifier = { add = 100 scope:true_form = yes scope:recipient = { health <= poor_health NOT = { has_character_modifier = sbs_true_form } } }
-		modifier = { add = -100 scope:true_form = yes scope:recipient = { health <= poor_health has_character_modifier = sbs_true_form } }
+		modifier = { add = 100 scope:true_form = yes scope:recipient = { is_at_war = yes NOT = { has_character_modifier = sbs_true_form } } }
+		modifier = { add = 100 scope:true_form = yes scope:recipient = { age >= 75 is_immortal = no NOT = { has_character_modifier = sbs_true_form } } }
+		modifier = { add = -100 scope:true_form = yes scope:recipient = { age >= 75 is_immortal = no has_character_modifier = sbs_true_form } }
 	}
 }

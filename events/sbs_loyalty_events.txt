@@ -42,7 +42,7 @@ sbs_loyalty.8000 = {
 		ai_chance = { base = 10 }
 		name = sbs_loyalty.8000.b
 		custom_tooltip = sbs_loyalty.8000.b.tt
-		remove_short_term_gold = massive_gold_value
+		remove_short_term_gold = monumental_gold_value
 	}
 	option = {
 		trigger = {
@@ -67,7 +67,10 @@ sbs_loyalty.8000 = {
 		add_character_modifier = sbs_seal
 		add_opinion = { target = scope:sbs_loyalty_random_1 modifier = carn_wants_to_be_your_slave_opinion }
 		scope:sbs_loyalty_random_1 = {
-			add_trait_force_tooltip = sbs_lesser_demon
+			if = {
+				limit = { age >= 18 }
+				add_trait_force_tooltip = sbs_lesser_demon
+			}
 			carn_enslave_effect = { SLAVE = root OWNER = this DRAMA = no }
 		}
 	}
@@ -226,13 +229,9 @@ sbs_loyalty.8006 = {
 		scope:sbs_loyalty_random_1 = { add_character_modifier = sbs_buff }
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = loyalty
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 25
 			}
 			add_character_modifier = { modifier = face_cum months = 1 }
 			add_character_modifier = { modifier = body_cum months = 1 }
@@ -284,7 +283,7 @@ sbs_loyalty.8099 = {
 	option = {
 		name = sbs_loyalty.8099.b
 		custom_tooltip = sbs_loyalty.8099.b.tt
-		remove_short_term_gold = minor_gold_value
+		remove_short_term_gold = monumental_gold_value
 		stress_impact = {
 			base = minor_stress_impact_gain
 			lustful = medium_stress_impact_gain
@@ -295,13 +294,9 @@ sbs_loyalty.8099 = {
 		custom_tooltip = sbs_loyalty.8099.c.tt
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = loyalty
 				value = -5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = -10
 			}
 		}
 		stress_impact = {
@@ -348,13 +343,9 @@ sbs_loyalty.8100 = {
 		add_character_modifier = { modifier = pussy_cum days = 30 }
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = loyalty
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 25
 			}
 		}
 		scope:sbs_loyalty_random_1 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
@@ -384,13 +375,9 @@ sbs_loyalty.8101 = {
 		add_piety = medium_piety_loss
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = loyalty
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 25
 			}
 			add_character_modifier = { modifier = ass_cum days = 15 }
 		}
@@ -401,13 +388,9 @@ sbs_loyalty.8101 = {
 		custom_tooltip = sbs_loyalty.8101.b.tt
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = loyalty
 				value = -1
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = -5
 			}
 		}
 	}
@@ -418,13 +401,9 @@ sbs_loyalty.8101 = {
 		add_prestige = minor_prestige_loss
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = loyalty
 				value = 1
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 5
 			}
 			add_character_modifier = { modifier = pussy_cum days = 15 }
 		}
@@ -457,13 +436,9 @@ sbs_loyalty.8102 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = loyalty
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 25
 			}
 		}
 	}
@@ -524,13 +499,9 @@ sbs_loyalty.8200 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = loyalty
 				value = -5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = -25
 			}
 		}
 	}
@@ -562,13 +533,9 @@ sbs_loyalty.8201 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = loyalty
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 25
 			}
 		}
 	}
@@ -618,13 +585,9 @@ sbs_loyalty.8202 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = loyalty
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 25
 			}
 		}
 	}
@@ -651,13 +614,9 @@ sbs_loyalty.8202 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = loyalty
 				value = -5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = -25
 			}
 		}
 	}
@@ -860,13 +819,9 @@ sbs_loyalty.8209 = {
 			add_character_modifier = { modifier = pussy_cum months = 3 }
 			add_character_modifier = { modifier = ass_cum months = 3 }
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = loyalty
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 25
 			}
 		}
 	}

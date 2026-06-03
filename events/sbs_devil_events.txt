@@ -12,11 +12,10 @@ sbs_devil.0550 = {
 			has_trait = deviant
 			any_secret = { type = secret_deviant }
 		}
-		OR = {
+		NOR = {
 			any_character_artifact { has_artifact_modifier = master_dildo_modifier count = 0 }
 			any_character_artifact { has_artifact_modifier = mistress_dildo_modifier count = 0 }
 		}
-		gold >= minor_gold_value
 	}
 	theme = bloody_wedding_night
 	override_background = { reference = bedchamber }
@@ -27,11 +26,11 @@ sbs_devil.0550 = {
 	# find one, at any cost
 	option = {
 		ai_chance = { base = 10 }
-		trigger = { gold >= minor_gold_value any_character_artifact { has_artifact_modifier = master_dildo_modifier count = 0 } }
+		trigger = { gold >= massive_gold_value any_character_artifact { has_artifact_modifier = master_dildo_modifier count = 0 } }
 		name = sbs_devil.0550.a
 		custom_tooltip = sbs_devil.0550.a.tt
 		ai_chance = { base = 50 }
-		remove_short_term_gold = minor_gold_value
+		remove_short_term_gold = monumental_gold_value
 		create_artifact = {
 			name = master_dildo
 			rarity = masterwork
@@ -40,9 +39,9 @@ sbs_devil.0550 = {
 			modifier = master_dildo_modifier
 			visuals = master_dildo
 			template = master_dildo_template
-			max_durability = 20
-			wealth = 10
-			quality = 10
+			max_durability = 100
+			wealth = 100
+			quality = 100
 		}
 	}
 	# try to endure
@@ -57,20 +56,21 @@ sbs_devil.0550 = {
 	}
 	# you can feel it, there is one nearby
 	option = {
-		ai_chance = { base = 10 }
-		trigger = { gold >= tiny_gold_value any_character_artifact { has_artifact_modifier = mistress_dildo_modifier count = 0 } }
+		ai_chance = { base = 5 }
+		trigger = { gold >= minor_gold_value any_character_artifact { has_artifact_modifier = mistress_dildo_modifier count = 0 } }
 		name = sbs_devil.0550.c
 		custom_tooltip = sbs_devil.0550.c.tt
 		ai_chance = { base = 50 }
-		remove_short_term_gold = tiny_gold_value
+		remove_short_term_gold = medium_gold_value
 		create_artifact = {
 			name = mistress_dildo
+			rarity = common
 			description = mistress_dildo_desc
 			type = magic_creation
 			modifier = mistress_dildo_modifier
 			visuals = mistress_dildo
 			template = mistress_dildo_template
-			max_durability = 20
+			max_durability = 10
 			wealth = 10
 			quality = 10
 		}
@@ -81,19 +81,19 @@ sbs_devil.0550 = {
 		trigger = { gold >= medium_gold_value is_ruler = yes NOT = { has_character_modifier = deviants_strangebook_modifier } }
 		name = sbs_devil.0550.d
 		custom_tooltip = sbs_devil.0550.d.tt
-		remove_short_term_gold = medium_gold_value
+		remove_short_term_gold = major_gold_value
 		add_character_modifier = { modifier = deviants_strangebook_modifier years = 10 }
 	}
 	# sleep potion for deviant lunatic
 	option = {
 		ai_chance = { base = 2 }
 		trigger = {
-		 	gold >= major_gold_value
+		 	gold >= massive_gold_value
 			NOT = { has_trait_with_flag = sbs_demon_trait }
 		}
 		name = sbs_devil.0550.e
 		custom_tooltip = sbs_devil.0550.e.tt
-		remove_short_term_gold = major_gold_value
+		remove_short_term_gold = monumental_gold_value
 		trigger_event = sbs_go.6000
 	}
 }
@@ -128,13 +128,9 @@ sbs_devil.1300 = {
 		custom_tooltip = sbs_devil.1300.a.tt
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = power
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 10
 			}
 		}
 		trigger_event = sbs_devil.1303
@@ -177,7 +173,7 @@ sbs_devil.1300 = {
 				}
 				hidden_effect = {
 					add_trait_xp = {
-						trait = sbs_succubus
+						trait = sbs_lesser_succubus
 						track = power
 						value = -10
 					}
@@ -197,7 +193,7 @@ sbs_devil.1300 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = corruption
 				value = -1
 			}
@@ -224,13 +220,9 @@ sbs_devil.1301 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = power
 				value = 10
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 20
 			}
 		}
 	}
@@ -269,7 +261,7 @@ sbs_devil.1302 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = corruption
 				value = -2
 			}
@@ -339,18 +331,14 @@ sbs_devil.1310 = {
 		hidden_effect = {
 			add_character_modifier = { modifier = pussy_cum months = 1 }
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = corruption
 				value = 5
 			}
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = power
 				value = 10
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 25
 			}
 		}
 		trigger_event = sbs_devil.1315
@@ -403,18 +391,14 @@ sbs_devil.1315 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = loyalty
 				value = 5
 			}
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = power
 				value = 10
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 25
 			}
 		}
 		trigger_event = sbs_devil.1319
@@ -516,23 +500,19 @@ sbs_devil.1320 = {
 		hidden_effect = {
 			add_character_modifier = { modifier = ass_cum months = 1 }
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = loyalty
 				value = 5
 			}
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = daring
 				value = 10
 			}
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = power
 				value = 10
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 20
 			}
 		}
 		trigger_event = sbs_devil.1325
@@ -543,13 +523,9 @@ sbs_devil.1320 = {
 		custom_tooltip = sbs_devil.1320.b.tt
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = power
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 10
 			}
 		}
 	}
@@ -582,23 +558,19 @@ sbs_devil.1325 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = power
 				value = 10
 			}
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = daring
 				value = 10
 			}
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = corruption
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 20
 			}
 		}
 	}
@@ -631,14 +603,14 @@ sbs_devil.1410 = {
 		first_valid = {
 			triggered_desc = {
 				trigger = {
-					has_trait_xp = { trait = sbs_succubus track = corruption value >= 100 }
+					has_trait_xp = { trait = sbs_lesser_succubus track = corruption value >= 100 }
 				}
 				desc = sbs_devil.1410.a.desc
 			}
 			triggered_desc = {
 				trigger = {
 					has_trait_xp = {
-						trait = sbs_succubus
+						trait = sbs_lesser_succubus
 						track = corruption
 						value < 50
 					}
@@ -660,7 +632,6 @@ sbs_devil.1410 = {
 	}
 	trigger = {
 		OR = {
-			has_trait = sbs_succubus
 			has_trait = sbs_lesser_succubus
 			has_trait = deviant
 			any_secret = { type = secret_deviant }
@@ -671,11 +642,11 @@ sbs_devil.1410 = {
 	# pay gold
 	option = {
 		ai_chance = { base = 10 }
-		trigger = { gold >= massive_gold_value }
+		trigger = { gold >= monumental_gold_value }
 		name = sbs_devil.1410.a
 		custom_tooltip = sbs_devil.1410.a.tt
 		add_piety = medium_piety_loss
-		remove_short_term_gold = massive_gold_value
+		remove_short_term_gold = monumental_gold_value
 		trigger_event = sbs_devil.1411
 	}
 	# beg for sex
@@ -684,7 +655,7 @@ sbs_devil.1410 = {
 			base = 1
 			modifier = {
 				subtract = 2
-				has_trait_xp = { trait = sbs_succubus track = corruption value >= 100 }
+				has_trait_xp = { trait = sbs_lesser_succubus track = corruption value >= 100 }
 			}
 		}
 		trigger = { has_trait = lustful }
@@ -699,7 +670,7 @@ sbs_devil.1410 = {
 			base = 1
 			modifier = {
 				subtract = 1
-				has_trait_xp = { trait = sbs_succubus track = loyalty value >= 100 }
+				has_trait_xp = { trait = sbs_lesser_succubus track = loyalty value >= 100 }
 			}
 		}
 		name = sbs_devil.1410.c
@@ -727,7 +698,7 @@ sbs_devil.1410 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = corruption
 				value = -1
 			}
@@ -752,18 +723,14 @@ sbs_devil.1411 = {
 		hidden_effect = {
 			add_character_modifier = { modifier = sbs_buff years = 100 }
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = corruption
 				value = 5
 			}
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = loyalty
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 30
 			}
 		}
 	}
@@ -788,13 +755,9 @@ sbs_devil.1412 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = corruption
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 25
 			}
 			add_character_modifier = { modifier = pussy_cum months = 1 }
 		}
@@ -818,13 +781,9 @@ sbs_devil.1413 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = loyalty
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 25
 			}
 			add_character_modifier = { modifier = pussy_cum days = 10 }
 		}
@@ -878,18 +837,14 @@ sbs_devil.1415 = {
 		add_piety = minor_piety_loss
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = daring
 				value = 10
 			}
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = power
 				value = 10
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 25
 			}
 		}
 	}
@@ -910,7 +865,7 @@ sbs_devil.1416 = {
 		name = sbs_devil.1416.a
 		custom_tooltip = sbs_devil.1416.a.tt
 		add_piety = minor_piety_loss
-		add_gold = tiny_gold_value
+		add_gold = 10
 		trigger_event = sbs_devil.1417
 	}
 	# if agree to fuck the biggest cock, longer you stay consious, the more you earn
@@ -925,7 +880,7 @@ sbs_devil.1416 = {
 		name = sbs_devil.1416.c
 		add_piety = medium_piety_loss
 		custom_tooltip = sbs_devil.1416.c.tt
-		add_gold = medium_gold_value
+		add_gold = tiny_gold_value
 		trigger_event = sbs_devil.1419
 	}
 }
@@ -951,13 +906,9 @@ sbs_devil.1417 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = power
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 10
 			}
 		}
 	}
@@ -1050,13 +1001,9 @@ sbs_devil.1418 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = daring
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 10
 			}
 		}
 	}
@@ -1121,20 +1068,16 @@ sbs_devil.1420 = {
 	option = {
 		name = sbs_devil.1420.a
 		custom_tooltip = sbs_devil.1420.a.tt
-		add_gold = minor_gold_value
+		add_gold = tiny_gold_value
 		stress_impact = {
 			base = medium_stress_impact_gain
 			lustful = medium_stress_impact_loss
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = corruption
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 25
 			}
 			add_character_modifier = { modifier = face_cum months = 1 }
 		}
@@ -1176,20 +1119,16 @@ sbs_devil.1422 = {
 	option = {
 		name = sbs_devil.1422.a
 		custom_tooltip = sbs_devil.1422.a.tt
-		add_gold = medium_gold_value
+		add_gold = tiny_gold_value
 		stress_impact = {
 			base = medium_stress_impact_gain
 			lustful = medium_stress_impact_loss
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = loyalty
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 25
 			}
 			add_character_modifier = { modifier = face_cum months = 1 }
 		}
@@ -1210,7 +1149,7 @@ sbs_devil.1423 = {
 	option = {
 		name = sbs_devil.1423.a
 		custom_tooltip = sbs_devil.1423.a.tt
-		add_gold = 10
+		add_gold = 1
 		stress_impact = {
 			base = medium_stress_impact_gain
 			lustful = medium_stress_impact_loss
@@ -1239,13 +1178,9 @@ sbs_devil.5100 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = power
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 10
 			}
 			add_character_modifier = { modifier = body_cum days = 20 }
 			trigger_event = sbs_devil.5500
@@ -1271,7 +1206,7 @@ sbs_devil.5100 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = corruption
 				value = -2
 			}
@@ -1313,20 +1248,16 @@ sbs_devil.5110 = {
 		ai_chance = { base = 10 }
 		name = sbs_devil.5110.a
 		custom_tooltip = sbs_devil.5110.a.tt
-		add_gold = tiny_gold_value
+		add_gold = 5
 		stress_impact = {
 			base = medium_stress_impact_loss
 			lustful = medium_stress_impact_loss
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = power
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 10
 			}
 			add_character_modifier = { modifier = face_cum days = 20 }
 			trigger_event = sbs_devil.5501
@@ -1339,13 +1270,9 @@ sbs_devil.5110 = {
 		custom_tooltip = sbs_devil.5110.b.tt
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = daring
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 10
 			}
 			trigger_event = sbs_devil.5502
 		}
@@ -1361,13 +1288,9 @@ sbs_devil.5110 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = corruption
 				value = -1
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = -10
 			}
 		}
 		trigger_event = sbs_devil.5111
@@ -1414,13 +1337,9 @@ sbs_devil.5120 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = daring
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 10
 			}
 			trigger_event = sbs_devil.5500
 		}
@@ -1432,13 +1351,9 @@ sbs_devil.5120 = {
 		custom_tooltip = sbs_devil.5120.b.tt
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = power
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 10
 			}
 			trigger_event = sbs_devil.5502
 		}
@@ -1454,7 +1369,7 @@ sbs_devil.5120 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = corruption
 				value = -1
 			}
@@ -1503,13 +1418,9 @@ sbs_devil.5130 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = power
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 10
 			}
 			add_character_modifier = { modifier = face_cum months = 1 }
 			trigger_event = sbs_devil.5501
@@ -1535,7 +1446,7 @@ sbs_devil.5130 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = corruption
 				value = -1
 			}
@@ -1585,13 +1496,9 @@ sbs_devil.5140 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = daring
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 10
 			}
 			add_character_modifier = { modifier = face_cum months = 1 }
 			trigger_event = sbs_devil.5501
@@ -1615,7 +1522,7 @@ sbs_devil.5140 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = power
 				value = -1
 			}
@@ -1681,13 +1588,9 @@ sbs_devil.5150 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = corruption
 				value = 2
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 10
 			}
 			add_character_modifier = { modifier = face_cum months = 1 }
 		}
@@ -1713,7 +1616,7 @@ sbs_devil.5150 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = corruption
 				value = -1
 			}
@@ -1788,13 +1691,9 @@ sbs_devil.5160 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = corruption
 				value = 1
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 10
 			}
 			add_character_modifier = { modifier = body_cum months = 1 }
 		}
@@ -1820,7 +1719,7 @@ sbs_devil.5160 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = corruption
 				value = -1
 			}
@@ -1874,18 +1773,14 @@ sbs_devil.5300 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = power
 				value = 5
 			}
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = daring
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 20
 			}
 			add_character_modifier = { modifier = body_cum months = 1 }
 			add_character_modifier = { modifier = face_cum months = 1 }
@@ -1914,18 +1809,14 @@ sbs_devil.5301 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = power
 				value = 5
 			}
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = daring
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 20
 			}
 		}
 		trigger_event = sbs_devil.5501
@@ -1956,18 +1847,14 @@ sbs_devil.5320 = {
 		}
 		hidden_effect = {
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = power
 				value = 5
 			}
 			add_trait_xp = {
-				trait = sbs_succubus
+				trait = sbs_lesser_succubus
 				track = daring
 				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 20
 			}
 			add_character_modifier = { modifier = pussy_cum months = 1 }
 			add_character_modifier = { modifier = ass_cum months = 1 }
@@ -2186,7 +2073,7 @@ sbs_devil.5700 = {
 	option = {
 		name = sbs_devil.5700.a
 		custom_tooltip = sbs_devil.5700.a.tt
-		remove_short_term_gold = major_gold_value
+		remove_short_term_gold = monumental_gold_value
 		add_piety = minor_piety_gain
 	}
 	# claim peronally closing the demon gates
@@ -2257,7 +2144,7 @@ sbs_devil.5701 = {
 	option = {
 		name = sbs_devil.5701.a
 		custom_tooltip = sbs_devil.5701.a.tt
-		remove_short_term_gold = major_gold_value
+		remove_short_term_gold = massive_gold_value
 		add_piety = minor_piety_gain
 	}
 	# tell your soldiers to hunt down the ghost
@@ -2358,7 +2245,7 @@ sbs_devil.5702 = {
 	option = {
 		name = sbs_devil.5702.a
 		custom_tooltip = sbs_devil.5702.a.tt
-		remove_short_term_gold = major_gold_value
+		remove_short_term_gold = massive_gold_value
 		add_piety = minor_piety_gain
 	}
 	# tell your soldiers to find the cultists and witches
@@ -2459,7 +2346,7 @@ sbs_devil.5703 = {
 	option = {
 		name = sbs_devil.5703.a
 		custom_tooltip = sbs_devil.5703.a.tt
-		remove_short_term_gold = major_gold_value
+		remove_short_term_gold = monumental_gold_value
 		add_piety = major_piety_gain
 	}
 	# excetute all
