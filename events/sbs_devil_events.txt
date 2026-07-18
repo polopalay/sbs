@@ -12,10 +12,7 @@ sbs_devil.0550 = {
 			has_trait = deviant
 			any_secret = { type = secret_deviant }
 		}
-		NOR = {
-			any_character_artifact { has_artifact_modifier = master_dildo_modifier count = 0 }
-			any_character_artifact { has_artifact_modifier = mistress_dildo_modifier count = 0 }
-		}
+		any_character_artifact { OR = { has_artifact_modifier = master_dildo_modifier has_artifact_modifier = mistress_dildo_modifier } count = 0 }
 	}
 	theme = bloody_wedding_night
 	override_background = { reference = bedchamber }

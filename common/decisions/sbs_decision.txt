@@ -32,11 +32,6 @@ become_demon = {
 				has_trait = education_stewardship_5
 				has_trait = education_martial_5
 				has_trait = education_learning_5
-				has_character_modifier = sbs_generals
-			}
-			AND = {
-				faith.religion = religion:demonic_religion
-				faith.religious_head = root
 			}
 		}
 	}
@@ -174,17 +169,6 @@ become_demon = {
 			save_scope_as = demon_child
 		}
 		scope:demon_child = {
-			if = {
-				limit = { is_female = yes }
-				give_nickname = nickname_the_demon_queen
-				remove_trait = sbs_lesser_succubus
-				add_trait = sbs_succubus
-			}
-			else = {
-				give_nickname = nickname_the_demon_king
-				remove_trait = sbs_lesser_demon
-				add_trait = sbs_demon
-			}
 			set_immortal_age = 18
 		}
 	}

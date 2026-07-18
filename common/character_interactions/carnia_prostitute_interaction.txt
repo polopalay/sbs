@@ -3,8 +3,8 @@
 	category = interaction_category_diplomacy
 	use_diplomatic_range = yes
 	common_interaction = yes
-	cooldown = { years = 1 }
-	cooldown_against_recipient = { years = 2 }
+	cooldown = { months = 6 }
+	cooldown_against_recipient = { years = 5 }
 
 	send_option = {
 		flag = use_contraception
@@ -67,13 +67,17 @@
 	ai_targets = {
 		ai_recipients = vassals
 		ai_recipients = peer_vassals
-		max = 20
+		ai_recipients = courtiers
+		max = 5
 	}
 	ai_targets = {
 		ai_recipients = neighboring_rulers
 		ai_recipients = nearby_domicile_owners
+		max = 5
+	}
+	ai_targets = {
 		ai_recipients = realm_characters
-		max = 20
+		max = 10
 	}
 	ai_will_do = {
 		base = 0

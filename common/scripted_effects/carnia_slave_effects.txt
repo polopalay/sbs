@@ -91,16 +91,6 @@
 			scope:new_slave = { remove_relation_slave_owner = prev }
 		}
 	}
-
-	scope:new_owner = {
-		add_courtier = scope:new_slave
-	}
-	scope:new_owner = {
-		set_relation_slave = { target = scope:new_slave }
-	}
-	scope:new_slave = {
-		set_relation_slave_owner = { target = scope:new_owner }
-	}
 	hidden_effect = {
 		scope:new_slave = {
 			if = {
@@ -111,6 +101,15 @@
 				on_action = carn_on_slave_enslaved
 			}
 		}
+	}
+	scope:new_owner = {
+		add_courtier = scope:new_slave
+	}
+	scope:new_owner = {
+		set_relation_slave = { target = scope:new_slave }
+	}
+	scope:new_slave = {
+		set_relation_slave_owner = { target = scope:new_owner }
 	}
 }
 

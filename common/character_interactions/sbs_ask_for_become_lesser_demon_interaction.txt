@@ -183,6 +183,7 @@
 	ai_targets = {
 		ai_recipients = scripted_relations
 		ai_recipients = neighboring_rulers
+		ai_recipients = realm_characters
 		max = 10
 	}
 

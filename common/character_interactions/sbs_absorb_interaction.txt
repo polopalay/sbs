@@ -4,7 +4,7 @@
 	use_diplomatic_range = yes
 	common_interaction = yes
 	cooldown = { years = 1 }
-	cooldown_against_recipient = { years = 2 }
+	cooldown_against_recipient = { years = 5 }
 	is_shown = {
 		scope:actor = {
 			OR = {
@@ -26,8 +26,9 @@
 			}
 		}
 		trigger_if = {
-			limit = { scope:actor = { sbs_lesser_demon NOT = { this = scope:recipient } } }
+			limit = { scope:actor = { has_trait = sbs_lesser_demon  } }
 			scope:recipient = {
+				this != scope:actor
 				OR = {
 					NOT = { has_character_modifier = sbs_debuff }
 					has_character_modifier = sbs_generals
@@ -50,11 +51,11 @@
 				}
 				if = {
 					limit = { scope:recipient = { has_character_modifier = body_cum } }
-					add_trait_xp = { trait = sbs_lesser_succubus track = power value = 10 }
+					add_trait_xp = { trait = sbs_lesser_succubus track = power value = 25 }
 				}
 				if = {
 					limit = { scope:recipient = { has_character_modifier = face_cum } }
-					add_trait_xp = { trait = sbs_lesser_succubus track = daring value = 10 }
+					add_trait_xp = { trait = sbs_lesser_succubus track = daring value = 25 }
 				}
 			}
 			else_if = {
@@ -110,7 +111,7 @@
 		}
 	}
 	ai_accept = {
-		base = -20
+		base = -5
 		opinion_modifier = {
 			opinion_target = scope:actor
 			who = scope:recipient
@@ -126,6 +127,7 @@
 		modifier = { add = 30 scope:recipient = { is_parent_of = scope:actor } }
 		modifier = { add = 10 scope:recipient = { has_dread_level_towards = { target = scope:actor level = 1 } } desc = INTIMIDATED_REASON }
 		modifier = { add = 20 scope:recipient = { has_dread_level_towards = { target = scope:actor level = 2 } } desc = COWED_REASON }
+		modifier = { add = -20  scope:actor = { has_trait = sbs_lesser_demon } }
 	}
 	ai_frequency = 12
 	ai_targets = {
@@ -133,6 +135,7 @@
 		ai_recipients = head_of_faith
 	}
 	ai_targets = {
+		ai_recipients = liege
 		ai_recipients = family
 		ai_recipients = courtiers
 		ai_recipients = vassals

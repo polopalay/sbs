@@ -5,10 +5,7 @@ sbs_makeup_interaction = {
 	common_interaction = yes
 
 	is_shown = {
-		scope:actor = {
-			has_trait_with_flag = sbs_demon_trait
-		}
-		scope:recipient = scope:actor
+		scope:actor = { has_trait_with_flag = sbs_demon_trait }
 	}
 	is_valid = {
 		scope:actor = {

@@ -173,7 +173,7 @@ sbs_devils_gift_interaction = {
 	ai_targets = {
 		ai_recipients = family
 		ai_recipients = courtiers
-		max = 20
+		max = 10
 	}
 	ai_potential = { always = yes }
 	ai_will_do = {
@@ -181,6 +181,6 @@ sbs_devils_gift_interaction = {
 		modifier = { add = 25 scope:recipient = scope:actor scope:actor = { NOT = { has_trait = sbs_demon } } }
 		modifier = { add = 25 scope:actor = { has_trait = sbs_demon } scope:recipient.dynasty = scope:actor.dynasty }
 		modifier = { add = 25 scope:actor = { has_trait = sbs_demon } scope:recipient = scope:actor }
-		modifier = { add = 25 scope:recipient = { has_trait = sbs_lesser_demon } }
+		modifier = { add = 100 scope:recipient = { has_trait = sbs_lesser_demon } }
 	}
 }

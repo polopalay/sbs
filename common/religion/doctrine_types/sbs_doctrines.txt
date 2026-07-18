@@ -156,6 +156,7 @@ carn_doctrine_prostitution_accepted = {
 		carn_prostitution_accepted = yes
 	}
 }
+
 carn_doctrine_prostitution_virtuous = {
 	can_pick = {
 		custom_description = {

@@ -109,11 +109,16 @@
 	ai_targets = {
 		ai_recipients = vassals
 		ai_recipients = peer_vassals
-		max = 10
+		ai_recipients = courtiers
+		max = 5
 	}
 	ai_targets = {
 		ai_recipients = neighboring_rulers
 		ai_recipients = nearby_domicile_owners
+		max = 5
+	}
+	ai_targets = {
+		ai_recipients = realm_characters
 		max = 10
 	}
 	ai_will_do = {

@@ -158,20 +158,7 @@ sbs_devils_curse_interaction = {
 	auto_accept = yes
 	ai_frequency = 24
 	ai_targets = {
-		ai_recipients = liege
-		max = 5
-	}
-	ai_targets = {
-		ai_recipients = vassals
-		ai_recipients = peer_vassals
-		ai_recipients = scripted_relations
-		max = 10
-	}
-	ai_targets = {
-		ai_recipients = neighboring_rulers
-		ai_recipients = nearby_domicile_owners
 		ai_recipients = courtiers
-		max = 10
 	}
 	ai_potential = { always = yes }
 	ai_will_do = {

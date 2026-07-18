@@ -157,6 +157,13 @@ prostitute_effect = {
 		random = { chance = 0 modifier = { scope:prostitute = { is_female = no } add = 25 } add_character_modifier = { modifier = ass_cum months = 6 } }
 		random = { chance = 0 modifier = { scope:prostitute = { is_female = no } is_female = yes add = 50 } add_character_modifier = { modifier = pussy_cum months = 6 } }
 		if = {
+			limit = { has_trait = sbs_lesser_succubus }
+			random = { chance = 25 add_trait_xp = { trait = sbs_lesser_succubus track = corruption value = 1 } }
+			random = { chance = 25 add_trait_xp = { trait = sbs_lesser_succubus track = loyalty value = 1 } }
+			random = { chance = 50 add_trait_xp = { trait = sbs_lesser_succubus track = power value = 5 } }
+			random = { chance = 50 add_trait_xp = { trait = sbs_lesser_succubus track = daring value = 5 } }
+		}
+		if = {
 			limit = {
 				is_female = yes
 				is_adult = yes
@@ -179,10 +186,17 @@ prostitute_effect = {
 			}
 		}
 		$PROSTITUTE$ = {
-			random = { chance = 0 modifier = { scope:had_sex_root_character = { is_female = no } add = 50 } add_character_modifier = { modifier = face_cum months = 6 } }
+			random = { chance = 0 modifier = { scope:had_sex_root_character = { is_female = no } add = 25 } add_character_modifier = { modifier = face_cum months = 6 } }
 			random = { chance = 0 modifier = { scope:had_sex_root_character = { is_female = no } add = 50 } add_character_modifier = { modifier = body_cum months = 6 } }
-			random = { chance = 0 modifier = { scope:had_sex_root_character = { is_female = no } add = 50 } add_character_modifier = { modifier = ass_cum months = 6 } }
+			random = { chance = 0 modifier = { scope:had_sex_root_character = { is_female = no } add = 25 } add_character_modifier = { modifier = ass_cum months = 6 } }
 			random = { chance = 0 modifier = { scope:had_sex_root_character = { is_female = no } is_female = yes add = 50 } add_character_modifier = { modifier = pussy_cum months = 6 } }
+			if = {
+				limit = { has_trait = sbs_lesser_succubus }
+				random = { chance = 25 add_trait_xp = { trait = sbs_lesser_succubus track = corruption value = 1 } }
+				random = { chance = 25 add_trait_xp = { trait = sbs_lesser_succubus track = loyalty value = 1 } }
+				random = { chance = 50 add_trait_xp = { trait = sbs_lesser_succubus track = power value = 5 } }
+				random = { chance = 50 add_trait_xp = { trait = sbs_lesser_succubus track = daring value = 5 } }
+			}
 			add_trait_xp = { trait = lifestyle_prostitute value = 2 }
 			if = {
 				limit = { OR = { has_trait_xp = { trait = lifestyle_prostitute value < 50 } NOT = { has_trait = lifestyle_prostitute } } }

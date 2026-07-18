@@ -120,7 +120,8 @@
 			if = {
 				limit = { has_trait = immortal }
 				remove_trait = immortal
-				add_trait_xp = { trait = sbs_lesser_succubus value = 100 }
+				add_trait_xp = { trait = sbs_lesser_succubus track = corruption value = 100 }
+				add_trait_xp = { trait = sbs_lesser_succubus track = power value = 100 }
 			}
 			if = {
 				limit = {
@@ -164,6 +165,7 @@
 	ai_targets = {
 		ai_recipients = scripted_relations
 		ai_recipients = neighboring_rulers
+		ai_recipients = realm_characters
 		max = 10
 	}
 	ai_potential = { always = yes }
