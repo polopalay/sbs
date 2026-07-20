@@ -114,29 +114,29 @@ sbs_lesser_succubus = {
 	tracks = {
 		power = {
 			33 = {
-				life_expectancy = 5
+				life_expectancy = 1
 			}
 
 			66 = {
-				life_expectancy = 5
+				life_expectancy = 1
 			}
 
 			100 = {
-				life_expectancy = 5
+				life_expectancy = 1
 			}
 		}
 		daring = {
 			25 = {
-				life_expectancy = 2
+				life_expectancy = 3
 			}
 			50 = {
-				life_expectancy = 2
+				life_expectancy = 4
 			}
 			75 = {
-				life_expectancy = 3
+				life_expectancy = 5
 			}
 			100 = {
-				life_expectancy = 3
+				life_expectancy = 5
 			}
 		}
 		corruption = {

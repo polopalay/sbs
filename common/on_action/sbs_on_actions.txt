@@ -41,14 +41,16 @@ sbs_devil_on_action = {
 		random_list = {
 			5 = 0
 			0 = {
-				modifier = { any_character_artifact { OR = { has_artifact_modifier = master_dildo_modifier has_artifact_modifier = mistress_dildo_modifier } count = 0 } gold >= minor_gold_value add = 5 }
+				modifier = { any_realm_county = { any_county_province = { has_building_or_higher = brothel1 } } add = 5 }
 				trigger_event = sbs_devil.0550 # max addiction
 			}
-			1 = {
-				trigger_event = sbs_devil.1300 # special dream
-			}
-			2 = {
+			0 = {
+				modifier = { any_realm_county = { any_county_province = { has_building_or_higher = brothel2 } } add = 2 }
 				trigger_event = sbs_devil.1410 # gremlin fuck
+			}
+			0 = {
+				modifier = { any_realm_county = { any_county_province = { has_building_or_higher = brothel3 } } add = 3 }
+				trigger_event = sbs_devil.1300 # special dream
 			}
 			1 = {
 				trigger_event = sbs_go.4000 # gremlin fuck
@@ -74,7 +76,7 @@ sbs_devil_on_action = {
 				trigger_event = sbs_courtier.1460 # fuck on throne event
 			}
 			0 = {
-				modifier = { any_councillor = { is_female = no } add = 2 }
+				modifier = { any_councillor = { is_female = no } add = 1 }
 				trigger_event = sbs_courtier.2000 # urge to masturbate
 			}
 			0 = {
@@ -122,9 +124,10 @@ sbs_prostitutute_on_action = {
 			is_ai = no
 		}
 		carn_is_working_as_prostitute_trigger = yes
+		is_valid_construction_brothel_trigger = yes
 	}
 	random_events = {
-		chance_to_happen = 50
+		chance_to_happen = 75
 		50 = sbs_prostitution.9000 # coming of age male
 		50 = sbs_prostitution.9010 # a married couple
 		50 = sbs_prostitution.9030 # older man

@@ -860,27 +860,15 @@ sbs_go.6050 = {
 		name = sbs_go.6050.a
 		custom_tooltip = sbs_go.6050.a.tt	
 		add_character_modifier = { modifier = licentious_05_modifier months = 1 }
-		if = {
-			limit = { has_trait = saint age >= 18 }
-			remove_trait = saint
-			give_nickname = nick_the_betrayer
-			add_trait_force_tooltip = sbs_lesser_succubus
-			if = {
-				limit = { has_trait = immortal }
-				remove_trait = immortal
-				add_trait_xp = { trait = sbs_lesser_succubus value = 100 }
-			}
+		random_list = {
+		 10 = 0
+		 5 = {
+			add_character_modifier = { modifier = sbs_buff years = 100 }
+			add_character_modifier = { modifier = face_cum months = 6 }
+			add_character_modifier = { modifier = body_cum months = 6 }
+			add_character_modifier = { modifier = pussy_cum months = 6 }
+			add_character_modifier = { modifier = ass_cum months = 6 }
 		}
-		else = {
-			random_list = {
-			 10 = 0
-			 5 = { add_character_modifier = sbs_buff }
-			}
-		}
-		if = {
-			limit = { has_trait = chaste }
-			remove_trait = chaste
-			add_trait_force_tooltip = lustful
 		}
 	}	
 	# repent, repent

@@ -20,7 +20,7 @@ trait_is_shunned_or_criminal_in_faith_or_liege_trigger = {
 	OR = {
 		trait_is_shunned_or_criminal_in_my_or_lieges_faith_trigger = { TRAIT = $TRAIT$ GENDER_CHARACTER = this }
 		AND = {
-			$TRAIT$ = lifestyle_prostitute
+			$TRAIT$ = trait:lifestyle_prostitute
 			OR = {
 				faith = { has_doctrine_parameter = carn_prostitution_illegal } 
 				faith = { has_doctrine_parameter = carn_prostitution_shunned } 

@@ -26,9 +26,9 @@ sbs_prostitution.0099 = {
 		NOT = {
 			has_trait = lifestyle_prostitute
 			any_secret = { type = secret_prostitute }
-			has_character_flag = isnt_voluntary_whore
 		}
 		is_imprisoned = no
+		any_sub_realm_county = { any_county_province = { has_building_or_higher = brothel1 } }
 	}
 	theme = seduction
 	override_background = { reference = alley_night }
@@ -1710,7 +1710,7 @@ sbs_prostitution.9222 = {
 		if = {
 			limit = { NOR = { has_trait = deviant any_secret = { type = secret_deviant } } }
 			if = {
-				limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = deviant } }
+				limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:deviant } }
 				add_secret = { type = secret_deviant }
 			}
 			else = {

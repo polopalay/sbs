@@ -9,33 +9,18 @@ brothel1 = {
 	can_construct_potential = {
 		scope:holder = {
 			OR = {
-				has_trait = sbs_demon
-				has_trait = sbs_succubus
-				has_trait = sbs_lesser_succubus
-				has_trait = sbs_lesser_demon
 				has_trait = lustful
 				has_trait = rakish
 				has_trait = deviant
-				has_trait = lifestyle_prostitute
-				any_secret = { type = secret_prostitute }
 			}
 		}
 	}
 	show_disabled = yes
 
-	duchy_capital_county_modifier = {
-		county_opinion_add = 5
-	}
 	province_modifier = {
 		monthly_income = 0.1
 	}
-	character_modifier = {
-		monthly_prestige_gain_mult = 0.1
-		monthly_dynasty_prestige_mult = 0.1
-	}
 	county_modifier = {
-		monthly_county_control_growth_add = 0.1
-		development_growth = 0.1
 		tax_mult = 0.01
 	}
 
@@ -53,32 +38,17 @@ brothel2 = {
 	can_construct_potential = {
 		scope:holder = {
 			OR = {
-				has_trait = sbs_demon
-				has_trait = sbs_succubus
-				has_trait = sbs_lesser_succubus
-				has_trait = sbs_lesser_demon
 				has_trait = lustful
 				has_trait = rakish
 				has_trait = deviant
-				has_trait = lifestyle_prostitute
-				any_secret = { type = secret_prostitute }
 			}
 		}
 	}
 
-	duchy_capital_county_modifier = {
-		county_opinion_add = 10
-	}
 	province_modifier = {
 		monthly_income = 0.2
 	}
-	character_modifier = {
-		monthly_prestige_gain_mult = 0.1
-		monthly_dynasty_prestige_mult = 0.1
-	}
 	county_modifier = {
-		monthly_county_control_growth_add = 0.2
-		development_growth = 0.2
 		tax_mult = 0.02
 	}
 
@@ -94,32 +64,17 @@ brothel3 = {
 	can_construct_potential = {
 		scope:holder = {
 			OR = {
-				has_trait = sbs_demon
-				has_trait = sbs_succubus
-				has_trait = sbs_lesser_succubus
-				has_trait = sbs_lesser_demon
 				has_trait = lustful
 				has_trait = rakish
 				has_trait = deviant
-				has_trait = lifestyle_prostitute
-				any_secret = { type = secret_prostitute }
 			}
 		}
 	}
 
-	duchy_capital_county_modifier = {
-		county_opinion_add = 20
-	}
 	province_modifier = {
 		monthly_income = 0.25
 	}
-	character_modifier = {
-		monthly_prestige_gain_mult = 0.1
-		monthly_dynasty_prestige_mult = 0.1
-	}
 	county_modifier = {
-		monthly_county_control_growth_add = 0.25
-		development_growth = 0.25
 		tax_mult = 0.025
 	}
 
@@ -137,32 +92,15 @@ alchemy1 = {
 	can_construct_potential = {
 		scope:holder = {
 			OR = {
-				has_trait = sbs_demon
-				has_trait = sbs_succubus
-				has_trait = sbs_lesser_demon
-				has_trait = sbs_lesser_succubus
 				has_trait = witch
-				has_trait = lifestyle_herbalist
 				any_secret = { type = secret_witch }
 			}
 		}
 	}
 
 	levy = 100
-	max_garrison = 100
 	duchy_capital_county_modifier = {
 		levy_size = 0.1
-	}
-	province_modifier = {
-		garrison_size = 0.1
-		fort_level = 2
-	}
-	character_modifier = {
-		mercenary_hire_cost_mult = -0.1
-	}
-	county_modifier = {
-		supply_limit = 1000
-		hostile_raid_time = 0.25
 	}
 
 	ai_value = { base = 80 }
@@ -179,32 +117,15 @@ alchemy2 = {
 	can_construct_potential = {
 		scope:holder = {
 			OR = {
-				has_trait = sbs_demon
-				has_trait = sbs_succubus
-				has_trait = sbs_lesser_demon
-				has_trait = sbs_lesser_succubus
 				has_trait = witch
-				has_trait = lifestyle_herbalist
 				any_secret = { type = secret_witch }
 			}
 		}
 	}
 
 	levy = 250
-	max_garrison = 250
 	duchy_capital_county_modifier = {
 		levy_size = 0.2
-	}
-	province_modifier = {
-		garrison_size = 0.2
-		fort_level = 5
-	}
-	character_modifier = {
-		mercenary_hire_cost_mult = -0.2
-	}
-	county_modifier = {
-		supply_limit = 2000
-		hostile_raid_time = 0.5
 	}
 
 	ai_value = { base = 80 }
@@ -219,32 +140,15 @@ alchemy3 = {
 	can_construct_potential = {
 		scope:holder = {
 			OR = {
-				has_trait = sbs_demon
-				has_trait = sbs_succubus
-				has_trait = sbs_lesser_demon
-				has_trait = sbs_lesser_succubus
 				has_trait = witch
-				has_trait = lifestyle_herbalist
 				any_secret = { type = secret_witch }
 			}
 		}
 	}
 
 	levy = 500
-	max_garrison = 500
 	duchy_capital_county_modifier = {
 		levy_size = 0.25
-	}
-	province_modifier = {
-		garrison_size = 0.25
-		fort_level = 8
-	}
-	character_modifier = {
-		mercenary_hire_cost_mult = -0.25
-	}
-	county_modifier = {
-		supply_limit = 5000
-		hostile_raid_time = 1
 	}
 
 	ai_value = { base = 80 }

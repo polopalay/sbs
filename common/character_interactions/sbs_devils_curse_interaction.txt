@@ -23,18 +23,23 @@ sbs_devils_curse_interaction = {
 			OR = {
 				has_trait = sbs_demon
 				has_trait = sbs_succubus
-				has_trait_xp = { trait = sbs_lesser_succubus track = daring value >= 25 }
-				has_trait_xp = { trait = sbs_lesser_demon value >= 100 }
+				has_trait_xp = { trait = sbs_lesser_succubus track = power value >= 25 }
+				has_trait_xp = { trait = sbs_lesser_demon value >= 25 }
 			}
 		}
 	}
 	send_option = {
-		is_shown = { scope:recipient = {  NOT = { has_character_modifier = sbs_seal } is_lowborn = yes is_ruler = no } }
+		is_shown = { scope:recipient = {  NOT = { has_character_modifier = sbs_seal } has_trait = slave is_lowborn = yes is_ruler = no } }
 		flag = sbs_seal
 		localization = sbs_seal
 	}
 	send_option = {
-		is_shown = { scope:actor = { is_ai = no } scope:recipient = { is_ai = yes } }
+		is_shown = { scope:actor = { is_ai = no OR = { has_trait = sbs_demon has_trait = sbs_succubus } } scope:recipient = { is_ai = yes } }
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
 		flag = player
 		localization = MAPMODE_PLAYERS_LABEL
 	}
@@ -54,37 +59,84 @@ sbs_devils_curse_interaction = {
 		localization = possessed_by_lust_demon_modifier
 	}
 	send_option = {
-		is_shown = { scope:recipient = { NOT = { has_trait = pneumonic } } }
+		is_shown = { scope:actor = { NOT = { has_character_modifier = party_baron_murdered_the_joy_of_life_modifier } } }
+		flag = party_baron_murdered_the_joy_of_life_modifier
+		localization = party_baron_murdered_the_joy_of_life_modifier
+	}
+	send_option = {
+		is_shown = { scope:actor = { NOT = { has_character_modifier = intrigue_broken_modifier } } }
+		flag = intrigue_broken_modifier
+		localization = intrigue_broken_modifier
+	}
+	send_option = {
+		is_shown = {
+			scope:recipient = { NOT = { has_trait = pneumonic } }
+		}
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+			}
+		}
 		flag = pneumonic
 		localization = trait_pneumonic
 	}
 	send_option = {
 		is_shown = { scope:recipient = { NOT = { has_trait = typhus } } }
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+			}
+		}
 		flag = typhus
 		localization = trait_typhus
 	}
 	send_option = {
 		is_shown = { scope:recipient = { NOT = { has_trait = consumption } } }
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+			}
+		}
 		flag = consumption
 		localization = trait_consumption
 	}
 	send_option = {
 		is_shown = { scope:recipient = { NOT = { has_trait = bubonic_plague } } }
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+			}
+		}
 		flag = bubonic_plague
 		localization = trait_bubonic_plague
 	}
 	send_option = {
 		is_shown = { scope:recipient = { NOT = { has_trait = measles } } }
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+			}
+		}
 		flag = measles
 		localization = trait_measles
 	}
 	send_option = {
 		is_shown = { scope:recipient = { NOT = { has_trait = dysentery } } }
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+			}
+		}
 		flag = dysentery
 		localization = trait_dysentery
 	}
 	send_option = {
 		is_shown = { scope:recipient = { NOT = { has_trait = ergotism } } }
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+			}
+		}
 		flag = ergotism
 		localization = trait_ergotism
 	}
@@ -94,11 +146,11 @@ sbs_devils_curse_interaction = {
 		scope:actor = {
 			if = {
 				limit = { has_trait = sbs_lesser_succubus }
-				add_trait_xp = { trait = sbs_lesser_succubus track = daring value = -25 }
+				add_trait_xp = { trait = sbs_lesser_succubus track = power value = -25 }
 			}
 			else_if = {
 				limit = { has_trait = sbs_lesser_demon }
-				add_trait_xp = { trait = sbs_lesser_demon value = -100 }
+				add_trait_xp = { trait = sbs_lesser_demon value = -25 }
 			}
 		}
 		scope:recipient = {
@@ -109,7 +161,7 @@ sbs_devils_curse_interaction = {
 					add_character_modifier = sbs_seal
 				}
 				0 = {
-					modifier = { scope:player = yes add = 10 }
+					modifier = { scope:player = yes add = 90 }
 					sbs_steal_body = { VICTIM = scope:recipient STEALER = scope:actor }	
 				}
 				0 = {
@@ -123,6 +175,14 @@ sbs_devils_curse_interaction = {
 				0 = {
 					modifier = { scope:possessed_by_lust_demon_modifier = yes add = 40 }
 					add_character_modifier = possessed_by_lust_demon_modifier
+				}
+				0 = {
+					modifier = { scope:party_baron_murdered_the_joy_of_life_modifier = yes add = 30 }
+					add_character_modifier = party_baron_murdered_the_joy_of_life_modifier
+				}
+				0 = {
+					modifier = { scope:intrigue_broken_modifier = yes add = 10 }
+					add_character_modifier = intrigue_broken_modifier
 				}
 				0 = {
 					modifier = { scope:pneumonic = yes add = 5 }

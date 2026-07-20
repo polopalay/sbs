@@ -12,7 +12,6 @@ sbs_devil.0550 = {
 			has_trait = deviant
 			any_secret = { type = secret_deviant }
 		}
-		any_character_artifact { OR = { has_artifact_modifier = master_dildo_modifier has_artifact_modifier = mistress_dildo_modifier } count = 0 }
 	}
 	theme = bloody_wedding_night
 	override_background = { reference = bedchamber }
@@ -86,7 +85,6 @@ sbs_devil.0550 = {
 		ai_chance = { base = 2 }
 		trigger = {
 		 	gold >= massive_gold_value
-			NOT = { has_trait_with_flag = sbs_demon_trait }
 		}
 		name = sbs_devil.0550.e
 		custom_tooltip = sbs_devil.0550.e.tt
@@ -192,7 +190,7 @@ sbs_devil.1300 = {
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
 				track = corruption
-				value = -1
+				value = -5
 			}
 		}
 	}
@@ -260,7 +258,7 @@ sbs_devil.1302 = {
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
 				track = corruption
-				value = -2
+				value = -10
 			}
 		}
 	}

@@ -23,15 +23,18 @@ become_demon = {
 				has_trait_xp = { trait = sbs_lesser_succubus track = power value >= 100 }
 				has_trait_xp = { trait = sbs_lesser_succubus track = corruption value >= 100 }
 				has_trait_xp = { trait = sbs_lesser_succubus track = loyalty value >= 100 }
-				has_character_modifier = sbs_generals
+				age >= 100
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = brothel3 } }
 			}
 			AND = {
 				has_trait_xp = { trait = sbs_lesser_demon value >= 100 }
-				has_trait = education_intrigue_5
-				has_trait = education_diplomacy_5
-				has_trait = education_stewardship_5
-				has_trait = education_martial_5
-				has_trait = education_learning_5
+				has_character_modifier = sbs_generals
+				age >= 100
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+			}
+			AND = {
+				faith.religion = religion:demonic_religion
+				faith.religious_head = root
 			}
 		}
 	}

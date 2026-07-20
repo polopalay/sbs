@@ -5,37 +5,97 @@ sbs_makeup_interaction = {
 	common_interaction = yes
 
 	is_shown = {
-		scope:actor = { has_trait_with_flag = sbs_demon_trait }
+		scope:actor = {
+			has_trait_with_flag = sbs_demon_trait
+		}
 	}
+
 	is_valid = {
 		scope:actor = {
 			OR = {
 				has_trait = sbs_demon
 				has_trait = sbs_succubus
-				has_trait_xp = { trait = sbs_lesser_succubus track = daring value >= 5 }
-				has_trait_xp = { trait = sbs_lesser_demon value >= 20 }
+				has_trait_xp = {
+					trait = sbs_lesser_succubus
+					track = daring
+					value >= 10
+				}
+				has_trait_xp = {
+					trait = sbs_lesser_demon
+					value >= 10
+				}
 			}
 		}
 	}
+
 	send_option = {
-		is_shown = {
-			scope:recipient = {
-				has_trait_with_flag = sbs_demon_trait
-			}
-		}
+		is_shown = { scope:recipient = { has_trait_with_flag = sbs_demon_trait } }
 		flag = true_form
 		localization = "sbs_true_form"
 	}
+
 	send_option = {
 		is_shown = {
 			scope:recipient = {
 				OR = {
 					should_be_naked_trigger = no
-					has_character_modifier = diplomacy_majesty_4090_no_raiment_modifier 
+					has_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
 				}
 			}
 		}
 		flag = naked
+	}
+
+	send_option = {
+		is_valid = {
+			scope:actor = {
+				OR = {
+					has_trait = sbs_demon
+					has_trait = sbs_succubus
+					has_trait_xp = {
+						trait = sbs_lesser_succubus
+						track = daring
+						value >= 100
+						}
+					has_trait_xp = {
+						trait = sbs_lesser_demon
+						value >= 100
+					}
+				}
+				is_valid_construction_alchemy_trigger = yes
+			}
+		}
+		flag = physique_good
+		localization = trait_physique_good
+	}
+
+	send_option = {
+		is_valid = {
+			scope:actor = {
+				OR = {
+					has_trait = sbs_demon
+					has_trait = sbs_succubus
+					has_trait_xp = {
+						trait = sbs_lesser_succubus
+						track = daring
+						value >= 100
+						}
+					has_trait_xp = {
+						trait = sbs_lesser_demon
+						value >= 100
+					}
+				}
+				is_valid_construction_alchemy_trigger = yes
+			}
+		}
+		flag = beauty_good
+		localization = trait_beauty_good
+	}
+
+	send_option = {
+		is_shown = { scope:actor = { is_ai = no } scope:actor != scope:recipient }
+		flag = dna
+		localization = DNA_MODIFIERS
 	}
 	send_option = {
 		is_shown = {
@@ -43,175 +103,347 @@ sbs_makeup_interaction = {
 			current_date >= 1032.1.1
 			character:367 = { is_alive = no }
 		}
-		flag = mathilde
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = 367
 		localization = "Mathilde"
 	}
+
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
 			current_date >= 1048.9.21
 			character:1183 = { is_alive = no }
 		}
-		flag = bertha
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = 1183
 		localization = "Bertha"
 	}
+
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
 			current_date >= 1053.1.1
 			character:41552 = { is_alive = no }
 		}
-		flag = maria
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = 41552
 		localization = "Martha"
 	}
+
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
 			current_date >= 1046.3.1
 			character:7757 = { is_alive = no }
 		}
-		flag = matilda
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = 7757
 		localization = "Matilda"
 	}
+
+	send_option = {
+		is_shown = {
+			scope:actor = { is_ai = no }
+			current_date >= 1015.1.1
+			character:1128 = { is_alive = no }
+		}
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = 1128
+		localization = "Robert"
+	}
+
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
 			current_date >= 1048.1.2
 			character:765 = { is_alive = no }
 		}
-		flag = swietoslawa
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = 765
 		localization = "S_wiE_tosL_awa"
 	}
+
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
 			current_date >= 1047.1.1
 			character:161257 = { is_alive = no }
 		}
-		flag = wyszeslawa
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = 161257
 		localization = "Wyszeslawa"
 	}
+
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
 			current_date >= 1160.1.1
 			character:466517 = { is_alive = no }
 		}
-		flag = tamar
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = 466517
 		localization = "Tamar"
 	}
+
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
 			current_date >= 1177.12.1
 			character:223541 = { is_alive = no }
 		}
-		flag = sibylla
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = 223541
 		localization = "Sibylla"
 	}
+
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
 			current_date >= 839.1.1
 			character:168314 = { is_alive = no }
 		}
-		flag = waldrada
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = 168314
 		localization = "Waldrada"
 	}
+
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
 			current_date >= 1145.1.1
 			character:223743 = { is_alive = no }
 		}
-		flag = marie
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = 223743
 		localization = "Marie"
 	}
+
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
 			current_date >= 1122.1.1
 			character:212501 = { is_alive = no }
 		}
-		flag = barbarossa
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = 212501
 		localization = "Friedrich"
 	}
+
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
 			current_date >= 1027.1.15
 			character:140 = { is_alive = no }
 		}
-		flag = william
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = 140
 		localization = "William"
 	}
+
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
 			current_date >= 1015.1.2
 			character:102531 = { is_alive = no }
 		}
-		flag = harald
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = 102531
 		localization = "Haraldr"
 	}
+
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
 			current_date >= 1039.1.1
 			character:20641 = { is_alive = no }
 		}
-		flag = tatus
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = 20641
 		localization = "Tatus"
 	}
+
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
 			current_date >= 806.1.1
 			character:90107 = { is_alive = no }
 		}
-		flag = ludwig
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = 90107
 		localization = "Ludwig"
 	}
+
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
 			current_date >= 830.1.14
 			character:42018 = { is_alive = no }
 		}
-		flag = karlmann
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = 42018
 		localization = "Karlmann"
 	}
+
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
 			current_date >= 1138.1.1
 			character:226000 = { is_alive = no }
 		}
-		flag = saladin
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = 226000
 		localization = "Yusuf"
 	}
+
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
 			current_date >= 828.1.1
 			character:163112 = { is_alive = no }
 		}
-		flag = halfdan
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = 163112
 		localization = "Halfdan"
 	}
+
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
 			current_date >= 1118.11.28
 			character:215530 = { is_alive = no }
 		}
-		flag = manuel
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = 215530
 		localization = "Manuel"
 	}
+
 	send_options_exclusive = yes
 
 	on_accept = {
 		scope:recipient = {
+			if = {
+				limit = {
+					OR = {
+						scope:367 = yes
+						scope:1183 = yes
+						scope:41552 = yes
+						scope:7757 = yes
+						scope:1128 = yes
+						scope:765 = yes
+						scope:161257 = yes
+						scope:466517 = yes
+						scope:223541 = yes
+						scope:168314 = yes
+						scope:223743 = yes
+						scope:212501 = yes
+						scope:140 = yes
+						scope:102531 = yes
+						scope:20641 = yes
+						scope:90107 = yes
+						scope:42018 = yes
+						scope:226000 = yes
+						scope:163112 = yes
+						scope:215530 = yes
+					}
+				}
+
+				if = {
+					limit = {
+						NOT = { scope:7757 = yes }
+						has_character_modifier = matilda_of_canossa_modifier
+					}
+					remove_character_modifier = matilda_of_canossa_modifier
+				}
+
+				if = {
+					limit = {
+						NOT = { scope:1128 = yes }
+						has_character_modifier = guiscard_modifier
+					}
+					remove_character_modifier = guiscard_modifier
+				}
+			}
+
 			if = {
 				limit = { scope:true_form = yes }
 				if = {
@@ -233,79 +465,136 @@ sbs_makeup_interaction = {
 				}
 			}
 			else_if = {
-				limit = { scope:mathilde = yes }
+				limit = { scope:physique_good = yes }
+				if = {
+					limit = { has_trait_rank = { trait = physique_good rank < 3 } }
+					change_trait_rank = { trait = physique_good rank = 1 }
+					scope:actor = {
+						if = {
+							limit = { has_trait = sbs_lesser_succubus }
+							add_trait_xp = { trait = sbs_lesser_succubus track = daring value = -90 }
+						}
+						else_if = {
+							limit = { has_trait = sbs_lesser_demon }
+							add_trait_xp = { trait = sbs_lesser_demon value = -90 }
+						}
+					}
+				}
+				else = {
+					set_trait_rank = { trait = physique_good rank = 0 }
+				}
+			}
+			else_if = {
+				limit = { scope:beauty_good = yes }
+
+				if = {
+					limit = { has_trait_rank = { trait = beauty_good rank < 3 } }
+					change_trait_rank = { trait = beauty_good rank = 1 }
+					scope:actor = {
+						if = {
+							limit = { has_trait = sbs_lesser_succubus }
+							add_trait_xp = { trait = sbs_lesser_succubus track = daring value = -90 }
+						}
+						else_if = {
+							limit = { has_trait = sbs_lesser_demon }
+							add_trait_xp = { trait = sbs_lesser_demon value = -90 }
+						}
+					}
+				}
+				else = {
+					set_trait_rank = { trait = beauty_good rank = 0 }
+				}
+			}
+			else_if = {
+				limit = { scope:dna = yes add = 40 }
+				scope:actor = { copy_inheritable_appearance_from = scope:recipient }
+			}
+			else_if = {
+				limit = { scope:367 = yes }
 				copy_inheritable_appearance_from = character:367
 			}
 			else_if = {
-				limit = { scope:bertha = yes }
+				limit = { scope:1183 = yes }
 				copy_inheritable_appearance_from = character:1183
 			}
 			else_if = {
-				limit = { scope:maria = yes }
+				limit = { scope:41552 = yes }
 				copy_inheritable_appearance_from = character:41552
 			}
 			else_if = {
-				limit = { scope:matilda = yes }
+				limit = { scope:7757 = yes }
+				if = {
+					limit = { NOT = { has_character_modifier = matilda_of_canossa_modifier } }
+					add_character_modifier = matilda_of_canossa_modifier
+				}
 				copy_inheritable_appearance_from = character:7757
 			}
 			else_if = {
-				limit = { scope:swietoslawa = yes }
+				limit = { scope:1128 = yes }
+				if = {
+					limit = { NOT = { has_character_modifier = guiscard_modifier } }
+					add_character_modifier = guiscard_modifier
+				}
+				copy_inheritable_appearance_from = character:1128
+			}
+			else_if = {
+				limit = { scope:765 = yes }
 				copy_inheritable_appearance_from = character:765
 			}
 			else_if = {
-				limit = { scope:wyszeslawa = yes }
+				limit = { scope:161257 = yes }
 				copy_inheritable_appearance_from = character:161257
 			}
 			else_if = {
-				limit = { scope:tamar = yes }
+				limit = { scope:466517 = yes }
 				copy_inheritable_appearance_from = character:466517
 			}
 			else_if = {
-				limit = { scope:sibylla = yes }
+				limit = { scope:223541 = yes }
 				copy_inheritable_appearance_from = character:223541
 			}
 			else_if = {
-				limit = { scope:waldrada = yes }
+				limit = { scope:168314 = yes }
 				copy_inheritable_appearance_from = character:168314
 			}
 			else_if = {
-				limit = { scope:marie = yes }
+				limit = { scope:223743 = yes }
 				copy_inheritable_appearance_from = character:223743
 			}
 			else_if = {
-				limit = { scope:barbarossa = yes }
+				limit = { scope:212501 = yes }
 				copy_inheritable_appearance_from = character:212501
 			}
 			else_if = {
-				limit = { scope:william = yes }
+				limit = { scope:140 = yes }
 				copy_inheritable_appearance_from = character:140
 			}
 			else_if = {
-				limit = { scope:harald = yes }
+				limit = { scope:102531 = yes }
 				copy_inheritable_appearance_from = character:102531
 			}
 			else_if = {
-				limit = { scope:tatus = yes }
+				limit = { scope:20641 = yes }
 				copy_inheritable_appearance_from = character:20641
 			}
 			else_if = {
-				limit = { scope:ludwig = yes }
+				limit = { scope:90107 = yes }
 				copy_inheritable_appearance_from = character:90107
 			}
 			else_if = {
-				limit = { scope:karlmann = yes }
+				limit = { scope:42018 = yes }
 				copy_inheritable_appearance_from = character:42018
 			}
 			else_if = {
-				limit = { scope:saladin = yes }
+				limit = { scope:226000 = yes }
 				copy_inheritable_appearance_from = character:226000
 			}
 			else_if = {
-				limit = { scope:halfdan = yes }
+				limit = { scope:163112 = yes }
 				copy_inheritable_appearance_from = character:163112
 			}
 			else_if = {
-				limit = { scope:manuel = yes }
+				limit = { scope:215530 = yes }
 				copy_inheritable_appearance_from = character:215530
 			}
 		}
@@ -313,38 +602,78 @@ sbs_makeup_interaction = {
 		scope:actor = {
 			if = {
 				limit = { has_trait = sbs_lesser_succubus }
-				add_trait_xp = { trait = sbs_lesser_succubus track = daring value = -5 }
+				add_trait_xp = { trait = sbs_lesser_succubus track = daring value = -10 }
 			}
 			else_if = {
 				limit = { has_trait = sbs_lesser_demon }
-				add_trait_xp = { trait = sbs_lesser_demon value = -20 }
+				add_trait_xp = { trait = sbs_lesser_demon value = -10 }
 			}
 		}
 	}
-	auto_accept = { scope:actor = scope:recipient }
+
+	auto_accept = {
+		scope:actor = scope:recipient
+	}
+
 	ai_accept = {
-		base = 1
+		base = -1
 		opinion_modifier = {
 			opinion_target = scope:actor
 			who = scope:recipient
-			multiplier = 1
+			multiplier = 0.2
 		}
 	}
+
 	ai_frequency = 36
+
 	ai_targets = {
 		ai_recipients = self
 		ai_recipients = vassals
 		ai_recipients = courtiers
 		max = 5
 	}
-	ai_potential = { always = yes }
+
+	ai_potential = {
+		always = yes
+	}
+
 	ai_will_do = {
 		base = 0
-		modifier = { add = 5 scope:naked = yes scope:recipient = { carn_is_working_as_prostitute_trigger = yes should_be_naked_trigger = no } }
-		modifier = { add = 5 scope:naked = yes scope:recipient = { carn_is_working_as_prostitute_trigger = no has_character_modifier = diplomacy_majesty_4090_no_raiment_modifier } }
-		modifier = { add = 100 scope:true_form = yes scope:recipient = { is_at_war = no has_character_modifier = sbs_true_form } }
-		modifier = { add = 100 scope:true_form = yes scope:recipient = { is_at_war = yes NOT = { has_character_modifier = sbs_true_form } } }
-		modifier = { add = 100 scope:true_form = yes scope:recipient = { age >= 75 is_immortal = no NOT = { has_character_modifier = sbs_true_form } } }
-		modifier = { add = -100 scope:true_form = yes scope:recipient = { age >= 75 is_immortal = no has_character_modifier = sbs_true_form } }
+
+		modifier = {
+			add = 5
+			scope:naked = yes
+			scope:recipient = { carn_is_working_as_prostitute_trigger = yes should_be_naked_trigger = no }
+		}
+
+		modifier = {
+			add = 5
+			scope:naked = yes
+			scope:recipient = { carn_is_working_as_prostitute_trigger = no has_character_modifier = diplomacy_majesty_4090_no_raiment_modifier }
+		}
+
+		modifier = {
+			add = 100
+			scope:true_form = yes
+			scope:recipient = { is_at_war = no has_character_modifier = sbs_true_form }
+		}
+
+		modifier = {
+			add = 100
+			scope:true_form = yes
+			scope:recipient = { is_at_war = yes NOT = { has_character_modifier = sbs_true_form } }
+		}
+
+		modifier = {
+			add = 100
+			scope:true_form = yes
+			scope:recipient = { age >= 75 is_immortal = no NOT = { has_character_modifier = sbs_true_form } }
+		}
+
+		modifier = {
+			add = -100
+			scope:true_form = yes
+			scope:recipient = { age >= 75 is_immortal = no has_character_modifier = sbs_true_form }
+		}
 	}
 }

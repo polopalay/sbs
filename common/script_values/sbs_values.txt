@@ -1,893 +1,841 @@
 succubus_cost_value = {
 	value = 0
 	if = {
-		limit = { scope:stress = yes }
-		add = succubus_cost_dealing_with_stress_value
+		limit = {
+			has_trait = drunkard
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:drunkard = yes
+			}
+		}
+		add = 1
 	}
 	if = {
-		limit = { scope:healing = yes }
-		add = succubus_cost_heal_value
+		limit = {
+			has_trait = hashishiyah
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:hashishiyah = yes
+			}
+		}
+		add = 1
 	}
 	if = {
-		limit = { scope:dna = yes }
-		add = succubus_cost_purify_price_value
+		limit = {
+			has_trait = rakish
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:rakish = yes
+			}
+		}
+		add = 1
 	}
 	if = {
-		limit = { scope:honor = yes }
-		add = succubus_cost_honor_price_value
+		limit = {
+			has_trait = reclusive
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:reclusive = yes
+			}
+		}
+		add = 1
 	}
-	max = 50
+	if = {
+		limit = {
+			has_trait = irritable
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:irritable = yes
+			}
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_trait = flagellant
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:flagellant = yes
+			}
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_trait = profligate
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:profligate = yes
+			}
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_trait = improvident
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:improvident = yes
+			}
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_trait = contrite
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:contrite = yes
+			}
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_trait = comfort_eater
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:comfort_eater = yes
+			}
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_trait = inappetetic
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:inappetetic = yes
+			}
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_character_modifier = rejected_from_marriage_bed_modifier
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:rejected_from_marriage_bed_modifier = yes
+			}
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_trait = depressed_1
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:depressed_1 = yes
+			}
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_trait = depressed_genetic
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:depressed_genetic = yes
+			}
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_trait = lunatic_1
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:lunatic_1 = yes
+			}
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_trait = lunatic_genetic
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:lunatic_genetic = yes
+			}
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_trait = possessed_1
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:possessed_1 = yes
+			}
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_trait = possessed_genetic
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:possessed_genetic = yes
+			}
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_trait = scarred
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:scarred = yes
+			}
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_trait = one_eyed
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:one_eyed = yes
+			}
+		}
+		add = 2
+	}
+	if = {
+		limit = {
+			has_trait = maimed
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:maimed = yes
+			}
+		}
+		add = 2
+	}
+	if = {
+		limit = {
+			has_trait = one_legged
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:one_legged = yes
+			}
+		}
+		add = 2
+	}
+	if = {
+		limit = {
+			has_trait = disfigured
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:disfigured = yes
+			}
+		}
+		add = 3
+	}
+	if = {
+		limit = {
+			has_trait = eunuch_1
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:eunuch_1 = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = beardless_eunuch
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:beardless_eunuch = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = blind
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:blind = yes
+			}
+		}
+		add = 3
+	}
+	if = {
+		limit = {
+			has_trait = sickly
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:sickly = yes
+			}
+		}
+		add = 2
+	}
+	if = {
+		limit = {
+			has_trait = infirm
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:infirm = yes
+			}
+		}
+		add = 2
+	}
+	if = {
+		limit = {
+			has_trait = incapable
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:incapable = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = leper
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:leper = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = wounded_1
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:wounded_1 = yes
+			}
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_trait = wounded_2
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:wounded_2 = yes
+			}
+		}
+		add = 2
+	}
+	if = {
+		limit = {
+			has_trait = wounded_3
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:wounded_3 = yes
+			}
+		}
+		add = 3
+	}
+	if = {
+		limit = {
+			has_trait = early_great_pox
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:early_great_pox = yes
+			}
+		}
+		add = 3
+	}
+	if = {
+		limit = {
+			has_trait = ill
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:ill = yes
+			}
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_trait = pneumonic
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:pneumonic = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = gout_ridden
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:gout_ridden = yes
+			}
+		}
+		add = 3
+	}
+	if = {
+		limit = {
+			has_trait = typhus
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:typhus = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = consumption
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:consumption = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = measles
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:measles = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = cancer
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:cancer = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = great_pox
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:great_pox = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = smallpox
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:smallpox = yes
+			}
+		}
+		add = 3
+	}
+	if = {
+		limit = {
+			has_trait = bubonic_plague
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:bubonic_plague = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = lovers_pox
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:lovers_pox = yes
+			}
+		}
+		add = 3
+	}
+	if = {
+		limit = {
+			has_trait = dysentery
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:dysentery = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = ergotism
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:ergotism = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = albino
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:albino = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = lisping
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:lisping = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = stuttering
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:stuttering = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = giant
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:giant = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = scaly
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:scaly = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = clubfooted
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:clubfooted = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = dwarf
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:dwarf = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = hunchbacked
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:hunchbacked = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = infertile
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:infertile = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = wheezing
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:wheezing = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = spindly
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:spindly = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = bleeder
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:bleeder = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = weak
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:weak = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = dull
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:dull = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = beauty_bad_1
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:beauty_bad_1 = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = beauty_bad_2
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:beauty_bad_2 = yes
+			}
+		}
+		add = 7
+	}
+	if = {
+		limit = {
+			has_trait = beauty_bad_3
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:beauty_bad_3 = yes
+			}
+		}
+		add = 10
+	}
+	if = {
+		limit = {
+			has_trait = intellect_bad_1
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:intellect_bad_1 = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = intellect_bad_2
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:intellect_bad_2 = yes
+			}
+		}
+		add = 7
+	}
+	if = {
+		limit = {
+			has_trait = intellect_bad_3
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:intellect_bad_3 = yes
+			}
+		}
+		add = 10
+	}
+	if = {
+		limit = {
+			has_trait = physique_bad_1
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:physique_bad_1 = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = physique_bad_2
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:physique_bad_2 = yes
+			}
+		}
+		add = 7
+	}
+	if = {
+		limit = {
+			has_trait = physique_bad_3
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:physique_bad_3 = yes
+			}
+		}
+		add = 10
+	}
+	if = {
+		limit = {
+			has_trait = inbred
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:inbred = yes
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			has_trait = witch
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:witch = yes
+			}
+		}
+		add = 3
+	}
+	if = {
+		limit = {
+			has_trait = deviant
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:deviant = yes
+			}
+		}
+		add = 3
+	}
+	if = {
+		limit = {
+			has_trait = cannibal
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:cannibal = yes
+			}
+		}
+		add = 3
+	}
+	if = {
+		limit = {
+			has_trait = adulterer
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:adulterer = yes
+			}
+		}
+		add = 2
+	}
+	if = {
+		limit = {
+			has_trait = sodomite
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:sodomite = yes
+			}
+		}
+		add = 2
+	}
+	if = {
+		limit = {
+			has_trait = incestuous
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:incestuous = yes
+			}
+		}
+		add = 3
+	}
+	if = {
+		limit = {
+			has_trait = fornicator
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:fornicator = yes
+			}
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_trait = kinslayer_1
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:kinslayer_1 = yes
+			}
+		}
+		add = 3
+	}
+	if = {
+		limit = {
+			has_trait = kinslayer_2
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:kinslayer_2 = yes
+			}
+		}
+		add = 2
+	}
+	if = {
+		limit = {
+			has_trait = kinslayer_3
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:kinslayer_3 = yes
+			}
+		}
+		add = 2
+	}
+	if = {
+		limit = {
+			has_trait = murderer
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:murderer = yes
+			}
+		}
+		add = 1
+	}
+	if = {
+		limit = {
+			has_trait = lifestyle_prostitute
+			OR = {
+				scope:actor = { is_ai = yes }
+				scope:lifestyle_prostitute = yes
+			}
+		}
+		add = 1
+	}
+	max = 25
 	min = 1
 }
 
-succubus_cost_dealing_with_stress_value = {
-	value = 0
-	if = {
-		limit = { has_character_modifier = rejected_from_marriage_bed_modifier }
-		add = 1
-	}
-	if = {
-		limit = { stress_level = 1 }
-		add = 1
-	}
-	if = {
-		limit = { stress_level = 2 }
-		add = 1
-	}
-	if = {
-		limit = { stress_level = 3 }
-		add = 1
-	}
-	if = {
-		limit = { stress_level = 4 }
-		add = 1
-	}
-	if = {
-		limit = { stress_level = 5 }
-		add = 1
-	}
-	if = {
-		limit = { has_trait = drunkard }
-		add = 1
-	}
-	if = {
-		limit = { has_trait = hashishiyah }
-		add = 1
-	}
-	if = {
-		limit = { has_trait = rakish }
-		add = 1
-	}
-	if = {
-		limit = { has_trait = reclusive }
-		add = 1 
-	}
-	if = {
-		limit = { has_trait = irritable }
-		add = 1
-	}
-	if = {
-		limit = { has_trait = flagellant }
-		add = 1
-	}
-	if = {
-		limit = { has_trait = profligate }
-		add = 1
-	}
-	if = {
-		limit = { has_trait = improvident }
-		add = 1
-	}
-	if = {
-		limit = { has_trait = contrite }
-		add = 1
-	}
-	if = {
-		limit = { has_trait = comfort_eater }
-		add = 1
-	}
-	if = {
-		limit = { has_trait = inappetetic }
-		add = 1
-	}
-}
-
-succubus_cost_heal_value = {
-	value = 0
-	if = {
-		limit = { has_trait = depressed_1 }
-		add = 1
-	}
-	if = {
-		limit = { has_trait = depressed_genetic }
-		add = 1
-	}
-	if = {
-		limit = { has_trait = lunatic_1 }
-		add = 1
-	}
-	if = {
-		limit = { has_trait = lunatic_genetic }
-		add = 1
-	}
-	if = {
-		limit = { has_trait = possessed_1 }
-		add = 1
-	}
-	if = {
-		limit = { has_trait = scarred }
-		add = 1
-	}
-	if = {
-		limit = { has_trait = one_eyed }
-		add = 2
-	}
-	if = {
-		limit = { has_trait = maimed }
-		add = 2
-	}
-	if = {
-		limit = { has_trait = one_legged }
-		add = 2
-	}
-	if = {
-		limit = { has_trait = disfigured }
-		add = 3
-	}
-	if = {
-		limit = { has_trait = eunuch }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = blind }
-		add = 3
-	}
-	if = {
-		limit = { has_trait = sickly }
-		add = 2
-	}
-	if = {
-		limit = { has_trait = infirm }
-		add = 2
-	}
-	if = {
-		limit = { has_trait = incapable }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = leper }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = dysentery }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = ergotism }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = wounded_1 }
-		add = 1
-	}
-	if = {
-		limit = { has_trait = wounded_2 }
-		add = 2
-	}
-	if = {
-		limit = { has_trait = wounded_3 }
-		add = 3
-	}
-	if = {
-		limit = { has_trait = ill }
-		add = 1
-	}
-	if = {
-		limit = { has_trait = pneumonic }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = gout_ridden }
-		add = 3
-	}
-	if = {
-		limit = { has_trait = typhus }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = consumption }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = cancer }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = great_pox }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = smallpox }
-		add = 3
-	}
-	if = {
-		limit = { has_trait = bubonic_plague }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = lovers_pox }
-		add = 3
-	}
-	if = {
-		limit = { has_trait = early_great_pox }
-		add = 3
-	}
-	if = {
-		limit = { has_trait = great_pox }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = possessed_genetic }
-		add = 1
-	}
-	if = {
-		limit = { has_trait = bubonic_plague }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = measles }
-		add = 5
-	}
-	if = {
-		limit = { current_weight >= 25 }
-		add = 1
-	}
-	if = {
-		limit = { current_weight >= 50 }
-		add = 1
-	}
-	if = {
-		limit = { current_weight <= -25 }
-		add = 1
-	}
-	if = {
-		limit = { current_weight <= -50 }
-		add = 1
-	}
-}
-
-succubus_cost_purify_price_value = {
-	value = 0
-	if = {
-		limit = { has_trait = albino }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = lisping }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = stuttering }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = giant }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = scaly }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = clubfooted }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = dwarf }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = hunchbacked }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = infertile }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = wheezing }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = spindly }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = bleeder }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = weak }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = dull }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = beauty_bad_1 }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = beauty_bad_2 }
-		add = 7
-	}
-	if = {
-		limit = { has_trait = beauty_bad_3 }
-		add = 10
-	}
-	if = {
-		limit = { has_trait = intellect_bad_1 }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = intellect_bad_2 }
-		add = 7
-	}
-	if = {
-		limit = { has_trait = intellect_bad_3 }
-		add = 10
-	}
-	if = {
-		limit = { has_trait = physique_bad_1 }
-		add = 5
-	}
-	if = {
-		limit = { has_trait = physique_bad_2 }
-		add = 7
-	}
-	if = {
-		limit = { has_trait = physique_bad_3 }
-		add = 10
-	}
-	if = {
-		limit = { has_trait = inbred }
-		add = 5
-	}
-}
-
-succubus_cost_honor_price_value = {
-	value = 0
-	if = {
-		limit = {
-			has_trait = witch
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = witch }
-		}
-		add = 3
-	}
-	if = {
-		limit = {
-			has_trait = deviant
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = deviant }
-		}
-		add = 3
-	}
-	if = {
-		limit = {
-			has_trait = cannibal
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = cannibal }
-		}
-		add = 3
-	}
-	if = {
-		limit = {
-			has_trait = adulterer
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = adulterer }
-		}
-		add = 2
-	}
-	if = {
-		limit = {
-			has_trait = sodomite
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = sodomite }
-		}
-		add = 2
-	}
-	if = {
-		limit = {
-			has_trait = incestuous
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = incestuous }
-		}
-		add = 3
-	}
-	if = {
-		limit = {
-			has_trait = fornicator
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = fornicator }
-		}
-		add = 1
-	}
-	if = {
-		limit = {
-			has_trait = kinslayer_1
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = kinslayer_1 }
-		}
-		add = 3
-	}
-	if = {
-		limit = {
-			has_trait = kinslayer_2
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = kinslayer_2 }
-		}
-		add = 2
-	}
-	if = {
-		limit = {
-			has_trait = kinslayer_3
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = kinslayer_3 }
-		}
-		add = 2
-	}
-	if = {
-		limit = {
-			has_trait = murderer
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = murderer }
-		}
-		add = 1
-	}
-	if = {
-		limit = {
-			has_trait = lifestyle_prostitute
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = lifestyle_prostitute }
-		}
-		add = 1
-	}
-}
-
 deal_price_value = {
-	value = 0
-	if = {
-		limit = { OR = { scope:stress = yes scope:actor = { is_ai = yes } } }
-		add = dealing_with_stress_value
-	}
-	if = {
-		limit = { OR = { scope:healing = yes scope:actor = { is_ai = yes } } }
-		add = heal_price_value
-	}
-	if = {
-		limit = { OR = {  scope:dna = yes scope:actor = { is_ai = yes } } }
-		add = purify_price_value
-	}
-	if = {
-		limit = { OR = {  scope:honor = yes scope:actor = { is_ai = yes } } }
-		add = honor_price_value
-	}
-	min = 0
+	value = succubus_cost_value
+	multiply = 5
 }
 
-dealing_with_stress_value = {
-	value = 0
-	if = {
-		limit = { stress_level = 1 }
-		add = 20
-	}
-	if = {
-		limit = { stress_level = 2 }
-		add = 40
-	}
-	if = {
-		limit = { stress_level = 3 }
-		add = 60
-	}
-	if = {
-		limit = { stress_level = 4 }
-		add = 80
-	}
-	if = {
-		limit = { stress_level = 5 }
-		add = 100
-	}
-	if = {
-		limit = { has_trait = drunkard }
-		add = 25
-	}
-	if = {
-		limit = { has_trait = hashishiyah }
-		add = 25
-	}
-	if = {
-		limit = { has_trait = rakish }
-		add = 25
-	}
-	if = {
-		limit = { has_trait = reclusive }
-		add = 25
-	}
-	if = {
-		limit = { has_trait = irritable }
-		add = 25
-	}
-	if = {
-		limit = { has_trait = flagellant }
-		add = 25
-	}
-	if = {
-		limit = { has_trait = profligate }
-		add = 25
-	}
-	if = {
-		limit = { has_trait = improvident }
-		add = 25
-	}
-	if = {
-		limit = { has_trait = contrite }
-		add = 25
-	}
-	if = {
-		limit = { has_trait = comfort_eater }
-		add = 25
-	}
-	if = {
-		limit = { has_trait = inappetetic }
-		add = 25
-	}
-}
-
-heal_price_value = {
-	value = 0
-	if = {
-		limit = { has_trait = depressed_1 }
-		add = 20
-	}
-	if = {
-		limit = { has_trait = depressed_genetic }
-		add = 20
-	}
-	if = {
-		limit = { has_trait = lunatic_1 }
-		add = 20
-	}
-	if = {
-		limit = { has_trait = lunatic_genetic }
-		add = 20
-	}
-	if = {
-		limit = { has_trait = possessed_1 }
-		add = 20
-	}
-	if = {
-		limit = { has_trait = scarred }
-		add = 20
-	}
-	if = {
-		limit = { has_trait = one_eyed }
-		add = 30
-	}
-	if = {
-		limit = { has_trait = maimed }
-		add = 30
-	}
-	if = {
-		limit = { has_trait = one_legged }
-		add = 30
-	}
-	if = {
-		limit = { has_trait = disfigured }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = eunuch }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = blind }
-		add = 30
-	}
-	if = {
-		limit = { has_trait = sickly }
-		add = 30
-	}
-	if = {
-		limit = { has_trait = infirm }
-		add = 30
-	}
-	if = {
-		limit = { has_trait = incapable }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = leper }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = dysentery }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = ergotism }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = wounded_1 }
-		add = 20
-	}
-	if = {
-		limit = { has_trait = wounded_2 }
-		add = 30
-	}
-	if = {
-		limit = { has_trait = wounded_3 }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = ill }
-		add = 20
-	}
-	if = {
-		limit = { has_trait = pneumonic }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = gout_ridden }
-		add = 30
-	}
-	if = {
-		limit = { has_trait = typhus }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = consumption }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = cancer }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = great_pox }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = smallpox }
-		add = 30
-	}
-	if = {
-		limit = { has_trait = bubonic_plague }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = lovers_pox }
-		add = 30
-	}
-	if = {
-		limit = { has_trait = early_great_pox }
-		add = 30
-	}
-	if = {
-		limit = { has_trait = great_pox }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = possessed_genetic }
-		add = 20
-	}
-	if = {
-		limit = { has_trait = bubonic_plague }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = measles }
-		add = 50
-	}
-	if = {
-		limit = { current_weight >= 25 }
-		add = 10
-	}
-	if = {
-		limit = { current_weight >= 50 }
-		add = 10
-	}
-	if = {
-		limit = { current_weight <= -25 }
-		add = 10
-	}
-	if = {
-		limit = { current_weight <= -50 }
-		add = 10
-	}
-}
-
-purify_price_value = {
-	value = 0
-	if = {
-		limit = { has_trait = albino }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = lisping }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = stuttering }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = giant }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = scaly }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = clubfooted }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = dwarf }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = hunchbacked }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = infertile }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = wheezing }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = spindly }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = bleeder }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = weak }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = dull }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = beauty_bad_1 }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = beauty_bad_2 }
-		add = 75
-	}
-	if = {
-		limit = { has_trait = beauty_bad_3 }
-		add = 100
-	}
-	if = {
-		limit = { has_trait = intellect_bad_1 }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = intellect_bad_2 }
-		add = 75
-	}
-	if = {
-		limit = { has_trait = intellect_bad_3 }
-		add = 100
-	}
-	if = {
-		limit = { has_trait = physique_bad_1 }
-		add = 50
-	}
-	if = {
-		limit = { has_trait = physique_bad_2 }
-		add = 75
-	}
-	if = {
-		limit = { has_trait = physique_bad_3 }
-		add = 100
-	}
-	if = {
-		limit = { has_trait = inbred }
-		add = 50
-	}
-}
-
-honor_price_value = {
-	value = 0
-	if = {
-		limit = {
-			has_trait = witch
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = witch }
-		}
-		add = 25
-	}
-	if = {
-		limit = {
-			has_trait = deviant
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = deviant }
-		}
-		add = 25
-	}
-	if = {
-		limit = {
-			has_trait = cannibal
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = cannibal }
-		}
-		add = 25
-	}
-	if = {
-		limit = {
-			has_trait = deviant
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = deviant }
-		}
-		add = 25
-	}
-	if = {
-		limit = {
-			has_trait = adulterer
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = adulterer }
-		}
-		add = 20
-	}
-	if = {
-		limit = {
-			has_trait = sodomite
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = sodomite }
-		}
-		add = 20
-	}
-	if = {
-		limit = {
-			has_trait = incestuous
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = incestuous }
-		}
-		add = 25
-	}
-	if = {
-		limit = {
-			has_trait = fornicator
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = fornicator }
-		}
-		add = 10
-	}
-	if = {
-		limit = {
-			has_trait = kinslayer_1
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = kinslayer1 }
-		}
-		add = 25
-	}
-	if = {
-		limit = {
-			has_trait = kinslayer_2
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = kinslayer2 }
-		}
-		add = 20
-	}
-	if = {
-		limit = {
-			has_trait = kinslayer_3
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = kinslayer3 }
-		}
-		add = 15
-	}
-	if = {
-		limit = {
-			has_trait = murderer
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = murderer }
-		}
-		add = 10
-	}
-	if = {
-		limit = {
-			has_trait = lifestyle_prostitute
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = lifestyle_prostitute }
-		}
-		add = 10
-	}
-}

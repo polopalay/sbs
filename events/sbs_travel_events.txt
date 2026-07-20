@@ -1403,7 +1403,7 @@ sbs_travel.0201 = {
 		if = {
 			limit = { NOR = { has_trait = deviant any_secret = { type = secret_deviant } } }
 			if = {
-				limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = deviant } }
+				limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:deviant } }
 				add_secret = { type = secret_deviant }
 			}
 			else = {
@@ -1433,7 +1433,7 @@ sbs_travel.0202 = {
 		if = {
 			limit = { NOR = { has_trait = deviant any_secret = { type = secret_deviant } } }
 			if = {
-				limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = deviant } }
+				limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:deviant } }
 				add_secret = { type = secret_deviant }
 			}
 			else = {
@@ -1464,7 +1464,7 @@ sbs_travel.0203 = {
 		if = {
 			limit = { NOR = { has_trait = deviant any_secret = { type = secret_deviant } } }
 			if = {
-				limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = deviant } }
+				limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:deviant } }
 				add_secret = { type = secret_deviant }
 			}
 			else = {

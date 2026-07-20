@@ -26,6 +26,7 @@
 			age >= 18
 		}
 		scope:recipient = {
+			faith.religious_head = scope:recipient
 			faith.religion = religion:demonic_religion
 			NOT = { has_character_modifier = sbs_debuff }
 		}

@@ -1,25 +1,16 @@
-is_valid_construction_alchemy3_trigger = {
+is_valid_construction_alchemy_trigger = {
 	OR = {
-		any_held_title = {
-			any_county_province = {
-				has_building_or_higher = alchemy3
-			}
-		}
-		AND = {
-			has_trait_xp = {
-				trait = sbs_succubus
-				track = corruption
-				value >= 100
-			}
-			has_trait_xp = {
-				trait = sbs_succubus
-				track = loyalty
-				value >= 66
-			}
-		}
-
+		any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy1 } }
+		any_realm_county = { any_county_province = { has_building_or_higher = alchemy2 } }
+		any_county_in_region = { any_county_province = { has_building_or_higher = alchemy3 } }
 	}
-
+}
+is_valid_construction_brothel_trigger = {
+	OR = {
+		any_sub_realm_county = { any_county_province = { has_building_or_higher = brothel1 } }
+		any_realm_county = { any_county_province = { has_building_or_higher = brothel2 } }
+		any_county_in_region = { any_county_province = { has_building_or_higher = brothel3 } }
+	}
 }
 
 have_devil_nicknames_trigger = {

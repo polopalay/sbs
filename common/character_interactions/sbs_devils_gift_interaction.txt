@@ -6,17 +6,15 @@ sbs_devils_gift_interaction = {
 	cooldown_against_recipient = { years = 2 }
 	common_interaction = yes
 	is_shown = {
-		scope:actor = {
-			has_trait_with_flag = sbs_demon_trait
-		}
+		scope:actor = { has_trait_with_flag = sbs_demon_trait }
 	}
 	is_valid = {
 		scope:actor = {
 			OR = {
 				has_trait = sbs_demon
 				has_trait = sbs_succubus
-				has_trait_xp = { trait = sbs_lesser_succubus track = daring value >= 25 }
-				has_trait_xp = { trait = sbs_lesser_demon value >= 100 }
+				has_trait_xp = { trait = sbs_lesser_succubus track = power value >= 25 }
+				has_trait_xp = { trait = sbs_lesser_demon value >= 50 }
 			}
 		}
 	}
@@ -27,38 +25,17 @@ sbs_devils_gift_interaction = {
 	}
 	send_option = {
 		is_shown = { scope:actor = { OR = { has_trait = sbs_demon has_trait = sbs_succubus } } scope:recipient = { is_ruler = no has_trait_with_flag = sbs_demon_trait } }
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+			}
+		}
 		flag = game_concept_ruler
 		localization = game_concept_ruler
 	}
 	send_option = {
-		is_shown = { scope:actor = { is_ai = no } scope:actor != scope:recipient }
-		flag = dna
-		localization = DNA_MODIFIERS
-	}
-	send_option = {
-		is_shown = { scope:recipient = { is_adult = yes has_trait_rank = { trait = education_learning rank < 5 } } }
-		flag = education_learning
-		localization = trait_education_learning
-	}
-	send_option = {
-		is_shown = { scope:recipient = { is_adult = yes has_trait_rank = { trait = education_martial rank < 5 } } }
-		flag = education_martial
-		localization = trait_education_martial
-	}
-	send_option = {
-		is_shown = { scope:recipient = { is_adult = yes has_trait_rank = { trait = education_intrigue rank < 5 } } }
-		flag = education_intrigue
-		localization = trait_education_intrigue
-	}
-	send_option = {
-		is_shown = { scope:recipient = { is_adult = yes has_trait_rank = { trait = education_diplomacy rank < 5 } } }
-		flag = education_diplomacy
-		localization = trait_education_diplomacy
-	}
-	send_option = {
-		is_shown = { scope:recipient = { is_adult = yes has_trait_rank = { trait = education_stewardship rank < 5 } } }
-		flag = education_stewardship
-		localization = trait_education_stewardship
+		flag = sbs_buff
+		localization = sbs_buff
 	}
 	send_option = {
 		is_shown = { scope:recipient = { has_character_modifier = sbs_seal } }
@@ -66,19 +43,95 @@ sbs_devils_gift_interaction = {
 		localization = sbs_seal
 	}
 	send_option = {
-		flag = sbs_buff
-		localization = sbs_buff
+		is_shown = {
+			scope:recipient = {
+				NOR = {
+					any_secret = { secret_type = secret_deviant }
+					has_trait  = deviant
+				}
+			}
+		}
+		flag = deviant
+		localization = trait_deviant
+	}
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				NOR = {
+					any_secret = { secret_type = secret_witch }
+					has_trait  = witch
+				}
+			}
+		}
+		flag = witch
+		localization = trait_witch
+	}
+	send_option = {
+		is_shown = { scope:recipient = { has_trait_rank = { trait = intellect_good rank < 3 } } }
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy2 } }
+			}
+		}
+		flag = intellect_good
+		localization = trait_intellect_good
+	}
+	send_option = {
+		is_shown = { scope:recipient = { is_adult = yes has_trait_rank = { trait = education_learning rank < 5 } } }
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+			}
+		}
+		flag = education_learning
+		localization = trait_education_learning
+	}
+	send_option = {
+		is_shown = { scope:recipient = { is_adult = yes has_trait_rank = { trait = education_martial rank < 5 } } }
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+			}
+		}
+		flag = education_martial
+		localization = trait_education_martial
+	}
+	send_option = {
+		is_shown = { scope:recipient = { is_adult = yes has_trait_rank = { trait = education_intrigue rank < 5 } } }
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+			}
+		}
+		flag = education_intrigue
+		localization = trait_education_intrigue
+	}
+	send_option = {
+		is_shown = { scope:recipient = { is_adult = yes has_trait_rank = { trait = education_diplomacy rank < 5 } } }
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+			}
+		}
+		flag = education_diplomacy
+		localization = trait_education_diplomacy
+	}
+	send_option = {
+		is_shown = { scope:recipient = { is_adult = yes has_trait_rank = { trait = education_stewardship rank < 5 } } }
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+			}
+		}
+		flag = education_stewardship
+		localization = trait_education_stewardship
 	}
 	send_options_exclusive = yes
 	on_accept = {
 		scope:actor = {
 			if = {
 				limit = { has_trait = sbs_lesser_succubus }
-				add_trait_xp = { trait = sbs_lesser_succubus track = daring value = -10 }
-			}
-			else_if = {
-				limit = { has_trait = sbs_lesser_succubus }
-				add_trait_xp = { trait = sbs_lesser_succubus value = -25 }
+				add_trait_xp = { trait = sbs_lesser_succubus track = power value = -25 }
 			}
 			else_if = {
 				limit = { has_trait = sbs_lesser_demon }
@@ -109,7 +162,7 @@ sbs_devils_gift_interaction = {
 					create_character = {
 						age = 0
 						employer = scope:actor
-						location = scope:actor.location
+						#location = scope:actor.location
 						mother = scope:mother
 						father = scope:father
 						dynasty_house = scope:actor.house
@@ -127,40 +180,50 @@ sbs_devils_gift_interaction = {
 					}
 				}
 				0 = {
-					modifier = { scope:dna = yes add = 40 }
-					scope:actor = { copy_inheritable_appearance_from = scope:recipient }
-				}
-				0 = {
-					modifier = { scope:education_learning = yes add = 10 }
-					change_trait_rank = { trait = education_learning rank = 1 }
-				}
-				0 = {
-					modifier = { scope:education_martial = yes add = 10 }
-					change_trait_rank = { trait = education_martial rank = 1 }
-				}
-				0 = {
-					modifier = { scope:education_intrigue = yes add = 10 }
-					change_trait_rank = { trait = education_intrigue rank = 1 }
-				}
-				0 = {
-					modifier = { scope:education_diplomacy = yes add = 10 }
-					change_trait_rank = { trait = education_diplomacy rank = 1 }
-				}
-				0 = {
-					modifier = { scope:education_stewardship = yes add = 10 }
-					change_trait_rank = { trait = education_stewardship rank = 1 }
-				}
-				0 = {
-					modifier = { scope:sbs_buff = yes add = 5 }
+					modifier = { scope:sbs_buff = yes NOT = { has_character_modifier = sbs_generals } add = 5 }
+					modifier = { scope:sbs_buff = yes NOT = { has_character_modifier = sbs_generals } is_valid_construction_alchemy_trigger = yes add = 15 }
 					add_character_modifier = { modifier = sbs_generals years = 50 }
 				}
 				0 = {
 					modifier = { scope:sbs_buff = yes add = 10 }
+					modifier = { scope:sbs_buff = yes is_valid_construction_alchemy_trigger = yes add = 20 }
 					add_character_modifier = { modifier = sbs_buff years = 100 }
 				}
 				0 = {
 					modifier = { scope:sbs_seal = yes add = 40 }
 					remove_character_modifier = sbs_seal
+				}
+				0 = {
+					modifier = { scope:deviant = yes add = 40 }
+					add_trait = deviant
+				}
+				0 = {
+					modifier = { scope:witch = yes add = 40 }
+					add_trait = witch
+				}
+				0 = {
+					modifier = { scope:intellect_good = yes add = 5 }
+					change_trait_rank = { trait = intellect_good rank = 1 }
+				}
+				0 = {
+					modifier = { scope:education_learning = yes add = 5 }
+					change_trait_rank = { trait = education_learning rank = 1 }
+				}
+				0 = {
+					modifier = { scope:education_martial = yes add = 5 }
+					change_trait_rank = { trait = education_martial rank = 1 }
+				}
+				0 = {
+					modifier = { scope:education_intrigue = yes add = 5 }
+					change_trait_rank = { trait = education_intrigue rank = 1 }
+				}
+				0 = {
+					modifier = { scope:education_diplomacy = yes add = 5 }
+					change_trait_rank = { trait = education_diplomacy rank = 1 }
+				}
+				0 = {
+					modifier = { scope:education_stewardship = yes add = 5 }
+					change_trait_rank = { trait = education_stewardship rank = 1 }
 				}
 			}
 		}
@@ -177,10 +240,9 @@ sbs_devils_gift_interaction = {
 	}
 	ai_potential = { always = yes }
 	ai_will_do = {
-		base = 0
-		modifier = { add = 25 scope:recipient = scope:actor scope:actor = { NOT = { has_trait = sbs_demon } } }
+		base = 1
 		modifier = { add = 25 scope:actor = { has_trait = sbs_demon } scope:recipient.dynasty = scope:actor.dynasty }
 		modifier = { add = 25 scope:actor = { has_trait = sbs_demon } scope:recipient = scope:actor }
-		modifier = { add = 100 scope:recipient = { has_trait = sbs_lesser_demon } }
+		modifier = { add = 100 scope:recipient = { has_trait = sbs_lesser_demon NOT = { has_character_modifier = sbs_generals } } }
 	}
 }
