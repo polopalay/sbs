@@ -3,6 +3,7 @@
 	desc = carn_free_slave_interaction.desc
 	common_interaction = yes
 	is_shown = {
+		scope:recipient != scope:actor
 		scope:recipient = {
 			has_trait = slave
 			has_relation_slave_owner = scope:actor
@@ -10,12 +11,48 @@
 		}
 	}
 	localization_values = {
+		EXTORTIONATE_RANSOM_COST = scope:recipient.carn_slave_price_value
 		RANSOM_COST = scope:recipient.carn_slave_price_value
-		CURRENT_GOLD = scope:recipient.carn_slave_price_value
+		CURRENT_GOLD = scope:recipient.gold
 	}
 	send_option = {
 		is_shown = {
 			scope:recipient != scope:actor
+			scope:actor = { dynasty ?= { has_dynasty_perk = fp1_pillage_legacy_3 } }
+			scope:recipient ?= {
+				gold >= {
+					value = scope:recipient.carn_slave_price_value
+					multiply = 1.5
+				}
+			}
+		}
+		flag = extortionate_gold
+		localization = "RANSOM_EXTORTIONATE_GOLD_OPTION"
+	}
+	send_option = {
+		is_shown = {
+			scope:recipient != scope:actor
+			scope:actor = { dynasty ?= { has_dynasty_perk = fp1_pillage_legacy_3 } }
+			scope:recipient ?= {
+				gold < {
+					value = scope:recipient.carn_slave_price_value
+					multiply = 1.5
+				}
+				gold >= 1
+			}
+		}
+		flag = extortionate_current_gold
+		localization = "RANSOM_EXTORTIONATE_CURRENT_GOLD_OPTION"
+	}
+	send_option = {
+		is_shown = {
+			scope:recipient != scope:actor
+			scope:actor = {
+				OR = {
+					is_lowborn = yes
+					NOT = { dynasty = { has_dynasty_perk = fp1_pillage_legacy_3 } }
+				}
+			}
 			scope:recipient ?= { gold >= scope:recipient.carn_slave_price_value }
 		}
 		flag = gold
@@ -24,22 +61,46 @@
 	send_option = {
 		is_shown = {
 			scope:recipient != scope:actor
-			scope:recipient ?= { gold >= 1 gold < scope:recipient.carn_slave_price_value }
+			scope:actor = {
+				OR = {
+					is_lowborn = yes
+					NOT = { dynasty = { has_dynasty_perk = fp1_pillage_legacy_3 } }
+				}
+			}
+			scope:recipient ?= {
+				gold < scope:recipient.carn_slave_price_value
+				gold >= 1
+			}
 		}
 		flag = current_gold
 		localization = "RANSOM_CURRENT_GOLD_OPTION"
+	}
+	send_option = {
+		is_shown = { scope:recipient != scope:actor }
+		is_valid = { scope:recipient = { has_usable_hook = scope:actor } }
+		flag = hook
+		localization = GENERIC_SPEND_A_HOOK
+	}
+	send_option = {
+		is_shown = { scope:recipient != scope:actor }
+		is_valid = {
+			scope:actor = {
+				can_add_hook = { target = scope:recipient type = favor_hook }
+			}
+		}
+		flag = favor
+		localization = "RANSOM_FAVOR_OPTION"
 	}
 	send_option = {
 		flag = demand_conversion
 		localization = "RELEASE_DEMAND_CONVERSION"
 		is_shown = {
 			scope:recipient != scope:actor
+			NOT = { scope:recipient.faith = scope:actor.faith }
 		}
 		is_valid = {
-			NOT = { scope:recipient.faith = scope:actor.faith }
 			custom_description = {
 				text = cannot_demand_religious_head_conversion
-				subject = scope:actor
 				NOT = {
 					AND = {
 						exists = scope:recipient.faith.religious_head
@@ -47,59 +108,82 @@
 					}
 				}
 			}
+			custom_description = {
+				text = cannot_demand_holy_order_master_conversion
+				NAND = {
+					exists = scope:recipient.faith
+					scope:recipient.faith = {
+						any_faith_holy_order = { leader = scope:recipient }
+					}
+				}
+			}
 		}
 	}
-	
 	send_option = {
-		is_shown = {
-			scope:recipient != scope:actor
+		is_shown = { scope:recipient != scope:actor }
+		is_valid = {
+			scope:recipient = {
+				any_secret = { NOT = { is_known_by = scope:actor } }
+			}
 		}
-		flag = gain_hook
-		localization = "RELEASE_GAIN_HOOK"
+		flag = expose_secret
+		localization = expose_secret_interaction
 	}
-	
 	send_options_exclusive = no
 	on_accept = {
 		scope:recipient = {
 			if = {
-				limit = { scope:gold = yes }
+				limit = { scope:extortionate_gold = yes }
 				pay_short_term_gold = {
-					gold = scope:recipient.carn_slave_price_value
 					target = scope:actor
+					gold = {
+						value = scope:recipient.carn_slave_price_value
+						multiply = 1.5
+					}
 				}
 			}
-
+			if = {
+				limit = { scope:extortionate_current_gold = yes }
+				pay_short_term_gold = { target = scope:actor gold = scope:recipient.current_gold_value }
+			}
+			if = {
+				limit = { scope:gold = yes }
+				pay_short_term_gold = { target = scope:actor gold = scope:recipient.carn_slave_price_value }
+			}
 			if = {
 				limit = { scope:current_gold = yes }
-				pay_short_term_gold = {
-					gold = scope:recipient.current_gold_value
-					target = scope:actor
-				}
+				pay_short_term_gold = { target = scope:actor gold = scope:recipient.current_gold_value }
 			}
-
+			if = {
+				limit = { scope:hook = yes has_hook = scope:actor }
+				use_hook = scope:actor
+			}
 			if = {
 				limit = { scope:demand_conversion = yes }
-				set_character_faith = scope:actor.faith
+				set_character_faith_with_conversion = scope:actor.faith
 				add_opinion = { modifier = demanded_my_conversion_opinion target = scope:actor }
 			}
-		
 			if = {
-				limit = { scope:gain_hook = yes }
-				add_opinion = { modifier = demanded_hook target = scope:owner }
-				scope:actor = {
-					add_hook = { target = scope:slave type = favor_hook }
+				limit = { scope:expose_secret = yes }
+				random_secret = {
+					limit = { NOT = { is_known_by = scope:actor } }
+					reveal_to = scope:actor
 				}
 			}
 			carn_free_slave_effect = yes
+		}
+		scope:actor = {
+			if = {
+				limit = { scope:favor = yes }
+				add_hook = { target = scope:recipient type = favor_hook }
+			}
 		}
 	}
 	ai_targets = {
 		ai_recipients = self
 		ai_recipients = scripted_relations
 	}
-	auto_accept = {
-		scope:recipient = scope:actor
-	}
+	auto_accept = { scope:recipient = scope:actor }
 	ai_potential = { always = yes }
 	ai_frequency = 12
 	ai_accept = {
@@ -118,6 +202,13 @@
 			add = 100
 			desc = "WANTS_FREEDOM_REASON"
 		}
+		modifier = { add = -15 scope:extortionate_gold = yes }
+		modifier = { add = -15 scope:extortionate_current_gold = yes }
+		modifier = { add = -10 scope:gold = yes }
+		modifier = { add = -10 scope:current_gold = yes }
+		modifier = { add = -10 scope:hook = yes }
+		modifier = { add = -10 scope:favor = yes }
+		modifier = { add = -5 scope:expose_secret = yes }
 		modifier = {
 			scope:recipient = { ai_zeal <= 20 }
 			scope:demand_conversion = yes
@@ -140,33 +231,30 @@
 					}
 					multiply = -1
 				}
-				else = {
-					multiply = -2
-				}
+				else = { multiply = -2 }
 			}
 			desc = "CONVERSION_NEGATIVE_REASON"
-		}
-		modifier = {
-			add = {
-				value = -50
-				if = {
-					limit = { scope:recipient = { ai_vengefulness > 0 } }
-					subtract = ai_vengefulness
-				}
-			}
-			scope:gain_hook = yes
-			desc = "GAIN_HOOK_NEGATIVE_REASON"
 		}
 	}
 	ai_will_do = {
 		base = 0
 		modifier = {
-			add = -40
-			scope:actor = {
-				NOT = {
-					has_trait = forgiving
-				}
+			factor = 0
+			scope:recipient != scope:actor
+			NOR = {
+				scope:extortionate_gold = yes
+				scope:extortionate_current_gold = yes
+				scope:gold = yes
+				scope:current_gold = yes
+				scope:hook = yes
+				scope:favor = yes
+				scope:demand_conversion = yes
+				scope:expose_secret = yes
 			}
+		}
+		modifier = {
+			add = -40
+			scope:actor = { NOT = { has_trait = forgiving } }
 			scope:recipient = {
 				OR = {
 					has_relation_rival = scope:actor
@@ -193,15 +281,8 @@
 				}
 			}
 		}
-		modifier = {
-			add = 10
-			scope:actor = { ai_compassion >= low_positive_ai_value }
-			scope:recipient = { is_adult = no }
-		}
-		modifier = {
-			add = 10
-			scope:actor = { ai_compassion >= very_high_positive_ai_value }
-		}
+		modifier = { add = 10 scope:actor = { ai_compassion >= low_positive_ai_value } scope:recipient = { is_adult = no } }
+		modifier = { add = 10 scope:actor = { ai_compassion >= very_high_positive_ai_value } }
 		modifier = {
 			add = 10
 			scope:actor = {
@@ -209,10 +290,7 @@
 					ai_compassion >= very_high_positive_ai_value
 					AND = {
 						ai_compassion >= high_negative_ai_value
-						opinion = {
-							target = scope:recipient
-							value >= low_negative_opinion
-						}
+						opinion = { target = scope:recipient value >= low_negative_opinion }
 					}
 				}
 			}
@@ -228,13 +306,8 @@
 		}
 		modifier = {
 			add = 40
-			scope:actor = {
-				is_at_war = no
-				ai_compassion >= very_high_negative_ai_value
-			}
-			scope:recipient = {
-				is_child_of = scope:actor
-			}
+			scope:actor = { is_at_war = no ai_compassion >= very_high_negative_ai_value }
+			scope:recipient = { is_child_of = scope:actor }
 		}
 	}
 }

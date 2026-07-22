@@ -18,7 +18,7 @@ sbs_devils_curse_interaction = {
 			}
 		}
 	}
-	is_valid = {
+	is_valid_showing_failures_only = {
 		scope:actor = {
 			OR = {
 				has_trait = sbs_demon

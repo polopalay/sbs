@@ -7,46 +7,92 @@
 	common_interaction = yes
 	is_shown = {
 		NOT = { has_global_variable = seal_the_gates_of_hell }
-		scope:recipient = {
-			NOT = { has_trait_with_flag = sbs_demon_trait }
-		}
-		scope:actor = {
-			OR = {
-				has_trait = sbs_demon
-				has_trait = sbs_succubus
-			}
-		}
+		scope:recipient = { NOT = { has_trait_with_flag = sbs_demon_trait } }
+		scope:actor = { OR = { has_trait = sbs_demon has_trait = sbs_succubus } }
 	}
-	is_valid = {
-		scope:recipient = {
-			age >= 18
-		}
+	is_valid_showing_failures_first = {
+		scope:recipient = { age >= 18 }
 		scope:actor = {
-			faith.religious_head = scope:actor
-			faith.religion = religion:demonic_religion
+			trigger_if = {
+				scope:recipient = { is_female = yes }
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = brothel3 } }
+			}
+			trigger_if = {
+				scope:recipient = { is_female = no }
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+			}
 			NOT = { has_character_modifier = sbs_debuff }
 		}
 	}
 	localization_values = {
-		RANSOM_COST = massive_gold_value
+		EXTORTIONATE_RANSOM_COST = scope:recipient.increased_ransom_cost_value
+		RANSOM_COST = scope:recipient.increased_ransom_cost_value
 	}
 	send_option = {
-		is_valid = { scope:recipient ?= { gold >= massive_gold_value } }
+		is_shown = {
+			NOT = { scope:actor = scope:recipient }
+			scope:actor = {
+				dynasty ?= { has_dynasty_perk = fp1_pillage_legacy_3 }
+			}
+			scope:recipient ?= { gold >= scope:recipient.increased_ransom_cost_value }
+		}
+		flag = extortionate_gold
+		localization = "RANSOM_EXTORTIONATE_GOLD_OPTION"
+	}
+	send_option = {
+		is_shown = {
+			NOT = { scope:actor = scope:recipient }
+			scope:actor = {
+				dynasty ?= { has_dynasty_perk = fp1_pillage_legacy_3 }
+			}
+			scope:recipient ?= {
+				gold < scope:recipient.increased_ransom_cost_value
+				gold >= 1
+			}
+		}
+		flag = extortionate_current_gold
+		localization = "RANSOM_EXTORTIONATE_CURRENT_GOLD_OPTION"
+	}
+	send_option = {
+		is_shown = {
+			NOT = { scope:actor = scope:recipient }
+			scope:actor = {
+				OR = {
+					is_lowborn = yes
+					NOT = { dynasty = { has_dynasty_perk = fp1_pillage_legacy_3 } }
+				}
+			}
+			scope:recipient ?= { gold >= scope:recipient.increased_ransom_cost_value }
+		}
 		flag = gold
 		localization = "RANSOM_GOLD_OPTION"
 	}
 	send_option = {
-		is_valid = {
-			scope:recipient = {
-				has_usable_hook = scope:actor
+		is_shown = {
+			NOT = { scope:actor = scope:recipient }
+			scope:actor = {
+				OR = {
+					is_lowborn = yes
+					NOT = { dynasty = { has_dynasty_perk = fp1_pillage_legacy_3 } }
+				}
+			}
+			scope:recipient ?= {
+				gold < scope:recipient.increased_ransom_cost_value
+				gold >= 1
 			}
 		}
+		flag = current_gold
+		localization = "RANSOM_CURRENT_GOLD_OPTION"
+	}
+	send_option = {
+		is_shown = { NOT = { scope:actor = scope:recipient } }
+		is_valid = { scope:recipient = { has_usable_hook = scope:actor } }
 		flag = hook
 		localization = GENERIC_SPEND_A_HOOK
 	}
 	send_option = {
+		is_shown = { NOT = { scope:actor = scope:recipient } }
 		is_valid = {
-			exists = scope:recipient
 			scope:actor = {
 				can_add_hook = {
 					target = scope:recipient
@@ -55,50 +101,212 @@
 			}
 		}
 		flag = favor
-		localization = "RANSOM_OWE_FAVOR_OPTION"
+		localization = "RANSOM_FAVOR_OPTION"
 	}
 	send_option = {
 		flag = demand_conversion
 		localization = "RELEASE_DEMAND_CONVERSION"
-		is_shown = {
-			NOT = { scope:actor.faith = scope:recipient.faith }
-		}
+		is_shown = { scope:recipient.faith != scope:actor.faith }
 		is_valid = {
-			# Cannot ask Religious Heads to convert
-			custom_description = {
-				text = cannot_demand_religious_head_conversion
-				NOT = {
-					AND = {
-						exists = scope:recipient.faith.religious_head
-						scope:recipient.faith.religious_head = scope:recipient
+			trigger_if = {
+				limit = { scope:actor = { is_ai = yes } }
+				scope:recipient = {
+					OR = {
+						is_close_or_extended_family_of = scope:actor
+						is_vassal_of = scope:actor
 					}
 				}
 			}
-			# Cannot ask Holy Order Master to convert
+			custom_description = {
+				text = cannot_demand_unsubordinate_landed_ruler_conversion
+				scope:recipient = {
+					trigger_if = {
+						limit = { is_playable_character = yes }
+						is_vassal_or_below_of = scope:actor
+					}
+				}
+			}
+			custom_description = {
+				text = cannot_demand_religious_head_conversion
+				NAND = {
+					exists = scope:recipient.faith.religious_head
+					scope:recipient.faith.religious_head = scope:recipient
+				}
+			}
 			custom_description = {
 				text = cannot_demand_holy_order_master_conversion
 				NAND = {
 					exists = scope:recipient.faith
-					scope:recipient.faith = {
-						any_faith_holy_order = { leader = scope:actor }
+					scope:recipient.faith = { any_faith_holy_order = { leader = scope:recipient } }
+				}
+			}
+		}
+	}
+	send_option = {
+		flag = renounce_claims
+		localization = RELEASE_RENOUNCE_CLAIMS
+		is_shown = {
+			custom_description = {
+				text = "release_renounce_claims"
+				subject = scope:recipient
+				scope:recipient = {
+					any_claim = {
+						explicit = yes
+						save_temporary_scope_as = temp_claim
+						OR = {
+							holder = scope:actor
+							AND = {
+								NOT = { prev = { target_is_liege_or_above = scope:actor } }
+								trigger_if = { limit = { exists = holder } holder = { target_is_liege_or_above = scope:actor } }
+							}
+							scope:actor = { any_held_title = { is_de_jure_liege_or_above_target = scope:temp_claim } }
+						}
 					}
 				}
 			}
 		}
+		current_description = { desc = RELEASE_RENOUNCE_CLAIMS_DESC }
+	}
+	send_option = {
+		flag = gain_hook
+		localization = "RELEASE_GAIN_HOOK"
+		is_shown = {
+			trigger_if = {
+				limit = { scope:actor = { is_ai = yes } }
+				scope:recipient = {
+					OR = {
+						is_vassal_of = scope:actor
+						liege ?= scope:actor
+					}
+				}
+			}
+		}
+		is_valid = {
+			scope:actor = {
+				can_add_hook = {
+					type = favor_hook
+					target = scope:recipient
+				}
+			}
+		}
+	}
+	send_option = {
+		flag = recruit
+		localization = "RELEASE_RECRUIT"
+		is_shown = {
+			trigger_if = {
+				limit = { scope:actor = { is_ai = yes } }
+				scope:recipient = {
+					OR = {
+						has_relation_best_friend = scope:actor
+						has_relation_friend = scope:actor
+						has_relation_lover = scope:actor
+						has_relation_soulmate = scope:actor
+						has_secret_relation_lover = scope:actor
+						is_heir_of = scope:actor
+					}
+				}
+			}
+			scope:recipient = {
+				is_ruler = no
+				NOT = { is_courtier_of = scope:actor }
+				OR = {
+					is_adult = yes
+					AND = {
+						is_adult = no
+						OR = {
+							trigger_if = { limit = { exists = liege } NOT = { is_heir_of = liege } }
+							NOT = { exists = liege }
+						}
+					}
+				}
+			}
+		}
+	}
+	send_option = {
+		flag = demand_admin
+		localization = "RELEASE_DEMAND_ADMIN"
+		is_shown = {
+			scope:actor = { government_allows = administrative }
+			scope:actor = scope:recipient.liege
+			scope:recipient = {
+				highest_held_title_tier >= tier_county
+				is_landed = yes
+				is_ruler = yes
+				NOT = { government_allows = administrative }
+				NOT = { government_has_flag = government_is_tribal }
+				NOT = { scope:recipient ?= scope:recipient.faith.religious_head }
+				NOT = { scope:recipient ?= scope:actor.diarch }
+			}
+		}
+		is_valid = { scope:recipient = { NOT = { government_allows = administrative } } }
 	}
 	send_options_exclusive = no
 	on_accept = {
 		scope:actor = {
 			if = {
-				limit = { scope:favor = yes }
-				add_hook = {
-					target = scope:recipient
-					type = favor_hook
-				}
+				limit = { OR = { scope:favor = yes scope:gain_hook = yes } }
+				add_hook = { target = scope:recipient type = favor_hook }
 			}
 			add_character_modifier = { modifier = sbs_debuff years = 25 }
 		}
 		scope:recipient = {
+			if = {
+				limit = { OR = { scope:gold = yes scope:extortionate_gold = yes } }
+				pay_short_term_gold = { target = scope:actor gold = scope:recipient.increased_ransom_cost_value }
+			}
+			if = {
+				limit = { OR = { scope:current_gold = yes scope:extortionate_current_gold = yes } }
+				pay_short_term_gold = { target = scope:actor gold = this.gold }
+			}
+			if = {
+				limit = { scope:hook = yes has_hook = scope:actor }
+				use_hook = scope:actor
+			}
+			if = {
+				limit = { scope:demand_conversion = yes }
+				set_character_faith_with_conversion = scope:actor.faith
+				add_opinion = { modifier = demanded_my_conversion_opinion target = scope:actor }
+			}
+			if = {
+				limit = { scope:renounce_claims = yes }
+				add_opinion = { modifier = demanded_claim_renouncement target = scope:actor }
+				every_claim = {
+					explicit = yes
+					limit = {
+						save_temporary_scope_as = temp_claim
+						OR = {
+							holder = scope:actor
+							AND = {
+								exists = holder
+								NOT = { prev = { target_is_liege_or_above = scope:actor } }
+								holder = { target_is_liege_or_above = scope:actor }
+							}
+							scope:actor = { any_held_title = { is_de_jure_liege_or_above_target = scope:temp_claim } }
+						}
+					}
+					scope:recipient = { remove_claim = prev }
+				}
+			}
+			if = {
+				limit = { scope:recruit = yes }
+				if = {
+					limit = { scope:actor = { culture = { has_cultural_parameter = can_recruit_prisoners_easily } } }
+					add_opinion = { modifier = loyal_servant target = scope:actor }
+					scope:actor = {
+						if = {
+							limit = { can_add_hook = { target = scope:recipient type = loyalty_hook } }
+							add_hook = { type = loyalty_hook target = scope:recipient }
+						}
+					}
+				}
+				else = { add_opinion = { modifier = demanded_recruitment target = scope:actor } }
+				scope:actor = { add_courtier = scope:recipient }
+			}
+			if = {
+				limit = { scope:demand_admin = yes }
+				change_to_administrative_effect = yes
+			}
 			if = {
 				limit = { is_female = yes }
 				add_trait = sbs_lesser_succubus
@@ -124,45 +332,29 @@
 				add_trait_xp = { trait = sbs_lesser_succubus track = corruption value = 100 }
 				add_trait_xp = { trait = sbs_lesser_succubus track = power value = 100 }
 			}
-			if = {
-				limit = {
-					scope:hook = yes
-					has_hook = scope:actor
-				}
-				use_hook = scope:actor
-			}
-			if = {
-				limit = { scope:gold = yes }
-				pay_short_term_gold = { target = scope:actor gold = scope:recipient.deal_price_value }
-			}
-			if = {
-				limit = { scope:demand_conversion = yes }
-				set_character_faith_with_conversion = scope:actor.faith
-			}
 		}
 	}
 	ai_accept = {
 		base = 20
-		opinion_modifier = {
-			opinion_target = scope:actor
-			who = scope:recipient
-			multiplier = 0.25
-		}
+		opinion_modifier = { opinion_target = scope:actor who = scope:recipient multiplier = 0.25 }
+		modifier = { add = -5 OR = { scope:gold = yes scope:extortionate_gold = yes } }
+		modifier = { add = -3 OR = { scope:current_gold = yes scope:extortionate_current_gold = yes } }
+		modifier = { add = -3 scope:hook = yes }
+		modifier = { add = -3 scope:favor = yes }
+		modifier = { add = -3 scope:gain_hook = yes }
+		modifier = { add = -5 scope:demand_conversion = yes }
+		modifier = { add = -3 scope:renounce_claims = yes }
+		modifier = { add = -2 scope:recruit = yes }
+		modifier = { add = -4 scope:demand_admin = yes }
 		modifier = { add = 10 scope:actor.faith = scope:recipient.faith }
 		modifier = { add = 10 scope:actor.culture = scope:recipient.culture }
-		modifier = { add = -5 scope:hook = yes }
-		modifier = { add = -5 scope:gold = yes }
-		modifier = { add = -5 scope:favor = yes }
 		modifier = { add = -20 scope:demand_conversion = yes scope:recipient = { has_trait = zealous } }
 		modifier = { add = -20 scope:demand_conversion = yes scope:recipient.primary_title.tier = tier_kingdom }
 		modifier = { add = -40 scope:demand_conversion = yes scope:recipient.primary_title.tier = tier_empire }
 		modifier = { add = -80 scope:demand_conversion = yes scope:recipient.primary_title.tier = tier_hegemony }
 	}
 	ai_frequency = 12
-	ai_targets = {
-		ai_recipients = family
-		max = 10
-	}
+	ai_targets = { ai_recipients = family max = 10 }
 	ai_targets = {
 		ai_recipients = scripted_relations
 		ai_recipients = neighboring_rulers
@@ -172,6 +364,25 @@
 	ai_potential = { always = yes }
 	ai_will_do = {
 		base = 0
+
+		modifier = {
+			factor = 0
+			NOT = { scope:actor = scope:recipient }
+			NOR = {
+				scope:extortionate_gold = yes
+				scope:extortionate_current_gold = yes
+				scope:gold = yes
+				scope:current_gold = yes
+				scope:hook = yes
+				scope:favor = yes
+				scope:gain_hook = yes
+				scope:demand_conversion = yes
+				scope:renounce_claims = yes
+				scope:recruit = yes
+				scope:demand_admin = yes
+			}
+		}
+
 		modifier = { add = 25 scope:recipient = { is_child_of = scope:actor } }
 		modifier = { add = 10 scope:recipient = { is_close_or_extended_family_of = scope:actor } }
 	}

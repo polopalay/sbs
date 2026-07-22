@@ -26,7 +26,7 @@
 		}
 	}
 
-	is_valid = {
+	is_valid_showing_failures_only = {
 		scope:actor = {
 			any_courtier = {
 				OR = {

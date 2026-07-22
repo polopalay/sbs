@@ -1,7 +1,7 @@
 brothel1 = {
 	type_icon = "icon_brothel.dds"
 	construction_time = slow_construction_time
-	cost = { gold = expensive_building_tier_3_cost }
+	cost = { gold = expensive_building_tier_6_cost prestige = expensive_building_tier_1_cost }
 	type = duchy_capital
 
 	next_building = brothel2
@@ -17,6 +17,9 @@ brothel1 = {
 	}
 	show_disabled = yes
 
+	character_modifier = {
+		years_of_fertility = 25
+	}
 	province_modifier = {
 		monthly_income = 0.1
 	}
@@ -24,13 +27,27 @@ brothel1 = {
 		tax_mult = 0.01
 	}
 
-	ai_value = { base = 100 }
+	ai_value = {
+		base = 0
+		modifier = {
+			add = 10
+			scope:holder = {
+				has_trait_with_flag = sbs_demon_trait
+			}
+		}
+		modifier = {
+			add = 100
+			scope:holder = {
+				has_trait = sbs_lesser_succubus
+			}
+		}
+	}
 }
 
 brothel2 = {
 	type_icon = "icon_brothel.dds"
 	construction_time = slow_construction_time
-	cost = { gold = expensive_building_tier_4_cost }
+	cost = { gold = expensive_building_tier_7_cost prestige = expensive_building_tier_2_cost }
 	type = duchy_capital
 
 	next_building = brothel3
@@ -45,6 +62,9 @@ brothel2 = {
 		}
 	}
 
+	character_modifier = {
+		years_of_fertility = 50
+	}
 	province_modifier = {
 		monthly_income = 0.2
 	}
@@ -52,13 +72,27 @@ brothel2 = {
 		tax_mult = 0.02
 	}
 
-	ai_value = { base = 100 }
+	ai_value = {
+		base = 0
+		modifier = {
+			add = 10
+			scope:holder = {
+				has_trait_with_flag = sbs_demon_trait
+			}
+		}
+		modifier = {
+			add = 100
+			scope:holder = {
+				has_trait = sbs_lesser_succubus
+			}
+		}
+	}
 }
 
 brothel3 = {
 	type_icon = "icon_brothel.dds"
 	construction_time = slow_construction_time
-	cost = { gold = expensive_building_tier_5_cost }
+	cost = { gold = expensive_building_tier_8_cost prestige = expensive_building_tier_3_cost }
 	type = duchy_capital
 
 	can_construct_potential = {
@@ -71,6 +105,9 @@ brothel3 = {
 		}
 	}
 
+	character_modifier = {
+		years_of_fertility = 100
+	}
 	province_modifier = {
 		monthly_income = 0.25
 	}
@@ -78,13 +115,27 @@ brothel3 = {
 		tax_mult = 0.025
 	}
 
-	ai_value = { base = 100 }
+	ai_value = {
+		base = 0
+		modifier = {
+			add = 10
+			scope:holder = {
+				has_trait_with_flag = sbs_demon_trait
+			}
+		}
+		modifier = {
+			add = 100
+			scope:holder = {
+				has_trait = sbs_lesser_succubus
+			}
+		}
+	}
 }
 
 alchemy1 = {
 	type_icon = "icon_alchemy.dds"
 	construction_time = slow_construction_time
-	cost = { gold = expensive_building_tier_3_cost }
+	cost = { gold = expensive_building_tier_6_cost piety = expensive_building_tier_1_cost }
 	type = duchy_capital
 
 	next_building = alchemy2
@@ -98,18 +149,35 @@ alchemy1 = {
 		}
 	}
 
+	character_modifier = {
+		life_expectancy = 25
+	}
 	levy = 100
 	duchy_capital_county_modifier = {
 		levy_size = 0.1
 	}
 
-	ai_value = { base = 80 }
+	ai_value = {
+		base = 0
+		modifier = {
+			add = 10
+			scope:holder = {
+				has_trait_with_flag = sbs_demon_trait
+			}
+		}
+		modifier = {
+			add = 100
+			scope:holder = {
+				has_trait = sbs_lesser_demon
+			}
+		}
+	}
 }
 
 alchemy2 = {
 	type_icon = "icon_alchemy.dds"
 	construction_time = slow_construction_time
-	cost = { gold = expensive_building_tier_4_cost }
+	cost = { gold = expensive_building_tier_7_cost piety = expensive_building_tier_2_cost }
 	type = duchy_capital
 
 	next_building = alchemy3
@@ -123,18 +191,35 @@ alchemy2 = {
 		}
 	}
 
+	character_modifier = {
+		life_expectancy = 50
+	}
 	levy = 250
 	duchy_capital_county_modifier = {
 		levy_size = 0.2
 	}
 
-	ai_value = { base = 80 }
+	ai_value = {
+		base = 0
+		modifier = {
+			add = 10
+			scope:holder = {
+				has_trait_with_flag = sbs_demon_trait
+			}
+		}
+		modifier = {
+			add = 100
+			scope:holder = {
+				has_trait = sbs_lesser_demon
+			}
+		}
+	}
 }
 
 alchemy3 = {
 	type_icon = "icon_alchemy.dds"
 	construction_time = slow_construction_time
-	cost = { gold = expensive_building_tier_5_cost }
+	cost = { gold = expensive_building_tier_8_cost piety = expensive_building_tier_3_cost }
 	type = duchy_capital
 
 	can_construct_potential = {
@@ -146,11 +231,28 @@ alchemy3 = {
 		}
 	}
 
+	character_modifier = {
+		life_expectancy = 100
+	}
 	levy = 500
 	duchy_capital_county_modifier = {
 		levy_size = 0.25
 	}
 
-	ai_value = { base = 80 }
+	ai_value = {
+		base = 0
+		modifier = {
+			add = 10
+			scope:holder = {
+				has_trait_with_flag = sbs_demon_trait
+			}
+		}
+		modifier = {
+			add = 100
+			scope:holder = {
+				has_trait = sbs_lesser_demon
+			}
+		}
+	}
 }
 

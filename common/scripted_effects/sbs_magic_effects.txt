@@ -76,724 +76,291 @@ deal_with_the_devil_healing = {
 	$DEVIL$ = { save_scope_as = devil }
 	scope:dealer = {
 		if = {
-			limit = {
-			OR = {
-				$DRUNKARD$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = drunkard
-			}
+			limit = { $DRUNKARD$ = yes }
 			remove_trait = drunkard
 		}
 		if = {
-			limit = {
-			OR = {
-				$HASHISHIYAH$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = hashishiyah
-			}
+			limit = { $HASHISHIYAH$ = yes }
 			remove_trait = hashishiyah
 		}
 		if = {
-			limit = {
-			OR = {
-				$RAKISH$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = rakish
-			}
+			limit = { $RAKISH$ = yes }
 			remove_trait = rakish
 		}
 		if = {
-			limit = {
-			OR = {
-				$RECLUSIVE$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = reclusive
-			}
+			limit = { $RECLUSIVE$ = yes }
 			remove_trait = reclusive
 		}
 		if = {
-			limit = {
-			OR = {
-				$IRRITABLE$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = irritable
-			}
+			limit = { $IRRITABLE$ = yes }
 			remove_trait = irritable
 		}
 		if = {
-			limit = {
-			OR = {
-				$FLAGELLANT$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = flagellant
-			}
+			limit = { $FLAGELLANT$ = yes }
 			remove_trait = flagellant
 		}
 		if = {
-			limit = {
-			OR = {
-				$PROFLIGATE$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = profligate
-			}
+			limit = { $PROFLIGATE$ = yes }
 			remove_trait = profligate
 		}
 		if = {
-			limit = {
-			OR = {
-				$IMPROVIDENT$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = improvident
-			}
+			limit = { $IMPROVIDENT$ = yes }
 			remove_trait = improvident
 		}
 		if = {
-			limit = {
-			OR = {
-				$CONTRITE$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = contrite
-			}
+			limit = { $CONTRITE$ = yes }
 			remove_trait = contrite
 		}
 		if = {
-			limit = {
-			OR = {
-				$COMFORT_EATER$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = comfort_eater
-			}
+			limit = { $COMFORT_EATER$ = yes }
 			remove_trait = comfort_eater
 		}
 		if = {
-			limit = {
-			OR = {
-				$INAPPETETIC$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = inappetetic
-			}
+			limit = { $INAPPETETIC$ = yes }
 			remove_trait = inappetetic
 		}
 		if = {
-			limit = {
-			OR = {
-				$REJECTED_FROM_MARRIAGE_BED_MODIFIER$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_character_modifier = rejected_from_marriage_bed_modifier
-			}
+			limit = { $REJECTED_FROM_MARRIAGE_BED_MODIFIER$ = yes }
 			remove_character_modifier = rejected_from_marriage_bed_modifier
 		}
 		if = {
-			limit = {
-			OR = {
-				$DEPRESSED_1$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = depressed_1
-			}
+			limit = { $DEPRESSED_1$ = yes }
 			remove_trait = depressed_1
 		}
 		if = {
-			limit = {
-			OR = {
-				$DEPRESSED_GENETIC$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = depressed_genetic
-			}
+			limit = { $DEPRESSED_GENETIC$ = yes }
 			remove_trait = depressed_genetic
 		}
 		if = {
-			limit = {
-			OR = {
-				$LUNATIC_1$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = lunatic_1
-			}
+			limit = { $LUNATIC_1$ = yes }
 			remove_trait = lunatic_1
 		}
 		if = {
-			limit = {
-			OR = {
-				$LUNATIC_GENETIC$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = lunatic_genetic
-			}
+			limit = { $LUNATIC_GENETIC$ = yes }
 			remove_trait = lunatic_genetic
 		}
 		if = {
-			limit = {
-			OR = {
-				$POSSESSED_1$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = possessed_1
-			}
+			limit = { $POSSESSED_1$ = yes }
 			remove_trait = possessed_1
 		}
 		if = {
-			limit = {
-			OR = {
-				$POSSESSED_GENETIC$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = possessed_genetic
-			}
+			limit = { $POSSESSED_GENETIC$ = yes }
 			remove_trait = possessed_genetic
 		}
 		if = {
-			limit = {
-			OR = {
-				$SCARRED$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = scarred
-			}
+			limit = { $SCARRED$ = yes }
 			remove_trait = scarred
 		}
 		if = {
-			limit = {
-			OR = {
-				$ONE_EYED$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = one_eyed
-			}
+			limit = { $ONE_EYED$ = yes }
 			remove_trait = one_eyed
 		}
 		if = {
-			limit = {
-			OR = {
-				$MAIMED$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = maimed
-			}
+			limit = { $MAIMED$ = yes }
 			remove_trait = maimed
 		}
 		if = {
-			limit = {
-			OR = {
-				$ONE_LEGGED$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = one_legged
-			}
+			limit = { $ONE_LEGGED$ = yes }
 			remove_trait = one_legged
 		}
 		if = {
-			limit = {
-			OR = {
-				$DISFIGURED$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = disfigured
-			}
+			limit = { $DISFIGURED$ = yes }
 			remove_trait = disfigured
 		}
 		if = {
-			limit = {
-			OR = {
-				$EUNUCH_1$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = eunuch_1
-			}
+			limit = { $EUNUCH_1$ = yes }
 			remove_trait = eunuch_1
 		}
 		if = {
-			limit = {
-			OR = {
-				$BEARDLESS_EUNUCH$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = beardless_eunuch
-			}
+			limit = { $BEARDLESS_EUNUCH$ = yes }
 			remove_trait = beardless_eunuch
 		}
 		if = {
-			limit = {
-			OR = {
-				$BLIND$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = blind
-			}
+			limit = { $BLIND$ = yes }
 			remove_trait = blind
 		}
 		if = {
-			limit = {
-			OR = {
-				$SICKLY$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = sickly
-			}
+			limit = { $SICKLY$ = yes }
 			remove_trait = sickly
 		}
 		if = {
-			limit = {
-			OR = {
-				$INFIRM$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = infirm
-			}
+			limit = { $INFIRM$ = yes }
 			remove_trait = infirm
 		}
 		if = {
-			limit = {
-			OR = {
-				$INCAPABLE$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = incapable
-			}
+			limit = { $INCAPABLE$ = yes }
 			remove_trait = incapable
 		}
 		if = {
-			limit = {
-			OR = {
-				$LEPER$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = leper
-			}
+			limit = { $LEPER$ = yes }
 			remove_trait = leper
 		}
 		if = {
-			limit = {
-			OR = {
-				$WOUNDED_1$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = wounded_1
-			}
+			limit = { $WOUNDED_1$ = yes }
 			remove_trait = wounded_1
 		}
 		if = {
-			limit = {
-			OR = {
-				$WOUNDED_2$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = wounded_2
-			}
+			limit = { $WOUNDED_2$ = yes }
 			remove_trait = wounded_2
 		}
 		if = {
-			limit = {
-			OR = {
-				$WOUNDED_3$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = wounded_3
-			}
+			limit = { $WOUNDED_3$ = yes }
 			remove_trait = wounded_3
 		}
 		if = {
-			limit = {
-			OR = {
-				$EARLY_GREAT_POX$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = early_great_pox
-			}
+			limit = { $EARLY_GREAT_POX$ = yes }
 			remove_trait = early_great_pox
 		}
 		if = {
-			limit = {
-			OR = {
-				$ILL$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = ill
-			}
+			limit = { $ILL$ = yes }
 			recover_from_disease_effect = { DISEASE = ill }
 		}
 		if = {
-			limit = {
-			OR = {
-				$PNEUMONIC$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = pneumonic
-			}
+			limit = { $PNEUMONIC$ = yes }
 			recover_from_disease_effect = { DISEASE = pneumonic }
 		}
 		if = {
-			limit = {
-			OR = {
-				$GOUT_RIDDEN$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = gout_ridden
-			}
+			limit = { $GOUT_RIDDEN$ = yes }
 			recover_from_disease_effect = { DISEASE = gout_ridden }
 		}
 		if = {
-			limit = {
-			OR = {
-				$TYPHUS$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = typhus
-			}
+			limit = { $TYPHUS$ = yes }
 			recover_from_disease_effect = { DISEASE = typhus }
 		}
 		if = {
-			limit = {
-			OR = {
-				$CONSUMPTION$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = consumption
-			}
+			limit = { $CONSUMPTION$ = yes }
 			recover_from_disease_effect = { DISEASE = consumption }
 		}
 		if = {
-			limit = {
-			OR = {
-				$MEASLES$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = measles
-			}
+			limit = { $MEASLES$ = yes }
 			recover_from_disease_effect = { DISEASE = measles }
 		}
 		if = {
-			limit = {
-			OR = {
-				$CANCER$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = cancer
-			}
+			limit = { $CANCER$ = yes }
 			recover_from_disease_effect = { DISEASE = cancer }
 		}
 		if = {
-			limit = {
-			OR = {
-				$GREAT_POX$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = great_pox
-			}
+			limit = { $GREAT_POX$ = yes }
 			recover_from_disease_effect = { DISEASE = great_pox }
 		}
 		if = {
-			limit = {
-			OR = {
-				$SMALLPOX$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = smallpox
-			}
+			limit = { $SMALLPOX$ = yes }
 			recover_from_disease_effect = { DISEASE = smallpox }
 		}
 		if = {
-			limit = {
-			OR = {
-				$BUBONIC_PLAGUE$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = bubonic_plague
-			}
+			limit = { $BUBONIC_PLAGUE$ = yes }
 			recover_from_disease_effect = { DISEASE = bubonic_plague }
 		}
 		if = {
-			limit = {
-			OR = {
-				$LOVERS_POX$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = lovers_pox
-			}
+			limit = { $LOVERS_POX$ = yes }
 			recover_from_disease_effect = { DISEASE = lovers_pox }
 		}
 		if = {
-			limit = {
-			OR = {
-				$DYSENTERY$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = dysentery
-			}
+			limit = { $DYSENTERY$ = yes }
 			recover_from_disease_effect = { DISEASE = dysentery }
 		}
 		if = {
-			limit = {
-			OR = {
-				$ERGOTISM$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = ergotism
-			}
+			limit = { $ERGOTISM$ = yes }
 			recover_from_disease_effect = { DISEASE = ergotism }
 		}
 		if = {
-			limit = {
-			OR = {
-				$ALBINO$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = albino
-			}
+			limit = { $ALBINO$ = yes }
 			remove_trait = albino
 		}
 		if = {
-			limit = {
-			OR = {
-				$LISPING$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = lisping
-			}
+			limit = { $LISPING$ = yes }
 			remove_trait = lisping
 		}
 		if = {
-			limit = {
-			OR = {
-				$STUTTERING$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = stuttering
-			}
+			limit = { $STUTTERING$ = yes }
 			remove_trait = stuttering
 		}
 		if = {
-			limit = {
-			OR = {
-				$GIANT$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = giant
-			}
+			limit = { $GIANT$ = yes }
 			remove_trait = giant
 		}
 		if = {
-			limit = {
-			OR = {
-				$SCALY$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = scaly
-			}
+			limit = { $SCALY$ = yes }
 			remove_trait = scaly
 		}
 		if = {
-			limit = {
-			OR = {
-				$CLUBFOOTED$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = clubfooted
-			}
+			limit = { $CLUBFOOTED$ = yes }
 			remove_trait = clubfooted
 		}
 		if = {
-			limit = {
-			OR = {
-				$DWARF$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = dwarf
-			}
+			limit = { $DWARF$ = yes }
 			remove_trait = dwarf
 		}
 		if = {
-			limit = {
-			OR = {
-				$HUNCHBACKED$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = hunchbacked
-			}
+			limit = { $HUNCHBACKED$ = yes }
 			remove_trait = hunchbacked
 		}
 		if = {
-			limit = {
-			OR = {
-				$INFERTILE$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = infertile
-			}
+			limit = { $INFERTILE$ = yes }
 			remove_trait = infertile
 		}
 		if = {
-			limit = {
-			OR = {
-				$WHEEZING$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = wheezing
-			}
+			limit = { $WHEEZING$ = yes }
 			remove_trait = wheezing
 		}
 		if = {
-			limit = {
-			OR = {
-				$SPINDLY$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = spindly
-			}
+			limit = { $SPINDLY$ = yes }
 			remove_trait = spindly
 		}
 		if = {
-			limit = {
-			OR = {
-				$BLEEDER$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = bleeder
-			}
+			limit = { $BLEEDER$ = yes }
 			remove_trait = bleeder
 		}
 		if = {
-			limit = {
-			OR = {
-				$WEAK$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = weak
-			}
+			limit = { $WEAK$ = yes }
 			remove_trait = weak
 		}
 		if = {
-			limit = {
-			OR = {
-				$DULL$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = dull
-			}
+			limit = { $DULL$ = yes }
 			remove_trait = dull
 		}
 		if = {
-			limit = {
-			OR = {
-				$BEAUTY_BAD_1$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = beauty_bad_1
-			}
+			limit = { $BEAUTY_BAD_1$ = yes }
 			set_trait_rank = { trait = beauty_bad rank = 0 }
 		}
 		if = {
-			limit = {
-			OR = {
-				$BEAUTY_BAD_2$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = beauty_bad_2
-			}
+			limit = { $BEAUTY_BAD_2$ = yes }
 			set_trait_rank = { trait = beauty_bad rank = 0 }
 		}
 		if = {
-			limit = {
-			OR = {
-				$BEAUTY_BAD_3$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = beauty_bad_3
-			}
+			limit = { $BEAUTY_BAD_3$ = yes }
 			set_trait_rank = { trait = beauty_bad rank = 0 }
 		}
 		if = {
-			limit = {
-			OR = {
-				$INTELLECT_BAD_1$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = intellect_bad_1
-			}
+			limit = { $INTELLECT_BAD_1$ = yes }
 			set_trait_rank = { trait = intellect_bad rank = 0 }
 		}
 		if = {
-			limit = {
-			OR = {
-				$INTELLECT_BAD_2$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = intellect_bad_2
-			}
+			limit = { $INTELLECT_BAD_2$ = yes }
 			set_trait_rank = { trait = intellect_bad rank = 0 }
 		}
 		if = {
-			limit = {
-			OR = {
-				$INTELLECT_BAD_3$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = intellect_bad_3
-			}
+			limit = { $INTELLECT_BAD_3$ = yes }
 			set_trait_rank = { trait = intellect_bad rank = 0 }
 		}
 		if = {
-			limit = {
-			OR = {
-				$PHYSIQUE_BAD_1$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = physique_bad_1
-			}
+			limit = { $PHYSIQUE_BAD_1$ = yes }
 			set_trait_rank = { trait = physique_bad rank = 0 }
 		}
 		if = {
-			limit = {
-			OR = {
-				$PHYSIQUE_BAD_2$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = physique_bad_2
-			}
+			limit = { $PHYSIQUE_BAD_2$ = yes }
 			set_trait_rank = { trait = physique_bad rank = 0 }
 		}
 		if = {
-			limit = {
-			OR = {
-				$PHYSIQUE_BAD_3$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = physique_bad_3
-			}
+			limit = { $PHYSIQUE_BAD_3$ = yes }
 			set_trait_rank = { trait = physique_bad rank = 0 }
 		}
 		if = {
-			limit = {
-			OR = {
-				$INBRED$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = inbred
-			}
+			limit = { $INBRED$ = yes }
 			remove_trait = inbred
 		}
 		if = {
-			limit = {
-			OR = {
-				$WITCH$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = witch
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:witch }
-			}
+			limit = { $WITCH$ = yes }
 			remove_trait = witch
 			if = {
 				limit = { NOT = { any_secret = { type = secret_witch } } }
@@ -805,14 +372,7 @@ deal_with_the_devil_healing = {
 			}
 		}
 		if = {
-			limit = {
-			OR = {
-				$DEVIANT$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = deviant
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:deviant }
-			}
+			limit = { $DEVIANT$ = yes }
 			remove_trait = deviant
 			if = {
 				limit = { NOT = { any_secret = { type = secret_deviant } } }
@@ -824,14 +384,7 @@ deal_with_the_devil_healing = {
 			}
 		}
 		if = {
-			limit = {
-			OR = {
-				$CANNIBAL$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = cannibal
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:cannibal }
-			}
+			limit = { $CANNIBAL$ = yes }
 			remove_trait = cannibal
 			if = {
 				limit = { NOT = { any_secret = { type = secret_cannibal } } }
@@ -843,25 +396,11 @@ deal_with_the_devil_healing = {
 			}
 		}
 		if = {
-			limit = {
-			OR = {
-				$ADULTERER$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = adulterer
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:adulterer }
-			}
+			limit = { $ADULTERER$ = yes }
 			remove_trait = adulterer
 		}
 		if = {
-			limit = {
-			OR = {
-				$SODOMITE$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = sodomite
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:sodomite }
-			}
+			limit = { $SODOMITE$ = yes }
 			remove_trait = sodomite
 			if = {
 				limit = { NOT = { any_secret = { type = secret_homosexual } } }
@@ -873,14 +412,7 @@ deal_with_the_devil_healing = {
 			}
 		}
 		if = {
-			limit = {
-			OR = {
-				$INCESTUOUS$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = incestuous
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:incestuous }
-			}
+			limit = { $INCESTUOUS$ = yes }
 			remove_trait = incestuous
 			if = {
 				limit = { NOT = { any_secret = { type = secret_incest } } }
@@ -892,69 +424,27 @@ deal_with_the_devil_healing = {
 			}
 		}
 		if = {
-			limit = {
-			OR = {
-				$FORNICATOR$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = fornicator
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:fornicator }
-			}
+			limit = { $FORNICATOR$ = yes }
 			remove_trait = fornicator
 		}
 		if = {
-			limit = {
-			OR = {
-				$KINSLAYER_1$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = kinslayer_1
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:kinslayer_1 }
-			}
+			limit = { $KINSLAYER_1$ = yes }
 			remove_trait = kinslayer_1
 		}
 		if = {
-			limit = {
-			OR = {
-				$KINSLAYER_2$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = kinslayer_2
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:kinslayer_2 }
-			}
+			limit = { $KINSLAYER_2$ = yes }
 			remove_trait = kinslayer_2
 		}
 		if = {
-			limit = {
-			OR = {
-				$KINSLAYER_3$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = kinslayer_3
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:kinslayer_3 }
-			}
+			limit = { $KINSLAYER_3$ = yes }
 			remove_trait = kinslayer_3
 		}
 		if = {
-			limit = {
-			OR = {
-				$MURDERER$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = murderer
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:murderer }
-			}
+			limit = { $MURDERER$ = yes }
 			remove_trait = murderer
 		}
 		if = {
-			limit = {
-			OR = {
-				$LIFESTYLE_PROSTITUTE$ = yes
-				scope:actor = { is_ai = yes }
-			}
-			has_trait = lifestyle_prostitute
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:lifestyle_prostitute }
-			}
+			limit = { $LIFESTYLE_PROSTITUTE$ = yes }
 			remove_trait = lifestyle_prostitute
 			if = {
 				limit = { NOT = { any_secret = { type = secret_prostitute } } }
@@ -964,21 +454,6 @@ deal_with_the_devil_healing = {
 					reveal_to = scope:devil
 				}
 			}
-		}
-		if = {
-			limit = {
-				scope:actor = { is_ai = yes }
-				stress_level >= 1
-			}
-			stress_impact = { base = massive_stress_impact_loss }
-		}
-		if = {
-			limit = {
-				scope:actor = { is_ai = yes }
-				OR = { current_weight >= 25 current_weight <= -25 }
-			}
-			change_current_weight = -200
-			change_current_weight = 100
 		}
 	}
 }

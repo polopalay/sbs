@@ -8,7 +8,7 @@ sbs_devils_gift_interaction = {
 	is_shown = {
 		scope:actor = { has_trait_with_flag = sbs_demon_trait }
 	}
-	is_valid = {
+	is_valid_showing_failures_only = {
 		scope:actor = {
 			OR = {
 				has_trait = sbs_demon

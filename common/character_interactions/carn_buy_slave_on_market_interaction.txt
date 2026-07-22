@@ -6,9 +6,7 @@
 	cooldown_against_recipient = { years = 3 }
 	send_options_exclusive = no
 	is_shown = {
-		scope:actor = {
-			is_ruler = yes
-		}
+		scope:actor = { is_ruler = yes }
 		scope:recipient = {
 			is_ruler = yes
 			any_courtier = { has_trait = slave has_relation_slave_owner = scope:recipient }
@@ -18,57 +16,127 @@
 	populate_recipient_list = {
 		scope:recipient = {
 			every_courtier = {
-				limit = {
-					has_trait = slave
-					has_relation_slave_owner = scope:recipient
-				}
+				limit = { has_trait = slave has_relation_slave_owner = scope:recipient }
 				add_to_list = characters
 			}
 		}
 	}
 	localization_values = {
-		RANSOM_COST = minor_gold_value
+		EXTORTIONATE_RANSOM_COST = scope:secondary_recipient.carn_slave_price_value
+		RANSOM_COST = scope:secondary_recipient.carn_slave_price_value
+		CURRENT_GOLD = scope:actor.gold
 	}
 	send_option = {
-		is_valid = { scope:actor ?= { gold >= scope:secondary_recipient.carn_slave_price_value } }
+		is_shown = {
+			scope:recipient = { dynasty ?= { has_dynasty_perk = fp1_pillage_legacy_3 } }
+			scope:actor ?= {
+				gold >= {
+					value = scope:secondary_recipient.carn_slave_price_value
+					multiply = 1.5
+				}
+			}
+		}
+		flag = extortionate_gold
+		localization = "RANSOM_EXTORTIONATE_GOLD_IMPRISONED_PERSPECTIVE_OPTION"
+	}
+	send_option = {
+		is_shown = {
+			scope:recipient = { dynasty ?= { has_dynasty_perk = fp1_pillage_legacy_3 } }
+			scope:actor ?= {
+				gold < {
+					value = scope:secondary_recipient.carn_slave_price_value
+					multiply = 1.5
+				}
+				gold >= 1
+			}
+		}
+		flag = extortionate_current_gold
+		localization = "RANSOM_EXTORTIONATE_CURRENT_GOLD_IMPRISONED_PERSPECTIVE_OPTION"
+	}
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				OR = {
+					is_lowborn = yes
+					NOT = { dynasty = { has_dynasty_perk = fp1_pillage_legacy_3 } }
+				}
+			}
+			scope:actor ?= { gold >= scope:secondary_recipient.carn_slave_price_value }
+		}
 		flag = gold
 		localization = "RANSOM_GOLD_OPTION"
+	}
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				OR = {
+					is_lowborn = yes
+					NOT = { dynasty = { has_dynasty_perk = fp1_pillage_legacy_3 } }
+				}
+			}
+			scope:actor ?= {
+				gold < scope:secondary_recipient.carn_slave_price_value
+				gold >= 1
+			}
+		}
+		flag = current_gold
+		localization = "RANSOM_CURRENT_GOLD_OPTION"
 	}
 	send_option = {
 		is_valid = { scope:actor = { has_usable_hook = scope:recipient } }
 		flag = hook
 		localization = GENERIC_SPEND_A_HOOK
 	}
-	on_accept = {
-		carn_buy_slave_effect = {
-			SELLER = scope:recipient
-			BUYER = scope:actor
-			SLAVE = scope:secondary_recipient
+	send_option = {
+		is_valid = {
+			scope:recipient = {
+				can_add_hook = { target = scope:actor type = favor_hook }
+			}
 		}
+		flag = favor
+		localization = "RANSOM_FAVOR_OPTION"
+	}
+	on_accept = {
 		scope:actor = {
 			if = {
-				limit = { scope:gold = yes }
+				limit = { scope:extortionate_gold = yes }
 				pay_short_term_gold = {
 					target = scope:recipient
-					gold = minor_gold_value
+					gold = {
+						value = scope:secondary_recipient.carn_slave_price_value
+						multiply = 1.5
+					}
 				}
 			}
 			if = {
-				limit = {
-					scope:hook = yes
-					has_hook = scope:recipient
-				}
+				limit = { scope:extortionate_current_gold = yes }
+				pay_short_term_gold = { target = scope:recipient gold = scope:actor.current_gold_value }
+			}
+			if = {
+				limit = { scope:gold = yes }
+				pay_short_term_gold = { target = scope:recipient gold = scope:secondary_recipient.carn_slave_price_value }
+			}
+			if = {
+				limit = { scope:current_gold = yes }
+				pay_short_term_gold = { target = scope:recipient gold = scope:actor.current_gold_value }
+			}
+			if = {
+				limit = { scope:hook = yes has_hook = scope:recipient }
 				use_hook = scope:recipient
 			}
 			save_scope_as = buyer
 		}
-		scope:recipient = { save_scope_as = seller }
+		scope:recipient = {
+			if = {
+				limit = { scope:favor = yes }
+				add_hook = { target = scope:actor type = favor_hook }
+			}
+			save_scope_as = seller
+		}
 		scope:secondary_recipient = { save_scope_as = slave }
-		carn_buy_slave_effect = { SLAVE_PRICE = scope:recipient.carn_slave_price_value }
+		carn_buy_slave_effect = { SLAVE_PRICE = scope:secondary_recipient.carn_slave_price_value }
 	}
-	ai_targets = {
-		ai_recipients = liege
-	}
+	ai_targets = { ai_recipients = liege }
 	ai_targets = {
 		ai_recipients = vassals
 		ai_recipients = peer_vassals
@@ -80,10 +148,7 @@
 		ai_recipients = nearby_domicile_owners
 		max = 5
 	}
-	ai_targets = {
-		ai_recipients = realm_characters
-		max = 10
-	}
+	ai_targets = { ai_recipients = realm_characters max = 10 }
 	ai_potential = { always = yes }
 	ai_frequency = 36
 	ai_accept = {
@@ -119,8 +184,12 @@
 		modifier = { add = 5 scope:secondary_recipient = { has_trait = giant } }
 		modifier = { add = 5 scope:secondary_recipient = { has_trait = weak } }
 		modifier = { add = 5 scope:secondary_recipient = { has_trait = dull } }
+		modifier = { add = 15 scope:extortionate_gold = yes }
+		modifier = { add = 15 scope:extortionate_current_gold = yes }
 		modifier = { add = 10 scope:gold = yes }
+		modifier = { add = 10 scope:current_gold = yes }
 		modifier = { add = 10 scope:hook = yes }
+		modifier = { add = 10 scope:favor = yes }
 		modifier = { add = -10 desc = carn_secondary_recipient_is_my_knight_reason scope:secondary_recipient = { is_knight_of = scope:recipient } }
 		modifier = { add = -10 desc = carn_secondary_recipient_is_my_councillor_reason scope:secondary_recipient = { is_councillor_of = scope:recipient } }
 		modifier = { add = -10 desc = carn_secondary_recipient_is_my_friend_reason scope:secondary_recipient = { has_relation_friend = scope:recipient } }
@@ -130,6 +199,17 @@
 	}
 	ai_will_do = {
 		base = 0
+		modifier = {
+			factor = 0
+			NOR = {
+				scope:extortionate_gold = yes
+				scope:extortionate_current_gold = yes
+				scope:gold = yes
+				scope:current_gold = yes
+				scope:hook = yes
+				scope:favor = yes
+			}
+		}
 		modifier = { add = 100 scope:recipient = { any_relation = { type = slave count > 5 } } }
 	}
 }

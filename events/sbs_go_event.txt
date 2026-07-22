@@ -861,14 +861,14 @@ sbs_go.6050 = {
 		custom_tooltip = sbs_go.6050.a.tt	
 		add_character_modifier = { modifier = licentious_05_modifier months = 1 }
 		random_list = {
-		 10 = 0
-		 5 = {
-			add_character_modifier = { modifier = sbs_buff years = 100 }
-			add_character_modifier = { modifier = face_cum months = 6 }
-			add_character_modifier = { modifier = body_cum months = 6 }
-			add_character_modifier = { modifier = pussy_cum months = 6 }
-			add_character_modifier = { modifier = ass_cum months = 6 }
-		}
+			10 = 0
+		 	5 = {
+				add_character_modifier = { modifier = sbs_buff years = 100 }
+				add_character_modifier = { modifier = face_cum months = 6 }
+				add_character_modifier = { modifier = body_cum months = 6 }
+				add_character_modifier = { modifier = pussy_cum months = 6 }
+				add_character_modifier = { modifier = ass_cum months = 6 }
+			}
 		}
 	}	
 	# repent, repent

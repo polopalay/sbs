@@ -9,7 +9,7 @@
 	cooldown_against_recipient = { years = 2 }
 
 	is_shown = {
-		NOT = { scope:actor = scope:recipient }
+		scope:actor != scope:recipient
 		scope:actor = {
 			OR = {
 				has_trait = drunkard
@@ -143,7 +143,7 @@
 		}
 		scope:recipient = { has_trait_with_flag = sbs_demon_trait }
 	}
-	is_valid = {
+	is_valid_showing_failures_only = {
 		scope:recipient = {
 			OR = {
 				has_trait = sbs_demon
@@ -251,7 +251,6 @@
 			scope:kinslayer_3 = yes
 			scope:murderer = yes
 			scope:lifestyle_prostitute = yes
-			scope:actor = { is_ai = yes }
 		}
 	}
 	send_option = {
@@ -262,6 +261,8 @@
 				has_trait = drunkard
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = hashishiyah
@@ -271,6 +272,8 @@
 				has_trait = hashishiyah
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = rakish
@@ -280,6 +283,8 @@
 				has_trait = rakish
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = reclusive
@@ -289,6 +294,8 @@
 				has_trait = reclusive
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = irritable
@@ -298,6 +305,8 @@
 				has_trait = irritable
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = flagellant
@@ -307,6 +316,8 @@
 				has_trait = flagellant
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = profligate
@@ -316,6 +327,8 @@
 				has_trait = profligate
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = improvident
@@ -325,6 +338,8 @@
 				has_trait = improvident
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = contrite
@@ -334,6 +349,8 @@
 				has_trait = contrite
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = comfort_eater
@@ -343,6 +360,8 @@
 				has_trait = comfort_eater
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = inappetetic
@@ -352,6 +371,8 @@
 				has_trait = inappetetic
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = rejected_from_marriage_bed_modifier
@@ -361,6 +382,8 @@
 				has_character_modifier = rejected_from_marriage_bed_modifier
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = depressed_1
@@ -370,6 +393,8 @@
 				has_trait = depressed_1
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = depressed_genetic
@@ -379,6 +404,8 @@
 				has_trait = depressed_genetic
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = lunatic_1
@@ -388,6 +415,8 @@
 				has_trait = lunatic_1
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = lunatic_genetic
@@ -397,6 +426,8 @@
 				has_trait = lunatic_genetic
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = possessed_1
@@ -406,6 +437,8 @@
 				has_trait = possessed_1
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = possessed_genetic
@@ -415,6 +448,8 @@
 				has_trait = possessed_genetic
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = scarred
@@ -424,6 +459,8 @@
 				has_trait = scarred
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = one_eyed
@@ -433,6 +470,8 @@
 				has_trait = one_eyed
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = maimed
@@ -442,6 +481,8 @@
 				has_trait = maimed
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = one_legged
@@ -451,6 +492,8 @@
 				has_trait = one_legged
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = disfigured
@@ -460,6 +503,8 @@
 				has_trait = disfigured
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = eunuch_1
@@ -469,6 +514,8 @@
 				has_trait = eunuch_1
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = beardless_eunuch
@@ -478,6 +525,8 @@
 				has_trait = beardless_eunuch
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = blind
@@ -487,6 +536,8 @@
 				has_trait = blind
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = sickly
@@ -496,6 +547,8 @@
 				has_trait = sickly
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = infirm
@@ -505,6 +558,8 @@
 				has_trait = infirm
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = incapable
@@ -514,6 +569,8 @@
 				has_trait = incapable
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = leper
@@ -523,6 +580,8 @@
 				has_trait = leper
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = wounded_1
@@ -532,6 +591,8 @@
 				has_trait = wounded_1
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = wounded_2
@@ -541,6 +602,8 @@
 				has_trait = wounded_2
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = wounded_3
@@ -550,6 +613,8 @@
 				has_trait = wounded_3
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = early_great_pox
@@ -559,6 +624,8 @@
 				has_trait = early_great_pox
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = ill
@@ -568,6 +635,8 @@
 				has_trait = ill
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = pneumonic
@@ -577,6 +646,8 @@
 				has_trait = pneumonic
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = gout_ridden
@@ -586,6 +657,8 @@
 				has_trait = gout_ridden
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = typhus
@@ -595,6 +668,8 @@
 				has_trait = typhus
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = consumption
@@ -604,6 +679,8 @@
 				has_trait = consumption
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = measles
@@ -613,6 +690,8 @@
 				has_trait = measles
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = cancer
@@ -622,6 +701,8 @@
 				has_trait = cancer
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = great_pox
@@ -631,6 +712,8 @@
 				has_trait = great_pox
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = smallpox
@@ -640,6 +723,8 @@
 				has_trait = smallpox
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = bubonic_plague
@@ -649,6 +734,8 @@
 				has_trait = bubonic_plague
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = lovers_pox
@@ -658,6 +745,8 @@
 				has_trait = lovers_pox
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = dysentery
@@ -667,6 +756,8 @@
 				has_trait = dysentery
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = ergotism
@@ -676,6 +767,8 @@
 				has_trait = ergotism
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = albino
@@ -685,6 +778,8 @@
 				has_trait = albino
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = lisping
@@ -694,6 +789,8 @@
 				has_trait = lisping
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = stuttering
@@ -703,6 +800,8 @@
 				has_trait = stuttering
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = giant
@@ -712,6 +811,8 @@
 				has_trait = giant
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = scaly
@@ -721,6 +822,8 @@
 				has_trait = scaly
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = clubfooted
@@ -730,6 +833,8 @@
 				has_trait = clubfooted
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = dwarf
@@ -739,6 +844,8 @@
 				has_trait = dwarf
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = hunchbacked
@@ -748,6 +855,8 @@
 				has_trait = hunchbacked
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = infertile
@@ -757,6 +866,8 @@
 				has_trait = infertile
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = wheezing
@@ -766,6 +877,8 @@
 				has_trait = wheezing
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = spindly
@@ -775,6 +888,8 @@
 				has_trait = spindly
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = bleeder
@@ -784,6 +899,8 @@
 				has_trait = bleeder
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = weak
@@ -793,6 +910,8 @@
 				has_trait = weak
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = dull
@@ -802,6 +921,8 @@
 				has_trait = dull
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = beauty_bad_1
@@ -811,6 +932,8 @@
 				has_trait = beauty_bad_1
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = beauty_bad_2
@@ -820,6 +943,8 @@
 				has_trait = beauty_bad_2
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = beauty_bad_3
@@ -829,6 +954,8 @@
 				has_trait = beauty_bad_3
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = intellect_bad_1
@@ -838,6 +965,8 @@
 				has_trait = intellect_bad_1
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = intellect_bad_2
@@ -847,6 +976,8 @@
 				has_trait = intellect_bad_2
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = intellect_bad_3
@@ -856,6 +987,8 @@
 				has_trait = intellect_bad_3
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = physique_bad_1
@@ -865,6 +998,8 @@
 				has_trait = physique_bad_1
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = physique_bad_2
@@ -874,6 +1009,8 @@
 				has_trait = physique_bad_2
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = physique_bad_3
@@ -883,6 +1020,8 @@
 				has_trait = physique_bad_3
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = inbred
@@ -892,6 +1031,8 @@
 				has_trait = inbred
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = witch
@@ -904,6 +1045,8 @@
 				}
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = deviant
@@ -916,6 +1059,8 @@
 				}
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = cannibal
@@ -928,6 +1073,8 @@
 				}
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = adulterer
@@ -940,6 +1087,8 @@
 				}
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = sodomite
@@ -952,6 +1101,8 @@
 				}
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = incestuous
@@ -964,6 +1115,8 @@
 				}
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = fornicator
@@ -976,6 +1129,8 @@
 				}
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = kinslayer_1
@@ -988,6 +1143,8 @@
 				}
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = kinslayer_2
@@ -1000,6 +1157,8 @@
 				}
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = kinslayer_3
@@ -1012,6 +1171,8 @@
 				}
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = murderer
@@ -1024,6 +1185,8 @@
 				}
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = lifestyle_prostitute
@@ -1036,32 +1199,78 @@
 				}
 			}
 		}
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	localization_values = {
+		EXTORTIONATE_RANSOM_COST = scope:actor.deal_price_value
 		RANSOM_COST = scope:actor.deal_price_value
 	}
 	send_option = {
 		is_shown = {
-			scope:actor.deal_price_value > 0
+			NOT = { scope:actor = scope:recipient }
+			scope:recipient = {
+				dynasty ?= { has_dynasty_perk = fp1_pillage_legacy_3 }
+			}
+			scope:actor ?= { gold >= scope:actor.deal_price_value }
 		}
-		is_valid = {
+		flag = extortionate_gold
+		localization = "RANSOM_EXTORTIONATE_GOLD_OPTION"
+	}
+	send_option = {
+		is_shown = {
+			NOT = { scope:actor = scope:recipient }
+			scope:recipient = {
+				dynasty ?= { has_dynasty_perk = fp1_pillage_legacy_3 }
+			}
+			scope:actor ?= {
+				gold < scope:actor.deal_price_value
+				gold >= 1
+			}
+		}
+		flag = extortionate_current_gold
+		localization = "RANSOM_EXTORTIONATE_CURRENT_GOLD_OPTION"
+	}
+	send_option = {
+		is_shown = {
+			NOT = { scope:actor = scope:recipient }
+			scope:recipient = {
+				OR = {
+					is_lowborn = yes
+					NOT = { dynasty = { has_dynasty_perk = fp1_pillage_legacy_3 } }
+				}
+			}
 			scope:actor ?= { gold >= scope:actor.deal_price_value }
 		}
 		flag = gold
 		localization = "RANSOM_GOLD_OPTION"
 	}
 	send_option = {
-		is_valid = {
-			scope:actor = {
-				has_usable_hook = scope:recipient
+		is_shown = {
+			NOT = { scope:actor = scope:recipient }
+			scope:recipient = {
+				OR = {
+					is_lowborn = yes
+					NOT = { dynasty = { has_dynasty_perk = fp1_pillage_legacy_3 } }
+				}
+			}
+			scope:actor ?= {
+				gold < scope:actor.deal_price_value
+				gold >= 1
 			}
 		}
+		flag = current_gold
+		localization = "RANSOM_CURRENT_GOLD_OPTION"
+	}
+	send_option = {
+		is_shown = { NOT = { scope:actor = scope:recipient } }
+		is_valid = { scope:actor = { has_usable_hook = scope:recipient } }
 		flag = hook
 		localization = GENERIC_SPEND_A_HOOK
 	}
 	send_option = {
+		is_shown = { NOT = { scope:actor = scope:recipient } }
 		is_valid = {
-			exists = scope:recipient
 			scope:recipient = {
 				can_add_hook = {
 					target = scope:actor
@@ -1070,36 +1279,145 @@
 			}
 		}
 		flag = favor
-		localization = "RANSOM_OWE_FAVOR_OPTION"
+		localization = "RANSOM_FAVOR_OPTION"
 	}
 	send_option = {
 		flag = demand_conversion
 		localization = "RELEASE_DEMAND_CONVERSION"
-		is_shown = {
-			NOT = { scope:actor.faith = scope:recipient.faith }
-		}
+		is_shown = { scope:actor.faith != scope:recipient.faith }
 		is_valid = {
-			# Cannot ask Religious Heads to convert
-			custom_description = {
-				text = cannot_demand_religious_head_conversion
-				NOT = {
-					AND = {
-						exists = scope:actor.faith.religious_head
-						scope:actor.faith.religious_head = scope:actor
+			trigger_if = {
+				limit = { scope:recipient = { is_ai = yes } }
+				scope:actor = {
+					OR = {
+						is_close_or_extended_family_of = scope:recipient
+						is_vassal_of = scope:recipient
 					}
 				}
 			}
-			# Cannot ask Holy Order Master to convert
+			custom_description = {
+				text = cannot_demand_unsubordinate_landed_ruler_conversion
+				scope:actor = {
+					trigger_if = {
+						limit = { is_playable_character = yes }
+						is_vassal_or_below_of = scope:recipient
+					}
+				}
+			}
+			custom_description = {
+				text = cannot_demand_religious_head_conversion
+				NAND = {
+					exists = scope:actor.faith.religious_head
+					scope:actor.faith.religious_head = scope:actor
+				}
+			}
 			custom_description = {
 				text = cannot_demand_holy_order_master_conversion
 				NAND = {
 					exists = scope:actor.faith
-					scope:actor.faith = {
-						any_faith_holy_order = { leader = scope:actor }
+					scope:actor.faith = { any_faith_holy_order = { leader = scope:actor } }
+				}
+			}
+		}
+	}
+	send_option = {
+		flag = renounce_claims
+		localization = RELEASE_RENOUNCE_CLAIMS
+		is_shown = {
+			custom_description = {
+				text = "release_renounce_claims"
+				subject = scope:actor
+				scope:actor = {
+					any_claim = {
+						explicit = yes
+						save_temporary_scope_as = temp_claim
+						OR = {
+							holder = scope:recipient
+							AND = {
+								NOT = { prev = { target_is_liege_or_above = scope:recipient } }
+								trigger_if = { limit = { exists = holder } holder = { target_is_liege_or_above = scope:recipient } }
+							}
+							scope:recipient = { any_held_title = { is_de_jure_liege_or_above_target = scope:temp_claim } }
+						}
 					}
 				}
 			}
 		}
+		current_description = { desc = RELEASE_RENOUNCE_CLAIMS_DESC }
+	}
+	send_option = {
+		flag = gain_hook
+		localization = "RELEASE_GAIN_HOOK"
+		is_shown = {
+			trigger_if = {
+				limit = { scope:recipient = { is_ai = yes } }
+				scope:actor = {
+					OR = {
+						is_vassal_of = scope:recipient
+						liege ?= scope:recipient
+					}
+				}
+			}
+		}
+		is_valid = {
+			scope:recipient = {
+				can_add_hook = {
+					type = favor_hook
+					target = scope:actor
+				}
+			}
+		}
+	}
+	send_option = {
+		flag = recruit
+		localization = "RELEASE_RECRUIT"
+		is_shown = {
+			trigger_if = {
+				limit = { scope:recipient = { is_ai = yes } }
+				scope:actor = {
+					OR = {
+						has_relation_best_friend = scope:recipient
+						has_relation_friend = scope:recipient
+						has_relation_lover = scope:recipient
+						has_relation_soulmate = scope:recipient
+						has_secret_relation_lover = scope:recipient
+						is_heir_of = scope:recipient
+					}
+				}
+			}
+			scope:actor = {
+				is_ruler = no
+				NOT = { is_courtier_of = scope:recipient }
+				OR = {
+					is_adult = yes
+					AND = {
+						is_adult = no
+						OR = {
+							trigger_if = { limit = { exists = liege } NOT = { is_heir_of = liege } }
+							NOT = { exists = liege }
+						}
+					}
+				}
+			}
+		}
+	}
+	send_option = {
+		flag = demand_admin
+		localization = "RELEASE_DEMAND_ADMIN"
+		is_shown = {
+			scope:recipient = { government_allows = administrative }
+			scope:recipient = scope:actor.liege
+			scope:actor = {
+				highest_held_title_tier >= tier_county
+				is_landed = yes
+				is_ruler = yes
+				NOT = { government_allows = administrative }
+				NOT = { government_has_flag = government_is_tribal }
+				NOT = { scope:actor ?= scope:actor.faith.religious_head }
+				NOT = { scope:actor ?= scope:recipient.diarch }
+			}
+		}
+		is_valid = { scope:actor = { NOT = { government_allows = administrative } } }
 	}
 	send_option = {
 		is_shown = {
@@ -1214,19 +1532,60 @@
 		}
 		scope:actor = {
 			if = {
-				limit = {
-					scope:hook = yes
-					has_hook = scope:recipient
-				}
-				use_hook = scope:recipient
+				limit = { OR = { scope:gold = yes scope:extortionate_gold = yes } }
+				pay_short_term_gold = { target = scope:recipient gold = scope:actor.deal_price_value }
 			}
 			if = {
-				limit = { scope:gold = yes }
-				pay_short_term_gold = { target = scope:recipient gold = scope:actor.deal_price_value }
+				limit = { OR = { scope:current_gold = yes scope:extortionate_current_gold = yes } }
+				pay_short_term_gold = { target = scope:recipient gold = this.gold }
+			}
+			if = {
+				limit = { scope:hook = yes has_hook = scope:recipient }
+				use_hook = scope:recipient
 			}
 			if = {
 				limit = { scope:demand_conversion = yes }
 				set_character_faith_with_conversion = scope:recipient.faith
+				add_opinion = { modifier = demanded_my_conversion_opinion target = scope:recipient }
+			}
+			if = {
+				limit = { scope:renounce_claims = yes }
+				add_opinion = { modifier = demanded_claim_renouncement target = scope:recipient }
+				every_claim = {
+					explicit = yes
+					limit = {
+						save_temporary_scope_as = temp_claim
+						OR = {
+							holder = scope:recipient
+							AND = {
+								exists = holder
+								NOT = { prev = { target_is_liege_or_above = scope:recipient } }
+								holder = { target_is_liege_or_above = scope:recipient }
+							}
+							scope:recipient = { any_held_title = { is_de_jure_liege_or_above_target = scope:temp_claim } }
+						}
+					}
+					scope:actor = { remove_claim = prev }
+				}
+			}
+			if = {
+				limit = { scope:recruit = yes }
+				if = {
+					limit = { scope:recipient = { culture = { has_cultural_parameter = can_recruit_prisoners_easily } } }
+					add_opinion = { modifier = loyal_servant target = scope:recipient }
+					scope:recipient = {
+						if = {
+							limit = { can_add_hook = { target = scope:actor type = loyalty_hook } }
+							add_hook = { type = loyalty_hook target = scope:actor }
+						}
+					}
+				}
+				else = { add_opinion = { modifier = demanded_recruitment target = scope:recipient } }
+				scope:recipient = { add_courtier = scope:actor }
+			}
+			if = {
+				limit = { scope:demand_admin = yes }
+				change_to_administrative_effect = yes
 			}
 			if = {
 				limit = { scope:small_price = yes }
@@ -1277,12 +1636,11 @@
 					}
 				}
 			}
+
+		
 			if = {
-				limit = { scope:favor = yes }
-				add_hook = {
-					target = scope:actor
-					type = favor_hook
-				}
+				limit = { OR = { scope:favor = yes scope:gain_hook = yes } }
+				add_hook = { target = scope:actor type = favor_hook }
 			}
 		}
 	}
@@ -1299,8 +1657,13 @@
 		modifier = { add = 1 scope:small_price = yes }
 		modifier = { add = 2 scope:expose_secret = yes }
 		modifier = { add = 3 scope:favor = yes }
+		modifier = { add = 3 scope:gain_hook = yes }
+		modifier = { add = 3 scope:renounce_claims = yes }
+		modifier = { add = 2 scope:recruit = yes }
+		modifier = { add = 4 scope:demand_admin = yes }
 		modifier = { add = 3 scope:hook = yes }
-		modifier = { add = 5 scope:gold = yes }
+		modifier = { add = 5 OR = { scope:gold = yes scope:extortionate_gold = yes } }
+		modifier = { add = 3 OR = { scope:current_gold = yes scope:extortionate_current_gold = yes } }
 		modifier = { add = 2 scope:demand_conversion = yes scope:actor.primary_title.tier = tier_county }
 		modifier = { add = 5 scope:demand_conversion = yes scope:actor.primary_title.tier = tier_duchy }
 		modifier = { add = 10 scope:demand_conversion = yes scope:actor.primary_title.tier = tier_kingdom }
@@ -1331,6 +1694,86 @@
 
 	ai_will_do = {
 		base = 0
+		modifier = {
+			factor = 0
+			NOR = {
+				scope:drunkard = yes
+				scope:hashishiyah = yes
+				scope:rakish = yes
+				scope:reclusive = yes
+				scope:irritable = yes
+				scope:flagellant = yes
+				scope:profligate = yes
+				scope:improvident = yes
+				scope:contrite = yes
+				scope:comfort_eater = yes
+				scope:inappetetic = yes
+				scope:rejected_from_marriage_bed_modifier = yes
+				scope:depressed_1 = yes
+				scope:depressed_genetic = yes
+				scope:lunatic_1 = yes
+				scope:lunatic_genetic = yes
+				scope:possessed_1 = yes
+				scope:possessed_genetic = yes
+				scope:scarred = yes
+				scope:one_eyed = yes
+				scope:maimed = yes
+				scope:one_legged = yes
+				scope:disfigured = yes
+				scope:eunuch_1 = yes
+				scope:beardless_eunuch = yes
+				scope:blind = yes
+				scope:sickly = yes
+				scope:infirm = yes
+				scope:incapable = yes
+				scope:leper = yes
+				scope:wounded_1 = yes
+				scope:wounded_2 = yes
+				scope:wounded_3 = yes
+				scope:early_great_pox = yes
+				scope:ill = yes
+				scope:pneumonic = yes
+				scope:gout_ridden = yes
+				scope:typhus = yes
+				scope:consumption = yes
+				scope:measles = yes
+				scope:cancer = yes
+				scope:great_pox = yes
+				scope:smallpox = yes
+				scope:bubonic_plague = yes
+				scope:lovers_pox = yes
+				scope:dysentery = yes
+				scope:ergotism = yes
+				scope:albino = yes
+				scope:lisping = yes
+				scope:stuttering = yes
+				scope:giant = yes
+				scope:scaly = yes
+				scope:clubfooted = yes
+				scope:dwarf = yes
+			}
+		}
+
+
+		modifier = {
+			factor = 0
+			NOT = { scope:actor = scope:recipient }
+			NOR = {
+				scope:extortionate_gold = yes
+				scope:extortionate_current_gold = yes
+				scope:gold = yes
+				scope:current_gold = yes
+				scope:hook = yes
+				scope:favor = yes
+				scope:gain_hook = yes
+				scope:demand_conversion = yes
+				scope:renounce_claims = yes
+				scope:recruit = yes
+				scope:demand_admin = yes
+				scope:small_price = yes
+				scope:expose_secret = yes
+			}
+		}
 		modifier = {
 			add = -10
 			scope:actor = {

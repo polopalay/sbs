@@ -18,7 +18,7 @@ sbs_seal_the_devil_interaction = {
 			}
 		}
 	}
-	is_valid = {
+	is_valid_showing_failures_only = {
 		scope:actor = {
 			OR = {
 				AND = {

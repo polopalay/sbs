@@ -32,8 +32,6 @@ sbs_demon = {
 		}
 	}
 
-	opposites = { sbs_lesser_demon }
-
 	ruler_designer_cost = 1000
 	shown_in_ruler_designer = no
 }
@@ -73,8 +71,6 @@ sbs_succubus = {
 			desc = sbs_succubus_character_desc
 		}
 	}
-
-	opposites = { sbs_lesser_succubus }
 
 	ruler_designer_cost = 1000
 	shown_in_ruler_designer = no
@@ -162,7 +158,6 @@ sbs_lesser_succubus = {
 		}
 	}
 
-	opposites = { sbs_succubus }
 	ruler_designer_cost = 200
 }
 
@@ -180,7 +175,6 @@ sbs_lesser_demon = {
 
 	valid_sex = male
 	minimum_age = 18
-	opposites = { sbs_demon }
 
 	ai_honor = dominant_positive_ai_value
 	ai_vengefulness = dominant_positive_ai_value

@@ -6,7 +6,6 @@
 	is_shown = {
 		scope:recipient = {
 			OR = {
-				is_vassal_of = scope:actor
 				is_courtier_of = scope:actor
 				is_imprisoned_by = scope:actor
 			}
@@ -20,7 +19,6 @@
 		}
 	}
 	is_valid_showing_failures_only = {
-		scope:recipient = { is_busy_in_events_localised = yes }
 		scope:recipient = {
 			custom_description = {
 				text = "currently_being_tortured"
@@ -82,7 +80,6 @@
 		scope:recipient = {
 			OR = {
 				is_imprisoned_by = scope:actor
-				has_trait = slave
 				has_character_flag = carn_wants_to_be_a_slave
 				has_trait_with_flag = carn_wants_to_be_a_slave
 				has_opinion_modifier = {

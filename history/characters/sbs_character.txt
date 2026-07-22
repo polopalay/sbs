@@ -395,6 +395,7 @@ pleasure_character = {
 			add_perk = a_job_done_right_perk
 			add_perk = twice_schemed_perk
 			add_perk = schemer_perk
+			add_trait = schemer
 			add_perk = like_weed_in_a_garden_perk
 			add_perk = unshackled_lust_perk
 			add_perk = subtle_desire_perk
@@ -404,6 +405,7 @@ pleasure_character = {
 			add_perk = graceful_recovery_perk
 			add_perk = smooth_operator_perk
 			add_perk = seducer_perk
+			add_trait = seducer
 			add_perk = dark_insights_perk
 			add_perk = divine_retribution_perk
 			add_perk = dreadful_perk
@@ -413,6 +415,7 @@ pleasure_character = {
 			add_perk = forever_infamous_perk
 			add_perk = prison_feudal_complex_perk
 			add_perk = torturer_perk
+			add_trait = torturer
 
 			add_perk = befriend_perk
 			add_perk = confidants_perk
@@ -423,6 +426,7 @@ pleasure_character = {
 			add_perk = thicker_than_water_perk
 			add_perk = sound_foundations_perk
 			add_perk = family_man_perk
+			add_trait = family_first
     	}
     }
 }
@@ -520,6 +524,7 @@ violence_character = {
 			add_perk = living_off_the_land_perk
 			add_perk = sappers_perk
 			add_perk = strategist_perk
+			add_trait = strategist
 			add_perk = serve_the_crown_perk
 			add_perk = a_mans_home_perk
 			add_perk = enduring_hardships_perk
@@ -529,6 +534,7 @@ violence_character = {
 			add_perk = soldiers_of_lesser_fortune_perk
 			add_perk = absolute_control_perk
 			add_perk = overseer_perk
+			add_trait = overseer
 			add_perk = stalwart_leader_perk
 			add_perk = courtship_perk
 			add_perk = promising_prospects_perk
@@ -538,6 +544,7 @@ violence_character = {
 			add_perk = kingsguard_perk
 			add_perk = peacemaker_perk
 			add_perk = gallant_perk
+			add_trait = gallant
 
 			add_perk = mustering_the_troops_perk
 			add_perk = local_inspection_perk
@@ -548,6 +555,7 @@ violence_character = {
 			add_perk = realm_charts_perk
 			add_perk = personal_touch_perk
 			add_perk = surveyor_perk
+			add_trait = lifestyle_surveyor
 			add_perk = well_prepared_perk
 			add_perk = roaming_perk
 			add_perk = far_and_wide_perk
@@ -557,6 +565,7 @@ violence_character = {
 			add_perk = travel_companion_perk
 			add_perk = the_home_away_from_home_perk
 			add_perk = wayfarer_perk
+			add_trait = lifestyle_wayfarer
 			add_perk = power_at_home_perk
 			add_perk = mercenary_contacts_perk
 			add_perk = journey_perk
@@ -566,6 +575,7 @@ violence_character = {
 			add_perk = gracious_host_impeccable_guest_perk
 			add_perk = journey_planner_perk
 			add_perk = voyager_perk
+			add_trait = lifestyle_voyager
 		}
 	}
 	1065.1.1 = {
@@ -693,6 +703,7 @@ nature_character = {
 			add_perk = iron_constitution_perk
 			add_perk = healthy_perk
 			add_perk = whole_of_body_perk
+			add_trait = whole_of_body
 			add_perk = pedagogy_perk
 			add_perk = open_minded_perk
 			add_perk = apostate_perk
@@ -702,6 +713,7 @@ nature_character = {
 			add_perk = learn_on_the_job_perk
 			add_perk = sanctioned_loopholes_perk
 			add_perk = scholar_perk
+			add_trait = scholar
 			add_perk = faithful_perk
 			add_perk = zealous_proselytizer_perk
 			add_perk = religious_icon_perk
@@ -711,6 +723,7 @@ nature_character = {
 			add_perk = radiant_perk
 			add_perk = defender_of_the_faith_perk
 			add_perk = theologian_perk
+			add_trait = theologian
 
 			add_perk = thoughtful_perk
 			add_perk = ducal_conquest_perk
@@ -721,6 +734,7 @@ nature_character = {
 			add_perk = embassies_perk
 			add_perk = accomplished_forger_perk
 			add_perk = diplomat_perk
+			add_trait = diplomat
 		}
 	}
 }
@@ -797,6 +811,7 @@ greedy_character = {
 			add_perk = golden_aplomb_perk
 			add_perk = at_any_cost_perk
 			add_perk = avaricious_perk
+			add_trait = avaricious
 			add_perk = tax_man_perk
 			add_perk = defensive_measures_perk
 			add_perk = organized_muster_rolls_perk
@@ -806,6 +821,7 @@ greedy_character = {
 			add_perk = popular_figurehead_perk
 			add_perk = divided_attention_perk
 			add_perk = architect_perk
+			add_trait = architect
 			add_perk = meritocracy_perk
 			add_perk = chains_of_loyalty_perk
 			add_perk = likable_perk
@@ -815,6 +831,7 @@ greedy_character = {
 			add_perk = toe_the_line_perk
 			add_perk = honored_to_serve_perk
 			add_perk = administrator_perk
+			add_trait = administrator
 
 			add_perk = benevolent_intent_perk
 			add_perk = inspiring_rule_perk
@@ -825,6 +842,7 @@ greedy_character = {
 			add_perk = a_life_of_glory_perk
 			add_perk = dignitas_perk
 			add_perk = august_perk
+			add_trait = augustus
 		}
 	}
 }

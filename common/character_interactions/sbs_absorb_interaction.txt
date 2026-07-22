@@ -13,7 +13,7 @@
 			}
 		}
 	}
-	is_valid = {
+	is_valid_showing_failures_only = {
 		trigger_if = {
 			limit = { scope:actor = { has_trait = sbs_lesser_succubus } }
 			scope:recipient = {
@@ -26,7 +26,7 @@
 			}
 		}
 		trigger_if = {
-			limit = { scope:actor = { has_trait = sbs_lesser_demon  } }
+			limit = { scope:actor = { has_trait = sbs_lesser_demon } }
 			scope:recipient = {
 				this != scope:actor
 				OR = {
@@ -37,6 +37,202 @@
 			}
 		}
 	}
+	localization_values = {
+		EXTORTIONATE_RANSOM_COST = scope:recipient.increased_ransom_cost_value
+		RANSOM_COST = scope:recipient.increased_ransom_cost_value
+		CURRENT_GOLD = scope:actor.gold
+	}
+	send_option = {
+		is_shown = {
+			NOT = { scope:actor = scope:recipient }
+			scope:actor = {
+				dynasty ?= { has_dynasty_perk = fp1_pillage_legacy_3 }
+			}
+			scope:actor ?= { gold >= scope:recipient.increased_ransom_cost_value }
+		}
+		flag = extortionate_gold
+		localization = "RANSOM_EXTORTIONATE_GOLD_OPTION"
+	}
+	send_option = {
+		is_shown = {
+			NOT = { scope:actor = scope:recipient }
+			scope:actor = {
+				dynasty ?= { has_dynasty_perk = fp1_pillage_legacy_3 }
+			}
+			scope:actor ?= {
+				gold < scope:recipient.increased_ransom_cost_value
+				gold >= 1
+			}
+		}
+		flag = extortionate_current_gold
+		localization = "RANSOM_EXTORTIONATE_CURRENT_GOLD_OPTION"
+	}
+	send_option = {
+		is_shown = {
+			NOT = { scope:actor = scope:recipient }
+			scope:actor = {
+				OR = {
+					is_lowborn = yes
+					NOT = { dynasty = { has_dynasty_perk = fp1_pillage_legacy_3 } }
+				}
+			}
+			scope:actor ?= { gold >= scope:recipient.increased_ransom_cost_value }
+		}
+		flag = gold
+		localization = "RANSOM_GOLD_OPTION"
+	}
+	send_option = {
+		is_shown = {
+			NOT = { scope:actor = scope:recipient }
+			scope:actor = {
+				OR = {
+					is_lowborn = yes
+					NOT = { dynasty = { has_dynasty_perk = fp1_pillage_legacy_3 } }
+				}
+			}
+			scope:actor ?= {
+				gold < scope:recipient.increased_ransom_cost_value
+				gold >= 1
+			}
+		}
+		flag = current_gold
+		localization = "RANSOM_CURRENT_GOLD_OPTION"
+	}
+	send_option = {
+		is_shown = { NOT = { scope:actor = scope:recipient } }
+		is_valid = { scope:recipient = { has_usable_hook = scope:actor } }
+		flag = hook
+		localization = GENERIC_SPEND_A_HOOK
+	}
+	send_option = {
+		is_shown = { NOT = { scope:actor = scope:recipient } }
+		is_valid = {
+			scope:recipient = {
+				can_add_hook = {
+					target = scope:actor
+					type = favor_hook
+				}
+			}
+		}
+		flag = favor
+		localization = "RANSOM_FAVOR_OPTION"
+	}
+	send_option = {
+		flag = demand_conversion
+		localization = "RELEASE_DEMAND_CONVERSION"
+		is_shown = { scope:recipient.faith != scope:actor.faith }
+		is_valid = {
+			trigger_if = {
+				limit = { scope:actor = { is_ai = yes } }
+				scope:recipient = {
+					OR = {
+						is_close_or_extended_family_of = scope:actor
+						is_vassal_of = scope:actor
+					}
+				}
+			}
+			custom_description = {
+				text = cannot_demand_unsubordinate_landed_ruler_conversion
+				scope:recipient = {
+					trigger_if = {
+						limit = { is_playable_character = yes }
+						is_vassal_or_below_of = scope:actor
+					}
+				}
+			}
+			custom_description = {
+				text = cannot_demand_religious_head_conversion
+				NAND = {
+					exists = scope:recipient.faith.religious_head
+					scope:recipient.faith.religious_head = scope:recipient
+				}
+			}
+			custom_description = {
+				text = cannot_demand_holy_order_master_conversion
+				NAND = {
+					exists = scope:recipient.faith
+					scope:recipient.faith = { any_faith_holy_order = { leader = scope:recipient } }
+				}
+			}
+		}
+	}
+	send_option = {
+		flag = renounce_claims
+		localization = RELEASE_RENOUNCE_CLAIMS
+		is_shown = {
+			custom_description = {
+				text = "release_renounce_claims"
+				subject = scope:recipient
+				scope:recipient = {
+					any_claim = {
+						explicit = yes
+						save_temporary_scope_as = temp_claim
+						OR = {
+							holder = scope:actor
+							AND = {
+								NOT = { prev = { target_is_liege_or_above = scope:actor } }
+								trigger_if = { limit = { exists = holder } holder = { target_is_liege_or_above = scope:actor } }
+							}
+							scope:actor = { any_held_title = { is_de_jure_liege_or_above_target = scope:temp_claim } }
+						}
+					}
+				}
+			}
+		}
+		current_description = { desc = RELEASE_RENOUNCE_CLAIMS_DESC }
+	}
+	send_option = {
+		flag = recruit
+		localization = "RELEASE_RECRUIT"
+		is_shown = {
+			trigger_if = {
+				limit = { scope:actor = { is_ai = yes } }
+				scope:recipient = {
+					OR = {
+						has_relation_best_friend = scope:actor
+						has_relation_friend = scope:actor
+						has_relation_lover = scope:actor
+						has_relation_soulmate = scope:actor
+						has_secret_relation_lover = scope:actor
+						is_heir_of = scope:actor
+					}
+				}
+			}
+			scope:recipient = {
+				is_ruler = no
+				NOT = { is_courtier_of = scope:actor }
+				OR = {
+					is_adult = yes
+					AND = {
+						is_adult = no
+						OR = {
+							trigger_if = { limit = { exists = liege } NOT = { is_heir_of = liege } }
+							NOT = { exists = liege }
+						}
+					}
+				}
+			}
+		}
+	}
+	send_option = {
+		flag = demand_admin
+		localization = "RELEASE_DEMAND_ADMIN"
+		is_shown = {
+			scope:actor = { government_allows = administrative }
+			scope:actor = scope:recipient.liege
+			scope:recipient = {
+				highest_held_title_tier >= tier_county
+				is_landed = yes
+				is_ruler = yes
+				NOT = { government_allows = administrative }
+				NOT = { government_has_flag = government_is_tribal }
+				NOT = { scope:recipient ?= scope:recipient.faith.religious_head }
+				NOT = { scope:recipient ?= scope:actor.diarch }
+			}
+		}
+		is_valid = { scope:recipient = { NOT = { government_allows = administrative } } }
+	}
+	send_options_exclusive = no
 	on_accept = {
 		scope:actor = {
 			if = {
@@ -48,6 +244,10 @@
 						limit = { is_valid_construction_brothel_trigger = yes }
 						add_trait_xp = { trait = sbs_lesser_succubus track = corruption value = 5 }
 					}
+					if = {
+						limit = { any_sub_realm_county = { any_county_province = { has_building_or_higher = brothel3 } } }
+						add_trait_xp = { trait = sbs_lesser_succubus track = corruption value = 10 }
+					}
 				}
 				if = {
 					limit = { scope:recipient = { has_character_modifier = ass_cum } }
@@ -55,6 +255,10 @@
 					if = {
 						limit = { is_valid_construction_brothel_trigger = yes }
 						add_trait_xp = { trait = sbs_lesser_succubus track = loyalty value = 5 }
+					}
+					if = {
+						limit = { any_sub_realm_county = { any_county_province = { has_building_or_higher = brothel3 } } }
+						add_trait_xp = { trait = sbs_lesser_succubus track = loyalty value = 10 }
 					}
 				}
 				if = {
@@ -64,6 +268,10 @@
 						limit = { is_valid_construction_brothel_trigger = yes }
 						add_trait_xp = { trait = sbs_lesser_succubus track = power value = 10 }
 					}
+					if = {
+						limit = { any_sub_realm_county = { any_county_province = { has_building_or_higher = brothel3 } } }
+						add_trait_xp = { trait = sbs_lesser_succubus track = power value = 20 }
+					}
 				}
 				if = {
 					limit = { scope:recipient = { has_character_modifier = face_cum } }
@@ -71,6 +279,10 @@
 					if = {
 						limit = { is_valid_construction_brothel_trigger = yes }
 						add_trait_xp = { trait = sbs_lesser_succubus track = daring value = 10 }
+					}
+					if = {
+						limit = { any_sub_realm_county = { any_county_province = { has_building_or_higher = brothel3 } } }
+						add_trait_xp = { trait = sbs_lesser_succubus track = daring value = 20 }
 					}
 				}
 			}
@@ -89,22 +301,91 @@
 					add_trait_xp = { trait = sbs_lesser_demon value = 50 }
 				}
 			}
+			if = {
+				limit = { OR = { scope:gold = yes scope:extortionate_gold = yes } }
+				pay_short_term_gold = {
+					target = scope:recipient
+					gold = scope:recipient.increased_ransom_cost_value
+				}
+			}
+			if = {
+				limit = { OR = { scope:current_gold = yes scope:extortionate_current_gold = yes } }
+				pay_short_term_gold = {
+					target = scope:recipient
+					gold = this.gold
+				}
+			}
 		}
 		scope:recipient = {
 			if = {
-				limit = { scope:actor = {  has_trait = sbs_lesser_succubus } has_character_modifier = face_cum }
+				limit = { scope:hook = yes has_hook = scope:actor }
+				use_hook = scope:actor
+			}
+			if = {
+				limit = { scope:favor = yes }
+				add_hook = {
+					target = scope:actor
+					type = favor_hook
+				}
+			}
+			if = {
+				limit = { scope:demand_conversion = yes }
+				set_character_faith_with_conversion = scope:actor.faith
+				add_opinion = { modifier = demanded_my_conversion_opinion target = scope:actor }
+			}
+			if = {
+				limit = { scope:renounce_claims = yes }
+				add_opinion = { modifier = demanded_claim_renouncement target = scope:actor }
+				every_claim = {
+					explicit = yes
+					limit = {
+						save_temporary_scope_as = temp_claim
+						OR = {
+							holder = scope:actor
+							AND = {
+								exists = holder
+								NOT = { prev = { target_is_liege_or_above = scope:actor } }
+								holder = { target_is_liege_or_above = scope:actor }
+							}
+							scope:actor = { any_held_title = { is_de_jure_liege_or_above_target = scope:temp_claim } }
+						}
+					}
+					scope:recipient = { remove_claim = prev }
+				}
+			}
+			if = {
+				limit = { scope:recruit = yes }
+				if = {
+					limit = { scope:actor = { culture = { has_cultural_parameter = can_recruit_prisoners_easily } } }
+					add_opinion = { modifier = loyal_servant target = scope:actor }
+					scope:actor = {
+						if = {
+							limit = { can_add_hook = { target = scope:recipient type = loyalty_hook } }
+							add_hook = { type = loyalty_hook target = scope:recipient }
+						}
+					}
+				}
+				else = { add_opinion = { modifier = demanded_recruitment target = scope:actor } }
+				scope:actor = { add_courtier = scope:recipient }
+			}
+			if = {
+				limit = { scope:demand_admin = yes }
+				change_to_administrative_effect = yes
+			}
+			if = {
+				limit = { scope:actor = { has_trait = sbs_lesser_succubus } has_character_modifier = face_cum }
 				remove_character_modifier = face_cum
 			}
 			if = {
-				limit = {  scope:actor = {  has_trait = sbs_lesser_succubus } has_character_modifier = body_cum }
+				limit = { scope:actor = { has_trait = sbs_lesser_succubus } has_character_modifier = body_cum }
 				remove_character_modifier = body_cum
 			}
 			if = {
-				limit = {  scope:actor = {  has_trait = sbs_lesser_succubus } has_character_modifier = ass_cum }
+				limit = { scope:actor = { has_trait = sbs_lesser_succubus } has_character_modifier = ass_cum }
 				remove_character_modifier = ass_cum
 			}
 			if = {
-				limit = {  scope:actor = {  has_trait = sbs_lesser_succubus } has_character_modifier = pussy_cum }
+				limit = { scope:actor = { has_trait = sbs_lesser_succubus } has_character_modifier = pussy_cum }
 				remove_character_modifier = pussy_cum
 			}
 			if = {
@@ -121,29 +402,29 @@
 			}
 		}
 	}
-	auto_accept = {
-		scope:recipient = {
-			has_relation_slave_owner = scope:actor
-		}
-	}
+	auto_accept = { scope:recipient = { has_relation_slave_owner = scope:actor } }
 	ai_accept = {
 		base = -5
-		opinion_modifier = {
-			opinion_target = scope:actor
-			who = scope:recipient
-			multiplier = 0.25
-		}
+		opinion_modifier = { opinion_target = scope:actor who = scope:recipient multiplier = 0.1 }
+		modifier = { add = 5 OR = { scope:gold = yes scope:extortionate_gold = yes } }
+		modifier = { add = 3 OR = { scope:current_gold = yes scope:extortionate_current_gold = yes } }
+		modifier = { add = -3 scope:hook = yes }
+		modifier = { add = 3 scope:favor = yes }
+		modifier = { add = -5 scope:demand_conversion = yes }
+		modifier = { add = -3 scope:renounce_claims = yes }
+		modifier = { add = -2 scope:recruit = yes }
+		modifier = { add = -4 scope:demand_admin = yes }
 		modifier = { add = 5 scope:recipient.faith = scope:actor.faith scope:recipient.faith.religion = religion:demonic_religion }
-		modifier = { add = 5  scope:actor = { has_relation_lover = scope:recipient } }
-		modifier = { add = 5  scope:actor = { has_relation_friend = scope:recipient } }
-		modifier = { add = 10  scope:actor = { has_relation_best_friend = scope:recipient } }
-		modifier = { add = 10  scope:actor = { has_relation_soulmate = scope:recipient } }
+		modifier = { add = 5 scope:actor = { has_relation_lover = scope:recipient } }
+		modifier = { add = 5 scope:actor = { has_relation_friend = scope:recipient } }
+		modifier = { add = 10 scope:actor = { has_relation_best_friend = scope:recipient } }
+		modifier = { add = 10 scope:actor = { has_relation_soulmate = scope:recipient } }
 		modifier = { add = 10 scope:recipient = { is_extended_family_of = scope:actor } }
 		modifier = { add = 20 scope:recipient = { is_close_family_of = scope:actor } }
 		modifier = { add = 30 scope:recipient = { is_parent_of = scope:actor } }
 		modifier = { add = 10 scope:recipient = { has_dread_level_towards = { target = scope:actor level = 1 } } desc = INTIMIDATED_REASON }
 		modifier = { add = 20 scope:recipient = { has_dread_level_towards = { target = scope:actor level = 2 } } desc = COWED_REASON }
-		modifier = { add = -20  scope:actor = { has_trait = sbs_lesser_demon } }
+		modifier = { add = -10 scope:actor = { has_trait = sbs_lesser_demon } }
 	}
 	ai_frequency = 12
 	ai_targets = {
@@ -158,5 +439,25 @@
 		max = 10
 	}
 	ai_potential = { always = yes }
-	ai_will_do = { base = 100 }
+	ai_will_do = {
+		base = 100
+
+		modifier = {
+			factor = 0
+			NOT = { scope:actor = scope:recipient }
+			NOR = {
+				scope:extortionate_gold = yes
+				scope:extortionate_current_gold = yes
+				scope:gold = yes
+				scope:current_gold = yes
+				scope:hook = yes
+				scope:favor = yes
+				scope:demand_conversion = yes
+				scope:renounce_claims = yes
+				scope:recruit = yes
+				scope:demand_admin = yes
+			}
+		}
+
+	}
 }

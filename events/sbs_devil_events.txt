@@ -22,7 +22,7 @@ sbs_devil.0550 = {
 	# find one, at any cost
 	option = {
 		ai_chance = { base = 10 }
-		trigger = { gold >= massive_gold_value any_character_artifact { has_artifact_modifier = master_dildo_modifier count = 0 } }
+		trigger = { gold >= massive_gold_value any_character_artifact = { has_artifact_modifier = master_dildo_modifier count = 0 } }
 		name = sbs_devil.0550.a
 		custom_tooltip = sbs_devil.0550.a.tt
 		ai_chance = { base = 50 }
@@ -53,7 +53,7 @@ sbs_devil.0550 = {
 	# you can feel it, there is one nearby
 	option = {
 		ai_chance = { base = 5 }
-		trigger = { gold >= minor_gold_value any_character_artifact { has_artifact_modifier = mistress_dildo_modifier count = 0 } }
+		trigger = { gold >= minor_gold_value any_character_artifact = { has_artifact_modifier = mistress_dildo_modifier count = 0 } }
 		name = sbs_devil.0550.c
 		custom_tooltip = sbs_devil.0550.c.tt
 		ai_chance = { base = 50 }
@@ -649,7 +649,7 @@ sbs_devil.1410 = {
 		ai_chance = {
 			base = 1
 			modifier = {
-				subtract = 2
+				add = -2
 				has_trait_xp = { trait = sbs_lesser_succubus track = corruption value >= 100 }
 			}
 		}
@@ -664,7 +664,7 @@ sbs_devil.1410 = {
 		ai_chance = {
 			base = 1
 			modifier = {
-				subtract = 1
+				add = -1
 				has_trait_xp = { trait = sbs_lesser_succubus track = loyalty value >= 100 }
 			}
 		}

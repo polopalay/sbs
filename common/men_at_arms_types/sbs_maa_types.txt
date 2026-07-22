@@ -85,10 +85,7 @@ succubus_zombie = {
 	icon = skirmishers
 	type = skirmishers
 	can_recruit = {
-		OR = {
-			has_trait = sbs_demon
-			have_devil_building_trigger = yes
-		}
+		has_trait = sbs_demon
 	}
 
 	pursuit = 15
@@ -123,10 +120,7 @@ succubus_skeleton = {
 	icon = skirmishers
 	type = skirmishers
 	can_recruit = {
-		OR = {
-			has_trait = sbs_demon
-			have_devil_building_trigger = yes
-		}
+		has_trait = sbs_demon
 	}
 
 	pursuit = 25

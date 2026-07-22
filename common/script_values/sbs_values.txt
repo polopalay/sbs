@@ -1,833 +1,335 @@
 succubus_cost_value = {
 	value = 0
 	if = {
-		limit = {
-			has_trait = drunkard
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:drunkard = yes
-			}
-		}
+		limit = { scope:drunkard = yes }
 		add = 1
 	}
 	if = {
-		limit = {
-			has_trait = hashishiyah
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:hashishiyah = yes
-			}
-		}
+		limit = { scope:hashishiyah = yes }
 		add = 1
 	}
 	if = {
-		limit = {
-			has_trait = rakish
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:rakish = yes
-			}
-		}
+		limit = { scope:rakish = yes }
 		add = 1
 	}
 	if = {
-		limit = {
-			has_trait = reclusive
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:reclusive = yes
-			}
-		}
+		limit = { scope:reclusive = yes }
 		add = 1
 	}
 	if = {
-		limit = {
-			has_trait = irritable
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:irritable = yes
-			}
-		}
+		limit = { scope:irritable = yes }
 		add = 1
 	}
 	if = {
-		limit = {
-			has_trait = flagellant
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:flagellant = yes
-			}
-		}
+		limit = { scope:flagellant = yes }
 		add = 1
 	}
 	if = {
-		limit = {
-			has_trait = profligate
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:profligate = yes
-			}
-		}
+		limit = { scope:profligate = yes }
 		add = 1
 	}
 	if = {
-		limit = {
-			has_trait = improvident
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:improvident = yes
-			}
-		}
+		limit = { scope:improvident = yes }
 		add = 1
 	}
 	if = {
-		limit = {
-			has_trait = contrite
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:contrite = yes
-			}
-		}
+		limit = { scope:contrite = yes }
 		add = 1
 	}
 	if = {
-		limit = {
-			has_trait = comfort_eater
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:comfort_eater = yes
-			}
-		}
+		limit = { scope:comfort_eater = yes }
 		add = 1
 	}
 	if = {
-		limit = {
-			has_trait = inappetetic
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:inappetetic = yes
-			}
-		}
+		limit = { scope:inappetetic = yes }
 		add = 1
 	}
 	if = {
-		limit = {
-			has_character_modifier = rejected_from_marriage_bed_modifier
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:rejected_from_marriage_bed_modifier = yes
-			}
-		}
+		limit = { scope:rejected_from_marriage_bed_modifier = yes }
 		add = 1
 	}
 	if = {
-		limit = {
-			has_trait = depressed_1
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:depressed_1 = yes
-			}
-		}
+		limit = { scope:depressed_1 = yes }
 		add = 1
 	}
 	if = {
-		limit = {
-			has_trait = depressed_genetic
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:depressed_genetic = yes
-			}
-		}
+		limit = { scope:depressed_genetic = yes }
 		add = 1
 	}
 	if = {
-		limit = {
-			has_trait = lunatic_1
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:lunatic_1 = yes
-			}
-		}
+		limit = { scope:lunatic_1 = yes }
 		add = 1
 	}
 	if = {
-		limit = {
-			has_trait = lunatic_genetic
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:lunatic_genetic = yes
-			}
-		}
+		limit = { scope:lunatic_genetic = yes }
 		add = 1
 	}
 	if = {
-		limit = {
-			has_trait = possessed_1
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:possessed_1 = yes
-			}
-		}
+		limit = { scope:possessed_1 = yes }
 		add = 1
 	}
 	if = {
-		limit = {
-			has_trait = possessed_genetic
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:possessed_genetic = yes
-			}
-		}
+		limit = { scope:possessed_genetic = yes }
 		add = 1
 	}
 	if = {
-		limit = {
-			has_trait = scarred
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:scarred = yes
-			}
-		}
+		limit = { scope:scarred = yes }
 		add = 1
 	}
 	if = {
-		limit = {
-			has_trait = one_eyed
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:one_eyed = yes
-			}
-		}
+		limit = { scope:one_eyed = yes }
 		add = 2
 	}
 	if = {
-		limit = {
-			has_trait = maimed
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:maimed = yes
-			}
-		}
+		limit = { scope:maimed = yes }
 		add = 2
 	}
 	if = {
-		limit = {
-			has_trait = one_legged
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:one_legged = yes
-			}
-		}
+		limit = { scope:one_legged = yes }
 		add = 2
 	}
 	if = {
-		limit = {
-			has_trait = disfigured
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:disfigured = yes
-			}
-		}
+		limit = { scope:disfigured = yes }
 		add = 3
 	}
 	if = {
-		limit = {
-			has_trait = eunuch_1
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:eunuch_1 = yes
-			}
-		}
+		limit = { scope:eunuch_1 = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = beardless_eunuch
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:beardless_eunuch = yes
-			}
-		}
+		limit = { scope:beardless_eunuch = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = blind
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:blind = yes
-			}
-		}
+		limit = { scope:blind = yes }
 		add = 3
 	}
 	if = {
-		limit = {
-			has_trait = sickly
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:sickly = yes
-			}
-		}
+		limit = { scope:sickly = yes }
 		add = 2
 	}
 	if = {
-		limit = {
-			has_trait = infirm
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:infirm = yes
-			}
-		}
+		limit = { scope:infirm = yes }
 		add = 2
 	}
 	if = {
-		limit = {
-			has_trait = incapable
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:incapable = yes
-			}
-		}
+		limit = { scope:incapable = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = leper
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:leper = yes
-			}
-		}
+		limit = { scope:leper = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = wounded_1
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:wounded_1 = yes
-			}
-		}
+		limit = { scope:wounded_1 = yes }
 		add = 1
 	}
 	if = {
-		limit = {
-			has_trait = wounded_2
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:wounded_2 = yes
-			}
-		}
+		limit = { scope:wounded_2 = yes }
 		add = 2
 	}
 	if = {
-		limit = {
-			has_trait = wounded_3
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:wounded_3 = yes
-			}
-		}
+		limit = { scope:wounded_3 = yes }
 		add = 3
 	}
 	if = {
-		limit = {
-			has_trait = early_great_pox
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:early_great_pox = yes
-			}
-		}
+		limit = { scope:early_great_pox = yes }
 		add = 3
 	}
 	if = {
-		limit = {
-			has_trait = ill
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:ill = yes
-			}
-		}
+		limit = { scope:ill = yes }
 		add = 1
 	}
 	if = {
-		limit = {
-			has_trait = pneumonic
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:pneumonic = yes
-			}
-		}
+		limit = { scope:pneumonic = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = gout_ridden
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:gout_ridden = yes
-			}
-		}
+		limit = { scope:gout_ridden = yes }
 		add = 3
 	}
 	if = {
-		limit = {
-			has_trait = typhus
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:typhus = yes
-			}
-		}
+		limit = { scope:typhus = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = consumption
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:consumption = yes
-			}
-		}
+		limit = { scope:consumption = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = measles
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:measles = yes
-			}
-		}
+		limit = { scope:measles = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = cancer
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:cancer = yes
-			}
-		}
+		limit = { scope:cancer = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = great_pox
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:great_pox = yes
-			}
-		}
+		limit = { scope:great_pox = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = smallpox
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:smallpox = yes
-			}
-		}
+		limit = { scope:smallpox = yes }
 		add = 3
 	}
 	if = {
-		limit = {
-			has_trait = bubonic_plague
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:bubonic_plague = yes
-			}
-		}
+		limit = { scope:bubonic_plague = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = lovers_pox
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:lovers_pox = yes
-			}
-		}
+		limit = { scope:lovers_pox = yes }
 		add = 3
 	}
 	if = {
-		limit = {
-			has_trait = dysentery
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:dysentery = yes
-			}
-		}
+		limit = { scope:dysentery = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = ergotism
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:ergotism = yes
-			}
-		}
+		limit = { scope:ergotism = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = albino
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:albino = yes
-			}
-		}
+		limit = { scope:albino = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = lisping
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:lisping = yes
-			}
-		}
+		limit = { scope:lisping = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = stuttering
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:stuttering = yes
-			}
-		}
+		limit = { scope:stuttering = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = giant
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:giant = yes
-			}
-		}
+		limit = { scope:giant = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = scaly
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:scaly = yes
-			}
-		}
+		limit = { scope:scaly = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = clubfooted
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:clubfooted = yes
-			}
-		}
+		limit = { scope:clubfooted = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = dwarf
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:dwarf = yes
-			}
-		}
+		limit = { scope:dwarf = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = hunchbacked
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:hunchbacked = yes
-			}
-		}
+		limit = { scope:hunchbacked = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = infertile
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:infertile = yes
-			}
-		}
+		limit = { scope:infertile = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = wheezing
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:wheezing = yes
-			}
-		}
+		limit = { scope:wheezing = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = spindly
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:spindly = yes
-			}
-		}
+		limit = { scope:spindly = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = bleeder
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:bleeder = yes
-			}
-		}
+		limit = { scope:bleeder = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = weak
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:weak = yes
-			}
-		}
+		limit = { scope:weak = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = dull
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:dull = yes
-			}
-		}
+		limit = { scope:dull = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = beauty_bad_1
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:beauty_bad_1 = yes
-			}
-		}
+		limit = { scope:beauty_bad_1 = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = beauty_bad_2
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:beauty_bad_2 = yes
-			}
-		}
+		limit = { scope:beauty_bad_2 = yes }
 		add = 7
 	}
 	if = {
-		limit = {
-			has_trait = beauty_bad_3
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:beauty_bad_3 = yes
-			}
-		}
+		limit = { scope:beauty_bad_3 = yes }
 		add = 10
 	}
 	if = {
-		limit = {
-			has_trait = intellect_bad_1
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:intellect_bad_1 = yes
-			}
-		}
+		limit = { scope:intellect_bad_1 = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = intellect_bad_2
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:intellect_bad_2 = yes
-			}
-		}
+		limit = { scope:intellect_bad_2 = yes }
 		add = 7
 	}
 	if = {
-		limit = {
-			has_trait = intellect_bad_3
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:intellect_bad_3 = yes
-			}
-		}
+		limit = { scope:intellect_bad_3 = yes }
 		add = 10
 	}
 	if = {
-		limit = {
-			has_trait = physique_bad_1
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:physique_bad_1 = yes
-			}
-		}
+		limit = { scope:physique_bad_1 = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = physique_bad_2
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:physique_bad_2 = yes
-			}
-		}
+		limit = { scope:physique_bad_2 = yes }
 		add = 7
 	}
 	if = {
-		limit = {
-			has_trait = physique_bad_3
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:physique_bad_3 = yes
-			}
-		}
+		limit = { scope:physique_bad_3 = yes }
 		add = 10
 	}
 	if = {
-		limit = {
-			has_trait = inbred
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:inbred = yes
-			}
-		}
+		limit = { scope:inbred = yes }
 		add = 5
 	}
 	if = {
-		limit = {
-			has_trait = witch
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:witch = yes
-			}
-		}
+		limit = { scope:witch = yes }
 		add = 3
 	}
 	if = {
-		limit = {
-			has_trait = deviant
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:deviant = yes
-			}
-		}
+		limit = { scope:deviant = yes }
 		add = 3
 	}
 	if = {
-		limit = {
-			has_trait = cannibal
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:cannibal = yes
-			}
-		}
+		limit = { scope:cannibal = yes }
 		add = 3
 	}
 	if = {
-		limit = {
-			has_trait = adulterer
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:adulterer = yes
-			}
-		}
+		limit = { scope:adulterer = yes }
 		add = 2
 	}
 	if = {
-		limit = {
-			has_trait = sodomite
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:sodomite = yes
-			}
-		}
+		limit = { scope:sodomite = yes }
 		add = 2
 	}
 	if = {
-		limit = {
-			has_trait = incestuous
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:incestuous = yes
-			}
-		}
+		limit = { scope:incestuous = yes }
 		add = 3
 	}
 	if = {
-		limit = {
-			has_trait = fornicator
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:fornicator = yes
-			}
-		}
+		limit = { scope:fornicator = yes }
 		add = 1
 	}
 	if = {
-		limit = {
-			has_trait = kinslayer_1
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:kinslayer_1 = yes
-			}
-		}
+		limit = { scope:kinslayer_1 = yes }
 		add = 3
 	}
 	if = {
-		limit = {
-			has_trait = kinslayer_2
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:kinslayer_2 = yes
-			}
-		}
+		limit = { scope:kinslayer_2 = yes }
 		add = 2
 	}
 	if = {
-		limit = {
-			has_trait = kinslayer_3
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:kinslayer_3 = yes
-			}
-		}
+		limit = { scope:kinslayer_3 = yes }
 		add = 2
 	}
 	if = {
-		limit = {
-			has_trait = murderer
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:murderer = yes
-			}
-		}
+		limit = { scope:murderer = yes }
 		add = 1
 	}
 	if = {
-		limit = {
-			has_trait = lifestyle_prostitute
-			OR = {
-				scope:actor = { is_ai = yes }
-				scope:lifestyle_prostitute = yes
-			}
-		}
+		limit = { scope:lifestyle_prostitute = yes }
 		add = 1
 	}
 	max = 25
@@ -838,4 +340,3 @@ deal_price_value = {
 	value = succubus_cost_value
 	multiply = 5
 }
-
