@@ -1559,6 +1559,15 @@ sbs_travel.1000 = {
 	}
 	#drink the drink and sleep naked in the specified altar room...
 	option = {
+		trigger = {
+			is_adult = yes
+			is_female = yes
+			is_ruler = yes
+			NOT = {
+				has_trait = lifestyle_prostitute
+				any_secret = { type = secret_prostitute }
+			}
+		}
 		ai_chance = { base = 1 }
 		name = sbs_travel.1000.a
 		custom_tooltip = sbs_travel.1000.a.tt
@@ -1646,6 +1655,9 @@ sbs_travel.1100 = {
 	}
 	# masturbate with the dildo
 	option = {
+		trigger = {
+			any_character_artifact { has_artifact_modifier = master_dildo_modifier }
+		}
 		ai_chance = { base = 2 }
 		name = sbs_travel.1100.a
 		custom_tooltip = sbs_travel.1100.a.tt
@@ -1770,6 +1782,15 @@ sbs_travel.2000 = {
 	}
 	#investigate
 	option = {
+		trigger = {
+			is_adult = yes
+			is_female = yes
+			is_ruler = yes
+			NOT = {
+				has_trait = lifestyle_prostitute
+				any_secret = { type = secret_prostitute }
+			}
+		}
 		ai_chance = { base = 5 }
 		name = sbs_travel.2000.a
 		custom_tooltip = sbs_travel.2000.a.tt

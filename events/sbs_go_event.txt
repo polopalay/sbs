@@ -1,13 +1,1850 @@
 namespace = sbs_go
 
-####### 4000 horse fucking ############
-#4000 start event of seeing horse cock,
+sbs_go.0100 = {
+	type = character_event
+	title = sbs_go.0100.t
+	desc = sbs_go.0100.intro
+	theme = deviantsmaskgo
+	override_background = { reference = deviantmerchantroombackground }
+	right_portrait = {
+		character = root
+		animation = chaplain
+		outfit_tags = { mena_stealth }
+	}
+	left_portrait = {
+		character = scope:sbs_black_market_assistant
+		animation = flirtation
+		outfit_tags = { priest_outfit }
+	}
+	immediate = {
+		create_character = {
+			template = cunning_courtesan_character
+			location = root.location
+			faith = root.capital_province.county.faith
+			culture = root.capital_province.county.culture
+			age = 20
+			gender_female_chance = 100
+			dynasty = none
+			save_scope_as = sbs_black_market_assistant
+		}
+		scope:sbs_black_market_assistant = {
+			hidden_effect = {
+				set_immortal_age = 20
+			}
+		}
+	}
+
+	# buy sleep potion
+	option = {
+		ai_chance = { base = 1 }
+		trigger = {
+			gold >= major_gold_value
+		}
+		name = sbs_go.0550.e
+		custom_tooltip = sbs_go.0550.e.tt
+		remove_short_term_gold = major_gold_value
+		scope:sbs_black_market_assistant = {
+			hidden_effect = {
+				death = {
+					death_reason = death_vanished
+				}
+			}
+		}
+		trigger_event = sbs_go.6000
+	}
+
+	# buy book
+	option = {
+		ai_chance = { base = 1 }
+		trigger = {
+			gold >= medium_gold_value
+			is_ruler = yes
+			NOT = { has_character_modifier = deviants_strangebook_modifier }
+		}
+		name = sbs_go.0550.d
+		custom_tooltip = sbs_go.0550.d.tt
+		remove_short_term_gold = medium_gold_value
+		add_character_modifier = { modifier = deviants_strangebook_modifier years = 10 }
+		scope:sbs_black_market_assistant = {
+			hidden_effect = {
+				death = {
+					death_reason = death_vanished
+				}
+			}
+		}
+	}
+
+	# buy master
+	option = {
+		ai_chance = { base = 5 }
+		trigger = {
+			gold >= massive_gold_value
+			NOT = {
+				any_character_artifact = {
+					has_artifact_modifier = master_dildo_modifier
+				}
+			}
+		}
+		name = master_dildo
+		remove_short_term_gold = massive_gold_value
+		create_artifact = {
+			name = master_dildo
+			rarity = masterwork
+			description = master_dildo_desc
+			type = magic_creation
+			modifier = master_dildo_modifier
+			visuals = master_dildo
+			template = master_dildo_template
+			max_durability = 100
+			wealth = 100
+			quality = 100
+		}
+		scope:sbs_black_market_assistant = {
+			hidden_effect = {
+				death = {
+					death_reason = death_vanished
+				}
+			}
+		}
+	}
+
+	# buy crown
+	option = {
+		ai_chance = { base = 5 }
+		trigger = {
+			gold >= massive_gold_value
+			NOT = {
+				any_character_artifact = {
+					has_artifact_modifier = crown_of_wisdom_crown_modifier
+				}
+			}
+		}
+		name = crown_of_wisdom_crown
+		remove_short_term_gold = massive_gold_value
+		create_artifact = {
+			name = crown_of_wisdom_crown
+			description = crown_of_wisdom_crown_desc
+			type = helmet_simple
+			modifier = crown_of_wisdom_crown_modifier
+			visuals = crown_of_wisdom_crown
+			template = crown_of_wisdom_crown_template
+			max_durability = 100
+			history = {
+				type = created_before_history
+				date = 670.1.1
+			}
+			wealth = 15
+			quality = 15
+		}
+		scope:sbs_black_market_assistant = {
+			hidden_effect = {
+				death = {
+					death_reason = death_vanished
+				}
+			}
+		}
+	}
+
+	# buy bracelet
+	option = {
+		ai_chance = { base = 5 }
+		trigger = {
+			gold >= monumental_gold_value
+			NOT = {
+				any_character_artifact = {
+					has_artifact_modifier = snake_bracelet_modifier
+				}
+			}
+		}
+		name = snake_bracelet
+		remove_short_term_gold = monumental_gold_value
+		create_artifact = {
+			name = snake_bracelet
+			description = snake_bracelet_desc
+			type = miscellaneous
+			modifier = snake_bracelet_modifier
+			visuals = snake_bracelet
+			template = snake_bracelet_template
+			history = {
+				type = created_before_history
+				date = 670.1.1
+			}
+			max_durability = 100
+			wealth = 15
+			quality = 15
+		}
+		scope:sbs_black_market_assistant = {
+			hidden_effect = {
+				death = {
+					death_reason = death_vanished
+				}
+			}
+		}
+	}
+
+	# buy dream ring
+	option = {
+		ai_chance = { base = 5 }
+		trigger = {
+			gold >= monumental_gold_value
+			NOT = {
+				any_character_artifact = {
+					has_artifact_modifier = reddreamring_modifier
+				}
+			}
+		}
+		name = reddreamring
+		remove_short_term_gold = monumental_gold_value
+		create_artifact = {
+			name = reddreamring
+			description = reddreamring_desc
+			type = miscellaneous
+			modifier = reddreamring_modifier
+			visuals = reddreamring
+			template = reddreamring_template
+			history = {
+				type = created_before_history
+				date = 670.1.1
+			}
+			max_durability = 999
+			wealth = 15
+			quality = 15
+		}
+		scope:sbs_black_market_assistant = {
+			hidden_effect = {
+				death = {
+					death_reason = death_vanished
+				}
+			}
+		}
+	}
+
+	# leave
+	option = {
+		ai_chance = { base = 1 }
+		name = sbs_go.0100.x
+		custom_tooltip = sbs_go.0100.x.tt
+		scope:sbs_black_market_assistant = {
+			hidden_effect = {
+				death = {
+					death_reason = death_vanished
+				}
+			}
+		}
+	}
+}
+
+sbs_go.0501 = { 
+	type = character_event
+	title = sbs_go.0501.t
+	desc = sbs_go.0501.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantbasicdildotwohandfuck }
+	right_portrait = {
+		character = root
+		animation = lunatic
+	}
+	trigger = {
+		stress_level >= 1
+		any_character_artifact = { has_artifact_modifier = master_dildo_modifier }
+	}
+	# pass out
+	option = {
+		ai_chance = { base = 10 }
+		name = sbs_go.0501.a
+		custom_tooltip = sbs_go.0501.a.tt
+		stress_impact = {
+			base = minor_stress_impact_loss
+			lustful = medium_stress_impact_loss
+		}
+	}		
+	# I can't live without it.
+	option = {
+		ai_chance = { base = 10 }
+		name = sbs_go.0501.b
+		custom_tooltip = sbs_go.0501.b.tt
+		stress_impact = {
+			base = minor_stress_impact_loss
+			lustful = medium_stress_impact_loss
+		}
+		add_character_modifier = { modifier = licentious_01_modifier months = 1 }
+		trigger_event = sbs_go.0511
+	}
+}
+
+sbs_go.0511 = { 
+	type = character_event
+	title = sbs_go.0511.t
+	desc = sbs_go.0511.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantbasicdildofuckontop }
+	right_portrait = {
+		character = root
+		animation = ecstasy
+	}
+	# pass out
+	option = {
+		name = sbs_go.0511.a
+		custom_tooltip = sbs_go.0511.a.tt
+		stress_impact = {
+			base = minor_stress_impact_loss
+			lustful = medium_stress_impact_loss
+		}
+		random_artifact = {
+			limit = { has_artifact_modifier = master_dildo_modifier }
+			add_durability = -1
+		}
+		add_character_modifier = { modifier = licentious_02_modifier months = 1 }
+	}
+}
+
+sbs_go.0550 = {
+	type = character_event
+	title = sbs_go.0550.t
+	desc = sbs_go.0550.desc
+	trigger = {
+		is_adult = yes
+		is_female = yes
+		OR = {
+			has_trait = deviant
+			any_secret = { type = secret_deviant }
+		}
+	}
+	theme = deviantsmaskgo
+	override_background = { reference = bedchamber }
+	right_portrait = {
+		character = root
+		animation = lunatic
+	}
+	# find one, at any cost
+	option = {
+		ai_chance = { base = 50 }
+		name = sbs_go.0550.a
+		custom_tooltip = sbs_go.0550.a.tt
+		trigger_event = sbs_go.0100
+	}
+	# try to endure
+	option = {
+		ai_chance = { base = 1 }
+		name = sbs_go.0550.b
+		custom_tooltip = sbs_go.0550.b.tt
+		stress_impact = {
+			base = medium_stress_impact_gain
+			lustful = medium_stress_impact_gain
+		}
+	}
+	# you can feel it, there is one nearby
+	option = {
+		ai_chance = { base = 5 }
+		trigger = { gold >= minor_gold_value any_character_artifact = { has_artifact_modifier = mistress_dildo_modifier count = 0 } }
+		name = sbs_go.0550.c
+		custom_tooltip = sbs_go.0550.c.tt
+		remove_short_term_gold = medium_gold_value
+		create_artifact = {
+			name = mistress_dildo
+			rarity = common
+			description = mistress_dildo_desc
+			type = magic_creation
+			modifier = mistress_dildo_modifier
+			visuals = mistress_dildo
+			template = mistress_dildo_template
+			max_durability = 10
+			wealth = 10
+			quality = 10
+		}
+	}
+}
+
+sbs_go.1300 = {
+	type = character_event
+	title = sbs_go.1300.t
+	desc = {
+		random_valid = {
+			desc = sbs_go.1300.a.desc
+			desc = sbs_go.1300.b.desc
+			desc = sbs_go.1300.c.desc
+			desc = sbs_go.1300.d.desc
+			desc = sbs_go.1300.e.desc
+		}
+	}
+	theme = deviantsmaskgo
+	override_background = { reference = dreamthingmanifests }
+	right_portrait = {
+		character = root
+		animation = shock
+		outfit_tags = { no_clothes }
+	}
+	trigger = {
+		is_female = yes
+		is_adult = yes
+	}
+	# submit
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_go.1300.a
+		custom_tooltip = sbs_go.1300.a.tt
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = power
+				value = 5
+			}
+		}
+		trigger_event = sbs_go.1303
+	}
+	# fight it
+	option = {
+		ai_chance = { base = 10 }
+		name = sbs_go.1300.b
+		custom_tooltip = sbs_go.1300.b.tt
+		duel = {
+			skill = prowess
+			value = high_skill_rating
+			# Success: win
+			20 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.1300.bwin.tt
+				}
+				stress_impact = {
+					base = medium_stress_impact_loss
+				}
+				trigger_event = sbs_go.1301
+			}
+			# Failure, lose
+			80 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.1300.blose.tt
+				}
+				stress_impact = {
+					base = massive_stress_impact_gain
+				}
+				hidden_effect = {
+					add_trait_xp = {
+						trait = sbs_lesser_succubus
+						track = power
+						value = -10
+					}
+				}
+				trigger_event = sbs_go.1302
+			}
+		}
+	}
+	# escape, by any means
+	option = {
+		ai_chance = { base = 10 }
+		name = sbs_go.1300.c
+		custom_tooltip = sbs_go.1300.c.tt
+		add_piety = minor_piety_gain
+		stress_impact = {
+			base = minor_stress_impact_gain
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = corruption
+				value = -5
+			}
+		}
+	}
+}
+
+sbs_go.1301 = {
+	type = character_event
+	title = sbs_go.1301.t
+	desc = sbs_go.1301.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = bedchamber }
+	right_portrait = {
+		character = root
+		animation = ecstasy
+		outfit_tags = { no_clothes }
+	}
+	#
+	option = {
+		name = sbs_go.1301.a
+		custom_tooltip = sbs_go.1301.a.tt
+		stress_impact = {
+			base = massive_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = power
+				value = 10
+			}
+		}
+	}
+}
+
+sbs_go.1302 = {
+	type = character_event
+	title = sbs_go.1302.t
+	desc = {
+		random_valid = {
+			desc = sbs_go.1302.a.desc
+			desc = sbs_go.1302.b.desc
+			desc = sbs_go.1302.c.desc
+			desc = sbs_go.1302.d.desc
+			desc = sbs_go.1302.e.desc
+		}
+	}
+	theme = deviantsmaskgo
+	override_background = { reference = dreamthingmanifests }
+	right_portrait = {
+		character = root
+		animation = shame
+		outfit_tags = { no_clothes }
+	}
+	#submit
+	option = {
+		name = sbs_go.1302.a
+		custom_tooltip = sbs_go.1302.a.tt
+		trigger_event = sbs_go.1303
+	}
+	#resist
+	option = {
+		name = sbs_go.1302.b
+		custom_tooltip = sbs_go.1302.b.tt
+		stress_impact = {
+			base = massive_stress_impact_gain
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = corruption
+				value = -10
+			}
+		}
+	}
+}
+
+sbs_go.1303 = {
+	type = character_event
+	title = sbs_go.1303.t
+	desc = sbs_go.1303.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = dreamthingmanifests }
+	right_portrait = {
+		character = root
+		animation = throne_room_kneel_1
+		outfit_tags = { no_clothes }
+	}
+	# offer ass
+	option = {
+		ai_chance = { base = 20 }
+		name = sbs_go.1303.a
+		custom_tooltip = sbs_go.1303.a.tt
+		trigger_event = sbs_go.1320
+	}
+	# willingly mount with pussy
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_go.1303.b
+		custom_tooltip = sbs_go.1303.b.tt
+		trigger_event = sbs_go.1310
+	}
+}
+
+sbs_go.1310 = {
+	type = character_event
+	title = sbs_go.1310.t
+	desc = {
+		random_valid = {
+			desc = sbs_go.1310.a.desc
+			desc = sbs_go.1310.b.desc
+			desc = sbs_go.1310.c.desc
+			desc = sbs_go.1310.d.desc
+			desc = sbs_go.1310.e.desc
+		}
+	}
+	theme = deviantsmaskgo
+	override_background = { reference = dreamthingpussyfuck }
+	right_portrait = {
+		character = root
+		animation = throne_room_kneel_1
+		outfit_tags = { no_clothes }
+	}
+	# accept seed
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_go.1310.a
+		custom_tooltip = sbs_go.1310.a.tt
+		random_living_character = {
+			limit = { is_adult = yes is_female = no }
+			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
+			weight = {
+				base = 0
+				modifier = { in_diplomatic_range = root add = 1 }
+				modifier = { is_courtier_of = root add = 1000 }
+				modifier = { has_trait = sbs_lesser_demon add = 10000 }
+			}
+		}
+		hidden_effect = {
+			add_character_modifier = { modifier = pussy_cum months = 1 }
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = corruption
+				value = 5
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = power
+				value = 10
+			}
+		}
+		trigger_event = sbs_go.1315
+	}
+	# pull out
+	option = {
+		name = sbs_go.1310.b
+		custom_tooltip = sbs_go.1310.b.tt
+		hidden_effect = {
+			add_character_modifier = { modifier = pussy_cum months = 1 }
+			add_character_modifier = { modifier = body_cum months = 1 }
+		}
+	}
+}
+
+sbs_go.1315 = {
+	type = character_event
+	title = sbs_go.1315.t
+	desc = {
+		random_valid = {
+			desc = sbs_go.1315.a.desc
+			desc = sbs_go.1315.b.desc
+			desc = sbs_go.1315.c.desc
+			desc = sbs_go.1315.d.desc
+			desc = sbs_go.1315.e.desc
+		}
+	}
+	theme = deviantsmaskgo
+	override_background = { reference = deviantsdildocockfucktop }
+	right_portrait = {
+		character = root
+		animation = shock
+		outfit_tags = { no_clothes }
+	}
+	# escape, before he comes to his senses
+	option = {
+		name = sbs_go.1315.a
+		custom_tooltip = sbs_go.1315.a.tt
+		stress_impact = {
+			lustful = medium_stress_impact_gain
+		}
+	}
+	# keep going, the man seems docile enough to let you cum... but he will definately tell others about it
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_go.1315.b
+		custom_tooltip = sbs_go.1315.b.tt
+		add_piety = minor_piety_loss
+		stress_impact = {
+			lustful = medium_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = loyalty
+				value = 5
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = power
+				value = 10
+			}
+		}
+		trigger_event = sbs_go.1319
+	}
+}
+
+sbs_go.1319 = {
+	type = character_event
+	title = sbs_go.1319.t
+	desc = {
+		random_valid = {
+			desc = sbs_go.1319.a.desc
+			desc = sbs_go.1319.b.desc
+			desc = sbs_go.1319.c.desc
+			desc = sbs_go.1319.d.desc
+			desc = sbs_go.1319.e.desc
+		}
+	}
+	theme = deviantsmaskgo
+	override_background = { reference = dreamthingbirthing }
+	right_portrait = {
+		character = root
+		animation = throne_room_kneel_1
+		outfit_tags = { no_clothes }
+	}
+	# it is, what it is
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_go.1319.a
+		custom_tooltip = sbs_go.1319.a.tt
+		random_list = {
+			1 = {
+				modifier = { add = -1 OR = { has_trait = dull has_trait = intellect_good has_trait = shrewd } }
+				add_trait_force_tooltip = dull
+			}
+			1 = {
+				modifier = { add = -1 OR = { has_trait = weak has_trait = strong has_trait = physique_good } }
+				add_trait_force_tooltip = weak
+			}
+			2 = {
+				modifier = { add = -1 has_trait = lisping }
+				add_trait_force_tooltip = lisping
+			}
+			2 = {
+				modifier = { add = -1 has_trait = stuttering }
+				add_trait_force_tooltip = stuttering
+			}
+			3 = {
+				modifier = { add = -1 OR = { has_trait = fecund has_trait = infertile } }
+				add_trait_force_tooltip = fecund
+			}
+			1 = {
+				modifier = { add = -1 OR = { has_trait_with_flag = sbs_demon_trait primary_title.tier < tier_duchy } }
+				add_trait_force_tooltip = sbs_lesser_succubus
+			}
+			20 = {
+				add_character_modifier = { modifier = sbs_buff years = 100 }
+			}
+		}
+	}
+	# this is wrong, go repent
+	option = {
+		name = sbs_go.1319.b
+		custom_tooltip = sbs_go.1319.b.tt
+		stress_impact = {
+			base = medium_stress_impact_gain
+		}
+		trigger_event = sbs_repent_event.0800
+	}
+}
+
+sbs_go.1320 = {
+	type = character_event
+	title = sbs_go.1320.t
+	desc = {
+		random_valid = {
+			desc = sbs_go.1320.a.desc
+			desc = sbs_go.1320.b.desc
+			desc = sbs_go.1320.c.desc
+			desc = sbs_go.1320.d.desc
+			desc = sbs_go.1320.e.desc
+		}
+	}
+	theme = deviantsmaskgo
+	override_background = { reference = dreamthingassfuck }
+	right_portrait = {
+		character = root
+		animation = throne_room_kneel_1
+		outfit_tags = { no_clothes }
+	}
+	# embrace
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_go.1320.a
+		custom_tooltip = sbs_go.1320.a.tt
+		stress_impact = {
+			base = medium_stress_impact_loss
+			lustful = medium_stress_impact_loss
+		}
+		hidden_effect = {
+			add_character_modifier = { modifier = ass_cum months = 1 }
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = loyalty
+				value = 5
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = daring
+				value = 10
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = power
+				value = 10
+			}
+		}
+		trigger_event = sbs_go.1325
+	}
+	# endure
+	option = {
+		name = sbs_go.1320.b
+		custom_tooltip = sbs_go.1320.b.tt
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = power
+				value = 5
+			}
+		}
+	}
+}
+
+sbs_go.1325 = {
+	type = character_event
+	title = sbs_go.1325.t
+	desc = {
+		random_valid = {
+			desc = sbs_go.1325.a.desc
+			desc = sbs_go.1325.b.desc
+			desc = sbs_go.1325.c.desc
+		}
+	}
+	theme = deviantsmaskgo
+	override_background = { reference = deviantanalcreampie }
+	right_portrait = {
+		character = root
+		animation = shame
+		outfit_tags = { no_clothes }
+	}
+	# embrace
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_go.1325.a
+		custom_tooltip = sbs_go.1325.a.tt
+		stress_impact = {
+			base = medium_stress_impact_loss
+			lustful = medium_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = power
+				value = 10
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = daring
+				value = 10
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = corruption
+				value = 5
+			}
+		}
+	}
+	# resist
+	option = {
+		name = sbs_go.1325.b
+		custom_tooltip = sbs_go.1325.b.tt
+		add_piety = minor_piety_loss
+		stress_impact = {
+			base = medium_stress_impact_gain
+		}
+	}
+	# lay still...
+	option = {
+		name = sbs_go.1325.c
+		custom_tooltip = sbs_go.1325.c.tt
+	}
+	# repent later
+	option = {
+		name = sbs_go.1325.d
+		custom_tooltip = sbs_go.1325.d.tt
+		trigger_event = sbs_repent_event.0800
+	}
+}
+
+sbs_go.1410 = {
+	type = character_event
+	title = sbs_go.1410.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					has_trait_xp = { trait = sbs_lesser_succubus track = corruption value >= 100 }
+				}
+				desc = sbs_go.1410.a.desc
+			}
+			triggered_desc = {
+				trigger = {
+					has_trait_xp = {
+						trait = sbs_lesser_succubus
+						track = corruption
+						value < 50
+					}
+				}
+				desc = sbs_go.1410.b.desc
+			}
+			triggered_desc = {
+				trigger = {
+					is_female = yes
+				}
+				desc = sbs_go.1410.c.desc
+			}
+		}
+	}
+	theme = deviantsmaskgo
+	override_background = { reference = deviantgremlinontop }
+	right_portrait = {
+		character = root
+		animation = lunatic
+	}
+	trigger = {
+		is_female = yes
+		is_adult = yes
+	}
+	# pay gold
+	option = {
+		ai_chance = { base = 10 }
+		trigger = { gold >= monumental_gold_value }
+		name = sbs_go.1410.a
+		custom_tooltip = sbs_go.1410.a.tt
+		add_piety = medium_piety_loss
+		remove_short_term_gold = monumental_gold_value
+		trigger_event = sbs_go.1411
+	}
+	# beg for sex
+	option = {
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = -2
+				has_trait_xp = { trait = sbs_lesser_succubus track = corruption value >= 100 }
+			}
+		}
+		trigger = { has_trait = lustful }
+		name = sbs_go.1410.b
+		custom_tooltip = sbs_go.1410.b.tt
+		add_piety = medium_piety_loss
+		trigger_event = sbs_go.1412
+	}
+	# stay still
+	option = {
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = -1
+				has_trait_xp = { trait = sbs_lesser_succubus track = loyalty value >= 100 }
+			}
+		}
+		name = sbs_go.1410.c
+		custom_tooltip = sbs_go.1410.c.tt
+		add_piety = minor_piety_loss
+		trigger_event = sbs_go.1413
+	}
+	# ask gold from it instead
+	option = {
+		ai_chance = { base = 1 }
+		add_piety = major_piety_loss
+		name = sbs_go.1410.d
+		custom_tooltip = sbs_go.1410.d.tt
+		trigger_event = sbs_go.1414
+	}
+	# resist
+	option = {
+		name = sbs_go.1410.e
+		ai_chance = { base = 0 }
+		custom_tooltip = sbs_go.1410.e.tt
+		add_piety = minor_piety_gain
+		stress_impact = {
+			base = major_stress_impact_gain
+			lustful = major_stress_impact_gain
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = corruption
+				value = -1
+			}
+		}
+	}
+}
+
+sbs_go.1411 = {
+	type = character_event
+	title = sbs_go.1411.t
+	desc = sbs_go.1411.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantgremlinontopkiss }
+	right_portrait = {
+		character = root
+		animation = personality_greedy
+		outfit_tags = { no_clothes }
+	}
+	option = {
+		name = sbs_go.1411.a
+		custom_tooltip = sbs_go.1411.a.tt
+		hidden_effect = {
+			add_character_modifier = { modifier = sbs_buff years = 100 }
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = corruption
+				value = 5
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = loyalty
+				value = 5
+			}
+		}
+	}
+}
+
+sbs_go.1412 = {
+	type = character_event
+	title = sbs_go.1412.t
+	desc = sbs_go.1412.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantgremlinontopfuck }
+	right_portrait = {
+		character = root
+		animation = personality_coward
+		outfit_tags = { no_clothes }
+	}
+	option = {
+		name = sbs_go.1412.a
+		custom_tooltip = sbs_go.1412.a.tt
+		stress_impact = {
+			base = medium_stress_impact_loss
+			lustful = massive_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = corruption
+				value = 5
+			}
+			add_character_modifier = { modifier = pussy_cum months = 1 }
+		}
+	}
+}
+
+sbs_go.1413 = {
+	type = character_event
+	title = sbs_go.1413.t
+	desc = sbs_go.1413.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantgremlinontopfuck }
+	right_portrait = {
+		character = root
+		animation = personality_callous
+	}
+	option = {
+		name = sbs_go.1413.a
+		custom_tooltip = sbs_go.1413.a.tt
+		stress_impact = {
+			base = medium_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = loyalty
+				value = 5
+			}
+			add_character_modifier = { modifier = pussy_cum days = 10 }
+		}
+	}
+}
+
+sbs_go.1414 = {
+	type = character_event
+	title = sbs_go.1414.t
+	desc = sbs_go.1414.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantgremlinontop }
+	right_portrait = {
+		character = root
+		animation = personality_content
+	}
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_go.1414.a
+		custom_tooltip = sbs_go.1414.a.tt
+		add_gold = 5
+		trigger_event = sbs_go.1415
+	}
+	# demand more gold
+	option = {
+		name = sbs_go.1414.b
+		add_piety = major_piety_loss
+		custom_tooltip = sbs_go.1414.b.tt
+		trigger_event = sbs_go.1416
+	}
+}
+
+sbs_go.1415 = {
+	type = character_event
+	title = sbs_go.1415.t
+	desc = sbs_go.1415.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantgremlinontopdoggy }
+	right_portrait = {
+		character = root
+		animation = frontend_right_idle
+		outfit_tags = { no_clothes }
+	}
+	option = {
+		name = sbs_go.1415.a
+		custom_tooltip = sbs_go.1415.a.tt
+		stress_impact = {
+			base = minor_stress_impact_loss
+			lustful = medium_stress_impact_loss
+		}
+		add_piety = minor_piety_loss
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = daring
+				value = 10
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = power
+				value = 10
+			}
+		}
+	}
+}
+
+sbs_go.1416 = {
+	type = character_event
+	title = sbs_go.1416.t
+	desc = sbs_go.1416.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemongrope }
+	right_portrait = {
+		character = root
+		animation = personality_greedy
+	}
+	# if agree to stuff every hole
+	option = {
+		name = sbs_go.1416.a
+		custom_tooltip = sbs_go.1416.a.tt
+		add_piety = minor_piety_loss
+		add_gold = 10
+		trigger_event = sbs_go.1417
+	}
+	# if agree to fuck the biggest cock, longer you stay consious, the more you earn
+	option = {
+		name = sbs_go.1416.b
+		add_piety = minor_piety_loss
+		custom_tooltip = sbs_go.1416.b.tt
+		trigger_event = sbs_go.1418
+	}
+	# if agree to a parade
+	option = {
+		name = sbs_go.1416.c
+		add_piety = medium_piety_loss
+		custom_tooltip = sbs_go.1416.c.tt
+		add_gold = tiny_gold_value
+		trigger_event = sbs_go.1419
+	}
+}
+
+sbs_go.1417 = {
+	type = character_event
+	title = sbs_go.1417.t
+	desc = sbs_go.1417.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonorgyfuck }
+	right_portrait = {
+		character = root
+		animation = wedding_priest
+		outfit_tags = { no_clothes }
+	}
+	# pass out
+	option = {
+		name = sbs_go.1417.a
+		custom_tooltip = sbs_go.1417.a.tt
+		stress_impact = {
+			base = medium_stress_impact_loss
+			lustful = medium_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = power
+				value = 5
+			}
+		}
+	}
+	# see how long you can endure
+	option = {
+		name = sbs_go.1417.b
+		custom_tooltip = sbs_go.1417.b.tt
+		duel = {
+			skill = prowess
+			value = decent_skill_rating
+			# Success: win
+			40 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.1417.bwin.tt
+				}
+				trigger_event = sbs_go.1420
+			}
+			# Failure, lose
+			60 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.1417.blose.tt
+				}
+				trigger_event = sbs_go.1421
+			}
+		}
+	}
+}
+
+sbs_go.1418 = {
+	type = character_event
+	title = sbs_go.1418.t
+	desc = sbs_go.1418.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonbigcockfuck }
+	right_portrait = {
+		character = root
+		animation = eccentric
+		outfit_tags = { no_clothes }
+	}
+	# see how long you can endure
+	option = {
+		name = sbs_go.1418.a
+		custom_tooltip = sbs_go.1418.a.tt
+		duel = {
+			skill = prowess
+			value = high_skill_rating
+			# Success: win
+			40 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.1418.awin.tt
+				}
+				trigger_event = sbs_go.1422
+			}
+			# Failure, lose
+			60 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.1418.alose.tt
+				}
+				trigger_event = sbs_go.1423
+			}
+		}
+	}
+	#just pass out to guard your fragile mind
+	option = {
+		name = sbs_go.1418.b
+		custom_tooltip = sbs_go.1418.b.tt
+		add_gold = 2
+		stress_impact = {
+			base = minor_stress_impact_loss
+			lustful = medium_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = daring
+				value = 5
+			}
+		}
+	}
+}
+
+sbs_go.1419 = {
+	type = character_event
+	title = sbs_go.1419.t
+	desc = sbs_go.1419.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonparade }
+	right_portrait = {
+		character = root
+		animation = personality_greedy
+	}
+	# set worth
+	option = {
+		name = sbs_go.1419.a
+		custom_tooltip = sbs_go.1419.a.tt
+		stress_impact = {
+			base = medium_stress_impact_gain
+			lustful = medium_stress_impact_loss
+		}
+		hidden_effect = {
+			random_list = {
+				10 = {
+					trigger_event = sbs_go.5100
+				}
+				10 = { trigger_event = sbs_go.5110 }
+				10 = { trigger_event = sbs_go.5120 }
+				10 = { trigger_event = sbs_go.5130 }
+				10 = { trigger_event = sbs_go.5140 }
+				0 = {
+					modifier = { any_knight = { is_adult = yes is_female = no } add = 20 }
+					trigger_event = sbs_go.5150
+				}
+				0 = {
+					modifier = { any_courtier = { is_adult = yes is_female = no } add = 20 }
+					trigger_event = sbs_go.5160
+				}
+				10 = { trigger_event = sbs_go.5300 }
+				0 = {
+					modifier = { any_prisoner = { is_adult = yes is_female = yes } add = 20 }
+					trigger_event = sbs_go.5320
+				}
+			}
+		}
+	}
+}
+
+sbs_go.1420 = {
+	type = character_event
+	title = sbs_go.1420.t
+	desc = sbs_go.1420.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonorgycumdump }
+	right_portrait = {
+		character = root
+		animation = war_over_win
+		outfit_tags = { no_clothes }
+	}
+	# pass out
+	option = {
+		name = sbs_go.1420.a
+		custom_tooltip = sbs_go.1420.a.tt
+		add_gold = tiny_gold_value
+		stress_impact = {
+			base = medium_stress_impact_gain
+			lustful = medium_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = corruption
+				value = 5
+			}
+			add_character_modifier = { modifier = face_cum months = 1 }
+		}
+	}
+}
+
+sbs_go.1421 = {
+	type = character_event
+	title = sbs_go.1421.t
+	desc = sbs_go.1421.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonbeinghumiliated }
+	right_portrait = {
+		character = root
+		animation = war_over_loss
+		outfit_tags = { no_clothes }
+	}
+	# pass out
+	option = {
+		name = sbs_go.1421.a
+		custom_tooltip = sbs_go.1421.a.tt
+		stress_impact = {
+			base = medium_stress_impact_gain
+			lustful = medium_stress_impact_loss
+		}
+	}
+}
+
+sbs_go.1422 = {
+	type = character_event
+	title = sbs_go.1422.t
+	desc = sbs_go.1422.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonbigcockcum }
+	right_portrait = {
+		character = root
+		animation = war_over_win
+		outfit_tags = { no_clothes }
+	}
+	# pass out
+	option = {
+		name = sbs_go.1422.a
+		custom_tooltip = sbs_go.1422.a.tt
+		add_gold = tiny_gold_value
+		stress_impact = {
+			base = medium_stress_impact_gain
+			lustful = medium_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = loyalty
+				value = 5
+			}
+			add_character_modifier = { modifier = face_cum months = 1 }
+		}
+	}
+}
+
+sbs_go.1423 = {
+	type = character_event
+	title = sbs_go.1423.t
+	desc = sbs_go.1423.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonbeinghumiliated }
+	right_portrait = {
+		character = root
+		animation = war_over_loss
+		outfit_tags = { no_clothes }
+	}
+	# pass out
+	option = {
+		name = sbs_go.1423.a
+		custom_tooltip = sbs_go.1423.a.tt
+		add_gold = 1
+		stress_impact = {
+			base = medium_stress_impact_gain
+			lustful = medium_stress_impact_loss
+		}
+	}
+}
+
+#1440 70> submission track, urge to expose
+
+sbs_go.1440 = {
+	type = character_event
+	title = sbs_go.1440.t
+	desc = sbs_go.1440.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = throne_room }
+	right_portrait = {
+		character = root
+		animation = personality_greedy
+	}
+	trigger = {
+		is_adult = yes
+		is_ruler = yes
+		is_female = yes
+		should_be_naked_trigger = no
+		any_councillor = { is_female = no }
+	}
+	option = {
+		name = sbs_go.1440.a
+		custom_tooltip = sbs_go.1440.a.tt
+		hidden_effect = {
+			random_list = {
+				10 = { trigger_event = sbs_go.1441 }
+				10 = { trigger_event = sbs_go.1442 }
+			}
+		}
+	}
+	option = {
+		name = sbs_go.1400.b
+		custom_tooltip = sbs_go.1400.b.tt
+		stress_impact = {
+			base = major_stress_impact_gain
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = daring
+				value = -1
+			}
+		}
+	}
+}
+
+sbs_go.1441 = {
+	type = character_event
+	title = sbs_go.1441.t
+	desc = sbs_go.1441.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantthroneexposespreadlegs }
+	right_portrait = {
+		character = root
+		animation = personality_greedy
+	}
+	option = {
+		name = sbs_go.1441.a
+		custom_tooltip = sbs_go.1441.a.tt
+		add_piety = minor_piety_loss
+		stress_impact = {
+			base = minor_stress_impact_gain
+		}
+		add_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = daring
+				value = 5
+			}
+		}
+	}
+}
+
+sbs_go.1442 = {
+	type = character_event
+	title = sbs_go.1442.t
+	desc = sbs_go.1442.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantthronefistpussymasturbation }
+	right_portrait = {
+		character = root
+		animation = personality_greedy
+	}
+	option = {
+		name = sbs_go.1442.a
+		custom_tooltip = sbs_go.1442.a.tt
+		add_piety = medium_piety_loss
+		stress_impact = {
+			base = minor_stress_impact_loss
+		}
+		add_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = daring
+				value = 5
+			}
+			add_character_modifier = { modifier = pussy_cum days = 10 }
+			add_character_modifier = { modifier = body_cum days = 10 }
+		}
+	}
+}
+
+#1460 past 50 corruption, after a heated debate, as you sit naked on your throne, some vassls/advisors just surround you on your throne, demand to fuck their whore ruler... to adress their issues to your holes... as you made them hard...
+
+sbs_go.1460 = {
+	type = character_event
+	title = sbs_go.1460.t
+	desc = sbs_go.1460.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantthroneexposespreadlegs }
+	right_portrait = {
+		character = root
+		animation = personality_greedy
+	}
+	trigger = {
+		is_adult = yes
+		is_female = yes
+		should_be_naked_trigger = yes
+		any_councillor = { is_female = no }
+	}
+	immediate = {
+		random_councillor = {
+			limit = { is_female = no }
+			save_scope_as = sbs_random_1
+		}
+	}
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_go.1460.a
+		custom_tooltip = sbs_go.1460.a.tt
+		hidden_effect = {
+			random_list = {
+				10 = { trigger_event = sbs_go.1461 }
+				10 = { trigger_event = sbs_go.1462 }
+			}
+		}
+	}
+	option = {
+		ai_chance = { base = 50 }
+		name = sbs_go.1460.b
+		custom_tooltip = sbs_go.1460.b.tt
+		scope:sbs_random_1 = {
+			pay_short_term_gold = {
+				target = root
+				gold = root.prostitute_price_value
+			}
+		}
+		hidden_effect = {
+			random_list = {
+				10 = { trigger_event = sbs_go.1461 }
+				10 = { trigger_event = sbs_go.1462 }
+			}
+		}
+	}
+	option = {
+		name = sbs_go.1460.x
+		custom_tooltip = sbs_go.1460.x.tt
+		stress_impact = {
+			base = major_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = daring
+				value = -10
+			}
+		}
+	}
+}
+
+#1461 side fuck while they keep debating, on the throne
+
+sbs_go.1461 = {
+	type = character_event
+	title = sbs_go.1461.t
+	desc = sbs_go.1461.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantthronesidewaysfuckcum }
+	right_portrait = {
+		character = root
+		animation = shame
+	}
+	left_portrait = {
+		character = scope:sbs_random_1
+		animation = personality_cynical
+	}
+	option = {
+		name = sbs_go.1461.a
+		custom_tooltip = sbs_go.1461.a.tt
+		stress_impact = { base = minor_stress_impact_loss }
+		every_court_position_holder = {
+			add_opinion = {
+				target = root
+				modifier = disgusted_opinion
+				opinion = -10
+			}
+		}
+		every_councillor = {
+			add_opinion = {
+				target = root
+				modifier = disgusted_opinion
+				opinion = -10
+			}
+		}
+		scope:sbs_random_1 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = daring
+				value = 5
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = power
+				value = 5
+			}
+			add_character_modifier = { modifier = pussy_cum days = 10 }
+			add_character_modifier = { modifier = body_cum days = 10 }
+		}
+	}
+}
+
+#1462 footstool while being fucked
+
+sbs_go.1462 = {
+	type = character_event
+	title = sbs_go.1462.t
+	desc = sbs_go.1462.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantthronebasicfootstoolhumiliation }
+	right_portrait = {
+		character = root
+		animation = shame
+	}
+	left_portrait = {
+		character = scope:sbs_random_1
+		animation = personality_cynical
+	}
+
+	option = {
+		name = sbs_go.1462.a
+		custom_tooltip = sbs_go.1462.a.tt
+		stress_impact = {
+			base = minor_stress_impact_loss
+		}
+		every_court_position_holder = {
+			add_opinion = {
+				target = root
+				modifier = disgusted_opinion
+				opinion = -10
+			}
+		}
+		every_councillor = {
+			add_opinion = {
+				target = root
+				modifier = disgusted_opinion
+				opinion = -10
+			}
+		}
+		trigger_event = sbs_go.1463
+	}
+}
+
+#1463 lickcum from floor after stool bukake
+
+sbs_go.1463 = {
+	type = character_event
+	title = sbs_go.1463.t
+	desc = sbs_go.1463.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantlickfloorcum }
+	right_portrait = {
+		character = root
+		animation = throne_room_kneel_2
+	}
+	left_portrait = {
+		character = scope:sbs_random_1
+		animation = personality_cynical
+	}
+
+	option = {
+		name = sbs_go.1463.a
+		custom_tooltip = sbs_go.1463.a.tt
+		stress_impact = {
+			base = minor_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = daring
+				value = 5
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = power
+				value = 5
+			}
+			add_character_modifier = { modifier = pussy_cum days = 10 }
+			add_character_modifier = { modifier = body_cum days = 10 }
+		}
+	}
+}
+
+#########################2000-2999 lustful only
+#2000urge to masturbate, middle of a meeting... pick when to do it... try to do it now is an intrigue challenge... diplo to excsue the meeting without issue, it's an important matter, or at least others seem to think os, endure is stress add...
+sbs_go.2000 = { 
+	type = character_event
+	title = sbs_go.2000.t
+	desc = sbs_go.2000.desc
+	theme = deviantsmaskgo
+	override_background = { reference = council_chamber }
+	right_portrait = {
+		character = root
+		animation = boredom  
+	}
+    trigger = {
+		is_ruler = yes
+		is_adult = yes
+	}
+	# dimsiss the meeting
+	option = {
+		name = sbs_go.2000.a
+		custom_tooltip = sbs_go.2000.a.tt
+        duel = {
+			skill = diplomacy
+			value = 10
+			# you convince everyone that you need to go pray, right now...
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = 3.5
+						min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.2000.aw.tt
+				}	
+				add_piety = minor_piety_gain
+				stress_impact = {
+					base = major_stress_impact_loss
+				}	
+			}
+			# 
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = -3.5
+						min = -49
+				}	
+				custom_tooltip = {
+					text = sbs_go.2000.al.tt
+				}		
+				add_prestige = minor_prestige_loss	
+				stress_impact = {
+					base = medium_stress_impact_loss
+				}				
+			}
+		}
+	}		
+	# do it now, 
+	option = {
+		name = sbs_go.2000.b
+		custom_tooltip = sbs_go.2000.b.tt
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = deviant
+				value = 1
+			}
+		}
+        duel = {
+			skill = intrigue
+			value = 10
+			# nobdy will notice, and the others even think you are focusing really inetntlys
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = 3.5
+						min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.2000.bw.tt
+				}		
+				add_prestige = miniscule_prestige_gain
+				stress_impact = {
+					base = major_stress_impact_loss
+				}
+			}
+			# bad rumours, that you act weird during meetings
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = -3.5
+						min = -49
+				}	
+				custom_tooltip = {
+					text = sbs_go.2000.bl.tt
+				}	
+				add_piety = minor_piety_loss	
+				stress_impact = {
+					base = minor_stress_impact_gain
+				}				
+			}
+		}
+	}	
+	# resist 
+	option = {
+		name = sbs_go.2000.c
+		custom_tooltip = sbs_go.2000.c.tt
+		stress_impact = {
+			base = major_stress_impact_gain
+		}
+	}			
+}
+
 sbs_go.4000 = { 
 	type = character_event
 	title = sbs_go.4000.t
 	cooldown = { years = 4 }
 	desc = sbs_go.4000.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
 	override_background = { reference = courtyard }
 	right_portrait = {
 		character = root
@@ -15,7 +1852,6 @@ sbs_go.4000 = {
 	}	
 	trigger = {
 		is_female = yes
-		has_trait = lustful
 	}
 	# have the horse bounds, for an inspection
 	option = {
@@ -31,13 +1867,12 @@ sbs_go.4000 = {
 	}	
 }
 
-#4010 inspecting the cock in private
 sbs_go.4010 = { 
 	type = character_event
 	title = sbs_go.4010.t
 	desc = sbs_go.4010.a.desc
-	theme = seduction
-	override_background = { reference = courtyard }	
+	theme = deviantsmaskgo
+	override_background = { reference = devianthorsecockpose }
 	right_portrait = {
 		character = root
 		animation = ecstasy
@@ -57,13 +1892,12 @@ sbs_go.4010 = {
 	}	
 }
 
-#4020the cock almost paralyzes you, you are forced to let out sounds
 sbs_go.4020 = { 
 	type = character_event
 	title = sbs_go.4020.t
 	desc = sbs_go.4020.a.desc
-	theme = seduction
-	override_background = { reference = courtyard }	
+	theme = deviantsmaskgo
+	override_background = { reference = devianthorsecockfuck }
 	right_portrait = {
 		character = root
 		animation = ecstasy
@@ -90,13 +1924,13 @@ sbs_go.4020 = {
 		}
 	}	
 }
-#4030horse cums... knocking you out...
+
 sbs_go.4030 = { 
 	type = character_event
 	title = sbs_go.4030.t
 	desc = sbs_go.4030.a.desc
-	theme = seduction
-	override_background = { reference = courtyard }	
+	theme = deviantsmaskgo
+	override_background = { reference = devianthorsecockcreampie }
 	right_portrait = {
 		character = root
 		animation = ecstasy
@@ -122,497 +1956,1224 @@ sbs_go.4030 = {
 	}	
 }
 
-#0501 basic exploratory dildo fuck, that escalates quickly
-sbs_go.0501 = { 
-	type = character_event
-	title = sbs_go.0501.t
-	desc = sbs_go.0501.desc
-	theme = family
-	override_background = { reference = bedchamber }
-	right_portrait = {
-		character = root
-		animation = lunatic
-	}
-	trigger = {
-		stress_level >= 1
-		any_character_artifact = {
-			OR = {
-				has_artifact_modifier = master_dildo_modifier
-				has_artifact_modifier = mistress_dildo_modifier
-			}
-		}
-	}
-	# pass out
-	option = {
-		ai_chance = { base = 10 }
-		name = sbs_go.0501.a
-		custom_tooltip = sbs_go.0501.a.tt
-		stress_impact = {
-			base = minor_stress_impact_loss
-			lustful = medium_stress_impact_loss
-		}
-		if = {
-			limit = { any_character_artifact = { has_artifact_modifier = master_dildo_modifier } }
-			random_artifact = {
-				limit = { has_artifact_modifier = master_dildo_modifier }
-				add_durability = -1
-			}
-		}
-		else_if = {
-			limit = { any_character_artifact = { has_artifact_modifier = mistress_dildo_modifier } }
-			random_artifact = {
-				limit = { has_artifact_modifier = mistress_dildo_modifier }
-				add_durability = -1
-			}
-		}
-	}		
-	# I can't live without it.
-	option = {
-		ai_chance = { base = 10 }
-		name = sbs_go.0501.b
-		custom_tooltip = sbs_go.0501.b.tt
-		stress_impact = {
-			base = minor_stress_impact_loss
-			lustful = medium_stress_impact_loss
-		}
-		add_character_modifier = { modifier = licentious_01_modifier months = 1 }
-		trigger_event = sbs_go.0511
-	}
-}
-
-#0511 if mount it
-sbs_go.0511 = { 
-	type = character_event
-	title = sbs_go.0511.t
-	desc = sbs_go.0511.desc
-	theme = secret
-	override_background = { reference = study }
-	right_portrait = {
-		character = root
-		animation = ecstasy
-	}
-	# pass out
-	option = {
-		name = sbs_go.0511.a
-		custom_tooltip = sbs_go.0511.a.tt
-		stress_impact = {
-			base = minor_stress_impact_loss
-			lustful = medium_stress_impact_loss
-		}
-		if = {
-			limit = { any_character_artifact = { has_artifact_modifier = master_dildo_modifier } }
-			random_artifact = {
-				limit = { has_artifact_modifier = master_dildo_modifier }
-				add_durability = -1
-			}
-		}
-		else_if = {
-			limit = { any_character_artifact = { has_artifact_modifier = mistress_dildo_modifier } }
-			random_artifact = {
-				limit = { has_artifact_modifier = mistress_dildo_modifier }
-				add_durability = -1
-			}
-		}
-		add_character_modifier = { modifier = licentious_02_modifier months = 1 }
-	}
-}
-
-#5000 you sweating in your study, can't focus, thinking about the book you read
-sbs_go.5000 = { 
-	type = character_event
-	title = sbs_go.5000.t
-	desc = sbs_go.5000.a.desc
-	theme = secret
-	override_background = { reference = study }
-	right_portrait = {
-		character = root
-		animation = chancellor
-	}
-	trigger = {
-		is_adult = yes
-		is_female = yes
-		has_character_modifier = deviants_strangebook_modifier
-	}
-	# yes
-	option = {
-		ai_chance = { base = 10 }
-		name = sbs_go.5000.a
-		custom_tooltip = sbs_go.5000.a.tt
-		stress_impact = {
-			base = medium_stress_impact_gain
-			lustful = minor_stress_impact_gain
-		}
-		trigger_event = sbs_go.5010
-
-	}	
-	# no no no
-	option = {
-		ai_chance = { base = 1 }
-		name = sbs_go.5000.b
-		custom_tooltip = sbs_go.5000.b.tt
-		remove_character_modifier = deviants_strangebook_modifier
-		stress_impact = {
-			lustful = massive_stress_impact_gain
-		}
-	}	
-}
-#5010 on a dark alley in commoner clothes, no idea how whores work, they keep ignoring you when you approach, you keep thinking about acting like in the book
-sbs_go.5010 = { 
-	type = character_event
-	title = sbs_go.5010.t
-	desc = sbs_go.5010.a.desc
-	theme = secret
-	override_background = { reference = alley_night }
-	right_portrait = {
-		character = root
-		animation = worry
-		outfit_tags = { mena_commoner_clothes }
-	}
-	# yes
-	option = {
-		ai_chance = { base = 10 }
-		name = sbs_go.5010.a
-		custom_tooltip = sbs_go.5010.a.tt
-		stress_impact = {
-			base = minor_stress_impact_gain
-		}
-		trigger_event = sbs_go.5100
-
-	}	
-	# no no no
-	option = {
-		name = sbs_go.5010.b
-		custom_tooltip = sbs_go.5010.b.tt
-		stress_impact = {
-			lustful = massive_stress_impact_gain
-		}
-	}	
-}
-
-#5100 guy shows up, maybe the one you exposed to, maybe someone else it atracted
-sbs_go.5100 = { 
+sbs_go.5100 = {
 	type = character_event
 	title = sbs_go.5100.t
-	desc = { 
-		random_valid = {
-			desc = sbs_go.5100.a.desc
-			desc = sbs_go.5100.b.desc
-			desc = sbs_go.5100.c.desc
-			desc = sbs_go.5100.d.desc
-		}
-	}
-	theme = secret
-	override_background = { reference = alley_night }
-	immediate = {
-		random_living_character = {
-			limit = { in_diplomatic_range = root is_adult = yes is_ruler = no is_lowborn = yes }
-			save_scope_as = random_go
-		}
-	}
-	left_portrait = {
-		character = scope:random_go
-		animation = scheme
-	}
+	desc = sbs_go.5100.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonparadegrope }
 	right_portrait = {
 		character = root
-		animation = worry
+		animation = personality_content
 		outfit_tags = { no_clothes }
 	}
-	# accept his offer
+	# promise to do better
 	option = {
-		ai_chance = { base = 10 }
 		name = sbs_go.5100.a
+		ai_chance = { base = 10 }
 		custom_tooltip = sbs_go.5100.a.tt
 		stress_impact = {
 			base = medium_stress_impact_gain
-			lustful = minor_stress_impact_loss
+			lustful = medium_stress_impact_loss
 		}
-		trigger_event = sbs_go.5110
-	}	
-	# no no no
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = power
+				value = 5
+			}
+			add_character_modifier = { modifier = body_cum days = 20 }
+			trigger_event = sbs_go.5500
+		}
+	}
+	# indifferent
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_go.5100.b
 		custom_tooltip = sbs_go.5100.b.tt
-		stress_impact = {
-			base = medium_stress_impact_gain
-			lustful = massive_stress_impact_gain
+		hidden_effect = {
+			trigger_event = sbs_go.5502
 		}
-	}	
+	}
+	# refuse
+	option = {
+		ai_chance = { base = 10 }
+		name = sbs_go.5100.c
+		custom_tooltip = sbs_go.5100.c.tt
+		stress_impact = {
+			base = medium_stress_impact_loss
+			lustful = medium_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = corruption
+				value = -2
+			}
+		}
+		trigger_event = sbs_go.5101
+	}
 }
 
-#5110 rough anal fuck, 4 variants,
-sbs_go.5110 = { 
+sbs_go.5101 = {
 	type = character_event
-	title = sbs_go.5110.t
-	desc = { 
-		random_valid = {
-			desc = sbs_go.5110.a.desc
-			desc = sbs_go.5110.b.desc
-			desc = sbs_go.5110.c.desc
-		}
-	}
-	theme = secret
-	override_background = { reference = alley_night }
-	left_portrait = {
-		character = scope:random_go
-		animation = scheme
-	}
+	title = sbs_go.5101.t
+	desc = sbs_go.5101.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonbeinghumiliated }
 	right_portrait = {
 		character = root
-		animation = worry
+		animation = prisondungeon
+	}
+	# pass out
+	option = {
+		name = sbs_go.5101.a
+		custom_tooltip = sbs_go.5101.a.tt
+		trigger_event = sbs_go.5500
+	}
+}
+
+sbs_go.5110 = {
+	type = character_event
+	title = sbs_go.5110.t
+	desc = sbs_go.5110.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonparafeedcumbucket }
+	right_portrait = {
+		character = root
+		animation = drink
 		outfit_tags = { no_clothes }
 	}
-	# love cock
+	# drink it all
 	option = {
 		ai_chance = { base = 10 }
 		name = sbs_go.5110.a
 		custom_tooltip = sbs_go.5110.a.tt
-		trigger_event = sbs_go.5111
-	}	
-	# ask finger
+		add_gold = 5
+		stress_impact = {
+			base = medium_stress_impact_loss
+			lustful = medium_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = power
+				value = 5
+			}
+			add_character_modifier = { modifier = face_cum days = 20 }
+			trigger_event = sbs_go.5501
+		}
+	}
+	# indifferent
 	option = {
 		ai_chance = { base = 10 }
 		name = sbs_go.5110.b
 		custom_tooltip = sbs_go.5110.b.tt
-		trigger_event = sbs_go.5112
-	}	
-	# C-cumming!
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = daring
+				value = 5
+			}
+			trigger_event = sbs_go.5502
+		}
+	}
+	# refuse
 	option = {
+		ai_chance = { base = 10 }
 		name = sbs_go.5110.c
 		custom_tooltip = sbs_go.5110.c.tt
-		trigger_event = sbs_go.5200
+		stress_impact = {
+			base = medium_stress_impact_loss
+			lustful = medium_stress_impact_gain
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = corruption
+				value = -1
+			}
+		}
+		trigger_event = sbs_go.5111
 	}
 }
 
-#5111 if I love cock!, rough doggy and he cums, use the ass fuck creampie
-sbs_go.5111 = { 
+sbs_go.5111 = {
 	type = character_event
 	title = sbs_go.5111.t
 	desc = sbs_go.5111.a.desc
-	theme = secret
-	override_background = { reference = alley_night }
-	left_portrait = {
-		character = scope:random_go
-		animation = scheme
-	}
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonparadecumwash }
 	right_portrait = {
 		character = root
-		animation = throne_room_kneel_1
+		animation = disbelief
 		outfit_tags = { no_clothes }
 	}
-	# 
+	# pass out
 	option = {
 		name = sbs_go.5111.a
 		custom_tooltip = sbs_go.5111.a.tt
-		stress_impact = {
-			base = minor_stress_impact_loss
-			lustful = medium_stress_impact_loss
-		}
-		trigger_event = sbs_go.5200
-	}	
+		trigger_event = sbs_go.5501
+	}
 }
 
-#5112 if Finger my pussy!, get fisted, use ass fuck and pussy fist pic
-sbs_go.5112 = { 
+sbs_go.5120 = {
 	type = character_event
-	title = sbs_go.5112.t
-	desc = sbs_go.5112.a.desc
-	theme = secret
-	override_background = { reference = alley_night }
-	left_portrait = {
-		character = scope:random_go
-		animation = scheme
-	}
+	title = sbs_go.5120.t
+	desc = sbs_go.5120.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonparadefistingrun }
 	right_portrait = {
 		character = root
-		animation = throne_room_kneel_1
+		animation = disbelief
 		outfit_tags = { no_clothes }
 	}
-	# 
+	# run faster
 	option = {
-		name = sbs_go.5112.a
-		custom_tooltip = sbs_go.5112.a.tt
+		name = sbs_go.5120.a
+		custom_tooltip = sbs_go.5120.a.tt
+		ai_chance = { base = 10 }
 		stress_impact = {
-			base = minor_stress_impact_loss
+			base = medium_stress_impact_gain
 			lustful = medium_stress_impact_loss
 		}
-		scope:random_go = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 0 } }
-		trigger_event = sbs_go.5200
-	}	
-}
-
-#5200 the man suddely leaves without cumming, men at arms surround you. the spear pic
-sbs_go.5200 = { 
-	type = character_event
-	title = sbs_go.5200.t
-	desc = sbs_go.5200.a.desc
-	immediate = {
-		random_living_character = {
-			limit = { in_diplomatic_range = root is_knight = yes is_adult = yes is_ruler = no is_lowborn = yes }
-			save_scope_as = random_knight
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = daring
+				value = 5
+			}
+			trigger_event = sbs_go.5500
 		}
 	}
-	theme = secret
-	override_background = { reference = alley_night }
-	left_portrait = {
-		character = scope:random_knight
-		animation = anger
+	# indifferent
+	option = {
+		ai_chance = { base = 10 }
+		name = sbs_go.5120.b
+		custom_tooltip = sbs_go.5120.b.tt
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = power
+				value = 5
+			}
+			trigger_event = sbs_go.5502
+		}
+	}
+	# refuse
+	option = {
+		ai_chance = { base = 10 }
+		name = sbs_go.5120.c
+		custom_tooltip = sbs_go.5120.c.tt
+		stress_impact = {
+			base = medium_stress_impact_loss
+			lustful = medium_stress_impact_gain
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = corruption
+				value = -1
+			}
+		}
+		trigger_event = sbs_go.5121
+	}
+}
+
+sbs_go.5121 = {
+	type = character_event
+	title = sbs_go.5121.t
+	desc = sbs_go.5121.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonparadecumwash }
+	right_portrait = {
+		character = root
+		animation = stress
+		outfit_tags = { no_clothes }
+	}
+	# pass out
+	option = {
+		name = sbs_go.5121.a
+		custom_tooltip = sbs_go.5121.a.tt
+		trigger_event = sbs_go.5501
+	}
+}
+
+sbs_go.5130 = {
+	type = character_event
+	title = sbs_go.5130.t
+	desc = sbs_go.5130.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonparadeorgyanalrough }
+	right_portrait = {
+		character = root
+		animation = personality_bold
+		outfit_tags = { no_clothes }
+	}
+	# moan as you cum
+	option = {
+		ai_chance = { base = 10 }
+		name = sbs_go.5130.a
+		custom_tooltip = sbs_go.5130.a.tt
+		stress_impact = {
+			base = medium_stress_impact_gain
+			lustful = medium_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = power
+				value = 5
+			}
+			add_character_modifier = { modifier = face_cum months = 1 }
+			trigger_event = sbs_go.5501
+		}
+	}
+	# indifferent
+	option = {
+		ai_chance = { base = 10 }
+		name = sbs_go.5130.b
+		custom_tooltip = sbs_go.5130.b.tt
+		hidden_effect = {
+			trigger_event = sbs_go.5502
+		}
+	}
+	# refuse
+	option = {
+		ai_chance = { base = 10 }
+		name = sbs_go.5130.c
+		custom_tooltip = sbs_go.5130.c.tt
+		stress_impact = {
+			base = medium_stress_impact_loss
+			lustful = medium_stress_impact_gain
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = corruption
+				value = -1
+			}
+		}
+		trigger_event = sbs_go.5131
+	}
+}
+
+sbs_go.5131 = {
+	type = character_event
+	title = sbs_go.5131.t
+	desc = sbs_go.5131.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonorgycumdump }
+	right_portrait = {
+		character = root
+		animation = personality_content
+		outfit_tags = { no_clothes }
+	}
+	# pass out
+	option = {
+		name = sbs_go.5131.a
+		custom_tooltip = sbs_go.5131.a.tt
+		trigger_event = sbs_go.5501
+	}
+}
+
+sbs_go.5140 = {
+	type = character_event
+	title = sbs_go.5140.t
+	desc = sbs_go.5140.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonparadeorgyheadincumbucket }
+	right_portrait = {
+		character = root
+		animation = personality_content
+		outfit_tags = { no_clothes }
+	}
+	# swallow as much as you can
+	option = {
+		ai_chance = { base = 10 }
+		name = sbs_go.5140.a
+		custom_tooltip = sbs_go.5140.a.tt
+		stress_impact = {
+			base = medium_stress_impact_gain
+			lustful = medium_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = daring
+				value = 5
+			}
+			add_character_modifier = { modifier = face_cum months = 1 }
+			trigger_event = sbs_go.5501
+		}
+	}
+	# indifferent, you pass out, straight to wake up event
+	option = {
+		ai_chance = { base = 10 }
+		name = sbs_go.5140.b
+		custom_tooltip = sbs_go.5140.b.tt
+		trigger_event = sbs_go.5502
+	}
+	# struggle to breathe
+	option = {
+		ai_chance = { base = 10 }
+		name = sbs_go.5140.c
+		custom_tooltip = sbs_go.5140.c.tt
+		stress_impact = {
+			base = medium_stress_impact_loss
+			lustful = medium_stress_impact_gain
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = power
+				value = -1
+			}
+		}
+		trigger_event = sbs_go.5141
+	}
+}
+
+sbs_go.5141 = {
+	type = character_event
+	title = sbs_go.5141.t
+	desc = sbs_go.5141.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonparadecumwash }
+	right_portrait = {
+		character = root
+		animation = personality_callous
+		outfit_tags = { no_clothes }
+	}
+	# pass out
+	option = {
+		name = sbs_go.5141.a
+		custom_tooltip = sbs_go.5141.a.tt
+		trigger_event = sbs_go.5501
+	}
+}
+
+sbs_go.5150 = {
+	type = character_event
+	title = sbs_go.5150.t
+	desc = sbs_go.5150.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonparadeorgymaleanalcoerced }
+	trigger = {
+		any_knight = {
+			is_adult = yes
+			is_female = no
+		}
+	}
+	immediate = {
+		random_knight = {
+			limit = { is_adult = yes is_female = no }
+			save_scope_as = knight
+		}
 	}
 	right_portrait = {
 		character = root
 		animation = shame
 		outfit_tags = { no_clothes }
 	}
-	# 
+	left_portrait = {
+		character = scope:knight
+		animation = shock
+	}
+	# act like a sex demon
 	option = {
 		ai_chance = { base = 10 }
-		name = sbs_go.5200.a
-		custom_tooltip = sbs_go.5200.a.tt
+		name = sbs_go.5150.a
+		custom_tooltip = sbs_go.5150.a.tt
 		stress_impact = {
 			base = medium_stress_impact_gain
 			lustful = medium_stress_impact_loss
 		}
-		trigger_event = sbs_go.5201	
-	}	
-	#
-	option = {
-		name = sbs_go.5200.b
-		custom_tooltip = sbs_go.5200.b.tt	
-		add_character_modifier = { modifier = licentious_03_modifier months = 1 }
-		stress_impact = {
-			base = medium_stress_impact_gain
-			lustful = massive_stress_impact_gain
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = corruption
+				value = 2
+			}
+			add_character_modifier = { modifier = face_cum months = 1 }
 		}
+		trigger_event = sbs_go.5151
 	}
-}
-
-#5201 if agree, spread limbs and do a perv pose while surrounded by spears, 
-sbs_go.5201 = { 
-	type = character_event
-	title = sbs_go.5201.t
-    desc = sbs_go.5201.a.desc
-	theme = secret
-	override_background = { reference = alley_night }
-	left_portrait = {
-		character = scope:random_knight
-		animation = ecstasy
-	}
-	right_portrait = {
-		character = root
-		animation = throne_room_kneel_1
-		outfit_tags = { no_clothes }
-	}
-	# 
-	option = {
-		name = sbs_go.5201.a
-		custom_tooltip = sbs_go.5201.a.tt
-		trigger_event = sbs_go.5210
-	}	
-}
-
-#5210 anal fuck train,
-sbs_go.5210 = { 
-	type = character_event
-	title = sbs_go.5210.t
-    desc = sbs_go.5210.a.desc
-	theme = secret
-	override_background = { reference = alley_night }
-	left_portrait = {
-		character = scope:random_knight
-		animation = ecstasy
-	}
-	right_portrait = {
-		character = root
-		animation = throne_room_kneel_1
-		outfit_tags = { no_clothes }
-	}
-	# 
-	option = {
-		name = sbs_go.5210.a
-		custom_tooltip = sbs_go.5210.a.tt
-		stress_impact = {
-			base = medium_stress_impact_loss
-			lustful = major_stress_impact_loss
-		}
-		scope:random_knight = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 0 } }
-		trigger_event = sbs_go.5211
-	}	
-}
-
-#5211 Harder, brave men! head spinning fuck
-sbs_go.5211 = { 
-	type = character_event
-	title = sbs_go.5211.t
-    desc = sbs_go.5211.a.desc
-	theme = secret
-	override_background = { reference = alley_night }
-	left_portrait = {
-		character = scope:random_knight
-		animation = ecstasy
-	}
-	right_portrait = {
-		character = root
-		animation = ecstatic
-		outfit_tags = { no_clothes }
-	}
-	# 
-	option = {
-		name = sbs_go.5211.a
-		custom_tooltip = sbs_go.5211.a.tt
-		trigger_event = sbs_go.5219
-		stress_impact = {
-			base = major_stress_impact_loss
-			lustful = major_stress_impact_loss
-		}
-		scope:random_knight = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 0 } }
-	}	
-}
-
-#5219 post event, ass leaking cum, ass leakc cum present pic
-sbs_go.5219 = { 
-	type = character_event
-	title = sbs_go.5219.t
-    desc = sbs_go.5219.a.desc
-	theme = secret
-	override_background = { reference = bedchamber }
-	right_portrait = {
-		character = root
-		animation = ecstatic
-		outfit_tags = { no_clothes }
-	}
-	# 
+	# indifferent,
 	option = {
 		ai_chance = { base = 10 }
-		name = sbs_go.5219.a
-		custom_tooltip = sbs_go.5219.a.tt
-		set_relation_lover = { 
-			reason = lover_shared_deviancy
-			target = scope:random_knight 
+		name = sbs_go.5150.b
+		custom_tooltip = sbs_go.5150.b.tt
+		hidden_effect = {
+			trigger_event = sbs_go.5502
+		}
+	}
+	# struggle, too much, to wake up event
+	option = {
+		ai_chance = { base = 10 }
+		name = sbs_go.5150.c
+		custom_tooltip = sbs_go.5150.c.tt
+		stress_impact = {
+			base = medium_stress_impact_loss
+			lustful = medium_stress_impact_gain
 		}
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				track = daring
-				value = 10
+				track = corruption
+				value = -1
 			}
 		}
-	}	
-	#
-	option = {
-		ai_chance = { base = 10 }
-		name = sbs_go.5219.b
-		custom_tooltip = sbs_go.5219.b.tt
-		add_character_modifier = { modifier = licentious_04_modifier months = 1 }
+		trigger_event = sbs_go.5500
 	}
 }
 
-#6000 new dream event variant, especially made for sleep potion from the merchant
+sbs_go.5151 = {
+	type = character_event
+	title = sbs_go.5151.t
+	desc = sbs_go.5151.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonparadeorgymaleanalcoerced }
+	right_portrait = {
+		character = root
+		animation = personality_dishonorable
+		outfit_tags = { no_clothes }
+	}
+	left_portrait = {
+		character = scope:knight
+		animation = shock
+		outfit_tags = { no_clothes }
+	}
+	# pass out
+	option = {
+		name = sbs_go.5151.a
+		custom_tooltip = sbs_go.5151.a.tt
+		scope:knight = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+		hidden_effect = {
+			add_character_modifier = { modifier = pussy_cum months = 1 }
+			trigger_event = sbs_go.5501
+		}
+	}
+}
+
+sbs_go.5160 = {
+	type = character_event
+	title = sbs_go.5160.t
+	desc = sbs_go.5160.a.desc
+	trigger = {
+		any_courtier = {
+			is_adult = yes
+			is_female = no
+		}
+	}
+	immediate = {
+		random_courtier = {
+			limit = { is_adult = yes is_female = no }
+			save_scope_as = courtier
+		}
+	}
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonparadeorgymaleanalcoerced }
+	right_portrait = {
+		character = root
+		animation = personality_greedy
+		outfit_tags = { no_clothes }
+	}
+	left_portrait = {
+		character = scope:courtier
+		animation = shock
+	}
+	# act like a sex demon
+	option = {
+		ai_chance = { base = 10 }
+		name = sbs_go.5160.a
+		custom_tooltip = sbs_go.5160.a.tt
+		stress_impact = {
+			base = medium_stress_impact_gain
+			lustful = medium_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = corruption
+				value = 1
+			}
+			add_character_modifier = { modifier = body_cum months = 1 }
+		}
+		trigger_event = sbs_go.5161
+	}
+	# indifferent
+	option = {
+		ai_chance = { base = 10 }
+		name = sbs_go.5160.b
+		custom_tooltip = sbs_go.5160.b.tt
+		hidden_effect = {
+			trigger_event = sbs_go.5502
+		}
+	}
+	# struggle, too much, to wake up event
+	option = {
+		ai_chance = { base = 10 }
+		name = sbs_go.5160.c
+		custom_tooltip = sbs_go.5160.c.tt
+		stress_impact = {
+			base = medium_stress_impact_gain
+			lustful = medium_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = corruption
+				value = -1
+			}
+		}
+		trigger_event = sbs_go.5500
+	}
+}
+
+sbs_go.5161 = {
+	type = character_event
+	title = sbs_go.5161.t
+	desc = sbs_go.5161.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonparadeorgymaleanalcoerced }
+	right_portrait = {
+		character = root
+		animation = personality_bold
+		outfit_tags = { no_clothes }
+	}
+	left_portrait = {
+		character = scope:courtier
+		animation = personality_dishonorable
+		outfit_tags = { no_clothes }
+	}
+	# pass out
+	option = {
+		name = sbs_go.5161.a
+		custom_tooltip = sbs_go.5161.a.tt
+		trigger_event = sbs_go.5501
+		scope:courtier = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+	}
+}
+
+sbs_go.5300 = {
+	type = character_event
+	title = sbs_go.5300.t
+	desc = sbs_go.5300.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonparadeorgydildoshow }
+	right_portrait = {
+		character = root
+		animation = personality_callous
+		outfit_tags = { no_clothes }
+	}
+	# work hard
+	option = {
+		name = sbs_go.5300.a
+		custom_tooltip = sbs_go.5300.a.tt
+		stress_impact = {
+			base = minor_stress_impact_loss
+			lustful = minor_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = power
+				value = 5
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = daring
+				value = 5
+			}
+			add_character_modifier = { modifier = body_cum months = 1 }
+			add_character_modifier = { modifier = face_cum months = 1 }
+		}
+		trigger_event = sbs_go.5301
+	}
+}
+
+sbs_go.5301 = {
+	type = character_event
+	title = sbs_go.5301.t
+	desc = sbs_go.5301.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonparadeorgymaleanalcoerced }
+	right_portrait = {
+		character = root
+		animation = personality_greedy
+		outfit_tags = { no_clothes }
+	}
+	# work hard
+	option = {
+		name = sbs_go.5301.a
+		custom_tooltip = sbs_go.5301.a.tt
+		stress_impact = {
+			base = minor_stress_impact_loss
+			lustful = minor_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = power
+				value = 5
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = daring
+				value = 5
+			}
+		}
+		trigger_event = sbs_go.5501
+	}
+}
+
+sbs_go.5320 = {
+	type = character_event
+	title = sbs_go.5320.t
+	desc = sbs_go.5320.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonparadehumanthugsgrope }
+	trigger = {
+		any_prisoner = { is_adult = yes is_female = yes }
+	}
+	right_portrait = {
+		character = root
+		animation = thinking
+		outfit_tags = { no_clothes }
+	}
+	# introduce yourself
+	option = {
+		name = sbs_go.5320.a
+		custom_tooltip = sbs_go.5320.a.tt
+		stress_impact = {
+			base = minor_stress_impact_loss
+			lustful = minor_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = power
+				value = 5
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = daring
+				value = 5
+			}
+			add_character_modifier = { modifier = pussy_cum months = 1 }
+			add_character_modifier = { modifier = ass_cum months = 1 }
+		}
+		trigger_event = sbs_go.5321
+	}
+}
+
+sbs_go.5321 = {
+	type = character_event
+	title = sbs_go.5321.t
+	desc = sbs_go.5321.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonparadehumanthugsgangbang }
+	right_portrait = {
+		character = root
+		animation = personality_greedy
+		outfit_tags = { no_clothes }
+	}
+	#
+	option = {
+		name = sbs_go.5321.a
+		custom_tooltip = sbs_go.5321.a.tt
+		stress_impact = {
+			base = medium_stress_impact_loss
+			lustful = medium_stress_impact_loss
+		}
+		every_prisoner = {
+			limit = { is_adult = yes is_female = yes }
+			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
+
+		}
+		trigger_event = sbs_go.5501
+	}
+}
+
+sbs_go.5500 = {
+	type = character_event
+	title = sbs_go.5500.t
+	desc = {
+		random_valid = {
+			desc = sbs_go.5500.a.desc
+			desc = sbs_go.5500.b.desc
+			desc = sbs_go.5500.c.desc
+			desc = sbs_go.5500.d.desc
+		}
+	}
+	trigger = {
+		is_ruler = yes
+	}
+	theme = deviantsmaskgo
+	override_background = { reference = corridor_day }
+	right_portrait = {
+		character = root
+		animation = ecstasy
+		outfit_tags = { no_clothes }
+	}
+	# go wash
+	option = {
+		name = sbs_go.5500.a
+		add_piety = minor_piety_loss
+		custom_tooltip = sbs_go.5500.a.tt
+	}
+	#
+	option = {
+		ai_chance = { base = 80 }
+		name = sbs_go.5500.b
+		custom_tooltip = sbs_go.5500.b.tt
+		add_prestige = medium_prestige_loss
+		add_piety = medium_piety_loss
+		stress_impact = {
+			base = medium_stress_impact_loss
+		}
+	}
+	#
+	option = {
+		name = sbs_go.5500.c
+		custom_tooltip = sbs_go.5500.c.tt
+		trigger_event = sbs_repent_event.0800
+	}
+	after =	{
+		if = {
+			limit = { is_ruler = yes }
+			hidden_effect = {
+				random_list = {
+					10 = { trigger_event = { id = sbs_go.5700 days = 1 } }
+					10 = { trigger_event = { id = sbs_go.5703 days = 1 } }
+					20 = { }
+				}
+			}
+		}
+	}
+}
+
+sbs_go.5501 = {
+	type = character_event
+	title = sbs_go.5501.t
+	desc = {
+		random_valid = {
+			desc = sbs_go.5501.a.desc
+			desc = sbs_go.5501.b.desc
+			desc = sbs_go.5501.c.desc
+			desc = sbs_go.5501.d.desc
+		}
+	}
+	trigger = {
+		is_ruler = yes
+	}
+	theme = deviantsmaskgo
+	override_background = { reference = corridor_day }
+	right_portrait = {
+		character = root
+		animation = ecstasy
+		outfit_tags = { no_clothes }
+	}
+	# go wash
+	option = {
+		name = sbs_go.5501.a
+		add_piety = minor_piety_loss
+		custom_tooltip = sbs_go.5501.a.tt
+	}
+	#
+	option = {
+		ai_chance = { base = 80 }
+		name = sbs_go.5501.b
+		custom_tooltip = sbs_go.5501.b.tt
+		add_prestige = medium_prestige_loss
+		add_piety = medium_piety_loss
+		stress_impact = {
+			base = medium_stress_impact_loss
+		}
+	}
+	#
+	option = {
+		name = sbs_go.5501.c
+		custom_tooltip = sbs_go.5501.c.tt
+		trigger_event = sbs_repent_event.0800
+	}
+	after =	{
+		if = {
+			limit = { is_ruler = yes }
+			hidden_effect = {
+				random_list = {
+					10 = { trigger_event = { id = sbs_go.5701 days = 1 } }
+					10 = { trigger_event = { id = sbs_go.5702 days = 1 } }
+					10 = { trigger_event = { id = sbs_go.5703 days = 1 } }
+					20 = { }
+				}
+			}
+		}
+	}
+}
+
+sbs_go.5502 = {
+	type = character_event
+	title = sbs_go.5502.t
+	desc = {
+		random_valid = {
+			desc = sbs_go.5502.a.desc
+			desc = sbs_go.5502.b.desc
+			desc = sbs_go.5502.c.desc
+			desc = sbs_go.5502.d.desc
+		}
+	}
+	trigger = {
+		is_ruler = yes
+	}
+	theme = deviantsmaskgo
+	override_background = { reference = bedchamber }
+	right_portrait = {
+		character = root
+		animation = ecstasy
+		outfit_tags = { no_clothes }
+	}
+	# go wash
+	option = {
+		name = sbs_go.5502.a
+		add_piety = minor_piety_loss
+		custom_tooltip = sbs_go.5502.a.tt
+	}
+	#
+	option = {
+		ai_chance = { base = 80 }
+		name = sbs_go.5502.b
+		custom_tooltip = sbs_go.5502.b.tt
+		add_prestige = medium_prestige_loss
+		add_piety = medium_piety_loss
+		stress_impact = {
+			base = medium_stress_impact_loss
+		}
+	}
+	#
+	option = {
+		name = sbs_go.5502.c
+		custom_tooltip = sbs_go.5502.c.tt
+		trigger_event = sbs_repent_event.0800
+	}
+}
+
+sbs_go.5700 = {
+	type = character_event
+	title = sbs_go.5700.t
+	desc = sbs_go.5700.a.desc
+	trigger = {
+		is_ruler = yes
+	}
+	theme = deviantsmaskgo
+	override_background = { reference = throne_room }
+	right_portrait = {
+		character = root
+		animation = thinking
+	}
+	# hire professioansl
+	option = {
+		name = sbs_go.5700.a
+		custom_tooltip = sbs_go.5700.a.tt
+		remove_short_term_gold = monumental_gold_value
+		add_piety = minor_piety_gain
+	}
+	# claim peronally closing the demon gates
+	option = {
+		name = sbs_go.5700.b
+		custom_tooltip = sbs_go.5700.b.tt
+		duel = {
+			skill = diplomacy
+			value = high_skill_rating
+			# Success: win
+			40 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.5700.bwin.tt
+				}
+				add_piety = medium_piety_gain
+				add_prestige = medium_prestige_gain
+			}
+			# Failure, lose
+			60 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.5700.blose.tt
+				}
+				add_piety = minor_piety_loss
+				add_prestige = medium_prestige_loss
+				stress_impact = {
+					base = medium_stress_impact_gain
+				}
+			}
+		}
+	}
+	# hunt down the cultists who opened the portal, and hang them
+	option = {
+		name = sbs_go.5700.c
+		custom_tooltip = sbs_go.5700.c.tt
+		add_dread = medium_dread_gain
+		add_prestige = minor_prestige_gain
+	}
+	# refuse, this is nonsense get hated on
+	option = {
+		name = sbs_go.5700.d
+		custom_tooltip = sbs_go.5700.d.tt
+		add_piety = major_piety_loss
+		add_prestige = major_prestige_loss
+	}
+}
+
+sbs_go.5701 = {
+	type = character_event
+	title = sbs_go.5701.t
+	desc = sbs_go.5701.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = throne_room }
+	right_portrait = {
+		character = root
+		animation = thinking
+	}
+	# hire professioansl
+	option = {
+		name = sbs_go.5701.a
+		custom_tooltip = sbs_go.5701.a.tt
+		remove_short_term_gold = massive_gold_value
+		add_piety = minor_piety_gain
+	}
+	# tell your soldiers to hunt down the ghost
+	option = {
+		name = sbs_go.5701.b
+		custom_tooltip = sbs_go.5701.b.tt
+		duel = {
+			skill = martial
+			value = decent_skill_rating
+			# Success: win
+			40 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.5701.bwin.tt
+				}
+				add_prestige = medium_prestige_gain
+			}
+			# Failure, lose
+			60 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.5701.blose.tt
+				}
+				add_piety = minor_piety_loss
+				add_prestige = medium_prestige_loss
+				stress_impact = {
+					base = medium_stress_impact_gain
+				}
+			}
+		}
+	}
+	# say you hunted it down personally and won... diplo check on results
+	option = {
+		name = sbs_go.5701.c
+		custom_tooltip = sbs_go.5701.c.tt
+		duel = {
+			skill = diplomacy
+			value = high_skill_rating
+			# Success: win
+			40 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.5701.cwin.tt
+				}
+				add_piety = medium_piety_gain
+				add_prestige = medium_prestige_gain
+			}
+			# Failure, lose
+			60 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.5701.close.tt
+				}
+				add_piety = minor_piety_loss
+				add_prestige = medium_prestige_loss
+				stress_impact = {
+					base = medium_stress_impact_gain
+				}
+			}
+		}
+	}
+	# refuse, this is nonsense get hated on
+	option = {
+		name = sbs_go.5701.d
+		custom_tooltip = sbs_go.5701.d.tt
+		add_piety = major_piety_loss
+		add_prestige = major_prestige_loss
+	}
+}
+
+sbs_go.5702 = {
+	type = character_event
+	title = sbs_go.5702.t
+	desc = sbs_go.5702.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = throne_room }
+	right_portrait = {
+		character = root
+		animation = thinking
+	}
+	# hire professioansl
+	option = {
+		name = sbs_go.5702.a
+		custom_tooltip = sbs_go.5702.a.tt
+		remove_short_term_gold = massive_gold_value
+		add_piety = minor_piety_gain
+	}
+	# tell your soldiers to find the cultists and witches
+	option = {
+		name = sbs_go.5702.b
+		custom_tooltip = sbs_go.5702.b.tt
+		duel = {
+			skill = martial
+			value = decent_skill_rating
+			# Success: win
+			40 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.5702.bwin.tt
+				}
+				add_prestige = medium_prestige_gain
+			}
+			# Failure, lose
+			60 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.5702.blose.tt
+				}
+				add_piety = minor_piety_loss
+				add_prestige = medium_prestige_loss
+				stress_impact = {
+					base = medium_stress_impact_gain
+				}
+			}
+		}
+	}
+	# say you hunted the demons, witches and cultists down personally and won... diplo check on results
+	option = {
+		name = sbs_go.5702.c
+		custom_tooltip = sbs_go.5702.c.tt
+		duel = {
+			skill = diplomacy
+			value = high_skill_rating
+			# Success: win
+			40 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.5702.cwin.tt
+				}
+				add_piety = medium_piety_gain
+				add_prestige = medium_prestige_gain
+			}
+			# Failure, lose
+			60 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.5702.close.tt
+				}
+				add_piety = minor_piety_loss
+				add_prestige = medium_prestige_loss
+				stress_impact = {
+					base = medium_stress_impact_gain
+				}
+			}
+		}
+	}
+	# refuse, this is nonsense get hated on
+	option = {
+		name = sbs_go.5702.d
+		custom_tooltip = sbs_go.5702.d.tt
+		add_piety = major_piety_loss
+		add_prestige = major_prestige_loss
+	}
+}
+
+sbs_go.5703 = {
+	type = character_event
+	title = sbs_go.5703.t
+	desc = sbs_go.5703.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = throne_room }
+	right_portrait = {
+		character = root
+		animation = thinking
+	}
+	# hire professioansl
+	option = {
+		name = sbs_go.5703.a
+		custom_tooltip = sbs_go.5703.a.tt
+		remove_short_term_gold = monumental_gold_value
+		add_piety = major_piety_gain
+	}
+	# excetute all
+	option = {
+		name = sbs_go.5703.b
+		custom_tooltip = sbs_go.5703.b.tt
+		add_dread = medium_dread_gain
+		add_prestige = minor_prestige_gain
+	}
+	# refuse, this is nonsense get hated on
+	option = {
+		name = sbs_go.5703.c
+		custom_tooltip = sbs_go.5703.c.tt
+		add_piety = major_piety_loss
+		add_prestige = major_prestige_loss
+	}
+}
+
 sbs_go.6000 = { 
 	type = character_event
 	title = sbs_go.6000.t
 	desc = sbs_go.6000.a.desc
-	theme = secret
-	override_background = { reference = bedchamber }	
+	theme = deviantsmaskgo
+	override_background = { reference = bedchamber }
 	right_portrait = {
 		character = root
 		animation = thinking
@@ -642,13 +3203,12 @@ sbs_go.6000 = {
 	}
 }
 
-#6001 in a fantastical library full of books
 sbs_go.6001 = { 
 	type = character_event
 	title = sbs_go.6001.t
 	desc = sbs_go.6001.a.desc
-	theme = secret
-	override_background = { reference = bedchamber }	
+	theme = deviantsmaskgo
+	override_background = { reference = deviantlibrarybackground }
 	right_portrait = {
 		character = root
 		animation = thinking
@@ -690,12 +3250,12 @@ sbs_go.6001 = {
 	}
 }
 
-#6010 witnessing an epic battle
 sbs_go.6010 = { 
 	type = character_event
 	title = sbs_go.6010.t
 	desc = sbs_go.6010.a.desc
-	theme = battle
+	theme = deviantsmaskgo
+	override_background = { reference = deviantbattlefieldbackground }
 	right_portrait = {
 		character = root
 		animation = war_over_win
@@ -736,13 +3296,12 @@ sbs_go.6010 = {
 	}
 }
 
-#6020 if even more, in darkness, feeling things
 sbs_go.6020 = { 
 	type = character_event
 	title = sbs_go.6020.t
 	desc = sbs_go.6020.a.desc
-	theme = secret
-	override_background = { reference = bedchamber }	
+	theme = deviantsmaskgo
+	override_background = { reference = devianttentacleallin }
 	right_portrait = {
 		character = root
 		animation = thinking
@@ -765,7 +3324,7 @@ sbs_go.6020 = {
 		}
 	}
 }
-#6030 being fucked
+
 sbs_go.6030 = { 
 	type = character_event
 	title = sbs_go.6030.t
@@ -781,8 +3340,8 @@ sbs_go.6030 = {
 			}
 		}
 	}	
-	theme = secret
-	override_background = { reference = bedchamber }	
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonimpfuckmissionarypov }
 	left_portrait = {
 		character = scope:random_man
 		animation = scheme
@@ -810,13 +3369,12 @@ sbs_go.6030 = {
 	}
 }
 
-#6040 being fucked silly if embrace
 sbs_go.6040 = { 
 	type = character_event
 	title = sbs_go.6040.t
 	desc = sbs_go.6040.a.desc
-	theme = secret
-	override_background = { reference = bedchamber }	
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonimpfuckmissionarysideview }
 	left_portrait = {
 		character = scope:random_man
 		animation = scheme
@@ -842,13 +3400,12 @@ sbs_go.6040 = {
 	}	
 }
 
-#6050 wake up wet and panting, gaping and a higly swollen pussy...
 sbs_go.6050 = { 
 	type = character_event
 	title = sbs_go.6050.t
 	desc = sbs_go.6050.a.desc
-	theme = secret
-	override_background = { reference = bedchamber }	
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonimpfuckwakpeupgape }
 	right_portrait = {
 		character = root
 		animation = ecstatic
@@ -880,3 +3437,1255 @@ sbs_go.6050 = {
 	}
 }
 
+########## Restored deviants_campslut chain ##########
+
+sbs_go.7000 = { 
+	type = character_event
+	title = sbs_go.7000.t
+	desc = sbs_go.7000.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = study }
+	right_portrait = {
+		character = root
+		animation = chancellor
+	}
+	trigger = {
+		is_adult = yes
+		is_female = yes
+		has_character_modifier = deviants_strangebook_modifier
+	}
+	# yes
+	option = {
+		ai_chance = { base = 10 }
+		name = sbs_go.7000.a
+		custom_tooltip = sbs_go.7000.a.tt
+		stress_impact = {
+			base = medium_stress_impact_gain
+			lustful = minor_stress_impact_gain
+		}
+		trigger_event = sbs_go.7010
+
+	}	
+	# no no no
+	option = {
+		ai_chance = { base = 1 }
+		name = sbs_go.7000.b
+		custom_tooltip = sbs_go.7000.b.tt
+		remove_character_modifier = deviants_strangebook_modifier
+		stress_impact = {
+			lustful = massive_stress_impact_gain
+		}
+	}	
+}
+
+sbs_go.7010 = { 
+	type = character_event
+	title = sbs_go.7010.t
+	desc = sbs_go.7010.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = alley_night }
+	right_portrait = {
+		character = root
+		animation = worry
+		outfit_tags = { mena_commoner_clothes }
+	}
+	# yes
+	option = {
+		ai_chance = { base = 10 }
+		name = sbs_go.7010.a
+		custom_tooltip = sbs_go.7010.a.tt
+		stress_impact = {
+			base = minor_stress_impact_gain
+		}
+		trigger_event = sbs_go.7100
+
+	}	
+	# no no no
+	option = {
+		name = sbs_go.7010.b
+		custom_tooltip = sbs_go.7010.b.tt
+		stress_impact = {
+			lustful = massive_stress_impact_gain
+		}
+	}	
+}
+
+sbs_go.7100 = { 
+	type = character_event
+	title = sbs_go.7100.t
+	desc = { 
+		random_valid = {
+			desc = sbs_go.7100.a.desc
+			desc = sbs_go.7100.b.desc
+			desc = sbs_go.7100.c.desc
+			desc = sbs_go.7100.d.desc
+		}
+	}
+	theme = deviantsmaskgo
+	override_background = { reference = deviantstreetslutexposeass }
+	immediate = {
+		random_living_character = {
+			limit = { in_diplomatic_range = root is_adult = yes is_ruler = no is_lowborn = yes }
+			save_scope_as = random_go
+		}
+	}
+	left_portrait = {
+		character = scope:random_go
+		animation = scheme
+	}
+	right_portrait = {
+		character = root
+		animation = worry
+		outfit_tags = { no_clothes }
+	}
+	# accept his offer
+	option = {
+		ai_chance = { base = 10 }
+		name = sbs_go.7100.a
+		custom_tooltip = sbs_go.7100.a.tt
+		stress_impact = {
+			base = medium_stress_impact_gain
+			lustful = minor_stress_impact_loss
+		}
+		trigger_event = sbs_go.7110
+	}	
+	# no no no
+	option = {
+		name = sbs_go.7100.b
+		custom_tooltip = sbs_go.7100.b.tt
+		stress_impact = {
+			base = medium_stress_impact_gain
+			lustful = massive_stress_impact_gain
+		}
+	}	
+}
+
+sbs_go.7110 = { 
+	type = character_event
+	title = sbs_go.7110.t
+	desc = { 
+		random_valid = {
+			desc = sbs_go.7110.a.desc
+			desc = sbs_go.7110.b.desc
+			desc = sbs_go.7110.c.desc
+		}
+	}
+	theme = deviantsmaskgo
+	override_background = { reference = deviantstreetslutdogguanalalley }
+	left_portrait = {
+		character = scope:random_go
+		animation = scheme
+	}
+	right_portrait = {
+		character = root
+		animation = worry
+		outfit_tags = { no_clothes }
+	}
+	# love cock
+	option = {
+		ai_chance = { base = 10 }
+		name = sbs_go.7110.a
+		custom_tooltip = sbs_go.7110.a.tt
+		trigger_event = sbs_go.7111
+	}	
+	# ask finger
+	option = {
+		ai_chance = { base = 10 }
+		name = sbs_go.7110.b
+		custom_tooltip = sbs_go.7110.b.tt
+		trigger_event = sbs_go.7112
+	}	
+	# C-cumming!
+	option = {
+		name = sbs_go.7110.c
+		custom_tooltip = sbs_go.7110.c.tt
+		trigger_event = sbs_go.7200
+	}
+}
+
+sbs_go.7111 = { 
+	type = character_event
+	title = sbs_go.7111.t
+	desc = sbs_go.7111.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantanalcreampie }
+	left_portrait = {
+		character = scope:random_go
+		animation = scheme
+	}
+	right_portrait = {
+		character = root
+		animation = throne_room_kneel_1
+		outfit_tags = { no_clothes }
+	}
+	# 
+	option = {
+		name = sbs_go.7111.a
+		custom_tooltip = sbs_go.7111.a.tt
+		stress_impact = {
+			base = minor_stress_impact_loss
+			lustful = medium_stress_impact_loss
+		}
+		trigger_event = sbs_go.7200
+	}	
+}
+
+sbs_go.7112 = { 
+	type = character_event
+	title = sbs_go.7112.t
+	desc = sbs_go.7112.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantanalfuckfist }
+	left_portrait = {
+		character = scope:random_go
+		animation = scheme
+	}
+	right_portrait = {
+		character = root
+		animation = throne_room_kneel_1
+		outfit_tags = { no_clothes }
+	}
+	# 
+	option = {
+		name = sbs_go.7112.a
+		custom_tooltip = sbs_go.7112.a.tt
+		stress_impact = {
+			base = minor_stress_impact_loss
+			lustful = medium_stress_impact_loss
+		}
+		scope:random_go = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 0 } }
+		trigger_event = sbs_go.7200
+	}	
+}
+
+sbs_go.7200 = { 
+	type = character_event
+	title = sbs_go.7200.t
+	desc = sbs_go.7200.a.desc
+	immediate = {
+		random_living_character = {
+			limit = { in_diplomatic_range = root is_knight = yes is_adult = yes is_ruler = no is_lowborn = yes }
+			save_scope_as = random_knight
+		}
+	}
+	theme = deviantsmaskgo
+	override_background = { reference = deviantstreetslutspearsurround }
+	left_portrait = {
+		character = scope:random_knight
+		animation = anger
+	}
+	right_portrait = {
+		character = root
+		animation = shame
+		outfit_tags = { no_clothes }
+	}
+	# 
+	option = {
+		ai_chance = { base = 10 }
+		name = sbs_go.7200.a
+		custom_tooltip = sbs_go.7200.a.tt
+		stress_impact = {
+			base = medium_stress_impact_gain
+			lustful = medium_stress_impact_loss
+		}
+		trigger_event = sbs_go.7201	
+	}	
+	#
+	option = {
+		name = sbs_go.7200.b
+		custom_tooltip = sbs_go.7200.b.tt	
+		add_character_modifier = { modifier = licentious_03_modifier months = 1 }
+		stress_impact = {
+			base = medium_stress_impact_gain
+			lustful = massive_stress_impact_gain
+		}
+	}
+}
+
+sbs_go.7201 = { 
+	type = character_event
+	title = sbs_go.7201.t
+    desc = sbs_go.7201.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantstreetslutspearsurroundbendover }
+	left_portrait = {
+		character = scope:random_knight
+		animation = ecstasy
+	}
+	right_portrait = {
+		character = root
+		animation = throne_room_kneel_1
+		outfit_tags = { no_clothes }
+	}
+	# 
+	option = {
+		name = sbs_go.7201.a
+		custom_tooltip = sbs_go.7201.a.tt
+		trigger_event = sbs_go.7210
+	}	
+}
+
+sbs_go.7210 = { 
+	type = character_event
+	title = sbs_go.7210.t
+    desc = sbs_go.7210.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantstreetslutdogguanalalley }
+	left_portrait = {
+		character = scope:random_knight
+		animation = ecstasy
+	}
+	right_portrait = {
+		character = root
+		animation = throne_room_kneel_1
+		outfit_tags = { no_clothes }
+	}
+	# 
+	option = {
+		name = sbs_go.7210.a
+		custom_tooltip = sbs_go.7210.a.tt
+		stress_impact = {
+			base = medium_stress_impact_loss
+			lustful = major_stress_impact_loss
+		}
+		scope:random_knight = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 0 } }
+		trigger_event = sbs_go.7211
+	}	
+}
+
+sbs_go.7211 = { 
+	type = character_event
+	title = sbs_go.7211.t
+    desc = sbs_go.7211.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantstreetslutdogguanalalleybodytexts }
+	left_portrait = {
+		character = scope:random_knight
+		animation = ecstasy
+	}
+	right_portrait = {
+		character = root
+		animation = ecstatic
+		outfit_tags = { no_clothes }
+	}
+	# 
+	option = {
+		name = sbs_go.7211.a
+		custom_tooltip = sbs_go.7211.a.tt
+		trigger_event = sbs_go.7219
+		stress_impact = {
+			base = major_stress_impact_loss
+			lustful = major_stress_impact_loss
+		}
+		scope:random_knight = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 0 } }
+	}	
+}
+
+sbs_go.7219 = { 
+	type = character_event
+	title = sbs_go.7219.t
+    desc = sbs_go.7219.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantstreetslutanallkeacumboydtexsts }
+	right_portrait = {
+		character = root
+		animation = ecstatic
+		outfit_tags = { no_clothes }
+	}
+	# 
+	option = {
+		ai_chance = { base = 10 }
+		name = sbs_go.7219.a
+		custom_tooltip = sbs_go.7219.a.tt
+		set_relation_lover = { 
+			reason = lover_shared_deviancy
+			target = scope:random_knight 
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = daring
+				value = 10
+			}
+		}
+	}	
+	#
+	option = {
+		ai_chance = { base = 10 }
+		name = sbs_go.7219.b
+		custom_tooltip = sbs_go.7219.b.tt
+		add_character_modifier = { modifier = licentious_04_modifier months = 1 }
+	}
+}
+
+######### 8000> the story demon/deviant lunatic events ##########
+
+#8000, 100 corruption,  knight comes, with men-at-arms, pay, admit or be arrested
+
+sbs_go.8000 = {
+	type = character_event
+	title = sbs_go.8000.t
+	desc = sbs_go.8000.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = throne_room }
+	immediate = {
+		random_knight = {
+			save_scope_as = sbs_loyalty_random_1
+			limit = { is_female = no }
+		}
+	}
+	right_portrait = {
+		character = root
+		animation = shock
+	}
+	left_portrait = {
+		character = scope:sbs_loyalty_random_1
+		animation = scheme
+		outfit_tags = { military_outfit }
+	}
+	trigger = {
+		is_female = yes
+		is_adult = yes
+		is_ruler = yes
+		any_knight = { count > 0 }
+		any_knight = {
+			is_incapable = no
+			has_character_modifier = sbs_buff
+			count = 0
+		}
+	}
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_go.8000.a
+		custom_tooltip = sbs_go.8000.a.tt
+		trigger_event = sbs_go.8001
+	}
+	option = {
+		ai_chance = { base = 10 }
+		name = sbs_go.8000.b
+		custom_tooltip = sbs_go.8000.b.tt
+		remove_short_term_gold = monumental_gold_value
+	}
+	option = {
+		trigger = {
+			NOT = { has_trait_with_flag = carn_cannot_be_enslaved }
+		}
+		ai_chance = { base = 0 }
+		name = sbs_go.8000.c
+		custom_tooltip = sbs_go.8000.c.tt
+		every_held_title = {
+			create_title_and_vassal_change = {
+				type = usurped
+				save_scope_as = change
+				add_claim_on_loss = no
+			}
+			change_title_holder_include_vassals = {
+				holder = scope:sbs_loyalty_random_1
+				change = scope:change
+				take_baronies = no
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		add_character_modifier = sbs_seal
+		add_opinion = { target = scope:sbs_loyalty_random_1 modifier = carn_wants_to_be_your_slave_opinion }
+		scope:sbs_loyalty_random_1 = {
+			if = {
+				limit = { age >= 18 }
+				add_trait_force_tooltip = sbs_lesser_demon
+			}
+			carn_enslave_effect = { SLAVE = root OWNER = this DRAMA = no }
+		}
+	}
+}
+
+#8001 exposed on the throne
+
+sbs_go.8001 = {
+	type = character_event
+	title = sbs_go.8001.t
+	desc = sbs_go.8001.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantthronefistpussymasturbation }
+	right_portrait = {
+		character = root
+		animation = personality_greedy
+		outfit_tags = { no_clothes }
+	}
+	left_portrait = {
+		character = scope:sbs_loyalty_random_1
+		animation = scheme
+	}
+	option = {
+		name = sbs_go.8001.a
+		custom_tooltip = sbs_go.8001.a.tt
+		trigger_event = sbs_go.8002
+	}
+}
+
+#8002 fuck first guy
+
+sbs_go.8002 = {
+	type = character_event
+	title = sbs_go.8002.t
+	desc = sbs_go.8002.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantthronesidewaysfuckcum }
+	immediate = {
+		random_knight = {
+			limit = { is_female = no }
+			save_scope_as = succubus_randoman_2
+		}
+	}
+	right_portrait = {
+		character = root
+		animation = personality_greedy
+		outfit_tags = { no_clothes }
+	}
+	left_portrait = {
+		character = scope:succubus_randoman_2
+		animation = scheme
+	}
+	option = {
+		name = sbs_go.8002.a
+		custom_tooltip = sbs_go.8002.a.tt
+		scope:succubus_randoman_2 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+		trigger_event = sbs_go.8003
+	}
+}
+
+#8003 mating press on the throne by a disfigured man
+
+sbs_go.8003 = {
+	type = character_event
+	title = sbs_go.8003.t
+	desc = sbs_go.8003.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantthronematingpress }
+	immediate = {
+		random_knight = {
+			limit = { is_female = no }
+			save_scope_as = succubus_randoman_2
+		}
+	}
+	right_portrait = {
+		character = root
+		animation = personality_greedy
+		outfit_tags = { no_clothes }
+	}
+	left_portrait = {
+		character = scope:succubus_randoman_2
+		animation = scheme
+	}
+	option = {
+		name = sbs_go.8003.a
+		custom_tooltip = sbs_go.8003.a.tt
+		scope:succubus_randoman_2 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+		trigger_event = sbs_go.8004
+	}
+}
+
+#8004
+
+sbs_go.8004 = {
+	type = character_event
+	title = sbs_go.8004.t
+	desc = sbs_go.8004.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantthronepresentcumpussy }
+	right_portrait = {
+		character = root
+		animation = shame
+		outfit_tags = { no_clothes }
+	}
+	left_portrait = {
+		character = scope:sbs_loyalty_random_1
+		animation = scheme
+	}
+	option = {
+		name = sbs_go.8004.a
+		custom_tooltip = sbs_go.8004.a.tt
+		trigger_event = sbs_go.8005
+	}
+
+}
+
+#8005 gangbang
+
+sbs_go.8005 = {
+	type = character_event
+	title = sbs_go.8005.t
+	desc = sbs_go.8005.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantthronedpcum }
+	right_portrait = {
+		character = root
+		animation = throne_room_kneel_2
+		outfit_tags = { no_clothes }
+	}
+	left_portrait = {
+		character = scope:sbs_loyalty_random_1
+		animation = scheme
+	}
+	option = {
+		name = sbs_go.8005.a
+		custom_tooltip = sbs_go.8005.a.tt
+		every_knight = {
+			limit = { is_adult = yes is_female = no }
+			add_opinion = {
+				target = root
+				modifier = amused_opinion
+				opinion = 20
+			}
+			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
+		}
+		trigger_event = sbs_go.8006
+	}
+}
+
+#8006
+
+sbs_go.8006 = {
+	type = character_event
+	title = sbs_go.8006.t
+	desc = sbs_go.8006.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantthronepresentcumpussywithguyscumleaking }
+	right_portrait = {
+		character = root
+		animation = shame
+		outfit_tags = { no_clothes }
+	}
+	left_portrait = {
+		character = scope:sbs_loyalty_random_1
+		animation = scheme
+	}
+	option = {
+		name = sbs_go.8006.a
+		custom_tooltip = sbs_go.8006.a.tt
+		scope:sbs_loyalty_random_1 = { add_character_modifier = sbs_buff }
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = loyalty
+				value = 5
+			}
+			add_character_modifier = { modifier = face_cum months = 1 }
+			add_character_modifier = { modifier = body_cum months = 1 }
+			add_character_modifier = { modifier = ass_cum months = 1 }
+			add_character_modifier = { modifier = pussy_cum months = 1 }
+		}
+	}
+}
+
+####### the men at arms slut events ########
+#one page events
+#8099 initial request event
+
+sbs_go.8099 = {
+	type = character_event
+	title = sbs_go.8099.t
+	desc = sbs_go.8099.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantthroneexposespreadlegs }
+	right_portrait = {
+		character = root
+		animation = shame
+	}
+	left_portrait = {
+		character = scope:sbs_loyalty_random_1
+		animation = chancellor
+	}
+	trigger = {
+		is_adult = yes
+		is_ruler = yes
+		is_female = yes
+		any_knight = { count > 0 }
+		any_knight = { is_female = no has_character_modifier = sbs_buff }
+	}
+	immediate = {
+		random_knight = {
+			limit = { is_female = no has_character_modifier = sbs_buff }
+			save_scope_as = sbs_loyalty_random_1
+		}
+	}
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_go.8099.a
+		custom_tooltip = sbs_go.8099.a.tt
+		hidden_effect = {
+			random_list = {
+				10 = { trigger_event = sbs_go.8100 }
+				10 = { trigger_event = sbs_go.8101 }
+				10 = { trigger_event = sbs_go.8102 }
+			}
+		}
+	}
+	option = {
+		name = sbs_go.8099.b
+		custom_tooltip = sbs_go.8099.b.tt
+		remove_short_term_gold = monumental_gold_value
+		stress_impact = {
+			base = minor_stress_impact_gain
+			lustful = medium_stress_impact_gain
+		}
+	}
+	option = {
+		name = sbs_go.8099.c
+		custom_tooltip = sbs_go.8099.c.tt
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = loyalty
+				value = -5
+			}
+		}
+		stress_impact = {
+			base = minor_stress_impact_gain
+			lustful = medium_stress_impact_gain
+		}
+	}
+}
+
+#8100 looping greeting new recruits
+
+sbs_go.8100 = {
+	type = character_event
+	title = sbs_go.8100.t
+	desc = sbs_go.8100.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantshakingcockoflineofmen }
+	right_portrait = {
+		character = root
+		animation = shame
+		outfit_tags = { no_clothes }
+	}
+	left_portrait = {
+		character = scope:sbs_loyalty_random_1
+		animation = chancellor
+	}
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_go.8100.a
+		custom_tooltip = sbs_go.8100.a.tt
+		scope:sbs_loyalty_random_1 = {
+			add_opinion = {
+				target = root
+				modifier = amused_opinion
+				opinion = 20
+			}
+		}
+		stress_impact = {
+			base = medium_stress_impact_gain
+			lustful = medium_stress_impact_gain
+		}
+	}
+	option = {
+		name = sbs_go.8100.b
+		custom_tooltip = sbs_go.8100.b.tt
+		add_character_modifier = { modifier = ass_cum days = 30 }
+		add_character_modifier = { modifier = pussy_cum days = 30 }
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = loyalty
+				value = 5
+			}
+		}
+		scope:sbs_loyalty_random_1 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+	}
+}
+
+#8101 gangbang on the throne, important foreign envoy insists seeing you
+
+sbs_go.8101 = {
+	type = character_event
+	title = sbs_go.8101.t
+	desc = sbs_go.8101.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantthronedpcum }
+	right_portrait = {
+		character = root
+		animation = shame
+		outfit_tags = { no_clothes }
+	}
+	left_portrait = {
+		character = scope:sbs_loyalty_random_1
+		animation = chancellor
+	}
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_go.8101.a
+		custom_tooltip = sbs_go.8101.a.tt
+		add_piety = medium_piety_loss
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = loyalty
+				value = 5
+			}
+			add_character_modifier = { modifier = ass_cum days = 15 }
+		}
+		scope:sbs_loyalty_random_1 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+	}
+	option = {
+		name = sbs_go.8101.b
+		custom_tooltip = sbs_go.8101.b.tt
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = loyalty
+				value = -1
+			}
+		}
+	}
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_go.8101.c
+		custom_tooltip = sbs_go.8101.c.tt
+		add_prestige = minor_prestige_loss
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = loyalty
+				value = 1
+			}
+			add_character_modifier = { modifier = pussy_cum days = 15 }
+		}
+		scope:sbs_loyalty_random_1 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+	}
+}
+
+#8102 bound and fucked the whole day in the barracks, then just left there, gagged while the men sleep
+
+sbs_go.8102 = {
+	type = character_event
+	title = sbs_go.8102.t
+	desc = sbs_go.8102.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantpublichumiliationbondagefreeuse }
+	right_portrait = {
+		character = root
+		animation = prisondungeon
+		outfit_tags = { no_clothes }
+	}
+	option = {
+		name = sbs_go.8102.a
+		custom_tooltip = sbs_go.8102.a.tt
+		scope:sbs_loyalty_random_1 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+	}
+	option = {
+		name = sbs_go.8102.b
+		custom_tooltip = sbs_go.8102.b.tt
+		stress_impact = {
+			base = medium_stress_impact_gain
+			lustful = medium_stress_impact_gain
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = loyalty
+				value = 5
+			}
+		}
+	}
+}
+
+#8200 first time greeting new recruits
+
+sbs_go.8200 = {
+	type = character_event
+	title = sbs_go.8200.t
+	desc = sbs_go.8200.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = army_camp }
+	trigger = {
+		is_adult = yes
+		is_female = yes
+		is_ruler = yes
+		any_knight = { count > 0 }
+		any_knight = {
+			is_female = no
+			has_character_modifier = sbs_generals
+			count = 0
+		}
+	}
+	right_portrait = {
+		character = root
+		animation = chaplain
+	}
+	left_portrait = {
+		character = scope:sbs_random_1
+		animation = scheme
+	}
+	immediate = {
+		random_knight = {
+			limit = { is_female = no }
+			save_scope_as = sbs_random_1
+		}
+	}
+	# fine
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_go.8200.a
+		custom_tooltip = sbs_go.8200.a.tt
+		add_legitimacy = minor_legitimacy_loss
+		trigger_event = sbs_go.8201
+	}
+	# refuse
+	option = {
+		name = sbs_go.8200.b
+		custom_tooltip = sbs_go.8200.b.tt
+		scope:sbs_random_1 = {
+			add_opinion = {
+				target = root
+				modifier = disappointed_opinion
+				opinion = -20
+			}
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = loyalty
+				value = -5
+			}
+		}
+	}
+}
+
+#8201 presenting pussy on the stage
+
+sbs_go.8201 = {
+	type = character_event
+	title = sbs_go.8201.t
+	desc = sbs_go.8201.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = devianthumiliationpussyspread }
+	right_portrait = {
+		character = root
+		animation = personality_greedy
+		outfit_tags = { no_clothes }
+	}
+	left_portrait = {
+		character = scope:sbs_random_1
+		animation = aggressive_sword
+	}
+	# constraint
+	option = {
+		ai_chance = { base = 50 }
+		name = sbs_go.8201.a
+		custom_tooltip = sbs_go.8201.a.tt
+		stress_impact = {
+			base = medium_stress_impact_gain
+			lustful = medium_stress_impact_gain
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = loyalty
+				value = 5
+			}
+		}
+	}
+	# outburst
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_go.8201.b
+		custom_tooltip = sbs_go.8201.b.tt
+		trigger_event = sbs_go.8202
+		stress_impact = {
+			base = minor_stress_impact_loss
+			lustful = medium_stress_impact_loss
+		}
+		add_legitimacy = medium_legitimacy_loss
+		hidden_effect = {
+			add_character_modifier = { modifier = face_cum months = 1 }
+			add_character_modifier = { modifier = body_cum months = 1 }
+			add_character_modifier = { modifier = pussy_cum months = 1 }
+			add_character_modifier = { modifier = ass_cum months = 1 }
+		}
+	}
+}
+
+#8202 knight shows how you just let him stick it in, in case it was not clear
+
+sbs_go.8202 = {
+	type = character_event
+	title = sbs_go.8202.t
+	desc = sbs_go.8202.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = devianthumiliationpussyspreadfuckfrombehindbreastgrope }
+	right_portrait = {
+		character = root
+		animation = personality_greedy
+		outfit_tags = { no_clothes }
+	}
+	left_portrait = {
+		character = scope:sbs_random_1
+		animation = map_ecstasy
+	}
+	# proceed
+	option = {
+		ai_chance = { base = 50 }
+		name = sbs_go.8202.a
+		custom_tooltip = sbs_go.8202.a.tt
+		stress_impact = {
+			base = medium_stress_impact_gain
+			lustful = medium_stress_impact_gain
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = loyalty
+				value = 5
+			}
+		}
+	}
+	# harder
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_go.8202.b
+		custom_tooltip = sbs_go.8202.b.tt
+		trigger_event = sbs_go.8203
+		add_legitimacy = minor_legitimacy_loss
+		hidden_effect = {
+			add_character_modifier = { modifier = face_cum months = 1 }
+			add_character_modifier = { modifier = body_cum months = 1 }
+			add_character_modifier = { modifier = pussy_cum months = 1 }
+			add_character_modifier = { modifier = ass_cum months = 1 }
+		}
+	}
+	# enough
+	option = {
+		name = sbs_go.8202.c
+		custom_tooltip = sbs_go.8202.c.tt
+		stress_impact = {
+			base = medium_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = loyalty
+				value = -5
+			}
+		}
+	}
+}
+
+#8203 if ask for harder, hard anal carry fuck to cum
+
+sbs_go.8203 = {
+	type = character_event
+	title = sbs_go.8203.t
+	desc = sbs_go.8203.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantfullnelsoncum }
+	right_portrait = {
+		character = root
+		animation = personality_greedy
+		outfit_tags = { no_clothes }
+	}
+	left_portrait = {
+		character = scope:sbs_random_1
+		animation = aggressive_sword
+	}
+	# proceed
+	option = {
+		name = sbs_go.8203.a
+		custom_tooltip = sbs_go.8203.a.tt
+		trigger_event = sbs_go.8204
+		add_legitimacy = minor_legitimacy_loss
+	}
+}
+
+#8204 time to swear oaths, everybody strip, first guy coming to insert and swear and grope
+
+sbs_go.8204 = {
+	type = character_event
+	title = sbs_go.8204.t
+	desc = sbs_go.8204.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantshakingcockoflineofmen }
+	right_portrait = {
+		character = root
+		animation = personality_greedy
+		outfit_tags = { no_clothes }
+	}
+	left_portrait = {
+		character = scope:sbs_random_1
+		animation = map_ecstasy
+	}
+	#
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_go.8204.a
+		custom_tooltip = sbs_go.8204.a.tt
+		trigger_event = sbs_go.8205
+		stress_impact = {
+			base = minor_stress_impact_gain
+			lustful = medium_stress_impact_gain
+		}
+	}
+	#
+	option = {
+		ai_chance = { base = 50 }
+		name = sbs_go.8204.b
+		custom_tooltip = sbs_go.8204.b.tt
+		trigger_event = sbs_go.8207
+	}
+}
+
+#8205 if just stand there, after ten guys
+
+sbs_go.8205 = {
+	type = character_event
+	title = sbs_go.8205.t
+	desc = sbs_go.8205.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantshakingcockoflineofmen }
+	right_portrait = {
+		character = root
+		animation = personality_greedy
+		outfit_tags = { no_clothes }
+	}
+	left_portrait = {
+		character = scope:sbs_random_1
+		animation = map_disgust
+	}
+	#
+	option = {
+		name = sbs_go.8205.a
+		custom_tooltip = sbs_go.8205.a.tt
+		trigger_event = sbs_go.8206
+		hidden_effect = {
+			add_character_modifier = { modifier = face_cum months = 3 }
+			add_character_modifier = { modifier = body_cum months = 3 }
+			add_character_modifier = { modifier = pussy_cum months = 3 }
+			add_character_modifier = { modifier = ass_cum months = 3 }
+		}
+	}
+}
+
+#8206 if just endure, end in pussy throbbing hard
+
+sbs_go.8206 = {
+	type = character_event
+	title = sbs_go.8206.t
+	desc = sbs_go.8206.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = devianthumiliationpussyspreadgropedbymenleakingcum }
+	right_portrait = {
+		character = root
+		animation = personality_greedy
+		outfit_tags = { no_clothes }
+	}
+	left_portrait = {
+		character = scope:sbs_random_1
+		animation = map_disgust
+	}
+	#
+	option = {
+		name = sbs_go.8206.a
+		custom_tooltip = sbs_go.8206.a.tt
+	}
+}
+
+#8207 if shaking hip, fucking him on the stage
+
+sbs_go.8207 = {
+	type = character_event
+	title = sbs_go.8207.t
+	desc = sbs_go.8207.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantshakingcockoflineofmen }
+	right_portrait = {
+		character = root
+		animation = personality_greedy
+		outfit_tags = { no_clothes }
+	}
+	left_portrait = {
+		character = scope:sbs_random_1
+		animation = map_disgust
+	}
+
+	#
+	option = {
+		name = sbs_go.8207.a
+		custom_tooltip = sbs_go.8207.a.tt
+		trigger_event = sbs_go.8208
+	}
+	#
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_go.8207.b
+		custom_tooltip = sbs_go.8207.b.tt
+		trigger_event = sbs_go.8209
+	}
+}
+
+#8208 if shake and cum end, they annoyed for being forced to enter the cum hole, some just leave rather than do it
+
+sbs_go.8208 = {
+	type = character_event
+	title = sbs_go.8208.t
+	desc = sbs_go.8208.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = deviantshakingcockoflineofmenfuckcum }
+	right_portrait = {
+		character = root
+		animation = personality_greedy
+		outfit_tags = { no_clothes }
+	}
+	left_portrait = {
+		character = scope:sbs_random_1
+		animation = map_disgust
+	}
+	#
+	option = {
+		name = sbs_go.8208.a
+		custom_tooltip = sbs_go.8208.a.tt
+		scope:sbs_random_1 = {
+			add_character_modifier = sbs_generals
+		}
+		hidden_effect = {
+			add_character_modifier = { modifier = face_cum months = 3 }
+			add_character_modifier = { modifier = body_cum months = 3 }
+			add_character_modifier = { modifier = pussy_cum months = 3 }
+			add_character_modifier = { modifier = ass_cum months = 3 }
+		}
+	}
+}
+
+#8209 if won't let them cum
+
+sbs_go.8209 = {
+	type = character_event
+	title = sbs_go.8209.t
+	desc = sbs_go.8209.a.desc
+	theme = deviantsmaskgo
+	override_background = { reference = devianthumiliationpussyspreadgropedbymenleakingcum }
+	right_portrait = {
+		character = root
+		animation = personality_greedy
+		outfit_tags = { no_clothes }
+	}
+	left_portrait = {
+		character = scope:sbs_random_1
+		animation = map_disgust
+	}
+	#
+	option = {
+		name = sbs_go.8209.a
+		custom_tooltip = sbs_go.8209.a.tt
+		hidden_effect = {
+			add_character_modifier = { modifier = face_cum months = 3 }
+			add_character_modifier = { modifier = body_cum months = 3 }
+			add_character_modifier = { modifier = pussy_cum months = 3 }
+			add_character_modifier = { modifier = ass_cum months = 3 }
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				track = loyalty
+				value = 5
+			}
+		}
+	}
+}

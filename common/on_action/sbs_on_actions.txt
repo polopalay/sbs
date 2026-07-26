@@ -8,7 +8,10 @@ on_game_start = {
 }
 random_yearly_everyone_pulse = {
 	trigger = {
+		is_adult = yes
+		is_female = yes
 		is_travelling = no
+		is_incapable = no
 		is_in_army = no
 		is_imprisoned = no
 	}
@@ -27,10 +30,7 @@ sbs_devil_on_action = {
 	trigger = {
 		is_adult = yes
 		is_female = yes
-		OR = {
-			is_ruler = yes
-			is_ai = no
-		}
+		is_ruler = yes
 		OR = {
 			has_trait = deviant
 			any_secret = { type = secret_deviant }
@@ -40,76 +40,53 @@ sbs_devil_on_action = {
 	effect = {
 		random_list = {
 			5 = 0
-			0 = {
-				modifier = { any_realm_county = { any_county_province = { has_building_or_higher = brothel1 } } add = 5 }
-				trigger_event = sbs_devil.0550 # max addiction
-			}
-			0 = {
-				modifier = { any_realm_county = { any_county_province = { has_building_or_higher = brothel2 } } add = 2 }
-				trigger_event = sbs_devil.1410 # gremlin fuck
-			}
-			0 = {
-				modifier = { any_realm_county = { any_county_province = { has_building_or_higher = brothel3 } } add = 3 }
-				trigger_event = sbs_devil.1300 # special dream
-			}
 			1 = {
+				modifier = { any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy1 } } has_trait = lustful add = 1 }
+				trigger_event = sbs_go.0550 # max addiction
+			}
+			0 = {
+				modifier = { any_character_artifact { has_artifact_modifier = reddreamring_modifier } add = 5 }
+				trigger_event = sbs_go.1410 # gremlin fuck
+			}
+			0 = {
+				modifier = { any_character_artifact { has_artifact_modifier = reddreamring_modifier } add = 1 }
+				trigger_event = sbs_go.1300 # special dream
+			}
+			0 = {
+				modifier = { has_character_flag = had_warhorse_story OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 1 }
 				trigger_event = sbs_go.4000 # gremlin fuck
 			}
 			0 = {
-				modifier = { carn_is_working_as_prostitute_trigger = yes any_knight = { count > 0 } any_knight = { is_female = no has_character_modifier = sbs_buff count = 0 } add = 3 }
+				modifier = { carn_is_working_as_prostitute_trigger = yes any_character_artifact { has_artifact_modifier = snake_bracelet_modifier } any_knight = { count > 0 } any_knight = { is_female = no has_character_modifier = sbs_buff count = 0 } add = 3 }
 				trigger_event = sbs_loyalty.8000 # loyalty event init
 			}
 			0 = {
-				modifier = { carn_is_working_as_prostitute_trigger = yes any_knight = { is_female = no has_character_modifier = sbs_buff } add = 3 }
+				modifier = { carn_is_working_as_prostitute_trigger = yes any_character_artifact { has_artifact_modifier = snake_bracelet_modifier } any_knight = { count > 0 } any_knight = { is_female = no has_character_modifier = sbs_buff } add = 3 }
 				trigger_event = sbs_loyalty.8099 # loyalty events
 			}
 			0 = {
-				modifier = { carn_is_working_as_prostitute_trigger = yes has_trait_with_flag = sbs_demon_trait any_knight = { count > 0 } any_knight = { is_female = no has_character_modifier = sbs_generals count = 0 } add = 3 }
+				modifier = { carn_is_working_as_prostitute_trigger = yes any_character_artifact { has_artifact_modifier = snake_bracelet_modifier } any_knight = { count > 0 } any_knight = { is_female = no has_character_modifier = sbs_generals count = 0 } add = 3 }
 				trigger_event = sbs_loyalty.8200 # loyalty event: new recruit
 			}
 			0 = {
-				modifier = { should_be_naked_trigger = no any_councillor = { is_female = no NOT = { is_spouse_of = root } } add = 1 }
+				modifier = { any_character_artifact { has_artifact_modifier = crown_of_wisdom_crown_modifier } should_be_naked_trigger = no any_councillor = { is_female = no } add = 1 }
 				trigger_event = sbs_courtier.1440 # naked event
 			}
 			0 = {
-				modifier = { carn_is_working_as_prostitute_trigger = yes should_be_naked_trigger = yes any_councillor = { is_female = no NOT = { is_spouse_of = root } } add = 1 }
+				modifier = { any_character_artifact { has_artifact_modifier = crown_of_wisdom_crown_modifier } should_be_naked_trigger = yes any_councillor = { is_female = no } add = 1 }
 				trigger_event = sbs_courtier.1460 # fuck on throne event
 			}
 			0 = {
-				modifier = { any_councillor = { is_female = no } add = 1 }
+				modifier = { any_character_artifact { has_artifact_modifier = crown_of_wisdom_crown_modifier } is_ruler = yes }
 				trigger_event = sbs_courtier.2000 # urge to masturbate
 			}
 			0 = {
-				modifier = { any_character_artifact { OR = { has_artifact_modifier = master_dildo_modifier has_artifact_modifier = mistress_dildo_modifier } } add = 1 }
+				modifier = { any_character_artifact { has_artifact_modifier = master_dildo_modifier } add = 1 }
 				trigger_event = sbs_go.0501 # basic exploratory dildo fuck
 			}
 			0 = {
-				modifier = { has_character_modifier = deviants_strangebook_modifier NOT = { any_secret = { type = secret_prostitute } has_trait = lifestyle_prostitute } add = 5 }
-				trigger_event = sbs_go.5000 # you sweating in your study
-			}
-			0 = {
-				modifier = { carn_is_working_as_prostitute_trigger = yes any_vassal = { has_trait = lustful is_female = no is_adult = yes NOT = { is_close_family_of = root has_relation_lover = root } } add = 1 }
-				trigger_event = sbs_blackmail.1000 # letter to come in room to pay major gold
-			}
-			0 = {
-				modifier = { carn_is_working_as_prostitute_trigger = yes any_vassal = { has_trait = lustful is_female = no is_adult = yes NOT = { is_close_family_of = root } has_relation_lover = root } add = 1 }
-				trigger_event = sbs_blackmail.1100 # he comes to you in private
-			}
-			0 = {
-				modifier = { carn_is_working_as_prostitute_trigger = yes any_vassal = { has_trait = lustful is_female = no is_adult = yes NOT = { is_close_family_of = root } has_relation_lover = root } add = 1 }
-				trigger_event = sbs_blackmail.1200 # he comes to you in public
-			}
-			0 = {
-				modifier = { carn_is_working_as_prostitute_trigger = yes any_vassal = { has_trait = lustful is_female = no is_adult = yes NOT = { is_close_family_of = root } has_relation_lover = root } add = 1 }
-				trigger_event = sbs_blackmail.1300 # inviting to be party decoration or pay major gold or favor hook
-			}
-			0 = {
-				modifier = { carn_is_working_as_prostitute_trigger = yes is_concubine = no is_married = no any_vassal = { is_married = no has_trait = lustful is_female = no is_adult = yes NOT = { is_close_family_of = root } has_relation_lover = root } add = 1 }
-				trigger_event = sbs_blackmail.1400 # if both unmarried, forcing you to marry him
-			}
-			0 = {
-				modifier = { carn_is_working_as_prostitute_trigger = yes is_married = yes any_vassal = { has_trait = lustful is_female = no is_adult = yes NOT = { is_close_family_of = root } has_relation_lover = root } add = 1 }
-				trigger_event = sbs_blackmail.2000 # if you have spouse
+				modifier = { has_character_modifier = deviants_strangebook_modifier add = 5 }
+				trigger_event = sbs_go.7000 # you sweating in your study
 			}
 		}
 	}
@@ -119,10 +96,8 @@ sbs_prostitutute_on_action = {
 	trigger = {
 		is_adult = yes
 		is_female = yes
-		OR = {
-			is_ruler = yes
-			is_ai = no
-		}
+		is_ruler = yes
+		has_std_trigger = no
 		carn_is_working_as_prostitute_trigger = yes
 		is_valid_construction_brothel_trigger = yes
 	}
@@ -145,7 +120,6 @@ on_travel_plan_movement = {
 		is_female = yes
 		is_ruler = yes
 		is_landed = yes
-		is_ai = no
 	}
 	on_actions = {
 		delay = { days = { 2 4 } }

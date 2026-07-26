@@ -11,7 +11,7 @@
 			any_courtier = { has_trait = slave has_relation_slave_owner = scope:actor }
 		}
 		scope:recipient = { is_ruler = yes }
-		NOT = { scope:actor = scope:recipient }
+		scope:actor != scope:recipient
 	}
 	populate_recipient_list = {
 		scope:actor = {

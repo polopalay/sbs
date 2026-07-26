@@ -43,3 +43,71 @@ mistress_dildo_template = {
 		fertility = -9000
 	}
 }
+
+reddreamring_template = {
+	can_equip = {
+		always = yes
+		age >= 18
+	}
+	can_reforge = {
+		always = no
+	}
+	can_repair = {
+		always = yes
+	}
+	can_benefit = {
+		OR = { 
+			has_trait = lustful
+			has_trait = deviant_courtesan_slut
+		}	
+	}
+	fallback = {
+		stress_loss_mult = -0.20
+	}
+}
+
+crown_of_wisdom_crown_template = {
+	can_equip = {
+		always = yes
+	}
+	can_reforge = {
+		always = no
+	}
+	can_repair = {
+		always = yes
+	}
+	can_benefit = {
+		is_female = yes
+		age >= 18
+		has_trait = deviants_demonanalslut
+	}
+	fallback = {
+		learning = 4
+		martial = 2
+		stewardship = 2
+		diplomacy = 2
+		stress_loss_mult = -0.50
+		stress_gain_mult = 1.00
+	}
+}
+
+snake_bracelet_template = {
+	can_equip = {
+		always = yes
+		age >= 18
+	}
+	can_reforge = {
+		always = no
+	}
+	can_repair = {
+		always = yes
+	}
+	can_benefit = {
+		is_male = yes	
+	}
+	fallback = {
+		intrigue = 3
+		enemy_hostile_scheme_success_chance_add = -20
+		monthly_intrigue_lifestyle_xp_gain_mult = 0.15
+	}
+}

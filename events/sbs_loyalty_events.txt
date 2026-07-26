@@ -24,7 +24,6 @@ sbs_loyalty.8000 = {
 		is_female = yes
 		is_adult = yes
 		is_ruler = yes
-		carn_is_working_as_prostitute_trigger = yes
 		any_knight = { count > 0 }
 		any_knight = {
 			is_incapable = no
@@ -259,7 +258,7 @@ sbs_loyalty.8099 = {
 		is_adult = yes
 		is_ruler = yes
 		is_female = yes
-		carn_is_working_as_prostitute_trigger = yes
+		any_knight = { count > 0 }
 		any_knight = { is_female = no has_character_modifier = sbs_buff }
 	}
 	immediate = {
@@ -455,8 +454,6 @@ sbs_loyalty.8200 = {
 		is_adult = yes
 		is_female = yes
 		is_ruler = yes
-		has_trait_with_flag = sbs_demon_trait
-		carn_is_working_as_prostitute_trigger = yes
 		any_knight = { count > 0 }
 		any_knight = {
 			is_female = no

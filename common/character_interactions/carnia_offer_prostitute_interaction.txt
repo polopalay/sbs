@@ -64,7 +64,7 @@
 
 	on_accept = {
 		if = {
-			limit = { NOT = { scope:actor = scope:secondary_recipient } }
+			limit = { scope:actor != scope:secondary_recipient }
 			scope:actor = {
 				save_scope_as = broker
 			}

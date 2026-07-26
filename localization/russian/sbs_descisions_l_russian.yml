@@ -19,3 +19,7 @@
   alienate_people.desc: "Вы начинаете отчуждать людей, чтобы укрепить свою власть и устранить любых потенциальных угроз."
   alienate_people.t: "Отчуждать людей"
   alienate_people.c: "Отчуждать людей"
+ sbs_startmerchant_decision: "Visit the Black Market"
+ sbs_startmerchant_decision_desc: "Visit the hidden market in person and inspect the merchant goods."
+ sbs_startmerchant_decision_tooltip: "Travel directly to the black-market merchant."
+ sbs_startmerchant_decision_confirm: "Go Forth"

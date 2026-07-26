@@ -18,3 +18,7 @@
   alienate_people.desc: "La gente te teme y te odia, pero eso no es suficiente. Debes hacer que te odien aún más, alejándolos de ti y de tu círculo social."
   alienate_people.t: "Alejar a la gente"
   alienate_people.c: "Alejar a la gente"
+ sbs_startmerchant_decision: "Visit the Black Market"
+ sbs_startmerchant_decision_desc: "Visit the hidden market in person and inspect the merchant goods."
+ sbs_startmerchant_decision_tooltip: "Travel directly to the black-market merchant."
+ sbs_startmerchant_decision_confirm: "Go Forth"

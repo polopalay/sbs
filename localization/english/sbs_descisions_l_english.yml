@@ -18,3 +18,7 @@
  alienate_people.desc: "Corrupt your people. Let them worship the true god"
  alienate_people.t: "Alienate People"
  alienate_people.c: "Alienate People"
+ sbs_startmerchant_decision: "Visit the Black Market"
+ sbs_startmerchant_decision_desc: "Visit the hidden market in person and inspect the merchant goods."
+ sbs_startmerchant_decision_tooltip: "Travel directly to the black-market merchant."
+ sbs_startmerchant_decision_confirm: "Go Forth"

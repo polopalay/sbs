@@ -76,6 +76,15 @@ deal_with_the_devil_healing = {
 	$DEVIL$ = { save_scope_as = devil }
 	scope:dealer = {
 		if = {
+			limit = { $STRESS$ = yes }
+			stress_impact = { base = massive_stress_impact_loss }
+		}
+		if = {
+			limit = { $WEIGHT$ = yes }
+			change_current_weight = -200
+			change_current_weight = 100
+		}
+		if = {
 			limit = { $DRUNKARD$ = yes }
 			remove_trait = drunkard
 		}

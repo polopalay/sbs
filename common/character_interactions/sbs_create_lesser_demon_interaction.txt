@@ -30,7 +30,7 @@
 	}
 	send_option = {
 		is_shown = {
-			NOT = { scope:actor = scope:recipient }
+			scope:actor != scope:recipient
 			scope:actor = {
 				dynasty ?= { has_dynasty_perk = fp1_pillage_legacy_3 }
 			}
@@ -41,7 +41,7 @@
 	}
 	send_option = {
 		is_shown = {
-			NOT = { scope:actor = scope:recipient }
+			scope:actor != scope:recipient
 			scope:actor = {
 				dynasty ?= { has_dynasty_perk = fp1_pillage_legacy_3 }
 			}
@@ -55,7 +55,7 @@
 	}
 	send_option = {
 		is_shown = {
-			NOT = { scope:actor = scope:recipient }
+			scope:actor != scope:recipient
 			scope:actor = {
 				OR = {
 					is_lowborn = yes
@@ -69,7 +69,7 @@
 	}
 	send_option = {
 		is_shown = {
-			NOT = { scope:actor = scope:recipient }
+			scope:actor != scope:recipient
 			scope:actor = {
 				OR = {
 					is_lowborn = yes
@@ -85,13 +85,13 @@
 		localization = "RANSOM_CURRENT_GOLD_OPTION"
 	}
 	send_option = {
-		is_shown = { NOT = { scope:actor = scope:recipient } }
+		is_shown = { scope:actor != scope:recipient }
 		is_valid = { scope:recipient = { has_usable_hook = scope:actor } }
 		flag = hook
 		localization = GENERIC_SPEND_A_HOOK
 	}
 	send_option = {
-		is_shown = { NOT = { scope:actor = scope:recipient } }
+		is_shown = { scope:actor != scope:recipient }
 		is_valid = {
 			scope:actor = {
 				can_add_hook = {
@@ -367,7 +367,7 @@
 
 		modifier = {
 			factor = 0
-			NOT = { scope:actor = scope:recipient }
+			scope:actor != scope:recipient
 			NOR = {
 				scope:extortionate_gold = yes
 				scope:extortionate_current_gold = yes

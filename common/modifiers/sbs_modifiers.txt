@@ -99,3 +99,24 @@ mistress_dildo_modifier = {
 	negate_health_penalty_add = 0.1
 	life_expectancy = 10
 }
+
+reddreamring_modifier = {
+    stress_loss_mult = 0.05
+    stress_gain_mult = -0.05
+}
+
+crown_of_wisdom_crown_modifier = {
+    learning = 2
+    martial = 2
+    stewardship = 2
+    diplomacy = 2
+    enemy_hostile_scheme_success_chance_add = -10
+    enemy_hostile_scheme_phase_duration_add = 10
+	enemy_hostile_scheme_success_chance_growth_add = -3
+}
+
+snake_bracelet_modifier = {
+    diplomacy = 2
+    intrigue = 2
+    monthly_income = 0.25
+}

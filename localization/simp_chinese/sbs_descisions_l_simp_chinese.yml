@@ -15,3 +15,7 @@
  alienate_people.desc: "腐化人民，传颂真神。"
  alienate_people.t: "疏远他人"
  alienate_people.c: "疏远他人"
+ sbs_startmerchant_decision: "Visit the Black Market"
+ sbs_startmerchant_decision_desc: "Visit the hidden market in person and inspect the merchant goods."
+ sbs_startmerchant_decision_tooltip: "Travel directly to the black-market merchant."
+ sbs_startmerchant_decision_confirm: "Go Forth"

@@ -44,7 +44,7 @@
 	}
 	send_option = {
 		is_shown = {
-			NOT = { scope:actor = scope:recipient }
+			scope:actor != scope:recipient
 			scope:actor = {
 				dynasty ?= { has_dynasty_perk = fp1_pillage_legacy_3 }
 			}
@@ -55,7 +55,7 @@
 	}
 	send_option = {
 		is_shown = {
-			NOT = { scope:actor = scope:recipient }
+			scope:actor != scope:recipient
 			scope:actor = {
 				dynasty ?= { has_dynasty_perk = fp1_pillage_legacy_3 }
 			}
@@ -69,7 +69,7 @@
 	}
 	send_option = {
 		is_shown = {
-			NOT = { scope:actor = scope:recipient }
+			scope:actor != scope:recipient
 			scope:actor = {
 				OR = {
 					is_lowborn = yes
@@ -83,7 +83,7 @@
 	}
 	send_option = {
 		is_shown = {
-			NOT = { scope:actor = scope:recipient }
+			scope:actor != scope:recipient
 			scope:actor = {
 				OR = {
 					is_lowborn = yes
@@ -99,13 +99,13 @@
 		localization = "RANSOM_CURRENT_GOLD_OPTION"
 	}
 	send_option = {
-		is_shown = { NOT = { scope:actor = scope:recipient } }
-		is_valid = { scope:recipient = { has_usable_hook = scope:actor } }
+		is_shown = { scope:actor != scope:recipient }
+		is_valid = { scope:actor = { has_usable_hook = scope:recipient } }
 		flag = hook
 		localization = GENERIC_SPEND_A_HOOK
 	}
 	send_option = {
-		is_shown = { NOT = { scope:actor = scope:recipient } }
+		is_shown = { scope:actor != scope:recipient }
 		is_valid = {
 			scope:recipient = {
 				can_add_hook = {
@@ -180,39 +180,6 @@
 			}
 		}
 		current_description = { desc = RELEASE_RENOUNCE_CLAIMS_DESC }
-	}
-	send_option = {
-		flag = recruit
-		localization = "RELEASE_RECRUIT"
-		is_shown = {
-			trigger_if = {
-				limit = { scope:actor = { is_ai = yes } }
-				scope:recipient = {
-					OR = {
-						has_relation_best_friend = scope:actor
-						has_relation_friend = scope:actor
-						has_relation_lover = scope:actor
-						has_relation_soulmate = scope:actor
-						has_secret_relation_lover = scope:actor
-						is_heir_of = scope:actor
-					}
-				}
-			}
-			scope:recipient = {
-				is_ruler = no
-				NOT = { is_courtier_of = scope:actor }
-				OR = {
-					is_adult = yes
-					AND = {
-						is_adult = no
-						OR = {
-							trigger_if = { limit = { exists = liege } NOT = { is_heir_of = liege } }
-							NOT = { exists = liege }
-						}
-					}
-				}
-			}
-		}
 	}
 	send_option = {
 		flag = demand_admin
@@ -312,15 +279,15 @@
 				limit = { OR = { scope:current_gold = yes scope:extortionate_current_gold = yes } }
 				pay_short_term_gold = {
 					target = scope:recipient
-					gold = this.gold
+					gold = scope:actor.gold
 				}
+			}
+			if = {
+				limit = { scope:hook = yes has_hook = scope:recipient }
+				use_hook = scope:recipient
 			}
 		}
 		scope:recipient = {
-			if = {
-				limit = { scope:hook = yes has_hook = scope:actor }
-				use_hook = scope:actor
-			}
 			if = {
 				limit = { scope:favor = yes }
 				add_hook = {
@@ -352,21 +319,6 @@
 					}
 					scope:recipient = { remove_claim = prev }
 				}
-			}
-			if = {
-				limit = { scope:recruit = yes }
-				if = {
-					limit = { scope:actor = { culture = { has_cultural_parameter = can_recruit_prisoners_easily } } }
-					add_opinion = { modifier = loyal_servant target = scope:actor }
-					scope:actor = {
-						if = {
-							limit = { can_add_hook = { target = scope:recipient type = loyalty_hook } }
-							add_hook = { type = loyalty_hook target = scope:recipient }
-						}
-					}
-				}
-				else = { add_opinion = { modifier = demanded_recruitment target = scope:actor } }
-				scope:actor = { add_courtier = scope:recipient }
 			}
 			if = {
 				limit = { scope:demand_admin = yes }
@@ -412,7 +364,6 @@
 		modifier = { add = 3 scope:favor = yes }
 		modifier = { add = -5 scope:demand_conversion = yes }
 		modifier = { add = -3 scope:renounce_claims = yes }
-		modifier = { add = -2 scope:recruit = yes }
 		modifier = { add = -4 scope:demand_admin = yes }
 		modifier = { add = 5 scope:recipient.faith = scope:actor.faith scope:recipient.faith.religion = religion:demonic_religion }
 		modifier = { add = 5 scope:actor = { has_relation_lover = scope:recipient } }
@@ -444,7 +395,7 @@
 
 		modifier = {
 			factor = 0
-			NOT = { scope:actor = scope:recipient }
+			scope:actor != scope:recipient
 			NOR = {
 				scope:extortionate_gold = yes
 				scope:extortionate_current_gold = yes
@@ -454,7 +405,6 @@
 				scope:favor = yes
 				scope:demand_conversion = yes
 				scope:renounce_claims = yes
-				scope:recruit = yes
 				scope:demand_admin = yes
 			}
 		}

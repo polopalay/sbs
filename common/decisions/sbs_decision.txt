@@ -317,3 +317,36 @@ alienate_people = {
 	ai_check_interval = 12
 	ai_will_do = { base = 100 }
 }
+
+sbs_startmerchant_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/event_scenes/deviant_black_market.dds"
+	}
+	desc = sbs_startmerchant_decision_desc
+	confirm_text = sbs_startmerchant_decision_confirm
+	selection_tooltip = sbs_startmerchant_decision_tooltip
+	decision_group_type = decisions
+	ai_check_interval = 0
+	ai_will_do = {
+		base = 0
+	}
+	is_shown = {
+		OR = {
+			has_trait_with_flag = sbs_demon_trait
+			has_trait = deviant
+			any_secret = { type = secret_deviant }
+		}
+	}
+	is_valid_showing_failures_only = {
+		age >= 18
+		is_ai = no
+		is_incapable = no
+		is_imprisoned = no
+		any_county_province = { has_building_or_higher = alchemy1 }
+	}
+	cooldown = { days = 10 }
+	effect = {
+		custom_tooltip = sbs_startmerchant_decision_tooltip
+		trigger_event = sbs_go.0100
+	}
+}

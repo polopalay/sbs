@@ -18,11 +18,12 @@ sbs_prostitution.0099 = {
 		}
 		desc = sbs_prostitution.0099.a.desc
 	}
+	cooldown = { years = 20 }
 	trigger = {
 		is_adult = yes
 		is_female = yes
 		is_ruler = yes
-		is_ai = no
+		age <= 40
 		NOT = {
 			has_trait = lifestyle_prostitute
 			any_secret = { type = secret_prostitute }
@@ -30,7 +31,7 @@ sbs_prostitution.0099 = {
 		is_imprisoned = no
 		any_sub_realm_county = { any_county_province = { has_building_or_higher = brothel1 } }
 	}
-	theme = seduction
+	theme = deviantsmaskgo
 	override_background = { reference = alley_night }
 	right_portrait = {
 		character = root
@@ -38,25 +39,33 @@ sbs_prostitution.0099 = {
 	}	
 	#look at the wanted posters
 	option = {
+		ai_chance = {
+			base = 10
+		}
 		name = sbs_prostitution.0099.a
 		custom_tooltip = sbs_prostitution.0099.a.tt
 		trigger_event = sbs_prostitution.0100
 	}	
 	#Any commoner brothel will do
 	option = {
+		ai_chance = { base = 1 }
+		trigger = { has_trait = rakish }
 		name = sbs_prostitution.0099.b
 		custom_tooltip = sbs_prostitution.0099.b.tt
 		trigger_event = sbs_prostitution.9220
 	}
 	# just fuck some guy
 	option = {
+		ai_chance = { base = 1 }
+		trigger = { has_trait = lustful }
 		name = sbs_prostitution.0099.c
 		custom_tooltip = sbs_prostitution.0099.c.tt
-		trigger_event = sbs_go.5010
+		trigger_event = sbs_go.7010
 
 	}
 	#this was a mistake
 	option = {
+		ai_chance = { base = 5 }
 		name = sbs_prostitution.0099.x
 		custom_tooltip = sbs_prostitution.0099.x.tt
 		stress_impact = {
@@ -73,7 +82,8 @@ sbs_prostitution.0100 = {
 	type = character_event
 	title = sbs_prostitution.0100.t
 	desc = sbs_prostitution.0100.desc
-	theme = tournament_locale_tavern
+	theme = deviantsmaskgo
+	override_background = { reference = deviantlineofnudewomen }
 	right_portrait = {
 		character = root
 		animation = shame
@@ -97,7 +107,8 @@ sbs_prostitution.0101 = {
 	type = character_event
 	title = sbs_prostitution.0101.t
 	desc = sbs_prostitution.0101.desc
-	theme = tournament_locale_tavern
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdemonparadehumanthugsgrope }
 	right_portrait = {
 		character = root
 		animation = shame
@@ -121,7 +132,8 @@ sbs_prostitution.0102 = {
 	type = character_event
 	title = sbs_prostitution.0102.t
 	desc = sbs_prostitution.0102.desc
-	theme = tournament_locale_tavern
+	theme = deviantsmaskgo
+	override_background = { reference = deviantfullnelsoncum }
 	right_portrait = {
 		character = root
 		animation = shame
@@ -145,7 +157,8 @@ sbs_prostitution.0103 = {
 	type = character_event
 	title = sbs_prostitution.0103.t
 	desc = sbs_prostitution.0103.desc
-	theme = tournament_locale_tavern
+	theme = deviantsmaskgo
+	override_background = { reference = deviantlikccumbowl }
 	right_portrait = {
 		character = root
 		animation = throne_room_kneel_2
@@ -194,7 +207,8 @@ sbs_prostitution.9000 = {
 	type = character_event
 	title = sbs_prostitution.9000.t
 	desc = sbs_prostitution.9000.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantgoorgy }
 	trigger = {
 		is_adult = yes
 		is_female = yes
@@ -237,7 +251,8 @@ sbs_prostitution.9001 = {
 	type = character_event
 	title = sbs_prostitution.9001.t
 	desc = sbs_prostitution.9001.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantsuckcock }
 	right_portrait = {
 		character = root
 		animation = personality_greedy
@@ -260,7 +275,8 @@ sbs_prostitution.9002 = {
 	type = character_event
 	title = sbs_prostitution.9002.t
 	desc = sbs_prostitution.9002.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantcumonfacewithcock }
 	right_portrait = {
 		character = root
 		animation = shock
@@ -285,7 +301,8 @@ sbs_prostitution.9003 = {
 	type = character_event
 	title = sbs_prostitution.9003.t
 	desc = sbs_prostitution.9003.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantasspresent }
 	right_portrait = {
 		character = root
 		animation = shame
@@ -312,7 +329,8 @@ sbs_prostitution.9010 = {
 	type = character_event
 	title = sbs_prostitution.9010.t
 	desc = sbs_prostitution.9010.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantgoorgy }
 	trigger = {
 		is_adult = yes
 		is_female = yes
@@ -360,7 +378,8 @@ sbs_prostitution.9011 = {
 	type = character_event
 	title = sbs_prostitution.9011.t
 	desc = sbs_prostitution.9011.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantffmsidebysidefuck }
 	lower_right_portrait = {
 		character = root
 		animation = personality_greedy
@@ -388,7 +407,8 @@ sbs_prostitution.9012 = {
 	type = character_event
 	title = sbs_prostitution.9012.t
 	desc = sbs_prostitution.9012.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantrearexposespread }
 	lower_right_portrait = {
 		character = root
 		animation = personality_greedy
@@ -470,7 +490,8 @@ sbs_prostitution.9013 = {
 	type = character_event
 	title = sbs_prostitution.9013.t
 	desc = sbs_prostitution.9013.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantffmduocockworship }
 	lower_right_portrait = {
 		character = root
 		animation = interested
@@ -504,7 +525,8 @@ sbs_prostitution.9014 = {
 	type = character_event
 	title = sbs_prostitution.9014.t
 	desc = sbs_prostitution.9014.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantsuckcock }
 	lower_right_portrait = {
 		character = root
 		animation = shame
@@ -530,7 +552,8 @@ sbs_prostitution.9015 = {
 	type = character_event
 	title = sbs_prostitution.9015.t
 	desc = sbs_prostitution.9015.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantffmoralandfuck }
 	#
 	lower_right_portrait = {
 		character = root
@@ -558,7 +581,8 @@ sbs_prostitution.9016 = {
 	type = character_event
 	title = sbs_prostitution.9016.t
 	desc = sbs_prostitution.9016.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantssixtyninewomen }
 	lower_right_portrait = {
 		character = root
 		animation = shame
@@ -584,7 +608,8 @@ sbs_prostitution.9020 = {
 	type = character_event
 	title = sbs_prostitution.9020.t
 	desc = sbs_prostitution.9020.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantrearexposespread }
 	lower_right_portrait = {
 		character = root
 		animation = shock
@@ -666,7 +691,8 @@ sbs_prostitution.9021 = {
 	type = character_event
 	title = sbs_prostitution.9021.t
 	desc = sbs_prostitution.9021.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantffmpilefuckhug }
 	lower_right_portrait = {
 		character = root
 		animation = scheme
@@ -700,7 +726,8 @@ sbs_prostitution.9022 = {
 	type = character_event
 	title = sbs_prostitution.9022.t
 	desc = sbs_prostitution.9022.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantssixtyninewomen }
 	lower_right_portrait = {
 		character = root
 		animation = throne_room_kneel_2
@@ -726,7 +753,8 @@ sbs_prostitution.9023 = {
 	type = character_event
 	title = sbs_prostitution.9023.t
 	desc = sbs_prostitution.9023.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantffmduocockworship }
 	lower_right_portrait = {
 		character = root
 		animation = scheme
@@ -760,7 +788,8 @@ sbs_prostitution.9024 = {
 	type = character_event
 	title = sbs_prostitution.9024.t
 	desc = sbs_prostitution.9024.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantsuckcock }
 	lower_right_portrait = {
 		character = root
 		animation = throne_room_kneel_2
@@ -792,7 +821,8 @@ sbs_prostitution.9030 = {
 		is_female = yes
 		carn_is_working_as_prostitute_trigger = yes
 	}
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantgoorgy }
 	immediate = {
 		random_living_character = {
 			limit = { in_diplomatic_range = root is_adult = yes is_female = no age > 55 }
@@ -830,7 +860,8 @@ sbs_prostitution.9031 = {
 	type = character_event
 	title = sbs_prostitution.9031.t
 	desc = sbs_prostitution.9031.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantvaginalrideholdcum }
 	right_portrait = {
 		character = root
 		animation = personality_greedy
@@ -860,7 +891,8 @@ sbs_prostitution.9032 = {
 	type = character_event
 	title = sbs_prostitution.9032.t
 	desc = sbs_prostitution.9032.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantbasicbreastgrope }
 	right_portrait = {
 		character = root
 		animation = personality_greedy
@@ -952,7 +984,8 @@ sbs_prostitution.9033 = {
 	type = character_event
 	title = sbs_prostitution.9033.t
 	desc = sbs_prostitution.9033.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantsuckcock }
 	right_portrait = {
 		character = root
 		animation = personality_greedy
@@ -981,7 +1014,8 @@ sbs_prostitution.9034 = {
 	type = character_event
 	title = sbs_prostitution.9034.t
 	desc = sbs_prostitution.9034.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantsuckcock }
 	right_portrait = {
 		character = root
 		animation = shame
@@ -1002,7 +1036,8 @@ sbs_prostitution.9035 = {
 	type = character_event
 	title = sbs_prostitution.9035.t
 	desc = sbs_prostitution.9035.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviant_choke_doggy_two }
 	right_portrait = {
 		character = root
 		animation = personality_dishonorable
@@ -1031,7 +1066,8 @@ sbs_prostitution.9036 = {
 	type = character_event
 	title = sbs_prostitution.9036.t
 	desc = sbs_prostitution.9036.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantgoorgy }
 	right_portrait = {
 		character = root
 		animation = shame
@@ -1059,7 +1095,8 @@ sbs_prostitution.9040 = {
 		is_lowborn = no
 		carn_is_working_as_prostitute_trigger = yes
 	}
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantgoorgy }
 	immediate = {
 		random_living_character = {
 			limit = { in_diplomatic_range = root is_adult = yes is_female = yes }
@@ -1102,7 +1139,8 @@ sbs_prostitution.9041 = {
 	type = character_event
 	title = sbs_prostitution.9041.t
 	desc = sbs_prostitution.9041.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdoubledildowomenfun }
 	right_portrait = {
 		character = root
 		animation = personality_greedy
@@ -1131,7 +1169,8 @@ sbs_prostitution.9042 = {
 	type = character_event
 	title = sbs_prostitution.9042.t
 	desc = sbs_prostitution.9042.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantsdildodualdominationfuck }
 	right_portrait = {
 		character = root
 		animation = personality_greedy
@@ -1160,7 +1199,8 @@ sbs_prostitution.9043 = {
 	type = character_event
 	title = sbs_prostitution.9043.t
 	desc = sbs_prostitution.9043.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantssixtyninewomen }
 	right_portrait = {
 		character = root
 		animation = personality_greedy
@@ -1189,7 +1229,8 @@ sbs_prostitution.9044 = {
 	type = character_event
 	title = sbs_prostitution.9044.t
 	desc = sbs_prostitution.9044.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantsdildostoragetwowomen }
 	right_portrait = {
 		character = root
 		animation = personality_greedy
@@ -1218,7 +1259,8 @@ sbs_prostitution.9045 = {
 	type = character_event
 	title = sbs_prostitution.9045.t
 	desc = sbs_prostitution.9045.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantspeggingwomen }
 	right_portrait = {
 		character = root
 		animation = personality_greedy
@@ -1258,7 +1300,8 @@ sbs_prostitution.9046 = {
 	type = character_event
 	title = sbs_prostitution.9046.t
 	desc = sbs_prostitution.9046.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantasspresent }
 	right_portrait = {
 		character = root
 		animation = personality_greedy
@@ -1293,7 +1336,8 @@ sbs_prostitution.9200 = {
 		is_female = yes
 		carn_is_working_as_prostitute_trigger = yes
 	}
-	theme = realm
+	theme = deviantsmaskgo
+	override_background = { reference = deviantgoorgy }
 	right_portrait = {
 		character = root
 		animation = thinking
@@ -1322,7 +1366,8 @@ sbs_prostitution.9201 = {
 	type = character_event
 	title = sbs_prostitution.9201.t
 	desc = sbs_prostitution.9201.a.desc
-	theme = tournament_locale_tavern
+	theme = deviantsmaskgo
+	override_background = { reference = deviantnakedwaitressgrope }
 	right_portrait = {
 		character = root
 		animation = personality_coward
@@ -1343,7 +1388,8 @@ sbs_prostitution.9202 = {
 	type = character_event
 	title = sbs_prostitution.9202.t
 	desc = sbs_prostitution.9202.a.desc
-	theme = tournament_locale_tavern
+	theme = deviantsmaskgo
+	override_background = { reference = deviantnakedwaitressgrope }
 	immediate = {
 		random_living_character = {
 			limit = { in_diplomatic_range = root is_adult = yes is_female = no OR = { has_trait = drunkard has_trait = gluttonous has_trait = lustful } }
@@ -1491,7 +1537,8 @@ sbs_prostitution.9203 = {
 	type = character_event
 	title = sbs_prostitution.9203.t
 	desc = sbs_prostitution.9203.a.desc
-	theme = tournament_locale_tavern
+	theme = deviantsmaskgo
+	override_background = { reference = deviant_choke_doggy_two }
 	right_portrait = {
 		character = root
 		animation = personality_honorable
@@ -1520,7 +1567,8 @@ sbs_prostitution.9204 = {
 	type = character_event
 	title = sbs_prostitution.9204.t
 	desc = sbs_prostitution.9204.a.desc
-	theme = tournament_locale_tavern
+	theme = deviantsmaskgo
+	override_background = { reference = deviantnakedwaitressgrope }
 	right_portrait = {
 		character = root
 		animation = shame
@@ -1540,7 +1588,8 @@ sbs_prostitution.9205 = {
 	type = character_event
 	title = sbs_prostitution.9205.t
 	desc = sbs_prostitution.9205.a.desc
-	theme = tournament_locale_tavern
+	theme = deviantsmaskgo
+	override_background = { reference = deviantsuckcock }
 	right_portrait = {
 		character = root
 		animation = personality_honorable
@@ -1569,7 +1618,8 @@ sbs_prostitution.9206 = {
 	type = character_event
 	title = sbs_prostitution.9206.t
 	desc = sbs_prostitution.9206.a.desc
-	theme = tournament_locale_tavern
+	theme = deviantsmaskgo
+	override_background = { reference = deviantsuckcock }
 	right_portrait = {
 		character = root
 		animation = shame
@@ -1589,7 +1639,8 @@ sbs_prostitution.9207 = {
 	type = character_event
 	title = sbs_prostitution.9207.t
 	desc = sbs_prostitution.9207.a.desc
-	theme = tournament_locale_tavern
+	theme = deviantsmaskgo
+	override_background = { reference = deviant_anal_rideontop_eight }
 	right_portrait = {
 		character = root
 		animation = personality_content
@@ -1618,7 +1669,8 @@ sbs_prostitution.9208 = {
 	type = character_event
 	title = sbs_prostitution.9208.t
 	desc = sbs_prostitution.9208.a.desc
-	theme = tournament_locale_tavern
+	theme = deviantsmaskgo
+	override_background = { reference = deviantgiantvaginalstrangledoggycum }
 	right_portrait = {
 		character = root
 		animation = shame
@@ -1644,7 +1696,8 @@ sbs_prostitution.9220 = {
 		is_female = yes
 		carn_is_working_as_prostitute_trigger = yes
 	}
-	theme = host_dinner
+	theme = deviantsmaskgo
+	override_background = { reference = deviantgoorgy }
 	right_portrait = {
 		character = root
 		animation = thinking
@@ -1674,7 +1727,8 @@ sbs_prostitution.9221 = {
 	type = character_event
 	title = sbs_prostitution.9221.t
 	desc = sbs_prostitution.9221.a.desc
-	theme = host_dinner
+	theme = deviantsmaskgo
+	override_background = { reference = deviantdildodisplaybox }
 	right_portrait = {
 		character = root
 		animation = personality_greedy
@@ -1698,7 +1752,8 @@ sbs_prostitution.9222 = {
 	type = character_event
 	title = sbs_prostitution.9222.t
 	desc = sbs_prostitution.9222.a.desc
-	theme = host_dinner
+	theme = deviantsmaskgo
+	override_background = { reference = deviantartexhibitdisplay }
 	right_portrait = {
 		character = root
 		animation = personality_greedy
@@ -1732,7 +1787,8 @@ sbs_prostitution.9223 = {
 	type = character_event
 	title = sbs_prostitution.9223.t
 	desc = sbs_prostitution.9223.a.desc
-	theme = host_dinner
+	theme = deviantsmaskgo
+	override_background = { reference = deviantartexhibitportraitbondage }
 	right_portrait = {
 		character = root
 		animation = personality_greedy
@@ -1764,7 +1820,8 @@ sbs_prostitution.9230 = {
 		is_female = yes
 		carn_is_working_as_prostitute_trigger = yes
 	}
-	theme = tournament_locale_tavern
+	theme = deviantsmaskgo
+	override_background = { reference = deviantgoorgy }
 	immediate = {
 		random_living_character = {
 			limit = { in_diplomatic_range = root is_adult = yes is_female = no OR = { gold > 100 has_trait = generous } }
@@ -1800,7 +1857,8 @@ sbs_prostitution.9231 = {
 	type = character_event
 	title = sbs_prostitution.9231.t
 	desc = sbs_prostitution.9231.a.desc
-	theme = tournament_locale_tavern
+	theme = deviantsmaskgo
+	override_background = { reference = deviantlineofnudewomen }
 	right_portrait = {
 		character = root
 		animation = personality_greedy
@@ -1827,7 +1885,8 @@ sbs_prostitution.9232 = {
 	type = character_event
 	title = sbs_prostitution.9232.t
 	desc = sbs_prostitution.9232.a.desc
-	theme = tournament_locale_tavern
+	theme = deviantsmaskgo
+	override_background = { reference = deviantlineofnudewomenfuckingdildos }
 	right_portrait = {
 		character = root
 		animation = thinking
@@ -1856,7 +1915,8 @@ sbs_prostitution.9233 = {
 	type = character_event
 	title = sbs_prostitution.9233.t
 	desc = sbs_prostitution.9233.a.desc
-	theme = tournament_locale_tavern
+	theme = deviantsmaskgo
+	override_background = { reference = deviantffmpilefuckhugdemoncockcum }
 	right_portrait = {
 		character = root
 		animation = personality_greedy
@@ -1885,7 +1945,8 @@ sbs_prostitution.9234 = {
 	type = character_event
 	title = sbs_prostitution.9234.t
 	desc = sbs_prostitution.9234.a.desc
-	theme = tournament_locale_tavern
+	theme = deviantsmaskgo
+	override_background = { reference = deviantcowgirlfffmbondageonbedcum }
 	right_portrait = {
 		character = root
 		animation = shame
@@ -1923,7 +1984,8 @@ sbs_prostitution.9260 = {
 	type = character_event
 	title = sbs_prostitution.9260.t
     desc = sbs_prostitution.9260.a.desc
-	theme = seduction
+	theme = deviantsmaskgo
+	override_background = { reference = deviantanaldpcum }
 	trigger = {
 		is_adult = yes
 		is_female = yes
@@ -2016,4 +2078,3 @@ sbs_prostitution.9260 = {
 		scope:random_noble_4 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
 	}	
 }
-

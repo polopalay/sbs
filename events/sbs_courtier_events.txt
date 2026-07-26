@@ -15,7 +15,7 @@ sbs_courtier.1440 = {
 		is_ruler = yes
 		is_female = yes
 		should_be_naked_trigger = no
-		any_councillor = { is_female = no NOT = { is_spouse_of = root } }
+		any_councillor = { is_female = no }
 	}
 	option = {
 		name = sbs_courtier.1440.a
@@ -113,11 +113,11 @@ sbs_courtier.1460 = {
 		is_adult = yes
 		is_female = yes
 		should_be_naked_trigger = yes
-		any_councillor = { is_female = no NOT = { is_spouse_of = root } }
+		any_councillor = { is_female = no }
 	}
 	immediate = {
 		random_councillor = {
-			limit = { is_female = no NOT = { is_spouse_of = root } }
+			limit = { is_female = no }
 			save_scope_as = sbs_random_1
 		}
 	}
@@ -304,10 +304,6 @@ sbs_courtier.2000 = {
 		animation = boredom  
 	}
     trigger = {
-		OR = {
-			has_trait = deviant
-			any_secret = { type = secret_deviant }
-		}
 		is_ruler = yes
 		is_adult = yes
 	}
