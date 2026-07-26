@@ -1,0 +1,13 @@
+﻿l_simp_chinese:
+ sbs_buff: "恶魔的眷顾"
+ sbs_buff_desc: "此人得到了恶魔的祝福"
+ sbs_debuff: "恶魔的诅咒"
+ sbs_debuff_desc: "此人受到了恶魔的诅咒"
+ sbs_true_form: "真身显现"
+ sbs_true_form_desc: "此人显现出了他们真正的恶魔形态"
+ sbs_seal: "恶魔的封印"
+ sbs_seal_desc: "此人被恶魔封印。"
+ sbs_generals: "魔将"
+ sbs_generals_desc: "被召唤出为恶魔情妇所服务的魔将"
+ deviants_strangebook_modifier: "变态书"
+ deviants_strangebook_modifier_desc: "有一本关于一位女士及其变态爱好的书。"

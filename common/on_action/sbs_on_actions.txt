@@ -58,27 +58,27 @@ sbs_devil_on_action = {
 			}
 			0 = {
 				modifier = { carn_is_working_as_prostitute_trigger = yes any_character_artifact { has_artifact_modifier = snake_bracelet_modifier } any_knight = { count > 0 } any_knight = { is_female = no has_character_modifier = sbs_buff count = 0 } add = 3 }
-				trigger_event = sbs_loyalty.8000 # loyalty event init
+				trigger_event = sbs_go.8000 # loyalty event init
 			}
 			0 = {
 				modifier = { carn_is_working_as_prostitute_trigger = yes any_character_artifact { has_artifact_modifier = snake_bracelet_modifier } any_knight = { count > 0 } any_knight = { is_female = no has_character_modifier = sbs_buff } add = 3 }
-				trigger_event = sbs_loyalty.8099 # loyalty events
+				trigger_event = sbs_go.8099 # loyalty events
 			}
 			0 = {
 				modifier = { carn_is_working_as_prostitute_trigger = yes any_character_artifact { has_artifact_modifier = snake_bracelet_modifier } any_knight = { count > 0 } any_knight = { is_female = no has_character_modifier = sbs_generals count = 0 } add = 3 }
-				trigger_event = sbs_loyalty.8200 # loyalty event: new recruit
+				trigger_event = sbs_go.8200 # loyalty event: new recruit
 			}
 			0 = {
 				modifier = { any_character_artifact { has_artifact_modifier = crown_of_wisdom_crown_modifier } should_be_naked_trigger = no any_councillor = { is_female = no } add = 1 }
-				trigger_event = sbs_courtier.1440 # naked event
+				trigger_event = sbs_go.1440 # naked event
 			}
 			0 = {
 				modifier = { any_character_artifact { has_artifact_modifier = crown_of_wisdom_crown_modifier } should_be_naked_trigger = yes any_councillor = { is_female = no } add = 1 }
-				trigger_event = sbs_courtier.1460 # fuck on throne event
+				trigger_event = sbs_go.1460 # fuck on throne event
 			}
 			0 = {
 				modifier = { any_character_artifact { has_artifact_modifier = crown_of_wisdom_crown_modifier } is_ruler = yes }
-				trigger_event = sbs_courtier.2000 # urge to masturbate
+				trigger_event = sbs_go.2000 # urge to masturbate
 			}
 			0 = {
 				modifier = { any_character_artifact { has_artifact_modifier = master_dildo_modifier } add = 1 }
