@@ -16,12 +16,6 @@ carn_on_stop_working_as_prostitute = {
 
 carn_on_sex_v2 = {
 	effect = {
-		create_character_memory = {
-			type = had_sex
-			participants = {
-				sex_partner = scope:prostitute
-			}
-		}
 		random = { chance = 0 modifier = { scope:carn_sex_partner = { is_female = no } add = 25 } add_character_modifier = { modifier = face_cum months = 6 } }
 		random = { chance = 0 modifier = { scope:carn_sex_partner = { is_female = no } add = 50 } add_character_modifier = { modifier = body_cum months = 6 } }
 		random = { chance = 0 modifier = { scope:carn_sex_partner = { is_female = no } add = 25 } add_character_modifier = { modifier = ass_cum months = 6 } }

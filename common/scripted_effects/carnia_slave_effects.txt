@@ -25,10 +25,6 @@
 		every_claim = { scope:new_slave = { remove_claim = prev } }
 		remove_trait = former_slave
 		add_trait = slave
-		if = {
-			limit = {gold > 0}
-			pay_short_term_gold = { target = scope:new_owner gold = scope:new_slave.gold }
-		}
 		every_spouse = { divorce = scope:new_slave }
 		if = {
 			limit = { exists = betrothed }
@@ -91,6 +87,12 @@
 			scope:new_slave = { remove_relation_slave_owner = prev }
 		}
 	}
+	scope:new_owner = {
+		set_relation_slave = { target = scope:new_slave }
+	}
+	scope:new_slave = {
+		set_relation_slave_owner = { target = scope:new_owner }
+	}
 	hidden_effect = {
 		scope:new_slave = {
 			if = {
@@ -101,15 +103,9 @@
 				on_action = carn_on_slave_enslaved
 			}
 		}
-	}
-	scope:new_owner = {
-		add_courtier = scope:new_slave
-	}
-	scope:new_owner = {
-		set_relation_slave = { target = scope:new_slave }
-	}
-	scope:new_slave = {
-		set_relation_slave_owner = { target = scope:new_owner }
+		scope:new_owner = {
+			add_courtier = scope:new_slave
+		}
 	}
 }
 
@@ -130,7 +126,6 @@ carn_buy_slave_effect = {
 		set_relation_slave = { target = scope:slave }
 	}
 	scope:buyer = {
-		pay_short_term_gold = { target = scope:seller gold = scope:slave_price }
 		add_courtier = scope:slave
 		save_scope_as = slave_owner
 	}
@@ -140,16 +135,6 @@ carn_free_slave_effect = {
 	every_relation = {
 		type = slave_owner
 		remove_relation_slave = prev
-		hidden_effect = {
-			add_opinion = {
-				target = prev
-				modifier = carn_former_slave_or_slave_owner_opinion
-			}
-			reverse_add_opinion = {
-				target = prev
-				modifier = carn_former_slave_or_slave_owner_opinion
-			}
-		}
 		save_scope_as = former_owner
 	}
 	hidden_effect = {

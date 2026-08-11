@@ -14,11 +14,11 @@
 		scope:recipient = { age >= 18 }
 		scope:actor = {
 			trigger_if = {
-				scope:recipient = { is_female = yes }
+				limit = { scope:recipient = { is_female = yes } }
 				any_sub_realm_county = { any_county_province = { has_building_or_higher = brothel3 } }
 			}
 			trigger_if = {
-				scope:recipient = { is_female = no }
+				limit = { scope:recipient = { is_female = no } }
 				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
 			}
 			NOT = { has_character_modifier = sbs_debuff }
@@ -266,11 +266,9 @@
 			if = {
 				limit = { scope:demand_conversion = yes }
 				set_character_faith_with_conversion = scope:actor.faith
-				add_opinion = { modifier = demanded_my_conversion_opinion target = scope:actor }
 			}
 			if = {
 				limit = { scope:renounce_claims = yes }
-				add_opinion = { modifier = demanded_claim_renouncement target = scope:actor }
 				every_claim = {
 					explicit = yes
 					limit = {
@@ -292,7 +290,6 @@
 				limit = { scope:recruit = yes }
 				if = {
 					limit = { scope:actor = { culture = { has_cultural_parameter = can_recruit_prisoners_easily } } }
-					add_opinion = { modifier = loyal_servant target = scope:actor }
 					scope:actor = {
 						if = {
 							limit = { can_add_hook = { target = scope:recipient type = loyalty_hook } }
@@ -300,7 +297,6 @@
 						}
 					}
 				}
-				else = { add_opinion = { modifier = demanded_recruitment target = scope:actor } }
 				scope:actor = { add_courtier = scope:recipient }
 			}
 			if = {
@@ -329,8 +325,14 @@
 			if = {
 				limit = { has_trait = immortal }
 				remove_trait = immortal
-				add_trait_xp = { trait = sbs_lesser_succubus track = corruption value = 100 }
-				add_trait_xp = { trait = sbs_lesser_succubus track = power value = 100 }
+				if = {
+					limit = { is_female = yes }
+					add_trait_xp = { trait = sbs_lesser_succubus track = corruption value = 100 }
+					add_trait_xp = { trait = sbs_lesser_succubus track = power value = 100 }
+				}
+				else = {
+					add_trait_xp = { trait = sbs_lesser_demon value = 100 }
+				}
 			}
 		}
 	}

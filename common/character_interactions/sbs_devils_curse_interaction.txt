@@ -49,22 +49,22 @@ sbs_devils_curse_interaction = {
 		localization = sbs_debuff
 	}
 	send_option = {
-		is_shown = { scope:actor = { NOT = { has_character_modifier = stanky_modifier } } }
+		is_shown = { scope:recipient = { NOT = { has_character_modifier = stanky_modifier } } }
 		flag = stanky_modifier
 		localization = stanky_modifier
 	}
 	send_option = {
-		is_shown = { scope:actor = { NOT = { has_character_modifier = possessed_by_lust_demon_modifier } } }
+		is_shown = { scope:recipient = { NOT = { has_character_modifier = possessed_by_lust_demon_modifier } } }
 		flag = possessed_by_lust_demon_modifier
 		localization = possessed_by_lust_demon_modifier
 	}
 	send_option = {
-		is_shown = { scope:actor = { NOT = { has_character_modifier = party_baron_murdered_the_joy_of_life_modifier } } }
+		is_shown = { scope:recipient = { NOT = { has_character_modifier = party_baron_murdered_the_joy_of_life_modifier } } }
 		flag = party_baron_murdered_the_joy_of_life_modifier
 		localization = party_baron_murdered_the_joy_of_life_modifier
 	}
 	send_option = {
-		is_shown = { scope:actor = { NOT = { has_character_modifier = intrigue_broken_modifier } } }
+		is_shown = { scope:recipient = { NOT = { has_character_modifier = intrigue_broken_modifier } } }
 		flag = intrigue_broken_modifier
 		localization = intrigue_broken_modifier
 	}

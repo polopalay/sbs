@@ -305,10 +305,6 @@ sbs_go.0550 = {
 	trigger = {
 		is_adult = yes
 		is_female = yes
-		OR = {
-			has_trait = deviant
-			any_secret = { type = secret_deviant }
-		}
 	}
 	theme = deviantsmaskgo
 	override_background = { reference = bedchamber }
@@ -318,7 +314,9 @@ sbs_go.0550 = {
 	}
 	# find one, at any cost
 	option = {
-		ai_chance = { base = 50 }
+		ai_chance = { base = 5 }
+		trigger = { location.county.holder.top_liege.any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy1 } } gold >= minor_gold_value }
+		remove_short_term_gold = minor_gold_value
 		name = sbs_go.0550.a
 		custom_tooltip = sbs_go.0550.a.tt
 		trigger_event = sbs_go.0100
@@ -336,7 +334,7 @@ sbs_go.0550 = {
 	# you can feel it, there is one nearby
 	option = {
 		ai_chance = { base = 5 }
-		trigger = { gold >= minor_gold_value any_character_artifact = { has_artifact_modifier = mistress_dildo_modifier count = 0 } }
+		trigger = { gold >= medium_gold_value }
 		name = sbs_go.0550.c
 		custom_tooltip = sbs_go.0550.c.tt
 		remove_short_term_gold = medium_gold_value
@@ -348,9 +346,9 @@ sbs_go.0550 = {
 			modifier = mistress_dildo_modifier
 			visuals = mistress_dildo
 			template = mistress_dildo_template
-			max_durability = 10
-			wealth = 10
-			quality = 10
+			max_durability = 1
+			wealth = 1
+			quality = 1
 		}
 	}
 }
@@ -1454,8 +1452,8 @@ sbs_go.1440 = {
 		}
 	}
 	option = {
-		name = sbs_go.1400.b
-		custom_tooltip = sbs_go.1400.b.tt
+		name = sbs_go.1440.b
+		custom_tooltip = sbs_go.1440.b.tt
 		stress_impact = {
 			base = major_stress_impact_gain
 		}
@@ -1940,7 +1938,6 @@ sbs_go.4030 = {
 	option = {
 		name = sbs_go.4030.a
 		custom_tooltip = sbs_go.4030.a.tt
-		add_trait = deviants_horse_fucker
 		stress_impact = {
 			base = medium_stress_impact_loss
 			lustful = medium_stress_impact_loss
@@ -3342,10 +3339,6 @@ sbs_go.6030 = {
 	}	
 	theme = deviantsmaskgo
 	override_background = { reference = deviantdemonimpfuckmissionarypov }
-	left_portrait = {
-		character = scope:random_man
-		animation = scheme
-	}
 	right_portrait = {
 		character = root
 		animation = ecstatic
@@ -4687,5 +4680,1694 @@ sbs_go.8209 = {
 				value = 5
 			}
 		}
+	}
+}
+
+sbs_go.9001 = { 
+	type = character_event
+	title = sbs_go.9001.t
+	desc = sbs_go.9001.desc
+	theme = deviantsmaskgo 
+	override_background = { reference = corridor_day }
+	right_portrait = {
+		character = root
+		animation = scheme  
+	}
+	left_portrait = {
+		character = scope:deviant_go_random_1
+		animation = thinking
+	}
+    trigger = {
+		is_ruler = yes
+		age >= 18
+		is_female = no
+		any_courtier_or_guest = {
+			is_female = yes
+			age >= 18
+			age <= 40
+			NOT = { is_close_or_extended_family_of = root }
+		}
+	}
+    immediate = {
+		random_courtier_or_guest = {
+			limit = { is_female = yes age >= 18 age <= 40 NOT = { is_close_or_extended_family_of = root } }
+			save_scope_as = deviant_go_random_1
+		}
+	}
+	# just slap their ass once, and try to explain it away...
+	option = {
+		name = sbs_go.9001.a
+		custom_tooltip = sbs_go.9001.a.tt
+        duel = {
+			skill = diplomacy
+			target = scope:deviant_go_random_1
+			# minimal effects, you explain it with such deatail about your right as a ruler. and how they desrved it, that even you think it was compleitely justified 
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				custom_tooltip = { text = sbs_go.9001.aw.tt }	
+				stress_impact = { base = major_stress_impact_loss }	
+				scope:deviant_go_random_1 = {
+					add_opinion = {
+						target = root
+						modifier = repentant_opinion
+						opinion = 10
+					}
+					stress_impact = {
+						base = minor_stress_impact_loss
+						lustful = medium_stress_impact_loss
+						just = minor_stress_impact_loss
+					}
+				}
+			}
+			# Failure, bad effects, even you start to doubt if what you did was right...
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}	
+				custom_tooltip = { text = sbs_go.9001.al.tt }
+				stress_impact = {
+					base = minor_stress_impact_gain
+					lustful = miniscule_stress_impact_loss
+			       	chaste = medium_stress_impact_gain
+					shy = medium_stress_impact_gain
+				}		
+				add_prestige = minor_prestige_loss	
+				scope:deviant_go_random_1 = {
+					add_opinion = {
+						target = root
+						modifier = overreaction_opinion
+						opinion = -10
+					}
+						stress_impact = {
+						base = medium_stress_impact_gain
+			       		chaste = medium_stress_impact_gain
+						shy = medium_stress_impact_gain
+					}
+				}			
+			}
+		}
+	}		
+	# kick them and then make sure they will not talk about it, or lat least nobody will believe her
+	option = {
+		name = sbs_go.9001.b
+		custom_tooltip = sbs_go.9001.b.tt
+        duel = {
+			skill = prowess
+			target = scope:deviant_go_random_1
+			# you manage to kick them down
+			40 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = 3.5
+						min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.9001.bw.tt
+				}	
+				trigger_event = sbs_go.9002
+				stress_impact = { base = massive_stress_impact_loss }	
+				scope:deviant_go_random_1 = {
+					add_opinion = {
+						target = root
+						modifier = angry_opinion
+						opinion = -10
+					}
+					stress_impact = {
+						base = medium_stress_impact_gain
+					}
+				}
+			}
+			# they avoid the kick and rumours spread and your reputation is affacted, some even call you arbitrary
+			60 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}	
+				custom_tooltip = {
+					text = sbs_go.9001.bl.tt
+				}
+				stress_impact = {
+					base = minor_stress_impact_gain
+					ambitious = medium_stress_impact_gain
+				}	
+				add_prestige = medium_prestige_loss	
+				scope:deviant_go_random_1 = {
+					add_opinion = {
+						target = root
+						modifier = angry_opinion
+						opinion = -10
+					}
+					stress_impact = {
+						base = medium_stress_impact_gain
+					}
+				}					
+			}
+		}
+	}	
+
+	# resist 
+	option = {
+		name = sbs_go.9001.c
+		custom_tooltip = sbs_go.9001.c.tt
+		stress_impact = {
+			base = medium_stress_impact_gain
+		}
+	}			
+}
+
+sbs_go.9002 = { 
+	type = character_event
+	title = sbs_go.9002.t
+	desc = sbs_go.9002.desc
+	theme = deviantsmaskgo 
+	override_background = { reference = corridor_day }
+	right_portrait = {
+		character = root
+		animation = laugh  
+	}
+	left_portrait = {
+		character = scope:deviant_go_random_1
+		animation = throne_room_kneel_1
+	}
+	# try to strip them
+	option = {
+		name = sbs_go.9002.a
+		custom_tooltip = sbs_go.9002.a.tt
+		trait = sadistic
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_demon
+				value = 20
+			}
+		}
+        duel = {
+			skill = prowess
+			target = scope:deviant_go_random_1
+			# you manage to strip them
+			30 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.9002.aw.tt
+				}	
+				stress_impact = {
+					base = medium_stress_impact_loss
+				}	
+				trigger_event = sbs_go.9003
+				scope:deviant_go_random_1 = {
+					add_opinion = {
+						target = root
+						modifier = angry_opinion
+						opinion = -20
+					}
+					stress_impact = {
+						base = medium_stress_impact_gain
+						lustful = medium_stress_impact_loss
+						shy = medium_stress_impact_gain
+						chaste = medium_stress_impact_gain
+					}
+				}
+			}
+			# Failure, they flee in panic
+			70 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}	
+				custom_tooltip = {
+					text = sbs_go.9002.al.tt
+				}
+				stress_impact = {
+					base = minor_stress_impact_gain
+					lustful = miniscule_stress_impact_loss
+			       	chaste = medium_stress_impact_gain
+					shy = medium_stress_impact_gain
+				}		
+				add_prestige = minor_prestige_loss	
+				scope:deviant_go_random_1 = {
+					add_opinion = {
+						target = root
+						modifier = angry_opinion
+						opinion = -20
+					}
+					stress_impact = {
+						base = medium_stress_impact_gain
+			       		chaste = medium_stress_impact_gain
+						shy = medium_stress_impact_gain
+					}
+				}			
+			}
+		}
+	}			
+	# leave once you had your fun 
+	option = {
+		name = sbs_go.9002.b
+		custom_tooltip = sbs_go.9002.b.tt
+		stress_impact = {
+			base = minor_stress_impact_loss
+		}
+	}			
+}
+
+sbs_go.9003 = { 
+	type = character_event
+	title = sbs_go.9003.t
+	desc = sbs_go.9003.desc
+	theme = deviantsmaskgo 
+	override_background = { reference = corridor_day }
+	right_portrait = {
+		character = root
+		animation = aggressive_unarmed  
+	}
+	left_portrait = {
+		character = scope:deviant_go_random_1
+		animation = throne_room_kneel_1
+		outfit_tags = { no_clothes }
+	}
+	# try to fuck
+	option = {
+		name = sbs_go.9003.a
+		custom_tooltip = sbs_go.9003.a.tt
+		trait = sadistic
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_demon
+				value = 20
+			}
+		}
+        duel = {
+			skill = prowess
+			target = scope:deviant_go_random_1
+			# you force yourself in her pussy
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.9003.aw.tt
+				}	
+				stress_impact = {
+					base = medium_stress_impact_loss
+				}	
+				trigger_event = sbs_go.9004
+				scope:deviant_go_random_1 = {
+					add_opinion = {
+						target = root
+						modifier = angry_opinion
+						opinion = -20
+					}
+					stress_impact = {
+						base = medium_stress_impact_gain
+						lustful = medium_stress_impact_loss
+						shy = medium_stress_impact_gain
+						chaste = medium_stress_impact_gain
+					}
+				}
+			}
+			# Failure, they flee in panic
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = -3.5
+						min = -49
+				}	
+				custom_tooltip = {
+					text = sbs_go.9003.al.tt
+				}
+				stress_impact = {
+					base = minor_stress_impact_gain
+					lustful = miniscule_stress_impact_loss
+			       	chaste = medium_stress_impact_gain
+					shy = medium_stress_impact_gain
+				}		
+				add_piety = medium_piety_loss	
+				scope:deviant_go_random_1 = {
+					add_opinion = {
+						target = root
+						modifier = angry_opinion
+						opinion = -20
+					}
+					stress_impact = {
+						base = medium_stress_impact_gain
+			    	   	chaste = medium_stress_impact_gain
+						shy = medium_stress_impact_gain
+					}
+				}			
+			}
+		}
+	}			
+	# leave once you had your fun 
+	option = {
+		name = sbs_go.9003.b
+		custom_tooltip = sbs_go.9003.b.tt
+		stress_impact = {
+			base = minor_stress_impact_loss
+		}
+	}			
+}
+
+sbs_go.9004 = { 
+	type = character_event
+	title = sbs_go.9004.t
+	desc = sbs_go.9004.desc
+	theme = deviantsmaskgo 
+	override_background = { reference = corridor_day }
+	right_portrait = {
+		character = root
+		animation = aggressive_unarmed  
+	}
+	left_portrait = {
+		character = scope:deviant_go_random_1
+		animation = throne_room_kneel_1
+		outfit_tags = { no_clothes }
+	}
+	# fuck after effects
+	option = {
+		name = sbs_go.9004.a
+		custom_tooltip = sbs_go.9004.a.tt
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_demon
+				value = 20
+			}
+		}
+		had_sex_with_effect = { CHARACTER = scope:deviant_go_random_1 PREGNANCY_CHANCE = pregnancy_chance }
+        duel = {
+			skill = intrigue
+			value = 15
+			# nobody will believe a thing, unless they pregnant
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = 3.5
+						min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.9004.aw.tt
+				}	
+				stress_impact = {
+					base = medium_stress_impact_loss
+				}	
+				scope:deviant_go_random_1 = {
+					add_opinion = {
+						target = root
+						modifier = hate_opinion
+						opinion = -20
+					}
+					stress_impact = {
+						base = massive_stress_impact_gain
+						lustful = medium_stress_impact_loss
+						shy = medium_stress_impact_gain
+						chaste = medium_stress_impact_gain
+					}
+				}
+			}
+			# everybody heard rumors of what you did, and multiple versions of them 
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = -3.5
+						min = -49
+				}	
+				custom_tooltip = {
+					text = sbs_go.9004.al.tt
+				}
+				stress_impact = {
+					base = minor_stress_impact_gain
+					lustful = miniscule_stress_impact_loss
+			       	chaste = medium_stress_impact_gain
+					shy = medium_stress_impact_gain
+				}		
+				remove_short_term_gold = medium_gold_value
+				add_piety = major_piety_loss	
+				pay_short_term_gold = {
+					target = scope:deviant_go_random_1
+					gold = minor_gold_value
+				}
+				scope:deviant_go_random_1 = {
+					add_opinion = {
+						target = root
+						modifier = hate_opinion
+						opinion = -20
+					}
+					stress_impact = {
+						base = major_stress_impact_gain
+			       		chaste = medium_stress_impact_gain
+						shy = medium_stress_impact_gain
+					}
+				}			
+			}
+		}
+	}					
+}
+
+sbs_go.9100 = { 
+	type = character_event
+	title = sbs_go.9100.t
+	desc = sbs_go.9100.desc
+	theme = deviantsmaskgo 
+	cooldown = { years = 2 }
+	override_background = { reference = courtyard }
+	right_portrait = {
+		character = scope:deviant_go_female_1
+		animation = personality_content 
+	}
+	left_portrait = {
+		character = scope:deviant_go_female_2
+		animation = personality_content 
+	}
+	lower_center_portrait = {
+		character = root
+		animation = scheme 
+	}
+    trigger = {
+		is_female = no
+		is_ruler = yes
+		age >= 18
+		any_courtier_or_guest = {
+			is_female = yes
+			age >= 18
+			age <= 40
+			NOT = { is_close_or_extended_family_of = root }
+			count >= 2
+		}
+	}
+	immediate = {
+		random_courtier_or_guest = {
+			limit = { is_female = yes age >= 18 age <= 40 NOT = { is_close_or_extended_family_of = root } }
+			save_scope_as = deviant_go_female_1
+		}
+		random_courtier_or_guest = {
+			limit = { is_female = yes age >= 18 age <= 40 NOT = { is_close_or_extended_family_of = root } NOT = { this = scope:deviant_go_female_1 } }
+			save_scope_as = deviant_go_female_2
+		}
+	}	
+	# tell the senior servant to inspect them nude,
+	option = {
+		name = sbs_go.9100.a
+		custom_tooltip = sbs_go.9100.a.tt
+        duel = {
+			skill = intrigue
+			value = 10
+			# you will make sure that even if someone suspected something, they will hear from the illness from others
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.9100.aw.tt
+				}	
+				stress_impact = {
+					base = medium_stress_impact_loss
+				}	
+				add_prestige = minor_prestige_gain
+			}
+			# rumour has it that you are at least some kind of a deviant
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}	
+				custom_tooltip = {
+					text = sbs_go.9100.al.tt
+				}		
+				add_piety = minor_piety_loss
+				stress_impact = {
+					base = minor_stress_impact_gain
+				}					
+			}
+		}
+	}		
+	# inspect them nude yourself
+	option = {
+		name = sbs_go.9100.b
+		custom_tooltip = sbs_go.9100.b.tt
+        duel = {
+			skill = diplomacy
+			target = scope:deviant_go_female_1
+			# they will consider it as an honor
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.9100.bw.tt
+				}	
+				stress_impact = {
+					base = massive_stress_impact_loss
+				}		
+				trigger_event = sbs_go.9101
+			}
+			# they will consider it as an humiliation, and rumour has it that you are at least some kind of a deviant
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}	
+				custom_tooltip = {
+					text = sbs_go.9100.bl.tt
+				}	
+				add_piety = medium_piety_loss
+				stress_impact = {
+					base = minor_stress_impact_gain
+				}					
+			}
+		}
+	}	
+	# resist 
+	option = {
+		name = sbs_go.9100.c
+		custom_tooltip = sbs_go.9100.c.tt
+		stress_impact = {
+			base = medium_stress_impact_gain
+		}
+	}			
+}
+
+sbs_go.9101 = { 
+	type = character_event
+	title = sbs_go.9101.t
+	desc = sbs_go.9101.desc
+	theme = deviantsmaskgo 
+	override_background = { reference = corridor_day }
+	right_portrait = {
+		character = scope:deviant_go_female_1
+		animation = personality_content 
+		outfit_tags = { no_clothes }
+	}
+	left_portrait = {
+		character = scope:deviant_go_female_2
+		animation = personality_content 
+		outfit_tags = { no_clothes }
+	}
+	lower_center_portrait = {
+		character = root
+		animation = scheme 
+	}
+	# after getting bored...
+	option = {
+		name = sbs_go.9101.a
+		custom_tooltip = sbs_go.9101.a.tt
+		stress_impact = {
+			base = medium_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_demon
+				value = 20
+			}
+		}
+	}			
+}
+
+sbs_go.9200 = { 
+	type = character_event
+	title = sbs_go.9200.t
+	desc = sbs_go.9200.desc
+	theme = deviantsmaskgo 
+	cooldown = { years = 2 }
+	override_background = { reference = courtyard }
+	left_portrait = {
+		character = root
+		animation = scheme  
+	}
+	right_portrait = {
+		character = scope:deviant_go_female_1
+		animation = idle
+	}
+    trigger = {
+		is_female = no
+		is_ruler = yes
+		age >= 18
+		any_courtier_or_guest = {
+			is_female = yes
+			age >= 18
+			age <= 40
+			NOT = { is_close_or_extended_family_of = root }
+		}
+	}
+	immediate = {
+		random_courtier_or_guest = {
+			limit = { is_female = yes age >= 18 age <= 40 NOT = { is_close_or_extended_family_of = root } }
+			save_scope_as = deviant_go_female_1
+		}
+	}	
+	# tell senior servant to spank her, to test her resolve bc she deserves it
+	option = {
+		name = sbs_go.9200.a
+		custom_tooltip = sbs_go.9200.a.tt
+        duel = {
+			skill = diplomacy
+			value = 10
+			# you convince even the servant that this is right and that you are just
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.9200.aw.tt
+				}	
+				stress_impact = {
+					base = medium_stress_impact_loss
+				}	
+				add_prestige = minor_prestige_gain
+			}
+			# rumour has it, that you are arbitarary in your judgment
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}	
+				custom_tooltip = {
+					text = sbs_go.9200.al.tt
+				}	
+				add_prestige = minor_prestige_loss	
+				stress_impact = {
+					base = medium_stress_impact_gain
+				}				
+			}
+		}
+	}		
+	# spank her yourself... 
+	option = {
+		name = sbs_go.9200.b
+		custom_tooltip = sbs_go.9200.b.tt
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_demon
+				value = 20
+			}
+		}
+        duel = {
+			skill = intrigue
+			value = 15
+			# nobody will ever mention this, most do not even hear of this, in fact the word is that you never touch any servants
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.9200.bw.tt
+				}	
+				stress_impact = {
+					base = major_stress_impact_loss
+				}	
+				add_piety = minor_piety_gain
+			}
+			# rumour has it, that you just go around spanking servants for improper reasons
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}	
+				custom_tooltip = {
+					text = sbs_go.9200.bl.tt
+				}		
+				add_piety = medium_piety_loss
+				stress_impact = {
+					base = medium_stress_impact_gain
+				}				
+			}
+		}
+	}	
+	# resist 
+	option = {
+		name = sbs_go.9200.c
+		custom_tooltip = sbs_go.9200.c.tt
+		stress_impact = {
+			base = medium_stress_impact_gain
+		}
+	}			
+}
+
+sbs_go.9300 = { 
+	type = character_event
+	title = sbs_go.9300.t
+	desc = sbs_go.9300.desc
+	theme = deviantsmaskgo 
+	cooldown = { years = 2 }
+	override_background = { reference = corridor_day }
+	left_portrait = {
+		character = root
+		animation = scheme  
+	}
+	right_portrait = {
+		character = scope:deviant_go_random_1
+		animation = personality_content  
+	}
+    trigger = {
+		is_female = no
+		is_ruler = yes
+		age >= 18
+		any_courtier_or_guest = {
+			is_female = yes
+			age >= 18
+			age <= 40
+			NOT = { is_close_or_extended_family_of = root }
+		}
+	}
+	immediate = {
+		random_courtier_or_guest = {
+			limit = { is_female = yes age >= 18 age <= 40 NOT = { is_close_or_extended_family_of = root } }
+			save_scope_as = deviant_go_random_1
+		}
+	}	
+	# you try to convince that he deserves it...
+	option = {
+		name = sbs_go.9300.a
+		custom_tooltip = sbs_go.9300.a.tt
+        duel = {
+			skill = diplomacy
+			target = scope:deviant_go_random_1
+			# they get down, you rub your feet on their back with a grin... and they even thank you for it
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = 3.5
+						min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.9300.aw.tt
+				}	
+				stress_impact = {
+					base = medium_stress_impact_loss
+				}	
+				scope:deviant_go_random_1 = {
+					add_opinion = {
+						target = root
+						modifier = repentant_opinion
+						opinion = 10
+					}
+					stress_impact = {
+					base = minor_stress_impact_loss
+					lustful = medium_stress_impact_loss
+					just = minor_stress_impact_loss
+					}
+				}
+			}
+			# he refuses, so boring, but at least you saw the anger on their face, rumours about you
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = -3.5
+						min = -49
+				}	
+				custom_tooltip = {
+					text = sbs_go.9300.al.tt
+				}	
+				add_prestige = minor_prestige_loss	
+				scope:deviant_go_random_1 = {
+					add_opinion = {
+						target = root
+						modifier = annoyed_opinion
+						opinion = -10
+					}
+					stress_impact = {
+						base = minor_stress_impact_gain
+					}
+				}					
+			}
+		}
+	}		
+	# you force them to the ground
+	option = {
+		name = sbs_go.9300.b
+		custom_tooltip = sbs_go.9300.b.tt
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_demon
+				value = 20
+			}
+		}
+        duel = {
+			skill = prowess
+			target = scope:deviant_go_random_1
+			# you pin them on the ground and rub your foot an their back as long as you want and peopel hera rumours about hwo eaisly you bested them
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = 3.5
+						min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.9300.bw.tt
+				}		
+				add_prestige = minor_prestige_gain	
+				stress_impact = {
+					base = major_stress_impact_loss
+				}
+				scope:deviant_go_random_1 = {
+					add_opinion = {
+						target = root
+						modifier = angry_opinion
+						opinion = -40
+					}
+					stress_impact = {
+						base = medium_stress_impact_gain
+					}
+				}
+			}
+			# they slam you on the ground instead, but both leave a bit confused about it
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = -3.5
+						min = -49
+				}	
+				custom_tooltip = {
+					text = sbs_go.9300.bl.tt
+				}	
+				add_prestige = minor_prestige_loss	
+				stress_impact = {
+					base = major_stress_impact_gain
+				}
+				scope:deviant_go_random_1 = {
+					add_opinion = {
+						target = root
+						modifier = confusion_opinion
+						opinion = -10
+					}
+					stress_impact = {
+						base = minor_stress_impact_loss
+					}
+				}					
+			}
+		}
+	}	
+	# if they lustful female, ask nicely
+	option = {
+		trigger = {
+			scope:deviant_go_random_1 = {
+				has_trait = lustful
+			}
+		}
+		name = sbs_go.9300.bb
+		custom_tooltip = sbs_go.9300.bb.tt
+		stress_impact = {
+			sadistic = minor_stress_impact_loss
+		}
+		scope:deviant_go_random_1 = {
+				add_opinion = {
+					target = root
+					modifier = confusion_opinion
+					opinion = 10
+				}
+			stress_impact = {
+				lustful = minor_stress_impact_loss
+			}
+		}	
+	}	
+	#if you female, and they lustful male, ask nicely
+	# resist 
+	option = {
+		name = sbs_go.9300.c
+		custom_tooltip = sbs_go.9300.c.tt
+		stress_impact = {
+			base = medium_stress_impact_gain
+		}
+	}			
+}
+
+sbs_go.9400 = { 
+	type = character_event
+	title = sbs_go.9400.t
+	desc = sbs_go.9400.desc
+	theme = deviantsmaskgo 
+	cooldown = { years = 2 }
+	override_background = { reference = feast }
+	left_portrait = {
+		character = root
+		animation = scheme  
+	}
+	right_portrait = {
+		character = scope:deviant_go_random_1
+		animation = drink  
+	}
+    trigger = {
+		is_female = no
+		is_ruler = yes
+		age >= 18
+		any_courtier_or_guest = {
+			is_female = yes
+			age >= 18
+			age <= 40
+			NOT = { is_close_or_extended_family_of = root }
+		}
+	}
+	immediate = {
+		random_courtier_or_guest = {
+			limit = { is_female = yes age >= 18 age <= 40 NOT = { is_close_or_extended_family_of = root } }
+			save_scope_as = deviant_go_random_1
+		}
+	}	
+	# diplomacy to accuse them of crimes that make them deserve at least a bit of prison
+	option = {
+		name = sbs_go.9400.a
+		custom_tooltip = sbs_go.9400.a.tt
+        duel = {
+			skill = diplomacy
+			target = scope:deviant_go_random_1
+			# eveybody thinks they deserve it, even them...
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = 3.5
+						min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.9400.aw.tt
+				}	
+				stress_impact = {
+					base = medium_stress_impact_loss
+				}	
+				add_prestige = medium_prestige_gain
+				imprison = {
+				target = scope:deviant_go_random_1
+					type = dungeon
+				}
+				scope:deviant_go_random_1 = {
+					add_opinion = {
+						target = root
+						modifier = repentant_opinion
+						opinion = 10
+					}
+					stress_impact = {
+						base = medium_stress_impact_gain
+					}
+					add_prestige = medium_prestige_loss
+				}
+			}
+			# they manage to prove their innocences
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = -3.5
+						min = -49
+				}	
+				custom_tooltip = {
+					text = sbs_go.9400.al.tt
+				}	
+				stress_impact = {
+					base = minor_stress_impact_gain
+				}
+				add_prestige = medium_prestige_loss
+				scope:deviant_go_random_1 = {
+					add_opinion = {
+						target = root
+						modifier = angry_opinion
+						opinion = -10
+					}
+					stress_impact = {
+					base = minor_stress_impact_loss
+					}
+					add_prestige = medium_prestige_gain
+				}					
+			}
+		}
+	}		
+	# intrigue to fabricare proof
+	option = {
+		name = sbs_go.9400.b
+		custom_tooltip = sbs_go.9400.b.tt
+        duel = {
+			skill = intrigue
+			value = 15
+			# the evidence you come up with even convinces them...
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = 3.5
+						min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.9400.bw.tt
+				}	
+				stress_impact = {
+					base = medium_stress_impact_loss
+				}
+				add_prestige = medium_prestige_gain
+				imprison = {
+				target = scope:deviant_go_random_1
+					type = dungeon
+				}	
+				scope:deviant_go_random_1 = {
+					add_opinion = {
+						target = root
+						modifier = repentant_opinion
+						opinion = 10
+					}
+					stress_impact = {
+					base = major_stress_impact_gain
+					}
+					add_prestige = medium_prestige_loss
+				}
+			}
+			# you can farbricate nothing, at least not this quickly
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = -3.5
+						min = -49
+				}	
+				custom_tooltip = {
+					text = sbs_go.9400.bl.tt
+				}	
+				stress_impact = {
+					base = medium_stress_impact_gain
+				}	
+				add_prestige = medium_prestige_loss
+				scope:deviant_go_random_1 = {
+					add_opinion = {
+						target = root
+						modifier = angry_opinion
+						opinion = -20
+					}
+					stress_impact = {
+						base = minor_stress_impact_loss
+					}
+					add_prestige = medium_prestige_gain
+				}					
+			}
+		}
+	}	
+	# resist 
+	option = {
+		name = sbs_go.9400.c
+		custom_tooltip = sbs_go.9400.c.tt
+		stress_impact = {
+			base = medium_stress_impact_gain
+		}
+	}			
+}
+
+sbs_go.9500 = { 
+	type = character_event
+	title = sbs_go.9500.t
+	desc = sbs_go.9500.desc
+	theme = deviantsmaskgo 
+	cooldown = { years = 2 }
+	override_background = { reference = feast }
+	left_portrait = {
+		character = root
+		animation = scheme  
+	}
+	right_portrait = {
+		character = scope:deviant_go_random_1
+		animation = personality_content  
+	}
+    trigger = {
+		is_female = no
+		is_ruler = yes
+		age >= 18
+		any_courtier_or_guest = {
+			is_female = yes
+			age >= 18
+			age <= 40
+			NOT = { is_close_or_extended_family_of = root }
+		}
+	}
+	immediate = {
+		random_courtier_or_guest = {
+			limit = { is_female = yes age >= 18 age <= 40 NOT = { is_close_or_extended_family_of = root } }
+			save_scope_as = deviant_go_random_1
+		}
+	}	
+	# convince them to admit to some minor crime, so they may repent
+	option = {
+		name = sbs_go.9500.a
+		custom_tooltip = sbs_go.9500.a.tt
+        duel = {
+			skill = diplomacy
+			target = scope:deviant_go_random_1
+			# 
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = 3.5
+						min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.9500.aw.tt
+				}	
+				trigger_event = sbs_go.9501
+				add_prestige = minor_prestige_gain
+				stress_impact = {
+					base = medium_stress_impact_loss
+				}	
+				scope:deviant_go_random_1 = {
+					add_opinion = {
+						target = root
+						modifier = repentant_opinion
+						opinion = 30
+					}
+					stress_impact = {
+						base = medium_stress_impact_loss
+					}
+					add_prestige = medium_prestige_loss
+				}
+			}
+			# they refuse... and in fact they have never done anything wrong and even you are convinced of it
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = -3.5
+						min = -49
+				}	
+				custom_tooltip = {
+					text = sbs_go.9500.al.tt
+				}	
+				stress_impact = {
+					base = medium_stress_impact_gain
+				}
+				scope:deviant_go_random_1 = {
+					add_opinion = {
+						target = root
+						modifier = angry_opinion
+						opinion = -10
+					}
+					stress_impact = {
+						base = minor_stress_impact_gain
+					}
+				}					
+			}
+		}
+	}		
+	# fabricate proof...
+	option = {
+		name = sbs_go.9500.b
+		custom_tooltip = sbs_go.9500.b.tt
+        duel = {
+			skill = intrigue
+			value = 15
+			# the proof convinces even them
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = 3.5
+						min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.9500.bw.tt
+				}		
+				trigger_event = sbs_go.9501
+				scope:deviant_go_random_1 = {
+					add_opinion = {
+						target = root
+						modifier = repentant_opinion
+						opinion = 10
+					}
+					stress_impact = {
+						base = major_stress_impact_gain
+					}
+				}
+			}
+			# nobody thinks that they did anything, if anything you humiliated yourself with such arbitarry accusations
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = -3.5
+						min = -49
+				}	
+				custom_tooltip = {
+					text = sbs_go.9500.bl.tt
+				}	
+				scope:deviant_go_random_1 = {
+					add_opinion = {
+						target = root
+						modifier = angry_opinion
+						opinion = -10
+					}
+					stress_impact = {
+						base = minor_stress_impact_loss
+					}
+					add_prestige = medium_prestige_loss
+				}					
+			}
+		}
+	}	
+	# resist 
+	option = {
+		name = sbs_go.9500.c
+		custom_tooltip = sbs_go.9500.c.tt
+		stress_impact = {
+			base = medium_stress_impact_gain
+		}
+	}			
+}
+
+sbs_go.9501 = { 
+	type = character_event
+	title = sbs_go.9501.t
+	desc = sbs_go.9501.desc
+	theme = deviantsmaskgo 
+	override_background = { reference = gallows }
+	left_portrait = {
+		character = root
+		animation = scheme  
+	}
+	right_portrait = {
+		character = scope:deviant_go_random_1
+		animation = prisondungeon 
+	}
+	# convince everyone taht they some sort of a deviant, and you can prove it, just dtrip them bare
+	option = {
+		name = sbs_go.9501.a
+		custom_tooltip = sbs_go.9501.a.tt
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_demon
+				value = 20
+			}
+		}
+        duel = {
+			skill = diplomacy
+			value = 15
+			# everybody agree, they deviant and want to see proof
+			40 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = 3.5
+						min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.9501.aw.tt
+				}	
+				add_prestige = minor_prestige_gain
+				stress_impact = {
+					base = medium_stress_impact_loss
+				}	
+				trigger_event = sbs_go.9502
+				scope:deviant_go_random_1 = {
+					add_opinion = {
+						target = root
+						modifier = repentant_opinion
+						opinion = 10
+					}
+					add_prestige = medium_prestige_loss
+					stress_impact = {
+						base = medium_stress_impact_gain
+						lustful = medium_stress_impact_loss
+					}
+				}
+			}
+			# poeple ar mostly suspect you of deviancy
+			60 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = -3.5
+						min = -49
+				}	
+				custom_tooltip = {
+					text = sbs_go.9501.al.tt
+				}	
+				stress_impact = {
+					base = medium_stress_impact_gain
+				}
+				add_piety = minor_piety_loss
+				scope:deviant_go_random_1 = {
+					add_opinion = {
+						target = root
+						modifier = angry_opinion
+						opinion = -20
+					}
+					stress_impact = {
+						base = minor_stress_impact_gain
+					}
+				}					
+			}
+		}
+	}		
+	# this enough 
+	option = {
+		name = sbs_go.9501.b
+		custom_tooltip = sbs_go.9501.b.tt
+		stress_impact = {
+			base = minor_stress_impact_loss
+		}
+	}			
+}
+
+sbs_go.9502 = { 
+	type = character_event
+	title = sbs_go.9502.t
+	desc = sbs_go.9502.desc
+	theme = deviantsmaskgo 
+	override_background = { reference = gallows }
+	left_portrait = {
+		character = root
+		animation = scheme  
+	}
+	right_portrait = {
+		character = scope:deviant_go_random_1
+		animation = prisondungeon 
+		outfit_tags = { no_clothes }
+	}
+	# convince everyone taht they some sort of a deviant, and you can prove it, just stick this stick into their ass
+	option = {
+		name = sbs_go.9502.a
+		custom_tooltip = sbs_go.9502.a.tt
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_demon
+				value = 20
+			}
+		}
+        duel = {
+			skill = diplomacy
+			value = 20
+			# everybody agree, they deviant and they even beg for forgiveness
+			30 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = 3.5
+						min = -49
+				}
+				custom_tooltip = {
+					text = sbs_go.9502.aw.tt
+				}	
+				add_prestige = minor_prestige_gain
+				stress_impact = {
+					base = medium_stress_impact_loss
+					deceitful = major_stress_impact_loss
+				}	
+				scope:deviant_go_random_1 = {
+					add_opinion = {
+						target = root
+						modifier = repentant_opinion
+						opinion = 10
+					}
+					add_piety = medium_piety_loss
+					stress_impact = {
+						base = minor_stress_impact_gain
+						lustful = major_stress_impact_loss
+					}
+					add_trait = deviant
+				}
+			}
+			# poeple ar mostly suspect you of deviancy, as they watch X tremble while the stick is up their ass
+			70 = {
+				compare_modifier = {
+					value = scope:duel_value
+						multiplier = -3.5
+						min = -49
+				}	
+				custom_tooltip = {
+					text = sbs_go.9502.al.tt
+				}	
+				stress_impact = {
+					base = medium_stress_impact_gain
+				}
+				add_piety = medium_piety_loss
+				scope:deviant_go_random_1 = {
+					add_opinion = {
+						target = root
+						modifier = angry_opinion
+						opinion = -80
+					}
+					stress_impact = {
+						base = minor_stress_impact_gain
+					}
+				}					
+			}
+		}
+	}		
+	# this enough 
+	option = {
+		name = sbs_go.9502.b
+		custom_tooltip = sbs_go.9502.b.tt
+		stress_impact = {
+			base = minor_stress_impact_loss
+		}
+	}			
+}
+
+#########################9600-9799 imported sadistic raw go events
+
+sbs_go.9700 = {
+	type = character_event
+	title = sbs_go.9700.t
+	desc = sbs_go.9700.desc
+	theme = deviantsmaskgo
+	override_background = { reference = wilderness }
+	cooldown = { years = 1 }
+	right_portrait = {
+		character = root
+		animation = thinking
+		outfit_tags = { military_outfit }
+	}
+	left_portrait = {
+		character = scope:deviant_go_random_1
+		animation = shock
+	}
+	lower_left_portrait = {
+		character = scope:deviant_go_knight_1
+		animation = aggressive_unarmed
+		outfit_tags = { military_outfit }
+	}
+	lower_center_portrait = {
+		character = scope:deviant_go_knight_2
+		animation = aggressive_unarmed
+		outfit_tags = { military_outfit }
+	}
+	lower_right_portrait = {
+		character = scope:deviant_go_knight_3
+		animation = aggressive_unarmed
+		outfit_tags = { military_outfit }
+	}
+	trigger = {
+		is_adult = yes
+		is_female = no
+		any_knight = {
+			count >= 4
+			is_adult = yes
+			is_female = no
+		}
+	}
+	immediate = {
+		create_character = {
+			template = beautiful_peasant_character
+			culture = location.culture
+			location = root.location
+			faith = location.faith
+			age = { 20 23 }
+			gender_female_chance = 100
+			dynasty = none
+			save_scope_as = deviant_go_random_1
+		}
+		random_knight = {
+			limit = { is_adult = yes is_female = no }
+			save_scope_as = deviant_go_knight_1
+		}
+		random_knight = {
+			limit = {
+				is_adult = yes
+				is_female = no
+				NOT = { this = scope:deviant_go_knight_1 }
+			}
+			save_scope_as = deviant_go_knight_2
+		}
+		random_knight = {
+			limit = {
+				is_adult = yes
+				is_female = no
+				NOT = { this = scope:deviant_go_knight_1 }
+				NOT = { this = scope:deviant_go_knight_2 }
+			}
+			save_scope_as = deviant_go_knight_3
+		}
+		random_knight = {
+			limit = {
+				is_adult = yes
+				is_female = no
+				NOT = { this = scope:deviant_go_knight_1 }
+				NOT = { this = scope:deviant_go_knight_2 }
+				NOT = { this = scope:deviant_go_knight_3 }
+			}
+			save_scope_as = deviant_go_knight_4
+		}
+	}
+
+	# imprison her, for crimes...
+	option = {
+		name = sbs_go.9700.a
+		custom_tooltip = sbs_go.9700.a.tt
+		imprison = {
+			target = scope:deviant_go_random_1
+			type = dungeon
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_demon
+				value = 20
+			}
+		}
+	}
+
+	# shower with gold to the point she agrees
+	option = {
+		name = sbs_go.9700.b
+		custom_tooltip = sbs_go.9700.b.tt
+		remove_short_term_gold = minor_gold_value
+		scope:deviant_go_random_1 = {
+			add_to_court_and_entourage_effect = yes
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 50
+			}
+			if = {
+				limit = {
+					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:lifestyle_prostitute }
+				}
+				add_secret = { type = secret_prostitute }
+			}
+			else = { add_trait_force_tooltip = lifestyle_prostitute }
+		}
+	}
+
+	# let's just have some fun
+	option = {
+		name = sbs_go.9700.c
+		custom_tooltip = sbs_go.9700.c.tt
+		add_prestige = { -10 -1 }
+		add_piety = { -10 -1 }
+		stress_impact = {
+			base = minor_stress_impact_loss
+			sadistic = major_stress_impact_loss
+		}
+		hidden_effect = {
+			had_sex_with_effect = {
+				CHARACTER = scope:deviant_go_random_1
+				PREGNANCY_CHANCE = pregnancy_chance
+			}
+			scope:deviant_go_knight_1 = { had_sex_with_effect = { CHARACTER = scope:deviant_go_random_1 PREGNANCY_CHANCE = pregnancy_chance } }
+			scope:deviant_go_knight_2 = { had_sex_with_effect = { CHARACTER = scope:deviant_go_random_1 PREGNANCY_CHANCE = pregnancy_chance } }
+			scope:deviant_go_knight_3 = { had_sex_with_effect = { CHARACTER = scope:deviant_go_random_1 PREGNANCY_CHANCE = pregnancy_chance } }
+			scope:deviant_go_knight_4 = { had_sex_with_effect = { CHARACTER = scope:deviant_go_random_1 PREGNANCY_CHANCE = pregnancy_chance } }
+		}
+	}
+}
+
+sbs_go.9710 = {
+	type = character_event
+	title = sbs_go.9710.t
+	desc = sbs_go.9710.desc
+	theme = deviantsmaskgo
+	override_background = { reference = wilderness }
+	cooldown = { years = 3 }
+	right_portrait = {
+		character = root
+		animation = thinking
+		outfit_tags = { military_outfit }
+	}
+	left_portrait = {
+		character = scope:deviant_go_knight_4
+		animation = celebrate_spear
+	}
+	lower_left_portrait = {
+		character = scope:deviant_go_knight_1
+		animation = aggressive_unarmed
+		outfit_tags = { military_outfit }
+	}
+	lower_center_portrait = {
+		character = scope:deviant_go_knight_2
+		animation = aggressive_unarmed
+		outfit_tags = { military_outfit }
+	}
+	lower_right_portrait = {
+		character = scope:deviant_go_knight_3
+		animation = aggressive_unarmed
+		outfit_tags = { military_outfit }
+	}
+	trigger = {
+		is_adult = yes
+		is_female = no
+		any_knight = {
+			count >= 4
+			is_adult = yes
+			is_female = no
+		}
+	}
+	immediate = {
+		random_knight = {
+			limit = { is_adult = yes is_female = no }
+			save_scope_as = deviant_go_knight_1
+		}
+		random_knight = {
+			limit = {
+				is_adult = yes
+				is_female = no
+				NOT = { this = scope:deviant_go_knight_1 }
+			}
+			save_scope_as = deviant_go_knight_2
+		}
+		random_knight = {
+			limit = {
+				is_adult = yes
+				is_female = no
+				NOT = { this = scope:deviant_go_knight_1 }
+				NOT = { this = scope:deviant_go_knight_2 }
+			}
+			save_scope_as = deviant_go_knight_3
+		}
+		random_knight = {
+			limit = {
+				is_adult = yes
+				is_female = no
+				NOT = { this = scope:deviant_go_knight_1 }
+				NOT = { this = scope:deviant_go_knight_2 }
+				NOT = { this = scope:deviant_go_knight_3 }
+			}
+			save_scope_as = deviant_go_knight_4
+		}
+		add_prestige = { -10 -1 }
+		add_piety = { -10 -1 }
+		stress_impact = {
+			base = minor_stress_impact_loss
+			sadistic = minor_stress_impact_loss
+		}
+	}
+
+	# good idea
+	option = {
+		name = sbs_go.9710.a
+		custom_tooltip = sbs_go.9710.a.tt
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_lesser_demon
+				value = 20
+			}
+		}
+	}
+
+	# no need to take this so seriously
+	option = {
+		name = sbs_go.9710.b
+		custom_tooltip = sbs_go.9710.b.tt
 	}
 }

@@ -79,7 +79,7 @@ prostitute_effect = {
 	save_scope_as = had_sex_root_character
 	$PROSTITUTE$ = { save_scope_as = prostitute }
 	save_scope_as = carn_sex_player
-	$PROSTITUTE$ = {save_scope_as = carn_sex_partner}
+	$PROSTITUTE$ = { save_scope_as = carn_sex_partner }
 
 	custom_tooltip = prostitute_effect.tt
 

@@ -290,12 +290,12 @@ sbs_startmerchant_decision = {
 			any_secret = { type = secret_deviant }
 		}
 	}
-	is_valid_showing_failures_only = {
+	is_valid = {
 		age >= 18
 		is_ai = no
 		is_incapable = no
 		is_imprisoned = no
-		any_county_province = { has_building_or_higher = alchemy1 }
+		any_sub_realm_county = { any_county_province = { has_building_or_higher = brothel1 } }
 	}
 	cooldown = { days = 10 }
 	effect = {

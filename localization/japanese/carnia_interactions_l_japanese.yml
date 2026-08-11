@@ -2,7 +2,7 @@
  carn_enslave_interaction: "奴隷にする"
  carn_enslave_interaction.desc: "[recipient.GetShortUINameNoTooltip]を奴隷にする"
  carn_wants_to_be_your_slave: "あなたを所有者にしたいです: $VALUE|=+0$"
- carn_enslave_recipient_is_noble: "[recipient.GetShortUIName|U]は[貴[noble|E]です: $VALUE|=+0$"
+ carn_enslave_recipient_is_noble: "[recipient.GetShortUIName|U]は貴[noble|E]です: $VALUE|=+0$"
  carn_enslave_you_have_no_reason: "あなたは[execute_reason|E]を持っていません: $VALUE|=+0$"
 
  carn_buy_slave_on_market_interaction: "奴隷を購入する"

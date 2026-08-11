@@ -18,7 +18,6 @@ number_slaves_normal_need = {
 	}
 	if = {
 		limit = { has_trait_with_flag = slave_owner }
-		has_opinion_modifier
 		add = 12
 	}
 }

@@ -17,7 +17,7 @@
  carn_doctrine_other_slavery_shunned_desc: "誤った信仰を持つ者であっても、その命を自分のものと称することは非難されるべき行為です。"
  carn_doctrine_other_slavery_accepted_name: "許容される行為"
  carn_doctrine_other_slavery_accepted_desc: "すべての[ROOT.Faith.GetAdherentNamePluralNoTooltip]は、真の信仰を悟っていない者を救わなければなりません。手段を選んではいけません..."
- doctrine_parameter_other_slavery_illegal: "[faith_hostile|E]または[faith_evil|E の[faiths|E]の[slaves|E]を所有することは[crime|E]です"
+ doctrine_parameter_other_slavery_illegal: "[faith_hostile|E]または[faith_evil|E] の[faiths|E]の[slaves|E]を所有することは[crime|E]です"
  doctrine_parameter_other_slavery_shunned: "[faith_hostile|E]または[faith_evil|E]の[faiths|E]の[slaves|E]を所有することは[shunned|E]されます"
  doctrine_parameter_other_slavery_accepted: "[faith_hostile|E]または[faith_evil|E]の[faiths|E]の[slaves|E]を所有することは許容されます"
 

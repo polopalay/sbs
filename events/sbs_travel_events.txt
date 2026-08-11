@@ -826,6 +826,10 @@ sbs_travel.0110 = {
 		character = scope:sbs_random_1
 		animation = celebrate_sword
 	}
+	trigger = {
+		is_female = yes
+		age >= 18
+	}
 	immediate = {
 		create_character = {
 			culture = location.culture
@@ -1037,10 +1041,6 @@ sbs_travel.0122 = {
 	desc = sbs_travel.0122.desc
 	theme = realm
 	override_background = { reference = wilderness }
-	right_portrait = {
-		character = root
-		animation = thinking
-	}
 	right_portrait = {
 		character = root
 		animation = thinking
@@ -1325,6 +1325,10 @@ sbs_travel.0200 = {
 		character = root
 		animation = thinking
 	}
+	trigger = {
+		is_female = yes
+		age >= 18
+	}
 	#
 	option = {
 		ai_chance = { base = 1 }
@@ -1546,6 +1550,10 @@ sbs_travel.1000 = {
 		character = scope:sbs_random_1
 		animation = scheme
 	}
+	trigger = {
+		is_female = yes
+		age >= 18
+	}
 	immediate = {
 		create_character = {
 			culture = location.culture
@@ -1656,7 +1664,7 @@ sbs_travel.1100 = {
 	# masturbate with the dildo
 	option = {
 		trigger = {
-			any_character_artifact { has_artifact_modifier = master_dildo_modifier }
+			any_character_artifact = { has_artifact_modifier = master_dildo_modifier }
 		}
 		ai_chance = { base = 2 }
 		name = sbs_travel.1100.a
@@ -1736,7 +1744,7 @@ sbs_travel.1110 = {
 		add_gold = tiny_gold_value
 		stress_impact = { lustful = major_stress_impact_loss }
 		if = {
-			limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = lifestyle_prostitute } }
+			limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:lifestyle_prostitute } }
 			add_secret = { type = secret_prostitute }
 		}
 		else = {
@@ -1774,6 +1782,10 @@ sbs_travel.2000 = {
 	right_portrait = {
 		character = root
 		animation = thinking
+	}
+	trigger = {
+		is_female = yes
+		age >= 18
 	}
 	immediate = {
 		current_travel_plan = {
@@ -2018,7 +2030,7 @@ sbs_travel.2103 = {
 		custom_tooltip = sbs_travel.2103.a.tt
 		current_travel_plan = { delay_travel_plan = { days = 5 } }
 		if = {
-			limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = lifestyle_prostitute } }
+			limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:lifestyle_prostitute } }
 			add_secret = { type = secret_prostitute }
 		}
 		else = {

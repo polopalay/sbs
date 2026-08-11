@@ -52,7 +52,7 @@ carn_slave.0003 = {
 				}
 			}
 			else_if = {
-				limit = { exits = liege }
+				limit = { exists = liege }
 				liege = { save_scope_as = owner }
 			}
 			else = {
@@ -106,7 +106,7 @@ carn_slave.0005 = {
 		every_relation = {
 			type = slave
 			if = {
-				limit = { exits = liege }
+				limit = { exists = liege }
 				root = { save_scope_as = seller }
 				liege = { save_scope_as = buyer }
 				save_scope_as = slave

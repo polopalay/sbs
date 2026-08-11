@@ -9,18 +9,6 @@ master_dildo_template = {
 	can_repair = {
 		always = yes
 	}
-	can_benefit = {
-		is_female = yes
-	}
-	fallback = {
-		stress_loss_mult = -0.2
-		stress_gain_mult = 0.2
-		learning = 2
-		martial = 2
-		stewardship = 2
-		diplomacy = 2
-		intrigue = 2
-	}
 }
 
 mistress_dildo_template = {
@@ -33,14 +21,6 @@ mistress_dildo_template = {
 	}
 	can_repair = {
 		always = yes
-	}
-	can_benefit = {
-		is_female = yes
-	}
-	fallback = {
-		stress_loss_mult = -0.2
-		stress_gain_mult = 0.2
-		fertility = -9000
 	}
 }
 
@@ -55,15 +35,6 @@ reddreamring_template = {
 	can_repair = {
 		always = yes
 	}
-	can_benefit = {
-		OR = { 
-			has_trait = lustful
-			has_trait = deviant_courtesan_slut
-		}	
-	}
-	fallback = {
-		stress_loss_mult = -0.20
-	}
 }
 
 crown_of_wisdom_crown_template = {
@@ -75,19 +46,6 @@ crown_of_wisdom_crown_template = {
 	}
 	can_repair = {
 		always = yes
-	}
-	can_benefit = {
-		is_female = yes
-		age >= 18
-		has_trait = deviants_demonanalslut
-	}
-	fallback = {
-		learning = 4
-		martial = 2
-		stewardship = 2
-		diplomacy = 2
-		stress_loss_mult = -0.50
-		stress_gain_mult = 1.00
 	}
 }
 
@@ -101,13 +59,5 @@ snake_bracelet_template = {
 	}
 	can_repair = {
 		always = yes
-	}
-	can_benefit = {
-		is_male = yes	
-	}
-	fallback = {
-		intrigue = 3
-		enemy_hostile_scheme_success_chance_add = -20
-		monthly_intrigue_lifestyle_xp_gain_mult = 0.15
 	}
 }

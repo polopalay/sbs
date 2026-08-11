@@ -148,14 +148,14 @@ sbs_devils_gift_interaction = {
 						limit = { is_female = yes }
 						save_scope_as = mother
 						random_living_character = {
-							limit = { has_trait_with_flag = sbs_demon_trait is_female = no is_adult = yes }
+							limit = { has_trait = sbs_demon is_female = no is_adult = yes }
 							save_scope_as = father
 						}
 					}
 					else = {
 						save_scope_as = father
 						random_living_character = {
-							limit = { has_trait_with_flag = sbs_demon_trait is_female = yes is_adult = yes }
+							limit = { has_trait = sbs_succubus is_female = yes is_adult = yes }
 							save_scope_as = mother
 						}
 					}

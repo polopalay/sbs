@@ -170,7 +170,7 @@ sbs_prostitution.0103 = {
 		name = sbs_prostitution.0103.a
 		custom_tooltip = sbs_prostitution.0103.a.tt
 		if = {
-			limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = lifestyle_prostitute } }
+			limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:lifestyle_prostitute } }
 			add_secret = { type = secret_prostitute }
 		}
 		else = {
@@ -1275,16 +1275,16 @@ sbs_prostitution.9045 = {
 		name = sbs_prostitution.9045.a
 		custom_tooltip = sbs_prostitution.9045.a.tt
 		create_artifact = {
-			name = master_dildo
-			rarity = masterwork
-			description = master_dildo_desc
+			name = mistress_dildo
+			rarity = common
+			description = mistress_dildo_desc
 			type = magic_creation
-			modifier = master_dildo_modifier
-			visuals = master_dildo
-			template = master_dildo_template
-			max_durability = 10
-			wealth = 10
-			quality = 10
+			modifier = mistress_dildo_modifier
+			visuals = mistress_dildo
+			template = mistress_dildo_template
+			max_durability = 1
+			wealth = 1
+			quality = 1
 		}
 		hidden_effect = {
 			add_trait_xp = {
@@ -1968,9 +1968,9 @@ sbs_prostitution.9234 = {
 			modifier = mistress_dildo_modifier
 			visuals = mistress_dildo
 			template = mistress_dildo_template
-			max_durability = 10
-			wealth = 10
-			quality = 10
+			max_durability = 1
+			wealth = 1
+			quality = 1
 		}
 		stress_impact = {
 			base = minor_stress_impact_gain

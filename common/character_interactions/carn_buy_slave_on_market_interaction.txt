@@ -24,7 +24,6 @@
 	localization_values = {
 		EXTORTIONATE_RANSOM_COST = scope:secondary_recipient.carn_slave_price_value
 		RANSOM_COST = scope:secondary_recipient.carn_slave_price_value
-		CURRENT_GOLD = scope:actor.gold
 	}
 	send_option = {
 		is_shown = {
@@ -32,7 +31,7 @@
 			scope:actor ?= {
 				gold >= {
 					value = scope:secondary_recipient.carn_slave_price_value
-					multiply = 1.5
+					multiply = 2
 				}
 			}
 		}
@@ -41,46 +40,21 @@
 	}
 	send_option = {
 		is_shown = {
-			scope:recipient = { dynasty ?= { has_dynasty_perk = fp1_pillage_legacy_3 } }
+			scope:recipient = {
+				OR = {
+					is_lowborn = yes
+					NOT = { dynasty = { has_dynasty_perk = fp1_pillage_legacy_3 } }
+				}
+			}
 			scope:actor ?= {
-				gold < {
+				gold >= {
 					value = scope:secondary_recipient.carn_slave_price_value
 					multiply = 1.5
 				}
-				gold >= 1
 			}
-		}
-		flag = extortionate_current_gold
-		localization = "RANSOM_EXTORTIONATE_CURRENT_GOLD_IMPRISONED_PERSPECTIVE_OPTION"
-	}
-	send_option = {
-		is_shown = {
-			scope:recipient = {
-				OR = {
-					is_lowborn = yes
-					NOT = { dynasty = { has_dynasty_perk = fp1_pillage_legacy_3 } }
-				}
-			}
-			scope:actor ?= { gold >= scope:secondary_recipient.carn_slave_price_value }
 		}
 		flag = gold
 		localization = "RANSOM_GOLD_OPTION"
-	}
-	send_option = {
-		is_shown = {
-			scope:recipient = {
-				OR = {
-					is_lowborn = yes
-					NOT = { dynasty = { has_dynasty_perk = fp1_pillage_legacy_3 } }
-				}
-			}
-			scope:actor ?= {
-				gold < scope:secondary_recipient.carn_slave_price_value
-				gold >= 1
-			}
-		}
-		flag = current_gold
-		localization = "RANSOM_CURRENT_GOLD_OPTION"
 	}
 	send_option = {
 		is_valid = { scope:actor = { has_usable_hook = scope:recipient } }
@@ -104,21 +78,19 @@
 					target = scope:recipient
 					gold = {
 						value = scope:secondary_recipient.carn_slave_price_value
-						multiply = 1.5
+						multiply = 2
 					}
 				}
 			}
 			if = {
-				limit = { scope:extortionate_current_gold = yes }
-				pay_short_term_gold = { target = scope:recipient gold = scope:actor.current_gold_value }
-			}
-			if = {
 				limit = { scope:gold = yes }
-				pay_short_term_gold = { target = scope:recipient gold = scope:secondary_recipient.carn_slave_price_value }
-			}
-			if = {
-				limit = { scope:current_gold = yes }
-				pay_short_term_gold = { target = scope:recipient gold = scope:actor.current_gold_value }
+				pay_short_term_gold = {
+					target = scope:recipient
+					gold = {
+						value = scope:secondary_recipient.carn_slave_price_value
+						multiply = 1.5
+					}
+				}
 			}
 			if = {
 				limit = { scope:hook = yes has_hook = scope:recipient }
@@ -185,9 +157,7 @@
 		modifier = { add = 5 scope:secondary_recipient = { has_trait = weak } }
 		modifier = { add = 5 scope:secondary_recipient = { has_trait = dull } }
 		modifier = { add = 15 scope:extortionate_gold = yes }
-		modifier = { add = 15 scope:extortionate_current_gold = yes }
 		modifier = { add = 10 scope:gold = yes }
-		modifier = { add = 10 scope:current_gold = yes }
 		modifier = { add = 10 scope:hook = yes }
 		modifier = { add = 10 scope:favor = yes }
 		modifier = { add = -10 desc = carn_secondary_recipient_is_my_knight_reason scope:secondary_recipient = { is_knight_of = scope:recipient } }
@@ -203,9 +173,7 @@
 			factor = 0
 			NOR = {
 				scope:extortionate_gold = yes
-				scope:extortionate_current_gold = yes
 				scope:gold = yes
-				scope:current_gold = yes
 				scope:hook = yes
 				scope:favor = yes
 			}

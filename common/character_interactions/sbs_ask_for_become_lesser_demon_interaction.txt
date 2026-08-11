@@ -257,11 +257,9 @@
 			if = {
 				limit = { scope:demand_conversion = yes }
 				set_character_faith_with_conversion = scope:recipient.faith
-				add_opinion = { modifier = demanded_my_conversion_opinion target = scope:recipient }
 			}
 			if = {
 				limit = { scope:renounce_claims = yes }
-				add_opinion = { modifier = demanded_claim_renouncement target = scope:recipient }
 				every_claim = {
 					explicit = yes
 					limit = {
@@ -283,7 +281,6 @@
 				limit = { scope:recruit = yes }
 				if = {
 					limit = { scope:recipient = { culture = { has_cultural_parameter = can_recruit_prisoners_easily } } }
-					add_opinion = { modifier = loyal_servant target = scope:recipient }
 					scope:recipient = {
 						if = {
 							limit = { can_add_hook = { target = scope:actor type = loyalty_hook } }
@@ -291,7 +288,6 @@
 						}
 					}
 				}
-				else = { add_opinion = { modifier = demanded_recruitment target = scope:recipient } }
 				scope:recipient = { add_courtier = scope:actor }
 			}
 			if = {

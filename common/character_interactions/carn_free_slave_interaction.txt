@@ -183,7 +183,6 @@
 		ai_recipients = self
 		ai_recipients = scripted_relations
 	}
-	auto_accept = { scope:recipient = scope:actor }
 	ai_potential = { always = yes }
 	ai_frequency = 12
 	ai_accept = {

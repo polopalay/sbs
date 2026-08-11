@@ -1575,11 +1575,9 @@
 			if = {
 				limit = { scope:demand_conversion = yes }
 				set_character_faith_with_conversion = scope:actor.faith
-				add_opinion = { modifier = demanded_my_conversion_opinion target = scope:actor }
 			}
 			if = {
 				limit = { scope:renounce_claims = yes }
-				add_opinion = { modifier = demanded_claim_renouncement target = scope:actor }
 				every_claim = {
 					explicit = yes
 					limit = {

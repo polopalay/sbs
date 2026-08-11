@@ -9,7 +9,6 @@ on_game_start = {
 random_yearly_everyone_pulse = {
 	trigger = {
 		is_adult = yes
-		is_female = yes
 		is_travelling = no
 		is_incapable = no
 		is_in_army = no
@@ -17,7 +16,9 @@ random_yearly_everyone_pulse = {
 	}
 	on_actions = {
 		delay = { days = { 12 36 } }
-		sbs_devil_on_action
+		sbs_male_on_action
+		delay = { days = { 12 36 } }
+		sbs_female_on_action
 		delay = { days = { 48 120 } }
 		sbs_prostitutute_on_action
 	}
@@ -26,30 +27,26 @@ random_yearly_everyone_pulse = {
 	}
 }
 
-sbs_devil_on_action = {
+sbs_female_on_action = {
 	trigger = {
 		is_adult = yes
 		is_female = yes
 		is_ruler = yes
-		OR = {
-			has_trait = deviant
-			any_secret = { type = secret_deviant }
-		}
 		is_imprisoned = no
 	}
 	effect = {
 		random_list = {
 			5 = 0
-			1 = {
-				modifier = { any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy1 } } has_trait = lustful add = 1 }
+			0 = {
+				modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 1 }
 				trigger_event = sbs_go.0550 # max addiction
 			}
 			0 = {
-				modifier = { any_character_artifact { has_artifact_modifier = reddreamring_modifier } add = 5 }
+				modifier = { any_character_artifact = { has_artifact_modifier = reddreamring_modifier } add = 3 }
 				trigger_event = sbs_go.1410 # gremlin fuck
 			}
 			0 = {
-				modifier = { any_character_artifact { has_artifact_modifier = reddreamring_modifier } add = 1 }
+				modifier = { any_character_artifact = { has_artifact_modifier = reddreamring_modifier } add = 1 }
 				trigger_event = sbs_go.1300 # special dream
 			}
 			0 = {
@@ -57,38 +54,66 @@ sbs_devil_on_action = {
 				trigger_event = sbs_go.4000 # gremlin fuck
 			}
 			0 = {
-				modifier = { carn_is_working_as_prostitute_trigger = yes any_character_artifact { has_artifact_modifier = snake_bracelet_modifier } any_knight = { count > 0 } any_knight = { is_female = no has_character_modifier = sbs_buff count = 0 } add = 3 }
+				modifier = { carn_is_working_as_prostitute_trigger = yes any_character_artifact = { has_artifact_modifier = snake_bracelet_modifier } any_knight = { count > 0 } any_knight = { is_female = no has_character_modifier = sbs_buff count = 0 } add = 3 }
 				trigger_event = sbs_go.8000 # loyalty event init
 			}
 			0 = {
-				modifier = { carn_is_working_as_prostitute_trigger = yes any_character_artifact { has_artifact_modifier = snake_bracelet_modifier } any_knight = { count > 0 } any_knight = { is_female = no has_character_modifier = sbs_buff } add = 3 }
+				modifier = { carn_is_working_as_prostitute_trigger = yes any_character_artifact = { has_artifact_modifier = snake_bracelet_modifier } any_knight = { count > 0 } any_knight = { is_female = no has_character_modifier = sbs_buff } add = 3 }
 				trigger_event = sbs_go.8099 # loyalty events
 			}
 			0 = {
-				modifier = { carn_is_working_as_prostitute_trigger = yes any_character_artifact { has_artifact_modifier = snake_bracelet_modifier } any_knight = { count > 0 } any_knight = { is_female = no has_character_modifier = sbs_generals count = 0 } add = 3 }
+				modifier = { carn_is_working_as_prostitute_trigger = yes any_character_artifact = { has_artifact_modifier = snake_bracelet_modifier } any_knight = { count > 0 } any_knight = { is_female = no has_character_modifier = sbs_generals count = 0 } add = 3 }
 				trigger_event = sbs_go.8200 # loyalty event: new recruit
 			}
 			0 = {
-				modifier = { any_character_artifact { has_artifact_modifier = crown_of_wisdom_crown_modifier } should_be_naked_trigger = no any_councillor = { is_female = no } add = 1 }
+				modifier = { any_character_artifact = { has_artifact_modifier = crown_of_wisdom_crown_modifier } should_be_naked_trigger = no any_councillor = { is_female = no } add = 1 }
 				trigger_event = sbs_go.1440 # naked event
 			}
 			0 = {
-				modifier = { any_character_artifact { has_artifact_modifier = crown_of_wisdom_crown_modifier } should_be_naked_trigger = yes any_councillor = { is_female = no } add = 1 }
+				modifier = { any_character_artifact = { has_artifact_modifier = crown_of_wisdom_crown_modifier } should_be_naked_trigger = yes any_councillor = { is_female = no } add = 1 }
 				trigger_event = sbs_go.1460 # fuck on throne event
 			}
 			0 = {
-				modifier = { any_character_artifact { has_artifact_modifier = crown_of_wisdom_crown_modifier } is_ruler = yes }
+				modifier = { any_character_artifact = { has_artifact_modifier = crown_of_wisdom_crown_modifier } is_ruler = yes add = 1 }
 				trigger_event = sbs_go.2000 # urge to masturbate
 			}
 			0 = {
-				modifier = { any_character_artifact { has_artifact_modifier = master_dildo_modifier } add = 1 }
+				modifier = { any_character_artifact = { has_artifact_modifier = master_dildo_modifier } add = 1 }
 				trigger_event = sbs_go.0501 # basic exploratory dildo fuck
 			}
 			0 = {
-				modifier = { has_character_modifier = deviants_strangebook_modifier add = 5 }
+				modifier = { has_character_modifier = deviants_strangebook_modifier add = 3 }
 				trigger_event = sbs_go.7000 # you sweating in your study
 			}
 		}
+	}
+}
+
+sbs_male_on_action = {
+	trigger = {
+		is_adult = yes
+		is_female = no
+		is_ruler = yes
+		OR = {
+			has_trait = deviant
+			any_secret = { type = secret_deviant }
+			has_trait = sadistic
+			has_trait = callous
+		}
+		is_imprisoned = no
+	}
+	random_events = {
+		chance_to_happen = 50
+
+		100 = sbs_go.9001
+		100 = sbs_go.9100
+		100 = sbs_go.9200
+		100 = sbs_go.9300
+		100 = sbs_go.9400
+		100 = sbs_go.9500
+
+		50 = sbs_go.9700
+		50 = sbs_go.9710
 	}
 }
 
@@ -117,7 +142,6 @@ sbs_prostitutute_on_action = {
 on_travel_plan_movement = {
 	trigger = {
 		is_adult = yes
-		is_female = yes
 		is_ruler = yes
 		is_landed = yes
 	}

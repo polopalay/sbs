@@ -17,7 +17,7 @@
  recipient_secondary_sbs_create_lesser_demon_interaction: "いずれかを選択してください"
 
  sbs_create_succubus_interaction: "サキュバスを作成"
- sbs_create_succubus_interaction.desc: "[recipient.GetShortUIName はサキュバスになります"
+ sbs_create_succubus_interaction.desc: "[recipient.GetShortUIName] はサキュバスになります"
  recipient_secondary_sbs_create_succubus_interaction: "いずれかを選択してください"
 
  sbs_absorb_interaction: "吸収"
