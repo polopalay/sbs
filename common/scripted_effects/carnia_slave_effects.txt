@@ -122,7 +122,43 @@ carn_buy_slave_effect = {
 		}
 		set_relation_slave_owner = { target = scope:buyer }
 	}
+	scope:seller = {
+		if = {
+			limit = { scope:favor = yes }
+			add_hook = { target = scope:buyer type = favor_hook }
+		}
+	}
 	scope:buyer = {
+		if = {
+			limit = { scope:hook = yes has_hook = scope:seller }
+			use_hook = scope:seller
+		}
+		if = {
+			limit = { scope:extortionate_gold = yes }
+			pay_short_term_gold = {
+				target = scope:seller
+				gold = {
+					value = scope:slave_price
+					multiply = 2
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:gold = yes }
+			pay_short_term_gold = {
+				target = scope:seller
+				gold = {
+					value = scope:slave_price
+					multiply = 1.5
+				}
+			}
+		}
+		else = {
+			pay_short_term_gold = {
+				target = scope:seller
+				gold = scope:slave_price
+			}
+		}
 		set_relation_slave = { target = scope:slave }
 	}
 	scope:buyer = {

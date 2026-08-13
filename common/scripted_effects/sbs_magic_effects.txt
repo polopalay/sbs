@@ -3,8 +3,37 @@
 	$STEALER$ = { save_scope_as = stealer }
 	if = {
 		limit = { scope:victim = { is_female = yes } }
+		create_character = {
+			faith = scope:victim.faith
+			culture = scope:victim.culture
+			age = 18
+			gender = female
+			random_traits = no
+			after_creation = {
+				clear_traits = yes
+				copy_traits = scope:victim
+			}
+			save_scope_as = victim_traits
+		}
 		scope:victim = {
 			save_scope_as = demon
+			clear_traits = yes
+			copy_traits = scope:stealer
+			if = {
+				limit = { has_trait = pregnant }
+				remove_trait = pregnant
+			}
+		}
+		scope:stealer = {
+			clear_traits = yes
+			copy_traits = scope:victim_traits
+			if = {
+				limit = { has_trait = pregnant }
+				remove_trait = pregnant
+			}
+		}
+		scope:victim_traits = {
+			death = { death_reason = death_vanished }
 		}
 	}
 	else = {
@@ -44,30 +73,20 @@
 				resolve_title_and_vassal_change = scope:change
 			}
 		}
-	}
-
-	scope:stealer = {
-		set_player_character = scope:demon
-		clear_traits = yes
-		copy_traits = scope:victim
-		if = {
-			limit = { has_trait = pregnant }
-			remove_trait = pregnant
-		}
-	}
-	scope:victim = {
-		if = {
-			limit = { is_female = no }
-			death = { death_reason = death_vanished }	
-		}
-		else = {
+		scope:stealer = {
 			clear_traits = yes
-			copy_traits = scope:demon
+			copy_traits = scope:victim
 			if = {
 				limit = { has_trait = pregnant }
 				remove_trait = pregnant
 			}
 		}
+		scope:victim = {
+			death = { death_reason = death_vanished }
+		}
+	}
+	scope:stealer = {
+		set_player_character = scope:demon
 	}
 }
 

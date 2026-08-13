@@ -100,3 +100,428 @@ lifestyle_prostitute = {
 	}
 }
 
+# Carnalitas-compatible body size traits.
+# Succubus defines only the two intended branches:
+# small_bad and big_good.
+# Trait IDs and full Carnalitas opposites are retained for cross-mod compatibility.
+# Without Carnalitas, opposite groups from the omitted branches may be unresolved;
+# with Carnalitas loaded before Succubus, those groups resolve normally.
+dick_small_bad_1 = {
+	name = trait_dick_small_1
+
+	opposites = {
+		dick_big_good
+		dick_big_bad
+		dick_small_good
+	}
+
+	group = dick_small_bad
+	level = 1
+
+	genetic = yes
+	physical = yes
+	fertility = -0.05
+	bad = yes
+
+	birth = 0 # handled through script
+	random_creation = 0
+	
+	shown_in_ruler_designer = no
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_dick_small_1_desc
+			}
+			desc = trait_dick_small_1_character_desc
+		}
+	}
+}
+
+dick_small_bad_2 = {
+	name = trait_dick_small_2
+
+	opposites = {
+		dick_big_good
+		dick_big_bad
+		dick_small_good
+	}
+
+	group = dick_small_bad
+	level = 2
+
+	genetic = yes
+	physical = yes
+	fertility = -0.1
+	bad = yes
+
+	birth = 0 # handled through script
+	random_creation = 0
+	
+	shown_in_ruler_designer = no
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_dick_small_2_desc
+			}
+			desc = trait_dick_small_2_character_desc
+		}
+	}
+}
+
+dick_small_bad_3 = {
+	name = trait_dick_small_3
+
+	opposites = {
+		dick_big_good
+		dick_big_bad
+		dick_small_good
+	}
+
+	group = dick_small_bad
+	level = 3
+
+	genetic = yes
+	physical = yes
+	fertility = -0.15
+	bad = yes
+
+	birth = 0 # handled through script
+	random_creation = 0
+	
+	shown_in_ruler_designer = no
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_dick_small_3_desc
+			}
+			desc = trait_dick_small_3_character_desc
+		}
+	}
+}
+
+dick_big_good_1 = {
+	name = trait_dick_big_1
+
+	opposites = {
+		dick_big_bad
+		dick_small_good
+		dick_small_bad
+	}
+
+	group = dick_big_good
+	level = 1
+
+	genetic = yes
+	physical = yes
+	fertility = 0.05
+	good = yes
+
+	birth = 0 # handled through script
+	random_creation = 0
+
+	ruler_designer_cost = 0
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_dick_big_1_desc
+			}
+			desc = trait_dick_big_1_character_desc
+		}
+	}
+}
+
+dick_big_good_2 = {
+	name = trait_dick_big_2
+
+	opposites = {
+		dick_big_bad
+		dick_small_good
+		dick_small_bad
+	}
+
+	group = dick_big_good
+	level = 2
+
+	genetic = yes
+	physical = yes
+	fertility = 0.1
+	good = yes
+
+	birth = 0 # handled through script
+	random_creation = 0
+
+	ruler_designer_cost = 0
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_dick_big_2_desc
+			}
+			desc = trait_dick_big_2_character_desc
+		}
+	}
+}
+
+dick_big_good_3 = {
+	name = trait_dick_big_3
+
+	opposites = {
+		dick_big_bad
+		dick_small_good
+		dick_small_bad
+	}
+
+	group = dick_big_good
+	level = 3
+
+	genetic = yes
+	physical = yes
+	fertility = 0.15
+	good = yes
+
+	birth = 0 # handled through script
+	random_creation = 0
+
+	ruler_designer_cost = 0
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_dick_big_3_desc
+			}
+			desc = trait_dick_big_3_character_desc
+		}
+	}
+}
+
+tits_small_bad_1 = {
+	name = trait_tits_small_1
+
+	opposites = {
+		tits_big_good
+		tits_big_bad
+		tits_small_good
+	}
+
+	group = tits_small_bad
+	level = 1
+
+	genetic = yes
+	physical = yes
+	fertility = -0.05
+	bad = yes
+
+	birth = 0 # handled through script
+	random_creation = 0
+	
+	shown_in_ruler_designer = no
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_tits_small_1_desc
+			}
+			desc = trait_tits_small_1_character_desc
+		}
+	}
+}
+
+tits_small_bad_2 = {
+	name = trait_tits_small_2
+
+	opposites = {
+		tits_big_good
+		tits_big_bad
+		tits_small_good
+	}
+
+	group = tits_small_bad
+	level = 2
+
+	genetic = yes
+	physical = yes
+	fertility = -0.1
+	bad = yes
+
+	birth = 0 # handled through script
+	random_creation = 0
+	
+	shown_in_ruler_designer = no
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_tits_small_2_desc
+			}
+			desc = trait_tits_small_2_character_desc
+		}
+	}
+}
+
+tits_small_bad_3 = {
+	name = trait_tits_small_3
+
+	opposites = {
+		tits_big_good
+		tits_big_bad
+		tits_small_good
+	}
+
+	group = tits_small_bad
+	level = 3
+
+	genetic = yes
+	physical = yes
+	fertility = -0.15
+	bad = yes
+
+	birth = 0 # handled through script
+	random_creation = 0
+	
+	shown_in_ruler_designer = no
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_tits_small_3_desc
+			}
+			desc = trait_tits_small_3_character_desc
+		}
+	}
+}
+
+tits_big_good_1 = {
+	name = trait_tits_big_1
+
+	opposites = {
+		tits_big_bad
+		tits_small_good
+		tits_small_bad
+	}
+
+	group = tits_big_good
+	level = 1
+
+	genetic = yes
+	physical = yes
+	fertility = 0.05
+	good = yes
+
+	birth = 0 # handled through script
+	random_creation = 0
+
+	ruler_designer_cost = 0
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_tits_big_1_desc
+			}
+			desc = trait_tits_big_1_character_desc
+		}
+	}
+}
+
+tits_big_good_2 = {
+	name = trait_tits_big_2
+
+	opposites = {
+		tits_big_bad
+		tits_small_good
+		tits_small_bad
+	}
+
+	group = tits_big_good
+	level = 2
+
+	genetic = yes
+	physical = yes
+	fertility = 0.1
+	good = yes
+
+	birth = 0 # handled through script
+	random_creation = 0
+
+	ruler_designer_cost = 0
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_tits_big_2_desc
+			}
+			desc = trait_tits_big_2_character_desc
+		}
+	}
+}
+
+tits_big_good_3 = {
+	name = trait_tits_big_3
+
+	opposites = {
+		tits_big_bad
+		tits_small_good
+		tits_small_bad
+	}
+
+	group = tits_big_good
+	level = 3
+
+	genetic = yes
+	physical = yes
+	fertility = 0.15
+	good = yes
+
+	birth = 0 # handled through script
+	random_creation = 0
+
+	ruler_designer_cost = 0
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_tits_big_3_desc
+			}
+			desc = trait_tits_big_3_character_desc
+		}
+	}
+}

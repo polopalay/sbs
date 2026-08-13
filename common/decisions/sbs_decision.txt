@@ -41,7 +41,7 @@ become_demon = {
 			if = {
 				limit = { NOT = { dynasty = dynasty:888888 } }
 				random_living_character = {
-					limit = { faith = faith:nature is_ruler = no }
+					limit = { faith = faith:nature is_ruler = no sbs_has_custom_model_trigger = no }
 					copy_inheritable_appearance_from = character:nature_character
 					save_scope_as = demon_child
 					weight = {
@@ -73,7 +73,7 @@ become_demon = {
 			if = {
 				limit = { NOT = { dynasty = dynasty:666666 } }
 				random_living_character = {
-					limit = { faith = faith:pleasure is_ruler = no }
+					limit = { faith = faith:pleasure is_ruler = no sbs_has_custom_model_trigger = no }
 					copy_inheritable_appearance_from = character:pleasure_character
 					save_scope_as = demon_child
 					weight = {
@@ -105,7 +105,7 @@ become_demon = {
 			if = {
 				limit = { NOT = { dynasty = dynasty:777777 } }
 				random_living_character = {
-					limit = { faith = faith:violence is_ruler = no }
+					limit = { faith = faith:violence is_ruler = no sbs_has_custom_model_trigger = no }
 					copy_inheritable_appearance_from = character:violence_character
 					save_scope_as = demon_child
 					weight = {
@@ -137,7 +137,7 @@ become_demon = {
 			if = {
 				limit = { NOT = { dynasty = dynasty:999999 } }
 				random_living_character = {
-					limit = { faith = faith:greedy is_ruler = no }
+					limit = { faith = faith:greedy is_ruler = no sbs_has_custom_model_trigger = no }
 					copy_inheritable_appearance_from = character:greedy_character
 					save_scope_as = demon_child
 					weight = {

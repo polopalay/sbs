@@ -266,7 +266,7 @@ sbs_prostitution.9001 = {
 	option = {
 		name = sbs_prostitution.9001.a
 		custom_tooltip = sbs_prostitution.9001.a.tt
-		scope:random_noble = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:random_noble = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
 	}
 }
 
@@ -293,7 +293,7 @@ sbs_prostitution.9002 = {
 		stress_impact = {
 			lustful = minor_stress_impact_loss
 		}
-		scope:random_noble = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:random_noble = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
 	}
 }
 #9003
@@ -320,7 +320,7 @@ sbs_prostitution.9003 = {
 		stress_impact = {
 			lustful = medium_stress_impact_loss
 		}
-		scope:random_noble = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:random_noble = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
 	}
 }
 
@@ -399,7 +399,7 @@ sbs_prostitution.9011 = {
 		name = sbs_prostitution.9011.a
 		custom_tooltip = sbs_prostitution.9011.a.tt
 		scope:random_noble = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
-		scope:random_noble = { prostitute_effect = { PROSTITUTE = scope:random_noble.primary_spouse PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:random_noble = { prostitute_effect = { PROSTITUTE = scope:random_noble.primary_spouse PREGNANCY_CHANCE = 1 } }
 	}
 }
 #9012 33% chance, timid wife
@@ -629,7 +629,7 @@ sbs_prostitution.9020 = {
 	option = {
 		name = sbs_prostitution.9020.a
 		custom_tooltip = sbs_prostitution.9020.a.tt
-		scope:random_noble.primary_spouse = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:random_noble.primary_spouse = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
 		duel = {
 			skill = diplomacy
 			value = 10

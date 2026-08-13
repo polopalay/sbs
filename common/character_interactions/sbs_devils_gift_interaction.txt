@@ -19,12 +19,7 @@ sbs_devils_gift_interaction = {
 		}
 	}
 	send_option = {
-		is_shown = { scope:actor = { is_adult = yes OR = { has_trait = sbs_demon has_trait = sbs_succubus } dynasty ?= { any_dynasty_member = { count < 4 is_alive = yes } } this = scope:recipient } }
-		flag = child
-		localization = nick_the_child
-	}
-	send_option = {
-		is_shown = { scope:actor = { OR = { has_trait = sbs_demon has_trait = sbs_succubus } } scope:recipient = { is_ruler = no has_trait_with_flag = sbs_demon_trait } }
+		is_shown = { scope:actor = { OR = { has_trait = sbs_demon has_trait = sbs_succubus } } }
 		is_valid = {
 			scope:actor = {
 				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
@@ -141,37 +136,6 @@ sbs_devils_gift_interaction = {
 		scope:recipient = {
 			random_list = {
 				10 = 0
-				0 = {
-					modifier = { scope:child = yes add = 10 }
-					desc = nick_the_child
-					if = {
-						limit = { is_female = yes }
-						save_scope_as = mother
-						random_living_character = {
-							limit = { has_trait = sbs_demon is_female = no is_adult = yes }
-							save_scope_as = father
-						}
-					}
-					else = {
-						save_scope_as = father
-						random_living_character = {
-							limit = { has_trait = sbs_succubus is_female = yes is_adult = yes }
-							save_scope_as = mother
-						}
-					}
-					create_character = {
-						age = 0
-						employer = scope:actor
-						#location = scope:actor.location
-						mother = scope:mother
-						father = scope:father
-						dynasty_house = scope:actor.house
-						culture = scope:actor.culture
-						faith = scope:actor.faith
-						gender_female_chance = 50
-						liege = scope:actor
-					}
-				}
 				0 = {
 					modifier = { scope:game_concept_ruler = yes add = 10 }
 					create_landless_adventurer_title_effect = {

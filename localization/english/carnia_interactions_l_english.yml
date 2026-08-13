@@ -42,3 +42,10 @@
 
  carn_force_stop_prostitution_interaction: "Stop Prostitution"
  carn_force_stop_prostitution_interaction.desc: "Stop forcing [recipient.GetShortUINameNoTooltip] to earn [gold|E] for you as a prostitute"
+
+ carn_demand_free_illegal_slaves_interaction: "Demand Manumission"
+ carn_demand_free_slaves_interaction_desc: "Demand that [recipient.GetShortUINameNoTooltip] free the [illegal|E] [slaves|E] they own"
+ carn_demand_free_illegal_slaves_is_crime: "\nRefusing to free illegal slaves is a [crime|E]"
+
+ carn_seize_slave_interaction: "Seize Slave"
+ carn_seize_slave_interaction_desc: "Take [recipient.GetShortUINameNoTooltip] as your own [slave|E]"

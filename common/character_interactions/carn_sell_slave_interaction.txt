@@ -72,39 +72,7 @@
 	}
 	on_accept = {
 		scope:actor = { save_scope_as = seller }
-		scope:recipient = {
-			if = {
-				limit = { scope:extortionate_gold = yes }
-				pay_short_term_gold = {
-					target = scope:actor
-					gold = {
-						value = scope:secondary_recipient.carn_slave_price_value
-						multiply = 2
-					}
-				}
-			}
-			if = {
-				limit = { scope:gold = yes }
-				pay_short_term_gold = {
-					target = scope:actor
-					gold = {
-						value = scope:secondary_recipient.carn_slave_price_value
-						multiply = 1.5
-					}
-				}
-			}
-			if = {
-				limit = { scope:hook = yes has_hook = scope:actor }
-				use_hook = scope:actor
-			}
-			save_scope_as = buyer
-		}
-		scope:actor = {
-			if = {
-				limit = { scope:favor = yes }
-				add_hook = { target = scope:recipient type = favor_hook }
-			}
-		}
+		scope:recipient = { save_scope_as = buyer }
 		scope:secondary_recipient = { save_scope_as = slave }
 		carn_buy_slave_effect = { SLAVE_PRICE = scope:secondary_recipient.carn_slave_price_value }
 	}
@@ -112,43 +80,43 @@
 		base = 5
 		opinion_modifier = { opinion_target = scope:actor multiplier = 0.1 }
 		opinion_modifier = { opinion_target = scope:secondary_recipient multiplier = 0.2 }
-		modifier = { add = -5 scope:secondary_recipient = { has_trait = beauty_good_1 } }
-		modifier = { add = -10 scope:secondary_recipient = { has_trait = beauty_good_2 } }
-		modifier = { add = -20 scope:secondary_recipient = { has_trait = beauty_good_3 } }
-		modifier = { add = 5 scope:secondary_recipient = { has_trait = beauty_bad_1 } }
-		modifier = { add = 10 scope:secondary_recipient = { has_trait = beauty_bad_2 } }
-		modifier = { add = 20 scope:secondary_recipient = { has_trait = beauty_bad_3 } }
-		modifier = { add = -5 scope:secondary_recipient = { has_trait = intellect_good_1 } }
-		modifier = { add = -8 scope:secondary_recipient = { has_trait = intellect_good_2 } }
-		modifier = { add = -10 scope:secondary_recipient = { has_trait = intellect_good_3 } }
-		modifier = { add = 5 scope:secondary_recipient = { has_trait = intellect_bad_1 } }
-		modifier = { add = 8 scope:secondary_recipient = { has_trait = intellect_bad_2 } }
-		modifier = { add = 10 scope:secondary_recipient = { has_trait = intellect_bad_3 } }
-		modifier = { add = -5 scope:secondary_recipient = { has_trait = physique_good_1 } }
-		modifier = { add = -8 scope:secondary_recipient = { has_trait = physique_good_2 } }
-		modifier = { add = -10 scope:secondary_recipient = { has_trait = physique_good_3 } }
-		modifier = { add = 5 scope:secondary_recipient = { has_trait = physique_bad_1 } }
-		modifier = { add = 8 scope:secondary_recipient = { has_trait = physique_bad_2 } }
-		modifier = { add = 10 scope:secondary_recipient = { has_trait = physique_bad_3 } }
-		modifier = { add = -5 scope:secondary_recipient = { has_trait = pure_blooded } }
-		modifier = { add = -5 scope:secondary_recipient = { has_trait = strong } }
-		modifier = { add = -5 scope:secondary_recipient = { has_trait = shrewd } }
-		modifier = { add = 5 scope:secondary_recipient = { has_trait = clubfooted } }
-		modifier = { add = 5 scope:secondary_recipient = { has_trait = hunchbacked } }
-		modifier = { add = 5 scope:secondary_recipient = { has_trait = lisping } }
-		modifier = { add = 5 scope:secondary_recipient = { has_trait = stuttering } }
-		modifier = { add = 5 scope:secondary_recipient = { has_trait = dwarf } }
-		modifier = { add = 5 scope:secondary_recipient = { has_trait = giant } }
-		modifier = { add = 5 scope:secondary_recipient = { has_trait = weak } }
-		modifier = { add = 5 scope:secondary_recipient = { has_trait = dull } }
+		modifier = { add = 5 scope:secondary_recipient = { has_trait = beauty_good_1 } }
+		modifier = { add = 10 scope:secondary_recipient = { has_trait = beauty_good_2 } }
+		modifier = { add = 20 scope:secondary_recipient = { has_trait = beauty_good_3 } }
+		modifier = { add = -5 scope:secondary_recipient = { has_trait = beauty_bad_1 } }
+		modifier = { add = -10 scope:secondary_recipient = { has_trait = beauty_bad_2 } }
+		modifier = { add = -20 scope:secondary_recipient = { has_trait = beauty_bad_3 } }
+		modifier = { add = 5 scope:secondary_recipient = { has_trait = intellect_good_1 } }
+		modifier = { add = 8 scope:secondary_recipient = { has_trait = intellect_good_2 } }
+		modifier = { add = 10 scope:secondary_recipient = { has_trait = intellect_good_3 } }
+		modifier = { add = -5 scope:secondary_recipient = { has_trait = intellect_bad_1 } }
+		modifier = { add = -8 scope:secondary_recipient = { has_trait = intellect_bad_2 } }
+		modifier = { add = -10 scope:secondary_recipient = { has_trait = intellect_bad_3 } }
+		modifier = { add = 5 scope:secondary_recipient = { has_trait = physique_good_1 } }
+		modifier = { add = 8 scope:secondary_recipient = { has_trait = physique_good_2 } }
+		modifier = { add = 10 scope:secondary_recipient = { has_trait = physique_good_3 } }
+		modifier = { add = -5 scope:secondary_recipient = { has_trait = physique_bad_1 } }
+		modifier = { add = -8 scope:secondary_recipient = { has_trait = physique_bad_2 } }
+		modifier = { add = -10 scope:secondary_recipient = { has_trait = physique_bad_3 } }
+		modifier = { add = 5 scope:secondary_recipient = { has_trait = pure_blooded } }
+		modifier = { add = 5 scope:secondary_recipient = { has_trait = strong } }
+		modifier = { add = 5 scope:secondary_recipient = { has_trait = shrewd } }
+		modifier = { add = -5 scope:secondary_recipient = { has_trait = clubfooted } }
+		modifier = { add = -5 scope:secondary_recipient = { has_trait = hunchbacked } }
+		modifier = { add = -5 scope:secondary_recipient = { has_trait = lisping } }
+		modifier = { add = -5 scope:secondary_recipient = { has_trait = stuttering } }
+		modifier = { add = -5 scope:secondary_recipient = { has_trait = dwarf } }
+		modifier = { add = -5 scope:secondary_recipient = { has_trait = giant } }
+		modifier = { add = -5 scope:secondary_recipient = { has_trait = weak } }
+		modifier = { add = -5 scope:secondary_recipient = { has_trait = dull } }
 		modifier = { add = -15 scope:extortionate_gold = yes }
 		modifier = { add = -10 scope:gold = yes }
 		modifier = { add = 10 scope:hook = yes }
 		modifier = { add = 10 scope:favor = yes }
-		modifier = { add = -10 desc = carn_secondary_recipient_is_my_friend_reason scope:secondary_recipient = { has_relation_friend = scope:recipient } }
-		modifier = { add = -20 desc = carn_secondary_recipient_is_my_lover_reason scope:secondary_recipient = { has_relation_lover = scope:recipient } }
-		modifier = { add = -10 desc = carn_secondary_recipient_is_my_crush_reason scope:secondary_recipient = { has_relation_crush = scope:recipient } }
-		modifier = { add = -20 desc = carn_secondary_recipient_is_my_soulmate_reason scope:secondary_recipient = { has_relation_soulmate = scope:recipient } }
+		modifier = { add = 10 desc = carn_secondary_recipient_is_my_friend_reason scope:secondary_recipient = { has_relation_friend = scope:recipient } }
+		modifier = { add = 20 desc = carn_secondary_recipient_is_my_lover_reason scope:secondary_recipient = { has_relation_lover = scope:recipient } }
+		modifier = { add = 10 desc = carn_secondary_recipient_is_my_crush_reason scope:secondary_recipient = { has_relation_crush = scope:recipient } }
+		modifier = { add = 20 desc = carn_secondary_recipient_is_my_soulmate_reason scope:secondary_recipient = { has_relation_soulmate = scope:recipient } }
 	}
 	ai_frequency = 12
 	ai_potential = { always = yes }

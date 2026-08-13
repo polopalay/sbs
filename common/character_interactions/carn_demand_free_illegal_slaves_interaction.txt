@@ -1,0 +1,209 @@
+﻿carn_demand_free_illegal_slaves_interaction = {
+	category = interaction_category_religion
+
+	ai_maybe = yes
+	ai_min_reply_days = 4
+	ai_max_reply_days = 9
+	can_send_despite_rejection = yes
+	popup_on_receive = yes
+
+	ai_targets = {
+		ai_recipients = vassals
+	}
+	ai_target_quick_trigger = {
+		adult = yes
+	}
+	ai_frequency = 12
+
+	desc = {
+		desc = carn_demand_free_slaves_interaction_desc
+		desc = carn_demand_free_illegal_slaves_is_crime
+	}
+
+	is_shown = {
+		scope:recipient = {
+			target_is_liege_or_above = scope:actor
+			is_ai = yes
+
+			OR = {
+				AND = {
+					faith = { has_doctrine = carn_doctrine_same_slavery_crime }
+					any_relation = {
+						type = slave
+						scope:recipient.faith = {
+							faith_hostility_level = {
+								target = prev.faith
+								value < faith_hostile_level
+							}
+						}
+					}
+				}
+				AND = {
+					faith = { has_doctrine = carn_doctrine_other_slavery_crime }
+					any_relation = {
+						type = slave
+						scope:recipient.faith = {
+							faith_hostility_level = {
+								target = prev.faith
+								value >= faith_hostile_level
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	cooldown_against_recipient = { years = 5 }
+
+	localization_values = { RANSOM_COST = demand_conversion_bribe_size }
+
+	send_option = {
+		is_valid = {
+			scope:actor = { gold >= demand_conversion_bribe_size }
+		}
+		flag = gold
+		localization = "RANSOM_GOLD_OPTION"
+	}
+
+	send_option = {
+		is_valid = {
+			scope:recipient = {
+				can_add_hook = { target = scope:actor type = favor_hook }
+			}
+		}
+		flag = favor
+		localization = "RANSOM_FAVOR_OPTION"
+	}
+
+	send_option = {
+		is_valid = {
+			scope:actor = { has_usable_hook = scope:recipient }
+		}
+		flag = hook
+		localization = GENERIC_SPEND_A_HOOK
+	}
+
+	send_options_exclusive = yes
+
+	auto_accept = {
+		OR = {
+			scope:recipient = { is_imprisoned_by = scope:actor }
+			AND = {
+				scope:hook = yes
+				scope:actor = { has_strong_hook = scope:recipient }
+			}
+		}
+	}
+
+	on_accept = {
+		scope:actor = {
+			if = {
+				limit = { scope:gold = yes }
+				pay_short_term_gold = { target = scope:recipient gold = demand_conversion_bribe_size }
+			}
+
+			if = {
+				limit = { scope:hook = yes has_hook = scope:recipient }
+				use_hook = scope:recipient
+			}
+		}
+
+		scope:recipient = {
+			if = {
+				limit = { scope:favor = yes }
+				add_hook = { target = scope:actor type = favor_hook }
+			}
+		}
+
+		scope:recipient = {
+			if = {
+				limit = {
+					faith = { has_doctrine = carn_doctrine_same_slavery_crime }
+				}
+				every_relation = {
+					type = slave
+					limit = {
+						scope:recipient.faith = {
+							faith_hostility_level = {
+								target = prev.faith
+								value < faith_hostile_level
+							}
+						}
+					}
+					carn_free_slave_effect = yes
+				}
+			}
+
+			if = {
+				limit = {
+					faith = { has_doctrine = carn_doctrine_other_slavery_crime }
+				}
+				every_relation = {
+					type = slave
+					limit = {
+						scope:recipient.faith = {
+							faith_hostility_level = {
+								target = prev.faith
+								value >= faith_hostile_level
+							}
+						}
+					}
+					carn_free_slave_effect = yes
+				}
+			}
+		}
+	}
+
+	on_decline = {
+		scope:recipient = {
+			add_opinion = {
+				target = scope:actor
+				modifier = demanded_my_conversion_opinion
+			}
+		}
+
+		scope:actor = {
+			add_opinion = {
+				target = scope:recipient
+				modifier = resisted_conversion_opinion
+			}
+		}
+	}
+
+	ai_potential = { is_adult = yes }
+
+	ai_accept = {
+		base = 0
+
+		religion_demand_conversion_default_modifier = yes
+
+		modifier = { add = 50 scope:gold = yes }
+		modifier = { add = 40 scope:favor = yes }
+		modifier = { add = 100 scope:hook = yes }
+	}
+
+	ai_will_do = {
+		base = 0
+		modifier = {
+			add = 25
+			scope:recipient = {
+				any_relation = {
+					type = slave
+					faith = scope:recipient.faith
+					OR = {
+						is_close_family_of = scope:actor
+						is_extended_family_of = scope:actor
+						is_spouse_of = scope:actor
+						has_relation_friend = scope:actor
+						has_relation_best_friend = scope:actor
+						has_relation_lover = scope:actor
+						has_relation_soulmate = scope:actor
+						has_relation_ward = scope:actor
+						has_relation_guardian = scope:actor
+					}
+				}
+			}
+		}
+	}
+}

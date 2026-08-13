@@ -71,40 +71,8 @@
 		localization = "RANSOM_FAVOR_OPTION"
 	}
 	on_accept = {
-		scope:actor = {
-			if = {
-				limit = { scope:extortionate_gold = yes }
-				pay_short_term_gold = {
-					target = scope:recipient
-					gold = {
-						value = scope:secondary_recipient.carn_slave_price_value
-						multiply = 2
-					}
-				}
-			}
-			if = {
-				limit = { scope:gold = yes }
-				pay_short_term_gold = {
-					target = scope:recipient
-					gold = {
-						value = scope:secondary_recipient.carn_slave_price_value
-						multiply = 1.5
-					}
-				}
-			}
-			if = {
-				limit = { scope:hook = yes has_hook = scope:recipient }
-				use_hook = scope:recipient
-			}
-			save_scope_as = buyer
-		}
-		scope:recipient = {
-			if = {
-				limit = { scope:favor = yes }
-				add_hook = { target = scope:actor type = favor_hook }
-			}
-			save_scope_as = seller
-		}
+		scope:actor = { save_scope_as = buyer }
+		scope:recipient = { save_scope_as = seller }
 		scope:secondary_recipient = { save_scope_as = slave }
 		carn_buy_slave_effect = { SLAVE_PRICE = scope:secondary_recipient.carn_slave_price_value }
 	}

@@ -47,6 +47,38 @@ sbs_makeup_interaction = {
 	}
 
 	send_option = {
+		is_shown = {
+			scope:recipient = {
+				is_female = yes
+				age >= 18
+			}
+		}
+		is_valid = {
+			scope:recipient = {
+				NOT = { has_trait = tits_big_good_3 }
+			}
+		}
+		flag = tits_big_good
+		localization = trait_tits_big
+	}
+
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				is_male = yes
+				age >= 18
+			}
+		}
+		is_valid = {
+			scope:recipient = {
+				NOT = { has_trait = dick_big_good_3 }
+			}
+		}
+		flag = dick_big_good
+		localization = trait_dick_big
+	}
+
+	send_option = {
 		is_valid = {
 			scope:actor = {
 				OR = {
@@ -93,15 +125,121 @@ sbs_makeup_interaction = {
 	}
 
 	send_option = {
-		is_shown = { scope:actor = { is_ai = no } scope:actor != scope:recipient }
+		is_shown = {
+			scope:actor = {
+				is_ai = no
+				sbs_has_custom_model_trigger = no
+			}
+			scope:actor != scope:recipient
+			scope:recipient = {
+				sbs_has_custom_model_trigger = no
+			}
+		}
+		is_valid = {
+			NOR = {
+				scope:recipient = character:han_8001
+				scope:recipient = character:andalusian_0003
+				scope:recipient = character:japanese_taira_kanmu_134
+				scope:recipient = character:131
+				scope:recipient = character:367
+				scope:recipient = character:1183
+				scope:recipient = character:41552
+				scope:recipient = character:7757
+				scope:recipient = character:1128
+				scope:recipient = character:466517
+				scope:recipient = character:223541
+				scope:recipient = character:168314
+				scope:recipient = character:212501
+				scope:recipient = character:140
+				scope:recipient = character:102531
+				scope:recipient = character:226000
+				scope:recipient = character:215530
+				scope:recipient = character:7627
+				scope:recipient = character:107590
+				scope:recipient = character:125501
+			}
+			scope:recipient = {
+				sbs_has_custom_model_trigger = no
+			}
+		}
 		flag = dna
 		localization = DNA_MODIFIERS
+	}
+
+	send_option = {
+		is_shown = {
+			scope:actor = { is_ai = no }
+			exists = character:han_8001
+			scope:recipient = {
+				sbs_has_custom_model_trigger = no
+			}
+		}
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = han_8001
+		localization = "Gao"
+	}
+
+	send_option = {
+		is_shown = {
+			scope:actor = { is_ai = no }
+			exists = character:andalusian_0003
+			scope:recipient = {
+				sbs_has_custom_model_trigger = no
+			}
+		}
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = andalusian_0003
+		localization = "Wallada"
+	}
+
+	send_option = {
+		is_shown = {
+			scope:actor = { is_ai = no }
+			exists = character:japanese_taira_kanmu_134
+			scope:recipient = {
+				sbs_has_custom_model_trigger = no
+			}
+		}
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = japanese_taira_kanmu_134
+		localization = "Masako"
+	}
+
+	send_option = {
+		is_shown = {
+			scope:actor = { is_ai = no }
+			exists = character:131
+			scope:recipient = {
+				sbs_has_custom_model_trigger = no
+			}
+		}
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = 131
+		localization = "Eadgifu"
 	}
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
-			current_date >= 1032.1.1
-			character:367 = { is_alive = no }
+			exists = character:367
+			scope:recipient = {
+				sbs_has_custom_model_trigger = no
+			}
 		}
 		is_valid = {
 			scope:actor = {
@@ -115,8 +253,10 @@ sbs_makeup_interaction = {
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
-			current_date >= 1048.9.21
-			character:1183 = { is_alive = no }
+			exists = character:1183
+			scope:recipient = {
+				sbs_has_custom_model_trigger = no
+			}
 		}
 		is_valid = {
 			scope:actor = {
@@ -130,8 +270,10 @@ sbs_makeup_interaction = {
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
-			current_date >= 1053.1.1
-			character:41552 = { is_alive = no }
+			exists = character:41552
+			scope:recipient = {
+				sbs_has_custom_model_trigger = no
+			}
 		}
 		is_valid = {
 			scope:actor = {
@@ -145,8 +287,10 @@ sbs_makeup_interaction = {
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
-			current_date >= 1046.3.1
-			character:7757 = { is_alive = no }
+			exists = character:7757
+			scope:recipient = {
+				sbs_has_custom_model_trigger = no
+			}
 		}
 		is_valid = {
 			scope:actor = {
@@ -160,8 +304,10 @@ sbs_makeup_interaction = {
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
-			current_date >= 1015.1.1
-			character:1128 = { is_alive = no }
+			exists = character:1128
+			scope:recipient = {
+				sbs_has_custom_model_trigger = no
+			}
 		}
 		is_valid = {
 			scope:actor = {
@@ -175,38 +321,10 @@ sbs_makeup_interaction = {
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
-			current_date >= 1048.1.2
-			character:765 = { is_alive = no }
-		}
-		is_valid = {
-			scope:actor = {
-				is_valid_construction_brothel_trigger = yes
+			exists = character:466517
+			scope:recipient = {
+				sbs_has_custom_model_trigger = no
 			}
-		}
-		flag = 765
-		localization = "S_wiE_tosL_awa"
-	}
-
-	send_option = {
-		is_shown = {
-			scope:actor = { is_ai = no }
-			current_date >= 1047.1.1
-			character:161257 = { is_alive = no }
-		}
-		is_valid = {
-			scope:actor = {
-				is_valid_construction_brothel_trigger = yes
-			}
-		}
-		flag = 161257
-		localization = "Wyszeslawa"
-	}
-
-	send_option = {
-		is_shown = {
-			scope:actor = { is_ai = no }
-			current_date >= 1160.1.1
-			character:466517 = { is_alive = no }
 		}
 		is_valid = {
 			scope:actor = {
@@ -220,8 +338,10 @@ sbs_makeup_interaction = {
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
-			current_date >= 1177.12.1
-			character:223541 = { is_alive = no }
+			exists = character:223541
+			scope:recipient = {
+				sbs_has_custom_model_trigger = no
+			}
 		}
 		is_valid = {
 			scope:actor = {
@@ -235,8 +355,10 @@ sbs_makeup_interaction = {
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
-			current_date >= 839.1.1
-			character:168314 = { is_alive = no }
+			exists = character:168314
+			scope:recipient = {
+				sbs_has_custom_model_trigger = no
+			}
 		}
 		is_valid = {
 			scope:actor = {
@@ -250,23 +372,10 @@ sbs_makeup_interaction = {
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
-			current_date >= 1145.1.1
-			character:223743 = { is_alive = no }
-		}
-		is_valid = {
-			scope:actor = {
-				is_valid_construction_brothel_trigger = yes
+			exists = character:212501
+			scope:recipient = {
+				sbs_has_custom_model_trigger = no
 			}
-		}
-		flag = 223743
-		localization = "Marie"
-	}
-
-	send_option = {
-		is_shown = {
-			scope:actor = { is_ai = no }
-			current_date >= 1122.1.1
-			character:212501 = { is_alive = no }
 		}
 		is_valid = {
 			scope:actor = {
@@ -280,8 +389,10 @@ sbs_makeup_interaction = {
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
-			current_date >= 1027.1.15
-			character:140 = { is_alive = no }
+			exists = character:140
+			scope:recipient = {
+				sbs_has_custom_model_trigger = no
+			}
 		}
 		is_valid = {
 			scope:actor = {
@@ -295,8 +406,10 @@ sbs_makeup_interaction = {
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
-			current_date >= 1015.1.2
-			character:102531 = { is_alive = no }
+			exists = character:102531
+			scope:recipient = {
+				sbs_has_custom_model_trigger = no
+			}
 		}
 		is_valid = {
 			scope:actor = {
@@ -310,53 +423,10 @@ sbs_makeup_interaction = {
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
-			current_date >= 1039.1.1
-			character:20641 = { is_alive = no }
-		}
-		is_valid = {
-			scope:actor = {
-				is_valid_construction_brothel_trigger = yes
+			exists = character:226000
+			scope:recipient = {
+				sbs_has_custom_model_trigger = no
 			}
-		}
-		flag = 20641
-		localization = "Tatus"
-	}
-
-	send_option = {
-		is_shown = {
-			scope:actor = { is_ai = no }
-			current_date >= 806.1.1
-			character:90107 = { is_alive = no }
-		}
-		is_valid = {
-			scope:actor = {
-				is_valid_construction_brothel_trigger = yes
-			}
-		}
-		flag = 90107
-		localization = "Ludwig"
-	}
-
-	send_option = {
-		is_shown = {
-			scope:actor = { is_ai = no }
-			current_date >= 830.1.14
-			character:42018 = { is_alive = no }
-		}
-		is_valid = {
-			scope:actor = {
-				is_valid_construction_brothel_trigger = yes
-			}
-		}
-		flag = 42018
-		localization = "Karlmann"
-	}
-
-	send_option = {
-		is_shown = {
-			scope:actor = { is_ai = no }
-			current_date >= 1138.1.1
-			character:226000 = { is_alive = no }
 		}
 		is_valid = {
 			scope:actor = {
@@ -370,23 +440,10 @@ sbs_makeup_interaction = {
 	send_option = {
 		is_shown = {
 			scope:actor = { is_ai = no }
-			current_date >= 828.1.1
-			character:163112 = { is_alive = no }
-		}
-		is_valid = {
-			scope:actor = {
-				is_valid_construction_brothel_trigger = yes
+			exists = character:215530
+			scope:recipient = {
+				sbs_has_custom_model_trigger = no
 			}
-		}
-		flag = 163112
-		localization = "Halfdan"
-	}
-
-	send_option = {
-		is_shown = {
-			scope:actor = { is_ai = no }
-			current_date >= 1118.11.28
-			character:215530 = { is_alive = no }
 		}
 		is_valid = {
 			scope:actor = {
@@ -397,6 +454,57 @@ sbs_makeup_interaction = {
 		localization = "Manuel"
 	}
 
+	send_option = {
+		is_shown = {
+			scope:actor = { is_ai = no }
+			exists = character:7627
+			scope:recipient = {
+				sbs_has_custom_model_trigger = no
+			}
+		}
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = 7627
+		localization = "Alfred"
+	}
+
+	send_option = {
+		is_shown = {
+			scope:actor = { is_ai = no }
+			exists = character:107590
+			scope:recipient = {
+				sbs_has_custom_model_trigger = no
+			}
+		}
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = 107590
+		localization = "Rodrigo"
+	}
+
+	send_option = {
+		is_shown = {
+			scope:actor = { is_ai = no }
+			exists = character:125501
+			scope:recipient = {
+				sbs_has_custom_model_trigger = no
+			}
+		}
+		is_valid = {
+			scope:actor = {
+				is_valid_construction_brothel_trigger = yes
+			}
+		}
+		flag = 125501
+		localization = "Temujin"
+	}
+
 	send_options_exclusive = yes
 
 	on_accept = {
@@ -404,26 +512,27 @@ sbs_makeup_interaction = {
 			if = {
 				limit = {
 					OR = {
+						scope:dna = yes
 						scope:367 = yes
 						scope:1183 = yes
 						scope:41552 = yes
 						scope:7757 = yes
 						scope:1128 = yes
-						scope:765 = yes
-						scope:161257 = yes
 						scope:466517 = yes
 						scope:223541 = yes
 						scope:168314 = yes
-						scope:223743 = yes
 						scope:212501 = yes
 						scope:140 = yes
 						scope:102531 = yes
-						scope:20641 = yes
-						scope:90107 = yes
-						scope:42018 = yes
 						scope:226000 = yes
-						scope:163112 = yes
 						scope:215530 = yes
+						scope:han_8001 = yes
+						scope:andalusian_0003 = yes
+						scope:japanese_taira_kanmu_134 = yes
+						scope:131 = yes
+						scope:7627 = yes
+						scope:107590 = yes
+						scope:125501 = yes
 					}
 				}
 
@@ -505,24 +614,88 @@ sbs_makeup_interaction = {
 					set_trait_rank = { trait = beauty_good rank = 0 }
 				}
 			}
+
+			else_if = {
+				limit = { scope:tits_big_good = yes }
+
+				remove_trait = tits_small_bad_1
+				remove_trait = tits_small_bad_2
+				remove_trait = tits_small_bad_3
+				if = {
+					limit = { has_trait_rank = { trait = tits_big_good rank < 3 } }
+					change_trait_rank = { trait = tits_big_good rank = 1 }
+				}
+				else_if = {
+					limit = { NOT = { has_trait = tits_big_good } }
+					add_trait = tits_big_good_1
+				}
+
+				scope:actor = {
+					if = {
+						limit = { has_trait = sbs_lesser_succubus }
+						add_trait_xp = { trait = sbs_lesser_succubus track = daring value = -10 }
+					}
+					else_if = {
+						limit = { has_trait = sbs_lesser_demon }
+						add_trait_xp = { trait = sbs_lesser_demon value = -10 }
+					}
+				}
+			}
+			else_if = {
+				limit = { scope:dick_big_good = yes }
+				remove_trait = dick_small_bad_1
+				remove_trait = dick_small_bad_2
+				remove_trait = dick_small_bad_3
+				if = {
+					limit = { has_trait_rank = { trait = dick_big_good rank < 3 } }
+					change_trait_rank = { trait = dick_big_good rank = 1 }
+				}
+				else_if = {
+					limit = { NOT = { has_trait = dick_big_good } }
+					add_trait = dick_big_good_1
+				}
+
+				scope:actor = {
+					if = {
+						limit = { has_trait = sbs_lesser_succubus }
+						add_trait_xp = { trait = sbs_lesser_succubus track = daring value = -10 }
+					}
+					else_if = {
+						limit = { has_trait = sbs_lesser_demon }
+						add_trait_xp = { trait = sbs_lesser_demon value = -10 }
+					}
+				}
+			}
 			else_if = {
 				limit = { scope:dna = yes add = 40 }
 				scope:actor = { copy_inheritable_appearance_from = scope:recipient }
 			}
 			else_if = {
-				limit = { scope:367 = yes }
+				limit = {
+					scope:367 = yes
+					exists = character:367
+				}
 				copy_inheritable_appearance_from = character:367
 			}
 			else_if = {
-				limit = { scope:1183 = yes }
+				limit = {
+					scope:1183 = yes
+					exists = character:1183
+				}
 				copy_inheritable_appearance_from = character:1183
 			}
 			else_if = {
-				limit = { scope:41552 = yes }
+				limit = {
+					scope:41552 = yes
+					exists = character:41552
+				}
 				copy_inheritable_appearance_from = character:41552
 			}
 			else_if = {
-				limit = { scope:7757 = yes }
+				limit = {
+					scope:7757 = yes
+					exists = character:7757
+				}
 				if = {
 					limit = { NOT = { has_character_modifier = matilda_of_canossa_modifier } }
 					add_character_modifier = matilda_of_canossa_modifier
@@ -530,7 +703,10 @@ sbs_makeup_interaction = {
 				copy_inheritable_appearance_from = character:7757
 			}
 			else_if = {
-				limit = { scope:1128 = yes }
+				limit = {
+					scope:1128 = yes
+					exists = character:1128
+				}
 				if = {
 					limit = { NOT = { has_character_modifier = guiscard_modifier } }
 					add_character_modifier = guiscard_modifier
@@ -538,64 +714,109 @@ sbs_makeup_interaction = {
 				copy_inheritable_appearance_from = character:1128
 			}
 			else_if = {
-				limit = { scope:765 = yes }
-				copy_inheritable_appearance_from = character:765
-			}
-			else_if = {
-				limit = { scope:161257 = yes }
-				copy_inheritable_appearance_from = character:161257
-			}
-			else_if = {
-				limit = { scope:466517 = yes }
+				limit = {
+					scope:466517 = yes
+					exists = character:466517
+				}
 				copy_inheritable_appearance_from = character:466517
 			}
 			else_if = {
-				limit = { scope:223541 = yes }
+				limit = {
+					scope:223541 = yes
+					exists = character:223541
+				}
 				copy_inheritable_appearance_from = character:223541
 			}
 			else_if = {
-				limit = { scope:168314 = yes }
+				limit = {
+					scope:168314 = yes
+					exists = character:168314
+				}
 				copy_inheritable_appearance_from = character:168314
 			}
 			else_if = {
-				limit = { scope:223743 = yes }
-				copy_inheritable_appearance_from = character:223743
-			}
-			else_if = {
-				limit = { scope:212501 = yes }
+				limit = {
+					scope:212501 = yes
+					exists = character:212501
+				}
 				copy_inheritable_appearance_from = character:212501
 			}
 			else_if = {
-				limit = { scope:140 = yes }
+				limit = {
+					scope:140 = yes
+					exists = character:140
+				}
 				copy_inheritable_appearance_from = character:140
 			}
 			else_if = {
-				limit = { scope:102531 = yes }
+				limit = {
+					scope:102531 = yes
+					exists = character:102531
+				}
 				copy_inheritable_appearance_from = character:102531
 			}
 			else_if = {
-				limit = { scope:20641 = yes }
-				copy_inheritable_appearance_from = character:20641
-			}
-			else_if = {
-				limit = { scope:90107 = yes }
-				copy_inheritable_appearance_from = character:90107
-			}
-			else_if = {
-				limit = { scope:42018 = yes }
-				copy_inheritable_appearance_from = character:42018
-			}
-			else_if = {
-				limit = { scope:226000 = yes }
+				limit = {
+					scope:226000 = yes
+					exists = character:226000
+				}
 				copy_inheritable_appearance_from = character:226000
 			}
 			else_if = {
-				limit = { scope:163112 = yes }
-				copy_inheritable_appearance_from = character:163112
+				limit = {
+					scope:215530 = yes
+					exists = character:215530
+				}
+				copy_inheritable_appearance_from = character:215530
 			}
 			else_if = {
-				limit = { scope:215530 = yes }
-				copy_inheritable_appearance_from = character:215530
+				limit = {
+					scope:han_8001 = yes
+					exists = character:han_8001
+				}
+				copy_inheritable_appearance_from = character:han_8001
+			}
+			else_if = {
+				limit = {
+					scope:andalusian_0003 = yes
+					exists = character:andalusian_0003
+				}
+				copy_inheritable_appearance_from = character:andalusian_0003
+			}
+			else_if = {
+				limit = {
+					scope:japanese_taira_kanmu_134 = yes
+					exists = character:japanese_taira_kanmu_134
+				}
+				copy_inheritable_appearance_from = character:japanese_taira_kanmu_134
+			}
+			else_if = {
+				limit = {
+					scope:131 = yes
+					exists = character:131
+				}
+				copy_inheritable_appearance_from = character:131
+			}
+			else_if = {
+				limit = {
+					scope:7627 = yes
+					exists = character:7627
+				}
+				copy_inheritable_appearance_from = character:7627
+			}
+			else_if = {
+				limit = {
+					scope:107590 = yes
+					exists = character:107590
+				}
+				copy_inheritable_appearance_from = character:107590
+			}
+			else_if = {
+				limit = {
+					scope:125501 = yes
+					exists = character:125501
+				}
+				copy_inheritable_appearance_from = character:125501
 			}
 		}
 

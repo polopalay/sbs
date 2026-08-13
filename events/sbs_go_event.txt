@@ -579,7 +579,7 @@ sbs_go.1310 = {
 		custom_tooltip = sbs_go.1310.a.tt
 		random_living_character = {
 			limit = { is_adult = yes is_female = no }
-			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
+			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 50 }
 			weight = {
 				base = 0
 				modifier = { in_diplomatic_range = root add = 1 }
@@ -1627,7 +1627,7 @@ sbs_go.1461 = {
 				opinion = -10
 			}
 		}
-		scope:sbs_random_1 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:sbs_random_1 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
@@ -2445,7 +2445,7 @@ sbs_go.5151 = {
 	option = {
 		name = sbs_go.5151.a
 		custom_tooltip = sbs_go.5151.a.tt
-		scope:knight = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:knight = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
 		hidden_effect = {
 			add_character_modifier = { modifier = pussy_cum months = 1 }
 			trigger_event = sbs_go.5501
@@ -2549,7 +2549,7 @@ sbs_go.5161 = {
 		name = sbs_go.5161.a
 		custom_tooltip = sbs_go.5161.a.tt
 		trigger_event = sbs_go.5501
-		scope:courtier = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:courtier = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
 	}
 }
 
@@ -2686,7 +2686,7 @@ sbs_go.5321 = {
 		}
 		every_prisoner = {
 			limit = { is_adult = yes is_female = yes }
-			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
+			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 }
 
 		}
 		trigger_event = sbs_go.5501
@@ -3382,7 +3382,7 @@ sbs_go.6040 = {
 		name = sbs_go.6040.a
 		custom_tooltip = sbs_go.6040.a.tt	
 		trigger_event = sbs_go.6050
-		scope:random_man = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } } 
+		scope:random_man = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } } 
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
@@ -3941,7 +3941,7 @@ sbs_go.8002 = {
 	option = {
 		name = sbs_go.8002.a
 		custom_tooltip = sbs_go.8002.a.tt
-		scope:succubus_randoman_2 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:succubus_randoman_2 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
 		trigger_event = sbs_go.8003
 	}
 }
@@ -3972,7 +3972,7 @@ sbs_go.8003 = {
 	option = {
 		name = sbs_go.8003.a
 		custom_tooltip = sbs_go.8003.a.tt
-		scope:succubus_randoman_2 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:succubus_randoman_2 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
 		trigger_event = sbs_go.8004
 	}
 }
@@ -4029,7 +4029,7 @@ sbs_go.8005 = {
 				modifier = amused_opinion
 				opinion = 20
 			}
-			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
+			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 }
 		}
 		trigger_event = sbs_go.8006
 	}
@@ -4184,7 +4184,7 @@ sbs_go.8100 = {
 				value = 5
 			}
 		}
-		scope:sbs_loyalty_random_1 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:sbs_loyalty_random_1 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
 	}
 }
 
@@ -4218,7 +4218,7 @@ sbs_go.8101 = {
 			}
 			add_character_modifier = { modifier = ass_cum days = 15 }
 		}
-		scope:sbs_loyalty_random_1 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:sbs_loyalty_random_1 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
 	}
 	option = {
 		name = sbs_go.8101.b
@@ -4244,7 +4244,7 @@ sbs_go.8101 = {
 			}
 			add_character_modifier = { modifier = pussy_cum days = 15 }
 		}
-		scope:sbs_loyalty_random_1 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:sbs_loyalty_random_1 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
 	}
 }
 
@@ -4264,7 +4264,7 @@ sbs_go.8102 = {
 	option = {
 		name = sbs_go.8102.a
 		custom_tooltip = sbs_go.8102.a.tt
-		scope:sbs_loyalty_random_1 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance } }
+		scope:sbs_loyalty_random_1 = { prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 1 } }
 	}
 	option = {
 		name = sbs_go.8102.b

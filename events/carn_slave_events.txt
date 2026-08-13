@@ -66,11 +66,6 @@ carn_slave.0003 = {
 				add_courtier = scope:child
 			}
 			scope:child = {
-				if = {
-					limit = { has_trait = slave has_trait = bastard scope:mother.house = scope:child.house }
-					remove_trait = bastard
-					add_trait = legitimized_bastard
-				}
 				set_to_lowborn = yes
 			}
 		}

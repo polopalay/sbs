@@ -561,17 +561,17 @@
 		}
 	}
 	ai_accept = {
-		base = -10
+		base = -8
 		opinion_modifier = { opinion_target = scope:actor who = scope:recipient multiplier = 0.1 }
-		modifier = { add = 5 OR = { scope:gold = yes scope:extortionate_gold = yes } }
-		modifier = { add = 3 OR = { scope:current_gold = yes scope:extortionate_current_gold = yes } }
-		modifier = { add = 5 scope:hook = yes }
-		modifier = { add = 5 scope:demand_conversion = yes }
-		modifier = { add = 5 scope:renounce_claims = yes }
-		modifier = { add = 2 scope:demand_admin = yes }
-		modifier = { add = 5 scope:recipient.faith = scope:actor.faith scope:recipient.faith.religion = religion:demonic_religion }
-		modifier = { add = 5 scope:actor = { has_relation_lover = scope:recipient } }
-		modifier = { add = 5 scope:actor = { has_relation_friend = scope:recipient } }
+		modifier = { add = 8 OR = { scope:gold = yes scope:extortionate_gold = yes } }
+		modifier = { add = 4 OR = { scope:current_gold = yes scope:extortionate_current_gold = yes } }
+		modifier = { add = 6 scope:hook = yes }
+		modifier = { add = 8 scope:demand_conversion = yes }
+		modifier = { add = 8 scope:renounce_claims = yes }
+		modifier = { add = 4 scope:demand_admin = yes }
+		modifier = { add = 6 scope:recipient.faith = scope:actor.faith scope:recipient.faith.religion = religion:demonic_religion }
+		modifier = { add = 6 scope:actor = { has_relation_lover = scope:recipient } }
+		modifier = { add = 6 scope:actor = { has_relation_friend = scope:recipient } }
 		modifier = { add = 10 scope:actor = { has_relation_best_friend = scope:recipient } }
 		modifier = { add = 10 scope:actor = { has_relation_soulmate = scope:recipient } }
 		modifier = { add = 10 scope:recipient = { is_extended_family_of = scope:actor } }

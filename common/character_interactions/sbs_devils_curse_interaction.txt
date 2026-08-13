@@ -59,6 +59,123 @@ sbs_devils_curse_interaction = {
 		localization = possessed_by_lust_demon_modifier
 	}
 	send_option = {
+		is_shown = {
+			scope:recipient = {
+				NOT = { has_character_modifier = bad_omen_modifier }
+			}
+		}
+		flag = bad_omen_modifier
+		localization = bad_omen_modifier
+	}
+
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				any_directly_owned_province = {
+					NOT = { has_province_modifier = plagued_by_nightmares_modifier }
+				}
+			}
+		}
+		flag = plagued_by_nightmares_modifier
+		localization = plagued_by_nightmares_modifier
+	}
+
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				any_held_county = {
+					NOT = { has_county_modifier = county_corruption_bandits_rampant_modifier }
+					NOR = {
+						title_province = { has_holding_type = nomad_holding }
+						title_province = { has_holding_type = herder_holding }
+					}
+				}
+			}
+		}
+		flag = county_corruption_bandits_rampant_modifier
+		localization = county_corruption_bandits_rampant_modifier
+	}
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				any_held_county = {
+					NOT = { has_county_modifier = county_corruption_thieves_guild_modifier }
+					NOR = {
+						title_province = { has_holding_type = nomad_holding }
+						title_province = { has_holding_type = herder_holding }
+					}
+				}
+			}
+		}
+		flag = county_corruption_thieves_guild_modifier
+		localization = county_corruption_thieves_guild_modifier
+	}
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				any_held_county = {
+					NOT = { has_county_modifier = county_corruption_roaming_bandits_modifier }
+					OR = {
+						title_province = { has_holding_type = nomad_holding }
+						title_province = { has_holding_type = herder_holding }
+					}
+				}
+			}
+		}
+		flag = county_corruption_roaming_bandits_modifier
+		localization = county_corruption_roaming_bandits_modifier
+	}
+
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				NOT = { has_character_modifier = totally_lost_modifier }
+			}
+		}
+		flag = totally_lost_modifier
+		localization = totally_lost_modifier
+	}
+
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				NOT = { has_character_modifier = confused_modifier }
+			}
+		}
+		flag = confused_modifier
+		localization = confused_modifier
+	}
+
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				NOT = { has_character_modifier = intrigue_starved_and_deprived_modifier }
+			}
+		}
+		flag = intrigue_starved_and_deprived_modifier
+		localization = intrigue_starved_and_deprived_modifier
+	}
+
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				NOT = { has_character_modifier = lost_in_lust_modifier }
+			}
+		}
+		flag = lost_in_lust_modifier
+		localization = lost_in_lust_modifier
+	}
+
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				NOT = { has_character_modifier = stress_smelling_of_sweat }
+			}
+		}
+		flag = stress_smelling_of_sweat
+		localization = stress_smelling_of_sweat
+	}
+	send_option = {
 		is_shown = { scope:recipient = { NOT = { has_character_modifier = party_baron_murdered_the_joy_of_life_modifier } } }
 		flag = party_baron_murdered_the_joy_of_life_modifier
 		localization = party_baron_murdered_the_joy_of_life_modifier
@@ -179,6 +296,76 @@ sbs_devils_curse_interaction = {
 				0 = {
 					modifier = { scope:party_baron_murdered_the_joy_of_life_modifier = yes add = 30 }
 					add_character_modifier = party_baron_murdered_the_joy_of_life_modifier
+				}
+				0 = {
+					modifier = { scope:bad_omen_modifier = yes add = 20 }
+					add_character_modifier = { modifier = bad_omen_modifier years = 3 }
+				}
+				0 = {
+					modifier = { scope:plagued_by_nightmares_modifier = yes add = 20 }
+					random_directly_owned_province = {
+						limit = { NOT = { has_province_modifier = plagued_by_nightmares_modifier } }
+						add_province_modifier = { modifier = plagued_by_nightmares_modifier years = 3 }
+					}
+				}
+				0 = {
+					modifier = { scope:totally_lost_modifier = yes add = 20 }
+					add_character_modifier = { modifier = totally_lost_modifier years = 3 }
+				}
+				0 = {
+					modifier = { scope:confused_modifier = yes add = 30 }
+					add_character_modifier = { modifier = confused_modifier years = 3 }
+				}
+				0 = {
+					modifier = { scope:intrigue_starved_and_deprived_modifier = yes add = 10 }
+					add_character_modifier = { modifier = intrigue_starved_and_deprived_modifier years = 1 }
+				}
+				0 = {
+					modifier = { scope:county_corruption_bandits_rampant_modifier = yes add = 20 }
+					random_held_county = {
+						limit = {
+							NOT = { has_county_modifier = county_corruption_bandits_rampant_modifier }
+							NOR = {
+								title_province = { has_holding_type = nomad_holding }
+								title_province = { has_holding_type = herder_holding }
+							}
+						}
+						add_county_modifier = { modifier = county_corruption_bandits_rampant_modifier years = 3 }
+					}
+				}
+				0 = {
+					modifier = { scope:county_corruption_thieves_guild_modifier = yes add = 20 }
+					random_held_county = {
+						limit = {
+							NOT = { has_county_modifier = county_corruption_thieves_guild_modifier }
+							NOR = {
+								title_province = { has_holding_type = nomad_holding }
+								title_province = { has_holding_type = herder_holding }
+							}
+						}
+						add_county_modifier = { modifier = county_corruption_thieves_guild_modifier years = 3 }
+					}
+				}
+				0 = {
+					modifier = { scope:county_corruption_roaming_bandits_modifier = yes add = 20 }
+					random_held_county = {
+						limit = {
+							NOT = { has_county_modifier = county_corruption_roaming_bandits_modifier }
+							OR = {
+								title_province = { has_holding_type = nomad_holding }
+								title_province = { has_holding_type = herder_holding }
+							}
+						}
+						add_county_modifier = { modifier = county_corruption_roaming_bandits_modifier years = 3 }
+					}
+				}
+				0 = {
+					modifier = { scope:lost_in_lust_modifier = yes add = 30 }
+					add_character_modifier = { modifier = lost_in_lust_modifier years = 3 }
+				}
+				0 = {
+					modifier = { scope:stress_smelling_of_sweat = yes add = 30 }
+					add_character_modifier = { modifier = stress_smelling_of_sweat years = 1 }
 				}
 				0 = {
 					modifier = { scope:intrigue_broken_modifier = yes add = 10 }
