@@ -349,24 +349,6 @@
 			scope:recipient.faith != scope:actor.faith
 		}
 		is_valid = {
-			trigger_if = {
-				limit = { scope:actor = { is_ai = yes } }
-				scope:recipient = {
-					OR = {
-						is_close_or_extended_family_of = scope:actor
-						is_vassal_of = scope:actor
-					}
-				}
-			}
-			custom_description = {
-				text = cannot_demand_unsubordinate_landed_ruler_conversion
-				scope:recipient = {
-					trigger_if = {
-						limit = { is_playable_character = yes }
-						is_vassal_or_below_of = scope:actor
-					}
-				}
-			}
 			custom_description = {
 				text = cannot_demand_religious_head_conversion
 				NAND = {

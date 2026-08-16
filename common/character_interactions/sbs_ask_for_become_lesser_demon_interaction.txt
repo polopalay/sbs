@@ -12,11 +12,17 @@
 		scope:recipient = { OR = { has_trait = sbs_demon has_trait = sbs_succubus } }
 	}
 
-	is_valid_showing_failures_only = {
-		scope:actor = { age >= 18 }
+	is_valid = {
+		scope:actor.age >= 18
 		scope:recipient = {
-			faith.religious_head = scope:recipient
-			faith.religion = religion:demonic_religion
+			trigger_if = {
+				limit = { scope:actor = { is_female = yes } }
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = brothel3 } }
+			}
+			trigger_if = {
+				limit = { scope:actor = { is_female = no } }
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+			}
 			NOT = { has_character_modifier = sbs_debuff }
 		}
 	}
@@ -105,24 +111,6 @@
 		localization = "RELEASE_DEMAND_CONVERSION"
 		is_shown = { scope:actor.faith != scope:recipient.faith }
 		is_valid = {
-			trigger_if = {
-				limit = { scope:recipient = { is_ai = yes } }
-				scope:actor = {
-					OR = {
-						is_close_or_extended_family_of = scope:recipient
-						is_vassal_of = scope:recipient
-					}
-				}
-			}
-			custom_description = {
-				text = cannot_demand_unsubordinate_landed_ruler_conversion
-				scope:actor = {
-					trigger_if = {
-						limit = { is_playable_character = yes }
-						is_vassal_or_below_of = scope:recipient
-					}
-				}
-			}
 			custom_description = {
 				text = cannot_demand_religious_head_conversion
 				NAND = {

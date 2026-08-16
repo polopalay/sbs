@@ -349,24 +349,6 @@
 		localization = "RELEASE_DEMAND_CONVERSION"
 		is_shown = { scope:actor.faith != scope:recipient.faith }
 		is_valid = {
-			trigger_if = {
-				limit = { scope:recipient = { is_ai = yes } }
-				scope:actor = {
-					OR = {
-						is_close_or_extended_family_of = scope:recipient
-						is_vassal_of = scope:recipient
-					}
-				}
-			}
-			custom_description = {
-				text = cannot_demand_unsubordinate_landed_ruler_conversion
-				scope:actor = {
-					trigger_if = {
-						limit = { is_playable_character = yes }
-						is_vassal_or_below_of = scope:recipient
-					}
-				}
-			}
 			custom_description = {
 				text = cannot_demand_religious_head_conversion
 				NAND = {

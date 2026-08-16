@@ -114,6 +114,7 @@ dick_small_bad_1 = {
 		dick_big_bad
 		dick_small_good
 	}
+	valid_sex = male
 
 	group = dick_small_bad
 	level = 1
@@ -123,8 +124,8 @@ dick_small_bad_1 = {
 	fertility = -0.05
 	bad = yes
 
-	birth = 0 # handled through script
-	random_creation = 0
+	birth = 1
+	random_creation = 1
 	
 	shown_in_ruler_designer = no
 
@@ -149,6 +150,7 @@ dick_small_bad_2 = {
 		dick_big_bad
 		dick_small_good
 	}
+	valid_sex = male
 
 	group = dick_small_bad
 	level = 2
@@ -158,8 +160,8 @@ dick_small_bad_2 = {
 	fertility = -0.1
 	bad = yes
 
-	birth = 0 # handled through script
-	random_creation = 0
+	birth = 0.5
+	random_creation = 0.5
 	
 	shown_in_ruler_designer = no
 
@@ -184,6 +186,7 @@ dick_small_bad_3 = {
 		dick_big_bad
 		dick_small_good
 	}
+	valid_sex = male
 
 	group = dick_small_bad
 	level = 3
@@ -193,8 +196,8 @@ dick_small_bad_3 = {
 	fertility = -0.15
 	bad = yes
 
-	birth = 0 # handled through script
-	random_creation = 0
+	birth = 0.1
+	random_creation = 0.1
 	
 	shown_in_ruler_designer = no
 
@@ -219,6 +222,7 @@ dick_big_good_1 = {
 		dick_small_good
 		dick_small_bad
 	}
+	valid_sex = male
 
 	group = dick_big_good
 	level = 1
@@ -228,8 +232,8 @@ dick_big_good_1 = {
 	fertility = 0.05
 	good = yes
 
-	birth = 0 # handled through script
-	random_creation = 0
+	birth = 1
+	random_creation = 1
 
 	ruler_designer_cost = 0
 
@@ -254,6 +258,7 @@ dick_big_good_2 = {
 		dick_small_good
 		dick_small_bad
 	}
+	valid_sex = male
 
 	group = dick_big_good
 	level = 2
@@ -263,8 +268,8 @@ dick_big_good_2 = {
 	fertility = 0.1
 	good = yes
 
-	birth = 0 # handled through script
-	random_creation = 0
+	birth = 0.5
+	random_creation = 0.5
 
 	ruler_designer_cost = 0
 
@@ -290,6 +295,8 @@ dick_big_good_3 = {
 		dick_small_bad
 	}
 
+	valid_sex = male
+
 	group = dick_big_good
 	level = 3
 
@@ -298,8 +305,8 @@ dick_big_good_3 = {
 	fertility = 0.15
 	good = yes
 
-	birth = 0 # handled through script
-	random_creation = 0
+	birth = 0.1
+	random_creation = 0.1
 
 	ruler_designer_cost = 0
 
@@ -325,16 +332,18 @@ tits_small_bad_1 = {
 		tits_small_good
 	}
 
+	valid_sex = female
+
 	group = tits_small_bad
 	level = 1
 
 	genetic = yes
 	physical = yes
-	fertility = -0.05
+	attraction_opinion = -5
 	bad = yes
 
-	birth = 0 # handled through script
-	random_creation = 0
+	birth = 1
+	random_creation = 1
 	
 	shown_in_ruler_designer = no
 
@@ -360,16 +369,18 @@ tits_small_bad_2 = {
 		tits_small_good
 	}
 
+	valid_sex = female
+
 	group = tits_small_bad
 	level = 2
 
 	genetic = yes
 	physical = yes
-	fertility = -0.1
+	attraction_opinion = -10
 	bad = yes
 
-	birth = 0 # handled through script
-	random_creation = 0
+	birth = 0.5
+	random_creation = 05
 	
 	shown_in_ruler_designer = no
 
@@ -395,16 +406,18 @@ tits_small_bad_3 = {
 		tits_small_good
 	}
 
+	valid_sex = female
+
 	group = tits_small_bad
 	level = 3
 
 	genetic = yes
 	physical = yes
-	fertility = -0.15
+	attraction_opinion = -15
 	bad = yes
 
-	birth = 0 # handled through script
-	random_creation = 0
+	birth = 0.1
+	random_creation = 0.1
 	
 	shown_in_ruler_designer = no
 
@@ -430,16 +443,18 @@ tits_big_good_1 = {
 		tits_small_bad
 	}
 
+	valid_sex = female
+
 	group = tits_big_good
 	level = 1
 
 	genetic = yes
 	physical = yes
-	fertility = 0.05
+	attraction_opinion = 5
 	good = yes
 
-	birth = 0 # handled through script
-	random_creation = 0
+	birth = 1
+	random_creation = 1
 
 	ruler_designer_cost = 0
 
@@ -465,16 +480,18 @@ tits_big_good_2 = {
 		tits_small_bad
 	}
 
+	valid_sex = female
+
 	group = tits_big_good
 	level = 2
 
 	genetic = yes
 	physical = yes
-	fertility = 0.1
+	attraction_opinion = 10
 	good = yes
 
-	birth = 0 # handled through script
-	random_creation = 0
+	birth = 0.5
+	random_creation = 0.5
 
 	ruler_designer_cost = 0
 
@@ -500,16 +517,18 @@ tits_big_good_3 = {
 		tits_small_bad
 	}
 
+	valid_sex = female
+
 	group = tits_big_good
 	level = 3
 
 	genetic = yes
 	physical = yes
-	fertility = 0.15
+	attraction_opinion = 15
 	good = yes
 
-	birth = 0 # handled through script
-	random_creation = 0
+	birth = 0.1
+	random_creation = 0.1
 
 	ruler_designer_cost = 0
 

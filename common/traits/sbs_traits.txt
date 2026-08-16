@@ -78,6 +78,7 @@ sbs_lesser_succubus = {
 	category = health
 	icon = sbs_lesser_succubus.dds
 
+	flag = is_immortal
 	flag = sbs_demon_trait
 
 	no_prowess_loss_from_age = yes
@@ -165,6 +166,7 @@ sbs_lesser_demon = {
 
 	no_prowess_loss_from_age = yes
 
+	flag = is_immortal
 	flag = sbs_demon_trait
 	flag = slave_owner
 

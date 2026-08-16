@@ -629,17 +629,6 @@ sbs_makeup_interaction = {
 					limit = { NOT = { has_trait = tits_big_good } }
 					add_trait = tits_big_good_1
 				}
-
-				scope:actor = {
-					if = {
-						limit = { has_trait = sbs_lesser_succubus }
-						add_trait_xp = { trait = sbs_lesser_succubus track = daring value = -10 }
-					}
-					else_if = {
-						limit = { has_trait = sbs_lesser_demon }
-						add_trait_xp = { trait = sbs_lesser_demon value = -10 }
-					}
-				}
 			}
 			else_if = {
 				limit = { scope:dick_big_good = yes }
@@ -653,17 +642,6 @@ sbs_makeup_interaction = {
 				else_if = {
 					limit = { NOT = { has_trait = dick_big_good } }
 					add_trait = dick_big_good_1
-				}
-
-				scope:actor = {
-					if = {
-						limit = { has_trait = sbs_lesser_succubus }
-						add_trait_xp = { trait = sbs_lesser_succubus track = daring value = -10 }
-					}
-					else_if = {
-						limit = { has_trait = sbs_lesser_demon }
-						add_trait_xp = { trait = sbs_lesser_demon value = -10 }
-					}
 				}
 			}
 			else_if = {

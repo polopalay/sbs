@@ -1,90 +1,231 @@
 ﻿sbs_steal_body = {
 	$VICTIM$ = { save_scope_as = victim }
 	$STEALER$ = { save_scope_as = stealer }
+
 	if = {
-		limit = { scope:victim = { is_female = yes } }
-		create_character = {
-			faith = scope:victim.faith
-			culture = scope:victim.culture
-			age = 18
-			gender = female
-			random_traits = no
-			after_creation = {
-				clear_traits = yes
-				copy_traits = scope:victim
+		limit = {
+			OR = {
+				AND = {
+					scope:victim = { is_female = yes }
+					scope:stealer = { is_female = yes }
+				}
+				AND = {
+					scope:victim = { is_male = yes }
+					scope:stealer = { is_male = yes }
+				}
 			}
-			save_scope_as = victim_traits
 		}
+
+		if = {
+			limit = { scope:stealer = { is_female = yes } }
+			create_character = {
+				faith = scope:victim.faith
+				culture = scope:victim.culture
+				age = 18
+				gender = female
+				random_traits = no
+				after_creation = {
+					clear_traits = yes
+					copy_traits = scope:victim
+				}
+				save_scope_as = victim_traits
+			}
+		}
+
+		else = {
+			create_character = {
+				faith = scope:victim.faith
+				culture = scope:victim.culture
+				age = 18
+				gender = male
+				random_traits = no
+				after_creation = {
+					clear_traits = yes
+					copy_traits = scope:victim
+				}
+				save_scope_as = victim_traits
+			}
+		}
+
 		scope:victim = {
 			save_scope_as = demon
 			clear_traits = yes
 			copy_traits = scope:stealer
+
+			if = {
+				limit = { is_immortal = yes }
+				set_immortal_age = 18
+			}
+
 			if = {
 				limit = { has_trait = pregnant }
 				remove_trait = pregnant
 			}
 		}
+
 		scope:stealer = {
 			clear_traits = yes
 			copy_traits = scope:victim_traits
+
+			if = {
+				limit = { is_immortal = yes }
+				set_immortal_age = 18
+			}
+
 			if = {
 				limit = { has_trait = pregnant }
 				remove_trait = pregnant
 			}
 		}
+
 		scope:victim_traits = {
 			death = { death_reason = death_vanished }
 		}
 	}
+
 	else = {
-		create_character = {
-			faith = scope:victim.faith
-			culture = scope:victim.culture
-			father = scope:victim.father
-			mother = scope:victim.mother
-			age = scope:victim.age
-			gender = female
-			random_traits = no
-			after_creation = {
-				change_first_name = { template_character = scope:victim }
-				set_house = scope:victim.house
-				copy_inheritable_appearance_from = scope:victim
-				clear_traits = yes
-				copy_traits = scope:stealer
-				if = {
-					limit = { has_trait = pregnant }
-					remove_trait = pregnant
-				}
+		if = {
+			limit = {
+				scope:stealer = { is_female = yes }
 			}
-			save_scope_as = demon
-		}
-		scope:victim = {
-			every_held_title = {
-				create_title_and_vassal_change = {
-					type = usurped
-					save_scope_as = change
-					add_claim_on_loss = no
+
+			create_character = {
+				faith = scope:victim.faith
+				culture = scope:victim.culture
+				father = scope:victim.father
+				mother = scope:victim.mother
+				age = scope:victim.age
+				gender = female
+				random_traits = no
+
+				after_creation = {
+					change_first_name = {
+						template_character = scope:victim
+					}
+
+					set_house = scope:victim.house
+					copy_inheritable_appearance_from = scope:victim
+
+					clear_traits = yes
+					copy_traits = scope:stealer
+
+					if = {
+						limit = { is_immortal = yes }
+						set_immortal_age = 18
+					}
+
+					if = {
+						limit = { has_trait = pregnant }
+						remove_trait = pregnant
+					}
 				}
+
+				save_scope_as = demon
+			}
+		}
+
+		else = {
+			create_character = {
+				faith = scope:victim.faith
+				culture = scope:victim.culture
+				father = scope:victim.father
+				mother = scope:victim.mother
+				age = scope:victim.age
+				gender = male
+				random_traits = no
+
+				after_creation = {
+					change_first_name = {
+						template_character = scope:victim
+					}
+
+					set_house = scope:victim.house
+					copy_inheritable_appearance_from = scope:victim
+
+					clear_traits = yes
+					copy_traits = scope:stealer
+
+					if = {
+						limit = { is_immortal = yes }
+						set_immortal_age = 18
+					}
+
+					if = {
+						limit = { has_trait = pregnant }
+						remove_trait = pregnant
+					}
+				}
+
+				save_scope_as = demon
+			}
+		}
+
+		scope:victim = {
+			every_vassal = {
+				add_to_list = sbs_steal_body_vassals
+			}
+
+			create_title_and_vassal_change = {
+				type = usurped
+				save_scope_as = title_change
+				add_claim_on_loss = no
+			}
+
+			every_held_title = {
 				change_title_holder_include_vassals = {
 					holder = scope:demon
-					change = scope:change
+					change = scope:title_change
 					take_baronies = no
 				}
-				resolve_title_and_vassal_change = scope:change
+			}
+
+			resolve_title_and_vassal_change = scope:title_change
+		}
+
+		create_title_and_vassal_change = {
+			type = granted
+			save_scope_as = vassal_change
+			add_claim_on_loss = no
+		}
+
+		every_in_list = {
+			list = sbs_steal_body_vassals
+
+			limit = {
+				highest_held_title_tier < scope:demon.highest_held_title_tier
+				NOT = {
+					liege = scope:demon
+				}
+			}
+
+			change_liege = {
+				liege = scope:demon
+				change = scope:vassal_change
 			}
 		}
+
+		resolve_title_and_vassal_change = scope:vassal_change
+
 		scope:stealer = {
 			clear_traits = yes
 			copy_traits = scope:victim
+
+			if = {
+				limit = { is_immortal = yes }
+				set_immortal_age = 18
+			}
+
 			if = {
 				limit = { has_trait = pregnant }
 				remove_trait = pregnant
 			}
 		}
+
 		scope:victim = {
 			death = { death_reason = death_vanished }
 		}
 	}
+
 	scope:stealer = {
 		set_player_character = scope:demon
 	}

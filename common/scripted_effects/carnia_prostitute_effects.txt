@@ -144,7 +144,7 @@ prostitute_effect = {
 		modifier = { add = -10 scope:prostitute = { has_trait = weak } }
 		modifier = { add = -10 scope:prostitute = { has_trait = dull } }
 		modifier = { add = -50 scope:prostitute = { has_trait = disfigured } }
-		modifier = { add = 25 scope:prostitute = { has_trait = poet } }
+		modifier = { add = 25 scope:prostitute = { has_trait = lifestyle_poet } }
 		modifier = { add = 20 scope:prostitute = { age <= 18 } }
 		modifier = { add = 10 scope:prostitute = { age <= 20 } }
 		modifier = { add = -20 scope:prostitute = { age >= 30 is_immortal = no } }

@@ -5,9 +5,11 @@ sbs_devils_gift_interaction = {
 	cooldown = { years = 1 }
 	cooldown_against_recipient = { years = 2 }
 	common_interaction = yes
+
 	is_shown = {
 		scope:actor = { has_trait_with_flag = sbs_demon_trait }
 	}
+
 	is_valid_showing_failures_only = {
 		scope:actor = {
 			OR = {
@@ -18,195 +20,497 @@ sbs_devils_gift_interaction = {
 			}
 		}
 	}
+
 	send_option = {
-		is_shown = { scope:actor = { OR = { has_trait = sbs_demon has_trait = sbs_succubus } } }
-		is_valid = {
+		is_shown = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+				OR = {
+					has_trait = sbs_demon
+					has_trait = sbs_succubus
+				}
+				faith.religious_head = root
+				faith.religion = religion:demonic_religion
+			}
+			scope:recipient = {
+				is_ruler = no
 			}
 		}
 		flag = game_concept_ruler
 		localization = game_concept_ruler
 	}
-	send_option = {
-		flag = sbs_buff
-		localization = sbs_buff
-	}
-	send_option = {
-		is_shown = { scope:recipient = { has_character_modifier = sbs_seal } }
-		flag = sbs_seal
-		localization = sbs_seal
-	}
+
 	send_option = {
 		is_shown = {
 			scope:recipient = {
 				NOR = {
 					any_secret = { secret_type = secret_deviant }
-					has_trait  = deviant
+					has_trait = deviant
 				}
 			}
 		}
 		flag = deviant
 		localization = trait_deviant
 	}
+
 	send_option = {
 		is_shown = {
 			scope:recipient = {
 				NOR = {
 					any_secret = { secret_type = secret_witch }
-					has_trait  = witch
+					has_trait = witch
 				}
 			}
 		}
 		flag = witch
 		localization = trait_witch
 	}
+
 	send_option = {
-		is_shown = { scope:recipient = { has_trait_rank = { trait = intellect_good rank < 3 } } }
+		is_shown = { scope:recipient = { has_character_modifier = sbs_seal } }
+		flag = sbs_seal
+		localization = sbs_seal
+	}
+
+	send_option = {
+		flag = sbs_buff
+		localization = sbs_buff
+	}
+
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				NOT = { has_character_modifier = possessed_by_lust_demon_modifier }
+			}
+		}
+		flag = possessed_by_lust_demon_modifier
+		localization = possessed_by_lust_demon_modifier
+	}
+
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				NOT = { has_character_modifier = legend_bloodthirsty_warrior }
+			}
+		}
+		flag = legend_bloodthirsty_warrior
+		localization = legend_bloodthirsty_warrior
+	}
+
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				NOT = { has_character_modifier = learned_in_demonology }
+			}
+		}
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy1 } }
+			}
+		}
+		flag = learned_in_demonology
+		localization = learned_in_demonology
+	}
+
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				NOT = { has_character_modifier = possessed_prophetic_visions }
+			}
+		}
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy1 } }
+			}
+		}
+		flag = possessed_prophetic_visions
+		localization = possessed_prophetic_visions
+	}
+
+	send_option = {
+		is_valid = {
+			scope:actor = { any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } } }
+		}
+		flag = intellect_good
+		localization = trait_intellect_good
+	}
+
+	send_option = {
+		is_shown = {
+			scope:recipient = { diplomacy_lifestyle_perk_points >= 1 }
+		}
 		is_valid = {
 			scope:actor = {
 				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy2 } }
 			}
 		}
-		flag = intellect_good
-		localization = trait_intellect_good
+		flag = convert_diplomacy_perk
+		localization = diplomacy
 	}
+
 	send_option = {
-		is_shown = { scope:recipient = { is_adult = yes has_trait_rank = { trait = education_learning rank < 5 } } }
+		is_shown = {
+			scope:recipient = { martial_lifestyle_perk_points >= 1 }
+		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy2 } }
+			}
+		}
+		flag = convert_martial_perk
+		localization = martial
+	}
+
+	send_option = {
+		is_shown = {
+			scope:recipient = { stewardship_lifestyle_perk_points >= 1 }
+		}
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy2 } }
+			}
+		}
+		flag = convert_stewardship_perk
+		localization = stewardship
+	}
+
+	send_option = {
+		is_shown = {
+			scope:recipient = { intrigue_lifestyle_perk_points >= 1 }
+		}
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy2 } }
+			}
+		}
+		flag = convert_intrigue_perk
+		localization = intrigue
+	}
+
+	send_option = {
+		is_shown = {
+			scope:recipient = { learning_lifestyle_perk_points >= 1 }
+		}
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy2 } }
+			}
+		}
+		flag = convert_learning_perk
+		localization = learning
+	}
+
+	send_option = {
+		is_shown = {
+			scope:actor = { is_valid_construction_alchemy_trigger = yes }
+		}
+		flag = reset_perks
+		localization = REFUND_PERKS
+	}
+
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				is_adult = yes
+				has_trait_rank = {
+					trait = education_learning
+					rank < 5
+				}
+			}
+			scope:actor = {
+				faith.religion = religion:demonic_religion
+			}
+		}
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = {
+					any_county_province = {
+						has_building_or_higher = alchemy3
+					}
+				}
 			}
 		}
 		flag = education_learning
 		localization = trait_education_learning
 	}
+
 	send_option = {
-		is_shown = { scope:recipient = { is_adult = yes has_trait_rank = { trait = education_martial rank < 5 } } }
+		is_shown = {
+			scope:recipient = {
+				is_adult = yes
+				has_trait_rank = {
+					trait = education_martial
+					rank < 5
+				}
+			}
+			scope:actor = {
+				faith.religion = religion:demonic_religion
+			}
+		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+				any_sub_realm_county = {
+					any_county_province = {
+						has_building_or_higher = alchemy3
+					}
+				}
 			}
 		}
 		flag = education_martial
 		localization = trait_education_martial
 	}
+
 	send_option = {
-		is_shown = { scope:recipient = { is_adult = yes has_trait_rank = { trait = education_intrigue rank < 5 } } }
+		is_shown = {
+			scope:recipient = {
+				is_adult = yes
+				has_trait_rank = {
+					trait = education_intrigue
+					rank < 5
+				}
+			}
+			scope:actor = {
+				faith.religion = religion:demonic_religion
+			}
+		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+				any_sub_realm_county = {
+					any_county_province = {
+						has_building_or_higher = alchemy3
+					}
+				}
 			}
 		}
 		flag = education_intrigue
 		localization = trait_education_intrigue
 	}
+
 	send_option = {
-		is_shown = { scope:recipient = { is_adult = yes has_trait_rank = { trait = education_diplomacy rank < 5 } } }
+		is_shown = {
+			scope:recipient = {
+				is_adult = yes
+				has_trait_rank = {
+					trait = education_diplomacy
+					rank < 5
+				}
+			}
+			scope:actor = {
+				faith.religion = religion:demonic_religion
+			}
+		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+				any_sub_realm_county = {
+					any_county_province = {
+						has_building_or_higher = alchemy3
+					}
+				}
 			}
 		}
 		flag = education_diplomacy
 		localization = trait_education_diplomacy
 	}
+
 	send_option = {
-		is_shown = { scope:recipient = { is_adult = yes has_trait_rank = { trait = education_stewardship rank < 5 } } }
+		is_shown = {
+			scope:recipient = {
+				is_adult = yes
+				has_trait_rank = {
+					trait = education_stewardship
+					rank < 5
+				}
+			}
+			scope:actor = {
+				faith.religion = religion:demonic_religion
+			}
+		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+				any_sub_realm_county = {
+					any_county_province = {
+						has_building_or_higher = alchemy3
+					}
+				}
 			}
 		}
 		flag = education_stewardship
 		localization = trait_education_stewardship
 	}
+
 	send_options_exclusive = yes
+
 	on_accept = {
 		scope:actor = {
 			if = {
 				limit = { has_trait = sbs_lesser_succubus }
-				add_trait_xp = { trait = sbs_lesser_succubus track = power value = -25 }
+				add_trait_xp = {
+					trait = sbs_lesser_succubus
+					track = power
+					value = -25
+				}
 			}
 			else_if = {
 				limit = { has_trait = sbs_lesser_demon }
-				add_trait_xp = { trait = sbs_lesser_demon value = -50 }
+				add_trait_xp = {
+					trait = sbs_lesser_demon
+					value = -50
+				}
 			}
 		}
+
 		scope:recipient = {
-			random_list = {
-				10 = 0
-				0 = {
-					modifier = { scope:game_concept_ruler = yes add = 10 }
-					create_landless_adventurer_title_effect = {
-						REASON = flag:voluntary
-						FLAVOR_CHAR = scope:recipient
+			if = {
+				limit = { scope:game_concept_ruler = yes }
+				create_landless_adventurer_title_effect = {
+					REASON = flag:voluntary
+					FLAVOR_CHAR = scope:recipient
+				}
+			}
+			else_if = {
+				limit = { scope:sbs_buff = yes }
+				random_list = {
+					5 = {
+						add_character_modifier = {
+							modifier = sbs_generals
+							years = 50
+						}
+					}
+					10 = {
+						modifier = {
+							is_valid_construction_alchemy_trigger = yes
+							add = 20
+						}
+						add_character_modifier = {
+							modifier = sbs_buff
+							years = 100
+						}
 					}
 				}
-				0 = {
-					modifier = { scope:sbs_buff = yes NOT = { has_character_modifier = sbs_generals } add = 5 }
-					modifier = { scope:sbs_buff = yes NOT = { has_character_modifier = sbs_generals } is_valid_construction_alchemy_trigger = yes add = 15 }
-					add_character_modifier = { modifier = sbs_generals years = 50 }
-				}
-				0 = {
-					modifier = { scope:sbs_buff = yes add = 10 }
-					modifier = { scope:sbs_buff = yes is_valid_construction_alchemy_trigger = yes add = 20 }
-					add_character_modifier = { modifier = sbs_buff years = 100 }
-				}
-				0 = {
-					modifier = { scope:sbs_seal = yes add = 40 }
-					remove_character_modifier = sbs_seal
-				}
-				0 = {
-					modifier = { scope:deviant = yes add = 40 }
-					add_trait = deviant
-				}
-				0 = {
-					modifier = { scope:witch = yes add = 40 }
-					add_trait = witch
-				}
-				0 = {
-					modifier = { scope:intellect_good = yes add = 5 }
+			}
+			else_if = {
+				limit = { scope:sbs_seal = yes }
+				remove_character_modifier = sbs_seal
+			}
+			else_if = {
+				limit = { scope:deviant = yes }
+				add_trait = deviant
+			}
+			else_if = {
+				limit = { scope:witch = yes }
+				add_trait = witch
+			}
+			else_if = {
+				limit = { scope:possessed_by_lust_demon_modifier = yes }
+				add_character_modifier = { modifier = possessed_by_lust_demon_modifier years = 10 }
+			}
+			else_if = {
+				limit = { scope:legend_bloodthirsty_warrior = yes }
+				add_character_modifier = { modifier = legend_bloodthirsty_warrior years = 10 }
+			}
+			else_if = {
+				limit = { scope:possessed_prophetic_visions = yes }
+				add_character_modifier = { modifier = possessed_prophetic_visions years = 10 }
+			}
+			else_if = {
+				limit = { scope:learned_in_demonology = yes }
+				add_character_modifier = { modifier = learned_in_demonology years = 10 }
+			}
+			else_if = {
+				limit = { scope:intellect_good = yes }
+				if = {
+					limit = { has_trait_rank = { trait = intellect_good rank < 3 } }
 					change_trait_rank = { trait = intellect_good rank = 1 }
 				}
-				0 = {
-					modifier = { scope:education_learning = yes add = 5 }
-					change_trait_rank = { trait = education_learning rank = 1 }
+				else = {
+					set_trait_rank = { trait = intellect_good rank = 0 }
 				}
-				0 = {
-					modifier = { scope:education_martial = yes add = 5 }
-					change_trait_rank = { trait = education_martial rank = 1 }
-				}
-				0 = {
-					modifier = { scope:education_intrigue = yes add = 5 }
-					change_trait_rank = { trait = education_intrigue rank = 1 }
-				}
-				0 = {
-					modifier = { scope:education_diplomacy = yes add = 5 }
-					change_trait_rank = { trait = education_diplomacy rank = 1 }
-				}
-				0 = {
-					modifier = { scope:education_stewardship = yes add = 5 }
-					change_trait_rank = { trait = education_stewardship rank = 1 }
-				}
+			}
+			else_if = {
+				limit = { scope:convert_diplomacy_perk = yes }
+				add_diplomacy_lifestyle_perk_points = -1
+				add_diplomacy_skill = 1
+			}
+			else_if = {
+				limit = { scope:convert_martial_perk = yes }
+				add_martial_lifestyle_perk_points = -1
+				add_martial_skill = 1
+			}
+			else_if = {
+				limit = { scope:convert_stewardship_perk = yes }
+				add_stewardship_lifestyle_perk_points = -1
+				add_stewardship_skill = 1
+			}
+			else_if = {
+				limit = { scope:convert_intrigue_perk = yes }
+				add_intrigue_lifestyle_perk_points = -1
+				add_intrigue_skill = 1
+			}
+			else_if = {
+				limit = { scope:convert_learning_perk = yes }
+				add_learning_lifestyle_perk_points = -1
+				add_learning_skill = 1
+			}
+			else_if = {
+				limit = { scope:reset_perks = yes }
+				refund_all_perks = yes
+				remove_all_landless_inspector_modifiers = yes
+				remove_all_perk_lifestyle_traits_effect = yes
+			}
+			else_if = {
+				limit = { scope:education_learning = yes }
+				change_trait_rank = { trait = education_learning rank = 1 }
+			}
+			else_if = {
+				limit = { scope:education_martial = yes }
+				change_trait_rank = { trait = education_martial rank = 1 }
+			}
+			else_if = {
+				limit = { scope:education_intrigue = yes }
+				change_trait_rank = { trait = education_intrigue rank = 1 }
+			}
+			else_if = {
+				limit = { scope:education_diplomacy = yes }
+				change_trait_rank = { trait = education_diplomacy rank = 1 }
+			}
+			else_if = {
+				limit = { scope:education_stewardship = yes }
+				change_trait_rank = { trait = education_stewardship rank = 1 }
 			}
 		}
 	}
+
 	auto_accept = yes
+
 	ai_frequency = 12
+
 	ai_targets = {
 		ai_recipients = self
 	}
+
 	ai_targets = {
 		ai_recipients = family
 		ai_recipients = courtiers
 		max = 10
 	}
-	ai_potential = { always = yes }
+
+	ai_potential = {
+		always = yes
+	}
+
 	ai_will_do = {
 		base = 1
-		modifier = { add = 25 scope:actor = { has_trait = sbs_demon } scope:recipient.dynasty = scope:actor.dynasty }
-		modifier = { add = 25 scope:actor = { has_trait = sbs_demon } scope:recipient = scope:actor }
-		modifier = { add = 100 scope:recipient = { has_trait = sbs_lesser_demon NOT = { has_character_modifier = sbs_generals } } }
+
+		modifier = {
+			add = 25
+			scope:actor = { OR = { has_trait = sbs_demon has_trait = sbs_succubus } }
+			scope:recipient.dynasty = scope:actor.dynasty
+			scope:recipient != scope:actor
+		}
+
+		modifier = {
+			add = 25
+			scope:actor = { OR = { has_trait = sbs_lesser_demon has_trait = sbs_lesser_succubus } }
+			scope:recipient = scope:actor
+		}
 	}
 }

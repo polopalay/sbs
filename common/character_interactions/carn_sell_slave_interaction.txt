@@ -111,8 +111,8 @@
 		modifier = { add = -5 scope:secondary_recipient = { has_trait = dull } }
 		modifier = { add = -15 scope:extortionate_gold = yes }
 		modifier = { add = -10 scope:gold = yes }
-		modifier = { add = 10 scope:hook = yes }
-		modifier = { add = 10 scope:favor = yes }
+		modifier = { add = -10 scope:hook = yes }
+		modifier = { add = -10 scope:favor = yes }
 		modifier = { add = 10 desc = carn_secondary_recipient_is_my_friend_reason scope:secondary_recipient = { has_relation_friend = scope:recipient } }
 		modifier = { add = 20 desc = carn_secondary_recipient_is_my_lover_reason scope:secondary_recipient = { has_relation_lover = scope:recipient } }
 		modifier = { add = 10 desc = carn_secondary_recipient_is_my_crush_reason scope:secondary_recipient = { has_relation_crush = scope:recipient } }

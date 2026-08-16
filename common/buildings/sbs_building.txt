@@ -9,6 +9,7 @@ brothel1 = {
 	can_construct_potential = {
 		scope:holder = {
 			OR = {
+				has_trait_with_flag = sbs_demon_trait
 				has_trait = lustful
 				has_trait = rakish
 				has_trait = deviant
@@ -28,16 +29,18 @@ brothel1 = {
 	}
 
 	ai_value = {
-		base = 0
+		base = 1
 		modifier = {
-			add = 10
+			add = 100
 			scope:holder = {
+				NOT = { any_county_in_region = { any_county_province = { has_building_or_higher = brothel1 } } }
 				has_trait_with_flag = sbs_demon_trait
 			}
 		}
 		modifier = {
-			add = 100
+			add = 1000
 			scope:holder = {
+				NOT = { any_county_in_region = { any_county_province = { has_building_or_higher = brothel1 } } }
 				has_trait = sbs_lesser_succubus
 			}
 		}
@@ -55,6 +58,7 @@ brothel2 = {
 	can_construct_potential = {
 		scope:holder = {
 			OR = {
+				has_trait_with_flag = sbs_demon_trait
 				has_trait = lustful
 				has_trait = rakish
 				has_trait = deviant
@@ -73,16 +77,18 @@ brothel2 = {
 	}
 
 	ai_value = {
-		base = 0
+		base = 1
 		modifier = {
-			add = 10
+			add = 100
 			scope:holder = {
+				NOT = { any_county_in_region = { any_county_province = { has_building_or_higher = brothel2 } } }
 				has_trait_with_flag = sbs_demon_trait
 			}
 		}
 		modifier = {
-			add = 100
+			add = 1000
 			scope:holder = {
+				NOT = { any_county_in_region = { any_county_province = { has_building_or_higher = brothel2 } } }
 				has_trait = sbs_lesser_succubus
 			}
 		}
@@ -98,6 +104,7 @@ brothel3 = {
 	can_construct_potential = {
 		scope:holder = {
 			OR = {
+				has_trait_with_flag = sbs_demon_trait
 				has_trait = lustful
 				has_trait = rakish
 				has_trait = deviant
@@ -116,16 +123,18 @@ brothel3 = {
 	}
 
 	ai_value = {
-		base = 0
+		base = 1
 		modifier = {
-			add = 10
+			add = 100
 			scope:holder = {
+				NOT = { any_county_in_region = { any_county_province = { has_building_or_higher = brothel3 } } }
 				has_trait_with_flag = sbs_demon_trait
 			}
 		}
 		modifier = {
-			add = 100
+			add = 1000
 			scope:holder = {
+				NOT = { any_county_in_region = { any_county_province = { has_building_or_higher = brothel3 } } }
 				has_trait = sbs_lesser_succubus
 			}
 		}
@@ -143,6 +152,7 @@ alchemy1 = {
 	can_construct_potential = {
 		scope:holder = {
 			OR = {
+				has_trait_with_flag = sbs_demon_trait
 				has_trait = witch
 				any_secret = { type = secret_witch }
 			}
@@ -158,16 +168,18 @@ alchemy1 = {
 	}
 
 	ai_value = {
-		base = 0
+		base = 1
 		modifier = {
-			add = 10
+			add = 100
 			scope:holder = {
+				NOT = { any_county_in_region = { any_county_province = { has_building_or_higher = alchemy1 } } }
 				has_trait_with_flag = sbs_demon_trait
 			}
 		}
 		modifier = {
-			add = 100
+			add = 1000
 			scope:holder = {
+				NOT = { any_county_in_region = { any_county_province = { has_building_or_higher = alchemy1 } } }
 				has_trait = sbs_lesser_demon
 			}
 		}
@@ -185,6 +197,7 @@ alchemy2 = {
 	can_construct_potential = {
 		scope:holder = {
 			OR = {
+				has_trait_with_flag = sbs_demon_trait
 				has_trait = witch
 				any_secret = { type = secret_witch }
 			}
@@ -200,16 +213,18 @@ alchemy2 = {
 	}
 
 	ai_value = {
-		base = 0
+		base = 1
 		modifier = {
-			add = 10
+			add = 100
 			scope:holder = {
+				NOT = { any_county_in_region = { any_county_province = { has_building_or_higher = alchemy2 } } }
 				has_trait_with_flag = sbs_demon_trait
 			}
 		}
 		modifier = {
-			add = 100
+			add = 1000
 			scope:holder = {
+				NOT = { any_county_in_region = { any_county_province = { has_building_or_higher = alchemy2 } } }
 				has_trait = sbs_lesser_demon
 			}
 		}
@@ -225,6 +240,7 @@ alchemy3 = {
 	can_construct_potential = {
 		scope:holder = {
 			OR = {
+				has_trait_with_flag = sbs_demon_trait
 				has_trait = witch
 				any_secret = { type = secret_witch }
 			}
@@ -240,19 +256,20 @@ alchemy3 = {
 	}
 
 	ai_value = {
-		base = 0
+		base = 1
 		modifier = {
-			add = 10
+			add = 100
 			scope:holder = {
+				NOT = { any_county_in_region = { any_county_province = { has_building_or_higher = alchemy3 } } }
 				has_trait_with_flag = sbs_demon_trait
 			}
 		}
 		modifier = {
-			add = 100
+			add = 1000
 			scope:holder = {
+				NOT = { any_county_in_region = { any_county_province = { has_building_or_higher = alchemy3 } } }
 				has_trait = sbs_lesser_demon
 			}
 		}
 	}
 }
-

@@ -4,6 +4,7 @@ sbs_devils_curse_interaction = {
 	use_diplomatic_range = yes
 	cooldown = { years = 1 }
 	common_interaction = yes
+
 	is_shown = {
 		scope:recipient != scope:actor
 		scope:actor = {
@@ -18,23 +19,51 @@ sbs_devils_curse_interaction = {
 			}
 		}
 	}
+
 	is_valid_showing_failures_only = {
 		scope:actor = {
 			OR = {
 				has_trait = sbs_demon
 				has_trait = sbs_succubus
-				has_trait_xp = { trait = sbs_lesser_succubus track = power value >= 25 }
-				has_trait_xp = { trait = sbs_lesser_demon value >= 25 }
+				has_trait_xp = {
+					trait = sbs_lesser_succubus
+					track = power
+					value >= 25
+				}
+				has_trait_xp = {
+					trait = sbs_lesser_demon
+					value >= 25
+				}
 			}
 		}
 	}
+
 	send_option = {
-		is_shown = { scope:recipient = {  NOT = { has_character_modifier = sbs_seal } has_trait = slave is_lowborn = yes is_ruler = no } }
+		is_shown = {
+			scope:recipient = {
+				NOT = { has_character_modifier = sbs_seal }
+				has_trait = slave
+				is_lowborn = yes
+				is_ruler = no
+			}
+		}
 		flag = sbs_seal
 		localization = sbs_seal
 	}
+
 	send_option = {
-		is_shown = { scope:actor = { is_ai = no OR = { has_trait = sbs_demon has_trait = sbs_succubus } } scope:recipient = { is_ai = yes } }
+		is_shown = {
+			scope:actor = {
+				is_ai = no
+				OR = {
+					has_trait = sbs_demon
+					has_trait = sbs_succubus
+				}
+			}
+			scope:recipient = {
+				is_ai = yes
+			}
+		}
 		is_valid = {
 			scope:actor = {
 				is_valid_construction_brothel_trigger = yes
@@ -43,25 +72,72 @@ sbs_devils_curse_interaction = {
 		flag = player
 		localization = MAPMODE_PLAYERS_LABEL
 	}
+
 	send_option = {
-		is_shown = { scope:recipient = {  NOT = { has_character_modifier = sbs_debuff } } }
+		is_shown = {
+			scope:recipient = { NOT = { has_character_modifier = sbs_debuff } }
+		}
 		flag = sbs_debuff
 		localization = sbs_debuff
 	}
+
 	send_option = {
-		is_shown = { scope:recipient = { NOT = { has_character_modifier = stanky_modifier } } }
+		is_shown = {
+			scope:recipient = { NOT = { has_character_modifier = stanky_modifier } }
+		}
 		flag = stanky_modifier
 		localization = stanky_modifier
 	}
-	send_option = {
-		is_shown = { scope:recipient = { NOT = { has_character_modifier = possessed_by_lust_demon_modifier } } }
-		flag = possessed_by_lust_demon_modifier
-		localization = possessed_by_lust_demon_modifier
-	}
+
 	send_option = {
 		is_shown = {
-			scope:recipient = {
-				NOT = { has_character_modifier = bad_omen_modifier }
+			scope:recipient = { NOT = { has_character_modifier = confused_modifier } }
+		}
+		flag = confused_modifier
+		localization = confused_modifier
+	}
+
+	send_option = {
+		is_shown = {
+			scope:recipient = { NOT = { has_character_modifier = stress_smelling_of_sweat } }
+		}
+		flag = stress_smelling_of_sweat
+		localization = stress_smelling_of_sweat
+	}
+
+	send_option = {
+		is_shown = {
+			scope:recipient = { NOT = { has_character_modifier = party_baron_murdered_the_joy_of_life_modifier } }
+		}
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy2 } }
+			}
+		}
+		flag = party_baron_murdered_the_joy_of_life_modifier
+		localization = party_baron_murdered_the_joy_of_life_modifier
+	}
+
+	send_option = {
+		is_shown = {
+			scope:recipient = { NOT = { has_character_modifier = totally_lost_modifier } }
+		}
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy2 } }
+			}
+		}
+		flag = totally_lost_modifier
+		localization = totally_lost_modifier
+	}
+
+	send_option = {
+		is_shown = {
+			scope:recipient = { NOT = { has_character_modifier = bad_omen_modifier } }
+		}
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy2 } }
 			}
 		}
 		flag = bad_omen_modifier
@@ -70,10 +146,41 @@ sbs_devils_curse_interaction = {
 
 	send_option = {
 		is_shown = {
+			scope:recipient = { NOT = { has_character_modifier = lost_in_lust_modifier } }
+		}
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy2 } }
+			}
+		}
+		flag = lost_in_lust_modifier
+		localization = lost_in_lust_modifier
+	}
+
+	send_option = {
+		is_shown = {
+			scope:recipient = { NOT = { has_character_modifier = intrigue_starved_and_deprived_modifier } }
+		}
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+			}
+		}
+		flag = intrigue_starved_and_deprived_modifier
+		localization = intrigue_starved_and_deprived_modifier
+	}
+
+	send_option = {
+		is_shown = {
 			scope:recipient = {
 				any_directly_owned_province = {
 					NOT = { has_province_modifier = plagued_by_nightmares_modifier }
 				}
+			}
+		}
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
 			}
 		}
 		flag = plagued_by_nightmares_modifier
@@ -92,9 +199,15 @@ sbs_devils_curse_interaction = {
 				}
 			}
 		}
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+			}
+		}
 		flag = county_corruption_bandits_rampant_modifier
 		localization = county_corruption_bandits_rampant_modifier
 	}
+
 	send_option = {
 		is_shown = {
 			scope:recipient = {
@@ -107,9 +220,15 @@ sbs_devils_curse_interaction = {
 				}
 			}
 		}
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+			}
+		}
 		flag = county_corruption_thieves_guild_modifier
 		localization = county_corruption_thieves_guild_modifier
 	}
+
 	send_option = {
 		is_shown = {
 			scope:recipient = {
@@ -122,6 +241,11 @@ sbs_devils_curse_interaction = {
 				}
 			}
 		}
+		is_valid = {
+			scope:actor = {
+				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+			}
+		}
 		flag = county_corruption_roaming_bandits_modifier
 		localization = county_corruption_roaming_bandits_modifier
 	}
@@ -129,76 +253,32 @@ sbs_devils_curse_interaction = {
 	send_option = {
 		is_shown = {
 			scope:recipient = {
-				NOT = { has_character_modifier = totally_lost_modifier }
+				capital_province = { any_province_epidemic = { count <= 0 } }
 			}
-		}
-		flag = totally_lost_modifier
-		localization = totally_lost_modifier
-	}
-
-	send_option = {
-		is_shown = {
-			scope:recipient = {
-				NOT = { has_character_modifier = confused_modifier }
+			scope:actor = {
+				OR = { has_trait = sbs_demon has_trait = sbs_succubus }
+				faith.religion = religion:demonic_religion
 			}
-		}
-		flag = confused_modifier
-		localization = confused_modifier
-	}
-
-	send_option = {
-		is_shown = {
-			scope:recipient = {
-				NOT = { has_character_modifier = intrigue_starved_and_deprived_modifier }
-			}
-		}
-		flag = intrigue_starved_and_deprived_modifier
-		localization = intrigue_starved_and_deprived_modifier
-	}
-
-	send_option = {
-		is_shown = {
-			scope:recipient = {
-				NOT = { has_character_modifier = lost_in_lust_modifier }
-			}
-		}
-		flag = lost_in_lust_modifier
-		localization = lost_in_lust_modifier
-	}
-
-	send_option = {
-		is_shown = {
-			scope:recipient = {
-				NOT = { has_character_modifier = stress_smelling_of_sweat }
-			}
-		}
-		flag = stress_smelling_of_sweat
-		localization = stress_smelling_of_sweat
-	}
-	send_option = {
-		is_shown = { scope:recipient = { NOT = { has_character_modifier = party_baron_murdered_the_joy_of_life_modifier } } }
-		flag = party_baron_murdered_the_joy_of_life_modifier
-		localization = party_baron_murdered_the_joy_of_life_modifier
-	}
-	send_option = {
-		is_shown = { scope:recipient = { NOT = { has_character_modifier = intrigue_broken_modifier } } }
-		flag = intrigue_broken_modifier
-		localization = intrigue_broken_modifier
-	}
-	send_option = {
-		is_shown = {
-			scope:recipient = { NOT = { has_trait = pneumonic } }
 		}
 		is_valid = {
 			scope:actor = {
 				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
 			}
 		}
-		flag = pneumonic
-		localization = trait_pneumonic
+		flag = smallpox
+		localization = trait_smallpox
 	}
+
 	send_option = {
-		is_shown = { scope:recipient = { NOT = { has_trait = typhus } } }
+		is_shown = {
+			scope:recipient = {
+				capital_province = { any_province_epidemic = { count <= 0 } }
+			}
+			scope:actor = {
+				OR = { has_trait = sbs_demon has_trait = sbs_succubus }
+				faith.religion = religion:demonic_religion
+			}
+		}
 		is_valid = {
 			scope:actor = {
 				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
@@ -207,8 +287,17 @@ sbs_devils_curse_interaction = {
 		flag = typhus
 		localization = trait_typhus
 	}
+
 	send_option = {
-		is_shown = { scope:recipient = { NOT = { has_trait = consumption } } }
+		is_shown = {
+			scope:recipient = {
+				capital_province = { any_province_epidemic = { count <= 0 } }
+			}
+			scope:actor = {
+				OR = { has_trait = sbs_demon has_trait = sbs_succubus }
+				faith.religion = religion:demonic_religion
+			}
+		}
 		is_valid = {
 			scope:actor = {
 				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
@@ -217,8 +306,17 @@ sbs_devils_curse_interaction = {
 		flag = consumption
 		localization = trait_consumption
 	}
+
 	send_option = {
-		is_shown = { scope:recipient = { NOT = { has_trait = bubonic_plague } } }
+		is_shown = {
+			scope:recipient = {
+				capital_province = { any_province_epidemic = { count <= 0 } }
+			}
+			scope:actor = {
+				OR = { has_trait = sbs_demon has_trait = sbs_succubus }
+				faith.religion = religion:demonic_religion
+			}
+		}
 		is_valid = {
 			scope:actor = {
 				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
@@ -227,8 +325,17 @@ sbs_devils_curse_interaction = {
 		flag = bubonic_plague
 		localization = trait_bubonic_plague
 	}
+
 	send_option = {
-		is_shown = { scope:recipient = { NOT = { has_trait = measles } } }
+		is_shown = {
+			scope:recipient = {
+				capital_province = { any_province_epidemic = { count <= 0 } }
+			}
+			scope:actor = {
+				OR = { has_trait = sbs_demon has_trait = sbs_succubus }
+				faith.religion = religion:demonic_religion
+			}
+		}
 		is_valid = {
 			scope:actor = {
 				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
@@ -237,8 +344,17 @@ sbs_devils_curse_interaction = {
 		flag = measles
 		localization = trait_measles
 	}
+
 	send_option = {
-		is_shown = { scope:recipient = { NOT = { has_trait = dysentery } } }
+		is_shown = {
+			scope:recipient = {
+				capital_province = { any_province_epidemic = { count <= 0 } }
+			}
+			scope:actor = {
+				OR = { has_trait = sbs_demon has_trait = sbs_succubus }
+				faith.religion = religion:demonic_religion
+			}
+		}
 		is_valid = {
 			scope:actor = {
 				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
@@ -247,8 +363,17 @@ sbs_devils_curse_interaction = {
 		flag = dysentery
 		localization = trait_dysentery
 	}
+
 	send_option = {
-		is_shown = { scope:recipient = { NOT = { has_trait = ergotism } } }
+		is_shown = {
+			scope:recipient = {
+				capital_province = { any_province_epidemic = { count <= 0 } }
+			}
+			scope:actor = {
+				OR = { has_trait = sbs_demon has_trait = sbs_succubus }
+				faith.religion = religion:demonic_religion
+			}
+		}
 		is_valid = {
 			scope:actor = {
 				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
@@ -257,6 +382,7 @@ sbs_devils_curse_interaction = {
 		flag = ergotism
 		localization = trait_ergotism
 	}
+
 	send_options_exclusive = yes
 
 	on_accept = {
@@ -270,146 +396,184 @@ sbs_devils_curse_interaction = {
 				add_trait_xp = { trait = sbs_lesser_demon value = -25 }
 			}
 		}
+
 		scope:recipient = {
-			random_list = {
-				10 = 0
-				0 = {
-					modifier = { scope:sbs_seal = yes add = 30 }
-					add_character_modifier = sbs_seal
+			if = {
+				limit = { scope:sbs_seal = yes }
+				add_character_modifier = sbs_seal
+			}
+			else_if = {
+				limit = { scope:player = yes }
+				sbs_steal_body = { VICTIM = scope:recipient STEALER = scope:actor }
+			}
+			else_if = {
+				limit = { scope:sbs_debuff = yes }
+				add_character_modifier = { modifier = sbs_debuff years = 10 }
+			}
+			else_if = {
+				limit = { scope:stanky_modifier = yes }
+				add_character_modifier = { modifier = stanky_modifier years = 5 }
+			}
+			else_if = {
+				limit = { scope:party_baron_murdered_the_joy_of_life_modifier = yes }
+				add_character_modifier = { modifier = party_baron_murdered_the_joy_of_life_modifier years = 5 }
+			}
+			else_if = {
+				limit = { scope:bad_omen_modifier = yes }
+				add_character_modifier = { modifier = bad_omen_modifier years = 5 }
+			}
+			else_if = {
+				limit = { scope:totally_lost_modifier = yes }
+				add_character_modifier = { modifier = totally_lost_modifier years = 5 }
+			}
+			else_if = {
+				limit = { scope:confused_modifier = yes }
+				add_character_modifier = { modifier = confused_modifier years = 5 }
+			}
+			else_if = {
+				limit = { scope:intrigue_starved_and_deprived_modifier = yes }
+				add_character_modifier = { modifier = intrigue_starved_and_deprived_modifier years = 5 }
+			}
+			else_if = {
+				limit = { scope:lost_in_lust_modifier = yes }
+				add_character_modifier = { modifier = lost_in_lust_modifier years = 5 }
+			}
+			else_if = {
+				limit = { scope:stress_smelling_of_sweat = yes }
+				add_character_modifier = { modifier = stress_smelling_of_sweat years = 5 }
+			}
+			else_if = {
+				limit = { scope:plagued_by_nightmares_modifier = yes }
+				random_directly_owned_province = {
+					limit = { NOT = { has_province_modifier = plagued_by_nightmares_modifier } }
+					add_province_modifier = { modifier = plagued_by_nightmares_modifier years = 10 }
 				}
-				0 = {
-					modifier = { scope:player = yes add = 90 }
-					sbs_steal_body = { VICTIM = scope:recipient STEALER = scope:actor }	
-				}
-				0 = {
-					modifier = { scope:sbs_debuff = yes add = 10 }
-					add_character_modifier = { modifier = sbs_debuff years = 10 }
-				}
-				0 = {
-					modifier = { scope:stanky_modifier = yes add = 30 }
-					add_character_modifier = { modifier =  stanky_modifier years = 1 }
-				}
-				0 = {
-					modifier = { scope:possessed_by_lust_demon_modifier = yes add = 40 }
-					add_character_modifier = possessed_by_lust_demon_modifier
-				}
-				0 = {
-					modifier = { scope:party_baron_murdered_the_joy_of_life_modifier = yes add = 30 }
-					add_character_modifier = party_baron_murdered_the_joy_of_life_modifier
-				}
-				0 = {
-					modifier = { scope:bad_omen_modifier = yes add = 20 }
-					add_character_modifier = { modifier = bad_omen_modifier years = 3 }
-				}
-				0 = {
-					modifier = { scope:plagued_by_nightmares_modifier = yes add = 20 }
-					random_directly_owned_province = {
-						limit = { NOT = { has_province_modifier = plagued_by_nightmares_modifier } }
-						add_province_modifier = { modifier = plagued_by_nightmares_modifier years = 3 }
-					}
-				}
-				0 = {
-					modifier = { scope:totally_lost_modifier = yes add = 20 }
-					add_character_modifier = { modifier = totally_lost_modifier years = 3 }
-				}
-				0 = {
-					modifier = { scope:confused_modifier = yes add = 30 }
-					add_character_modifier = { modifier = confused_modifier years = 3 }
-				}
-				0 = {
-					modifier = { scope:intrigue_starved_and_deprived_modifier = yes add = 10 }
-					add_character_modifier = { modifier = intrigue_starved_and_deprived_modifier years = 1 }
-				}
-				0 = {
-					modifier = { scope:county_corruption_bandits_rampant_modifier = yes add = 20 }
-					random_held_county = {
-						limit = {
-							NOT = { has_county_modifier = county_corruption_bandits_rampant_modifier }
-							NOR = {
-								title_province = { has_holding_type = nomad_holding }
-								title_province = { has_holding_type = herder_holding }
-							}
+			}
+			else_if = {
+				limit = { scope:county_corruption_bandits_rampant_modifier = yes }
+				random_held_county = {
+					limit = {
+						NOT = { has_county_modifier = county_corruption_bandits_rampant_modifier }
+						NOR = {
+							title_province = { has_holding_type = nomad_holding }
+							title_province = { has_holding_type = herder_holding }
 						}
-						add_county_modifier = { modifier = county_corruption_bandits_rampant_modifier years = 3 }
 					}
+					add_county_modifier = { modifier = county_corruption_bandits_rampant_modifier years = 10 }
 				}
-				0 = {
-					modifier = { scope:county_corruption_thieves_guild_modifier = yes add = 20 }
-					random_held_county = {
-						limit = {
-							NOT = { has_county_modifier = county_corruption_thieves_guild_modifier }
-							NOR = {
-								title_province = { has_holding_type = nomad_holding }
-								title_province = { has_holding_type = herder_holding }
-							}
+			}
+			else_if = {
+				limit = { scope:county_corruption_thieves_guild_modifier = yes }
+				random_held_county = {
+					limit = {
+						NOT = { has_county_modifier = county_corruption_thieves_guild_modifier }
+						NOR = {
+							title_province = { has_holding_type = nomad_holding }
+							title_province = { has_holding_type = herder_holding }
 						}
-						add_county_modifier = { modifier = county_corruption_thieves_guild_modifier years = 3 }
 					}
+					add_county_modifier = { modifier = county_corruption_thieves_guild_modifier years = 10 }
 				}
-				0 = {
-					modifier = { scope:county_corruption_roaming_bandits_modifier = yes add = 20 }
-					random_held_county = {
-						limit = {
-							NOT = { has_county_modifier = county_corruption_roaming_bandits_modifier }
-							OR = {
-								title_province = { has_holding_type = nomad_holding }
-								title_province = { has_holding_type = herder_holding }
-							}
+			}
+			else_if = {
+				limit = { scope:county_corruption_roaming_bandits_modifier = yes }
+				random_held_county = {
+					limit = {
+						NOT = { has_county_modifier = county_corruption_roaming_bandits_modifier }
+						OR = {
+							title_province = { has_holding_type = nomad_holding }
+							title_province = { has_holding_type = herder_holding }
 						}
-						add_county_modifier = { modifier = county_corruption_roaming_bandits_modifier years = 3 }
+					}
+					add_county_modifier = { modifier = county_corruption_roaming_bandits_modifier years = 10 }
+				}
+			}
+			else_if = {
+				limit = { scope:smallpox = yes }
+				capital_province = {
+					create_epidemic_outbreak = {
+						type = smallpox
+						intensity = minor
 					}
 				}
-				0 = {
-					modifier = { scope:lost_in_lust_modifier = yes add = 30 }
-					add_character_modifier = { modifier = lost_in_lust_modifier years = 3 }
+			}
+			else_if = {
+				limit = { scope:typhus = yes }
+				capital_province = {
+					create_epidemic_outbreak = {
+						type = typhus
+						intensity = minor
+					}
 				}
-				0 = {
-					modifier = { scope:stress_smelling_of_sweat = yes add = 30 }
-					add_character_modifier = { modifier = stress_smelling_of_sweat years = 1 }
+			}
+			else_if = {
+				limit = { scope:consumption = yes }
+				capital_province = {
+					create_epidemic_outbreak = {
+						type = consumption
+						intensity = minor
+					}
 				}
-				0 = {
-					modifier = { scope:intrigue_broken_modifier = yes add = 10 }
-					add_character_modifier = intrigue_broken_modifier
+			}
+			else_if = {
+				limit = { scope:bubonic_plague = yes }
+				capital_province = {
+					create_epidemic_outbreak = {
+						type = bubonic_plague
+						intensity = minor
+					}
 				}
-				0 = {
-					modifier = { scope:pneumonic = yes add = 5 }
-					add_trait = pneumonic
+			}
+			else_if = {
+				limit = { scope:measles = yes }
+				capital_province = {
+					create_epidemic_outbreak = {
+						type = measles
+						intensity = minor
+					}
 				}
-				0 = {
-					modifier = { scope:typhus = yes add = 5 }
-					add_trait = typhus
+			}
+			else_if = {
+				limit = { scope:dysentery = yes }
+				capital_province = {
+					create_epidemic_outbreak = {
+						type = dysentery
+						intensity = minor
+					}
 				}
-				0 = {
-					modifier = { scope:consumption = yes add = 5 }
-					add_trait = consumption
-				}
-				0 = {
-					modifier = { scope:bubonic_plague = yes add = 5 }
-					add_trait = bubonic_plague
-				}
-				0 = {
-					modifier = { scope:measles = yes add = 5 }
-					add_trait = measles
-				}
-				0 = {
-					modifier = { scope:dysentery = yes add = 5 }
-					add_trait = dysentery
-				}
-				0 = {
-					modifier = { scope:ergotism = yes add = 5 }
-					add_trait = ergotism
+			}
+			else_if = {
+				limit = { scope:ergotism = yes }
+				capital_province = {
+					create_epidemic_outbreak = {
+						type = ergotism
+						intensity = minor
+					}
 				}
 			}
 		}
 	}
+
 	auto_accept = yes
+
 	ai_frequency = 24
+
 	ai_targets = {
 		ai_recipients = courtiers
 	}
-	ai_potential = { always = yes }
+
+	ai_potential = {
+		always = yes
+	}
+
 	ai_will_do = {
 		base = 0
-		modifier = { add = 100 scope:actor = { has_trait = sbs_lesser_demon has_relation_slave = scope:recipient } }
+
+		modifier = {
+			add = 100
+			scope:actor = {
+				has_relation_slave = scope:recipient
+			}
+		}
 	}
 }

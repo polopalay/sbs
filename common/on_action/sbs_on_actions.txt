@@ -43,10 +43,11 @@ sbs_female_on_action = {
 			}
 			0 = {
 				modifier = { any_character_artifact = { has_artifact_modifier = reddreamring_modifier } add = 3 }
+				modifier = { has_character_modifier = possessed_by_lust_demon_modifier add = 2 }
 				trigger_event = sbs_go.1410 # gremlin fuck
 			}
 			0 = {
-				modifier = { any_character_artifact = { has_artifact_modifier = reddreamring_modifier } add = 1 }
+				modifier = { any_character_artifact = { has_artifact_modifier = reddreamring_modifier } has_character_modifier = possessed_by_lust_demon_modifier add = 1 }
 				trigger_event = sbs_go.1300 # special dream
 			}
 			0 = {

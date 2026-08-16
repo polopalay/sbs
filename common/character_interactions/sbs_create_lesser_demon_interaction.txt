@@ -10,8 +10,8 @@
 		scope:recipient = { NOT = { has_trait_with_flag = sbs_demon_trait } }
 		scope:actor = { OR = { has_trait = sbs_demon has_trait = sbs_succubus } }
 	}
-	is_valid_showing_failures_first = {
-		scope:recipient = { age >= 18 }
+	is_valid = {
+		scope:recipient.age >= 18
 		scope:actor = {
 			trigger_if = {
 				limit = { scope:recipient = { is_female = yes } }
@@ -108,24 +108,6 @@
 		localization = "RELEASE_DEMAND_CONVERSION"
 		is_shown = { scope:recipient.faith != scope:actor.faith }
 		is_valid = {
-			trigger_if = {
-				limit = { scope:actor = { is_ai = yes } }
-				scope:recipient = {
-					OR = {
-						is_close_or_extended_family_of = scope:actor
-						is_vassal_of = scope:actor
-					}
-				}
-			}
-			custom_description = {
-				text = cannot_demand_unsubordinate_landed_ruler_conversion
-				scope:recipient = {
-					trigger_if = {
-						limit = { is_playable_character = yes }
-						is_vassal_or_below_of = scope:actor
-					}
-				}
-			}
 			custom_description = {
 				text = cannot_demand_religious_head_conversion
 				NAND = {
