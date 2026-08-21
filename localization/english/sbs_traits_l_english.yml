@@ -1,4 +1,8 @@
 ﻿l_english:
+ trait_sbs_true_demon: "True Demon"
+ sbs_true_demon_desc: "An ancient demon whose power predates mortal infernal rites."
+ sbs_true_demon_character_desc: "[ROOT.GetCharacter.GetName] is a True Demon, an ancient being able to wield demonic magic without mortal infrastructure."
+
  trait_sbs_demon: "Demon"
  sbs_demon_desc: "Those cursed by heaven, blessed by hell. Deep within them is death and destruction."
  sbs_demon_character_desc: "As children of the devil, blessed by the princes of hell. [ROOT.GetCharacter.GetNamePossessive]'s mission is to bless chaos and destruction throughout the world."

@@ -2,7 +2,9 @@
 	category = interaction_category_prison
 	desc = carnia_slave_training_interaction.desc
 	common_interaction = yes
+
 	cooldown_against_recipient = { years = 1 }
+
 	is_shown = {
 		scope:actor = {
 			is_adult = yes
@@ -13,121 +15,141 @@
 			is_courtier_of = scope:actor
 		}
 	}
+
 	localization_values = {
 		RANSOM_COST = scope:recipient.gold
 	}
+
 	send_option = {
-		is_shown = {  scope:recipient = { has_std_trigger = no is_female = yes is_adult = yes } }
-		flag = prostitute
-		localization = "carnia_prostitute_interaction"
-	}
-	send_option = {
-		is_shown = {  scope:actor = { is_attracted_to_gender_of = scope:recipient OR = { has_trait = deviant has_trait = lustful any_secret = { type = secret_deviant } } } }
+		is_shown = {
+			scope:actor = {
+				is_attracted_to_gender_of = scope:recipient
+				OR = {
+					has_trait = deviant
+					has_trait = lustful
+					any_secret = { type = secret_deviant }
+				}
+			}
+		}
 		flag = had_sex
 		localization = "trait_deviant"
 	}
+
 	send_option = {
-		is_shown = { scope:recipient = { should_be_naked_trigger = no } }
+		is_shown = {
+			scope:recipient = { should_be_naked_trigger = no }
+		}
 		flag = naked
 		localization = diplomacy_majesty_4090_no_raiment_modifier
 	}
+
 	send_option = {
 		is_shown = { scope:recipient.gold > 0 }
 		flag = gold
 		localization = "RANSOM_GOLD_OPTION"
 	}
+
 	send_option = {
 		is_shown = { scope:actor.faith != scope:recipient.faith }
 		flag = conversion
 		localization = "ask_for_conversion_interaction"
 	}
+
 	send_option = {
-		is_shown = { scope:recipient = { has_trait_rank = { trait = wounded rank < 3 } } }
-		flag = torture
-		localization = "torture_interaction"
-	}
-	send_options_exclusive = yes
-	on_accept = {
-		scope:recipient = {
-			random_list = {
-				0 = {
-					modifier = { scope:actor = { is_ai = yes } is_female = yes add = 50 }
-					modifier = { scope:prostitute = yes add = 1 }
-					scope:actor = {
-						save_scope_as = broker
-						add_piety = miniscule_piety_loss
-					}
-					random_living_character = {
-						limit = { is_lowborn = yes is_ruler = no is_female = no is_adult = yes in_diplomatic_range = scope:actor }
-						had_sex_with_effect = { CHARACTER = scope:recipient PREGNANCY_CHANCE = pregnancy_chance }
-						pay_short_term_gold = { target = scope:actor gold = tiny_gold_value }
-					}
-				}
-				0 = {
-					modifier = { scope:had_sex = yes add = 1 }
-					had_sex_with_effect = { CHARACTER = scope:actor PREGNANCY_CHANCE = pregnancy_chance }
-					scope:actor = {
-						add_piety = minor_piety_loss
-						stress_impact = {
-							base = minor_stress_impact_loss
-							lustful = miniscule_stress_impact_loss
-							chaste = medium_stress_impact_gain
-						}
-					}
-				}
-				0 = {
-					modifier = { scope:naked = yes add = 1 }
-					add_character_modifier = { modifier =  diplomacy_majesty_4090_no_raiment_modifier years = 10 }
-					scope:actor = { add_tyranny = 1 }
-				}
-				0 = {
-					modifier = { scope:gold = yes add = 1 }
-					pay_short_term_gold = { target = scope:actor gold = gold }
-					scope:actor = { add_tyranny = 5 }
-				}
-				0 = {
-					modifier = { scope:conversion = yes add = 1 }
-					set_character_faith_with_conversion = scope:actor.faith
-					scope:actor = { add_tyranny = 10 }
-				}
-				0 = {
-					modifier = { scope:torture = yes add = 1 }
-					if = {
-						limit = { current_weight < -60 }
-						change_current_weight = -10
-					}
-					else_if = {
-						limit = { NOT = { has_character_modifier = aging_gracefully_modifier } }
-						add_character_modifier = { modifier =  aging_gracefully_modifier years = 5 }
-					}
-					else_if = {
-						limit = { NOT = { has_character_modifier = stress_smelling_of_sweat } }
-						add_character_modifier = { modifier =  stress_smelling_of_sweat years = 1 }
-					}
-					else_if = {
-						limit = { NOT = { has_character_modifier = exhausted_modifier } }
-						add_character_modifier = { modifier =  exhausted_modifier months = 1 }
-					}
-					else = {
-						change_trait_rank = { trait = wounded rank = 1 }
-					}
-					stress_impact = {
-						base = minor_stress_impact_loss
-						sadistic = medium_stress_impact_loss
-						vengeful = minor_stress_impact_loss
-						callous = miniscule_stress_impact_loss
-						compassionate = minor_stress_impact_gain
-						forgiving = miniscule_stress_impact_gain
-					}
-					scope:actor = { add_tyranny = 20 }
+		is_shown = {
+			scope:recipient = {
+				has_trait_rank = {
+					trait = wounded
+					rank < 3
 				}
 			}
 		}
+		flag = torture
+		localization = "torture_interaction"
 	}
+
+	send_options_exclusive = yes
+
+	on_accept = {
+		scope:recipient = {
+			if = {
+				limit = { scope:had_sex = yes }
+				had_sex_with_effect = { CHARACTER = scope:actor PREGNANCY_CHANCE = pregnancy_chance }
+				scope:actor = {
+					add_piety = minor_piety_loss
+					stress_impact = {
+						base = minor_stress_impact_loss
+						lustful = miniscule_stress_impact_loss
+						chaste = medium_stress_impact_gain
+					}
+				}
+			}
+			else_if = {
+				limit = { scope:naked = yes }
+				add_character_modifier = {
+					modifier = diplomacy_majesty_4090_no_raiment_modifier
+					years = 10
+				}
+				scope:actor = { add_tyranny = 1 }
+			}
+			else_if = {
+				limit = { scope:gold = yes }
+				pay_short_term_gold = { target = scope:actor gold = gold }
+				scope:actor = { add_tyranny = 5 }
+			}
+			else_if = {
+				limit = { scope:conversion = yes }
+				set_character_faith_with_conversion = scope:actor.faith
+				scope:actor = { add_tyranny = 5 }
+			}
+			else_if = {
+				limit = { scope:torture = yes }
+				if = {
+					limit = { current_weight < -60 }
+					change_current_weight = -10
+				}
+				else_if = {
+					limit = { NOT = { has_character_modifier = aging_gracefully_modifier } }
+					add_character_modifier = { modifier = aging_gracefully_modifier years = 5 }
+				}
+				else_if = {
+					limit = { NOT = { has_character_modifier = stress_smelling_of_sweat } }
+					add_character_modifier = { modifier = stress_smelling_of_sweat years = 1 }
+				}
+				else_if = {
+					limit = { NOT = { has_character_modifier = exhausted_modifier } }
+					add_character_modifier = { modifier = exhausted_modifier months = 1 }
+				}
+				else = {
+					change_trait_rank = { trait = wounded rank = 1 }
+				}
+
+				stress_impact = {
+					base = minor_stress_impact_loss
+					sadistic = medium_stress_impact_loss
+					vengeful = minor_stress_impact_loss
+					callous = miniscule_stress_impact_loss
+					compassionate = minor_stress_impact_gain
+					forgiving = miniscule_stress_impact_gain
+				}
+
+				scope:actor = { add_tyranny = 10 }
+			}
+		}
+	}
+
 	auto_accept = yes
-	ai_targets = { ai_recipients = courtiers }
-	ai_potential = { always = yes }
+
+	ai_targets = {
+		ai_recipients = courtiers
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
 	ai_frequency = 12
+
 	ai_will_do = {
 		base = 25
 		ai_value_modifier = {

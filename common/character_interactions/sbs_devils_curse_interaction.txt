@@ -23,6 +23,7 @@ sbs_devils_curse_interaction = {
 	is_valid_showing_failures_only = {
 		scope:actor = {
 			OR = {
+				has_trait = sbs_true_demon
 				has_trait = sbs_demon
 				has_trait = sbs_succubus
 				has_trait_xp = {
@@ -56,6 +57,7 @@ sbs_devils_curse_interaction = {
 			scope:actor = {
 				is_ai = no
 				OR = {
+					has_trait = sbs_true_demon
 					has_trait = sbs_demon
 					has_trait = sbs_succubus
 				}
@@ -111,7 +113,7 @@ sbs_devils_curse_interaction = {
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy2 } }
+				sbs_has_alchemy_2_trigger = yes
 			}
 		}
 		flag = party_baron_murdered_the_joy_of_life_modifier
@@ -124,7 +126,7 @@ sbs_devils_curse_interaction = {
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy2 } }
+				sbs_has_alchemy_2_trigger = yes
 			}
 		}
 		flag = totally_lost_modifier
@@ -137,7 +139,7 @@ sbs_devils_curse_interaction = {
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy2 } }
+				sbs_has_alchemy_2_trigger = yes
 			}
 		}
 		flag = bad_omen_modifier
@@ -150,7 +152,7 @@ sbs_devils_curse_interaction = {
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy2 } }
+				sbs_has_alchemy_2_trigger = yes
 			}
 		}
 		flag = lost_in_lust_modifier
@@ -163,7 +165,7 @@ sbs_devils_curse_interaction = {
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+				sbs_has_alchemy_3_trigger = yes
 			}
 		}
 		flag = intrigue_starved_and_deprived_modifier
@@ -180,7 +182,7 @@ sbs_devils_curse_interaction = {
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+				sbs_has_alchemy_3_trigger = yes
 			}
 		}
 		flag = plagued_by_nightmares_modifier
@@ -201,7 +203,7 @@ sbs_devils_curse_interaction = {
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+				sbs_has_alchemy_3_trigger = yes
 			}
 		}
 		flag = county_corruption_bandits_rampant_modifier
@@ -222,7 +224,7 @@ sbs_devils_curse_interaction = {
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+				sbs_has_alchemy_3_trigger = yes
 			}
 		}
 		flag = county_corruption_thieves_guild_modifier
@@ -243,7 +245,7 @@ sbs_devils_curse_interaction = {
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+				sbs_has_alchemy_3_trigger = yes
 			}
 		}
 		flag = county_corruption_roaming_bandits_modifier
@@ -255,14 +257,10 @@ sbs_devils_curse_interaction = {
 			scope:recipient = {
 				capital_province = { any_province_epidemic = { count <= 0 } }
 			}
-			scope:actor = {
-				OR = { has_trait = sbs_demon has_trait = sbs_succubus }
-				faith.religion = religion:demonic_religion
-			}
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+				sbs_has_alchemy_3_trigger = yes
 			}
 		}
 		flag = smallpox
@@ -274,14 +272,10 @@ sbs_devils_curse_interaction = {
 			scope:recipient = {
 				capital_province = { any_province_epidemic = { count <= 0 } }
 			}
-			scope:actor = {
-				OR = { has_trait = sbs_demon has_trait = sbs_succubus }
-				faith.religion = religion:demonic_religion
-			}
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+				sbs_has_alchemy_3_trigger = yes
 			}
 		}
 		flag = typhus
@@ -293,14 +287,10 @@ sbs_devils_curse_interaction = {
 			scope:recipient = {
 				capital_province = { any_province_epidemic = { count <= 0 } }
 			}
-			scope:actor = {
-				OR = { has_trait = sbs_demon has_trait = sbs_succubus }
-				faith.religion = religion:demonic_religion
-			}
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+				sbs_has_alchemy_3_trigger = yes
 			}
 		}
 		flag = consumption
@@ -312,14 +302,10 @@ sbs_devils_curse_interaction = {
 			scope:recipient = {
 				capital_province = { any_province_epidemic = { count <= 0 } }
 			}
-			scope:actor = {
-				OR = { has_trait = sbs_demon has_trait = sbs_succubus }
-				faith.religion = religion:demonic_religion
-			}
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+				sbs_has_alchemy_3_trigger = yes
 			}
 		}
 		flag = bubonic_plague
@@ -331,14 +317,10 @@ sbs_devils_curse_interaction = {
 			scope:recipient = {
 				capital_province = { any_province_epidemic = { count <= 0 } }
 			}
-			scope:actor = {
-				OR = { has_trait = sbs_demon has_trait = sbs_succubus }
-				faith.religion = religion:demonic_religion
-			}
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+				sbs_has_alchemy_3_trigger = yes
 			}
 		}
 		flag = measles
@@ -350,14 +332,10 @@ sbs_devils_curse_interaction = {
 			scope:recipient = {
 				capital_province = { any_province_epidemic = { count <= 0 } }
 			}
-			scope:actor = {
-				OR = { has_trait = sbs_demon has_trait = sbs_succubus }
-				faith.religion = religion:demonic_religion
-			}
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+				sbs_has_alchemy_3_trigger = yes
 			}
 		}
 		flag = dysentery
@@ -369,14 +347,10 @@ sbs_devils_curse_interaction = {
 			scope:recipient = {
 				capital_province = { any_province_epidemic = { count <= 0 } }
 			}
-			scope:actor = {
-				OR = { has_trait = sbs_demon has_trait = sbs_succubus }
-				faith.religion = religion:demonic_religion
-			}
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+				sbs_has_alchemy_3_trigger = yes
 			}
 		}
 		flag = ergotism

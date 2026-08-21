@@ -1,7 +1,12 @@
 ﻿l_simp_chinese:
+ trait_sbs_true_demon: "真魔"
+ sbs_true_demon_desc: "拥有远超凡人极限之力的远古恶魔。真魔能够施展一切恶魔仪式，但永远不会统领军队。"
+ sbs_true_demon_character_desc: "[ROOT.GetCharacter.GetName]是一名真魔：拥有压倒性的力量，超脱凡人的脆弱，无需凡俗设施便可施展一切恶魔仪式。这样的存在永远不会担任军队统帅。"
+
  trait_sbs_demon: "恶魔"
  sbs_demon_desc: "被天堂诅咒，被地狱祝福，内心充斥着死亡和毁灭之人。"
  sbs_demon_character_desc: "作为受到地狱祝福的恶魔之子。[ROOT.GetCharacter.GetNamePossessive]生来就怀着给世界带来混乱和毁灭的使命。"
+
  trait_sbs_succubus_neutral: "魅魔"
  trait_sbs_succubus_female: "魅魔"
  trait_sbs_succubus_male: "梦魇"
@@ -15,6 +20,7 @@
  trait_track_loyalty_desc: "确保男人忠诚的方法可不止一种"
  trait_track_daring: "勇气"
  trait_track_daring_desc: "生活中的许多事情都需要勇气"
+
  trait_lesser_succubus_neutral: "低等魅魔"
  trait_lesser_succubus_female: "低等魅魔"
  trait_lesser_succubus_male: "低等梦魇"
@@ -22,6 +28,7 @@
  lesser_sbs_succubus_character_desc: "大多数人都听说过，甚至是见过[ROOT.GetCharacter.GetNamePossessive]道德败坏的行为。人们对她的评价就像对街头妓女一样不屑一顾。"
  trait_track_sbs_lesser_succubus: "淫能"
  trait_track_sbs_lesser_succubus_desc: "她是一位竭心侍奉男性以乞求精液的廉价娼妓"
+
  trait_sbs_lesser_demon: "恶魔之种"
  sbs_lesser_demon_desc: "[ROOT.GetCharacter.GetName]被恶魔赋予力量，是毁灭和混乱的象征。"
  sbs_lesser_demon_character_desc: "亚巴顿给世界带来毁灭和混乱的仆人。"

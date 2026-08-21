@@ -1,0 +1,288 @@
+﻿sbs_reset_all_lifestyle_perks_effect = {
+	refund_all_perks = yes
+	remove_all_perk_lifestyle_traits_effect = yes
+}
+
+sbs_grant_diplomat_branch_effect = {
+	add_perk = thoughtful_perk
+	add_perk = ducal_conquest_perk
+	add_perk = forced_vassalage_perk
+	add_perk = adaptive_traditions_perk
+	add_perk = flexible_truces_perk
+	add_perk = defensive_negotiations_perk
+	add_perk = embassies_perk
+	add_perk = accomplished_forger_perk
+	add_perk = diplomat_perk
+	add_trait = diplomat
+}
+
+sbs_grant_august_branch_effect = {
+	add_perk = benevolent_intent_perk
+	add_perk = inspiring_rule_perk
+	add_perk = firm_hand_perk
+	add_perk = praetorian_guard_perk
+	add_perk = true_ruler_perk
+	add_perk = writing_history_perk
+	add_perk = a_life_of_glory_perk
+	add_perk = dignitas_perk
+	add_perk = august_perk
+	add_trait = august
+}
+
+sbs_grant_family_first_branch_effect = {
+	add_perk = befriend_perk
+	add_perk = confidants_perk
+	add_perk = flatterer_perk
+	add_perk = friendly_counsel_perk
+	add_perk = familial_familiar_perk
+	add_perk = groomed_to_rule_perk
+	add_perk = thicker_than_water_perk
+	add_perk = sound_foundations_perk
+	add_perk = family_man_perk
+	add_trait = family_first
+}
+
+sbs_grant_all_diplomacy_perks_effect = {
+	sbs_grant_diplomat_branch_effect = yes
+	sbs_grant_august_branch_effect = yes
+	sbs_grant_family_first_branch_effect = yes
+}
+
+sbs_grant_schemer_branch_effect = {
+	add_perk = truth_is_relative_perk
+	add_perk = digging_for_dirt_perk
+	add_perk = kidnapper_perk
+	add_perk = court_of_shadows_perk
+	add_perk = prepared_for_anything_perk
+	add_perk = swift_execution_perk
+	add_perk = a_job_done_right_perk
+	add_perk = twice_schemed_perk
+	add_perk = schemer_perk
+	add_trait = schemer
+}
+
+sbs_grant_seducer_branch_effect = {
+	add_perk = like_weed_in_a_garden_perk
+	add_perk = unshackled_lust_perk
+	add_perk = subtle_desire_perk
+	add_perk = mortal_adoration_perk
+	add_perk = enticing_opportunity_perk
+	add_perk = home_advantage_perk
+	add_perk = graceful_recovery_perk
+	add_perk = smooth_operator_perk
+	add_perk = seducer_perk
+	add_trait = seducer
+}
+
+sbs_grant_torturer_branch_effect = {
+	add_perk = dark_insights_perk
+	add_perk = divine_retribution_perk
+	add_perk = dreadful_perk
+	add_perk = thriving_in_chaos_perk
+	add_perk = malice_implicit_perk
+	add_perk = fear_tax_perk
+	add_perk = forever_infamous_perk
+	add_perk = prison_feudal_complex_perk
+	add_perk = torturer_perk
+	add_trait = torturer
+}
+
+sbs_grant_all_intrigue_perks_effect = {
+	sbs_grant_schemer_branch_effect = yes
+	sbs_grant_seducer_branch_effect = yes
+	sbs_grant_torturer_branch_effect = yes
+}
+
+sbs_grant_whole_of_body_branch_effect = {
+	add_perk = anatomical_studies_perk
+	add_perk = carefree_perk
+	add_perk = mental_resilience_perk
+	add_perk = restraint_perk
+	add_perk = know_thyself_perk
+	add_perk = wash_your_hands_perk
+	add_perk = iron_constitution_perk
+	add_perk = healthy_perk
+	add_perk = whole_of_body_perk
+	add_trait = whole_of_body
+}
+
+sbs_grant_scholar_branch_effect = {
+	add_perk = pedagogy_perk
+	add_perk = open_minded_perk
+	add_perk = apostate_perk
+	add_perk = scientific_perk
+	add_perk = planned_cultivation_perk
+	add_perk = scholarly_circles_perk
+	add_perk = learn_on_the_job_perk
+	add_perk = sanctioned_loopholes_perk
+	add_perk = scholar_perk
+	add_trait = scholar
+}
+
+sbs_grant_theologian_branch_effect = {
+	add_perk = faithful_perk
+	add_perk = zealous_proselytizer_perk
+	add_perk = religious_icon_perk
+	add_perk = prophet_perk
+	add_perk = clerical_justifications_perk
+	add_perk = church_and_state_perk
+	add_perk = radiant_perk
+	add_perk = defender_of_the_faith_perk
+	add_perk = theologian_perk
+	add_trait = theologian
+}
+
+sbs_grant_all_learning_perks_effect = {
+	sbs_grant_whole_of_body_branch_effect = yes
+	sbs_grant_scholar_branch_effect = yes
+	sbs_grant_theologian_branch_effect = yes
+}
+
+sbs_grant_strategist_branch_effect = {
+	add_perk = bellum_justum_perk
+	add_perk = parthian_tactics_perk
+	add_perk = envelopment_perk
+	add_perk = organized_retreat_perk
+	add_perk = hit_and_run_perk
+	add_perk = engineered_for_destruction_perk
+	add_perk = living_off_the_land_perk
+	add_perk = sappers_perk
+	add_perk = strategist_perk
+	add_trait = strategist
+}
+
+sbs_grant_overseer_branch_effect = {
+	add_perk = serve_the_crown_perk
+	add_perk = a_mans_home_perk
+	add_perk = enduring_hardships_perk
+	add_perk = prepared_conscription_perk
+	add_perk = strict_organization_perk
+	add_perk = hard_rule_perk
+	add_perk = soldiers_of_lesser_fortune_perk
+	add_perk = absolute_control_perk
+	add_perk = overseer_perk
+	add_trait = overseer
+}
+
+sbs_grant_gallant_branch_effect = {
+	add_perk = stalwart_leader_perk
+	add_perk = courtship_perk
+	add_perk = promising_prospects_perk
+	add_perk = loyalty_and_respect_perk
+	add_perk = chivalric_dominance_perk
+	add_perk = never_back_down_perk
+	add_perk = kingsguard_perk
+	add_perk = peacemaker_perk
+	add_perk = gallant_perk
+	add_trait = gallant
+}
+
+sbs_grant_all_martial_perks_effect = {
+	sbs_grant_strategist_branch_effect = yes
+	sbs_grant_overseer_branch_effect = yes
+	sbs_grant_gallant_branch_effect = yes
+}
+
+sbs_grant_avaricious_branch_effect = {
+	add_perk = golden_obligations_perk
+	add_perk = heregeld_perk
+	add_perk = detailed_ledgers_perk
+	add_perk = war_profiteer_perk
+	add_perk = fearful_troops_perk
+	add_perk = it_is_my_domain_perk
+	add_perk = golden_aplomb_perk
+	add_perk = at_any_cost_perk
+	add_perk = avaricious_perk
+	add_trait = avaricious
+}
+
+sbs_grant_architect_branch_effect = {
+	add_perk = tax_man_perk
+	add_perk = defensive_measures_perk
+	add_perk = organized_muster_rolls_perk
+	add_perk = cutting_corners_perk
+	add_perk = professional_workforce_perk
+	add_perk = centralization_perk
+	add_perk = popular_figurehead_perk
+	add_perk = divided_attention_perk
+	add_perk = architect_perk
+	add_trait = architect
+}
+
+sbs_grant_administrator_branch_effect = {
+	add_perk = meritocracy_perk
+	add_perk = chains_of_loyalty_perk
+	add_perk = likable_perk
+	add_perk = positions_of_power_perk
+	add_perk = large_levies_perk
+	add_perk = soon_forgiven_perk
+	add_perk = toe_the_line_perk
+	add_perk = honored_to_serve_perk
+	add_perk = administrator_perk
+	add_trait = administrator
+}
+
+sbs_grant_all_stewardship_perks_effect = {
+	sbs_grant_avaricious_branch_effect = yes
+	sbs_grant_architect_branch_effect = yes
+	sbs_grant_administrator_branch_effect = yes
+}
+
+sbs_grant_surveyor_branch_effect = {
+	add_perk = mustering_the_troops_perk
+	add_perk = local_inspection_perk
+	add_perk = know_your_land_know_your_people_perk
+	add_perk = no_stone_unturned_perk
+	add_perk = travel_logs_perk
+	add_perk = local_arbitration_perk
+	add_perk = realm_charts_perk
+	add_perk = personal_touch_perk
+	add_perk = surveyor_perk
+	add_trait = lifestyle_surveyor
+}
+
+sbs_grant_wayfarer_branch_effect = {
+	add_perk = well_prepared_perk
+	add_perk = roaming_perk
+	add_perk = far_and_wide_perk
+	add_perk = just_one_more_hill_perk
+	add_perk = of_the_people_perk
+	add_perk = local_hero_perk
+	add_perk = travel_companion_perk
+	add_perk = the_home_away_from_home_perk
+	add_perk = wayfarer_perk
+	add_trait = lifestyle_wayfarer
+}
+
+sbs_grant_voyager_branch_effect = {
+	add_perk = power_at_home_perk
+	add_perk = mercenary_contacts_perk
+	add_perk = journey_perk
+	add_perk = been_there_done_that_perk
+	add_perk = finally_there_perk
+	add_perk = souvenirs_aplenty_perk
+	add_perk = gracious_host_impeccable_guest_perk
+	add_perk = journey_planner_perk
+	add_perk = voyager_perk
+	add_trait = lifestyle_voyager
+}
+
+sbs_grant_all_wanderer_perks_effect = {
+	sbs_grant_surveyor_branch_effect = yes
+	sbs_grant_wayfarer_branch_effect = yes
+	sbs_grant_voyager_branch_effect = yes
+}
+
+sbs_grant_all_lifestyle_perks_effect = {
+	sbs_grant_all_diplomacy_perks_effect = yes
+	sbs_grant_all_intrigue_perks_effect = yes
+	sbs_grant_all_learning_perks_effect = yes
+	sbs_grant_all_martial_perks_effect = yes
+	sbs_grant_all_stewardship_perks_effect = yes
+	sbs_grant_all_wanderer_perks_effect = yes
+}
+
+sbs_reset_and_grant_all_lifestyle_perks_effect = {
+	sbs_reset_all_lifestyle_perks_effect = yes
+	sbs_grant_all_lifestyle_perks_effect = yes
+}

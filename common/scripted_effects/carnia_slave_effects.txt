@@ -37,7 +37,7 @@
 		add_legitimacy = -1000
 		change_influence_level = -6
 		add_character_flag = blocked_from_leaving
-		set_to_lowborn = yes
+		#set_to_lowborn = yes
 		if = {
 			limit = { 
 				$DRAMA$ = yes

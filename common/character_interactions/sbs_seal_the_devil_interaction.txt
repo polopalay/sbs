@@ -10,12 +10,7 @@ sbs_seal_the_devil_interaction = {
 			NOT = { has_trait_with_flag = sbs_demon_trait }
 		}
 		scope:recipient = {
-			OR = {
-				has_trait = sbs_demon
-				has_trait = sbs_succubus
-				has_trait = sbs_lesser_succubus
-				has_trait = sbs_lesser_demon
-			}
+			has_trait_with_flag = sbs_demon_trait
 		}
 	}
 	is_valid_showing_failures_only = {
@@ -41,88 +36,142 @@ sbs_seal_the_devil_interaction = {
 		scope:recipient = {
 			OR = {
 				AND = {
-					faith.religious_head = scope:recipient
-					faith = faith:nature
-					is_lowborn = yes
+					has_trait = sbs_true_demon
+					is_imprisoned_by = scope:actor
 				}
 				AND = {
-					faith.religious_head = scope:recipient
-					faith = faith:pleasure
-					is_lowborn = yes
-				}
-				AND = {
-					faith.religious_head = scope:recipient
-					faith = faith:violence
-					is_lowborn = yes
-				}
-				AND = {
-					faith.religious_head = scope:recipient
-					faith = faith:greedy
-					is_lowborn = yes
-				}
-				is_imprisoned_by = scope:actor
-			}
-			OR = {
-				custom_description = {
-					text = NOT_I_AM_HEAD_OF_FAITH_TRIGGER
-					NOT = { faith.religious_head = scope:recipient }
-				}
-				AND = {
-					faith.religious_head = scope:recipient
-					province:2065.religion = religion:christianity_religion
-					faith = faith:nature
-					custom_description = {
-						text = nature_isn_seal
-						NOT = { has_global_variable = seal_nature }
+					NOT = { has_trait = sbs_true_demon }
+					OR = {
+						AND = {
+							faith.religious_head = scope:recipient
+							faith = faith:nature
+							is_lowborn = yes
+						}
+						AND = {
+							faith.religious_head = scope:recipient
+							faith = faith:pleasure
+							is_lowborn = yes
+						}
+						AND = {
+							faith.religious_head = scope:recipient
+							faith = faith:violence
+							is_lowborn = yes
+						}
+						AND = {
+							faith.religious_head = scope:recipient
+							faith = faith:greedy
+							is_lowborn = yes
+						}
+						is_imprisoned_by = scope:actor
 					}
-				}
-				AND = {
-					faith.religious_head = scope:recipient
-					province:5965.religion = religion:christianity_religion
-					faith = faith:pleasure
-					custom_description = {
-						text = pleasure_isn_seal
-						NOT = { has_global_variable = seal_pleasure }
-					}
-				}
-				AND = {
-					faith.religious_head = scope:recipient
-					province:482.religion = religion:christianity_religion
-					faith = faith:violence
-					custom_description = {
-						text = violence_isn_seal
-						NOT = { has_global_variable = seal_violence }
-					}
-				}
-				AND = {
-					faith.religious_head = scope:recipient
-					province:2575.religion = religion:christianity_religion
-					faith = faith:greedy
-					custom_description = {
-						text = greedy_isn_seal
-						NOT = { has_global_variable = seal_greedy }
+					OR = {
+						custom_description = {
+							text = NOT_I_AM_HEAD_OF_FAITH_TRIGGER
+							NOT = { faith.religious_head = scope:recipient }
+						}
+						AND = {
+							faith.religious_head = scope:recipient
+							province:2065.religion = religion:christianity_religion
+							faith = faith:nature
+							custom_description = {
+								text = nature_isn_seal
+								NOT = { has_global_variable = seal_nature }
+							}
+						}
+						AND = {
+							faith.religious_head = scope:recipient
+							province:5965.religion = religion:christianity_religion
+							faith = faith:pleasure
+							custom_description = {
+								text = pleasure_isn_seal
+								NOT = { has_global_variable = seal_pleasure }
+							}
+						}
+						AND = {
+							faith.religious_head = scope:recipient
+							province:482.religion = religion:christianity_religion
+							faith = faith:violence
+							custom_description = {
+								text = violence_isn_seal
+								NOT = { has_global_variable = seal_violence }
+							}
+						}
+						AND = {
+							faith.religious_head = scope:recipient
+							province:2575.religion = religion:christianity_religion
+							faith = faith:greedy
+							custom_description = {
+								text = greedy_isn_seal
+								NOT = { has_global_variable = seal_greedy }
+							}
+						}
 					}
 				}
 			}
 		}
+
 	}
 	on_accept = {
 		scope:actor = {
 			if = {
-				limit = { NOT = { has_trait = saint } }
-				add_trait = saint
-				give_nickname = nick_the_saint
-			}
-			else_if = {
-				limit = { NOT = { has_trait = immortal } }
-				add_trait = immortal
-			}
-			else = {
-				add_piety = 10000
+				limit = { scope:recipient = { NOT = { has_trait = sbs_true_demon } } }
+				if = {
+					limit = { NOT = { has_trait = saint } }
+					add_trait = saint
+					give_nickname = nick_the_saint
+				}
+				else_if = {
+					limit = { NOT = { has_trait = immortal } }
+					add_trait = immortal
+				}
+				else = {
+					add_piety = 10000
+				}
 			}
 		}
 		scope:recipient = {
 			if = {
+				limit = { has_trait = sbs_true_demon }
+				death = { death_reason = death_execution killer = scope:actor }
+				scope:actor = {
+					if = { limit = { NOT = { has_trait = faith_warrior } } add_trait = faith_warrior }
+					if = { limit = { NOT = { has_trait = saint } } add_trait = saint }
+					if = { limit = { NOT = { has_trait = crusader_king } } add_trait = crusader_king }
+					if = { limit = { NOT = { has_trait = conqueror } } add_trait = conqueror }
+					if = { limit = { NOT = { has_trait = immortal } } add_trait = immortal }
+					set_immortal_age = 18
+
+					add_diplomacy_skill = 12
+					add_martial_skill = 12
+					add_stewardship_skill = 12
+					add_intrigue_skill = 12
+					add_learning_skill = 12
+					add_prowess_skill = 12
+
+					add_piety_level = 6
+					add_prestige_level = 6
+					dynasty ?= { add_dynasty_prestige = 100000 }
+					give_nickname = nick_the_saint
+				}
+
+				if = {
+					limit = { faith = faith:nature }
+					set_global_variable = { name = seal_nature value = yes }
+				}
+				else_if = {
+					limit = { faith = faith:pleasure }
+					set_global_variable = { name = seal_pleasure value = yes }
+				}
+				else_if = {
+					limit = { faith = faith:violence }
+					set_global_variable = { name = seal_violence value = yes }
+				}
+				else_if = {
+					limit = { faith = faith:greedy }
+					set_global_variable = { name = seal_greedy value = yes }
+				}
+			}
+			else_if = {
 				limit = { faith.religious_head = scope:recipient faith = faith:nature }
 				death = { death_reason = death_execution killer = scope:actor }
 				scope:actor = {
@@ -148,23 +197,6 @@ sbs_seal_the_devil_interaction = {
 				limit = { faith.religious_head = scope:recipient faith = faith:violence }
 				death = { death_reason = death_execution killer = scope:actor }
 				scope:actor = {
-					add_trait = logistician
-					add_trait = military_engineer
-					add_trait = aggressive_attacker
-					add_trait = unyielding_defender
-					add_trait = forder
-					add_trait = flexible_leader
-					add_trait = desert_warrior
-					add_trait = jungle_stalker
-					add_trait = reaver
-					add_trait = reckless
-					add_trait = holy_warrior
-					add_trait = open_terrain_expert
-					add_trait = rough_terrain_expert
-					add_trait = forest_fighter
-					add_trait = cautious_leader
-					add_trait = organizer
-					add_trait = winter_soldier
 					add_trait = conqueror
 				}
 				custom_description = {
@@ -176,7 +208,7 @@ sbs_seal_the_devil_interaction = {
 				limit = { faith.religious_head = scope:recipient faith = faith:greedy }
 				death = { death_reason = death_execution killer = scope:actor }
 				scope:actor = {
-					set_trait_rank = { trait = education_martial rank = 5 }
+					set_trait_rank = { trait = education_stewardship rank = 5 }
 				}
 				custom_description = {
 					text = "seal_greedy"
@@ -184,16 +216,16 @@ sbs_seal_the_devil_interaction = {
 				}
 			}
 			else_if = {
-				limit = { OR = { father = { has_trait = sbs_demon } mother = { has_trait = sbs_demon } } }
+				limit = { any_parent = { has_trait_with_flag = sbs_demon_trait } }
 				death = { death_reason = death_execution killer = scope:actor }
 				if = {
 					limit = { has_trait = education_learning }
 					scope:actor = {
 						if = {
 							limit = { has_trait = education_learning }
-							change_trait_rank = { trait = education_stewardship rank = 1 }
+							change_trait_rank = { trait = education_learning rank = 1 }
 						}
-						else_if = {
+						else = {
 							add_trait = education_learning_1	
 						}
 					}
@@ -205,7 +237,7 @@ sbs_seal_the_devil_interaction = {
 							limit = { has_trait = education_intrigue }
 							change_trait_rank = { trait = education_intrigue rank = 1 }
 						}
-						else_if = {
+						else = {
 							add_trait = education_intrigue_1
 						}
 					}
@@ -217,7 +249,7 @@ sbs_seal_the_devil_interaction = {
 							limit = { has_trait = education_martial }
 							change_trait_rank = { trait = education_martial rank = 1 }
 						}
-						else_if = {
+						else = {
 							add_trait = education_martial_1
 						}
 					}
@@ -229,7 +261,7 @@ sbs_seal_the_devil_interaction = {
 							limit = { has_trait = education_diplomacy }
 							change_trait_rank = { trait = education_diplomacy rank = 1 }
 						}
-						else_if = {
+						else = {
 							add_trait = education_diplomacy_1
 						}
 					}
@@ -241,7 +273,7 @@ sbs_seal_the_devil_interaction = {
 							limit = { has_trait = education_stewardship }
 							change_trait_rank = { trait = education_stewardship rank = 1 }
 						}
-						else_if = {
+						else = {
 							add_trait = education_stewardship_1
 						}
 					}

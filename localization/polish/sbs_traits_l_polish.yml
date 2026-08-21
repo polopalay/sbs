@@ -1,4 +1,8 @@
 ﻿l_polish:
+ trait_sbs_true_demon: "Prawdziwy demon"
+ sbs_true_demon_desc: "Pradawny demon, którego potęga przekracza granice śmiertelników. Prawdziwy demon może odprawiać wszystkie demoniczne rytuały, lecz nigdy nie poprowadzi armii."
+ sbs_true_demon_character_desc: "[ROOT.GetCharacter.GetName] to Prawdziwy demon: istota o przytłaczającej mocy, wolna od słabości śmiertelników i zdolna odprawiać każdy demoniczny rytuał bez wsparcia śmiertelnej infrastruktury. Taka istota nigdy nie będzie dowodzić armią."
+
  trait_sbs_demon: "Demon"
  sbs_demon_desc: "Ci przeklęci przez niebo, błogosławieni przez piekło. Głęboko w nich jest śmierć i zniszczenie."
  sbs_demon_character_desc: "Jako dzieci diabła, błogosławieni przez książąt piekła, misją [ROOT.GetCharacter.GetNamePossessive]jest błogosławienie chaosu i zniszczenia na całym świecie."

@@ -1,5 +1,6 @@
 is_valid_construction_alchemy_trigger = {
 	OR = {
+		has_trait = sbs_true_demon
 		any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy1 } }
 		any_realm_county = { any_county_province = { has_building_or_higher = alchemy2 } }
 		any_county_in_region = { any_county_province = { has_building_or_higher = alchemy3 } }
@@ -7,9 +8,48 @@ is_valid_construction_alchemy_trigger = {
 }
 is_valid_construction_brothel_trigger = {
 	OR = {
+		has_trait = sbs_true_demon
 		any_sub_realm_county = { any_county_province = { has_building_or_higher = brothel1 } }
 		any_realm_county = { any_county_province = { has_building_or_higher = brothel2 } }
 		any_county_in_region = { any_county_province = { has_building_or_higher = brothel3 } }
+	}
+}
+
+
+sbs_has_alchemy_1_trigger = {
+	OR = {
+		has_trait = sbs_true_demon
+		any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy1 } }
+	}
+}
+sbs_has_alchemy_2_trigger = {
+	OR = {
+		has_trait = sbs_true_demon
+		any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy2 } }
+	}
+}
+sbs_has_alchemy_3_trigger = {
+	OR = {
+		has_trait = sbs_true_demon
+		any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+	}
+}
+sbs_has_brothel_1_trigger = {
+	OR = {
+		has_trait = sbs_true_demon
+		any_sub_realm_county = { any_county_province = { has_building_or_higher = brothel1 } }
+	}
+}
+sbs_has_brothel_2_trigger = {
+	OR = {
+		has_trait = sbs_true_demon
+		any_sub_realm_county = { any_county_province = { has_building_or_higher = brothel2 } }
+	}
+}
+sbs_has_brothel_3_trigger = {
+	OR = {
+		has_trait = sbs_true_demon
+		any_sub_realm_county = { any_county_province = { has_building_or_higher = brothel3 } }
 	}
 }
 

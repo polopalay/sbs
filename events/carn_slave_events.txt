@@ -66,7 +66,7 @@ carn_slave.0003 = {
 				add_courtier = scope:child
 			}
 			scope:child = {
-				set_to_lowborn = yes
+				#set_to_lowborn = yes
 			}
 		}
 	}

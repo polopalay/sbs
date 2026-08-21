@@ -8,20 +8,19 @@
 	is_shown = {
 		NOT = { has_global_variable = seal_the_gates_of_hell }
 		scope:recipient = { NOT = { has_trait_with_flag = sbs_demon_trait } }
-		scope:actor = { OR = { has_trait = sbs_demon has_trait = sbs_succubus } }
+		scope:actor = { OR = { has_trait = sbs_true_demon has_trait = sbs_demon has_trait = sbs_succubus } }
 	}
 	is_valid = {
-		scope:recipient.age >= 18
+		scope:recipient.age >= 16
 		scope:actor = {
 			trigger_if = {
 				limit = { scope:recipient = { is_female = yes } }
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = brothel3 } }
+				sbs_has_brothel_3_trigger = yes
 			}
 			trigger_if = {
 				limit = { scope:recipient = { is_female = no } }
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
+				sbs_has_alchemy_3_trigger = yes
 			}
-			NOT = { has_character_modifier = sbs_debuff }
 		}
 	}
 	localization_values = {
@@ -125,31 +124,6 @@
 		}
 	}
 	send_option = {
-		flag = renounce_claims
-		localization = RELEASE_RENOUNCE_CLAIMS
-		is_shown = {
-			custom_description = {
-				text = "release_renounce_claims"
-				subject = scope:recipient
-				scope:recipient = {
-					any_claim = {
-						explicit = yes
-						save_temporary_scope_as = temp_claim
-						OR = {
-							holder = scope:actor
-							AND = {
-								NOT = { prev = { target_is_liege_or_above = scope:actor } }
-								trigger_if = { limit = { exists = holder } holder = { target_is_liege_or_above = scope:actor } }
-							}
-							scope:actor = { any_held_title = { is_de_jure_liege_or_above_target = scope:temp_claim } }
-						}
-					}
-				}
-			}
-		}
-		current_description = { desc = RELEASE_RENOUNCE_CLAIMS_DESC }
-	}
-	send_option = {
 		flag = gain_hook
 		localization = "RELEASE_GAIN_HOOK"
 		is_shown = {
@@ -230,7 +204,6 @@
 				limit = { OR = { scope:favor = yes scope:gain_hook = yes } }
 				add_hook = { target = scope:recipient type = favor_hook }
 			}
-			add_character_modifier = { modifier = sbs_debuff years = 25 }
 		}
 		scope:recipient = {
 			if = {
@@ -247,26 +220,7 @@
 			}
 			if = {
 				limit = { scope:demand_conversion = yes }
-				set_character_faith_with_conversion = scope:actor.faith
-			}
-			if = {
-				limit = { scope:renounce_claims = yes }
-				every_claim = {
-					explicit = yes
-					limit = {
-						save_temporary_scope_as = temp_claim
-						OR = {
-							holder = scope:actor
-							AND = {
-								exists = holder
-								NOT = { prev = { target_is_liege_or_above = scope:actor } }
-								holder = { target_is_liege_or_above = scope:actor }
-							}
-							scope:actor = { any_held_title = { is_de_jure_liege_or_above_target = scope:temp_claim } }
-						}
-					}
-					scope:recipient = { remove_claim = prev }
-				}
+				set_character_faith = scope:actor.faith
 			}
 			if = {
 				limit = { scope:recruit = yes }
@@ -327,7 +281,6 @@
 		modifier = { add = -3 scope:favor = yes }
 		modifier = { add = -3 scope:gain_hook = yes }
 		modifier = { add = -5 scope:demand_conversion = yes }
-		modifier = { add = -3 scope:renounce_claims = yes }
 		modifier = { add = -2 scope:recruit = yes }
 		modifier = { add = -4 scope:demand_admin = yes }
 		modifier = { add = 10 scope:actor.faith = scope:recipient.faith }
@@ -361,7 +314,6 @@
 				scope:favor = yes
 				scope:gain_hook = yes
 				scope:demand_conversion = yes
-				scope:renounce_claims = yes
 				scope:recruit = yes
 				scope:demand_admin = yes
 			}
@@ -369,5 +321,6 @@
 
 		modifier = { add = 25 scope:recipient = { is_child_of = scope:actor } }
 		modifier = { add = 10 scope:recipient = { is_close_or_extended_family_of = scope:actor } }
+		modifier = { add = 10 scope:recipient.dynasty = scope:actor.dynasty }
 	}
 }

@@ -23,7 +23,6 @@
 				has_trait = contrite
 				has_trait = comfort_eater
 				has_trait = inappetetic
-				has_character_modifier = rejected_from_marriage_bed_modifier
 				has_trait = depressed_1
 				has_trait = depressed_genetic
 				has_trait = lunatic_1
@@ -83,54 +82,17 @@
 				has_trait = physique_bad_2
 				has_trait = physique_bad_3
 				has_trait = inbred
-				AND = {
-					has_trait = witch
-					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:witch }
-				}
-				AND = {
-					has_trait = deviant
-					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:deviant }
-				}
-				AND = {
-					has_trait = cannibal
-					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:cannibal }
-				}
-				AND = {
-					has_trait = adulterer
-					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:adulterer }
-				}
-				AND = {
-					has_trait = sodomite
-					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:sodomite }
-				}
-				AND = {
-					has_trait = incestuous
-					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:incestuous }
-				}
-				AND = {
-					has_trait = fornicator
-					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:fornicator }
-				}
-				AND = {
-					has_trait = kinslayer_1
-					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:kinslayer_1 }
-				}
-				AND = {
-					has_trait = kinslayer_2
-					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:kinslayer_2 }
-				}
-				AND = {
-					has_trait = kinslayer_3
-					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:kinslayer_3 }
-				}
-				AND = {
-					has_trait = murderer
-					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:murderer }
-				}
-				AND = {
-					has_trait = lifestyle_prostitute
-					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:lifestyle_prostitute }
-				}
+				has_character_modifier = rejected_from_marriage_bed_modifier
+				has_character_modifier = sbs_seal
+				has_character_modifier = sbs_debuff
+				has_character_modifier = stanky_modifier
+				has_character_modifier = confused_modifier
+				has_character_modifier = stress_smelling_of_sweat
+				has_character_modifier = party_baron_murdered_the_joy_of_life_modifier
+				has_character_modifier = totally_lost_modifier
+				has_character_modifier = bad_omen_modifier
+				has_character_modifier = lost_in_lust_modifier
+				has_character_modifier = intrigue_starved_and_deprived_modifier
 				stress_level >= 1
 				current_weight >= 25
 				current_weight <= -25
@@ -141,6 +103,7 @@
 	is_valid_showing_failures_only = {
 		scope:recipient = {
 			OR = {
+				has_trait = sbs_true_demon
 				has_trait = sbs_demon
 				has_trait = sbs_succubus
 				has_trait_xp = {
@@ -169,7 +132,6 @@
 			scope:weight = yes
 			scope:drunkard = yes
 			scope:hashishiyah = yes
-			scope:rakish = yes
 			scope:reclusive = yes
 			scope:irritable = yes
 			scope:flagellant = yes
@@ -178,6 +140,7 @@
 			scope:contrite = yes
 			scope:comfort_eater = yes
 			scope:inappetetic = yes
+			scope:rakish = yes
 			scope:rejected_from_marriage_bed_modifier = yes
 			scope:depressed_1 = yes
 			scope:depressed_genetic = yes
@@ -238,18 +201,16 @@
 			scope:physique_bad_2 = yes
 			scope:physique_bad_3 = yes
 			scope:inbred = yes
-			scope:witch = yes
-			scope:deviant = yes
-			scope:cannibal = yes
-			scope:adulterer = yes
-			scope:sodomite = yes
-			scope:incestuous = yes
-			scope:fornicator = yes
-			scope:kinslayer_1 = yes
-			scope:kinslayer_2 = yes
-			scope:kinslayer_3 = yes
-			scope:murderer = yes
-			scope:lifestyle_prostitute = yes
+			scope:sbs_seal = yes
+			scope:sbs_debuff = yes
+			scope:stanky_modifier = yes
+			scope:confused_modifier = yes
+			scope:stress_smelling_of_sweat = yes
+			scope:party_baron_murdered_the_joy_of_life_modifier = yes
+			scope:totally_lost_modifier = yes
+			scope:bad_omen_modifier = yes
+			scope:lost_in_lust_modifier = yes
+			scope:intrigue_starved_and_deprived_modifier = yes
 		}
 	}
 	localization_values = {
@@ -368,33 +329,6 @@
 		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
-		flag = renounce_claims
-		localization = RELEASE_RENOUNCE_CLAIMS
-		is_shown = {
-			custom_description = {
-				text = "release_renounce_claims"
-				subject = scope:actor
-				scope:actor = {
-					any_claim = {
-						explicit = yes
-						save_temporary_scope_as = temp_claim
-						OR = {
-							holder = scope:recipient
-							AND = {
-								NOT = { prev = { target_is_liege_or_above = scope:recipient } }
-								trigger_if = { limit = { exists = holder } holder = { target_is_liege_or_above = scope:recipient } }
-							}
-							scope:recipient = { any_held_title = { is_de_jure_liege_or_above_target = scope:temp_claim } }
-						}
-					}
-				}
-			}
-		}
-		current_description = { desc = RELEASE_RENOUNCE_CLAIMS_DESC }
-		starts_enabled = { scope:actor = { is_ai = yes } }
-		can_be_changed = { scope:actor = { is_ai = no } }
-	}
-			send_option = {
 		flag = demand_admin
 		localization = "RELEASE_DEMAND_ADMIN"
 		is_shown = {
@@ -442,6 +376,9 @@
 	send_option = {
 		flag = stress
 		localization = "STRESS"
+		is_valid = {
+			scope:recipient = { sbs_has_brothel_1_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				stress_level >= 1
@@ -467,6 +404,9 @@
 	send_option = {
 		flag = drunkard
 		localization = trait_drunkard
+		is_valid = {
+			scope:recipient = { sbs_has_brothel_1_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = drunkard
@@ -478,6 +418,9 @@
 	send_option = {
 		flag = hashishiyah
 		localization = trait_hashishiyah
+		is_valid = {
+			scope:recipient = { sbs_has_brothel_1_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = hashishiyah
@@ -489,6 +432,9 @@
 	send_option = {
 		flag = rakish
 		localization = trait_rakish
+		is_valid = {
+			scope:recipient = { sbs_has_brothel_2_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = rakish
@@ -500,6 +446,9 @@
 	send_option = {
 		flag = reclusive
 		localization = trait_reclusive
+		is_valid = {
+			scope:recipient = { sbs_has_brothel_1_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = reclusive
@@ -511,6 +460,9 @@
 	send_option = {
 		flag = irritable
 		localization = trait_irritable
+		is_valid = {
+			scope:recipient = { sbs_has_brothel_1_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = irritable
@@ -522,6 +474,9 @@
 	send_option = {
 		flag = flagellant
 		localization = trait_flagellant
+		is_valid = {
+			scope:recipient = { sbs_has_brothel_1_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = flagellant
@@ -533,6 +488,9 @@
 	send_option = {
 		flag = profligate
 		localization = trait_profligate
+		is_valid = {
+			scope:recipient = { sbs_has_brothel_1_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = profligate
@@ -544,6 +502,9 @@
 	send_option = {
 		flag = improvident
 		localization = trait_improvident
+		is_valid = {
+			scope:recipient = { sbs_has_brothel_1_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = improvident
@@ -555,6 +516,9 @@
 	send_option = {
 		flag = contrite
 		localization = trait_contrite
+		is_valid = {
+			scope:recipient = { sbs_has_brothel_1_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = contrite
@@ -566,6 +530,9 @@
 	send_option = {
 		flag = comfort_eater
 		localization = trait_comfort_eater
+		is_valid = {
+			scope:recipient = { sbs_has_brothel_1_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = comfort_eater
@@ -577,6 +544,9 @@
 	send_option = {
 		flag = inappetetic
 		localization = trait_inappetetic
+		is_valid = {
+			scope:recipient = { sbs_has_brothel_1_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = inappetetic
@@ -597,6 +567,77 @@
 		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
+		flag = sbs_seal
+		localization = sbs_seal
+		is_shown = { scope:actor = { has_character_modifier = sbs_seal } }
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
+	}
+	send_option = {
+		flag = sbs_debuff
+		localization = sbs_debuff
+		is_shown = { scope:actor = { has_character_modifier = sbs_debuff } }
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
+	}
+	send_option = {
+		flag = stanky_modifier
+		localization = stanky_modifier
+		is_shown = { scope:actor = { has_character_modifier = stanky_modifier } }
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
+	}
+	send_option = {
+		flag = confused_modifier
+		localization = confused_modifier
+		is_shown = { scope:actor = { has_character_modifier = confused_modifier } }
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
+	}
+	send_option = {
+		flag = stress_smelling_of_sweat
+		localization = stress_smelling_of_sweat
+		is_shown = { scope:actor = { has_character_modifier = stress_smelling_of_sweat } }
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
+	}
+	send_option = {
+		flag = party_baron_murdered_the_joy_of_life_modifier
+		localization = party_baron_murdered_the_joy_of_life_modifier
+		is_shown = { scope:actor = { has_character_modifier = party_baron_murdered_the_joy_of_life_modifier } }
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
+	}
+	send_option = {
+		flag = totally_lost_modifier
+		localization = totally_lost_modifier
+		is_shown = { scope:actor = { has_character_modifier = totally_lost_modifier } }
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
+	}
+	send_option = {
+		flag = bad_omen_modifier
+		localization = bad_omen_modifier
+		is_shown = { scope:actor = { has_character_modifier = bad_omen_modifier } }
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
+	}
+	send_option = {
+		flag = lost_in_lust_modifier
+		localization = lost_in_lust_modifier
+		is_shown = { scope:actor = { has_character_modifier = lost_in_lust_modifier } }
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
+	}
+	send_option = {
+		flag = intrigue_starved_and_deprived_modifier
+		localization = intrigue_starved_and_deprived_modifier
+		is_shown = { scope:actor = { has_character_modifier = intrigue_starved_and_deprived_modifier } }
+		starts_enabled = { scope:actor = { is_ai = yes } }
+		can_be_changed = { scope:actor = { is_ai = no } }
+	}
+
+	send_option = {
 		flag = depressed_1
 		localization = trait_depressed_1
 		is_shown = {
@@ -610,6 +651,9 @@
 	send_option = {
 		flag = depressed_genetic
 		localization = trait_depressed_genetic
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_2_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = depressed_genetic
@@ -632,6 +676,9 @@
 	send_option = {
 		flag = lunatic_genetic
 		localization = trait_lunatic_genetic
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_2_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = lunatic_genetic
@@ -654,6 +701,9 @@
 	send_option = {
 		flag = possessed_genetic
 		localization = trait_possessed_genetic
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_2_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = possessed_genetic
@@ -676,6 +726,9 @@
 	send_option = {
 		flag = one_eyed
 		localization = trait_one_eyed
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_3_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = one_eyed
@@ -687,6 +740,9 @@
 	send_option = {
 		flag = maimed
 		localization = trait_maimed
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_3_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = maimed
@@ -698,6 +754,9 @@
 	send_option = {
 		flag = one_legged
 		localization = trait_one_legged
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_3_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = one_legged
@@ -709,6 +768,9 @@
 	send_option = {
 		flag = disfigured
 		localization = trait_disfigured
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_3_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = disfigured
@@ -720,6 +782,9 @@
 	send_option = {
 		flag = eunuch_1
 		localization = trait_eunuch_1
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_3_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = eunuch_1
@@ -731,6 +796,9 @@
 	send_option = {
 		flag = beardless_eunuch
 		localization = trait_beardless_eunuch
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_3_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = beardless_eunuch
@@ -742,6 +810,9 @@
 	send_option = {
 		flag = blind
 		localization = trait_blind
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_3_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = blind
@@ -769,6 +840,9 @@
 				has_trait = infirm
 			}
 		}
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_1_trigger = yes }
+		}
 		starts_enabled = { scope:actor = { is_ai = yes } }
 		can_be_changed = { scope:actor = { is_ai = no } }
 	}
@@ -780,12 +854,18 @@
 				has_trait = incapable
 			}
 		}
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_1_trigger = yes }
+		}
 		starts_enabled = { scope:actor = { is_ai = yes } }
 		can_be_changed = { scope:actor = { is_ai = no } }
 	}
 	send_option = {
 		flag = leper
 		localization = trait_leper
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_1_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = leper
@@ -852,6 +932,9 @@
 	send_option = {
 		flag = pneumonic
 		localization = trait_pneumonic
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_1_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = pneumonic
@@ -863,6 +946,9 @@
 	send_option = {
 		flag = gout_ridden
 		localization = trait_gout_ridden
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_1_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = gout_ridden
@@ -874,6 +960,9 @@
 	send_option = {
 		flag = typhus
 		localization = trait_typhus
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_1_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = typhus
@@ -885,6 +974,9 @@
 	send_option = {
 		flag = consumption
 		localization = trait_consumption
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_1_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = consumption
@@ -896,6 +988,9 @@
 	send_option = {
 		flag = measles
 		localization = trait_measles
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_1_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = measles
@@ -907,6 +1002,9 @@
 	send_option = {
 		flag = cancer
 		localization = trait_cancer
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_1_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = cancer
@@ -929,6 +1027,9 @@
 	send_option = {
 		flag = smallpox
 		localization = trait_smallpox
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_1_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = smallpox
@@ -940,6 +1041,9 @@
 	send_option = {
 		flag = bubonic_plague
 		localization = trait_bubonic_plague
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_1_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = bubonic_plague
@@ -962,6 +1066,9 @@
 	send_option = {
 		flag = dysentery
 		localization = trait_dysentery
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_1_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = dysentery
@@ -973,6 +1080,9 @@
 	send_option = {
 		flag = ergotism
 		localization = trait_ergotism
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_1_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = ergotism
@@ -984,6 +1094,9 @@
 	send_option = {
 		flag = albino
 		localization = trait_albino
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_2_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = albino
@@ -995,6 +1108,9 @@
 	send_option = {
 		flag = lisping
 		localization = trait_lisping
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_2_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = lisping
@@ -1006,6 +1122,9 @@
 	send_option = {
 		flag = stuttering
 		localization = trait_stuttering
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_2_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = stuttering
@@ -1017,6 +1136,9 @@
 	send_option = {
 		flag = giant
 		localization = trait_giant
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_2_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = giant
@@ -1028,6 +1150,9 @@
 	send_option = {
 		flag = scaly
 		localization = trait_scaly
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_2_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = scaly
@@ -1039,6 +1164,9 @@
 	send_option = {
 		flag = clubfooted
 		localization = trait_clubfooted
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_2_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = clubfooted
@@ -1050,6 +1178,9 @@
 	send_option = {
 		flag = dwarf
 		localization = trait_dwarf
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_2_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = dwarf
@@ -1061,6 +1192,9 @@
 	send_option = {
 		flag = hunchbacked
 		localization = trait_hunchbacked
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_2_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = hunchbacked
@@ -1072,6 +1206,9 @@
 	send_option = {
 		flag = infertile
 		localization = trait_infertile
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_2_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = infertile
@@ -1083,6 +1220,9 @@
 	send_option = {
 		flag = wheezing
 		localization = trait_wheezing
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_2_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = wheezing
@@ -1094,6 +1234,9 @@
 	send_option = {
 		flag = spindly
 		localization = trait_spindly
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_2_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = spindly
@@ -1105,6 +1248,9 @@
 	send_option = {
 		flag = bleeder
 		localization = trait_bleeder
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_2_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = bleeder
@@ -1138,6 +1284,9 @@
 	send_option = {
 		flag = beauty_bad_1
 		localization = trait_beauty_bad_1
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_2_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = beauty_bad_1
@@ -1149,6 +1298,9 @@
 	send_option = {
 		flag = beauty_bad_2
 		localization = trait_beauty_bad_2
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_2_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = beauty_bad_2
@@ -1160,6 +1312,9 @@
 	send_option = {
 		flag = beauty_bad_3
 		localization = trait_beauty_bad_3
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_2_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = beauty_bad_3
@@ -1171,6 +1326,9 @@
 	send_option = {
 		flag = intellect_bad_1
 		localization = trait_intellect_bad_1
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_2_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = intellect_bad_1
@@ -1182,6 +1340,9 @@
 	send_option = {
 		flag = intellect_bad_2
 		localization = trait_intellect_bad_2
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_2_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = intellect_bad_2
@@ -1193,6 +1354,9 @@
 	send_option = {
 		flag = intellect_bad_3
 		localization = trait_intellect_bad_3
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_2_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = intellect_bad_3
@@ -1204,6 +1368,9 @@
 	send_option = {
 		flag = physique_bad_1
 		localization = trait_physique_bad_1
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_2_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = physique_bad_1
@@ -1215,6 +1382,9 @@
 	send_option = {
 		flag = physique_bad_2
 		localization = trait_physique_bad_2
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_2_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = physique_bad_2
@@ -1226,6 +1396,9 @@
 	send_option = {
 		flag = physique_bad_3
 		localization = trait_physique_bad_3
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_2_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = physique_bad_3
@@ -1237,177 +1410,12 @@
 	send_option = {
 		flag = inbred
 		localization = trait_inbred
+		is_valid = {
+			scope:recipient = { sbs_has_alchemy_2_trigger = yes }
+		}
 		is_shown = {
 			scope:actor = {
 				has_trait = inbred
-			}
-		}
-		starts_enabled = { scope:actor = { is_ai = yes } }
-		can_be_changed = { scope:actor = { is_ai = no } }
-	}
-	send_option = {
-		flag = witch
-		localization = trait_witch
-		is_shown = {
-			scope:actor = {
-				AND = {
-					has_trait = witch
-					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:witch }
-				}
-			}
-		}
-		starts_enabled = { scope:actor = { is_ai = yes } }
-		can_be_changed = { scope:actor = { is_ai = no } }
-	}
-	send_option = {
-		flag = deviant
-		localization = trait_deviant
-		is_shown = {
-			scope:actor = {
-				AND = {
-					has_trait = deviant
-					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:deviant }
-				}
-			}
-		}
-		starts_enabled = { scope:actor = { is_ai = yes } }
-		can_be_changed = { scope:actor = { is_ai = no } }
-	}
-	send_option = {
-		flag = cannibal
-		localization = trait_cannibal
-		is_shown = {
-			scope:actor = {
-				AND = {
-					has_trait = cannibal
-					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:cannibal }
-				}
-			}
-		}
-		starts_enabled = { scope:actor = { is_ai = yes } }
-		can_be_changed = { scope:actor = { is_ai = no } }
-	}
-	send_option = {
-		flag = adulterer
-		localization = trait_adulterer
-		is_shown = {
-			scope:actor = {
-				AND = {
-					has_trait = adulterer
-					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:adulterer }
-				}
-			}
-		}
-		starts_enabled = { scope:actor = { is_ai = yes } }
-		can_be_changed = { scope:actor = { is_ai = no } }
-	}
-	send_option = {
-		flag = sodomite
-		localization = trait_sodomite
-		is_shown = {
-			scope:actor = {
-				AND = {
-					has_trait = sodomite
-					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:sodomite }
-				}
-			}
-		}
-		starts_enabled = { scope:actor = { is_ai = yes } }
-		can_be_changed = { scope:actor = { is_ai = no } }
-	}
-	send_option = {
-		flag = incestuous
-		localization = trait_incestuous
-		is_shown = {
-			scope:actor = {
-				AND = {
-					has_trait = incestuous
-					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:incestuous }
-				}
-			}
-		}
-		starts_enabled = { scope:actor = { is_ai = yes } }
-		can_be_changed = { scope:actor = { is_ai = no } }
-	}
-	send_option = {
-		flag = fornicator
-		localization = trait_fornicator
-		is_shown = {
-			scope:actor = {
-				AND = {
-					has_trait = fornicator
-					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:fornicator }
-				}
-			}
-		}
-		starts_enabled = { scope:actor = { is_ai = yes } }
-		can_be_changed = { scope:actor = { is_ai = no } }
-	}
-	send_option = {
-		flag = kinslayer_1
-		localization = trait_kinslayer_1
-		is_shown = {
-			scope:actor = {
-				AND = {
-					has_trait = kinslayer_1
-					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:kinslayer_1 }
-				}
-			}
-		}
-		starts_enabled = { scope:actor = { is_ai = yes } }
-		can_be_changed = { scope:actor = { is_ai = no } }
-	}
-	send_option = {
-		flag = kinslayer_2
-		localization = trait_kinslayer_2
-		is_shown = {
-			scope:actor = {
-				AND = {
-					has_trait = kinslayer_2
-					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:kinslayer_2 }
-				}
-			}
-		}
-		starts_enabled = { scope:actor = { is_ai = yes } }
-		can_be_changed = { scope:actor = { is_ai = no } }
-	}
-	send_option = {
-		flag = kinslayer_3
-		localization = trait_kinslayer_3
-		is_shown = {
-			scope:actor = {
-				AND = {
-					has_trait = kinslayer_3
-					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:kinslayer_3 }
-				}
-			}
-		}
-		starts_enabled = { scope:actor = { is_ai = yes } }
-		can_be_changed = { scope:actor = { is_ai = no } }
-	}
-	send_option = {
-		flag = murderer
-		localization = trait_murderer
-		is_shown = {
-			scope:actor = {
-				AND = {
-					has_trait = murderer
-					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:murderer }
-				}
-			}
-		}
-		starts_enabled = { scope:actor = { is_ai = yes } }
-		can_be_changed = { scope:actor = { is_ai = no } }
-	}
-	send_option = {
-		flag = lifestyle_prostitute
-		localization = trait_lifestyle_prostitute
-		is_shown = {
-			scope:actor = {
-				AND = {
-					has_trait = lifestyle_prostitute
-					trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:lifestyle_prostitute }
-				}
 			}
 		}
 		starts_enabled = { scope:actor = { is_ai = yes } }
@@ -1433,6 +1441,16 @@
 			COMFORT_EATER = scope:comfort_eater
 			INAPPETETIC = scope:inappetetic
 			REJECTED_FROM_MARRIAGE_BED_MODIFIER = scope:rejected_from_marriage_bed_modifier
+			SBS_SEAL = scope:sbs_seal
+			SBS_DEBUFF = scope:sbs_debuff
+			STANKY_MODIFIER = scope:stanky_modifier
+			CONFUSED_MODIFIER = scope:confused_modifier
+			STRESS_SMELLING_OF_SWEAT = scope:stress_smelling_of_sweat
+			PARTY_BARON_MURDERED_THE_JOY_OF_LIFE_MODIFIER = scope:party_baron_murdered_the_joy_of_life_modifier
+			TOTALLY_LOST_MODIFIER = scope:totally_lost_modifier
+			BAD_OMEN_MODIFIER = scope:bad_omen_modifier
+			LOST_IN_LUST_MODIFIER = scope:lost_in_lust_modifier
+			INTRIGUE_STARVED_AND_DEPRIVED_MODIFIER = scope:intrigue_starved_and_deprived_modifier
 			DEPRESSED_1 = scope:depressed_1
 			DEPRESSED_GENETIC = scope:depressed_genetic
 			LUNATIC_1 = scope:lunatic_1
@@ -1492,18 +1510,6 @@
 			PHYSIQUE_BAD_2 = scope:physique_bad_2
 			PHYSIQUE_BAD_3 = scope:physique_bad_3
 			INBRED = scope:inbred
-			WITCH = scope:witch
-			DEVIANT = scope:deviant
-			CANNIBAL = scope:cannibal
-			ADULTERER = scope:adulterer
-			SODOMITE = scope:sodomite
-			INCESTUOUS = scope:incestuous
-			FORNICATOR = scope:fornicator
-			KINSLAYER_1 = scope:kinslayer_1
-			KINSLAYER_2 = scope:kinslayer_2
-			KINSLAYER_3 = scope:kinslayer_3
-			MURDERER = scope:murderer
-			LIFESTYLE_PROSTITUTE = scope:lifestyle_prostitute
 		}
 		scope:actor = {
 			if = {
@@ -1520,26 +1526,7 @@
 			}
 			if = {
 				limit = { scope:demand_conversion = yes }
-				set_character_faith_with_conversion = scope:recipient.faith
-			}
-			if = {
-				limit = { scope:renounce_claims = yes }
-				every_claim = {
-					explicit = yes
-					limit = {
-						save_temporary_scope_as = temp_claim
-						OR = {
-							holder = scope:recipient
-							AND = {
-								exists = holder
-								NOT = { prev = { target_is_liege_or_above = scope:recipient } }
-								holder = { target_is_liege_or_above = scope:recipient }
-							}
-							scope:recipient = { any_held_title = { is_de_jure_liege_or_above_target = scope:temp_claim } }
-						}
-					}
-					scope:actor = { remove_claim = prev }
-				}
+				set_character_faith = scope:recipient.faith
 			}
 			if = {
 				limit = { scope:demand_admin = yes }
@@ -1623,7 +1610,6 @@
 				scope:hook = yes
 				scope:favor = yes
 				scope:demand_conversion = yes
-				scope:renounce_claims = yes
 				scope:demand_admin = yes
 				scope:small_price = yes
 				scope:expose_secret = yes
@@ -1632,7 +1618,6 @@
 		modifier = { add = 1 scope:small_price = yes }
 		modifier = { add = 2 scope:expose_secret = yes }
 		modifier = { add = 3 scope:favor = yes }
-		modifier = { add = 3 scope:renounce_claims = yes }
 		modifier = { add = 4 scope:demand_admin = yes }
 		modifier = { add = 3 scope:hook = yes }
 		modifier = { add = 2 OR = { scope:gold = yes scope:extortionate_gold = yes } }
@@ -1684,6 +1669,16 @@
 				scope:comfort_eater = yes
 				scope:inappetetic = yes
 				scope:rejected_from_marriage_bed_modifier = yes
+				scope:sbs_seal = yes
+				scope:sbs_debuff = yes
+				scope:stanky_modifier = yes
+				scope:confused_modifier = yes
+				scope:stress_smelling_of_sweat = yes
+				scope:party_baron_murdered_the_joy_of_life_modifier = yes
+				scope:totally_lost_modifier = yes
+				scope:bad_omen_modifier = yes
+				scope:lost_in_lust_modifier = yes
+				scope:intrigue_starved_and_deprived_modifier = yes
 				scope:depressed_1 = yes
 				scope:depressed_genetic = yes
 				scope:lunatic_1 = yes
@@ -1741,17 +1736,9 @@
 				scope:hook = yes
 				scope:favor = yes
 				scope:demand_conversion = yes
-				scope:renounce_claims = yes
 				scope:demand_admin = yes
 				scope:small_price = yes
 				scope:expose_secret = yes
-			}
-		}
-		modifier = {
-			add = -10
-			scope:actor = {
-				has_trait = witch
-				trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:witch }
 			}
 		}
 		modifier = { add = 1 scope:actor = { has_character_modifier = rejected_from_marriage_bed_modifier } }

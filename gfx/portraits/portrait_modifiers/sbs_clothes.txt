@@ -49,6 +49,24 @@ horn_clothes = {
 	usage = game
 	priority = 10
 
+	horn0 = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = horns
+				template = horn_0
+				value = 1
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				has_trait = sbs_true_demon
+				has_character_modifier = sbs_true_form
+			}
+		}
+	}
 	horn1 = {
 		dna_modifiers = {
 			accessory = {
@@ -117,6 +135,31 @@ horn_clothes = {
 			modifier = {
 				add = 100
 				has_trait = sbs_lesser_succubus
+				has_character_modifier = sbs_true_form
+			}
+		}
+	}
+}
+
+true_demon_womb_clothes = {
+	usage = game
+	priority = 10
+
+	true_demon_womb = {
+		dna_modifiers = {
+			morph = {
+				mode = add
+				gene = succubus_womb
+				value = 1
+				template = womb_3
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				is_female = yes
+				has_trait = sbs_true_demon
 				has_character_modifier = sbs_true_form
 			}
 		}

@@ -285,51 +285,43 @@ succubus_cost_value = {
 		add = 5
 	}
 	if = {
-		limit = { scope:witch = yes }
-		add = 3
-	}
-	if = {
-		limit = { scope:deviant = yes }
-		add = 3
-	}
-	if = {
-		limit = { scope:cannibal = yes }
-		add = 3
-	}
-	if = {
-		limit = { scope:adulterer = yes }
-		add = 2
-	}
-	if = {
-		limit = { scope:sodomite = yes }
-		add = 2
-	}
-	if = {
-		limit = { scope:incestuous = yes }
-		add = 3
-	}
-	if = {
-		limit = { scope:fornicator = yes }
+		limit = { scope:sbs_seal = yes }
 		add = 1
 	}
 	if = {
-		limit = { scope:kinslayer_1 = yes }
-		add = 3
-	}
-	if = {
-		limit = { scope:kinslayer_2 = yes }
-		add = 2
-	}
-	if = {
-		limit = { scope:kinslayer_3 = yes }
-		add = 2
-	}
-	if = {
-		limit = { scope:murderer = yes }
+		limit = { scope:sbs_debuff = yes }
 		add = 1
 	}
 	if = {
-		limit = { scope:lifestyle_prostitute = yes }
+		limit = { scope:stanky_modifier = yes }
+		add = 1
+	}
+	if = {
+		limit = { scope:confused_modifier = yes }
+		add = 1
+	}
+	if = {
+		limit = { scope:stress_smelling_of_sweat = yes }
+		add = 1
+	}
+	if = {
+		limit = { scope:party_baron_murdered_the_joy_of_life_modifier = yes }
+		add = 1
+	}
+	if = {
+		limit = { scope:totally_lost_modifier = yes }
+		add = 1
+	}
+	if = {
+		limit = { scope:bad_omen_modifier = yes }
+		add = 1
+	}
+	if = {
+		limit = { scope:lost_in_lust_modifier = yes }
+		add = 1
+	}
+	if = {
+		limit = { scope:intrigue_starved_and_deprived_modifier = yes }
 		add = 1
 	}
 	max = 25

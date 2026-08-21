@@ -139,45 +139,6 @@
 		}
 	}
 	send_option = {
-		flag = renounce_claims
-		localization = RELEASE_RENOUNCE_CLAIMS
-		is_shown = {
-			scope:recipient != scope:actor
-			custom_description = {
-				text = "release_renounce_claims"
-				subject = scope:actor
-				scope:actor = {
-					any_claim = {
-						explicit = yes
-						save_temporary_scope_as = temp_claim
-						OR = {
-							holder = scope:recipient
-							AND = {
-								NOT = {
-									prev = {
-										target_is_liege_or_above = scope:recipient
-									}
-								}
-								trigger_if = {
-									limit = { exists = holder }
-									holder = {
-										target_is_liege_or_above = scope:recipient
-									}
-								}
-							}
-							scope:recipient = {
-								any_held_title = {
-									is_de_jure_liege_or_above_target = scope:temp_claim
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		current_description = { desc = RELEASE_RENOUNCE_CLAIMS_DESC }
-	}
-	send_option = {
 		flag = demand_admin
 		localization = "RELEASE_DEMAND_ADMIN"
 		is_shown = {
@@ -422,36 +383,7 @@
 			}
 			if = {
 				limit = { scope:demand_conversion = yes }
-				set_character_faith_with_conversion = scope:recipient.faith
-			}
-			if = {
-				limit = { scope:renounce_claims = yes }
-				every_claim = {
-					explicit = yes
-					limit = {
-						save_temporary_scope_as = temp_claim
-						OR = {
-							holder = scope:recipient
-							AND = {
-								exists = holder
-								NOT = {
-									prev = {
-										target_is_liege_or_above = scope:recipient
-									}
-								}
-								holder = {
-									target_is_liege_or_above = scope:recipient
-								}
-							}
-							scope:recipient = {
-								any_held_title = {
-									is_de_jure_liege_or_above_target = scope:temp_claim
-								}
-							}
-						}
-					}
-					scope:actor = { remove_claim = prev }
-				}
+				set_character_faith = scope:recipient.faith
 			}
 			if = {
 				limit = { scope:demand_admin = yes }
@@ -549,7 +481,6 @@
 		modifier = { add = 4 OR = { scope:current_gold = yes scope:extortionate_current_gold = yes } }
 		modifier = { add = 6 scope:hook = yes }
 		modifier = { add = 8 scope:demand_conversion = yes }
-		modifier = { add = 8 scope:renounce_claims = yes }
 		modifier = { add = 4 scope:demand_admin = yes }
 		modifier = { add = 6 scope:recipient.faith = scope:actor.faith scope:recipient.faith.religion = religion:demonic_religion }
 		modifier = { add = 6 scope:actor = { has_relation_lover = scope:recipient } }
@@ -573,12 +504,12 @@
 		ai_recipients = family
 		ai_recipients = courtiers
 		ai_recipients = vassals
+		ai_recipients = scripted_relations
 		max = 10
 	}
 	ai_potential = { always = yes }
 	ai_will_do = {
 		base = 100
-
 		modifier = {
 			factor = 0
 			scope:actor != scope:recipient
@@ -589,7 +520,6 @@
 				scope:current_gold = yes
 				scope:hook = yes
 				scope:demand_conversion = yes
-				scope:renounce_claims = yes
 				scope:demand_admin = yes
 			}
 		}

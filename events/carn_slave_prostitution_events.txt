@@ -1,0 +1,54 @@
+namespace = carn_slave_prostitution
+
+carn_slave_prostitution.0001 = {
+	hidden = yes
+
+	trigger = {
+		has_trait = slave
+		is_female = yes
+		is_adult = yes
+		carn_is_working_as_prostitute_trigger = yes
+		fertility >= 0.1
+		any_relation = { type = slave_owner }
+	}
+
+	immediate = {
+		save_scope_as = slave
+
+		random_relation = {
+			type = slave_owner
+			limit = { is_alive = yes }
+			save_scope_as = slave_owner
+		}
+
+		random_living_character = {
+			limit = {
+				has_trait = slave
+				this != scope:slave
+				is_female = no
+				NOT = { is_close_or_extended_family_of = scope:slave }
+			}
+			weight = {
+				base = 1
+				modifier = { is_at_same_location = scope:slave add = 1000 }
+				modifier = { in_diplomatic_range = scope:slave_owner add = 100 }
+			}
+			save_scope_as = breeder
+		}
+
+		if = {
+			limit = { exists = scope:breeder }
+			had_sex_with_effect = { CHARACTER = scope:breeder PREGNANCY_CHANCE = pregnancy_chance }
+			every_relation = {
+				type = slave_owner
+				limit = { is_alive = yes }
+				send_interface_message = {
+					type = carn_prostitute_random_event_good
+					title = carn_slave_prostitution.0001.t
+					add_gold = scope:slave.prostitute_price_value
+					add_piety = miniscule_piety_loss
+				}
+			}
+		}
+	}
+}

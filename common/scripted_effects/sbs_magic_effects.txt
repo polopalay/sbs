@@ -293,6 +293,46 @@ deal_with_the_devil_healing = {
 			remove_character_modifier = rejected_from_marriage_bed_modifier
 		}
 		if = {
+			limit = { $SBS_SEAL$ = yes }
+			remove_character_modifier = sbs_seal
+		}
+		if = {
+			limit = { $SBS_DEBUFF$ = yes }
+			remove_character_modifier = sbs_debuff
+		}
+		if = {
+			limit = { $STANKY_MODIFIER$ = yes }
+			remove_character_modifier = stanky_modifier
+		}
+		if = {
+			limit = { $CONFUSED_MODIFIER$ = yes }
+			remove_character_modifier = confused_modifier
+		}
+		if = {
+			limit = { $STRESS_SMELLING_OF_SWEAT$ = yes }
+			remove_character_modifier = stress_smelling_of_sweat
+		}
+		if = {
+			limit = { $PARTY_BARON_MURDERED_THE_JOY_OF_LIFE_MODIFIER$ = yes }
+			remove_character_modifier = party_baron_murdered_the_joy_of_life_modifier
+		}
+		if = {
+			limit = { $TOTALLY_LOST_MODIFIER$ = yes }
+			remove_character_modifier = totally_lost_modifier
+		}
+		if = {
+			limit = { $BAD_OMEN_MODIFIER$ = yes }
+			remove_character_modifier = bad_omen_modifier
+		}
+		if = {
+			limit = { $LOST_IN_LUST_MODIFIER$ = yes }
+			remove_character_modifier = lost_in_lust_modifier
+		}
+		if = {
+			limit = { $INTRIGUE_STARVED_AND_DEPRIVED_MODIFIER$ = yes }
+			remove_character_modifier = intrigue_starved_and_deprived_modifier
+		}
+		if = {
 			limit = { $DEPRESSED_1$ = yes }
 			remove_trait = depressed_1
 		}
@@ -528,101 +568,26 @@ deal_with_the_devil_healing = {
 			limit = { $INBRED$ = yes }
 			remove_trait = inbred
 		}
+	
 		if = {
-			limit = { $WITCH$ = yes }
-			remove_trait = witch
-			if = {
-				limit = { NOT = { any_secret = { type = secret_witch } } }
-				add_secret = { type = secret_witch }
-				random_secret = {
-					type = secret_witch
-					reveal_to = scope:devil
+			limit = {
+				OR = {
+					$STRESS$ = yes
+					$DRUNKARD$ = yes
+					$HASHISHIYAH$ = yes
+					$RECLUSIVE$ = yes
+					$IRRITABLE$ = yes
+					$FLAGELLANT$ = yes
+					$PROFLIGATE$ = yes
+					$IMPROVIDENT$ = yes
+					$CONTRITE$ = yes
+					$COMFORT_EATER$ = yes
+					$INAPPETETIC$ = yes
 				}
+				scope:devil = { sbs_has_brothel_2_trigger = no }
+				NOT = { has_trait = rakish }
 			}
-		}
-		if = {
-			limit = { $DEVIANT$ = yes }
-			remove_trait = deviant
-			if = {
-				limit = { NOT = { any_secret = { type = secret_deviant } } }
-				add_secret = { type = secret_deviant }
-				random_secret = {
-					type = secret_deviant
-					reveal_to = scope:devil
-				}
-			}
-		}
-		if = {
-			limit = { $CANNIBAL$ = yes }
-			remove_trait = cannibal
-			if = {
-				limit = { NOT = { any_secret = { type = secret_cannibal } } }
-				add_secret = { type = secret_cannibal }
-				random_secret = {
-					type = secret_cannibal
-					reveal_to = scope:devil
-				}
-			}
-		}
-		if = {
-			limit = { $ADULTERER$ = yes }
-			remove_trait = adulterer
-		}
-		if = {
-			limit = { $SODOMITE$ = yes }
-			remove_trait = sodomite
-			if = {
-				limit = { NOT = { any_secret = { type = secret_homosexual } } }
-				add_secret = { type = secret_homosexual }
-				random_secret = {
-					type = secret_homosexual
-					reveal_to = scope:devil
-				}
-			}
-		}
-		if = {
-			limit = { $INCESTUOUS$ = yes }
-			remove_trait = incestuous
-			if = {
-				limit = { NOT = { any_secret = { type = secret_incest } } }
-				add_secret = { type = secret_incest }
-				random_secret = {
-					type = secret_incest
-					reveal_to = scope:devil
-				}
-			}
-		}
-		if = {
-			limit = { $FORNICATOR$ = yes }
-			remove_trait = fornicator
-		}
-		if = {
-			limit = { $KINSLAYER_1$ = yes }
-			remove_trait = kinslayer_1
-		}
-		if = {
-			limit = { $KINSLAYER_2$ = yes }
-			remove_trait = kinslayer_2
-		}
-		if = {
-			limit = { $KINSLAYER_3$ = yes }
-			remove_trait = kinslayer_3
-		}
-		if = {
-			limit = { $MURDERER$ = yes }
-			remove_trait = murderer
-		}
-		if = {
-			limit = { $LIFESTYLE_PROSTITUTE$ = yes }
-			remove_trait = lifestyle_prostitute
-			if = {
-				limit = { NOT = { any_secret = { type = secret_prostitute } } }
-				add_secret = { type = secret_prostitute }
-				random_secret = {
-					type = secret_prostitute
-					reveal_to = scope:devil
-				}
-			}
+			add_trait = rakish
 		}
 	}
 }

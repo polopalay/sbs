@@ -16,7 +16,7 @@
 	populate_recipient_list = {
 		scope:recipient = {
 			every_courtier = {
-				limit = { has_trait = slave has_relation_slave_owner = scope:recipient }
+				limit = { has_trait = slave has_relation_slave_owner = scope:recipient NOT = { has_character_flag = carnia_slave_sale_pending } }
 				add_to_list = characters
 			}
 		}
@@ -70,11 +70,24 @@
 		flag = favor
 		localization = "RANSOM_FAVOR_OPTION"
 	}
+	on_send = {
+		scope:secondary_recipient = {
+			add_character_flag = carnia_slave_sale_pending
+		}
+	}
 	on_accept = {
 		scope:actor = { save_scope_as = buyer }
 		scope:recipient = { save_scope_as = seller }
-		scope:secondary_recipient = { save_scope_as = slave }
+		scope:secondary_recipient = {
+			save_scope_as = slave
+			remove_character_flag = carnia_slave_sale_pending
+		}
 		carn_buy_slave_effect = { SLAVE_PRICE = scope:secondary_recipient.carn_slave_price_value }
+	}
+	on_decline = {
+		scope:secondary_recipient = {
+			remove_character_flag = carnia_slave_sale_pending
+		}
 	}
 	ai_targets = { ai_recipients = liege }
 	ai_targets = {

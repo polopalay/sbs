@@ -23,12 +23,8 @@ succubus_dark_amry = {
 	stack = 100
 	max_sub_regiments = 10
 	can_recruit = {
-		OR = {
-			has_trait = sbs_demon
-			has_trait = sbs_succubus
-			has_trait = sbs_lesser_succubus
-			has_trait = sbs_lesser_demon
-		}
+		has_trait_with_flag = sbs_demon_trait
+		sbs_has_alchemy_1_trigger = yes
 	}
 
 	buy_cost = { gold = heavy_infantry_recruitment_cost }
@@ -69,7 +65,8 @@ succubus_death_korps  = {
 	stack = 100
 	max_sub_regiments = 10
 	can_recruit = {
-		has_trait = sbs_demon
+		has_trait_with_flag = sbs_demon_trait
+		sbs_has_alchemy_2_trigger = yes
 	}
 
 	buy_cost = { gold = heavy_cavalry_recruitment_cost }
@@ -85,7 +82,8 @@ succubus_zombie = {
 	icon = skirmishers
 	type = skirmishers
 	can_recruit = {
-		has_trait = sbs_demon
+		has_trait_with_flag = sbs_demon_trait
+		sbs_has_alchemy_3_trigger = yes
 	}
 
 	pursuit = 15
@@ -120,7 +118,8 @@ succubus_skeleton = {
 	icon = skirmishers
 	type = skirmishers
 	can_recruit = {
-		has_trait = sbs_demon
+		has_trait_with_flag = sbs_demon_trait
+		sbs_has_alchemy_3_trigger = yes
 	}
 
 	pursuit = 25

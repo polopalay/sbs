@@ -6,6 +6,7 @@ become_demon = {
 	decision_group_type = decisions
 
 	is_shown = {
+		NOT = { has_trait = sbs_true_demon }
 		NOT = { has_global_variable = seal_the_gates_of_hell }
 		OR = {
 			has_trait = sbs_lesser_succubus
@@ -22,12 +23,10 @@ become_demon = {
 				has_trait_xp = { trait = sbs_lesser_succubus track = corruption value >= 100 }
 				has_trait_xp = { trait = sbs_lesser_succubus track = loyalty value >= 100 }
 				age >= 100
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = brothel3 } }
 			}
 			AND = {
 				has_trait_xp = { trait = sbs_lesser_demon value >= 100 }
 				age >= 100
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } }
 			}
 			AND = {
 				faith.religion = religion:demonic_religion
@@ -49,7 +48,7 @@ become_demon = {
 						modifier = { is_lowborn = no add = 1 }
 						modifier = { dynasty = dynasty:888888 add = 100 }
 						modifier = { dynasty = dynasty:888888 is_female = yes is_adult = yes add = 1000 }
-						modifier = { dynasty = dynasty:888888 has_trait = sbs_demon is_adult = yes add = 10000 }
+						modifier = { dynasty = dynasty:888888 has_trait = sbs_succubus is_adult = yes add = 10000 }
 					}
 				}
 				random_held_title = {
@@ -81,7 +80,7 @@ become_demon = {
 						modifier = { is_lowborn = yes add = 1 }
 						modifier = { dynasty = dynasty:666666 add = 100 }
 						modifier = { dynasty = dynasty:666666 is_female = yes is_adult = yes add = 1000 }
-						modifier = { dynasty = dynasty:666666 has_trait = sbs_demon is_adult = yes add = 10000 }
+						modifier = { dynasty = dynasty:666666 has_trait = sbs_succubus is_adult = yes add = 10000 }
 					}
 				}
 				random_held_title = {

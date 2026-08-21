@@ -13,6 +13,7 @@ sbs_devils_gift_interaction = {
 	is_valid_showing_failures_only = {
 		scope:actor = {
 			OR = {
+				has_trait = sbs_true_demon
 				has_trait = sbs_demon
 				has_trait = sbs_succubus
 				has_trait_xp = { trait = sbs_lesser_succubus track = power value >= 25 }
@@ -24,12 +25,7 @@ sbs_devils_gift_interaction = {
 	send_option = {
 		is_shown = {
 			scope:actor = {
-				OR = {
-					has_trait = sbs_demon
-					has_trait = sbs_succubus
-				}
-				faith.religious_head = root
-				faith.religion = religion:demonic_religion
+				has_trait = sbs_true_demon
 			}
 			scope:recipient = {
 				is_ruler = no
@@ -104,7 +100,7 @@ sbs_devils_gift_interaction = {
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy1 } }
+				sbs_has_alchemy_1_trigger = yes
 			}
 		}
 		flag = learned_in_demonology
@@ -119,7 +115,7 @@ sbs_devils_gift_interaction = {
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy1 } }
+				sbs_has_alchemy_1_trigger = yes
 			}
 		}
 		flag = possessed_prophetic_visions
@@ -128,7 +124,7 @@ sbs_devils_gift_interaction = {
 
 	send_option = {
 		is_valid = {
-			scope:actor = { any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy3 } } }
+			scope:actor = { sbs_has_alchemy_3_trigger = yes }
 		}
 		flag = intellect_good
 		localization = trait_intellect_good
@@ -140,7 +136,7 @@ sbs_devils_gift_interaction = {
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy2 } }
+				sbs_has_alchemy_2_trigger = yes
 			}
 		}
 		flag = convert_diplomacy_perk
@@ -153,7 +149,7 @@ sbs_devils_gift_interaction = {
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy2 } }
+				sbs_has_alchemy_2_trigger = yes
 			}
 		}
 		flag = convert_martial_perk
@@ -166,7 +162,7 @@ sbs_devils_gift_interaction = {
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy2 } }
+				sbs_has_alchemy_2_trigger = yes
 			}
 		}
 		flag = convert_stewardship_perk
@@ -179,7 +175,7 @@ sbs_devils_gift_interaction = {
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy2 } }
+				sbs_has_alchemy_2_trigger = yes
 			}
 		}
 		flag = convert_intrigue_perk
@@ -192,7 +188,7 @@ sbs_devils_gift_interaction = {
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = { any_county_province = { has_building_or_higher = alchemy2 } }
+				sbs_has_alchemy_2_trigger = yes
 			}
 		}
 		flag = convert_learning_perk
@@ -222,11 +218,7 @@ sbs_devils_gift_interaction = {
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = {
-					any_county_province = {
-						has_building_or_higher = alchemy3
-					}
-				}
+				sbs_has_alchemy_3_trigger = yes
 			}
 		}
 		flag = education_learning
@@ -248,11 +240,7 @@ sbs_devils_gift_interaction = {
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = {
-					any_county_province = {
-						has_building_or_higher = alchemy3
-					}
-				}
+				sbs_has_alchemy_3_trigger = yes
 			}
 		}
 		flag = education_martial
@@ -274,11 +262,7 @@ sbs_devils_gift_interaction = {
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = {
-					any_county_province = {
-						has_building_or_higher = alchemy3
-					}
-				}
+				sbs_has_alchemy_3_trigger = yes
 			}
 		}
 		flag = education_intrigue
@@ -300,11 +284,7 @@ sbs_devils_gift_interaction = {
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = {
-					any_county_province = {
-						has_building_or_higher = alchemy3
-					}
-				}
+				sbs_has_alchemy_3_trigger = yes
 			}
 		}
 		flag = education_diplomacy
@@ -326,11 +306,7 @@ sbs_devils_gift_interaction = {
 		}
 		is_valid = {
 			scope:actor = {
-				any_sub_realm_county = {
-					any_county_province = {
-						has_building_or_higher = alchemy3
-					}
-				}
+				sbs_has_alchemy_3_trigger = yes
 			}
 		}
 		flag = education_stewardship
@@ -393,11 +369,23 @@ sbs_devils_gift_interaction = {
 			}
 			else_if = {
 				limit = { scope:deviant = yes }
-				add_trait = deviant
+				if = {
+					limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:deviant } }
+					add_secret = { type = secret_deviant }
+				}
+				else = {
+					add_trait = deviant
+				}
 			}
 			else_if = {
 				limit = { scope:witch = yes }
-				add_trait = witch
+				if = {
+					limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:witch } }
+					add_secret = { type = secret_witch }
+				}
+				else = {
+					add_trait = witch
+				}
 			}
 			else_if = {
 				limit = { scope:possessed_by_lust_demon_modifier = yes }
@@ -502,7 +490,8 @@ sbs_devils_gift_interaction = {
 
 		modifier = {
 			add = 25
-			scope:actor = { OR = { has_trait = sbs_demon has_trait = sbs_succubus } }
+			scope:actor = { OR = { has_trait = sbs_true_demon has_trait = sbs_demon has_trait = sbs_succubus } }
+			scope:recipient = { has_trait_with_flag = sbs_demon_trait }
 			scope:recipient.dynasty = scope:actor.dynasty
 			scope:recipient != scope:actor
 		}
