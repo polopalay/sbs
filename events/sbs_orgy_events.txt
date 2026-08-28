@@ -2498,8 +2498,12 @@ sbs_orgy.3300 = {
 		# The rival is only the opposing contestant. Every other adult attendee is a round partner.
 		involved_activity = {
 			every_attending_character = {
-				limit = { this != root this != scope:sbs_orgy_contest_rival is_adult = yes }
+				limit = { this != root is_adult = yes }
 				had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance }
+			}
+			every_attending_character = {
+				limit = { this != scope:sbs_orgy_contest_rival is_adult = yes }
+				had_sex_with_effect = { CHARACTER = scope:sbs_orgy_contest_rival PREGNANCY_CHANCE = pregnancy_chance }
 			}
 		}
 		duel = {
