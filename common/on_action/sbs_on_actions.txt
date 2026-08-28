@@ -6,167 +6,49 @@ on_game_start = {
 		}
 	}
 }
+
 random_yearly_everyone_pulse = {
-	trigger = {
-		is_adult = yes
-		is_travelling = no
-		is_incapable = no
-		is_in_army = no
-		is_imprisoned = no
-	}
 	on_actions = {
-		delay = { days = { 12 36 } }
-		sbs_male_on_action
-		delay = { days = { 12 36 } }
-		sbs_female_on_action
-		delay = { days = { 48 120 } }
-		sbs_prostitutute_on_action
-	}
-	events = {
-		sbs_prostitution.0099 # voluntary whore options
+		sbs_on_action
 	}
 }
 
-sbs_female_on_action = {
+sbs_on_action = {
 	trigger = {
 		is_adult = yes
-		is_female = yes
 		is_ruler = yes
 		is_imprisoned = no
-	}
-	effect = {
-		random_list = {
-			5 = 0
-			0 = {
-				modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 1 }
-				trigger_event = sbs_go.0550 # max addiction
-			}
-			0 = {
-				modifier = { any_character_artifact = { has_artifact_modifier = reddreamring_modifier } add = 3 }
-				modifier = { has_character_modifier = possessed_by_lust_demon_modifier add = 2 }
-				trigger_event = sbs_go.1410 # gremlin fuck
-			}
-			0 = {
-				modifier = { any_character_artifact = { has_artifact_modifier = reddreamring_modifier } has_character_modifier = possessed_by_lust_demon_modifier add = 1 }
-				trigger_event = sbs_go.1300 # special dream
-			}
-			0 = {
-				modifier = { has_character_flag = had_warhorse_story OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 1 }
-				trigger_event = sbs_go.4000 # gremlin fuck
-			}
-			0 = {
-				modifier = { carn_is_working_as_prostitute_trigger = yes any_character_artifact = { has_artifact_modifier = snake_bracelet_modifier } any_knight = { count > 0 } any_knight = { is_female = no has_character_modifier = sbs_buff count = 0 } add = 3 }
-				trigger_event = sbs_go.8000 # loyalty event init
-			}
-			0 = {
-				modifier = { carn_is_working_as_prostitute_trigger = yes any_character_artifact = { has_artifact_modifier = snake_bracelet_modifier } any_knight = { count > 0 } any_knight = { is_female = no has_character_modifier = sbs_buff } add = 3 }
-				trigger_event = sbs_go.8099 # loyalty events
-			}
-			0 = {
-				modifier = { carn_is_working_as_prostitute_trigger = yes any_character_artifact = { has_artifact_modifier = snake_bracelet_modifier } any_knight = { count > 0 } any_knight = { is_female = no has_character_modifier = sbs_generals count = 0 } add = 3 }
-				trigger_event = sbs_go.8200 # loyalty event: new recruit
-			}
-			0 = {
-				modifier = { any_character_artifact = { has_artifact_modifier = crown_of_wisdom_crown_modifier } should_be_naked_trigger = no any_councillor = { is_female = no } add = 1 }
-				trigger_event = sbs_go.1440 # naked event
-			}
-			0 = {
-				modifier = { any_character_artifact = { has_artifact_modifier = crown_of_wisdom_crown_modifier } should_be_naked_trigger = yes any_councillor = { is_female = no } add = 1 }
-				trigger_event = sbs_go.1460 # fuck on throne event
-			}
-			0 = {
-				modifier = { any_character_artifact = { has_artifact_modifier = crown_of_wisdom_crown_modifier } is_ruler = yes add = 1 }
-				trigger_event = sbs_go.2000 # urge to masturbate
-			}
-			0 = {
-				modifier = { any_character_artifact = { has_artifact_modifier = master_dildo_modifier } add = 1 }
-				trigger_event = sbs_go.0501 # basic exploratory dildo fuck
-			}
-			0 = {
-				modifier = { has_character_modifier = deviants_strangebook_modifier add = 3 }
-				trigger_event = sbs_go.7000 # you sweating in your study
-			}
-		}
-	}
-}
-
-sbs_male_on_action = {
-	trigger = {
-		is_adult = yes
-		is_female = no
-		is_ruler = yes
 		OR = {
-			has_trait = deviant
-			any_secret = { type = secret_deviant }
-			has_trait = sadistic
-			has_trait = callous
+			has_trait = sbs_lesser_succubus
+			has_trait = sbs_lesser_demon
 		}
-		is_imprisoned = no
 	}
-	random_events = {
-		chance_to_happen = 50
 
-		100 = sbs_go.9001
-		100 = sbs_go.9100
-		100 = sbs_go.9200
-		100 = sbs_go.9300
-		100 = sbs_go.9400
-		100 = sbs_go.9500
+	effect = {
+		if = {
+			limit = { has_trait = sbs_lesser_succubus }
+			every_relation = {
+				type = lover
+				root = {
+					add_trait_xp = { trait = sbs_lesser_succubus track = corruption value = 1 }
+				}
+			}
+			every_relation = {
+				type = soulmate
+				root = {
+					add_trait_xp = { trait = sbs_lesser_succubus track = loyalty value = 1 }
+				}
+			}
+		}
+		if = {
+			limit = { has_trait = sbs_lesser_demon }
 
-		50 = sbs_go.9700
-		50 = sbs_go.9710
-	}
-}
-
-sbs_prostitutute_on_action = {
-	trigger = {
-		is_adult = yes
-		is_female = yes
-		is_ruler = yes
-		has_std_trigger = no
-		carn_is_working_as_prostitute_trigger = yes
-		is_valid_construction_brothel_trigger = yes
-	}
-	random_events = {
-		chance_to_happen = 75
-		50 = sbs_prostitution.9000 # coming of age male
-		50 = sbs_prostitution.9010 # a married couple
-		50 = sbs_prostitution.9030 # older man
-		50 = sbs_prostitution.9040 # noble woman
-		50 = sbs_prostitution.9200 # decide to be a nude waitress
-		50 = sbs_prostitution.9220 # only decoration aviable
-		50 = sbs_prostitution.9230 # rich merchant
-		50 = sbs_prostitution.9260 # harsh anal dp gangbang
-	}
-}
-
-on_travel_plan_movement = {
-	trigger = {
-		is_adult = yes
-		is_ruler = yes
-		is_landed = yes
-	}
-	on_actions = {
-		delay = { days = { 2 4 } }
-		sbs_travel_events
-	}
-}
-
-sbs_travel_events = {
-	random_events = {
-		chance_to_happen = 5
-		100 = sbs_travel.0100 # spot a bound woman having a witch trial
-		100 = sbs_travel.0101 # bound person is blocking your path
-		100 = sbs_travel.0102
-		100 = sbs_travel.0103
-		100 = sbs_travel.0104
-		100 = sbs_travel.0105
-		100 = sbs_travel.0106
-		100 = sbs_travel.0107
-		100 = sbs_travel.0108
-		100 = sbs_travel.0110 # bandit attack if female
-		100 = sbs_travel.0200 # spot woman fucking a dog
-		100 = sbs_travel.1000 # lustful female only perverted inn
-		100 = sbs_travel.2000 # lustful female only perverted inn
+			every_relation = {
+				type = slave
+				root = {
+					add_trait_xp = { trait = sbs_lesser_demon value = 5 }
+				}
+			}
+		}
 	}
 }

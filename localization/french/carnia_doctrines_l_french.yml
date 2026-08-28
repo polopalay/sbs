@@ -8,7 +8,7 @@
   carn_doctrine_same_slavery_accepted_desc: "L'esclavage est une punition juste et adéquate pour les [ROOT.Faith.GetAdherentNamePluralNoTooltip] qui se sont ecarté du droit chemin. Une vie de servitude sera leur pénitence pour leurs crimes."
   doctrine_parameter_same_slavery_illegal: "Posséder des [slaves|El] de [faiths|El] [faith_righteous|El] ou [faith_astray|El] est un [crime|El]"
   doctrine_parameter_same_slavery_shunned: "Posséder des [slaves|El] de [faiths|El] [faith_righteous|El] ou [faith_astray|El] est [shunned|El]"
-d octrine_parameter_same_slavery_accepted: "Posséder des [slaves|El] de [faiths|El] [faith_righteous|El] ou [faith_astray|El] est complétement accepté"
+  doctrine_parameter_same_slavery_accepted: "Posséder des [slaves|El] de [faiths|El] [faith_righteous|El] ou [faith_astray|El] est complétement accepté"
 
   carn_doctrine_other_slavery_name: "Asservissement d'infidèles"
   carn_doctrine_other_slavery_crime_name: "Criminel"

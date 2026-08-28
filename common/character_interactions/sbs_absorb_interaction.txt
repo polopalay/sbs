@@ -174,7 +174,7 @@
 					add_trait_xp = {
 						trait = sbs_lesser_succubus
 						track = corruption
-						value = 5
+						value = 2
 					}
 					if = {
 						limit = {
@@ -183,7 +183,7 @@
 						add_trait_xp = {
 							trait = sbs_lesser_succubus
 							track = corruption
-							value = 5
+							value = 2
 						}
 					}
 					if = {
@@ -197,7 +197,7 @@
 						add_trait_xp = {
 							trait = sbs_lesser_succubus
 							track = corruption
-							value = 10
+							value = 5
 						}
 					}
 				}
@@ -210,7 +210,7 @@
 					add_trait_xp = {
 						trait = sbs_lesser_succubus
 						track = loyalty
-						value = 5
+						value = 2
 					}
 					if = {
 						limit = {
@@ -219,7 +219,7 @@
 						add_trait_xp = {
 							trait = sbs_lesser_succubus
 							track = loyalty
-							value = 5
+							value = 2
 						}
 					}
 					if = {
@@ -233,7 +233,7 @@
 						add_trait_xp = {
 							trait = sbs_lesser_succubus
 							track = loyalty
-							value = 10
+							value = 5
 						}
 					}
 				}

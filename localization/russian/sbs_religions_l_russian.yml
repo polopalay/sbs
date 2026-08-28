@@ -110,3 +110,12 @@
   succubus_night_god_name_possessive: "Гекаты"
   succubus_water_god_name: "Левиафан"
   succubus_water_god_name_possessive: "Левиафана"
+
+  succubus_high_god_name: "Сатана"
+  succubus_high_god_name_2: "$succubus_high_god_name$"
+  succubus_high_god_name_3: "$succubus_high_god_name$"
+  succubus_high_god_name_possessive: "Сатаны"
+  succubus_high_god_name_alternate: "Господь"
+  succubus_high_god_name_alternate_possessive: "Господа"
+  succubus_good_god_1: "$succubus_health_god_name$"
+  succubus_good_god_2: "Люцифер"

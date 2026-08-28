@@ -4,7 +4,7 @@
 	colored_emblem={
 		color1=grey
 		color2=black
-		texture="carn_ce_womb_39.dds"
+		texture="ce_norse_triskele_snakes.dds"
 		instance={
 			position={ 0.500000 0.520000 }
 		}
@@ -17,7 +17,7 @@
 	colored_emblem={
 		color1=black
 		color2=grey
-		texture="cherilewd_ce_hypno_4.dds"
+		texture="ce_boathooks.dds"
 		instance={
 			position={ 0.500000 0.520000 }
 		}
@@ -32,7 +32,7 @@
 		color1=yellow
 		color2=white
 		color3=black
-		texture="cherilewd_ce_silhouette_3.dds"
+		texture="ce_triskel_02.dds"
 		instance={
 			position={ 0.500000 0.520000 }
 			scale={ 1.100000 1.100000 }
@@ -49,39 +49,7 @@
 	colored_emblem={
 		color1=yellow
 		color2=black
-		texture="carn_ce_womb_71.dds"
-		instance={
-			scale={ 0.900000 0.900000 }
-		}
-	}
-}
-
-14814813={
-	pattern="pattern_solid.dds"
-	color1=black
-	color2=blue
-	color3=white
-	color4=yellow
-	colored_emblem={
-		color1=yellow
-		color2=white
-		texture="cherilewd_ce_symbol_9.dds"
-		instance={
-			scale={ 0.900000 0.900000 }
-		}
-	}
-}
-
-13131313={
-	pattern="pattern_solid.dds"
-	color1=red
-	color2=blue
-	color3=white
-	color4=yellow
-	colored_emblem={
-		color1=yellow
-		color2=white
-		texture="cherilewd_ce_symbol_11.dds"
+		texture="ce_ordroerir.dds"
 		instance={
 			scale={ 0.900000 0.900000 }
 		}
@@ -94,7 +62,7 @@ k_pleasure={
 	colored_emblem={
 		color1=grey
 		color2=black
-		texture="carn_ce_womb_39.dds"
+		texture="ce_norse_triskele_snakes.dds"
 		instance={
 			position={ 0.500000 0.520000 }
 		}
@@ -107,7 +75,7 @@ k_violence={
 	colored_emblem={
 		color1=black
 		color2=grey
-		texture="cherilewd_ce_hypno_4.dds"
+		texture="ce_boathooks.dds"
 		instance={
 			position={ 0.500000 0.520000 }
 		}
@@ -122,7 +90,7 @@ k_nature={
 		color1=yellow
 		color2=white
 		color3=black
-		texture="cherilewd_ce_silhouette_3.dds"
+		texture="ce_triskel_02.dds"
 		instance={
 			position={ 0.500000 0.520000 }
 			scale={ 1.100000 1.100000 }
@@ -139,7 +107,7 @@ k_greedy={
 	colored_emblem={
 		color1=yellow
 		color2=black
-		texture="carn_ce_womb_71.dds"
+		texture="ce_ordroerir.dds"
 		instance={
 			scale={ 0.900000 0.900000 }
 		}

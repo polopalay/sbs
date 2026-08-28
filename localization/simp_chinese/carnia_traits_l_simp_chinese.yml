@@ -6,6 +6,12 @@
  trait_former_slave_desc: "该角色曾是奴隶，但现在已挣脱枷锁，重归自由。"
  trait_former_slave_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip]曾是奴隶，但现在已挣脱枷锁，重归自由。"
 
+ trait_lifestyle_prostitute: "娼妓"
+ trait_lifestyle_prostitute_desc: "此角色以肉体换取金钱。"
+ trait_lifestyle_prostitute_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip]以性服务换取钱币。"
+ trait_track_lifestyle_prostitute: "娼妓"
+ trait_track_lifestyle_prostitute_desc: "以出卖性爱为生"
+
  trait_dick_small: "小阴茎"
  trait_dick_small_bad: "$trait_dick_small$"
  trait_dick_small_1: "小阴茎"

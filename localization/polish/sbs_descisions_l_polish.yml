@@ -4,17 +4,7 @@
  become_demon.c: "Przyjmij błogosławieństwo" 
  become_demon.t: "Rozpocznij święty rytuał"
 
- masturbate: "Masturbuj się"
- masturbate.desc: "Twoje życie jest już pełne stresu, szukasz czegoś, co go złagodzi. Dildo to najbezpieczniejszy sposób, możesz oddać się zmysłowości, nie martwiąc się plotkami o tym, że jesteś rozwiązłą i rozwiązłą rozwiązłą rozwiązłością."
- masturbate.t: "Uwolnij się od stresu"
- masturbate.c: "Rozpocznij święty rytuał"
-
  seal_the_gates_of_hell: "Zapieczętuj Bramy Piekła"
  seal_the_gates_of_hell.desc: "Bramy piekła są otwarte, a demony szykują się do inwazji na świat ludzi. Musisz znaleźć sposób na zapieczętowanie bram piekła i uniemożliwienie demonom wejścia do świata ludzi."
  seal_the_gates_of_hell.t: "Zapieczętuj Bramy Piekła"
  seal_the_gates_of_hell.c: "Zapieczętuj Bramy Piekła"
-
- sbs_startmerchant_decision: "Odwiedź czarny rynek"
- sbs_startmerchant_decision_desc: "Udaj się osobiście na ukryty targ i obejrzyj towary kupca."
- sbs_startmerchant_decision_tooltip: "Udaj się bezpośrednio do handlarza z czarnego rynku."
- sbs_startmerchant_decision_confirm: "Wyrusz"

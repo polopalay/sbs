@@ -1,0 +1,548 @@
+sbs_private_orgy = {
+	is_shown = {
+		is_ruler = yes
+		is_available_adult = yes
+		faith = {
+			has_doctrine_parameter = adultery_female_accepted
+			has_doctrine_parameter = adultery_male_accepted
+			has_doctrine_parameter = carn_prostitution_accepted
+		}
+		has_std_trigger = no
+	}
+
+	can_start_showing_failures_only = {
+		is_ruler = yes
+		is_available_adult = yes
+		faith = {
+			has_doctrine_parameter = adultery_female_accepted
+			has_doctrine_parameter = adultery_male_accepted
+			has_doctrine_parameter = carn_prostitution_accepted
+		}
+		NOT = { is_activity_type_on_cooldown = sbs_private_orgy }
+	}
+
+	is_valid = {
+		scope:host = {
+			is_alive = yes
+			is_ruler = yes
+			is_adult = yes
+			faith = {
+				has_doctrine_parameter = adultery_female_accepted
+				has_doctrine_parameter = adultery_male_accepted
+				has_doctrine_parameter = carn_prostitution_accepted
+			}
+		}
+		# Any unlanded ruler can only host the outdoor version.
+		trigger_if = {
+			limit = {
+				scope:host = { is_landed = no }
+			}
+			has_activity_option = {
+				category = sbs_orgy_option_location
+				option = sbs_orgy_location_outdoor
+			}
+		}
+
+		trigger_if = {
+			limit = { is_current_phase_active = yes }
+			has_attending_activity_guests = yes
+		}
+	}
+
+	on_invalidated = {
+		every_attending_character = {
+			remove_character_flag = sbs_orgy_active
+			if = {
+				limit = { has_variable = sbs_orgy_round }
+				remove_variable = sbs_orgy_round
+			}
+			if = {
+				limit = { has_variable = sbs_orgy_target_rounds }
+				remove_variable = sbs_orgy_target_rounds
+			}
+			if = {
+				limit = { has_character_flag = sbs_orgy_forced_naked }
+				remove_character_flag = is_naked
+				remove_character_flag = sbs_orgy_forced_naked
+			}
+		}
+
+		# Safety cleanup for the host in case the attendee iterator does not include it.
+		scope:host = {
+			remove_character_flag = sbs_orgy_active
+			if = {
+				limit = { has_variable = sbs_orgy_round }
+				remove_variable = sbs_orgy_round
+			}
+			if = {
+				limit = { has_variable = sbs_orgy_target_rounds }
+				remove_variable = sbs_orgy_target_rounds
+			}
+			if = {
+				limit = { has_character_flag = sbs_orgy_forced_naked }
+				remove_character_flag = is_naked
+				remove_character_flag = sbs_orgy_forced_naked
+			}
+		}
+
+		if = {
+			limit = {
+				scope:host = { is_alive = yes is_imprisoned = no }
+				has_attending_activity_guests = no
+			}
+			scope:host = { trigger_event = sbs_orgy.0002 }
+		}
+	}
+
+	is_single_location = yes
+	# domicile_domain works for landed hosts and landless adventurers with a domicile.
+	province_filter = domicile_domain
+	ai_province_filter = domicile_domain
+	max_province_icons = 1
+	allow_zero_guest_invites = no
+	open_invite = no
+
+	max_guests = {
+		value = 20
+		if = {
+			limit = { scope:sbs_orgy_option_size ?= flag:sbs_orgy_size_medium }
+			add = 10
+		}
+		else_if = {
+			limit = { scope:sbs_orgy_option_size ?= flag:sbs_orgy_size_large }
+			add = 20
+		}
+	}
+
+	guest_invite_rules = {
+		rules = {
+			2 = activity_invite_rule_rivals_if_appropriate
+			3 = activity_invite_rule_extended_family
+			4 = activity_invite_neighbouring_rulers
+			5 = activity_invite_rule_knights
+			6 = activity_invite_mp
+		}
+		defaults = {
+			1 = sbs_orgy_invite_rule_barony_rulers
+			1 = activity_invite_rule_vassals_and_below
+			1 = activity_invite_rule_liege
+			1 = activity_invite_rule_suzerain
+			1 = activity_invite_rule_tributaries
+			1 = activity_invite_rule_confederates
+			2 = activity_invite_rule_fellow_vassals
+
+			1 = activity_invite_rule_friends
+			1 = activity_invite_rule_potential_friends
+			2 = activity_invite_rule_lovers
+			2 = activity_invite_rule_potential_lovers
+			1 = activity_invite_rule_close_family
+			1 = activity_invite_spouses
+
+			3 = activity_invite_rule_courtiers
+			4 = activity_invite_rule_guests
+
+			1 = activity_invite_rule_landless_adventurers
+			1 = activity_invite_rule_followers
+			2 = activity_invite_rule_local_lord
+		}
+	}
+
+	can_be_activity_guest = {
+		is_available_adult = yes
+		in_diplomatic_range = scope:host
+		has_std_trigger = no
+	}
+
+	host_intents = {
+		intents = { reduce_stress_intent woo_attendee_intent befriend_attendee_intent }
+		default = reduce_stress_intent
+	}
+
+	guest_intents = {
+		intents = { reduce_stress_intent woo_attendee_intent befriend_attendee_intent }
+		default = reduce_stress_intent
+	}
+
+	guest_join_chance = {
+		# Barons have little rank/prestige leverage, so a base of 10 made
+		# their invitations fail far too often.
+		base = 30
+		base_activity_modifier = yes
+		activity_guest_shared_ai_accept_modifier = yes
+	}
+
+	cost = {
+		gold = {
+			add = { value = tiny_gold_value desc = sbs_private_orgy_cost_desc }
+		}
+	}
+	ui_predicted_cost = { gold = { value = tiny_gold_value } }
+
+	max_guest_arrival_delay_time = { months = sbs_orgy_guest_arrival_delay_days }
+
+	options = {
+		sbs_orgy_option_size = {
+			sbs_orgy_size_small = {
+				default = yes
+				ai_will_do = { value = 100 }
+			}
+			sbs_orgy_size_medium = {
+				cost = { gold = { value = tiny_gold_value } }
+				ai_will_do = { value = 25 }
+			}
+			sbs_orgy_size_large = {
+				cost = { gold = { value = minor_gold_value } }
+				ai_will_do = { value = 5 }
+			}
+		}
+
+		sbs_orgy_option_location = {
+			# Show Indoor first. Landless rulers can see it, but cannot select it.
+			sbs_orgy_location_indoor = {
+				is_valid = {
+					custom_tooltip = {
+						text = sbs_orgy_location_indoor_landless_invalid
+						is_landed = yes
+					}
+				}
+				ai_will_do = { value = 60 }
+			}
+
+			# Outdoor stays the default so landless hosts always start on a valid choice.
+			sbs_orgy_location_outdoor = {
+				default = yes
+				ai_will_do = { value = 40 }
+			}
+		}
+	}
+
+	phases = {
+		sbs_private_orgy_phase = {
+			order = 1
+			is_predefined = yes
+			is_shown = { always = yes }
+
+			on_phase_active = {
+				# Only the host controls the phase duration.
+				if = {
+					limit = { this = scope:host }
+					if = {
+						limit = {
+							scope:activity = {
+								has_activity_option = {
+									category = sbs_orgy_option_size
+									option = sbs_orgy_size_small
+								}
+							}
+						}
+						scope:activity = { progress_activity_phase_after = { weeks = 3 } }
+					}
+					else_if = {
+						limit = {
+							scope:activity = {
+								has_activity_option = {
+									category = sbs_orgy_option_size
+									option = sbs_orgy_size_medium
+								}
+							}
+						}
+						scope:activity = { progress_activity_phase_after = { weeks = 5 } }
+					}
+					else = {
+						scope:activity = { progress_activity_phase_after = { weeks = 7 } }
+					}
+				}
+
+				# Every participant starts the same personal chain.
+				# 0001 fires immediately, then every 7 days, for exactly 3 / 5 / 7 rounds.
+				add_character_flag = sbs_orgy_active
+				set_variable = { name = sbs_orgy_round value = 0 }
+
+				if = {
+					limit = {
+						scope:activity = {
+							has_activity_option = {
+								category = sbs_orgy_option_size
+								option = sbs_orgy_size_small
+							}
+						}
+					}
+					set_variable = { name = sbs_orgy_target_rounds value = 3 }
+				}
+				else_if = {
+					limit = {
+						scope:activity = {
+							has_activity_option = {
+								category = sbs_orgy_option_size
+								option = sbs_orgy_size_medium
+							}
+						}
+					}
+					set_variable = { name = sbs_orgy_target_rounds value = 5 }
+				}
+				else = {
+					set_variable = { name = sbs_orgy_target_rounds value = 7 }
+				}
+
+				trigger_event = sbs_orgy.0001
+			}
+		}
+	}
+
+	on_start = {
+		set_variable = { name = host_var value = scope:host }
+	}
+
+	# Passive state is deliberately quiet: arrival itself produces no popup.
+	# Attendees still undress as soon as they reach the venue.
+	on_enter_passive_state = {
+		if = {
+			limit = { NOT = { has_character_flag = is_naked } }
+			add_character_flag = sbs_orgy_forced_naked
+			add_character_flag = is_naked
+		}
+	}
+
+	on_enter_active_state = {
+		add_character_flag = sbs_orgy_active
+		if = {
+			limit = { NOT = { has_character_flag = is_naked } }
+			add_character_flag = sbs_orgy_forced_naked
+			add_character_flag = is_naked
+		}
+	}
+
+	on_leave_active_state = {
+		# Any delayed 0001 already in the queue now fails its trigger.
+		remove_character_flag = sbs_orgy_active
+		if = {
+			limit = { has_variable = sbs_orgy_round }
+			remove_variable = sbs_orgy_round
+		}
+		if = {
+			limit = { has_variable = sbs_orgy_target_rounds }
+			remove_variable = sbs_orgy_target_rounds
+		}
+		if = {
+			limit = { has_character_flag = sbs_orgy_forced_naked }
+			remove_character_flag = is_naked
+			remove_character_flag = sbs_orgy_forced_naked
+		}
+	}
+
+	on_complete = {
+		remove_character_flag = sbs_orgy_active
+		if = {
+			limit = { has_variable = sbs_orgy_round }
+			remove_variable = sbs_orgy_round
+		}
+		if = {
+			limit = { has_variable = sbs_orgy_target_rounds }
+			remove_variable = sbs_orgy_target_rounds
+		}
+		if = {
+			limit = { has_character_flag = sbs_orgy_forced_naked }
+			remove_character_flag = is_naked
+			remove_character_flag = sbs_orgy_forced_naked
+		}
+	}
+
+	# Short activity summaries, in the same style as vanilla Feast/Hunt.
+	host_description = {
+		desc = sbs_orgy_host_desc
+	}
+
+	guest_description = {
+		desc = sbs_orgy_guest_desc
+	}
+
+	conclusion_description = {
+		desc = sbs_orgy_conclusion_desc
+	}
+
+	# Like Feast/Hunt/Camp Party, show actual attendees in the activity window.
+	# Repeated guest slots draw from the attendee list; the UI skips duplicates.
+	window_characters = {
+		# Four guest slots, arranged around the host like vanilla Camp Party.
+		# Candidates are all accepted attendees, including those still travelling,
+		# so the activity screen can show a fuller company from the beginning.
+		guest = {
+			camera = camera_body_right
+			effect = {
+				every_attending_character = {
+					limit = { this != scope:host }
+					add_to_list = characters
+				}
+			}
+			scripted_animation = {
+				triggered_animation = {
+					trigger = { always = yes }
+					animation = { drink_goblet happiness flirtation throne_room_conversation_3 throne_room_conversation_1 }
+				}
+			}
+		}
+
+		guest = {
+			camera = camera_body
+			effect = {
+				every_attending_character = {
+					limit = { this != scope:host }
+					add_to_list = characters
+				}
+			}
+			scripted_animation = {
+				triggered_animation = {
+					trigger = { always = yes }
+					animation = { happiness flirtation drink throne_room_conversation_2 throne_room_conversation_3 }
+				}
+			}
+		}
+
+		host = {
+			camera = camera_body
+			effect = {
+				scope:host = { add_to_list = characters }
+			}
+			scripted_animation = {
+				triggered_animation = {
+					trigger = { always = yes }
+					animation = { happiness drink_goblet flirtation }
+				}
+			}
+		}
+
+		guest = {
+			camera = camera_body
+			effect = {
+				every_attending_character = {
+					limit = { this != scope:host }
+					add_to_list = characters
+				}
+			}
+			scripted_animation = {
+				triggered_animation = {
+					trigger = { always = yes }
+					animation = { dancing laugh throne_room_conversation_2 happiness }
+				}
+			}
+		}
+
+		guest = {
+			camera = camera_body_left
+			effect = {
+				every_attending_character = {
+					limit = { this != scope:host }
+					add_to_list = characters
+				}
+			}
+			scripted_animation = {
+				triggered_animation = {
+					trigger = { always = yes }
+					animation = { drink eavesdrop wedding_drunk throne_room_conversation_1 }
+				}
+			}
+		}
+	}
+
+	cooldown = { years = 1 }
+
+	# Use one interval for every host type so landless adventurers are
+	# still considered. 60 months made low-tier hosts effectively vanish.
+	ai_check_interval = 24
+
+	# AI hosting priority: desire matters, but safety and money come first.
+	# The hard AI-only gate above requires peace, a healthy gold reserve, and no epidemic nearby.
+	ai_will_do = {
+		value = 25
+
+		if = {
+			limit = { has_trait = lustful }
+			add = { value = 20 desc = lustful }
+		}
+		if = {
+			limit = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } }
+			add = { value = 25 desc = deviant }
+		}
+		if = {
+			limit = { has_trait = rakish }
+			add = { value = 25 desc = rakish }
+		}
+		if = {
+			limit = {
+				OR = {
+					is_at_war = yes
+					location.county = {
+						OR = {
+							has_province_with_epidemic = { intensity = any }
+							any_neighboring_county = {
+								has_province_with_epidemic = { intensity = any }
+							}
+						}
+					}
+				}
+			}
+			multiply = 0
+		}
+
+	}
+
+	# Explicit positive province score for AI hosts. The filter itself remains
+	# domicile_domain so the same activity still works for landed and landless.
+	ai_will_select_province = {
+		value = 10
+	}
+
+	# Travel background: the old single background only matched once the host
+	# had reached the activity location, leaving the activity window blank en route.
+	background = { # Travel - sea
+		trigger = {
+			NOT = { scope:host.location = scope:activity.activity_location }
+			scope:host.location = { is_sea_province = yes }
+		}
+		texture = "gfx/interface/illustrations/event_scenes/fp1_ocean.dds"
+		environment = "environment_event_fp1_ocean"
+		ambience = "event:/DLC/FP1/SFX/Events/event_ocean_longship"
+	}
+
+	background = { # Travel - land fallback
+		trigger = {
+			NOT = { scope:host.location = scope:activity.activity_location }
+			scope:host.location = { NOT = { is_sea_province = yes } }
+		}
+		texture = "gfx/interface/illustrations/event_scenes/ep2_travel_hills.dds"
+		environment = "environment_travel_hills_settlement"
+		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
+	}
+
+	background = { # Orgy location - outdoors / camp party
+		trigger = {
+			scope:host.location = scope:activity.activity_location
+			scope:activity = {
+				has_activity_option = {
+					category = sbs_orgy_option_location
+					option = sbs_orgy_location_outdoor
+				}
+			}
+		}
+		texture = "gfx/interface/illustrations/event_scenes/ep3_campfire.dds"
+		environment = "environment_event_bp1_bonfire"
+		ambience = "event:/SFX/Events/Backgrounds/burning_building"
+	}
+
+	background = { # Orgy location - indoors / feast hall
+		trigger = {
+			scope:host.location = scope:activity.activity_location
+			scope:activity = {
+				NOT = {
+					has_activity_option = {
+						category = sbs_orgy_option_location
+						option = sbs_orgy_location_outdoor
+					}
+				}
+			}
+		}
+		texture = "gfx/interface/illustrations/event_scenes/feast.dds"
+		environment = "environment_event_feast"
+		ambience = "event:/SFX/Events/Backgrounds/feasthall"
+	}
+}

@@ -1,0 +1,21 @@
+﻿l_russian:
+ sbs_devils_curse: "Проклятие Дьявола"
+ sbs_devils_curse_action: "Проклясть"
+ sbs_devils_curse_general_desc: "Совершить демонический ритуал, чтобы наложить выбранное проклятие на цель. Интрига определяет шанс успеха."
+ sbs_devils_curse_success_desc: "При успехе выбранное проклятие накладывается на цель."
+ sbs_devils_curse_success_toast: "Проклятие Дьявола удалось"
+ sbs_devils_curse_failure_toast: "Проклятие Дьявола не удалось"
+
+ sbs_devils_gift: "Дар Дьявола"
+ sbs_devils_gift_action: "Даровать Дар Дьявола"
+ sbs_devils_gift_general_desc: "Совершить демонический ритуал, чтобы даровать выбранный дар цели. Образованность определяет шанс успеха."
+ sbs_devils_gift_success_desc: "При успехе выбранный дар даруется цели."
+ sbs_devils_gift_success_toast: "Дар Дьявола удался"
+ sbs_devils_gift_failure_toast: "Дар Дьявола не удался"
+
+ sbs_ritual_easy_modifier: "Простой ритуал"
+ sbs_ritual_easy_modifier_desc: "Простой ритуал: около 1 месяца и +60 фиксированного шанса успеха."
+ sbs_ritual_medium_modifier: "Продвинутый ритуал"
+ sbs_ritual_medium_modifier_desc: "Продвинутый ритуал: около 2 месяцев и +40 фиксированного шанса успеха."
+ sbs_ritual_hard_modifier: "Трудный ритуал"
+ sbs_ritual_hard_modifier_desc: "Трудный ритуал: около 3 месяцев и +20 фиксированного шанса успеха."

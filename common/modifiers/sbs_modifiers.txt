@@ -14,17 +14,13 @@ sbs_debuff = {
 
 sbs_true_form = {
 	icon = souls_positive
-	tyranny_gain_mult = 1
-	tyranny_loss_mult = -1
-	dread_gain_mult = 1
-	dread_decay_mult = -1
-	stress_loss_mult = -0.1
-	stress_gain_mult = 0.1
-	health = 3
-	negate_health_penalty_add = 3
-	epidemic_resistance = 44
+	tyranny_gain_mult = 1.3
+	tyranny_loss_mult = -1.3
+	dread_gain_mult = 1.3
+	dread_decay_mult = -1.3
+	stress_loss_mult = -0.13
+	stress_gain_mult = 0.13
 	dread_baseline_add = 666
-	general_opinion = -44
 	life_expectancy = 100
 	years_of_fertility = 100
 }
@@ -69,46 +65,16 @@ sbs_generals = {
 	supply_limit_mult = 1.3
 }
 
-deviants_strangebook_modifier = {
-	icon = learning_negative
-    stress_loss_mult = 0.05
+sbs_ritual_easy_modifier = {
+	scheme_success_chance = 60
 }
 
-mistress_dildo_modifier = {
-	fertility = -1
-	stress_loss_mult = 0.1
-	stress_gain_mult = -0.1
-	health = 0.1
-	negate_health_penalty_add = 0.1
-	life_expectancy = 10
+sbs_ritual_medium_modifier = {
+	scheme_success_chance = 40
+	scheme_phase_duration = 30
 }
 
-master_dildo_modifier = {
-	fertility = -1
-	stress_loss_mult = 1
-	stress_gain_mult = -1
-	health = 1
-	negate_health_penalty_add = 1
-	life_expectancy = 50
-	years_of_fertility = 50
-}
-
-crown_of_wisdom_crown_modifier = {
-    learning = 1
-    martial = 1
-    stewardship = 1
-    diplomacy = 1
-	life_expectancy = 50
-	years_of_fertility = 50
-}
-
-reddreamring_modifier = {
-	life_expectancy = 100
-	years_of_fertility = 100
-}
-
-snake_bracelet_modifier = {
-    monthly_income = 0.25
-	life_expectancy = 80
-	years_of_fertility = 80
+sbs_ritual_hard_modifier = {
+	scheme_success_chance = 20
+	scheme_phase_duration = 60
 }

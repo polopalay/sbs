@@ -1,0 +1,21 @@
+﻿l_japanese:
+ sbs_devils_curse: "悪魔の呪い"
+ sbs_devils_curse_action: "呪う"
+ sbs_devils_curse_general_desc: "選んだ呪いを対象にかける悪魔の儀式を行う。成功の可否は陰謀スキルに左右される。"
+ sbs_devils_curse_success_desc: "成功すれば、選んだ呪いが対象に付与される。"
+ sbs_devils_curse_success_toast: "悪魔の呪いが成功した"
+ sbs_devils_curse_failure_toast: "悪魔の呪いは失敗した"
+
+ sbs_devils_gift: "悪魔の賜物"
+ sbs_devils_gift_action: "に悪魔の賜物を授ける"
+ sbs_devils_gift_general_desc: "選んだ賜物を対象に授ける悪魔の儀式を行う。成功の可否は学識スキルに左右される。"
+ sbs_devils_gift_success_desc: "成功すれば、選んだ賜物が対象に与えられる。"
+ sbs_devils_gift_success_toast: "悪魔の賜物が成功した"
+ sbs_devils_gift_failure_toast: "悪魔の賜物は失敗した"
+
+ sbs_ritual_easy_modifier: "簡易儀式"
+ sbs_ritual_easy_modifier_desc: "簡易儀式：約1か月、成功率が固定で+60。"
+ sbs_ritual_medium_modifier: "高度な儀式"
+ sbs_ritual_medium_modifier_desc: "高度な儀式：約2か月、成功率が固定で+40。"
+ sbs_ritual_hard_modifier: "難儀な儀式"
+ sbs_ritual_hard_modifier_desc: "難儀な儀式：約3か月、成功率が固定で+20。"

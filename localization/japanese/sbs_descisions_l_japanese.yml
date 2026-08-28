@@ -4,17 +4,7 @@ become_demon.desc: "サタンと地獄の王子たちから祝福を受けたサ
 become_demon.c: "祝福を受けよ"
 become_demon.t: "神聖な儀式を始めよ"
 
-masturbate: "自慰行為をせよ"
-masturbate.desc: "あなたの人生はすでにストレスでいっぱいで、あなたはそれを解消する何かを探しています。ディルドは最も安全な方法です。あなたが痴女で淫乱な痴女だという噂を気にすることなく、官能に耽ることができます。"
-masturbate.t: "ストレス解消"
-masturbate.c: "アソコに入れて"
-
 seal_the_gates_of_hell: "地獄の門を封印せよ"
 seal_the_gates_of_hell.desc: "地獄の門が開き、悪魔が人間界に侵入しようとしています。地獄の門を封印し、悪魔が人間界に侵入するのを防ぐ方法を見つけなければなりません。"
 seal_the_gates_of_hell.t: "地獄の門を封印せよ"
 seal_the_gates_of_hell.c: "地獄の門を封印せよ"
-
-sbs_startmerchant_decision: "闇市場を訪れる"
-sbs_startmerchant_decision_desc: "秘密の市場へ自ら足を運び、商人の品物を確かめる。"
-sbs_startmerchant_decision_tooltip: "闇市場の商人のもとへ直接向かう。"
-sbs_startmerchant_decision_confirm: "出発する"

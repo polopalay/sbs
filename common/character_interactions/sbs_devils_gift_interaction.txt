@@ -1,6 +1,8 @@
 sbs_devils_gift_interaction = {
 	desc = sbs_devils_gift_interaction.desc
 	category = interaction_category_hostile
+	scheme = sbs_devils_gift
+	send_name = START_SCHEME
 	use_diplomatic_range = yes
 	cooldown = { years = 1 }
 	cooldown_against_recipient = { years = 2 }
@@ -10,14 +12,23 @@ sbs_devils_gift_interaction = {
 		scope:actor = { has_trait_with_flag = sbs_demon_trait }
 	}
 
-	is_valid_showing_failures_only = {
+	is_valid = {
 		scope:actor = {
 			OR = {
 				has_trait = sbs_true_demon
 				has_trait = sbs_demon
 				has_trait = sbs_succubus
-				has_trait_xp = { trait = sbs_lesser_succubus track = power value >= 25 }
+				has_trait_xp = { trait = sbs_lesser_succubus track = corruption value >= 10 }
 				has_trait_xp = { trait = sbs_lesser_demon value >= 50 }
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			can_start_scheme = {
+				type = sbs_devils_gift
+				target_character = scope:recipient
 			}
 		}
 	}
@@ -28,6 +39,7 @@ sbs_devils_gift_interaction = {
 				has_trait = sbs_true_demon
 			}
 			scope:recipient = {
+				is_adult = yes
 				is_ruler = no
 			}
 		}
@@ -38,6 +50,7 @@ sbs_devils_gift_interaction = {
 	send_option = {
 		is_shown = {
 			scope:recipient = {
+				is_adult = yes
 				NOR = {
 					any_secret = { secret_type = secret_deviant }
 					has_trait = deviant
@@ -51,6 +64,7 @@ sbs_devils_gift_interaction = {
 	send_option = {
 		is_shown = {
 			scope:recipient = {
+				is_adult = yes
 				NOR = {
 					any_secret = { secret_type = secret_witch }
 					has_trait = witch
@@ -317,152 +331,24 @@ sbs_devils_gift_interaction = {
 
 	on_accept = {
 		scope:actor = {
-			if = {
-				limit = { has_trait = sbs_lesser_succubus }
-				add_trait_xp = {
-					trait = sbs_lesser_succubus
-					track = power
-					value = -25
-				}
+			begin_scheme_basic_effect = {
+				SCHEME_TYPE = sbs_devils_gift
+				TARGET_TYPE = target_character
+				TARGET_SCOPE = scope:recipient
 			}
-			else_if = {
-				limit = { has_trait = sbs_lesser_demon }
-				add_trait_xp = {
-					trait = sbs_lesser_demon
-					value = -50
-				}
-			}
-		}
 
-		scope:recipient = {
-			if = {
-				limit = { scope:game_concept_ruler = yes }
-				create_landless_adventurer_title_effect = {
-					REASON = flag:voluntary
-					FLAVOR_CHAR = scope:recipient
-				}
-			}
-			else_if = {
-				limit = { scope:sbs_buff = yes }
-				random_list = {
-					5 = {
-						add_character_modifier = {
-							modifier = sbs_generals
-							years = 50
-						}
+			scope:new_scheme ?= {
+				sbs_store_gift_effect = yes
+				scheme_owner = {
+					if = {
+						limit = { has_trait = sbs_lesser_succubus }
+						add_trait_xp = { trait = sbs_lesser_succubus track = corruption value = -10 }
 					}
-					10 = {
-						modifier = {
-							is_valid_construction_alchemy_trigger = yes
-							add = 20
-						}
-						add_character_modifier = {
-							modifier = sbs_buff
-							years = 100
-						}
+					else_if = {
+						limit = { has_trait = sbs_lesser_demon }
+						add_trait_xp = { trait = sbs_lesser_demon value = -50 }
 					}
 				}
-			}
-			else_if = {
-				limit = { scope:sbs_seal = yes }
-				remove_character_modifier = sbs_seal
-			}
-			else_if = {
-				limit = { scope:deviant = yes }
-				if = {
-					limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:deviant } }
-					add_secret = { type = secret_deviant }
-				}
-				else = {
-					add_trait = deviant
-				}
-			}
-			else_if = {
-				limit = { scope:witch = yes }
-				if = {
-					limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:witch } }
-					add_secret = { type = secret_witch }
-				}
-				else = {
-					add_trait = witch
-				}
-			}
-			else_if = {
-				limit = { scope:possessed_by_lust_demon_modifier = yes }
-				add_character_modifier = { modifier = possessed_by_lust_demon_modifier years = 10 }
-			}
-			else_if = {
-				limit = { scope:legend_bloodthirsty_warrior = yes }
-				add_character_modifier = { modifier = legend_bloodthirsty_warrior years = 10 }
-			}
-			else_if = {
-				limit = { scope:possessed_prophetic_visions = yes }
-				add_character_modifier = { modifier = possessed_prophetic_visions years = 10 }
-			}
-			else_if = {
-				limit = { scope:learned_in_demonology = yes }
-				add_character_modifier = { modifier = learned_in_demonology years = 10 }
-			}
-			else_if = {
-				limit = { scope:intellect_good = yes }
-				if = {
-					limit = { has_trait_rank = { trait = intellect_good rank < 3 } }
-					change_trait_rank = { trait = intellect_good rank = 1 }
-				}
-				else = {
-					set_trait_rank = { trait = intellect_good rank = 0 }
-				}
-			}
-			else_if = {
-				limit = { scope:convert_diplomacy_perk = yes }
-				add_diplomacy_lifestyle_perk_points = -1
-				add_diplomacy_skill = 1
-			}
-			else_if = {
-				limit = { scope:convert_martial_perk = yes }
-				add_martial_lifestyle_perk_points = -1
-				add_martial_skill = 1
-			}
-			else_if = {
-				limit = { scope:convert_stewardship_perk = yes }
-				add_stewardship_lifestyle_perk_points = -1
-				add_stewardship_skill = 1
-			}
-			else_if = {
-				limit = { scope:convert_intrigue_perk = yes }
-				add_intrigue_lifestyle_perk_points = -1
-				add_intrigue_skill = 1
-			}
-			else_if = {
-				limit = { scope:convert_learning_perk = yes }
-				add_learning_lifestyle_perk_points = -1
-				add_learning_skill = 1
-			}
-			else_if = {
-				limit = { scope:reset_perks = yes }
-				refund_all_perks = yes
-				remove_all_landless_inspector_modifiers = yes
-				remove_all_perk_lifestyle_traits_effect = yes
-			}
-			else_if = {
-				limit = { scope:education_learning = yes }
-				change_trait_rank = { trait = education_learning rank = 1 }
-			}
-			else_if = {
-				limit = { scope:education_martial = yes }
-				change_trait_rank = { trait = education_martial rank = 1 }
-			}
-			else_if = {
-				limit = { scope:education_intrigue = yes }
-				change_trait_rank = { trait = education_intrigue rank = 1 }
-			}
-			else_if = {
-				limit = { scope:education_diplomacy = yes }
-				change_trait_rank = { trait = education_diplomacy rank = 1 }
-			}
-			else_if = {
-				limit = { scope:education_stewardship = yes }
-				change_trait_rank = { trait = education_stewardship rank = 1 }
 			}
 		}
 	}
@@ -489,17 +375,18 @@ sbs_devils_gift_interaction = {
 		base = 1
 
 		modifier = {
-			add = 25
-			scope:actor = { OR = { has_trait = sbs_true_demon has_trait = sbs_demon has_trait = sbs_succubus } }
-			scope:recipient = { has_trait_with_flag = sbs_demon_trait }
+			add = 5
+			scope:actor = { has_trait = sbs_true_demon }
 			scope:recipient.dynasty = scope:actor.dynasty
 			scope:recipient != scope:actor
+			average_of_all_skills_and_prowess >= very_high_skill_rating	
 		}
-
 		modifier = {
-			add = 25
-			scope:actor = { OR = { has_trait = sbs_lesser_demon has_trait = sbs_lesser_succubus } }
-			scope:recipient = scope:actor
+			add = 5
+			scope:actor = { has_trait = sbs_true_demon }
+			scope:recipient.dynasty = scope:actor.dynasty
+			scope:recipient != scope:actor
+			average_of_all_skills_and_prowess >= extremely_high_skill_rating	
 		}
 	}
 }

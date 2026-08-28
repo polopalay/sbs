@@ -61,6 +61,116 @@ have_devil_nicknames_trigger = {
 	}
 }
 
+
+sbs_has_bad_habit_trait_trigger = {
+	OR = {
+		has_trait = drunkard
+		has_trait = hashishiyah
+		has_trait = rakish
+		has_trait = flagellant
+		has_trait = profligate
+		has_trait = comfort_eater
+		has_trait = inappetetic
+		has_trait = reclusive
+		has_trait = irritable
+	}
+}
+
+sbs_has_sinful_trait_trigger = {
+	save_temporary_scope_as = sbs_sinful_character
+	any_character_trait = {
+		has_trait_category = personality
+		scope:sbs_sinful_character.faith = {
+			trait_is_sin = prev
+		}
+	}
+}
+
+sbs_has_injury_trait_trigger = {
+	OR = {
+		has_trait = ill
+		has_trait = wounded_1
+		has_trait = wounded_2
+		has_trait = wounded_3
+		has_trait = maimed
+		has_trait = one_eyed
+		has_trait = one_legged
+		has_trait = disfigured
+		has_trait = blind
+		has_trait = scarred
+	}
+}
+
+sbs_has_physical_issue_trait_trigger = {
+	OR = {
+		has_trait = beauty_bad_1
+		has_trait = beauty_bad_2
+		has_trait = beauty_bad_3
+		has_trait = intellect_bad_1
+		has_trait = intellect_bad_2
+		has_trait = intellect_bad_3
+		has_trait = physique_bad_1
+		has_trait = physique_bad_2
+		has_trait = physique_bad_3
+		has_trait = clubfooted
+		has_trait = hunchbacked
+		has_trait = lisping
+		has_trait = stuttering
+		has_trait = dwarf
+		has_trait = inbred
+		has_trait = weak
+		has_trait = dull
+		has_trait = spindly
+		has_trait = scaly
+		has_trait = albino
+		has_trait = wheezing
+		has_trait = bleeder
+		has_trait = infertile
+	}
+}
+
+sbs_has_bad_fame_trait_trigger = {
+	OR = {
+		has_trait = deviant
+		has_trait = cannibal
+		has_trait = witch
+		has_trait = excommunicated
+	}
+}
+
+sbs_can_receive_realm_miracle_trigger = {
+	is_ruler = yes
+	is_landed = yes
+	piety_level >= high_piety_level
+	piety >= major_piety_value
+	OR = {
+		capital_county = { has_province_with_epidemic = { intensity = any } }
+		any_sub_realm_county = { has_province_with_epidemic = { intensity = any } }
+	}
+}
+
+sbs_orgy_sex_positive_trigger = {
+	is_adult = yes
+	OR = {
+		has_trait = lustful
+		has_trait = deviant
+		has_trait = rakish
+		any_secret = { type = secret_deviant }
+		accepts_adultery_without_penalty_trigger = yes
+		faith = { has_doctrine_parameter = carn_prostitution_accepted }
+		AND = { is_female = yes faith = { has_doctrine_parameter = adultery_female_accepted } }
+		AND = { is_female = no faith = { has_doctrine_parameter = adultery_male_accepted } }
+	}
+}
+
+sbs_orgy_nudity_context_trigger = {
+	OR = {
+		faith = { has_doctrine_parameter = naked_priests_active }
+		faith = { has_doctrine = tenet_natural_primitivism }
+		has_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
+	}
+}
+
 sbs_has_custom_model_trigger = {
 	OR = {
 		has_character_flag = has_scripted_appearance

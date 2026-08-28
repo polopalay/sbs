@@ -1,0 +1,21 @@
+﻿l_spanish:
+ sbs_devils_curse: "Maldición del Diablo"
+ sbs_devils_curse_action: "Maldecir"
+ sbs_devils_curse_general_desc: "Realizar un ritual demoníaco para imponer la maldición elegida al objetivo. Tu Intriga determina la probabilidad de éxito."
+ sbs_devils_curse_success_desc: "Si tiene éxito, la maldición elegida se aplica al objetivo."
+ sbs_devils_curse_success_toast: "La maldición del Diablo tiene éxito"
+ sbs_devils_curse_failure_toast: "La maldición del Diablo falla"
+
+ sbs_devils_gift: "Don del Diablo"
+ sbs_devils_gift_action: "Conceder un Don del Diablo a"
+ sbs_devils_gift_general_desc: "Realizar un ritual demoníaco para conceder el don elegido al objetivo. Tu Erudición determina la probabilidad de éxito."
+ sbs_devils_gift_success_desc: "Si tiene éxito, el don elegido se concede al objetivo."
+ sbs_devils_gift_success_toast: "El Don del Diablo tiene éxito"
+ sbs_devils_gift_failure_toast: "El Don del Diablo falla"
+
+ sbs_ritual_easy_modifier: "Ritual simple"
+ sbs_ritual_easy_modifier_desc: "Un ritual simple: unos 1 mes y +60 de probabilidad fija de éxito."
+ sbs_ritual_medium_modifier: "Ritual avanzado"
+ sbs_ritual_medium_modifier_desc: "Un ritual avanzado: unos 2 meses y +40 de probabilidad fija de éxito."
+ sbs_ritual_hard_modifier: "Ritual difícil"
+ sbs_ritual_hard_modifier_desc: "Un ritual difícil: unos 3 meses y +20 de probabilidad fija de éxito."

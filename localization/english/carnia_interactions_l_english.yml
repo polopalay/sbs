@@ -49,3 +49,9 @@
 
  carn_seize_slave_interaction: "Seize Slave"
  carn_seize_slave_interaction_desc: "Take [recipient.GetShortUINameNoTooltip] as your own [slave|E]"
+
+ sbs_pray_for_interaction: "Pray for"
+ sbs_pray_for_interaction.desc: "Pray for [recipient.GetShortUIName] and ask God to grant a blessing according to your Level of Devotion."
+ sbs_ask_for_blessing_interaction: "Ask for a Blessing"
+ sbs_ask_for_blessing_interaction.desc: "Ask [recipient.GetShortUIName] to pray for you. The blessing is determined automatically by [recipient.GetHerHis] Level of Devotion."
+

@@ -21,11 +21,12 @@
 			is_imprisoned = no
 			NOT = { is_at_war_with = scope:recipient }
 			NOT = { has_trait = celibate }
-			carn_is_working_as_prostitute_trigger = no
+			stress_level >= 1
 			OR = {
-				stress_level >= 1
 				has_trait = rakish
 				has_trait = lustful
+				has_trait = profligate
+				has_trait = seducer
 				has_trait = deviant
 				any_secret = { type = secret_deviant }
 			}
@@ -38,21 +39,14 @@
 	}
 
 	on_accept = {
-		scope:recipient = {
-			send_interface_toast = {
-				title = carnia_prostitute_interaction
-				left_icon = scope:actor
-				right_icon = scope:recipient
-				scope:actor = {
-					stress_impact = { base = massive_stress_impact_loss }
-					if = {
-						limit = { scope:use_contraception = yes }
-						prostitute_effect = { PROSTITUTE = scope:recipient PREGNANCY_CHANCE = 1 }
-					}
-					else = {
-						prostitute_effect = { PROSTITUTE = scope:recipient PREGNANCY_CHANCE = pregnancy_chance }
-					}
-				}
+		scope:actor = {
+			stress_impact = { base = massive_stress_impact_loss }
+			if = {
+				limit = { scope:use_contraception = yes }
+				prostitute_effect = { PROSTITUTE = scope:recipient PREGNANCY_CHANCE = 1 }
+			}
+			else = {
+				prostitute_effect = { PROSTITUTE = scope:recipient PREGNANCY_CHANCE = pregnancy_chance }
 			}
 		}
 	}
@@ -122,5 +116,6 @@
 		modifier = { add = 1 scope:recipient = { should_be_naked_trigger = yes } }
 		modifier = { add = 5 scope:actor = {  NOR = { has_trait = deviant any_secret = { type = secret_deviant } } } scope:use_contraception = yes }
 		modifier = { add = -10 scope:actor = { is_close_family_of = scope:recipient faith = { NOT = { has_doctrine = tenet_divine_marriage } } } }
+		modifier = { add = -5 scope:recipient = { might_cheat_on_every_partner_trigger = yes } }
 	}
 }

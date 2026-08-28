@@ -7,7 +7,7 @@
  carnx_freed_memory: "해방됨"
  carnx_freed_desc_1: "저는 [해방자.GetTitledFirstName]에 의해 노예 상태에서 해방되었습니다."
  carnx_freed_desc_second_perspective_1: "당신은 [해방자.GetTitledFirstName]에 의해 노예 상태에서 해방되었습니다."
- carnia_freed_desc_third_perspective_1: "[owner.GetName]은 [emancipator.GetTitledFirstName]에 의해 노예에서 해방되었습니다."
+ carnx_freed_desc_third_perspective_1: "[owner.GetName]은(는) [emancipator.GetTitledFirstName]에 의해 노예 신분에서 해방되었다"
 
  carnia_start_prostitute: "매춘부로 일하기 시작했습니다."
  carnia_start_prostitute_desc_1: "저는 매춘부로 일하기 시작했습니다."

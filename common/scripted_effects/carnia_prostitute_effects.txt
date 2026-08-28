@@ -217,6 +217,12 @@ prostitute_effect = {
 					}
 				}
 			}
+			send_interface_message = {
+				type = carn_prostitute_random_event_good
+				title = carnia_prostitute_interaction
+				left_icon = scope:prostitute
+				right_icon = scope:had_sex_root_character
+			}
 		}
 
 		if = {

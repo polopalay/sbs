@@ -42,3 +42,13 @@
 
   carn_force_stop_prostitution_interaction: "Prostitution stoppen"
   carn_force_stop_prostitution_interaction.desc: "Stoppen Sie, [recipient.GetShortUINameNoTooltip] zu zwingen, [gold|E] für Sie als Prostituierte zu verdienen"
+
+  carn_demand_free_illegal_slaves_interaction: "Freilassung verlangen"
+  carn_demand_free_slaves_interaction_desc: "Verlangen, dass [recipient.GetShortUINameNoTooltip] die [illegal|E] [slaves|E] freilässt, die [recipient.GetSheHe] besitzt"
+  carn_demand_free_illegal_slaves_is_crime: "\\nDie Freilassung illegaler Sklaven zu verweigern ist ein [crime|E]"
+  carn_seize_slave_interaction: "Sklaven beschlagnahmen"
+  carn_seize_slave_interaction_desc: "[recipient.GetShortUINameNoTooltip] als eigenen [slave|E] nehmen"
+  sbs_pray_for_interaction: "Beten für"
+  sbs_pray_for_interaction.desc: "Für [recipient.GetShortUIName] beten und Gott um einen Segen entsprechend eurer Frömmigkeitsstufe bitten."
+  sbs_ask_for_blessing_interaction: "Um einen Segen bitten"
+  sbs_ask_for_blessing_interaction.desc: "[recipient.GetShortUIName] bitten, für euch zu beten. Der Segen richtet sich automatisch nach [recipient.GetHerHis] Frömmigkeitsstufe."

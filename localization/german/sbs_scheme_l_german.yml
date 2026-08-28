@@ -1,0 +1,21 @@
+﻿l_german:
+ sbs_devils_curse: "Fluch des Teufels"
+ sbs_devils_curse_action: "Verfluchen"
+ sbs_devils_curse_general_desc: "Ein dämonisches Ritual vollziehen, um den gewählten Fluch auf das Ziel zu legen. Eure Intrige bestimmt die Erfolgschance."
+ sbs_devils_curse_success_desc: "Bei Erfolg wird der gewählte Fluch auf das Ziel gelegt."
+ sbs_devils_curse_success_toast: "Der Fluch des Teufels gelingt"
+ sbs_devils_curse_failure_toast: "Der Fluch des Teufels misslingt"
+
+ sbs_devils_gift: "Gabe des Teufels"
+ sbs_devils_gift_action: "Eine Gabe des Teufels gewähren an"
+ sbs_devils_gift_general_desc: "Ein dämonisches Ritual vollziehen, um die gewählte Gabe zu verleihen. Eure Bildung bestimmt die Erfolgschance."
+ sbs_devils_gift_success_desc: "Bei Erfolg wird die gewählte Gabe dem Ziel verliehen."
+ sbs_devils_gift_success_toast: "Die Gabe des Teufels gelingt"
+ sbs_devils_gift_failure_toast: "Die Gabe des Teufels misslingt"
+
+ sbs_ritual_easy_modifier: "Einfaches Ritual"
+ sbs_ritual_easy_modifier_desc: "Ein einfaches Ritual: etwa 1 Monat und +60 feste Erfolgschance."
+ sbs_ritual_medium_modifier: "Fortgeschrittenes Ritual"
+ sbs_ritual_medium_modifier_desc: "Ein fortgeschrittenes Ritual: etwa 2 Monate und +40 feste Erfolgschance."
+ sbs_ritual_hard_modifier: "Schwieriges Ritual"
+ sbs_ritual_hard_modifier_desc: "Ein schwieriges Ritual: etwa 3 Monate und +20 feste Erfolgschance."

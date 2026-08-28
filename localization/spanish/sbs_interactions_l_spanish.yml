@@ -3,7 +3,7 @@
   sbs_devil_dead_interaction.desc: "Elimina todo tipo de enfermedades, lesiones y todos los nombres vergonzosos"
   stress_flag: "Estrés"
   healing_flag: "Curación"
-  honor_flag: "Honor"
+  honor_flag: "Honra"
   dna_flag: "Gen"
 
   sbs_devils_gift_interaction: "El regalo del Diablo"

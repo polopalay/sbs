@@ -1,6 +1,8 @@
 sbs_devils_curse_interaction = {
 	desc = sbs_devils_curse_interaction.desc
 	category = interaction_category_hostile
+	scheme = sbs_devils_curse
+	send_name = START_SCHEME
 	use_diplomatic_range = yes
 	cooldown = { years = 1 }
 	common_interaction = yes
@@ -20,7 +22,7 @@ sbs_devils_curse_interaction = {
 		}
 	}
 
-	is_valid_showing_failures_only = {
+	is_valid = {
 		scope:actor = {
 			OR = {
 				has_trait = sbs_true_demon
@@ -28,8 +30,8 @@ sbs_devils_curse_interaction = {
 				has_trait = sbs_succubus
 				has_trait_xp = {
 					trait = sbs_lesser_succubus
-					track = power
-					value >= 25
+					track = loyalty
+					value >= 10
 				}
 				has_trait_xp = {
 					trait = sbs_lesser_demon
@@ -39,12 +41,20 @@ sbs_devils_curse_interaction = {
 		}
 	}
 
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			can_start_scheme = {
+				type = sbs_devils_curse
+				target_character = scope:recipient
+			}
+		}
+	}
+
 	send_option = {
 		is_shown = {
 			scope:recipient = {
 				NOT = { has_character_modifier = sbs_seal }
 				has_trait = slave
-				is_lowborn = yes
 				is_ruler = no
 			}
 		}
@@ -361,167 +371,22 @@ sbs_devils_curse_interaction = {
 
 	on_accept = {
 		scope:actor = {
-			if = {
-				limit = { has_trait = sbs_lesser_succubus }
-				add_trait_xp = { trait = sbs_lesser_succubus track = power value = -25 }
+			begin_scheme_basic_effect = {
+				SCHEME_TYPE = sbs_devils_curse
+				TARGET_TYPE = target_character
+				TARGET_SCOPE = scope:recipient
 			}
-			else_if = {
-				limit = { has_trait = sbs_lesser_demon }
-				add_trait_xp = { trait = sbs_lesser_demon value = -25 }
-			}
-		}
 
-		scope:recipient = {
-			if = {
-				limit = { scope:sbs_seal = yes }
-				add_character_modifier = sbs_seal
-			}
-			else_if = {
-				limit = { scope:player = yes }
-				sbs_steal_body = { VICTIM = scope:recipient STEALER = scope:actor }
-			}
-			else_if = {
-				limit = { scope:sbs_debuff = yes }
-				add_character_modifier = { modifier = sbs_debuff years = 10 }
-			}
-			else_if = {
-				limit = { scope:stanky_modifier = yes }
-				add_character_modifier = { modifier = stanky_modifier years = 5 }
-			}
-			else_if = {
-				limit = { scope:party_baron_murdered_the_joy_of_life_modifier = yes }
-				add_character_modifier = { modifier = party_baron_murdered_the_joy_of_life_modifier years = 5 }
-			}
-			else_if = {
-				limit = { scope:bad_omen_modifier = yes }
-				add_character_modifier = { modifier = bad_omen_modifier years = 5 }
-			}
-			else_if = {
-				limit = { scope:totally_lost_modifier = yes }
-				add_character_modifier = { modifier = totally_lost_modifier years = 5 }
-			}
-			else_if = {
-				limit = { scope:confused_modifier = yes }
-				add_character_modifier = { modifier = confused_modifier years = 5 }
-			}
-			else_if = {
-				limit = { scope:intrigue_starved_and_deprived_modifier = yes }
-				add_character_modifier = { modifier = intrigue_starved_and_deprived_modifier years = 5 }
-			}
-			else_if = {
-				limit = { scope:lost_in_lust_modifier = yes }
-				add_character_modifier = { modifier = lost_in_lust_modifier years = 5 }
-			}
-			else_if = {
-				limit = { scope:stress_smelling_of_sweat = yes }
-				add_character_modifier = { modifier = stress_smelling_of_sweat years = 5 }
-			}
-			else_if = {
-				limit = { scope:plagued_by_nightmares_modifier = yes }
-				random_directly_owned_province = {
-					limit = { NOT = { has_province_modifier = plagued_by_nightmares_modifier } }
-					add_province_modifier = { modifier = plagued_by_nightmares_modifier years = 10 }
-				}
-			}
-			else_if = {
-				limit = { scope:county_corruption_bandits_rampant_modifier = yes }
-				random_held_county = {
-					limit = {
-						NOT = { has_county_modifier = county_corruption_bandits_rampant_modifier }
-						NOR = {
-							title_province = { has_holding_type = nomad_holding }
-							title_province = { has_holding_type = herder_holding }
-						}
+			scope:new_scheme ?= {
+				sbs_store_curse_effect = yes
+				scheme_owner = {
+					if = {
+						limit = { has_trait = sbs_lesser_succubus }
+						add_trait_xp = { trait = sbs_lesser_succubus track = loyalty value = -10 }
 					}
-					add_county_modifier = { modifier = county_corruption_bandits_rampant_modifier years = 10 }
-				}
-			}
-			else_if = {
-				limit = { scope:county_corruption_thieves_guild_modifier = yes }
-				random_held_county = {
-					limit = {
-						NOT = { has_county_modifier = county_corruption_thieves_guild_modifier }
-						NOR = {
-							title_province = { has_holding_type = nomad_holding }
-							title_province = { has_holding_type = herder_holding }
-						}
-					}
-					add_county_modifier = { modifier = county_corruption_thieves_guild_modifier years = 10 }
-				}
-			}
-			else_if = {
-				limit = { scope:county_corruption_roaming_bandits_modifier = yes }
-				random_held_county = {
-					limit = {
-						NOT = { has_county_modifier = county_corruption_roaming_bandits_modifier }
-						OR = {
-							title_province = { has_holding_type = nomad_holding }
-							title_province = { has_holding_type = herder_holding }
-						}
-					}
-					add_county_modifier = { modifier = county_corruption_roaming_bandits_modifier years = 10 }
-				}
-			}
-			else_if = {
-				limit = { scope:smallpox = yes }
-				capital_province = {
-					create_epidemic_outbreak = {
-						type = smallpox
-						intensity = minor
-					}
-				}
-			}
-			else_if = {
-				limit = { scope:typhus = yes }
-				capital_province = {
-					create_epidemic_outbreak = {
-						type = typhus
-						intensity = minor
-					}
-				}
-			}
-			else_if = {
-				limit = { scope:consumption = yes }
-				capital_province = {
-					create_epidemic_outbreak = {
-						type = consumption
-						intensity = minor
-					}
-				}
-			}
-			else_if = {
-				limit = { scope:bubonic_plague = yes }
-				capital_province = {
-					create_epidemic_outbreak = {
-						type = bubonic_plague
-						intensity = minor
-					}
-				}
-			}
-			else_if = {
-				limit = { scope:measles = yes }
-				capital_province = {
-					create_epidemic_outbreak = {
-						type = measles
-						intensity = minor
-					}
-				}
-			}
-			else_if = {
-				limit = { scope:dysentery = yes }
-				capital_province = {
-					create_epidemic_outbreak = {
-						type = dysentery
-						intensity = minor
-					}
-				}
-			}
-			else_if = {
-				limit = { scope:ergotism = yes }
-				capital_province = {
-					create_epidemic_outbreak = {
-						type = ergotism
-						intensity = minor
+					else_if = {
+						limit = { has_trait = sbs_lesser_demon }
+						add_trait_xp = { trait = sbs_lesser_demon value = -25 }
 					}
 				}
 			}
@@ -542,7 +407,6 @@ sbs_devils_curse_interaction = {
 
 	ai_will_do = {
 		base = 0
-
 		modifier = {
 			add = 100
 			scope:actor = {

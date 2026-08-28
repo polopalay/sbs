@@ -418,3 +418,15 @@ carn_slave_price_value = {
 	min = 1
 }
 
+sbs_orgy_guest_arrival_delay_days = {
+	value = 1
+	if = {
+		limit = { scope:sbs_orgy_option_focus ?= flag:sbs_orgy_focus_medium }
+		add = 1
+	}
+	else_if = {
+		limit = { scope:sbs_orgy_option_focus ?= flag:sbs_orgy_focus_large }
+		add = 1
+	}
+}
+

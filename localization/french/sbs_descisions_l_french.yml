@@ -4,17 +4,7 @@
  become_demon.c: "Recevoir la bénédiction"
  become_demon.t: "Commencer le rituel sacré"
 
- masturbate: "Se Masturber"
- masturbate.desc: "Votre vie est déjà pleine de stress, vous cherchez quelque chose pour vous soulager. Les godes sont le moyen le plus sûr, vous pouvez vous abandonner à la sensualité sans vous inquiéter des commérages sur vous en tant que salope dévergondée."
- masturbate.t: "Soulager le stress"
- masturbate.c: "Introduisez-le dans votre vagin"
-
  seal_the_gates_of_hell: "Sceller les Portes de l'Enfer"
  seal_the_gates_of_hell.desc: "Les portes de l'enfer sont ouvertes, et les démons s'apprêtent à envahir le monde des humains. Vous devez trouver un moyen de sceller les portes de l'enfer et d'empêcher les démons d'entrer dans le monde des humains."
  seal_the_gates_of_hell.t: "Sceller les Portes de l'Enfer"
  seal_the_gates_of_hell.c: "Sceller les Portes de l'Enfer"
-
- sbs_startmerchant_decision: "Visiter le marché noir"
- sbs_startmerchant_decision_desc: "Rendez-vous en personne au marché clandestin pour examiner les marchandises du négociant."
- sbs_startmerchant_decision_tooltip: "Rendez-vous directement auprès du marchand du marché noir."
- sbs_startmerchant_decision_confirm: "Partir"

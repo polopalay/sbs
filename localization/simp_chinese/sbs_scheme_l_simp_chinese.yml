@@ -1,0 +1,21 @@
+﻿l_simp_chinese:
+ sbs_devils_curse: "恶魔诅咒"
+ sbs_devils_curse_action: "诅咒"
+ sbs_devils_curse_general_desc: "举行恶魔仪式，对目标施加所选诅咒。你的阴谋决定成功几率。"
+ sbs_devils_curse_success_desc: "若成功，所选诅咒将施加于目标。"
+ sbs_devils_curse_success_toast: "恶魔诅咒成功"
+ sbs_devils_curse_failure_toast: "恶魔诅咒失败"
+
+ sbs_devils_gift: "恶魔馈赠"
+ sbs_devils_gift_action: "将恶魔馈赠赐予"
+ sbs_devils_gift_general_desc: "举行恶魔仪式，将所选馈赠赐予目标。你的学识决定成功几率。"
+ sbs_devils_gift_success_desc: "若成功，所选馈赠将赐予目标。"
+ sbs_devils_gift_success_toast: "恶魔馈赠成功"
+ sbs_devils_gift_failure_toast: "恶魔馈赠失败"
+
+ sbs_ritual_easy_modifier: "简易仪式"
+ sbs_ritual_easy_modifier_desc: "简易仪式：约1个月，固定成功率+60。"
+ sbs_ritual_medium_modifier: "进阶仪式"
+ sbs_ritual_medium_modifier_desc: "进阶仪式：约2个月，固定成功率+40。"
+ sbs_ritual_hard_modifier: "艰难仪式"
+ sbs_ritual_hard_modifier_desc: "艰难仪式：约3个月，固定成功率+20。"

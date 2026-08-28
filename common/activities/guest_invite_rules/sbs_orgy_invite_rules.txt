@@ -1,0 +1,19 @@
+sbs_orgy_invite_rule_barony_rulers = {
+	effect = {
+		if = {
+			limit = { exists = top_liege }
+			top_liege = {
+				every_vassal_or_below = {
+					limit = {
+						this != root
+						highest_held_title_tier = tier_barony
+						is_available_adult = yes
+						in_diplomatic_range = root
+						bannable_serving_diarch_trigger = no
+					}
+					add_to_list = characters
+				}
+			}
+		}
+	}
+}

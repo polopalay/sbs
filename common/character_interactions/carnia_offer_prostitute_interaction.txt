@@ -21,13 +21,13 @@
 			is_adult = yes
 			is_incapable = no
 			is_imprisoned = no
+			has_std_trigger = no
 			NOT = { is_at_war_with = scope:actor }
 			NOT = { has_trait = celibate }
 			stress_level >= 1
 			OR = {
 				has_trait = rakish
 				has_trait = lustful
-				has_trait = gluttonous
 				has_trait = profligate
 				has_trait = seducer
 				has_trait = deviant
@@ -73,7 +73,7 @@
 			stress_impact = { base = massive_stress_impact_loss }
 			if = {
 				limit = { scope:use_contraception = yes }
-				prostitute_effect = { PROSTITUTE = scope:secondary_recipient PREGNANCY_CHANCE = 0 }
+				prostitute_effect = { PROSTITUTE = scope:secondary_recipient PREGNANCY_CHANCE = 1 }
 			}
 			else = {
 				prostitute_effect = { PROSTITUTE = scope:secondary_recipient PREGNANCY_CHANCE = pregnancy_chance }
@@ -131,6 +131,7 @@
 		modifier = { add = -5 scope:secondary_recipient = { age > 25 } }
 		modifier = { add = -10 scope:secondary_recipient = { age > 40 } }
 		modifier = { add = 10 scope:secondary_recipient = { should_be_naked_trigger = yes } }
+		modifier = { add = -10 scope:recipient = { might_cheat_on_every_partner_trigger = yes } }
 		modifier = {
 			add = -10
 			desc = cant_have_sex_without_contraception

@@ -43,3 +43,49 @@ on_title_lost = {
 		carn_slave.0005
 	}
 }
+
+random_yearly_everyone_pulse = {
+	on_actions = {
+		delay = { days = { 30 60 } }
+		carn_slave_events
+	}
+}
+
+carn_slave_events = {
+	trigger = {
+		has_trait = slave
+		is_female = yes
+		is_adult = yes
+		fertility >= 0.1
+	}
+	random_events = {
+		chance_to_happen = 100
+		100 = carn_slave.0006
+	}
+}
+
+carn_on_slave_enslaved = {
+	effect = {
+		random_relation = {
+			type = slave_owner
+			save_scope_as = new_owner
+		}
+		create_character_memory = {
+			type = carnx_enslaved_memory
+			participants = {
+				enslaver = scope:new_owner
+			}
+		}
+	}
+}
+
+carn_on_slave_freed = {
+	effect = {
+		create_character_memory = {
+			type = carnx_freed_memory
+			participants = {
+				emancipator = scope:former_owner
+			}
+		}
+	}
+}

@@ -1,0 +1,655 @@
+namespace = carnia_slave_market
+
+carnia_slave_market.0001 = {
+	hidden = yes
+	type = character_event
+	immediate = {
+		random_list = {
+			40 = { trigger_event = carnia_slave_market.0002 }
+			8 = { trigger_event = carnia_slave_market.0005 }
+			8 = { trigger_event = carnia_slave_market.0006 }
+			8 = { trigger_event = carnia_slave_market.0007 }
+			6 = { trigger_event = carnia_slave_market.0008 }
+			0 = {
+				modifier = {
+					any_living_character = {
+						is_alive = yes
+						is_adult = yes
+						this != root
+						is_ruler = no
+						is_landed = no
+						NOT = { has_trait = slave }
+						is_lowborn = no
+						OR = {
+							is_pool_character = yes
+							NOT = { exists = liege }
+						}
+						faith = {
+							faith_hostility_level = {
+								target = root.faith
+								value >= faith_hostile_level
+							}
+						}
+						NOT = {
+							any_close_family_member = { is_ruler = yes }
+						}
+					}
+					add = 3
+				}
+				trigger_event = carnia_slave_market.0003
+			}
+			0 = {
+				modifier = {
+					any_living_character = {
+						is_alive = yes
+						is_adult = yes
+						this != root
+						is_ruler = no
+						is_landed = no
+						NOT = { has_trait = slave }
+						NOT = { in_diplomatic_range = root }
+						OR = {
+							is_pool_character = yes
+							NOT = { exists = liege }
+						}
+					}
+					add = 3
+				}
+				trigger_event = carnia_slave_market.0004
+			}
+		}
+	}
+}
+
+# Highest weight: four lowborn offerings.
+carnia_slave_market.0002 = {
+	type = character_event
+	title = carnia_slave_market.0002.t
+	desc = carnia_slave_market.0002.desc
+	theme = diplomacy
+	override_background = { reference = market }
+
+	immediate = {
+		create_character = {
+			gender = male
+			age = { 18 24 }
+			culture = root.culture
+			faith = root.faith
+			location = root.location
+			dynasty = none
+			save_scope_as = carnia_slave_man
+		}
+		create_character = {
+			gender = female
+			age = { 18 24 }
+			culture = root.culture
+			faith = root.faith
+			location = root.location
+			dynasty = none
+			save_scope_as = carnia_slave_woman
+		}
+		create_character = {
+			gender_female_chance = 50
+			age = { 6 12 }
+			culture = root.culture
+			faith = root.faith
+			location = root.location
+			dynasty = none
+			save_scope_as = carnia_slave_child
+		}
+		create_character = {
+			gender_female_chance = 50
+			age = { 50 70 }
+			culture = root.culture
+			faith = root.faith
+			location = root.location
+			dynasty = none
+			save_scope_as = carnia_slave_old
+		}
+	}
+
+	left_portrait = { character = scope:carnia_slave_man animation = personality_content }
+	right_portrait = { character = root animation = personality_greedy }
+	lower_left_portrait = { character = scope:carnia_slave_woman animation = personality_content }
+	lower_center_portrait = { character = scope:carnia_slave_child animation = personality_content }
+	lower_right_portrait = { character = scope:carnia_slave_old animation = personality_content }
+
+	option = {
+		name = carnia_slave_market.0002.a
+		trigger = { gold >= minor_gold_value }
+		remove_short_term_gold = minor_gold_value
+		carn_enslave_effect = { SLAVE = scope:carnia_slave_man OWNER = root DRAMA = no }
+		ai_chance = {
+			base = 20
+			modifier = { gold < minor_gold_value add = -100 }
+			modifier = { has_trait = greedy add = 10 }
+		}
+	}
+	option = {
+		name = carnia_slave_market.0002.b
+		trigger = { gold >= minor_gold_value }
+		remove_short_term_gold = minor_gold_value
+		carn_enslave_effect = { SLAVE = scope:carnia_slave_woman OWNER = root DRAMA = no }
+		ai_chance = {
+			base = 20
+			modifier = { gold < minor_gold_value add = -100 }
+			modifier = { has_trait = lustful add = 10 }
+		}
+	}
+	option = {
+		name = carnia_slave_market.0002.c
+		trigger = { gold >= minor_gold_value }
+		remove_short_term_gold = minor_gold_value
+		carn_enslave_effect = { SLAVE = scope:carnia_slave_child OWNER = root DRAMA = no }
+		ai_chance = {
+			base = 15
+			modifier = { gold < minor_gold_value add = -100 }
+		}
+	}
+	option = {
+		name = carnia_slave_market.0002.d
+		trigger = { gold >= minor_gold_value }
+		remove_short_term_gold = minor_gold_value
+		carn_enslave_effect = { SLAVE = scope:carnia_slave_old OWNER = root DRAMA = no }
+		ai_chance = {
+			base = 15
+			modifier = { gold < minor_gold_value add = -100 }
+		}
+	}
+	option = {
+		name = carnia_slave_market.0002.e
+		ai_chance = {
+			base = 30
+			modifier = { has_trait = compassionate add = 20 }
+			modifier = { has_trait = just add = 10 }
+		}
+	}
+
+# Fallen noble from the living pool. Not generated.
+carnia_slave_market.0003 = {
+	type = character_event
+	title = carnia_slave_market.0003.t
+	desc = carnia_slave_market.0003.desc
+	theme = diplomacy
+	override_background = { reference = market }
+
+	trigger = {
+		any_living_character = {
+			is_alive = yes
+			is_adult = yes
+			this != root
+			is_ruler = no
+			is_landed = no
+			NOT = { has_trait = slave }
+			is_lowborn = no
+			OR = {
+				is_pool_character = yes
+				NOT = { exists = liege }
+			}
+			faith = {
+				faith_hostility_level = {
+					target = root.faith
+					value >= faith_hostile_level
+				}
+			}
+			NOT = {
+				any_close_family_member = { is_ruler = yes }
+			}
+		}
+	}
+
+	immediate = {
+		random_living_character = {
+			limit = {
+				is_alive = yes
+				is_adult = yes
+				this != root
+				is_ruler = no
+				is_landed = no
+				NOT = { has_trait = slave }
+				is_lowborn = no
+				OR = {
+					is_pool_character = yes
+					NOT = { exists = liege }
+				}
+				faith = {
+					faith_hostility_level = {
+						target = root.faith
+						value >= faith_hostile_level
+					}
+				}
+				NOT = {
+					any_close_family_member = { is_ruler = yes }
+				}
+			}
+			save_scope_as = carnia_slave_noble
+		}
+	}
+
+	left_portrait = { character = scope:carnia_slave_noble animation = sadness }
+	right_portrait = { character = root animation = personality_greedy }
+
+	option = {
+		name = carnia_slave_market.0003.a
+		trigger = { gold >= minor_gold_value }
+		remove_short_term_gold = minor_gold_value
+		carn_enslave_effect = { SLAVE = scope:carnia_slave_noble OWNER = root DRAMA = no }
+		ai_chance = {
+			base = 45
+			modifier = { has_trait = greedy add = 15 }
+			modifier = { has_trait = zealous add = 10 }
+			modifier = { has_trait = compassionate add = -20 }
+			modifier = { gold < minor_gold_value add = -100 }
+		}
+	}
+	option = {
+		name = carnia_slave_market.0003.b
+		ai_chance = {
+			base = 35
+			modifier = { has_trait = compassionate add = 20 }
+			modifier = { has_trait = just add = 10 }
+		}
+	}
+}
+
+# Distant pilgrim: outside diplomatic range, lowborn allowed.
+carnia_slave_market.0004 = {
+	type = character_event
+	title = carnia_slave_market.0004.t
+	desc = carnia_slave_market.0004.desc
+	theme = diplomacy
+	override_background = { reference = market }
+
+	trigger = {
+		any_living_character = {
+			is_alive = yes
+			is_adult = yes
+			this != root
+			is_ruler = no
+			is_landed = no
+			NOT = { has_trait = slave }
+			NOT = { in_diplomatic_range = root }
+			OR = {
+				is_pool_character = yes
+				NOT = { exists = liege }
+			}
+		}
+	}
+
+	immediate = {
+		random_living_character = {
+			limit = {
+				is_alive = yes
+				is_adult = yes
+				this != root
+				is_ruler = no
+				is_landed = no
+				NOT = { has_trait = slave }
+				NOT = { in_diplomatic_range = root }
+				OR = {
+					is_pool_character = yes
+					NOT = { exists = liege }
+				}
+			}
+			save_scope_as = carnia_slave_pilgrim
+		}
+	}
+
+	left_portrait = { character = scope:carnia_slave_pilgrim animation = personality_content }
+	right_portrait = { character = root animation = personality_greedy }
+
+	option = {
+		name = carnia_slave_market.0004.a
+		trigger = { gold >= minor_gold_value }
+		remove_short_term_gold = minor_gold_value
+		carn_enslave_effect = { SLAVE = scope:carnia_slave_pilgrim OWNER = root DRAMA = no }
+		ai_chance = {
+			base = 40
+			modifier = { has_trait = greedy add = 10 }
+			modifier = { has_trait = cynical add = 10 }
+			modifier = { has_trait = zealous add = -10 }
+			modifier = { gold < minor_gold_value add = -100 }
+		}
+	}
+	option = {
+		name = carnia_slave_market.0004.b
+		ai_chance = {
+			base = 40
+			modifier = { has_trait = zealous add = 15 }
+			modifier = { has_trait = compassionate add = 15 }
+		}
+	}
+}
+
+# Pair of adults. Buy both, one, or neither. The unbought is enslaved by another ruler.
+carnia_slave_market.0005 = {
+	type = character_event
+	title = carnia_slave_market.0005.t
+	desc = carnia_slave_market.0005.desc
+	theme = diplomacy
+	override_background = { reference = market }
+
+	immediate = {
+		create_character = {
+			gender = male
+			age = { 18 35 }
+			culture = root.culture
+			faith = root.faith
+			location = root.location
+			dynasty = none
+			save_scope_as = carnia_slave_a
+		}
+		create_character = {
+			gender = female
+			age = { 18 35 }
+			culture = root.culture
+			faith = root.faith
+			location = root.location
+			dynasty = none
+			save_scope_as = carnia_slave_b
+		}
+	}
+
+	left_portrait = { character = scope:carnia_slave_a animation = personality_content }
+	right_portrait = { character = root animation = personality_greedy }
+	lower_right_portrait = { character = scope:carnia_slave_b animation = personality_content }
+
+	option = {
+		name = carnia_slave_market.0005.a
+		trigger = { gold >= minor_gold_value }
+		remove_short_term_gold = minor_gold_value
+		carn_enslave_effect = { SLAVE = scope:carnia_slave_a OWNER = root DRAMA = no }
+		carn_enslave_effect = { SLAVE = scope:carnia_slave_b OWNER = root DRAMA = no }
+		ai_chance = {
+			base = 40
+			modifier = { has_trait = greedy add = 10 }
+			modifier = { gold < minor_gold_value add = -100 }
+		}
+	}
+	option = {
+		name = carnia_slave_market.0005.b
+		trigger = { gold >= minor_gold_value }
+		remove_short_term_gold = minor_gold_value
+		carn_enslave_effect = { SLAVE = scope:carnia_slave_a OWNER = root DRAMA = no }
+		if = {
+			limit = {
+				any_ruler = { this != root is_alive = yes in_diplomatic_range = root }
+			}
+			random_ruler = {
+				limit = { this != root is_alive = yes in_diplomatic_range = root }
+				save_scope_as = carnia_other_buyer
+			}
+			carn_enslave_effect = { SLAVE = scope:carnia_slave_b OWNER = scope:carnia_other_buyer DRAMA = no }
+		}
+		ai_chance = {
+			base = 20
+			modifier = { gold < minor_gold_value add = -100 }
+		}
+	}
+	option = {
+		name = carnia_slave_market.0005.c
+		trigger = { gold >= minor_gold_value }
+		remove_short_term_gold = minor_gold_value
+		carn_enslave_effect = { SLAVE = scope:carnia_slave_b OWNER = root DRAMA = no }
+		if = {
+			limit = {
+				any_ruler = { this != root is_alive = yes in_diplomatic_range = root }
+			}
+			random_ruler = {
+				limit = { this != root is_alive = yes in_diplomatic_range = root }
+				save_scope_as = carnia_other_buyer
+			}
+			carn_enslave_effect = { SLAVE = scope:carnia_slave_a OWNER = scope:carnia_other_buyer DRAMA = no }
+		}
+		ai_chance = {
+			base = 20
+			modifier = { gold < minor_gold_value add = -100 }
+		}
+	}
+	option = {
+		name = carnia_slave_market.0005.d
+		ai_chance = {
+			base = 25
+			modifier = { has_trait = compassionate add = 20 }
+		}
+	}
+}
+
+# Mother and child.
+carnia_slave_market.0006 = {
+	type = character_event
+	title = carnia_slave_market.0006.t
+	desc = carnia_slave_market.0006.desc
+	theme = diplomacy
+	override_background = { reference = market }
+
+	immediate = {
+		create_character = {
+			gender = female
+			age = { 18 24 }
+			culture = root.culture
+			faith = root.faith
+			location = root.location
+			dynasty = none
+			save_scope_as = carnia_slave_mother
+		}
+		create_character = {
+			mother = scope:carnia_slave_mother
+			gender_female_chance = 50
+			age = { 0 1 }
+			culture = root.culture
+			faith = root.faith
+			location = root.location
+			dynasty = none
+			save_scope_as = carnia_slave_child
+		}
+	}
+
+	left_portrait = { character = scope:carnia_slave_mother animation = personality_content }
+	right_portrait = { character = root animation = personality_greedy }
+	lower_right_portrait = { character = scope:carnia_slave_child animation = personality_content }
+
+	option = {
+		name = carnia_slave_market.0006.a
+		trigger = { gold >= minor_gold_value }
+		remove_short_term_gold = minor_gold_value
+		carn_enslave_effect = { SLAVE = scope:carnia_slave_mother OWNER = root DRAMA = no }
+		carn_enslave_effect = { SLAVE = scope:carnia_slave_child OWNER = root DRAMA = no }
+		ai_chance = {
+			base = 45
+			modifier = { has_trait = compassionate add = 10 }
+			modifier = { gold < minor_gold_value add = -100 }
+		}
+	}
+	option = {
+		name = carnia_slave_market.0006.b
+		trigger = { gold >= minor_gold_value }
+		remove_short_term_gold = minor_gold_value
+		carn_enslave_effect = { SLAVE = scope:carnia_slave_mother OWNER = root DRAMA = no }
+		if = {
+			limit = {
+				any_ruler = { this != root is_alive = yes in_diplomatic_range = root }
+			}
+			random_ruler = {
+				limit = { this != root is_alive = yes in_diplomatic_range = root }
+				save_scope_as = carnia_other_buyer
+			}
+			carn_enslave_effect = { SLAVE = scope:carnia_slave_child OWNER = scope:carnia_other_buyer DRAMA = no }
+		}
+		ai_chance = {
+			base = 15
+			modifier = { has_trait = callous add = 15 }
+			modifier = { gold < minor_gold_value add = -100 }
+		}
+	}
+	option = {
+		name = carnia_slave_market.0006.c
+		trigger = { gold >= minor_gold_value }
+		remove_short_term_gold = minor_gold_value
+		carn_enslave_effect = { SLAVE = scope:carnia_slave_child OWNER = root DRAMA = no }
+		if = {
+			limit = {
+				any_ruler = { this != root is_alive = yes in_diplomatic_range = root }
+			}
+			random_ruler = {
+				limit = { this != root is_alive = yes in_diplomatic_range = root }
+				save_scope_as = carnia_other_buyer
+			}
+			carn_enslave_effect = { SLAVE = scope:carnia_slave_mother OWNER = scope:carnia_other_buyer DRAMA = no }
+		}
+		ai_chance = {
+			base = 10
+			modifier = { gold < minor_gold_value add = -100 }
+		}
+	}
+	option = {
+		name = carnia_slave_market.0006.d
+		ai_chance = {
+			base = 30
+			modifier = { has_trait = compassionate add = 20 }
+		}
+	}
+}
+
+# Lovers.
+carnia_slave_market.0007 = {
+	type = character_event
+	title = carnia_slave_market.0007.t
+	desc = carnia_slave_market.0007.desc
+	theme = diplomacy
+	override_background = { reference = market }
+
+	immediate = {
+		create_character = {
+			gender = male
+			age = { 18 35 }
+			culture = root.culture
+			faith = root.faith
+			location = root.location
+			dynasty = none
+			save_scope_as = carnia_slave_lover_a
+		}
+		create_character = {
+			gender = female
+			age = { 18 35 }
+			culture = root.culture
+			faith = root.faith
+			location = root.location
+			dynasty = none
+			save_scope_as = carnia_slave_lover_b
+		}
+	}
+
+	left_portrait = { character = scope:carnia_slave_lover_a animation = sadness }
+	right_portrait = { character = root animation = personality_greedy }
+	lower_right_portrait = { character = scope:carnia_slave_lover_b animation = sadness }
+
+	option = {
+		name = carnia_slave_market.0007.a
+		trigger = { gold >= minor_gold_value }
+		remove_short_term_gold = minor_gold_value
+		carn_enslave_effect = { SLAVE = scope:carnia_slave_lover_a OWNER = root DRAMA = no }
+		carn_enslave_effect = { SLAVE = scope:carnia_slave_lover_b OWNER = root DRAMA = no }
+		ai_chance = {
+			base = 40
+			modifier = { has_trait = lustful add = 10 }
+			modifier = { gold < minor_gold_value add = -100 }
+		}
+	}
+	option = {
+		name = carnia_slave_market.0007.b
+		trigger = { gold >= minor_gold_value }
+		remove_short_term_gold = minor_gold_value
+		carn_enslave_effect = { SLAVE = scope:carnia_slave_lover_a OWNER = root DRAMA = no }
+		if = {
+			limit = {
+				any_ruler = { this != root is_alive = yes in_diplomatic_range = root }
+			}
+			random_ruler = {
+				limit = { this != root is_alive = yes in_diplomatic_range = root }
+				save_scope_as = carnia_other_buyer
+			}
+			carn_enslave_effect = { SLAVE = scope:carnia_slave_lover_b OWNER = scope:carnia_other_buyer DRAMA = no }
+		}
+		ai_chance = {
+			base = 15
+			modifier = { gold < minor_gold_value add = -100 }
+		}
+	}
+	option = {
+		name = carnia_slave_market.0007.c
+		trigger = { gold >= minor_gold_value }
+		remove_short_term_gold = minor_gold_value
+		carn_enslave_effect = { SLAVE = scope:carnia_slave_lover_b OWNER = root DRAMA = no }
+		if = {
+			limit = {
+				any_ruler = { this != root is_alive = yes in_diplomatic_range = root }
+			}
+			random_ruler = {
+				limit = { this != root is_alive = yes in_diplomatic_range = root }
+				save_scope_as = carnia_other_buyer
+			}
+			carn_enslave_effect = { SLAVE = scope:carnia_slave_lover_a OWNER = scope:carnia_other_buyer DRAMA = no }
+		}
+		ai_chance = {
+			base = 15
+			modifier = { gold < minor_gold_value add = -100 }
+		}
+	}
+	option = {
+		name = carnia_slave_market.0007.d
+		ai_chance = {
+			base = 30
+			modifier = { has_trait = compassionate add = 20 }
+		}
+	}
+}
+
+# Rare generated servant.
+carnia_slave_market.0008 = {
+	type = character_event
+	title = carnia_slave_market.0008.t
+	desc = carnia_slave_market.0008.desc
+	theme = diplomacy
+	override_background = { reference = market }
+
+	immediate = {
+		create_character = {
+			template = beautiful_peasant_character
+			age = { 18 30 }
+			gender_female_chance = 50
+			culture = root.culture
+			faith = root.faith
+			location = root.location
+			dynasty = none
+			after_creation = {
+				add_trait = physique_good_2
+				add_trait = intellect_good_1
+			}
+			save_scope_as = carnia_slave_good
+		}
+	}
+
+	left_portrait = { character = scope:carnia_slave_good animation = personality_content }
+	right_portrait = { character = root animation = personality_greedy }
+
+	option = {
+		name = carnia_slave_market.0008.a
+		trigger = { gold >= minor_gold_value }
+		remove_short_term_gold = minor_gold_value
+		carn_enslave_effect = { SLAVE = scope:carnia_slave_good OWNER = root DRAMA = no }
+		ai_chance = {
+			base = 50
+			modifier = { has_trait = greedy add = 10 }
+			modifier = { has_trait = lustful add = 10 }
+			modifier = { gold < minor_gold_value add = -100 }
+		}
+	}
+	option = {
+		name = carnia_slave_market.0008.b
+		ai_chance = {
+			base = 30
+			modifier = { has_trait = temperate add = 10 }
+		}
+	}
+}

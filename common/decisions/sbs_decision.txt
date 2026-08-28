@@ -11,10 +11,6 @@ become_demon = {
 		OR = {
 			has_trait = sbs_lesser_succubus
 			has_trait = sbs_lesser_demon
-			AND = {
-				faith.religion = religion:demonic_religion
-				faith.religious_head = root
-			}
 		}
 	}
 	is_valid = {
@@ -28,196 +24,19 @@ become_demon = {
 				has_trait_xp = { trait = sbs_lesser_demon value >= 100 }
 				age >= 100
 			}
-			AND = {
-				faith.religion = religion:demonic_religion
-				faith.religious_head = root
-			}
 		}
 	}
 	effect = {
 		if = {
-			limit = { faith = faith:nature faith.religious_head = root }
-			if = {
-				limit = { NOT = { dynasty = dynasty:888888 } }
-				random_living_character = {
-					limit = { faith = faith:nature is_ruler = no sbs_has_custom_model_trigger = no }
-					copy_inheritable_appearance_from = character:nature_character
-					save_scope_as = demon_child
-					weight = {
-						base = 0
-						modifier = { is_lowborn = no add = 1 }
-						modifier = { dynasty = dynasty:888888 add = 100 }
-						modifier = { dynasty = dynasty:888888 is_female = yes is_adult = yes add = 1000 }
-						modifier = { dynasty = dynasty:888888 has_trait = sbs_succubus is_adult = yes add = 10000 }
-					}
-				}
-				random_held_title = {
-					limit = { this = title:k_nature }
-					create_title_and_vassal_change = {
-						type = usurped
-						save_scope_as = change
-						add_claim_on_loss = no
-					}
-					change_title_holder_include_vassals = {
-						holder = scope:demon_child
-						change = scope:change
-						take_baronies = no
-					}
-					resolve_title_and_vassal_change = scope:change
-				}
-			}
+			limit = { is_female = yes }
+			add_trait = sbs_succubus
+			set_immortal_age = 18
+			remove_trait = sbs_lesser_succubus
 		}
-		else_if = {
-			limit = { faith = faith:pleasure faith.religious_head = root }
-			if = {
-				limit = { NOT = { dynasty = dynasty:666666 } }
-				random_living_character = {
-					limit = { faith = faith:pleasure is_ruler = no sbs_has_custom_model_trigger = no }
-					copy_inheritable_appearance_from = character:pleasure_character
-					save_scope_as = demon_child
-					weight = {
-						base = 0
-						modifier = { is_lowborn = yes add = 1 }
-						modifier = { dynasty = dynasty:666666 add = 100 }
-						modifier = { dynasty = dynasty:666666 is_female = yes is_adult = yes add = 1000 }
-						modifier = { dynasty = dynasty:666666 has_trait = sbs_succubus is_adult = yes add = 10000 }
-					}
-				}
-				random_held_title = {
-					limit = { this = title:k_pleasure }
-					create_title_and_vassal_change = {
-						type = usurped
-						save_scope_as = change
-						add_claim_on_loss = no
-					}
-					change_title_holder_include_vassals = {
-						holder = scope:demon_child
-						change = scope:change
-						take_baronies = no
-					}
-					resolve_title_and_vassal_change = scope:change
-				}
-			}
-		}
-		else_if = {
-			limit = { faith = faith:violence faith.religious_head = root }
-			if = {
-				limit = { NOT = { dynasty = dynasty:777777 } }
-				random_living_character = {
-					limit = { faith = faith:violence is_ruler = no sbs_has_custom_model_trigger = no }
-					copy_inheritable_appearance_from = character:violence_character
-					save_scope_as = demon_child
-					weight = {
-						base = 0
-						modifier = { is_lowborn = yes add = 1 }
-						modifier = { dynasty = dynasty:777777 add = 100 }
-						modifier = { dynasty = dynasty:777777 is_female = no is_adult = yes add = 1000 }
-						modifier = { dynasty = dynasty:777777 has_trait = sbs_demon is_adult = yes add = 10000 }
-					}
-				}
-				random_held_title = {
-					limit = { this = title:k_violence }
-					create_title_and_vassal_change = {
-						type = usurped
-						save_scope_as = change
-						add_claim_on_loss = no
-					}
-					change_title_holder_include_vassals = {
-						holder = scope:demon_child
-						change = scope:change
-						take_baronies = no
-					}
-					resolve_title_and_vassal_change = scope:change
-				}
-			}
-		}
-		else_if = {
-			limit = { faith = faith:greedy faith.religious_head = root }
-			if = {
-				limit = { NOT = { dynasty = dynasty:999999 } }
-				random_living_character = {
-					limit = { faith = faith:greedy is_ruler = no sbs_has_custom_model_trigger = no }
-					copy_inheritable_appearance_from = character:greedy_character
-					save_scope_as = demon_child
-					weight = {
-						base = 0
-						modifier = { is_lowborn = yes add = 1 }
-						modifier = { dynasty = dynasty:999999 add = 100 }
-						modifier = { dynasty = dynasty:999999 is_female = no is_adult = yes add = 1000 }
-						modifier = { dynasty = dynasty:999999 has_trait = sbs_demon is_adult = yes add = 10000 }
-					}
-				}
-				random_held_title = {
-					limit = { this = title:k_greedy }
-					create_title_and_vassal_change = {
-						type = usurped
-						save_scope_as = change
-						add_claim_on_loss = no
-					}
-					change_title_holder_include_vassals = {
-						holder = scope:demon_child
-						change = scope:change
-						take_baronies = no
-					}
-					resolve_title_and_vassal_change = scope:change
-				}
-			}
-		}
-		if = {
-			limit = { NOT = { exists = scope:demon_child } }
-			save_scope_as = demon_child
-		}
-		scope:demon_child = {
-			if = {
-				limit = { is_female = yes }
-				add_trait = sbs_succubus
-				set_immortal_age = 18
-				remove_trait = sbs_lesser_succubus
-			}
-			else = {
-				add_trait = sbs_demon
-				set_immortal_age = 18
-				remove_trait = sbs_lesser_demon
-			}
-		}
-	}
-	ai_potential = { always = yes }
-	ai_check_interval = 12
-	ai_will_do = { base = 100 }
-}
-
-masturbate = {
-	picture = { reference = "gfx/interface/illustrations/decisions/deviant_courtesans.dds" }
-	desc = masturbate.desc
-	confirm_text = masturbate.c
-	selection_tooltip = masturbate.t
-	decision_group_type = decisions
-	cooldown = { years = 1 }
-
-	is_shown = {
-		is_female = yes
-		stress_level >= 1
-		OR = {
-			any_character_artifact = { has_artifact_modifier = master_dildo_modifier }
-			any_character_artifact = { has_artifact_modifier = mistress_dildo_modifier }
-		}
-	}
-	effect = {
-		if = {
-			limit = { any_character_artifact = { has_artifact_modifier = master_dildo_modifier } }
-			stress_impact = { base = massive_stress_impact_loss }
-			random_artifact = {
-				limit = { has_artifact_modifier = master_dildo_modifier }
-				add_durability = -1
-			}
-		}
-		else_if = {
-			limit = { any_character_artifact = { has_artifact_modifier = mistress_dildo_modifier } }
-			stress_impact = { base = major_stress_impact_loss }
-			random_artifact = {
-				limit = { has_artifact_modifier = mistress_dildo_modifier }
-				add_durability = -1
-			}
+		else = {
+			add_trait = sbs_demon
+			set_immortal_age = 18
+			remove_trait = sbs_lesser_demon
 		}
 	}
 	ai_potential = { always = yes }
@@ -268,37 +87,4 @@ seal_the_gates_of_hell = {
 	ai_potential = { always = yes }
 	ai_check_interval = 12
 	ai_will_do = { base = 100 }
-}
-
-sbs_startmerchant_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/event_scenes/deviant_black_market.dds"
-	}
-	desc = sbs_startmerchant_decision_desc
-	confirm_text = sbs_startmerchant_decision_confirm
-	selection_tooltip = sbs_startmerchant_decision_tooltip
-	decision_group_type = decisions
-	ai_check_interval = 0
-	ai_will_do = {
-		base = 0
-	}
-	is_shown = {
-		OR = {
-			has_trait_with_flag = sbs_demon_trait
-			has_trait = deviant
-			any_secret = { type = secret_deviant }
-		}
-	}
-	is_valid = {
-		age >= 18
-		is_ai = no
-		is_incapable = no
-		is_imprisoned = no
-		any_sub_realm_county = { any_county_province = { has_building_or_higher = brothel1 } }
-	}
-	cooldown = { days = 10 }
-	effect = {
-		custom_tooltip = sbs_startmerchant_decision_tooltip
-		trigger_event = sbs_go.0100
-	}
 }

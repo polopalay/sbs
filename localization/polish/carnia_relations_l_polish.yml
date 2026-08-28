@@ -3,6 +3,6 @@
  relation_slave: "niewolnik"
  relation_slave_possessive: "niewolnika"
 
- slav_owner: "Właściciel niewolnika"
+ slave_owner: "Właściciel niewolników"
  relation_slave_owner: "właściciel"
  relation_slave_owner_possessive: "właściciela"

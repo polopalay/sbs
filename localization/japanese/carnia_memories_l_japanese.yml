@@ -1,6 +1,6 @@
 ﻿l_japanese:
  carnx_enslaved_memory: "奴隷にされた"
-carnx_enslaved_desc_1: "私は[enslaver.GetTitledFirstName]に奴隷にされました"
+ carnx_enslaved_desc_1: "私は[enslaver.GetTitledFirstName]に奴隷にされました"
  carnx_enslaved_desc_second_perspective_1: "あなたは[enslaver.GetTitledFirstName]に奴隷にされました"
  carnx_enslaved_desc_third_perspective_1: "[owner.GetName]は[enslaver.GetTitledFirstName]に奴隷にされました"
 
@@ -12,8 +12,11 @@ carnx_enslaved_desc_1: "私は[enslaver.GetTitledFirstName]に奴隷にされま
  carnia_start_prostitute: "売春婦として働き始めました"
  carnia_start_prostitute_desc_1: "私は売春婦として働き始めました"
  carnia_start_prostitute_desc_second_perspective_1: "あなたは売春婦として働き始めました"
+ carnia_start_prostitute_desc_third_perspective_1: "[owner.GetName]は娼婦として働き始めた"
 
  carnia_stop_prostitute: "売春婦として働くのをやめました"
  carnia_stop_prostitute_desc_1: "私は売春婦として働くのをやめました"
  carnia_stop_prostitute_desc_second_perspective_1: "あなたは売春婦として働くのをやめました"
  carnia_stop_prostitute_desc_third_perspective_1: "[owner.GetName]は売春婦として働くのをやめました"
+
+

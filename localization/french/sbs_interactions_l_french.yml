@@ -1,7 +1,7 @@
 ﻿l_french:
   sbs_devil_dead_interaction: "Guérison"
   sbs_devil_dead_interaction.desc: "Élimine toutes sortes de maladies, blessures et tous les noms disgracieux"
-  stress_flag: "Stress"
+  stress_flag: "Tension"
   healing_flag: "Guérison"
   honor_flag: "Honneur"
   dna_flag: "Gène"

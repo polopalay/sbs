@@ -1,0 +1,21 @@
+﻿l_polish:
+ sbs_devils_curse: "Klątwa Diabła"
+ sbs_devils_curse_action: "Przeklnij"
+ sbs_devils_curse_general_desc: "Odpraw demoniczny rytuał, by nałożyć wybraną klątwę na cel. Intryga określa szansę sukcesu."
+ sbs_devils_curse_success_desc: "W razie sukcesu wybrana klątwa spada na cel."
+ sbs_devils_curse_success_toast: "Klątwa Diabła się powiodła"
+ sbs_devils_curse_failure_toast: "Klątwa Diabła zawiodła"
+
+ sbs_devils_gift: "Dar Diabła"
+ sbs_devils_gift_action: "Obdarz Darem Diabła"
+ sbs_devils_gift_general_desc: "Odpraw demoniczny rytuał, by obdarzyć cel wybranym darem. Wykształcenie określa szansę sukcesu."
+ sbs_devils_gift_success_desc: "W razie sukcesu wybrany dar zostaje udzielony celowi."
+ sbs_devils_gift_success_toast: "Dar Diabła się powiódł"
+ sbs_devils_gift_failure_toast: "Dar Diabła zawiódł"
+
+ sbs_ritual_easy_modifier: "Prosty rytuał"
+ sbs_ritual_easy_modifier_desc: "Prosty rytuał: około 1 miesiąca i +60 stałej szansy sukcesu."
+ sbs_ritual_medium_modifier: "Zaawansowany rytuał"
+ sbs_ritual_medium_modifier_desc: "Zaawansowany rytuał: około 2 miesięcy i +40 stałej szansy sukcesu."
+ sbs_ritual_hard_modifier: "Trudny rytuał"
+ sbs_ritual_hard_modifier_desc: "Trudny rytuał: około 3 miesięcy i +20 stałej szansy sukcesu."

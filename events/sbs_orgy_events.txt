@@ -1,0 +1,3568 @@
+namespace = sbs_orgy
+
+# 0001: hidden per-character dispatcher.
+sbs_orgy.0001 = {
+	hidden = yes
+	type = activity_event
+
+	trigger = {
+		is_alive = yes
+		has_character_flag = sbs_orgy_active
+		has_variable = sbs_orgy_round
+		has_variable = sbs_orgy_target_rounds
+		var:sbs_orgy_round < var:sbs_orgy_target_rounds
+	}
+
+	immediate = {
+		change_variable = { name = sbs_orgy_round add = 1 }
+
+		random_list = {
+			# Generic one-on-one. Same weight band as the specific scenes.
+			6 = {
+				trigger = {
+					involved_activity = {
+						any_attending_character = { this != root is_adult = yes }
+					}
+				}
+				trigger_event = sbs_orgy.1100
+			}
+
+			# Three-person content genuinely needs two other people.
+			6 = {
+				trigger = {
+					involved_activity = {
+						any_attending_character = { count >= 2 this != root is_adult = yes }
+					}
+				}
+				trigger_event = sbs_orgy.1200
+			}
+
+			# Nudity set-pieces: indoor only.
+			5 = {
+				trigger = {
+					involved_activity = {
+						NOT = {
+							has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+						}
+						any_attending_character = { this != root is_adult = yes }
+					}
+				}
+				trigger_event = sbs_orgy.4100
+			}
+			4 = {
+				trigger = {
+					involved_activity = {
+						NOT = {
+							has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+						}
+						any_attending_character = { count >= 4 this != root is_adult = yes }
+					}
+				}
+				trigger_event = sbs_orgy.4200
+			}
+
+			# Contest scenes: only retain requirements needed by the actual content.
+			5 = {
+				trigger = {
+					involved_activity = {
+						any_attending_character = { count >= 2 this != root is_adult = yes }
+						any_attending_character = { this != root is_adult = yes is_male = yes }
+					}
+				}
+				trigger_event = sbs_orgy.3100
+			}
+			5 = {
+				trigger = {
+					involved_activity = {
+						any_attending_character = { count >= 2 this != root is_adult = yes }
+					}
+				}
+				trigger_event = sbs_orgy.3200
+			}
+			5 = {
+				trigger = {
+					involved_activity = {
+						any_attending_character = { count >= 2 this != root is_adult = yes }
+					}
+				}
+				trigger_event = sbs_orgy.3300
+			}
+			5 = {
+				trigger = {
+					involved_activity = {
+						any_attending_character = { count >= 2 this != root is_adult = yes }
+					}
+				}
+				trigger_event = sbs_orgy.3400
+			}
+			5 = {
+				trigger = {
+					involved_activity = {
+						any_attending_character = { count >= 2 this != root is_adult = yes }
+						any_attending_character = { this != root is_adult = yes is_female = yes }
+					}
+				}
+				trigger_event = sbs_orgy.3500
+			}
+
+			# Extreme outdoor scenes.
+			3 = {
+				trigger = {
+					is_female = yes
+					involved_activity = {
+						has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+					}
+				}
+				trigger_event = sbs_orgy.6100
+			}
+			3 = {
+				trigger = {
+					is_female = yes
+					involved_activity = {
+						has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+						any_attending_character = { this != root is_adult = yes }
+					}
+				}
+				trigger_event = sbs_orgy.6200
+			}
+			3 = {
+				trigger = {
+					is_female = yes
+					involved_activity = {
+						has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+						any_attending_character = { this != root is_adult = yes is_female = yes }
+					}
+				}
+				trigger_event = sbs_orgy.6300
+			}
+			4 = {
+				trigger = {
+					is_female = yes
+					involved_activity = {
+						has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+						any_attending_character = { count >= 1 this != root is_adult = yes is_female = yes }
+						any_attending_character = { count >= 2 this != root is_adult = yes is_male = yes }
+					}
+				}
+				trigger_event = sbs_orgy.6400
+			}
+			4 = {
+				trigger = {
+					is_female = yes
+					involved_activity = {
+						any_attending_character = { this != root is_adult = yes is_female = yes }
+					}
+				}
+				trigger_event = sbs_orgy.3600
+			}
+
+				# Relationship-specific one-on-one scenes. Lower weight than the generic encounter.
+				7 = {
+					trigger = {
+						involved_activity = {
+							any_attending_character = {
+								this != root
+								is_adult = yes
+
+								any_parent = { this = root }
+							}
+						}
+					}
+					trigger_event = sbs_orgy.2100
+				}
+				7 = {
+					trigger = {
+						involved_activity = {
+							any_attending_character = {
+								this != root
+								is_adult = yes
+
+								any_spouse = { any_parent = { this = root } }
+							}
+						}
+					}
+					trigger_event = sbs_orgy.2200
+				}
+				8 = {
+					trigger = {
+						involved_activity = {
+							any_attending_character = {
+								this != root
+								is_adult = yes
+
+								NOT = { is_spouse_of = root }
+								NOT = { is_close_or_extended_family_of = root }
+								NOT = { any_spouse = { any_parent = { this = root } } }
+								NOR = {
+									has_relation_rival = root
+									has_relation_nemesis = root
+								}
+								OR = {
+									has_relation_friend = root
+									has_relation_best_friend = root
+								}
+							}
+						}
+					}
+					trigger_event = sbs_orgy.2300
+				}
+				8 = {
+					trigger = {
+						involved_activity = {
+							any_attending_character = {
+								this != root
+								is_adult = yes
+
+								NOT = { is_spouse_of = root }
+								NOT = { is_close_or_extended_family_of = root }
+								NOT = { any_spouse = { any_parent = { this = root } } }
+								OR = {
+									has_relation_rival = root
+									has_relation_nemesis = root
+								}
+							}
+						}
+					}
+					trigger_event = sbs_orgy.2400
+				}
+				8 = {
+					trigger = {
+						involved_activity = {
+							any_attending_character = {
+								this != root
+								is_adult = yes
+
+								NOT = { is_spouse_of = root }
+								NOT = { is_close_or_extended_family_of = root }
+								NOT = { any_spouse = { any_parent = { this = root } } }
+								NOR = {
+									has_relation_friend = root
+									has_relation_best_friend = root
+									has_relation_rival = root
+									has_relation_nemesis = root
+									is_councillor_of = root
+								}
+								is_vassal_of = root
+							}
+						}
+					}
+					trigger_event = sbs_orgy.2500
+				}
+				9 = {
+					trigger = {
+						involved_activity = {
+							any_attending_character = { this != root is_adult = yes is_spouse_of = root }
+						}
+					}
+					trigger_event = sbs_orgy.2600
+				}
+				7 = {
+					trigger = {
+						involved_activity = {
+							any_attending_character = {
+								this != root
+								is_adult = yes
+
+								NOT = { is_spouse_of = root }
+								NOT = { is_close_or_extended_family_of = root }
+								NOT = { any_spouse = { any_parent = { this = root } } }
+								NOR = {
+									has_relation_friend = root
+									has_relation_best_friend = root
+									has_relation_rival = root
+									has_relation_nemesis = root
+								}
+								NOT = { any_spouse = { is_vassal_of = root } }
+								is_councillor_of = root
+							}
+						}
+					}
+					trigger_event = sbs_orgy.2700
+				}
+				7 = {
+					trigger = {
+						involved_activity = {
+							any_attending_character = {
+								this != root
+								is_adult = yes
+
+								NOT = { is_spouse_of = root }
+								NOT = { is_close_or_extended_family_of = root }
+								NOT = { any_spouse = { any_parent = { this = root } } }
+								NOR = {
+									has_relation_friend = root
+									has_relation_best_friend = root
+									has_relation_rival = root
+									has_relation_nemesis = root
+								}
+								any_spouse = { is_vassal_of = root }
+							}
+						}
+					}
+					trigger_event = sbs_orgy.2800
+				}
+
+				# Direct liege. Kept separate from the generic encounter.
+				8 = {
+					trigger = {
+						exists = root.liege
+						involved_activity = {
+							any_attending_character = { this = root.liege is_adult = yes }
+						}
+					}
+					trigger_event = sbs_orgy.2900
+				}
+
+				# An attending character marked as a slave.
+				7 = {
+					trigger = {
+						involved_activity = {
+							any_attending_character = { this != root is_adult = yes has_trait = slave }
+						}
+					}
+					trigger_event = sbs_orgy.2920
+				}
+
+				# Indoor-only: throne and bedchamber scenes.
+				6 = {
+					trigger = {
+						involved_activity = {
+							NOT = {
+								has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+							}
+							any_attending_character = { this != root is_adult = yes }
+						}
+					}
+					trigger_event = sbs_orgy.1300
+				}
+				6 = {
+					trigger = {
+						involved_activity = {
+							NOT = {
+								has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+							}
+							any_attending_character = { this != root is_adult = yes }
+						}
+					}
+					trigger_event = sbs_orgy.1400
+				}
+
+				# Outdoor-only scenes.
+				5 = {
+					trigger = {
+						involved_activity = {
+							has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+						}
+					}
+					trigger_event = sbs_orgy.5100
+				}
+				5 = {
+					trigger = {
+						involved_activity = {
+							has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+							any_attending_character = { count >= 2 this != root is_adult = yes }
+						}
+					}
+					trigger_event = sbs_orgy.5200
+				}
+				5 = {
+					trigger = {
+						is_female = yes
+						involved_activity = {
+							has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+							any_attending_character = { this != root is_adult = yes is_male = yes }
+						}
+					}
+					trigger_event = sbs_orgy.5300
+				}
+				5 = {
+					trigger = {
+						is_male = yes
+						involved_activity = {
+							has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+							any_attending_character = { this != root is_adult = yes is_female = yes }
+						}
+					}
+					trigger_event = sbs_orgy.5400
+				}
+		}
+
+		# Do not rely only on phase timing: the exact personal round budget prevents
+		# an extra event on the final week. sbs_orgy_active stops queued events when
+		# the activity ends or is invalidated.
+		if = {
+			limit = { has_character_flag = sbs_orgy_active has_variable = sbs_orgy_round has_variable = sbs_orgy_target_rounds var:sbs_orgy_round < var:sbs_orgy_target_rounds }
+			trigger_event = { id = sbs_orgy.0001 days = 7 }
+		}
+	}
+}
+
+# 0002: An Empty House. Fallback if the gathering has no guests.
+sbs_orgy.0002 = {
+	type = activity_event
+	title = sbs_orgy.0002.t
+	desc = sbs_orgy.0002.desc
+	theme = feast_activity
+	override_background = {
+		trigger = {
+			involved_activity = {
+				has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			}
+		}
+		reference = wilderness
+	}
+	override_background = {
+		trigger = {
+			involved_activity = {
+				NOT = {
+					has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+				}
+			}
+		}
+		reference = sitting_room
+	}
+	right_portrait = { character = root animation = boredom }
+	option = { name = sbs_orgy.0002.a }
+}
+
+# 1100: A Private Accord. Generic one-on-one.
+sbs_orgy.1100 = {
+	type = activity_event
+	title = sbs_orgy.1100.t
+	desc = {
+		desc = sbs_orgy.1100.desc
+		random_valid = {
+			# Female root + Male guest
+			triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.1100.fm.1.desc }
+			triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.1100.fm.2.desc }
+			triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.1100.fm.3.desc }
+			triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.1100.fm.4.desc }
+			triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.1100.fm.5.desc }
+			triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.1100.fm.6.desc }
+			triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.1100.fm.7.desc }
+			triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.1100.fm.8.desc }
+			# Male root + Female guest
+			triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.1100.mf.1.desc }
+			triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.1100.mf.2.desc }
+			triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.1100.mf.3.desc }
+			triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.1100.mf.4.desc }
+			triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.1100.mf.5.desc }
+			triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.1100.mf.6.desc }
+			triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.1100.mf.7.desc }
+			triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.1100.mf.8.desc }
+			# Male + Male
+			triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.1100.mm.1.desc }
+			triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.1100.mm.2.desc }
+			triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.1100.mm.3.desc }
+			triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.1100.mm.4.desc }
+			triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.1100.mm.5.desc }
+			triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.1100.mm.6.desc }
+			triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.1100.mm.7.desc }
+			triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.1100.mm.8.desc }
+			# Female + Female
+			triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.1100.ff.1.desc }
+			triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.1100.ff.2.desc }
+			triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.1100.ff.3.desc }
+			triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.1100.ff.4.desc }
+			triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.1100.ff.5.desc }
+			triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.1100.ff.6.desc }
+			triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.1100.ff.7.desc }
+			triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.1100.ff.8.desc }
+		}
+	}
+	theme = seduction
+	override_background = {
+		trigger = {
+			involved_activity = {
+				has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			}
+		}
+		reference = ep3_camp
+	}
+	override_background = {
+		trigger = {
+			involved_activity = {
+				NOT = {
+					has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+				}
+			}
+		}
+		reference = bedchamber
+	}
+
+	trigger = {
+		involved_activity = {
+			any_attending_character = { this != root is_adult = yes }
+		}
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = { this != root is_adult = yes }
+				save_scope_as = sbs_orgy_guest
+			}
+		}
+	}
+
+	left_portrait = { character = scope:sbs_orgy_guest animation = flirtation }
+	right_portrait = { character = root animation = happiness }
+
+	# No precautions. Deviant characters strongly prefer this route.
+	option = {
+		name = sbs_orgy.1100.a
+		custom_tooltip = sbs_orgy.1100.a.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = pregnancy_chance }
+		ai_chance = {
+			base = 0
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 100 }
+		}
+	}
+
+	# Precautions. This is the normal AI choice.
+	option = {
+		name = sbs_orgy.1100.b
+		custom_tooltip = sbs_orgy.1100.b.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = 1 }
+		ai_chance = {
+			base = 50
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 20 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = lustful } add = 5 }
+			modifier = { scope:sbs_orgy_guest = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } add = 8 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = rakish } add = 5 }
+			modifier = { scope:sbs_orgy_guest = { faith = { has_doctrine = tenet_polyamory } } add = 3 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = chaste } add = -8 }
+		}
+	}
+
+	# Intimacy that may become a Lover relation. Mutual attraction is mandatory in both directions.
+	option = {
+		name = sbs_orgy.1100.c
+		custom_tooltip = sbs_orgy.1100.c.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+			can_set_relation_lover_trigger = { CHARACTER = scope:sbs_orgy_guest }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = 1 }
+		random_list = {
+			95 = { }
+			5 = {
+				# A chosen Woo target gets a much stronger chance to become a Lover here.
+				modifier = { has_activity_intent = woo_attendee_intent intent_target ?= scope:sbs_orgy_guest add = 300 }
+				modifier = { faith = { has_doctrine = tenet_polyamory } add = 20 }
+				modifier = { scope:sbs_orgy_guest = { faith = { has_doctrine = tenet_polyamory } } add = 20 }
+				modifier = { has_trait = lustful add = 3 }
+				modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 3 }
+				modifier = { scope:sbs_orgy_guest = { has_trait = lustful } add = 3 }
+				modifier = { scope:sbs_orgy_guest = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } add = 3 }
+				set_relation_lover = { target = scope:sbs_orgy_guest }
+				if = {
+					limit = { has_activity_intent = woo_attendee_intent intent_target ?= scope:sbs_orgy_guest }
+					complete_activity_intent = yes
+				}
+			}
+		}
+		ai_chance = {
+			base = 15
+			modifier = { has_activity_intent = woo_attendee_intent intent_target ?= scope:sbs_orgy_guest add = 100 }
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 20 }
+			modifier = { faith = { has_doctrine = tenet_polyamory } add = 20 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = lustful } add = 5 }
+			modifier = { scope:sbs_orgy_guest = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } add = 8 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = rakish } add = 5 }
+			modifier = { scope:sbs_orgy_guest = { faith = { has_doctrine = tenet_polyamory } } add = 3 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = chaste } add = -8 }
+		}
+	}
+
+	# Dirty talk about desire - gender variants
+	option = {
+		name = sbs_orgy.1100.d_fm
+		custom_tooltip = sbs_orgy.1100.d_fm.tt
+		trigger = { is_female = yes scope:sbs_orgy_guest = { is_male = yes } }
+		stress_impact = {
+			base = medium_stress_impact_loss
+			lustful = minor_stress_impact_loss
+			deviant = minor_stress_impact_loss
+			chaste = miniscule_stress_impact_gain
+		}
+		scope:sbs_orgy_guest = {
+			stress_impact = {
+				base = medium_stress_impact_loss
+				lustful = minor_stress_impact_loss
+				deviant = minor_stress_impact_loss
+				chaste = miniscule_stress_impact_gain
+			}
+		}
+		ai_chance = {
+			base = 30
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 20 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = lustful } add = 5 }
+			modifier = { scope:sbs_orgy_guest = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } add = 8 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = rakish } add = 5 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = chaste } add = -8 }
+		}
+	}
+	option = {
+		name = sbs_orgy.1100.d_mf
+		custom_tooltip = sbs_orgy.1100.d_mf.tt
+		trigger = { is_male = yes scope:sbs_orgy_guest = { is_female = yes } }
+		stress_impact = {
+			base = medium_stress_impact_loss
+			lustful = minor_stress_impact_loss
+			deviant = minor_stress_impact_loss
+			chaste = miniscule_stress_impact_gain
+		}
+		scope:sbs_orgy_guest = {
+			stress_impact = {
+				base = medium_stress_impact_loss
+				lustful = minor_stress_impact_loss
+				deviant = minor_stress_impact_loss
+				chaste = miniscule_stress_impact_gain
+			}
+		}
+		ai_chance = {
+			base = 30
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 20 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = lustful } add = 5 }
+			modifier = { scope:sbs_orgy_guest = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } add = 8 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = rakish } add = 5 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = chaste } add = -8 }
+		}
+	}
+	option = {
+		name = sbs_orgy.1100.d_mm
+		custom_tooltip = sbs_orgy.1100.d_mm.tt
+		trigger = { is_male = yes scope:sbs_orgy_guest = { is_male = yes } }
+		stress_impact = {
+			base = medium_stress_impact_loss
+			lustful = minor_stress_impact_loss
+			deviant = minor_stress_impact_loss
+			chaste = miniscule_stress_impact_gain
+		}
+		scope:sbs_orgy_guest = {
+			stress_impact = {
+				base = medium_stress_impact_loss
+				lustful = minor_stress_impact_loss
+				deviant = minor_stress_impact_loss
+				chaste = miniscule_stress_impact_gain
+			}
+		}
+		ai_chance = {
+			base = 30
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 20 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = lustful } add = 5 }
+			modifier = { scope:sbs_orgy_guest = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } add = 8 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = rakish } add = 5 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = chaste } add = -8 }
+		}
+	}
+	option = {
+		name = sbs_orgy.1100.d_ff
+		custom_tooltip = sbs_orgy.1100.d_ff.tt
+		trigger = { is_female = yes scope:sbs_orgy_guest = { is_female = yes } }
+		stress_impact = {
+			base = medium_stress_impact_loss
+			lustful = minor_stress_impact_loss
+			deviant = minor_stress_impact_loss
+			chaste = miniscule_stress_impact_gain
+		}
+		scope:sbs_orgy_guest = {
+			stress_impact = {
+				base = medium_stress_impact_loss
+				lustful = minor_stress_impact_loss
+				deviant = minor_stress_impact_loss
+				chaste = miniscule_stress_impact_gain
+			}
+		}
+		ai_chance = {
+			base = 30
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 20 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = lustful } add = 5 }
+			modifier = { scope:sbs_orgy_guest = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } add = 8 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = rakish } add = 5 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = chaste } add = -8 }
+		}
+	}
+
+	# Talk about love: usually deepens the bond into friendship.
+	option = {
+		name = sbs_orgy.1100.e
+		custom_tooltip = sbs_orgy.1100.e.tt
+		scope:sbs_orgy_guest = {
+			add_opinion = { target = root modifier = feast_had_good_talk }
+		}
+		random_list = {
+			20 = { }
+			80 = {
+				trigger = { can_set_relation_friend_trigger = { CHARACTER = scope:sbs_orgy_guest } }
+				modifier = { has_activity_intent = befriend_attendee_intent intent_target ?= scope:sbs_orgy_guest add = 300 }
+				set_relation_friend = {
+					target = scope:sbs_orgy_guest
+					reason = friend_feast_talking_and_laughing
+				}
+				if = {
+					limit = { has_activity_intent = befriend_attendee_intent intent_target ?= scope:sbs_orgy_guest }
+					complete_activity_intent = yes
+				}
+			}
+		}
+		ai_chance = {
+			base = 40
+			modifier = { has_activity_intent = befriend_attendee_intent intent_target ?= scope:sbs_orgy_guest add = 100 }
+		}
+	}
+
+	# Mutual fondling / mutual masturbation - gender variants
+	option = {
+		name = sbs_orgy.1100.f_fm
+		custom_tooltip = sbs_orgy.1100.f_fm.tt
+		trigger = { is_female = yes scope:sbs_orgy_guest = { is_male = yes } }
+		stress_impact = { base = minor_stress_impact_loss }
+		scope:sbs_orgy_guest = { stress_impact = { base = minor_stress_impact_loss } }
+		ai_chance = {
+			base = 35
+			modifier = { has_trait = lustful add = 10 }
+			modifier = { has_trait = rakish add = 10 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 10 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = lustful } add = 5 }
+			modifier = { scope:sbs_orgy_guest = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } add = 8 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = rakish } add = 5 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = chaste } add = -5 }
+		}
+	}
+	option = {
+		name = sbs_orgy.1100.f_mf
+		custom_tooltip = sbs_orgy.1100.f_mf.tt
+		trigger = { is_male = yes scope:sbs_orgy_guest = { is_female = yes } }
+		stress_impact = { base = minor_stress_impact_loss }
+		scope:sbs_orgy_guest = { stress_impact = { base = minor_stress_impact_loss } }
+		ai_chance = {
+			base = 35
+			modifier = { has_trait = lustful add = 10 }
+			modifier = { has_trait = rakish add = 10 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 10 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = lustful } add = 5 }
+			modifier = { scope:sbs_orgy_guest = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } add = 8 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = rakish } add = 5 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = chaste } add = -5 }
+		}
+	}
+	option = {
+		name = sbs_orgy.1100.f_mm
+		custom_tooltip = sbs_orgy.1100.f_mm.tt
+		trigger = { is_male = yes scope:sbs_orgy_guest = { is_male = yes } }
+		stress_impact = { base = minor_stress_impact_loss }
+		scope:sbs_orgy_guest = { stress_impact = { base = minor_stress_impact_loss } }
+		ai_chance = {
+			base = 35
+			modifier = { has_trait = lustful add = 10 }
+			modifier = { has_trait = rakish add = 10 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 10 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = lustful } add = 5 }
+			modifier = { scope:sbs_orgy_guest = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } add = 8 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = rakish } add = 5 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = chaste } add = -5 }
+		}
+	}
+	option = {
+		name = sbs_orgy.1100.f_ff
+		custom_tooltip = sbs_orgy.1100.f_ff.tt
+		trigger = { is_female = yes scope:sbs_orgy_guest = { is_female = yes } }
+		stress_impact = { base = minor_stress_impact_loss }
+		scope:sbs_orgy_guest = { stress_impact = { base = minor_stress_impact_loss } }
+		ai_chance = {
+			base = 35
+			modifier = { has_trait = lustful add = 10 }
+			modifier = { has_trait = rakish add = 10 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 10 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = lustful } add = 5 }
+			modifier = { scope:sbs_orgy_guest = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } add = 8 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = rakish } add = 5 }
+			modifier = { scope:sbs_orgy_guest = { has_trait = chaste } add = -5 }
+		}
+	}
+}
+
+# 1200: A Third Place. Three-person encounter.
+sbs_orgy.1200 = {
+	type = activity_event
+	title = sbs_orgy.1200.t
+	desc = {
+		desc = sbs_orgy.1200.desc
+		triggered_desc = { trigger = { is_male = yes } desc = sbs_orgy.1200.male.desc }
+		triggered_desc = { trigger = { is_female = yes } desc = sbs_orgy.1200.female.desc }
+	}
+	theme = seduction
+	override_background = {
+		trigger = {
+			involved_activity = {
+				has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			}
+		}
+		reference = ep3_camp
+	}
+	override_background = {
+		trigger = {
+			involved_activity = {
+				NOT = {
+					has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+				}
+			}
+		}
+		reference = bedchamber
+	}
+
+	trigger = {
+		involved_activity = {
+			any_attending_character = { count >= 2 this != root is_adult = yes }
+		}
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = { this != root is_adult = yes }
+				save_scope_as = sbs_orgy_guest_a
+			}
+			random_attending_character = {
+				limit = { this != root this != scope:sbs_orgy_guest_a is_adult = yes }
+				save_scope_as = sbs_orgy_guest_b
+			}
+		}
+	}
+
+	left_portrait = { character = scope:sbs_orgy_guest_a animation = flirtation }
+	right_portrait = { character = root animation = happiness }
+	lower_right_portrait = { character = scope:sbs_orgy_guest_b animation = flirtation }
+
+	option = {
+		name = sbs_orgy.1200.a
+		custom_tooltip = sbs_orgy.1200.a.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest_a = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest_a PREGNANCY_CHANCE = 1 }
+		scope:sbs_orgy_guest_b = {
+			add_opinion = { target = root modifier = feast_rejected_dalliance_opinion }
+		}
+		ai_chance = {
+			base = 20
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 20 }
+		}
+	}
+
+	option = {
+		name = sbs_orgy.1200.b
+		custom_tooltip = sbs_orgy.1200.b.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest_b = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest_b PREGNANCY_CHANCE = 1 }
+		scope:sbs_orgy_guest_a = {
+			add_opinion = { target = root modifier = feast_rejected_dalliance_opinion }
+		}
+		ai_chance = {
+			base = 20
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 20 }
+		}
+	}
+
+	option = {
+		name = sbs_orgy.1200.c
+		custom_tooltip = sbs_orgy.1200.c.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest_a = {
+				sbs_orgy_sex_positive_trigger = yes
+				# The two guests must not already be an established couple.
+				NOR = {
+					has_relation_lover = scope:sbs_orgy_guest_b
+					is_spouse_of = scope:sbs_orgy_guest_b
+				}
+			}
+			scope:sbs_orgy_guest_b = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest_a PREGNANCY_CHANCE = 1 }
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest_b PREGNANCY_CHANCE = 1 }
+		scope:sbs_orgy_guest_a = {
+			had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest_b PREGNANCY_CHANCE = 1 }
+		}
+		ai_chance = {
+			base = 25
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 20 }
+			modifier = { faith = { has_doctrine = tenet_polyamory } add = 20 }
+		}
+	}
+
+	option = {
+		name = sbs_orgy.1200.d
+		custom_tooltip = sbs_orgy.1200.d.tt
+		stress_impact = {
+			base = medium_stress_impact_loss
+			lustful = minor_stress_impact_loss
+			deviant = minor_stress_impact_loss
+			chaste = miniscule_stress_impact_gain
+		}
+
+		scope:sbs_orgy_guest_a = {
+			stress_impact = {
+				base = medium_stress_impact_loss
+				lustful = minor_stress_impact_loss
+				deviant = minor_stress_impact_loss
+				chaste = miniscule_stress_impact_gain
+			}
+		}
+		scope:sbs_orgy_guest_b = {
+			stress_impact = {
+				base = medium_stress_impact_loss
+				lustful = minor_stress_impact_loss
+				deviant = minor_stress_impact_loss
+				chaste = miniscule_stress_impact_gain
+			}
+		}
+		scope:sbs_orgy_guest_a = { add_opinion = { target = root modifier = feast_had_good_talk } }
+		scope:sbs_orgy_guest_b = { add_opinion = { target = root modifier = feast_had_good_talk } }
+		ai_chance = {
+			base = 30
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 20 }
+		}
+	}
+
+	option = {
+		name = sbs_orgy.1200.e
+		custom_tooltip = sbs_orgy.1200.e.tt
+		scope:sbs_orgy_guest_a = {
+			add_opinion = { target = root modifier = feast_had_good_talk }
+			add_opinion = { target = scope:sbs_orgy_guest_b modifier = feast_had_good_talk }
+		}
+		scope:sbs_orgy_guest_b = {
+			add_opinion = { target = root modifier = feast_had_good_talk }
+			add_opinion = { target = scope:sbs_orgy_guest_a modifier = feast_had_good_talk }
+		}
+		ai_chance = {
+			base = 45
+			modifier = { faith = { has_doctrine = tenet_polyamory } add = 15 }
+		}
+	}
+}
+
+# 1300: The High Seat. Indoor. Sex on the host's throne.
+sbs_orgy.1300 = {
+	type = activity_event
+	title = sbs_orgy.1300.t
+	desc = {
+		desc = sbs_orgy.1300.desc
+		triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.1300.fm.desc }
+		triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.1300.mf.desc }
+		triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.1300.mm.desc }
+		triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.1300.ff.desc }
+	}
+	theme = seduction
+	override_background = { reference = throne_room }
+
+	trigger = {
+		involved_activity = {
+			NOT = { has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor } }
+			any_attending_character = { this != root is_adult = yes }
+		}
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = { this != root is_adult = yes }
+				save_scope_as = sbs_orgy_guest
+			}
+		}
+	}
+
+	left_portrait = { character = scope:sbs_orgy_guest animation = flirtation }
+	right_portrait = { character = root animation = personality_bold }
+
+	option = {
+		name = sbs_orgy.1300.a
+		custom_tooltip = sbs_orgy.1300.a.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = 1 }
+		scope:sbs_orgy_guest = {
+			add_opinion = { target = root modifier = feast_had_good_talk }
+		}
+		ai_chance = {
+			base = 55
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 15 }
+		}
+	}
+	option = {
+		name = sbs_orgy.1300.b
+		custom_tooltip = sbs_orgy.1300.b.tt
+		scope:sbs_orgy_guest = {
+			add_opinion = { target = root modifier = feast_rejected_dalliance_opinion }
+		}
+		ai_chance = {
+			base = 35
+			modifier = { has_trait = chaste add = 25 }
+			modifier = { has_trait = shy add = 15 }
+		}
+	}
+}
+
+# 1400: A Softer Room. Indoor. Partner asks to move to the bedchamber.
+sbs_orgy.1400 = {
+	type = activity_event
+	title = sbs_orgy.1400.t
+	desc = {
+		desc = sbs_orgy.1400.desc
+		triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.1400.fm.desc }
+		triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.1400.mf.desc }
+		triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.1400.mm.desc }
+		triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.1400.ff.desc }
+	}
+	theme = seduction
+	override_background = { reference = bedchamber }
+
+	trigger = {
+		involved_activity = {
+			NOT = { has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor } }
+			any_attending_character = { this != root is_adult = yes }
+		}
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = { this != root is_adult = yes }
+				save_scope_as = sbs_orgy_guest
+			}
+		}
+	}
+
+	left_portrait = { character = scope:sbs_orgy_guest animation = scheme }
+	right_portrait = { character = root animation = flirtation }
+
+	option = {
+		name = sbs_orgy.1400.a
+		custom_tooltip = sbs_orgy.1400.a.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = 1 }
+		scope:sbs_orgy_guest = {
+			add_opinion = { target = root modifier = feast_had_good_talk }
+		}
+		ai_chance = {
+			base = 45
+			modifier = { has_trait = lustful add = 15 }
+		}
+	}
+	option = {
+		name = sbs_orgy.1400.b
+		custom_tooltip = sbs_orgy.1400.b.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = 1 }
+		stress_impact = { base = minor_stress_impact_loss }
+		scope:sbs_orgy_guest = {
+			add_opinion = { target = root modifier = pleased_opinion }
+		}
+		ai_chance = {
+			base = 30
+			modifier = { has_trait = arrogant add = 20 }
+			modifier = { has_trait = stubborn add = 10 }
+		}
+	}
+	option = {
+		name = sbs_orgy.1400.c
+		custom_tooltip = sbs_orgy.1400.c.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = pregnancy_chance }
+		ai_chance = {
+			base = 40
+			modifier = { has_trait = lustful add = 20 }
+		}
+	}
+}
+
+# 2100: A Familiar Unease. Adult child.
+sbs_orgy.2100 = {
+	type = activity_event
+	title = sbs_orgy.2100.t
+	desc = {
+		desc = sbs_orgy.2100.desc
+		triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.2100.fm.desc }
+		triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.2100.mf.desc }
+		triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.2100.mm.desc }
+		triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.2100.ff.desc }
+	}
+	theme = seduction
+	override_background = {
+		trigger = {
+			involved_activity = {
+				has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			}
+		}
+		reference = wilderness_forest
+	}
+	override_background = {
+		trigger = {
+			involved_activity = {
+				NOT = {
+					has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+				}
+			}
+		}
+		reference = bedchamber
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = {
+					this != root
+					is_adult = yes
+
+					any_parent = { this = root }
+				}
+				save_scope_as = sbs_orgy_guest
+			}
+		}
+	}
+
+	left_portrait = { character = scope:sbs_orgy_guest animation = worry }
+	right_portrait = { character = root animation = worry }
+
+	option = {
+		name = sbs_orgy.2100.a
+		custom_tooltip = sbs_orgy.2100.a.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = pregnancy_chance }
+		ai_chance = {
+			base = 0
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 100 }
+		}
+	}
+	option = {
+		name = sbs_orgy.2100.b
+		custom_tooltip = sbs_orgy.2100.b.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = 1 }
+		ai_chance = {
+			base = 0
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 100 }
+		}
+	}
+	option = {
+		name = sbs_orgy.2100.c
+		custom_tooltip = sbs_orgy.2100.c.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+			# Vanilla already checks both characters are adults, mutually attracted,
+			# are not the same character, and are not already Lovers.
+			can_set_relation_lover_trigger = { CHARACTER = scope:sbs_orgy_guest }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = 1 }
+		random_list = {
+			95 = { }
+			5 = {
+				modifier = { faith = { has_doctrine = tenet_polyamory } add = 20 }
+				modifier = { scope:sbs_orgy_guest = { faith = { has_doctrine = tenet_polyamory } } add = 20 }
+				modifier = { has_trait = lustful add = 3 }
+				modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 3 }
+				modifier = { scope:sbs_orgy_guest = { has_trait = lustful } add = 3 }
+				modifier = { scope:sbs_orgy_guest = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } add = 3 }
+				set_relation_lover = { target = scope:sbs_orgy_guest }
+			}
+		}
+		ai_chance = {
+			base = 0
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 100 }
+			modifier = { faith = { has_doctrine = tenet_polyamory } add = 10 }
+		}
+	}
+	option = {
+		name = sbs_orgy.2100.d
+		custom_tooltip = sbs_orgy.2100.d.tt
+		stress_impact = { base = minor_stress_impact_loss }
+		scope:sbs_orgy_guest = { stress_impact = { base = minor_stress_impact_loss } }
+		ai_chance = { base = 45 }
+	}
+	option = {
+		name = sbs_orgy.2100.e
+		custom_tooltip = sbs_orgy.2100.e.tt
+		scope:sbs_orgy_guest = {
+			add_opinion = { target = root modifier = feast_had_good_talk }
+		}
+		stress_impact = { base = minor_stress_impact_loss }
+		scope:sbs_orgy_guest = { stress_impact = { base = minor_stress_impact_loss } }
+		ai_chance = { base = 60 }
+	}
+}
+
+# 2200: By Marriage. Child-in-law.
+sbs_orgy.2200 = {
+	type = activity_event
+	title = sbs_orgy.2200.t
+	desc = {
+		desc = sbs_orgy.2200.desc
+		triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.2200.fm.desc }
+		triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.2200.mf.desc }
+		triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.2200.mm.desc }
+		triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.2200.ff.desc }
+	}
+	theme = seduction
+	override_background = {
+		trigger = {
+			involved_activity = {
+				has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			}
+		}
+		reference = wilderness_forest
+	}
+	override_background = {
+		trigger = {
+			involved_activity = {
+				NOT = {
+					has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+				}
+			}
+		}
+		reference = bedchamber
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = {
+					this != root
+					is_adult = yes
+
+					any_spouse = { any_parent = { this = root } }
+				}
+				save_scope_as = sbs_orgy_guest
+			}
+		}
+		random_child = {
+			limit = {
+				any_spouse = { this = scope:sbs_orgy_guest }
+			}
+			save_scope_as = sbs_orgy_child
+		}
+	}
+
+	left_portrait = { character = scope:sbs_orgy_guest animation = flirtation }
+	right_portrait = { character = root animation = happiness }
+	lower_right_portrait = {
+		trigger = { exists = scope:sbs_orgy_child }
+		character = scope:sbs_orgy_child
+		animation = personality_content
+	}
+
+	option = {
+		name = sbs_orgy.2200.a
+		custom_tooltip = sbs_orgy.2200.a.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = pregnancy_chance }
+		ai_chance = {
+			base = 0
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 100 }
+		}
+	}
+	option = {
+		name = sbs_orgy.2200.b
+		custom_tooltip = sbs_orgy.2200.b.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = 1 }
+		ai_chance = {
+			base = 35
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 20 }
+		}
+	}
+
+	option = {
+		name = sbs_orgy.2200.c
+		custom_tooltip = sbs_orgy.2200.c.tt
+		stress_impact = { base = minor_stress_impact_loss }
+		scope:sbs_orgy_guest = { stress_impact = { base = minor_stress_impact_loss } }
+		ai_chance = { base = 45 }
+	}
+	option = {
+		name = sbs_orgy.2200.d
+		custom_tooltip = sbs_orgy.2200.d.tt
+		trigger = { exists = scope:sbs_orgy_child }
+		add_opinion = {
+			target = scope:sbs_orgy_child
+			modifier = feast_had_good_talk
+		}
+		scope:sbs_orgy_guest = {
+			add_opinion = { target = root modifier = feast_had_good_talk }
+		}
+		ai_chance = { base = 55 }
+	}
+}
+
+# 2300: Proof of Friendship.
+sbs_orgy.2300 = {
+	type = activity_event
+	title = sbs_orgy.2300.t
+	desc = {
+		desc = sbs_orgy.2300.desc
+		triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.2300.fm.desc }
+		triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.2300.mf.desc }
+		triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.2300.mm.desc }
+		triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.2300.ff.desc }
+	}
+	theme = seduction
+	override_background = {
+		trigger = {
+			involved_activity = {
+				has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			}
+		}
+		reference = ep3_campfire
+	}
+	override_background = {
+		trigger = {
+			involved_activity = {
+				NOT = {
+					has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+				}
+			}
+		}
+		reference = bedchamber
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = {
+					this != root
+					is_adult = yes
+
+					NOT = { is_spouse_of = root }
+					NOT = { is_close_or_extended_family_of = root }
+					NOT = { any_spouse = { any_parent = { this = root } } }
+					NOR = {
+						has_relation_rival = root
+						has_relation_nemesis = root
+					}
+					OR = {
+						has_relation_friend = root
+						has_relation_best_friend = root
+					}
+				}
+				save_scope_as = sbs_orgy_guest
+			}
+		}
+	}
+
+	left_portrait = { character = scope:sbs_orgy_guest animation = happiness }
+	right_portrait = { character = root animation = happiness }
+
+	# Proof of friendship: unprotected sex, but it only deepens opinion.
+	option = {
+		name = sbs_orgy.2300.a
+		custom_tooltip = sbs_orgy.2300.a.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = pregnancy_chance }
+		scope:sbs_orgy_guest = {
+			add_opinion = { target = root modifier = feast_had_good_talk }
+		}
+		ai_chance = {
+			base = 10
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 60 }
+		}
+	}
+
+	# One precaution: sex + goodwill only. This option never creates a Lover relation.
+	option = {
+		name = sbs_orgy.2300.b
+		custom_tooltip = sbs_orgy.2300.b.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = 1 }
+		scope:sbs_orgy_guest = {
+			add_opinion = { target = root modifier = feast_had_good_talk }
+		}
+		ai_chance = {
+			base = 45
+			modifier = { has_trait = lustful add = 15 }
+			modifier = { has_trait = rakish add = 15 }
+		}
+	}
+
+	# More than friendship: this is the relationship-forming choice.
+	option = {
+		name = sbs_orgy.2300.c
+		custom_tooltip = sbs_orgy.2300.c.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+			can_set_relation_lover_trigger = { CHARACTER = scope:sbs_orgy_guest }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = 1 }
+		set_relation_lover = { target = scope:sbs_orgy_guest }
+		if = {
+			limit = { has_activity_intent = woo_attendee_intent intent_target ?= scope:sbs_orgy_guest }
+			complete_activity_intent = yes
+		}
+		ai_chance = {
+			base = 15
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 20 }
+			modifier = { faith = { has_doctrine = tenet_polyamory } add = 20 }
+		}
+	}
+
+	# Reminisce: no sex/relationship change, just friendship and stress relief.
+	option = {
+		name = sbs_orgy.2300.d
+		custom_tooltip = sbs_orgy.2300.d.tt
+		stress_impact = { base = medium_stress_impact_loss }
+		scope:sbs_orgy_guest = {
+			stress_impact = { base = medium_stress_impact_loss }
+			add_opinion = { target = root modifier = feast_had_good_talk }
+		}
+		ai_chance = { base = 65 }
+	}
+}
+
+# 2400: A Truce in Private. Rival.
+sbs_orgy.2400 = {
+	type = activity_event
+	title = sbs_orgy.2400.t
+	desc = {
+		desc = sbs_orgy.2400.desc
+		triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.2400.fm.desc }
+		triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.2400.mf.desc }
+		triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.2400.mm.desc }
+		triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.2400.ff.desc }
+	}
+	theme = seduction
+	override_background = {
+		trigger = {
+			involved_activity = {
+				has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			}
+		}
+		reference = ep3_campfire
+	}
+	override_background = {
+		trigger = {
+			involved_activity = {
+				NOT = {
+					has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+				}
+			}
+		}
+		reference = sitting_room
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = {
+					this != root
+					is_adult = yes
+
+					NOT = { is_spouse_of = root }
+					NOT = { is_close_or_extended_family_of = root }
+					NOT = { any_spouse = { any_parent = { this = root } } }
+					OR = {
+						has_relation_rival = root
+						has_relation_nemesis = root
+					}
+				}
+				save_scope_as = sbs_orgy_guest
+			}
+		}
+	}
+
+	left_portrait = { character = scope:sbs_orgy_guest animation = personality_vengeful }
+	right_portrait = { character = root animation = personality_bold }
+
+	option = {
+		name = sbs_orgy.2400.a
+		custom_tooltip = sbs_orgy.2400.a.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = 1 }
+		random = {
+			chance = 50
+			if = {
+				limit = { has_relation_rival = scope:sbs_orgy_guest }
+				remove_relation_rival = scope:sbs_orgy_guest
+			}
+			if = {
+				limit = { has_relation_nemesis = scope:sbs_orgy_guest }
+				remove_relation_nemesis = scope:sbs_orgy_guest
+			}
+		}
+		ai_chance = {
+			base = 15
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 20 }
+		}
+	}
+	option = {
+		name = sbs_orgy.2400.b
+		custom_tooltip = sbs_orgy.2400.b.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = pregnancy_chance }
+		if = {
+			limit = { has_relation_rival = scope:sbs_orgy_guest }
+			remove_relation_rival = scope:sbs_orgy_guest
+		}
+		if = {
+			limit = { has_relation_nemesis = scope:sbs_orgy_guest }
+			remove_relation_nemesis = scope:sbs_orgy_guest
+		}
+		ai_chance = {
+			base = 0
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 100 }
+		}
+	}
+	option = {
+		name = sbs_orgy.2400.c
+		custom_tooltip = sbs_orgy.2400.c.tt
+		ai_chance = { base = 60 }
+	}
+}
+
+# 2500: No Titles Tonight. Vassal.
+sbs_orgy.2500 = {
+	type = activity_event
+	title = sbs_orgy.2500.t
+	desc = {
+		desc = sbs_orgy.2500.desc
+		triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.2500.fm.desc }
+		triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.2500.mf.desc }
+		triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.2500.mm.desc }
+		triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.2500.ff.desc }
+	}
+	theme = seduction
+	override_background = {
+		trigger = {
+			involved_activity = {
+				has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			}
+		}
+		reference = courtyard
+	}
+	override_background = {
+		trigger = {
+			involved_activity = {
+				NOT = {
+					has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+				}
+			}
+		}
+		reference = throne_room
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = {
+					this != root
+					is_adult = yes
+
+					NOT = { is_spouse_of = root }
+					NOT = { is_close_or_extended_family_of = root }
+					NOT = { any_spouse = { any_parent = { this = root } } }
+					NOR = {
+						has_relation_friend = root
+						has_relation_best_friend = root
+						has_relation_rival = root
+						has_relation_nemesis = root
+						is_councillor_of = root
+					}
+					is_vassal_of = root
+				}
+				save_scope_as = sbs_orgy_guest
+			}
+		}
+	}
+
+	left_portrait = { character = scope:sbs_orgy_guest animation = personality_content }
+	right_portrait = { character = root animation = personality_bold }
+
+	option = {
+		name = sbs_orgy.2500.a
+		custom_tooltip = sbs_orgy.2500.a.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = 1 }
+		ai_chance = {
+			base = 20
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 20 }
+		}
+	}
+	option = {
+		name = sbs_orgy.2500.b
+		custom_tooltip = sbs_orgy.2500.b.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		had_sex_with_effect = {
+			CHARACTER = scope:sbs_orgy_guest
+			PREGNANCY_CHANCE = 0
+		}
+		stress_impact = { base = minor_stress_impact_loss }
+		scope:sbs_orgy_guest = { stress_impact = { base = minor_stress_impact_loss } }
+		ai_chance = {
+			base = 15
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 20 }
+		}
+	}
+	option = {
+		name = sbs_orgy.2500.c
+		custom_tooltip = sbs_orgy.2500.c.tt
+		trigger = {
+			gold >= scope:sbs_orgy_guest.prostitute_price_value
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		pay_short_term_gold = {
+			target = scope:sbs_orgy_guest
+			gold = scope:sbs_orgy_guest.prostitute_price_value
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = 1 }
+		ai_chance = {
+			base = 10
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 20 }
+			modifier = { has_trait = generous add = 20 }
+		}
+	}
+	option = {
+		name = sbs_orgy.2500.d
+		custom_tooltip = sbs_orgy.2500.d.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		scope:sbs_orgy_guest = {
+			add_opinion = { target = root modifier = feast_had_good_talk }
+		}
+		ai_chance = {
+			base = 25
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 20 }
+		}
+	}
+}
+
+# 2600: A Familiar Promise. Spouse.
+sbs_orgy.2600 = {
+	type = activity_event
+	title = sbs_orgy.2600.t
+	desc = {
+		desc = sbs_orgy.2600.desc
+		triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.2600.fm.desc }
+		triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.2600.mf.desc }
+		triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.2600.mm.desc }
+		triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.2600.ff.desc }
+	}
+	theme = seduction
+	override_background = {
+		trigger = {
+			involved_activity = {
+				has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			}
+		}
+		reference = ep3_campfire
+	}
+	override_background = {
+		trigger = {
+			involved_activity = {
+				NOT = {
+					has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+				}
+			}
+		}
+		reference = bedchamber
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = { this != root is_adult = yes is_spouse_of = root }
+				save_scope_as = sbs_orgy_guest
+			}
+		}
+	}
+
+	left_portrait = { character = scope:sbs_orgy_guest animation = happiness }
+	right_portrait = { character = root animation = happiness }
+
+	option = {
+		name = sbs_orgy.2600.a
+		custom_tooltip = sbs_orgy.2600.a.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = pregnancy_chance }
+		scope:sbs_orgy_guest = {
+			add_opinion = { target = root modifier = feast_had_good_talk }
+		}
+		ai_chance = {
+			base = 0
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 100 }
+		}
+	}
+	option = {
+		name = sbs_orgy.2600.b
+		custom_tooltip = sbs_orgy.2600.b.tt
+		scope:sbs_orgy_guest = {
+			add_opinion = { target = root modifier = feast_rejected_dalliance_opinion }
+		}
+		ai_chance = { base = 25 }
+	}
+}
+
+# 2700: Business Before Pleasure. Councillor. No sexual option.
+sbs_orgy.2700 = {
+	type = activity_event
+	title = sbs_orgy.2700.t
+	desc = sbs_orgy.2700.desc
+	theme = diplomacy
+	override_background = {
+		trigger = {
+			involved_activity = {
+				has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			}
+		}
+		reference = ep3_campfire
+	}
+	override_background = {
+		trigger = {
+			involved_activity = {
+				NOT = {
+					has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+				}
+			}
+		}
+		reference = council_chamber
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = {
+					this != root
+					is_adult = yes
+
+					NOT = { is_spouse_of = root }
+					NOT = { is_close_or_extended_family_of = root }
+					NOT = { any_spouse = { any_parent = { this = root } } }
+					NOR = {
+						has_relation_friend = root
+						has_relation_best_friend = root
+						has_relation_rival = root
+						has_relation_nemesis = root
+					}
+					NOT = { any_spouse = { is_vassal_of = root } }
+					is_councillor_of = root
+				}
+				save_scope_as = sbs_orgy_guest
+			}
+		}
+	}
+
+	left_portrait = { character = scope:sbs_orgy_guest animation = throne_room_conversation_1 }
+	right_portrait = { character = root animation = throne_room_conversation_2 }
+
+	option = {
+		name = sbs_orgy.2700.a
+		custom_tooltip = sbs_orgy.2700.a.tt
+		scope:sbs_orgy_guest = {
+			add_opinion = { target = root modifier = feast_had_good_talk }
+		}
+		stress_impact = { base = minor_stress_impact_loss }
+		scope:sbs_orgy_guest = { stress_impact = { base = minor_stress_impact_loss } }
+		ai_chance = { base = 40 }
+	}
+	option = {
+		name = sbs_orgy.2700.b
+		custom_tooltip = sbs_orgy.2700.b.tt
+		scope:sbs_orgy_guest = {
+			add_opinion = { target = root modifier = feast_had_good_talk }
+		}
+		ai_chance = { base = 30 }
+	}
+	option = {
+		name = sbs_orgy.2700.c
+		custom_tooltip = sbs_orgy.2700.c.tt
+		stress_impact = {
+			base = medium_stress_impact_loss
+			lustful = minor_stress_impact_loss
+			deviant = minor_stress_impact_loss
+			chaste = miniscule_stress_impact_gain
+		}
+		scope:sbs_orgy_guest = {
+			stress_impact = {
+				base = medium_stress_impact_loss
+				lustful = minor_stress_impact_loss
+				deviant = minor_stress_impact_loss
+				chaste = miniscule_stress_impact_gain
+			}
+		}
+		ai_chance = {
+			base = 25
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 20 }
+		}
+	}
+}
+
+# 2800: A Vassal's Household. Spouse of a vassal.
+sbs_orgy.2800 = {
+	type = activity_event
+	title = sbs_orgy.2800.t
+	desc = {
+		desc = sbs_orgy.2800.desc
+		triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.2800.fm.desc }
+		triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.2800.mf.desc }
+		triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.2800.mm.desc }
+		triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.2800.ff.desc }
+	}
+	theme = seduction
+	override_background = {
+		trigger = {
+			involved_activity = {
+				has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			}
+		}
+		reference = ep3_campfire
+	}
+	override_background = {
+		trigger = {
+			involved_activity = {
+				NOT = {
+					has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+				}
+			}
+		}
+		reference = sitting_room
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = {
+					this != root
+					is_adult = yes
+
+					NOT = { is_spouse_of = root }
+					NOT = { is_close_or_extended_family_of = root }
+					NOT = { any_spouse = { any_parent = { this = root } } }
+					NOR = {
+						has_relation_friend = root
+						has_relation_best_friend = root
+						has_relation_rival = root
+						has_relation_nemesis = root
+					}
+					any_spouse = { is_vassal_of = root }
+				}
+				save_scope_as = sbs_orgy_guest
+			}
+		}
+		scope:sbs_orgy_guest = {
+			random_spouse = {
+				limit = { is_vassal_of = root }
+				save_scope_as = sbs_orgy_vassal_spouse_owner
+			}
+		}
+	}
+
+	left_portrait = { character = scope:sbs_orgy_guest animation = flirtation }
+	right_portrait = { character = root animation = happiness }
+	lower_right_portrait = {
+		trigger = {
+			exists = scope:sbs_orgy_vassal_spouse_owner
+			involved_activity = { any_attending_character = { this = scope:sbs_orgy_vassal_spouse_owner } }
+		}
+		character = scope:sbs_orgy_vassal_spouse_owner
+		animation = personality_content
+	}
+
+	option = {
+		name = sbs_orgy.2800.a
+		custom_tooltip = sbs_orgy.2800.a.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = 1 }
+		ai_chance = {
+			base = 25
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 20 }
+		}
+	}
+	option = {
+		name = sbs_orgy.2800.b
+		custom_tooltip = sbs_orgy.2800.b.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = pregnancy_chance }
+		ai_chance = {
+			base = 0
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 100 }
+		}
+	}
+	option = {
+		name = sbs_orgy.2800.c
+		custom_tooltip = sbs_orgy.2800.c.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+			# Vanilla already checks both characters are adults, mutually attracted,
+			# are not the same character, and are not already Lovers.
+			can_set_relation_lover_trigger = { CHARACTER = scope:sbs_orgy_guest }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = 1 }
+		random_list = {
+			95 = { }
+			5 = {
+				modifier = { faith = { has_doctrine = tenet_polyamory } add = 20 }
+				modifier = { scope:sbs_orgy_guest = { faith = { has_doctrine = tenet_polyamory } } add = 20 }
+				modifier = { has_trait = lustful add = 3 }
+				modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 3 }
+				modifier = { scope:sbs_orgy_guest = { has_trait = lustful } add = 3 }
+				modifier = { scope:sbs_orgy_guest = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } } add = 3 }
+				set_relation_lover = { target = scope:sbs_orgy_guest }
+			}
+		}
+		ai_chance = {
+			base = 12
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 20 }
+			modifier = { faith = { has_doctrine = tenet_polyamory } add = 15 }
+		}
+	}
+	option = {
+		name = sbs_orgy.2800.d
+		custom_tooltip = sbs_orgy.2800.d.tt
+		trigger = {
+			exists = scope:sbs_orgy_vassal_spouse_owner
+			involved_activity = { any_attending_character = { this = scope:sbs_orgy_vassal_spouse_owner } }
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+			scope:sbs_orgy_vassal_spouse_owner = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		scope:sbs_orgy_guest = {
+			had_sex_with_effect = { CHARACTER = scope:sbs_orgy_vassal_spouse_owner PREGNANCY_CHANCE = pregnancy_chance }
+			add_opinion = { target = root modifier = feast_had_good_talk }
+		}
+		scope:sbs_orgy_vassal_spouse_owner = { add_opinion = { target = root modifier = feast_had_good_talk } }
+		stress_impact = { base = minor_stress_impact_gain }
+		ai_chance = {
+			base = 10
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 20 }
+			modifier = { faith = { has_doctrine = tenet_polyamory } add = 20 }
+		}
+	}
+	option = {
+		name = sbs_orgy.2800.e
+		custom_tooltip = sbs_orgy.2800.e.tt
+		scope:sbs_orgy_guest = {
+			add_opinion = { target = root modifier = feast_had_good_talk }
+		}
+		ai_chance = { base = 50 }
+	}
+}
+
+# 2900: Above Rank. Direct liege.
+sbs_orgy.2900 = {
+	type = activity_event
+	title = sbs_orgy.2900.t
+	desc = {
+		desc = sbs_orgy.2900.desc
+		triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.2900.fm.desc }
+		triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.2900.mf.desc }
+		triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.2900.mm.desc }
+		triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.2900.ff.desc }
+	}
+	theme = seduction
+	override_background = {
+		trigger = {
+			involved_activity = {
+				has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			}
+		}
+		reference = ep3_campfire
+	}
+	override_background = {
+		trigger = {
+			involved_activity = {
+				NOT = {
+					has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+				}
+			}
+		}
+		reference = throne_room
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = { this = root.liege is_adult = yes }
+				save_scope_as = sbs_orgy_guest
+			}
+		}
+	}
+
+	left_portrait = { character = scope:sbs_orgy_guest animation = personality_bold }
+	right_portrait = { character = root animation = personality_content }
+
+	option = {
+		name = sbs_orgy.2900.a
+		custom_tooltip = sbs_orgy.2900.a.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = 1 }
+		ai_chance = {
+			base = 20
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 20 }
+		}
+	}
+
+	option = {
+		name = sbs_orgy.2900.b
+		custom_tooltip = sbs_orgy.2900.b.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		duel = {
+			skill = diplomacy
+			target = scope:sbs_orgy_guest
+			50 = {
+				compare_modifier = { value = scope:duel_value multiplier = 3.5 min = -49 }
+				scope:sbs_orgy_guest = {
+					pay_short_term_gold = {
+						target = root
+						gold = root.prostitute_price_value
+					}
+				}
+				had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = 1 }
+				desc = sbs_orgy.2900.b.success
+			}
+			50 = {
+				compare_modifier = { value = scope:duel_value multiplier = -3.5 min = -49 }
+				scope:sbs_orgy_guest = {
+					add_opinion = { target = root modifier = feast_rejected_dalliance_opinion }
+				}
+				desc = sbs_orgy.2900.b.failure
+			}
+		}
+		ai_chance = {
+			base = 10
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 20 }
+			modifier = { has_trait = greedy add = 20 }
+		}
+	}
+
+	option = {
+		name = sbs_orgy.2900.c
+		custom_tooltip = sbs_orgy.2900.c.tt
+		scope:sbs_orgy_guest = {
+			add_opinion = { target = root modifier = feast_had_good_talk }
+			stress_impact = { base = minor_stress_impact_loss }
+		}
+		stress_impact = { base = minor_stress_impact_loss }
+		ai_chance = { base = 50 }
+	}
+}
+
+# 2920: A Bound Guest. Attending slave.
+sbs_orgy.2920 = {
+	type = activity_event
+	title = sbs_orgy.2920.t
+	desc = {
+		desc = sbs_orgy.2920.desc
+		triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.2920.fm.desc }
+		triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.2920.mf.desc }
+		triggered_desc = { trigger = { is_male = yes scope:sbs_orgy_guest = { is_male = yes } } desc = sbs_orgy.2920.mm.desc }
+		triggered_desc = { trigger = { is_female = yes scope:sbs_orgy_guest = { is_female = yes } } desc = sbs_orgy.2920.ff.desc }
+	}
+	theme = seduction
+	override_background = {
+		trigger = {
+			involved_activity = {
+				has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			}
+		}
+		reference = ep3_camp
+	}
+	override_background = {
+		trigger = {
+			involved_activity = {
+				NOT = {
+					has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+				}
+			}
+		}
+		reference = dungeon
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = { this != root is_adult = yes has_trait = slave }
+				save_scope_as = sbs_orgy_guest
+			}
+		}
+	}
+
+	left_portrait = { character = scope:sbs_orgy_guest animation = personality_content }
+	right_portrait = { character = root animation = personality_bold }
+
+	option = {
+		name = sbs_orgy.2920.a
+		custom_tooltip = sbs_orgy.2920.a.tt
+		trigger = { sbs_orgy_sex_positive_trigger = yes }
+		had_sex_with_effect = {
+			CHARACTER = scope:sbs_orgy_guest
+			PREGNANCY_CHANCE = 0
+		}
+		stress_impact = { base = minor_stress_impact_loss }
+		ai_chance = {
+			base = 15
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 20 }
+		}
+	}
+
+	option = {
+		name = sbs_orgy.2920.b
+		custom_tooltip = sbs_orgy.2920.b.tt
+		scope:sbs_orgy_guest = { stress_impact = { base = medium_stress_impact_gain } }
+		stress_impact = { base = medium_stress_impact_loss }
+		ai_chance = {
+			base = 5
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 60 }
+			modifier = { has_trait = sadistic add = 30 }
+			modifier = { has_trait = compassionate add = -100 }
+		}
+	}
+
+	option = {
+		name = sbs_orgy.2920.c
+		custom_tooltip = sbs_orgy.2920.c.tt
+		trigger = { sbs_orgy_sex_positive_trigger = yes }
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = 1 }
+		ai_chance = {
+			base = 20
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 20 }
+		}
+	}
+
+	option = {
+		name = sbs_orgy.2920.d
+		custom_tooltip = sbs_orgy.2920.d.tt
+		scope:sbs_orgy_guest = {
+			stress_impact = { base = medium_stress_impact_loss }
+			add_opinion = { target = root modifier = feast_had_good_talk }
+		}
+		stress_impact = { base = minor_stress_impact_loss }
+		ai_chance = {
+			base = 40
+			modifier = { has_trait = compassionate add = 50 }
+			modifier = { has_trait = generous add = 20 }
+		}
+	}
+}
+
+# 3100: A Contest of Mouths.
+sbs_orgy.3100 = {
+	type = activity_event
+	title = sbs_orgy.3100.t
+	desc = {
+		desc = sbs_orgy.3100.desc
+		triggered_desc = { trigger = { is_male = yes } desc = sbs_orgy.3100.male.desc }
+		triggered_desc = { trigger = { is_female = yes } desc = sbs_orgy.3100.female.desc }
+	}
+	theme = seduction
+	override_background = {
+		trigger = {
+			involved_activity = {
+				has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			}
+		}
+		reference = ep3_campfire
+	}
+	override_background = {
+		trigger = {
+			involved_activity = {
+				NOT = {
+					has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+				}
+			}
+		}
+		reference = courtyard
+	}
+
+	trigger = {
+		involved_activity = {
+			any_attending_character = { count >= 2 this != root is_adult = yes }
+			any_attending_character = { this != root is_adult = yes is_male = yes }
+		}
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = { this != root is_adult = yes is_male = yes }
+				save_scope_as = sbs_orgy_contest_partner
+			}
+			random_attending_character = {
+				limit = { this != root this != scope:sbs_orgy_contest_partner is_adult = yes }
+				save_scope_as = sbs_orgy_contest_rival
+			}
+		}
+	}
+
+	left_portrait = { character = root animation = personality_bold }
+	right_portrait = {
+		trigger = { exists = scope:sbs_orgy_contest_rival }
+		character = scope:sbs_orgy_contest_rival
+		animation = personality_bold
+	}
+
+	option = {
+		name = sbs_orgy.3100.a
+		custom_tooltip = sbs_orgy.3100.a.tt
+		trigger = { exists = scope:sbs_orgy_contest_partner exists = scope:sbs_orgy_contest_rival }
+		# The offered male is the sexual partner; the rival is only the opposing contestant.
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_contest_partner PREGNANCY_CHANCE = 0 }
+		duel = {
+			skill = prowess
+			target = scope:sbs_orgy_contest_rival
+			50 = {
+				compare_modifier = { target = scope:sbs_orgy_contest_rival value = prowess multiplier = -1 }
+				desc = sbs_orgy.3100.a.success
+				add_gold = minor_gold_value
+				add_prestige = minor_prestige_gain
+				stress_impact = { base = minor_stress_impact_loss }
+			}
+			50 = {
+				compare_modifier = { target = scope:sbs_orgy_contest_rival value = prowess }
+				desc = sbs_orgy.3100.a.failure
+				stress_impact = { base = minor_stress_impact_gain }
+			}
+		}
+		ai_chance = { base = 60 }
+	}
+	option = {
+		name = sbs_orgy.3100.b
+		custom_tooltip = sbs_orgy.3100.b.tt
+		ai_chance = { base = 40 }
+	}
+}
+
+# 3200: Who Lasts the Longest.
+sbs_orgy.3200 = {
+	type = activity_event
+	title = sbs_orgy.3200.t
+	desc = {
+		desc = sbs_orgy.3200.desc
+		triggered_desc = { trigger = { is_male = yes } desc = sbs_orgy.3200.male.desc }
+		triggered_desc = { trigger = { is_female = yes } desc = sbs_orgy.3200.female.desc }
+	}
+	theme = seduction
+	override_background = {
+		trigger = {
+			involved_activity = {
+				has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			}
+		}
+		reference = ep3_campfire
+	}
+	override_background = {
+		trigger = {
+			involved_activity = {
+				NOT = {
+					has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+				}
+			}
+		}
+		reference = courtyard
+	}
+
+	trigger = {
+		involved_activity = {
+			any_attending_character = { count >= 2 this != root is_adult = yes }
+		}
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = { this != root is_adult = yes }
+				save_scope_as = sbs_orgy_contest_partner
+			}
+			random_attending_character = {
+				limit = { this != root this != scope:sbs_orgy_contest_partner is_adult = yes }
+				save_scope_as = sbs_orgy_contest_rival
+			}
+		}
+	}
+
+	left_portrait = { character = root animation = personality_bold }
+	right_portrait = {
+		trigger = { exists = scope:sbs_orgy_contest_rival }
+		character = scope:sbs_orgy_contest_rival
+		animation = personality_bold
+	}
+
+	option = {
+		name = sbs_orgy.3200.a
+		custom_tooltip = sbs_orgy.3200.a.tt
+		trigger = { exists = scope:sbs_orgy_contest_partner exists = scope:sbs_orgy_contest_rival }
+		# Actual sex with the chosen partner for the endurance contest
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_contest_partner PREGNANCY_CHANCE = pregnancy_chance }
+		duel = {
+			skill = prowess
+			target = scope:sbs_orgy_contest_rival
+			50 = {
+				compare_modifier = { target = scope:sbs_orgy_contest_rival value = prowess multiplier = -1 }
+				desc = sbs_orgy.3200.a.success
+				add_gold = minor_gold_value
+				add_prestige = minor_prestige_gain
+				stress_impact = { base = minor_stress_impact_loss }
+			}
+			50 = {
+				compare_modifier = { target = scope:sbs_orgy_contest_rival value = prowess }
+				desc = sbs_orgy.3200.a.failure
+				stress_impact = { base = minor_stress_impact_gain }
+			}
+		}
+		ai_chance = { base = 55 }
+	}
+	option = {
+		name = sbs_orgy.3200.b
+		custom_tooltip = sbs_orgy.3200.b.tt
+		ai_chance = { base = 45 }
+	}
+}
+
+# 3300: The Most Rounds.
+sbs_orgy.3300 = {
+	type = activity_event
+	title = sbs_orgy.3300.t
+	desc = {
+		desc = sbs_orgy.3300.desc
+		triggered_desc = { trigger = { is_male = yes } desc = sbs_orgy.3300.male.desc }
+		triggered_desc = { trigger = { is_female = yes } desc = sbs_orgy.3300.female.desc }
+	}
+	theme = seduction
+	override_background = {
+		trigger = {
+			involved_activity = {
+				has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			}
+		}
+		reference = ep3_campfire
+	}
+	override_background = {
+		trigger = {
+			involved_activity = {
+				NOT = {
+					has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+				}
+			}
+		}
+		reference = courtyard
+	}
+
+	trigger = {
+		involved_activity = {
+			any_attending_character = { count >= 2 this != root is_adult = yes }
+		}
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = { this != root is_adult = yes }
+				save_scope_as = sbs_orgy_contest_rival
+			}
+		}
+	}
+
+	left_portrait = { character = root animation = personality_bold }
+	right_portrait = {
+		trigger = { exists = scope:sbs_orgy_contest_rival }
+		character = scope:sbs_orgy_contest_rival
+		animation = personality_bold
+	}
+
+	option = {
+		name = sbs_orgy.3300.a
+		custom_tooltip = sbs_orgy.3300.a.tt
+		trigger = { exists = scope:sbs_orgy_contest_rival }
+		# The rival is only the opposing contestant. Every other adult attendee is a round partner.
+		involved_activity = {
+			every_attending_character = {
+				limit = { this != root this != scope:sbs_orgy_contest_rival is_adult = yes }
+				had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance }
+			}
+		}
+		duel = {
+			skill = prowess
+			target = scope:sbs_orgy_contest_rival
+			50 = {
+				compare_modifier = { target = scope:sbs_orgy_contest_rival value = prowess multiplier = -1 }
+				desc = sbs_orgy.3300.a.success
+				add_gold = minor_gold_value
+				add_prestige = minor_prestige_gain
+				stress_impact = { base = medium_stress_impact_loss }
+			}
+			50 = {
+				compare_modifier = { target = scope:sbs_orgy_contest_rival value = prowess }
+				desc = sbs_orgy.3300.a.failure
+				stress_impact = { base = minor_stress_impact_gain }
+			}
+		}
+		ai_chance = { base = 55 }
+	}
+	option = {
+		name = sbs_orgy.3300.b
+		custom_tooltip = sbs_orgy.3300.b.tt
+		ai_chance = { base = 45 }
+	}
+}
+
+# 3400: Who Breaks First.
+sbs_orgy.3400 = {
+	type = activity_event
+	title = sbs_orgy.3400.t
+	desc = {
+		desc = sbs_orgy.3400.desc
+		triggered_desc = { trigger = { is_male = yes } desc = sbs_orgy.3400.male.desc }
+		triggered_desc = { trigger = { is_female = yes } desc = sbs_orgy.3400.female.desc }
+	}
+	theme = seduction
+	override_background = {
+		trigger = {
+			involved_activity = {
+				has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			}
+		}
+		reference = ep3_campfire
+	}
+	override_background = {
+		trigger = {
+			involved_activity = {
+				NOT = {
+					has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+				}
+			}
+		}
+		reference = courtyard
+	}
+
+	trigger = {
+		involved_activity = {
+			any_attending_character = { count >= 2 this != root is_adult = yes }
+		}
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = { this != root is_adult = yes }
+				save_scope_as = sbs_orgy_contest_partner
+			}
+			random_attending_character = {
+				limit = { this != root this != scope:sbs_orgy_contest_partner is_adult = yes }
+				save_scope_as = sbs_orgy_contest_rival
+			}
+		}
+	}
+
+	left_portrait = { character = root animation = personality_bold }
+	right_portrait = {
+		trigger = { exists = scope:sbs_orgy_contest_rival }
+		character = scope:sbs_orgy_contest_rival
+		animation = personality_bold
+	}
+
+	option = {
+		name = sbs_orgy.3400.a
+		custom_tooltip = sbs_orgy.3400.a.tt
+		trigger = { exists = scope:sbs_orgy_contest_partner exists = scope:sbs_orgy_contest_rival }
+		# The partner provides the stimulation; the rival is only the opposing contestant.
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_contest_partner PREGNANCY_CHANCE = 0 }
+		duel = {
+			skill = prowess
+			target = scope:sbs_orgy_contest_rival
+			50 = {
+				compare_modifier = { target = scope:sbs_orgy_contest_rival value = prowess multiplier = -1 }
+				desc = sbs_orgy.3400.a.success
+				add_gold = minor_gold_value
+				add_prestige = minor_prestige_gain
+				stress_impact = { base = minor_stress_impact_loss }
+			}
+			50 = {
+				compare_modifier = { target = scope:sbs_orgy_contest_rival value = prowess }
+				desc = sbs_orgy.3400.a.failure
+				stress_impact = { base = minor_stress_impact_gain }
+			}
+		}
+		ai_chance = { base = 55 }
+	}
+	option = {
+		name = sbs_orgy.3400.b
+		custom_tooltip = sbs_orgy.3400.b.tt
+		ai_chance = { base = 45 }
+	}
+}
+
+# 3500: A Contest of Tongues.
+sbs_orgy.3500 = {
+	type = activity_event
+	title = sbs_orgy.3500.t
+	desc = {
+		desc = sbs_orgy.3500.desc
+		triggered_desc = { trigger = { is_male = yes } desc = sbs_orgy.3500.male.desc }
+		triggered_desc = { trigger = { is_female = yes } desc = sbs_orgy.3500.female.desc }
+	}
+	theme = seduction
+	override_background = {
+		trigger = {
+			involved_activity = {
+				has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			}
+		}
+		reference = ep3_campfire
+	}
+	override_background = {
+		trigger = {
+			involved_activity = {
+				NOT = {
+					has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+				}
+			}
+		}
+		reference = courtyard
+	}
+
+	trigger = {
+		involved_activity = {
+			any_attending_character = { count >= 2 this != root is_adult = yes }
+			any_attending_character = { this != root is_adult = yes is_female = yes }
+		}
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = { this != root is_adult = yes is_female = yes }
+				save_scope_as = sbs_orgy_contest_partner
+			}
+			random_attending_character = {
+				limit = { this != root this != scope:sbs_orgy_contest_partner is_adult = yes }
+				save_scope_as = sbs_orgy_contest_rival
+			}
+		}
+	}
+
+	left_portrait = { character = root animation = personality_bold }
+	right_portrait = {
+		trigger = { exists = scope:sbs_orgy_contest_rival }
+		character = scope:sbs_orgy_contest_rival
+		animation = personality_bold
+	}
+
+	option = {
+		name = sbs_orgy.3500.a
+		custom_tooltip = sbs_orgy.3500.a.tt
+		trigger = { exists = scope:sbs_orgy_contest_partner exists = scope:sbs_orgy_contest_rival }
+		# The offered woman is the sexual partner; the rival is only the opposing contestant.
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_contest_partner PREGNANCY_CHANCE = 0 }
+		duel = {
+			skill = prowess
+			target = scope:sbs_orgy_contest_rival
+			50 = {
+				compare_modifier = { target = scope:sbs_orgy_contest_rival value = prowess multiplier = -1 }
+				desc = sbs_orgy.3500.a.success
+				add_gold = minor_gold_value
+				add_prestige = minor_prestige_gain
+				stress_impact = { base = minor_stress_impact_loss }
+			}
+			50 = {
+				compare_modifier = { target = scope:sbs_orgy_contest_rival value = prowess }
+				desc = sbs_orgy.3500.a.failure
+				stress_impact = { base = minor_stress_impact_gain }
+			}
+		}
+		ai_chance = { base = 55 }
+	}
+	option = {
+		name = sbs_orgy.3500.b
+		custom_tooltip = sbs_orgy.3500.b.tt
+		ai_chance = { base = 45 }
+	}
+}
+
+# 3600: A Different Kind of Toast.
+sbs_orgy.3600 = {
+	type = activity_event
+	title = sbs_orgy.3600.t
+	desc = sbs_orgy.3600.desc
+	theme = seduction
+	override_background = {
+		trigger = {
+			involved_activity = {
+				has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			}
+		}
+		reference = village
+	}
+	override_background = {
+		trigger = {
+			involved_activity = {
+				NOT = {
+					has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+				}
+			}
+		}
+		reference = feast
+	}
+
+	trigger = {
+		is_female = yes
+		involved_activity = {
+			any_attending_character = { this != root is_adult = yes is_female = yes }
+			any_attending_character = { this != root is_adult = yes is_male = yes }
+		}
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = { this != root is_adult = yes is_female = yes }
+				save_scope_as = sbs_orgy_contest_rival
+			}
+		}
+	}
+
+	left_portrait = { character = root animation = personality_bold }
+	right_portrait = {
+		trigger = { exists = scope:sbs_orgy_contest_rival }
+		character = scope:sbs_orgy_contest_rival
+		animation = personality_bold
+	}
+
+	option = {
+		name = sbs_orgy.3600.a
+		custom_tooltip = sbs_orgy.3600.a.tt
+		trigger = { exists = scope:sbs_orgy_contest_rival }
+
+		duel = {
+			skill = prowess
+			target = scope:sbs_orgy_contest_rival
+			50 = {
+				compare_modifier = { target = scope:sbs_orgy_contest_rival value = prowess multiplier = -1 }
+				desc = sbs_orgy.3600.a.success
+				add_gold = medium_gold_value
+				add_prestige = minor_prestige_gain
+				stress_impact = { base = minor_stress_impact_loss }
+			}
+			50 = {
+				compare_modifier = { target = scope:sbs_orgy_contest_rival value = prowess }
+				desc = sbs_orgy.3600.a.failure
+				involved_activity = {
+					every_attending_character = {
+						limit = { this != root this != scope:sbs_orgy_contest_rival is_adult = yes is_male = yes }
+						had_sex_with_effect = { CHARACTER = root PREGNANCY_CHANCE = pregnancy_chance }
+						had_sex_with_effect = { CHARACTER = scope:sbs_orgy_contest_rival PREGNANCY_CHANCE = pregnancy_chance }
+					}
+				}
+				stress_impact = { base = medium_stress_impact_gain }
+			}
+		}
+		ai_chance = {
+			base = 55
+			modifier = { has_trait = brave add = 20 }
+			modifier = { has_trait = lustful add = 15 }
+			modifier = { has_trait = craven add = -30 }
+		}
+	}
+
+	option = {
+		name = sbs_orgy.3600.b
+		custom_tooltip = sbs_orgy.3600.b.tt
+		ai_chance = {
+			base = 45
+			modifier = { has_trait = craven add = 25 }
+			modifier = { has_trait = chaste add = 20 }
+		}
+	}
+}
+
+# 4100: The Naked Crown. Indoor only.
+sbs_orgy.4100 = {
+	type = activity_event
+	title = sbs_orgy.4100.t
+	desc = {
+		desc = sbs_orgy.4100.desc
+		triggered_desc = { trigger = { is_male = yes } desc = sbs_orgy.4100.male.desc }
+		triggered_desc = { trigger = { is_female = yes } desc = sbs_orgy.4100.female.desc }
+	}
+	theme = diplomacy
+	override_background = {
+		trigger = {
+			involved_activity = {
+				has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			}
+		}
+		reference = throne_room
+	}
+	override_background = {
+		trigger = {
+			involved_activity = {
+				NOT = {
+					has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+				}
+			}
+		}
+		reference = throne_room
+	}
+	trigger = {
+		# Indoor-only nudity scene.
+		involved_activity = {
+			NOT = {
+				has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			}
+			any_attending_character = { this != root is_adult = yes }
+		}
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = { this != root is_adult = yes }
+				save_scope_as = sbs_orgy_nudity_guest
+			}
+		}
+	}
+
+	left_portrait = { character = scope:sbs_orgy_nudity_guest animation = personality_honorable }
+	right_portrait = { character = root animation = personality_bold }
+
+	option = {
+		name = sbs_orgy.4100.a
+		custom_tooltip = sbs_orgy.4100.a.tt
+		trigger = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } }
+		add_prestige = minor_prestige_gain
+		ai_chance = { base = 25 }
+	}
+	option = {
+		name = sbs_orgy.4100.b
+		custom_tooltip = sbs_orgy.4100.b.tt
+		add_piety = minor_piety_gain
+		ai_chance = {
+			base = 25
+			modifier = { has_trait = zealous add = 30 }
+		}
+	}
+	option = {
+		name = sbs_orgy.4100.c
+		custom_tooltip = sbs_orgy.4100.c.tt
+		trigger = { diplomacy >= high_skill_rating }
+		add_prestige = minor_prestige_gain
+		ai_chance = {
+			base = 25
+			modifier = { diplomacy >= very_high_skill_rating add = 20 }
+		}
+	}
+	option = {
+		name = sbs_orgy.4100.d
+		custom_tooltip = sbs_orgy.4100.d.tt
+		stress_impact = { base = minor_stress_impact_loss }
+		scope:sbs_orgy_nudity_guest = { stress_impact = { base = minor_stress_impact_loss } }
+		ai_chance = { base = 25 }
+	}
+}
+
+# 4200: The Fairest Form. Indoor only.
+sbs_orgy.4200 = {
+	type = activity_event
+	title = sbs_orgy.4200.t
+	desc = {
+		desc = sbs_orgy.4200.desc
+		triggered_desc = { trigger = { is_male = yes } desc = sbs_orgy.4200.male.desc }
+		triggered_desc = { trigger = { is_female = yes } desc = sbs_orgy.4200.female.desc }
+	}
+	theme = feast_activity
+	override_background = {
+		trigger = {
+			involved_activity = {
+				has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			}
+		}
+		reference = throne_room
+	}
+	override_background = {
+		trigger = {
+			involved_activity = {
+				NOT = {
+					has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+				}
+			}
+		}
+		reference = throne_room
+	}
+	trigger = {
+		involved_activity = {
+			NOT = {
+				has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			}
+			any_attending_character = { count >= 4 this != root is_adult = yes }
+		}
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = { this != root is_adult = yes  }
+				save_scope_as = sbs_orgy_body_a
+			}
+			random_attending_character = {
+				limit = { this != root this != scope:sbs_orgy_body_a is_adult = yes }
+				save_scope_as = sbs_orgy_body_b
+			}
+			random_attending_character = {
+				limit = { this != root this != scope:sbs_orgy_body_a this != scope:sbs_orgy_body_b is_adult = yes }
+				save_scope_as = sbs_orgy_body_c
+			}
+			random_attending_character = {
+				limit = { this != root this != scope:sbs_orgy_body_a this != scope:sbs_orgy_body_b this != scope:sbs_orgy_body_c is_adult = yes }
+				save_scope_as = sbs_orgy_body_d
+			}
+		}
+	}
+
+	left_portrait = { character = scope:sbs_orgy_body_a animation = personality_bold }
+	right_portrait = { character = root animation = personality_bold }
+	lower_left_portrait = scope:sbs_orgy_body_b
+	lower_center_portrait = scope:sbs_orgy_body_c
+	lower_right_portrait = scope:sbs_orgy_body_d
+
+	option = {
+		name = sbs_orgy.4200.a
+		custom_tooltip = sbs_orgy.4200.a.tt
+		duel = {
+			skill = prowess
+			value = high_skill_rating
+			50 = {
+				compare_modifier = { value = scope:duel_value multiplier = 3.5 min = -49 }
+				add_prestige = minor_prestige_gain
+			}
+			50 = { compare_modifier = { value = scope:duel_value multiplier = -3.5 min = -49 } }
+		}
+	}
+	option = {
+		name = sbs_orgy.4200.b
+		custom_tooltip = sbs_orgy.4200.b.tt
+		duel = {
+			skill = diplomacy
+			value = high_skill_rating
+			50 = {
+				compare_modifier = { value = scope:duel_value multiplier = 3.5 min = -49 }
+				add_prestige = minor_prestige_gain
+			}
+			50 = { compare_modifier = { value = scope:duel_value multiplier = -3.5 min = -49 } }
+		}
+	}
+	option = {
+		name = sbs_orgy.4200.c
+		custom_tooltip = sbs_orgy.4200.c.tt
+		duel = {
+			skill = intrigue
+			value = high_skill_rating
+			50 = {
+				compare_modifier = { value = scope:duel_value multiplier = 3.5 min = -49 }
+				add_prestige = minor_prestige_gain
+			}
+			50 = { compare_modifier = { value = scope:duel_value multiplier = -3.5 min = -49 } }
+		}
+	}
+	option = {
+		name = sbs_orgy.4200.d
+		custom_tooltip = sbs_orgy.4200.d.tt
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_body_a PREGNANCY_CHANCE = 1 }
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_body_b PREGNANCY_CHANCE = 1 }
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_body_c PREGNANCY_CHANCE = 1 }
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_body_d PREGNANCY_CHANCE = 1 }
+		stress_impact = { base = medium_stress_impact_loss }
+		ai_chance = {
+			base = 15
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = rakish add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 20 }
+		}
+	}
+}
+
+# 5100: A Village Procession. Outdoor exclusive.
+sbs_orgy.5100 = {
+	type = activity_event
+	title = sbs_orgy.5100.t
+	desc = sbs_orgy.5100.desc
+	theme = feast_activity
+	override_background = { reference = village_festival }
+
+	trigger = {
+		involved_activity = {
+			has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+		}
+	}
+
+	left_portrait = { character = root animation = personality_bold }
+
+	option = {
+		name = sbs_orgy.5100.a
+		custom_tooltip = sbs_orgy.5100.a.tt
+		if = {
+			limit = {
+				exists = involved_activity
+				involved_activity = { exists = activity_location }
+			}
+			involved_activity = {
+				activity_location = {
+					county = { change_county_control = -5 }
+				}
+			}
+		}
+		ai_chance = { base = 100 }
+	}
+}
+
+# 5200: Among the Stones. Outdoor exclusive. Cemetery.
+sbs_orgy.5200 = {
+	type = activity_event
+	title = sbs_orgy.5200.t
+	desc = {
+		desc = sbs_orgy.5200.desc
+		triggered_desc = { trigger = { is_female = yes } desc = sbs_orgy.5200.female.desc }
+		triggered_desc = { trigger = { is_male = yes } desc = sbs_orgy.5200.male.desc }
+	}
+	theme = seduction
+	override_background = { reference = gallows }
+
+	trigger = {
+		involved_activity = {
+			has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			any_attending_character = { count >= 2 this != root is_adult = yes }
+		}
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = { this != root is_adult = yes }
+				save_scope_as = sbs_orgy_guest_a
+			}
+			random_attending_character = {
+				limit = { this != root this != scope:sbs_orgy_guest_a is_adult = yes }
+				save_scope_as = sbs_orgy_guest_b
+			}
+		}
+	}
+
+	left_portrait = { character = scope:sbs_orgy_guest_a animation = shock }
+	right_portrait = { character = root animation = personality_dishonorable }
+	lower_right_portrait = { character = scope:sbs_orgy_guest_b animation = scheme }
+
+	option = {
+		name = sbs_orgy.5200.a
+		custom_tooltip = sbs_orgy.5200.a.tt
+		add_piety = miniscule_piety_gain
+		stress_impact = { base = minor_stress_impact_gain }
+		ai_chance = {
+			base = 40
+			modifier = { has_trait = zealous add = 30 }
+			modifier = { has_trait = compassionate add = 15 }
+			modifier = { has_trait = chaste add = 15 }
+		}
+	}
+	option = {
+		name = sbs_orgy.5200.b
+		custom_tooltip = sbs_orgy.5200.b.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest_a = { sbs_orgy_sex_positive_trigger = yes }
+			scope:sbs_orgy_guest_b = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest_a PREGNANCY_CHANCE = 1 }
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest_b PREGNANCY_CHANCE = 1 }
+		add_piety = miniscule_piety_loss
+		stress_impact = { base = medium_stress_impact_loss }
+		ai_chance = {
+			base = 35
+			modifier = { has_trait = cynical add = 20 }
+			modifier = { has_trait = deviant add = 40 }
+			modifier = { has_trait = lustful add = 15 }
+		}
+	}
+}
+
+# 5300: After the Long Day. Outdoor exclusive. Female camp hunger.
+sbs_orgy.5300 = {
+	type = activity_event
+	title = sbs_orgy.5300.t
+	desc = {
+		desc = sbs_orgy.5300.desc
+		triggered_desc = { desc = sbs_orgy.5300.body.desc }
+	}
+	theme = seduction
+	override_background = { reference = ep3_camp }
+
+	trigger = {
+		is_female = yes
+		involved_activity = {
+			has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			any_attending_character = { this != root is_adult = yes is_male = yes }
+		}
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = { this != root is_adult = yes is_male = yes }
+				save_scope_as = sbs_orgy_guest
+			}
+		}
+	}
+
+	left_portrait = { character = scope:sbs_orgy_guest animation = personality_callous }
+	right_portrait = { character = root animation = pain }
+
+	option = {
+		name = sbs_orgy.5300.a
+		custom_tooltip = sbs_orgy.5300.a.tt
+		stress_impact = { base = minor_stress_impact_loss }
+		ai_chance = {
+			base = 30
+			modifier = { has_trait = gluttonous add = 20 }
+			modifier = { has_trait = deviant add = 20 }
+		}
+	}
+	option = {
+		name = sbs_orgy.5300.b
+		custom_tooltip = sbs_orgy.5300.b.tt
+		add_prestige = miniscule_prestige_loss
+		scope:sbs_orgy_guest = {
+			add_opinion = { target = root modifier = feast_had_good_talk }
+		}
+		ai_chance = {
+			base = 35
+			modifier = { has_trait = humble add = 15 }
+			modifier = { has_trait = craven add = 10 }
+		}
+	}
+	option = {
+		name = sbs_orgy.5300.c
+		custom_tooltip = sbs_orgy.5300.c.tt
+		add_prestige = miniscule_prestige_loss
+		stress_impact = { base = miniscule_stress_impact_gain }
+		ai_chance = {
+			base = 25
+			modifier = { has_trait = stubborn add = 15 }
+			modifier = { has_trait = impatient add = 10 }
+		}
+	}
+}
+
+# 5400: The Next Fire. Outdoor exclusive. Male camp hunger.
+sbs_orgy.5400 = {
+	type = activity_event
+	title = sbs_orgy.5400.t
+	desc = {
+		desc = sbs_orgy.5400.desc
+		triggered_desc = { desc = sbs_orgy.5400.body.desc }
+	}
+	theme = seduction
+	override_background = { reference = ep3_camp }
+
+	trigger = {
+		is_male = yes
+		involved_activity = {
+			has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			any_attending_character = { this != root is_adult = yes is_female = yes }
+		}
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = { this != root is_adult = yes is_female = yes }
+				save_scope_as = sbs_orgy_guest
+			}
+		}
+	}
+
+	left_portrait = { character = scope:sbs_orgy_guest animation = idle }
+	right_portrait = { character = root animation = personality_bold }
+
+	option = {
+		name = sbs_orgy.5400.a
+		custom_tooltip = sbs_orgy.5400.a.tt
+		scope:sbs_orgy_guest = {
+			add_opinion = { target = root modifier = feast_had_good_talk }
+		}
+		ai_chance = {
+			base = 45
+			modifier = { has_trait = compassionate add = 20 }
+			modifier = { has_trait = generous add = 15 }
+		}
+	}
+	option = {
+		name = sbs_orgy.5400.b
+		custom_tooltip = sbs_orgy.5400.b.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = pregnancy_chance }
+		scope:sbs_orgy_guest = {
+			add_opinion = { target = root modifier = feast_rejected_dalliance_opinion }
+		}
+		ai_chance = {
+			base = 30
+			modifier = { has_trait = lustful add = 25 }
+			modifier = { has_trait = callous add = 10 }
+		}
+	}
+	option = {
+		name = sbs_orgy.5400.c
+		custom_tooltip = sbs_orgy.5400.c.tt
+		scope:sbs_orgy_guest = {
+			add_opinion = { target = root modifier = insulted_opinion }
+		}
+		stress_impact = { base = medium_stress_impact_loss }
+		ai_chance = {
+			base = 15
+			modifier = { has_trait = sadistic add = 25 }
+			modifier = { has_trait = deviant add = 20 }
+			modifier = { has_trait = compassionate add = -20 }
+		}
+	}
+}
+
+# 6100: A Different Guest. Extreme outdoor. Animal.
+sbs_orgy.6100 = {
+	type = activity_event
+	title = sbs_orgy.6100.t
+	desc = {
+		desc = sbs_orgy.6100.desc
+		first_valid = {
+			triggered_desc = {
+				desc = sbs_orgy.6100.horse.desc
+			}
+		}
+	}
+	theme = seduction
+	override_background = {
+		trigger = {
+			involved_activity = {
+				has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			}
+		}
+		reference = farmland
+	}
+	override_background = {
+		trigger = {
+			involved_activity = {
+				NOT = {
+					has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+				}
+			}
+		}
+		reference = farmland
+	}
+
+	trigger = {
+		is_female = yes
+		involved_activity = {
+			has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+		}
+	}
+
+	left_portrait = { character = root animation = shock }
+
+	option = {
+		name = sbs_orgy.6100.a
+		custom_tooltip = sbs_orgy.6100.a.tt
+		stress_impact = {
+			base = major_stress_impact_loss
+			deviant = medium_stress_impact_loss
+		}
+		ai_chance = {
+			base = 40
+			modifier = { has_trait = lustful add = 30 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 50 }
+			modifier = { has_trait = chaste add = -40 }
+		}
+	}
+
+	option = {
+		name = sbs_orgy.6100.b
+		custom_tooltip = sbs_orgy.6100.b.tt
+		stress_impact = { base = minor_stress_impact_gain }
+		ai_chance = {
+			base = 60
+			modifier = { has_trait = chaste add = 30 }
+			modifier = { has_trait = lustful add = -20 }
+		}
+	}
+}
+
+# 6200: Led Like a Beast. Extreme outdoor.
+sbs_orgy.6200 = {
+	type = activity_event
+	title = sbs_orgy.6200.t
+	desc = {
+		desc = sbs_orgy.6200.desc
+		first_valid = {
+			triggered_desc = {
+				desc = sbs_orgy.6200.horse.desc
+			}
+		}
+	}
+	theme = seduction
+	override_background = {
+		trigger = {
+			involved_activity = {
+				has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			}
+		}
+		reference = wilderness
+	}
+	override_background = {
+		trigger = {
+			involved_activity = {
+				NOT = {
+					has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+				}
+			}
+		}
+		reference = wilderness
+	}
+
+	trigger = {
+		is_female = yes
+		involved_activity = {
+			has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			any_attending_character = { this != root is_adult = yes }
+		}
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = { this != root is_adult = yes }
+				save_scope_as = sbs_orgy_guest
+			}
+		}
+	}
+
+	left_portrait = { character = scope:sbs_orgy_guest animation = personality_callous }
+	right_portrait = { character = root animation = shame }
+
+	# Take the animal
+	option = {
+		name = sbs_orgy.6200.a
+		custom_tooltip = sbs_orgy.6200.a.tt
+		stress_impact = {
+			base = major_stress_impact_loss
+			deviant = medium_stress_impact_loss
+		}
+		scope:sbs_orgy_guest = {
+			add_opinion = { target = root modifier = pleased_opinion opinion = 15 }
+		}
+		ai_chance = {
+			base = 25
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 40 }
+			modifier = { has_trait = chaste add = -50 }
+		}
+	}
+
+	# Beg the guest instead
+	option = {
+		name = sbs_orgy.6200.b
+		custom_tooltip = sbs_orgy.6200.b.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+			scope:sbs_orgy_guest = { sbs_orgy_sex_positive_trigger = yes }
+		}
+		had_sex_with_effect = { CHARACTER = scope:sbs_orgy_guest PREGNANCY_CHANCE = pregnancy_chance }
+		scope:sbs_orgy_guest = {
+			add_opinion = { target = root modifier = pleased_opinion opinion = 10 }
+		}
+		ai_chance = {
+			base = 40
+			modifier = { has_trait = lustful add = 15 }
+		}
+	}
+
+	# Stop, insulted
+	option = {
+		name = sbs_orgy.6200.c
+		custom_tooltip = sbs_orgy.6200.c.tt
+		stress_impact = { base = medium_stress_impact_gain }
+		scope:sbs_orgy_guest = {
+			add_opinion = { target = root modifier = insulted_opinion opinion = -20 }
+		}
+		ai_chance = {
+			base = 35
+			modifier = { has_trait = chaste add = 40 }
+			modifier = { has_trait = arrogant add = 20 }
+		}
+	}
+}
+
+# 6300: My Own Pet. Extreme outdoor.
+sbs_orgy.6300 = {
+	type = activity_event
+	title = sbs_orgy.6300.t
+	desc = {
+		desc = sbs_orgy.6300.desc
+		first_valid = {
+			triggered_desc = {
+				desc = sbs_orgy.6300.horse.desc
+			}
+		}
+	}
+	theme = seduction
+	override_background = {
+		trigger = {
+			involved_activity = {
+				has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			}
+		}
+		reference = wilderness
+	}
+	override_background = {
+		trigger = {
+			involved_activity = {
+				NOT = {
+					has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+				}
+			}
+		}
+		reference = wilderness
+	}
+
+	trigger = {
+		is_female = yes
+		involved_activity = {
+			has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			any_attending_character = { this != root is_adult = yes is_female = yes }
+		}
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = { this != root is_adult = yes is_female = yes }
+				save_scope_as = sbs_orgy_guest
+			}
+		}
+	}
+
+	left_portrait = { character = root animation = personality_callous }
+	right_portrait = { character = scope:sbs_orgy_guest animation = shame }
+
+	# Force the animal on her
+	option = {
+		name = sbs_orgy.6300.a
+		custom_tooltip = sbs_orgy.6300.a.tt
+		stress_impact = { base = medium_stress_impact_loss }
+		scope:sbs_orgy_guest = {
+			stress_impact = { base = major_stress_impact_gain }
+		}
+		ai_chance = {
+			base = 30
+			modifier = { has_trait = sadistic add = 40 }
+			modifier = { OR = { has_trait = deviant any_secret = { type = secret_deviant } } add = 30 }
+			modifier = { has_trait = compassionate add = -40 }
+		}
+	}
+
+	# Fondle her instead
+	option = {
+		name = sbs_orgy.6300.b
+		custom_tooltip = sbs_orgy.6300.b.tt
+		stress_impact = { base = minor_stress_impact_loss }
+		scope:sbs_orgy_guest = { stress_impact = { base = minor_stress_impact_loss } }
+		ai_chance = {
+			base = 50
+			modifier = { has_trait = lustful add = 20 }
+			modifier = { has_trait = compassionate add = 15 }
+		}
+	}
+}
+
+# 6400: The Paddock. Extreme outdoor. Daytime. Women and horses.
+sbs_orgy.6400 = {
+	type = activity_event
+	title = sbs_orgy.6400.t
+	desc = {
+		desc = sbs_orgy.6400.desc
+		triggered_desc = { desc = sbs_orgy.6400.body.desc }
+	}
+	theme = seduction
+	override_background = { reference = farmland }
+
+	trigger = {
+		is_female = yes
+		involved_activity = {
+			has_activity_option = { category = sbs_orgy_option_location option = sbs_orgy_location_outdoor }
+			any_attending_character = { count >= 1 this != root is_adult = yes is_female = yes }
+			any_attending_character = { count >= 2 this != root is_adult = yes is_male = yes }
+		}
+	}
+
+	immediate = {
+		involved_activity = {
+			random_attending_character = {
+				limit = { this != root is_adult = yes is_female = yes }
+				save_scope_as = sbs_orgy_horse_girl
+			}
+		}
+	}
+
+	left_portrait = { character = scope:sbs_orgy_horse_girl animation = pain }
+	right_portrait = { character = root animation = shock }
+
+	option = {
+		name = sbs_orgy.6400.a
+		custom_tooltip = sbs_orgy.6400.a.tt
+		stress_impact = { base = major_stress_impact_gain }
+		ai_chance = {
+			base = 25
+			modifier = { has_trait = deviant add = 40 }
+			modifier = { has_trait = lustful add = 15 }
+			modifier = { has_trait = chaste add = -30 }
+			modifier = { has_trait = craven add = -10 }
+		}
+	}
+	option = {
+		name = sbs_orgy.6400.b
+		custom_tooltip = sbs_orgy.6400.b.tt
+		trigger = {
+			sbs_orgy_sex_positive_trigger = yes
+		}
+		involved_activity = {
+			every_attending_character = {
+				limit = { this != root is_adult = yes is_male = yes }
+				root = { had_sex_with_effect = { CHARACTER = prev PREGNANCY_CHANCE = 1 } }
+			}
+		}
+		ai_chance = {
+			base = 55
+			modifier = { has_trait = lustful add = 15 }
+			modifier = { has_trait = chaste add = 10 }
+		}
+	}
+}
+

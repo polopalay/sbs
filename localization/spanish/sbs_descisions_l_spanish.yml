@@ -4,18 +4,7 @@
  become_demon.c: "Recibir la bendición"
  become_demon.t: "Iniciar el ritual sagrado"
 
- masturbate: "Masturbarse"
- masturbate.desc: "Tu vida ya está llena de estrés, estás buscando algo para aliviarlo. Los consoladores son la forma más segura, puedes disfrutar de la sensualidad sin preocuparte por los rumores sobre ti siendo una puta y una promiscuo."
- masturbate.t: "Aliviar el estrés"
- masturbate.c: "Póntelo en tu vagina"
-
  seal_the_gates_of_hell: "Sellando las Puertas del Infierno"
  seal_the_gates_of_hell.desc: "Las puertas del infierno se han abierto, los demonios están a punto de invadir el mundo humano. Debes encontrar una manera de sellar las puertas del infierno y evitar que los demonios invadan el mundo humano."
  seal_the_gates_of_hell.t: "Sellando las Puertas del Infierno"
  seal_the_gates_of_hell.c: "Sellando las Puertas del Infierno"
-
- sbs_startmerchant_decision: "Visitar el mercado negro"
- sbs_startmerchant_decision_desc: "Visita en persona el mercado oculto y examina las mercancías del comerciante."
- sbs_startmerchant_decision_tooltip: "Viaja directamente hasta el comerciante del mercado negro."
- sbs_startmerchant_decision_confirm: "Partir"
-

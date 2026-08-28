@@ -42,3 +42,13 @@
 
  carn_force_stop_prostitution_interaction: "매춘 중지"
  carn_force_stop_prostitution_interaction.desc: "[recipient.GetShortUINameNoTooltip]가 당신을 위해 [gold|E]를 벌도록 강요하는 것을 중지합니다."
+
+ carn_demand_free_illegal_slaves_interaction: "해방을 요구한다"
+ carn_demand_free_slaves_interaction_desc: "[recipient.GetShortUINameNoTooltip]에게 소유한 [illegal|E] [slaves|E]를 풀어 주라고 요구한다"
+ carn_demand_free_illegal_slaves_is_crime: "\\n불법 노예의 해방을 거부하는 것은 [crime|E]이다"
+ carn_seize_slave_interaction: "노예를 탈취한다"
+ carn_seize_slave_interaction_desc: "[recipient.GetShortUINameNoTooltip]을(를) 자신의 [slave|E]로 삼는다"
+ sbs_pray_for_interaction: "을(를) 위해 기도한다"
+ sbs_pray_for_interaction.desc: "[recipient.GetShortUIName]을(를) 위해 기도하고, 신앙 수준에 따른 축복을 신에게 구한다."
+ sbs_ask_for_blessing_interaction: "축복을 청한다"
+ sbs_ask_for_blessing_interaction.desc: "[recipient.GetShortUIName]에게 자신을 위해 기도해 달라고 청한다. 축복은 상대의 신앙 수준에 따라 자동으로 정해진다."

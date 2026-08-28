@@ -3,7 +3,7 @@
 	desc = carnia_slave_training_interaction.desc
 	common_interaction = yes
 
-	cooldown_against_recipient = { years = 1 }
+	cooldown_against_recipient = { years = 5 }
 
 	is_shown = {
 		scope:actor = {
@@ -12,7 +12,11 @@
 		scope:recipient = {
 			is_adult = yes
 			has_trait = slave
-			is_courtier_of = scope:actor
+			has_relation_slave_owner = scope:actor
+			OR = {
+				is_courtier_of = scope:actor
+				is_imprisoned_by = scope:actor
+			}
 		}
 	}
 
@@ -36,9 +40,7 @@
 	}
 
 	send_option = {
-		is_shown = {
-			scope:recipient = { should_be_naked_trigger = no }
-		}
+		is_shown = { scope:recipient = { should_be_naked_trigger = no } }
 		flag = naked
 		localization = diplomacy_majesty_4090_no_raiment_modifier
 	}
@@ -58,83 +60,222 @@
 	send_option = {
 		is_shown = {
 			scope:recipient = {
-				has_trait_rank = {
-					trait = wounded
-					rank < 3
-				}
+				NOT = { has_character_flag = is_being_tortured }
+				NOT = { has_character_modifier = recently_tortured }
 			}
 		}
 		flag = torture
 		localization = "torture_interaction"
 	}
 
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				OR = {
+					is_imprisoned = no
+					is_in_prison_type = dungeon
+				}
+			}
+		}
+		flag = house_arrest
+		localization = "house_arrest"
+	}
+
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				OR = {
+					is_imprisoned = no
+					is_in_prison_type = house_arrest
+				}
+			}
+		}
+		flag = dungeon
+		localization = "dungeon"
+	}
+
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				NOT = { has_trait = blind }
+				NOT = { has_character_flag = is_being_tortured }
+			}
+		}
+		flag = blind
+		localization = "RELEASE_BLIND"
+	}
+
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				NOT = { has_trait = disfigured }
+				NOT = { has_character_flag = is_being_tortured }
+			}
+		}
+		flag = disfigure
+		localization = "RELEASE_DISFIGURE"
+	}
+
+	send_option = {
+		is_shown = {
+			scope:recipient = {
+				is_male = yes
+				is_eunuch_trigger = no
+				NOT = { has_character_flag = is_being_tortured }
+			}
+		}
+		flag = castrate
+		localization = "castrate_interaction"
+	}
+
 	send_options_exclusive = yes
 
 	on_accept = {
-		scope:recipient = {
-			if = {
-				limit = { scope:had_sex = yes }
-				had_sex_with_effect = { CHARACTER = scope:actor PREGNANCY_CHANCE = pregnancy_chance }
-				scope:actor = {
-					add_piety = minor_piety_loss
-					stress_impact = {
-						base = minor_stress_impact_loss
-						lustful = miniscule_stress_impact_loss
-						chaste = medium_stress_impact_gain
-					}
+		if = {
+			limit = { scope:had_sex = yes }
+			scope:recipient = {
+				had_sex_with_effect = {
+					CHARACTER = scope:actor
+					PREGNANCY_CHANCE = pregnancy_chance
 				}
 			}
-			else_if = {
-				limit = { scope:naked = yes }
-				add_character_modifier = {
-					modifier = diplomacy_majesty_4090_no_raiment_modifier
-					years = 10
-				}
-				scope:actor = { add_tyranny = 1 }
-			}
-			else_if = {
-				limit = { scope:gold = yes }
-				pay_short_term_gold = { target = scope:actor gold = gold }
-				scope:actor = { add_tyranny = 5 }
-			}
-			else_if = {
-				limit = { scope:conversion = yes }
-				set_character_faith_with_conversion = scope:actor.faith
-				scope:actor = { add_tyranny = 5 }
-			}
-			else_if = {
-				limit = { scope:torture = yes }
-				if = {
-					limit = { current_weight < -60 }
-					change_current_weight = -10
-				}
-				else_if = {
-					limit = { NOT = { has_character_modifier = aging_gracefully_modifier } }
-					add_character_modifier = { modifier = aging_gracefully_modifier years = 5 }
-				}
-				else_if = {
-					limit = { NOT = { has_character_modifier = stress_smelling_of_sweat } }
-					add_character_modifier = { modifier = stress_smelling_of_sweat years = 1 }
-				}
-				else_if = {
-					limit = { NOT = { has_character_modifier = exhausted_modifier } }
-					add_character_modifier = { modifier = exhausted_modifier months = 1 }
-				}
-				else = {
-					change_trait_rank = { trait = wounded rank = 1 }
-				}
-
+			scope:actor = {
+				add_tyranny = 1
 				stress_impact = {
-					base = minor_stress_impact_loss
-					sadistic = medium_stress_impact_loss
-					vengeful = minor_stress_impact_loss
+					base = miniscule_stress_impact_gain
+					lustful = minor_stress_impact_loss
+					sadistic = minor_stress_impact_loss
+					callous = miniscule_stress_impact_loss
+					chaste = medium_stress_impact_gain
+					compassionate = medium_stress_impact_gain
+					just = minor_stress_impact_gain
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:naked = yes }
+			scope:recipient = {
+				add_character_modifier = { modifier = diplomacy_majesty_4090_no_raiment_modifier years = 10 }
+			}
+			scope:actor = {
+				add_tyranny = 1
+				stress_impact = {
+					base = miniscule_stress_impact_gain
+					sadistic = miniscule_stress_impact_loss
 					callous = miniscule_stress_impact_loss
 					compassionate = minor_stress_impact_gain
 					forgiving = miniscule_stress_impact_gain
 				}
-
-				scope:actor = { add_tyranny = 10 }
 			}
+		}
+
+		else_if = {
+			limit = { scope:gold = yes }
+			scope:recipient = {
+				pay_short_term_gold = { target = scope:actor gold = gold }
+			}
+			scope:actor = {
+				add_tyranny = 2
+				stress_impact = {
+					base = miniscule_stress_impact_gain
+					greedy = miniscule_stress_impact_loss
+					generous = minor_stress_impact_gain
+					compassionate = miniscule_stress_impact_gain
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:conversion = yes }
+			scope:recipient = { set_character_faith_with_conversion = scope:actor.faith }
+			scope:actor = {
+				add_tyranny = 3
+				stress_impact = {
+					base = miniscule_stress_impact_gain
+					zealous = miniscule_stress_impact_loss
+					compassionate = minor_stress_impact_gain
+					forgiving = miniscule_stress_impact_gain
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:house_arrest = yes }
+
+			if = {
+				limit = { scope:recipient = { is_imprisoned_by = scope:actor } }
+				scope:recipient = { change_prison_type = house_arrest }
+			}
+			else = {
+				scope:actor = {
+					imprison = { target = scope:recipient type = house_arrest }
+				}
+			}
+
+			scope:actor = {
+				add_tyranny = 5
+				stress_impact = {
+					base = miniscule_stress_impact_gain
+					callous = miniscule_stress_impact_loss
+					compassionate = minor_stress_impact_gain
+					forgiving = minor_stress_impact_gain
+					just = miniscule_stress_impact_gain
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:dungeon = yes }
+			if = {
+				limit = { scope:recipient = { is_imprisoned_by = scope:actor } }
+				scope:recipient = { change_prison_type = dungeon }
+			}
+			else = {
+				scope:actor = {
+					imprison = { target = scope:recipient type = dungeon }
+				}
+			}
+			scope:actor = {
+				add_tyranny = 10
+				stress_impact = {
+					base = minor_stress_impact_gain
+					sadistic = miniscule_stress_impact_loss
+					callous = miniscule_stress_impact_loss
+					vengeful = miniscule_stress_impact_loss
+					compassionate = medium_stress_impact_gain
+					forgiving = minor_stress_impact_gain
+					just = minor_stress_impact_gain
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:torture = yes }
+			scope:recipient = { add_character_flag = { flag = is_being_tortured months = 6 } }
+			scope:actor = { save_scope_as = bg_override_char }
+			torture_interaction_actor_effect = yes
+			torturer_interaction_recipient_effect = yes
+			scope:actor = { add_tyranny = 10 }
+		}
+		else_if = {
+			limit = { scope:blind = yes }
+			scope:recipient = { add_character_flag = { flag = is_being_tortured months = 6 } }
+			blind_castrate_and_disfigure_effect = yes
+			scope:recipient = { add_trait = blind }
+			torture_blind_castrate_disfigure_opinion_effect = { VERB = blinded }
+			scope:actor = { add_tyranny = 15 }
+		}
+		else_if = {
+			limit = { scope:disfigure = yes }
+			scope:recipient = { add_character_flag = { flag = is_being_tortured months = 6 } }
+			blind_castrate_and_disfigure_effect = yes
+			scope:recipient = { add_trait = disfigured }
+			torture_blind_castrate_disfigure_opinion_effect = { VERB = disfigured }
+			scope:actor = { add_tyranny = 15 }
+		}
+		else_if = {
+			limit = { scope:castrate = yes }
+			scope:recipient = { add_character_flag = { flag = is_being_tortured months = 6 } }
+			blind_castrate_and_disfigure_effect = yes
+			scope:recipient = { ep3_youth_castration_effect = yes }
+			torture_blind_castrate_disfigure_opinion_effect = { VERB = castrated }
+			scope:actor = { add_tyranny = 20 }
 		}
 	}
 
@@ -142,6 +283,7 @@
 
 	ai_targets = {
 		ai_recipients = courtiers
+		ai_recipients = prisoners
 	}
 
 	ai_potential = {
@@ -151,10 +293,9 @@
 	ai_frequency = 12
 
 	ai_will_do = {
-		base = 25
+		base = 0
 		ai_value_modifier = {
-			ai_vengefulness = 1
-			ai_greed = 0.5
+			ai_vengefulness = 0.5
 			ai_compassion = -1
 			ai_honor = -0.5
 			ai_rationality = -0.1

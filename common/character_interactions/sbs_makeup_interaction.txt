@@ -54,11 +54,6 @@ sbs_makeup_interaction = {
 				age >= 18
 			}
 		}
-		is_valid = {
-			scope:recipient = {
-				NOT = { has_trait = tits_big_good_3 }
-			}
-		}
 		flag = tits_big_good
 		localization = trait_tits_big
 	}
@@ -620,7 +615,6 @@ sbs_makeup_interaction = {
 
 			else_if = {
 				limit = { scope:tits_big_good = yes }
-
 				remove_trait = tits_small_bad_1
 				remove_trait = tits_small_bad_2
 				remove_trait = tits_small_bad_3
@@ -628,9 +622,8 @@ sbs_makeup_interaction = {
 					limit = { has_trait_rank = { trait = tits_big_good rank < 3 } }
 					change_trait_rank = { trait = tits_big_good rank = 1 }
 				}
-				else_if = {
-					limit = { NOT = { has_trait = tits_big_good } }
-					add_trait = tits_big_good_1
+				else = {
+					set_trait_rank = { trait = tits_big_good rank = 0 }
 				}
 			}
 			else_if = {

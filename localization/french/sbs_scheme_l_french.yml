@@ -1,0 +1,21 @@
+﻿l_french:
+ sbs_devils_curse: "Malédiction du Diable"
+ sbs_devils_curse_action: "Maudire"
+ sbs_devils_curse_general_desc: "Accomplir un rituel démoniaque pour poser la malédiction choisie sur la cible. Votre Intrigue détermine les chances de succès."
+ sbs_devils_curse_success_desc: "En cas de succès, la malédiction choisie est appliquée à la cible."
+ sbs_devils_curse_success_toast: "La malédiction du Diable réussit"
+ sbs_devils_curse_failure_toast: "La malédiction du Diable échoue"
+
+ sbs_devils_gift: "Don du Diable"
+ sbs_devils_gift_action: "Accorder un don du Diable à"
+ sbs_devils_gift_general_desc: "Accomplir un rituel démoniaque pour accorder le don choisi à la cible. Votre Érudition détermine les chances de succès."
+ sbs_devils_gift_success_desc: "En cas de succès, le don choisi est accordé à la cible."
+ sbs_devils_gift_success_toast: "Le don du Diable réussit"
+ sbs_devils_gift_failure_toast: "Le don du Diable échoue"
+
+ sbs_ritual_easy_modifier: "Rituel simple"
+ sbs_ritual_easy_modifier_desc: "Un rituel simple : environ 1 mois et +60 de chance de succès fixe."
+ sbs_ritual_medium_modifier: "Rituel avancé"
+ sbs_ritual_medium_modifier_desc: "Un rituel avancé : environ 2 mois et +40 de chance de succès fixe."
+ sbs_ritual_hard_modifier: "Rituel difficile"
+ sbs_ritual_hard_modifier_desc: "Un rituel difficile : environ 3 mois et +20 de chance de succès fixe."

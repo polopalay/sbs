@@ -10,3 +10,10 @@
 
   nickname_the_whore: "La Prostituta"
   nickname_the_whore_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] solía ser noble, pero renunció a todo para convertirse en prostituta."
+
+  nickname_the_demon_queen: "la Reina Demonio"
+  nickname_the_demon_queen_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] es una criatura del infierno que traerá al mundo las bendiciones del mal"
+  nickname_the_demon_king: "el Rey Demonio"
+  nickname_the_demon_king_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] es una criatura del infierno que traerá al mundo las bendiciones del mal"
+  nickname_the_devil_creation: "Criaturas demoníacas"
+  nickname_the_devil_creation_desc: "Hijos nacidos del poder de los demonios, destinados a traer caos y destrucción."

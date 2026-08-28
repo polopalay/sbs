@@ -1,0 +1,21 @@
+﻿l_english:
+ sbs_devils_curse: "Devil's Curse"
+ sbs_devils_curse_action: "Curse"
+ sbs_devils_curse_general_desc: "Perform a demonic ritual to place the selected curse on the target. Your Intrigue determines the chance of success."
+ sbs_devils_curse_success_desc: "If successful, the selected curse is applied to the target."
+ sbs_devils_curse_success_toast: "The Devil's Curse Succeeds"
+ sbs_devils_curse_failure_toast: "The Devil's Curse Fails"
+
+ sbs_devils_gift: "Devil's Gift"
+ sbs_devils_gift_action: "Grant a Devil's Gift to"
+ sbs_devils_gift_general_desc: "Perform a demonic ritual to grant the selected gift to the target. Your Learning determines the chance of success."
+ sbs_devils_gift_success_desc: "If successful, the selected gift is granted to the target."
+ sbs_devils_gift_success_toast: "The Devil's Gift Succeeds"
+ sbs_devils_gift_failure_toast: "The Devil's Gift Fails"
+
+ sbs_ritual_easy_modifier: "Simple Ritual"
+ sbs_ritual_easy_modifier_desc: "A simple ritual: about 1 month and +60 fixed success chance."
+ sbs_ritual_medium_modifier: "Advanced Ritual"
+ sbs_ritual_medium_modifier_desc: "An advanced ritual: about 2 months and +40 fixed success chance."
+ sbs_ritual_hard_modifier: "Difficult Ritual"
+ sbs_ritual_hard_modifier_desc: "A difficult ritual: about 3 months and +20 fixed success chance."

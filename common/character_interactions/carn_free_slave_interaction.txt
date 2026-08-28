@@ -3,11 +3,9 @@
 	desc = carn_free_slave_interaction.desc
 	common_interaction = yes
 	is_shown = {
-		scope:recipient != scope:actor
 		scope:recipient = {
 			has_trait = slave
 			has_relation_slave_owner = scope:actor
-			is_courtier_of = scope:actor
 		}
 	}
 	localization_values = {
@@ -180,8 +178,7 @@
 		}
 	}
 	ai_targets = {
-		ai_recipients = self
-		ai_recipients = scripted_relations
+		ai_recipients = courtiers
 	}
 	ai_potential = { always = yes }
 	ai_frequency = 12
@@ -239,7 +236,6 @@
 		base = 0
 		modifier = {
 			factor = 0
-			scope:recipient != scope:actor
 			NOR = {
 				scope:extortionate_gold = yes
 				scope:extortionate_current_gold = yes
@@ -306,6 +302,10 @@
 		modifier = {
 			add = 40
 			scope:actor = { is_at_war = no ai_compassion >= very_high_negative_ai_value }
+			scope:recipient = { is_child_of = scope:actor }
+		}
+		modifier = {
+			add = 10
 			scope:recipient = { is_child_of = scope:actor }
 		}
 	}

@@ -45,6 +45,8 @@ carn_slave_prostitution.0001 = {
 				send_interface_message = {
 					type = carn_prostitute_random_event_good
 					title = carn_slave_prostitution.0001.t
+					left_icon = scope:slave
+					right_icon = scope:breeder
 					add_gold = scope:slave.prostitute_price_value
 					add_piety = miniscule_piety_loss
 				}

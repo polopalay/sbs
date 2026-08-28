@@ -1,0 +1,47 @@
+carnia_buy_from_slave_market = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_recruitment.dds" }
+	desc = carnia_buy_from_slave_market_desc
+	selection_tooltip = carnia_buy_from_slave_market_tooltip
+	confirm_text = carnia_buy_from_slave_market_confirm
+	decision_group_type = decisions
+
+	is_shown = {
+		is_ruler = yes
+		is_adult = yes
+	}
+
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+		short_term_gold >= minor_gold_value
+	}
+
+	effect = {
+		custom_tooltip = carnia_buy_from_slave_market_effect
+		hidden_effect = {
+			trigger_event = carnia_slave_market.0001
+		}
+	}
+
+	ai_check_interval = 24
+	ai_potential = {
+		is_available_adult = yes
+		highest_held_title_tier >= tier_duchy
+	}
+	ai_will_do = {
+		base = 40
+		modifier = {
+			factor = 0
+			any_relation = { type = slave }
+		}
+		modifier = {
+			factor = 0
+			short_term_gold < medium_gold_value
+		}
+		ai_value_modifier = {
+			ai_greed = 0.2
+			ai_compassion = -0.25
+			ai_honor = -0.1
+		}
+	}
+}
+

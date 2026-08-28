@@ -744,3 +744,722 @@ sbs_mind_break_effect = {
 		add_trait = lustful
 	}
 }
+
+sbs_remove_one_bad_habit_effect = {
+	random_character_trait = {
+		limit = {
+			OR = {
+				this = trait:drunkard
+				this = trait:hashishiyah
+				this = trait:rakish
+				this = trait:flagellant
+				this = trait:profligate
+				this = trait:comfort_eater
+				this = trait:inappetetic
+				this = trait:reclusive
+				this = trait:irritable
+			}
+		}
+		save_scope_as = sbs_bad_habit_trait
+	}
+	if = {
+		limit = { exists = scope:sbs_bad_habit_trait }
+		remove_trait = scope:sbs_bad_habit_trait
+	}
+}
+
+sbs_replace_one_sin_effect = {
+	save_scope_as = sbs_sinful_character
+	random_character_trait = {
+		limit = {
+			has_trait_category = personality
+			scope:sbs_sinful_character.faith = {
+				trait_is_sin = prev
+			}
+		}
+		save_scope_as = sbs_sinful_personality_trait
+	}
+	if = {
+		limit = { exists = scope:sbs_sinful_personality_trait }
+		remove_trait = scope:sbs_sinful_personality_trait
+		random_trait = {
+			limit = {
+				has_trait_category = personality
+				save_temporary_scope_as = sbs_candidate_virtue
+				scope:sbs_sinful_character.faith = { trait_is_virtue = prev }
+				NOR = {
+					scope:sbs_sinful_character = { has_trait = scope:sbs_candidate_virtue }
+					any_opposite_trait = {
+						scope:sbs_sinful_character = { has_trait = scope:sbs_candidate_virtue }
+					}
+				}
+			}
+			save_scope_as = sbs_virtuous_personality_trait
+		}
+		if = {
+			limit = { exists = scope:sbs_virtuous_personality_trait }
+			add_trait_force_tooltip = scope:sbs_virtuous_personality_trait
+		}
+	}
+}
+
+sbs_blessing_positive_modifier_effect = {
+	random_list = {
+		10 = { add_character_modifier = { modifier = divine_guidance_modifier years = 5 } }
+		10 = { add_character_modifier = { modifier = good_omen_modifier years = 5 } }
+		10 = { add_character_modifier = { modifier = strong_willed_modifier years = 5 } }
+		10 = { add_character_modifier = { modifier = confident_diplomat years = 5 } }
+		10 = { add_character_modifier = { modifier = confident_strategist years = 5 } }
+		10 = { add_character_modifier = { modifier = confident_organizer years = 5 } }
+		10 = { add_character_modifier = { modifier = confident_schemer years = 5 } }
+		10 = { add_character_modifier = { modifier = confident_scholar years = 5 } }
+	}
+}
+
+sbs_blessing_heal_one_injury_effect = {
+	random_character_trait = {
+		limit = {
+			OR = {
+				this = trait:ill
+				this = trait:wounded_1
+				this = trait:wounded_2
+				this = trait:wounded_3
+				this = trait:maimed
+				this = trait:one_eyed
+				this = trait:one_legged
+				this = trait:disfigured
+				this = trait:blind
+				this = trait:scarred
+			}
+		}
+		save_scope_as = sbs_injury_trait
+	}
+	if = {
+		limit = { exists = scope:sbs_injury_trait }
+		remove_trait = scope:sbs_injury_trait
+	}
+}
+
+sbs_blessing_heal_one_physical_issue_effect = {
+	random_character_trait = {
+		limit = {
+			OR = {
+				this = trait:beauty_bad_1
+				this = trait:beauty_bad_2
+				this = trait:beauty_bad_3
+				this = trait:intellect_bad_1
+				this = trait:intellect_bad_2
+				this = trait:intellect_bad_3
+				this = trait:physique_bad_1
+				this = trait:physique_bad_2
+				this = trait:physique_bad_3
+				this = trait:clubfooted
+				this = trait:hunchbacked
+				this = trait:lisping
+				this = trait:stuttering
+				this = trait:dwarf
+				this = trait:inbred
+				this = trait:weak
+				this = trait:dull
+				this = trait:spindly
+				this = trait:scaly
+				this = trait:albino
+				this = trait:wheezing
+				this = trait:bleeder
+				this = trait:infertile
+			}
+		}
+		save_scope_as = sbs_physical_issue_trait
+	}
+	if = {
+		limit = { exists = scope:sbs_physical_issue_trait }
+		remove_trait = scope:sbs_physical_issue_trait
+	}
+}
+
+sbs_blessing_remove_bad_fame_effect = {
+	random_character_trait = {
+		limit = {
+			OR = {
+				this = trait:deviant
+				this = trait:cannibal
+				this = trait:witch
+				this = trait:excommunicated
+			}
+		}
+		save_scope_as = sbs_bad_fame_trait
+	}
+	if = {
+		limit = { exists = scope:sbs_bad_fame_trait }
+		remove_trait = scope:sbs_bad_fame_trait
+	}
+}
+
+sbs_clear_epidemic_diseases_effect = {
+	if = { limit = { has_trait = smallpox } remove_trait = smallpox }
+	if = { limit = { has_trait = bubonic_plague } remove_trait = bubonic_plague }
+	if = { limit = { has_trait = typhus } remove_trait = typhus }
+	if = { limit = { has_trait = consumption } remove_trait = consumption }
+	if = { limit = { has_trait = measles } remove_trait = measles }
+	if = { limit = { has_trait = dysentery } remove_trait = dysentery }
+	if = { limit = { has_trait = ergotism } remove_trait = ergotism }
+}
+
+sbs_holy_realm_miracle_effect = {
+	add_piety = major_piety_loss
+	sbs_clear_epidemic_diseases_effect = yes
+	every_courtier_or_guest = {
+		sbs_clear_epidemic_diseases_effect = yes
+	}
+	every_vassal_or_below = {
+		sbs_clear_epidemic_diseases_effect = yes
+		every_courtier_or_guest = {
+			sbs_clear_epidemic_diseases_effect = yes
+		}
+	}
+}
+
+sbs_receive_blessing_effect = {
+	save_scope_as = sbs_blessed_character
+	if = {
+		limit = {
+			scope:sbs_blesser = { piety_level >= max_piety_level }
+			sbs_can_receive_realm_miracle_trigger = yes
+		}
+		sbs_holy_realm_miracle_effect = yes
+	}
+	else_if = {
+		limit = {
+			scope:sbs_blesser = { piety_level >= very_high_piety_level }
+			sbs_has_physical_issue_trait_trigger = yes
+		}
+		sbs_blessing_heal_one_physical_issue_effect = yes
+	}
+	else_if = {
+		limit = {
+			scope:sbs_blesser = { piety_level >= very_high_piety_level }
+			sbs_has_injury_trait_trigger = yes
+		}
+		sbs_blessing_heal_one_injury_effect = yes
+	}
+	else_if = {
+		limit = {
+			scope:sbs_blesser = { piety_level >= high_piety_level }
+			sbs_has_bad_fame_trait_trigger = yes
+		}
+		sbs_blessing_remove_bad_fame_effect = yes
+	}
+	else_if = {
+		limit = {
+			scope:sbs_blesser = { piety_level >= medium_piety_level }
+			sbs_has_sinful_trait_trigger = yes
+		}
+		sbs_replace_one_sin_effect = yes
+	}
+	else_if = {
+		limit = {
+			scope:sbs_blesser = { piety_level >= medium_piety_level }
+			sbs_has_bad_habit_trait_trigger = yes
+		}
+		sbs_remove_one_bad_habit_effect = yes
+	}
+	else_if = {
+		limit = { scope:sbs_blesser = { piety_level >= medium_piety_level } }
+		sbs_blessing_positive_modifier_effect = yes
+	}
+	else = {
+		add_piety = miniscule_piety_gain
+	}
+
+	if = {
+		limit = { scope:sbs_blesser = != scope:sbs_blessed_character }
+		add_opinion = {
+			target = scope:sbs_blesser
+			modifier = showed_me_the_light_opinion
+		}
+	}
+}
+
+# Curse/Gift ritual difficulty.
+sbs_ritual_easy_effect = {
+	set_variable = sbs_ritual_easy
+	add_scheme_modifier = { type = sbs_ritual_easy_modifier }
+}
+
+sbs_ritual_medium_effect = {
+	set_variable = sbs_ritual_medium
+	add_scheme_modifier = { type = sbs_ritual_medium_modifier }
+}
+
+sbs_ritual_hard_effect = {
+	set_variable = sbs_ritual_hard
+	add_scheme_modifier = { type = sbs_ritual_hard_modifier }
+}
+
+# Store selected Curse.
+sbs_store_curse_effect = {
+	if = {
+		limit = { scope:player ?= yes }
+		set_variable = player
+		sbs_ritual_hard_effect = yes
+	}
+	else_if = {
+		limit = { scope:intrigue_starved_and_deprived_modifier ?= yes }
+		set_variable = intrigue_starved_and_deprived_modifier
+		sbs_ritual_hard_effect = yes
+	}
+	else_if = {
+		limit = { scope:plagued_by_nightmares_modifier ?= yes }
+		set_variable = plagued_by_nightmares_modifier
+		sbs_ritual_hard_effect = yes
+	}
+	else_if = {
+		limit = { scope:county_corruption_bandits_rampant_modifier ?= yes }
+		set_variable = county_corruption_bandits_rampant_modifier
+		sbs_ritual_hard_effect = yes
+	}
+	else_if = {
+		limit = { scope:county_corruption_thieves_guild_modifier ?= yes }
+		set_variable = county_corruption_thieves_guild_modifier
+		sbs_ritual_hard_effect = yes
+	}
+	else_if = {
+		limit = { scope:county_corruption_roaming_bandits_modifier ?= yes }
+		set_variable = county_corruption_roaming_bandits_modifier
+		sbs_ritual_hard_effect = yes
+	}
+	else_if = {
+		limit = { scope:smallpox ?= yes }
+		set_variable = smallpox
+		sbs_ritual_hard_effect = yes
+	}
+	else_if = {
+		limit = { scope:typhus ?= yes }
+		set_variable = typhus
+		sbs_ritual_hard_effect = yes
+	}
+	else_if = {
+		limit = { scope:consumption ?= yes }
+		set_variable = consumption
+		sbs_ritual_hard_effect = yes
+	}
+	else_if = {
+		limit = { scope:bubonic_plague ?= yes }
+		set_variable = bubonic_plague
+		sbs_ritual_hard_effect = yes
+	}
+	else_if = {
+		limit = { scope:measles ?= yes }
+		set_variable = measles
+		sbs_ritual_hard_effect = yes
+	}
+	else_if = {
+		limit = { scope:dysentery ?= yes }
+		set_variable = dysentery
+		sbs_ritual_hard_effect = yes
+	}
+	else_if = {
+		limit = { scope:ergotism ?= yes }
+		set_variable = ergotism
+		sbs_ritual_hard_effect = yes
+	}
+	else_if = {
+		limit = { scope:party_baron_murdered_the_joy_of_life_modifier ?= yes }
+		set_variable = party_baron_murdered_the_joy_of_life_modifier
+		sbs_ritual_medium_effect = yes
+	}
+	else_if = {
+		limit = { scope:totally_lost_modifier ?= yes }
+		set_variable = totally_lost_modifier
+		sbs_ritual_medium_effect = yes
+	}
+	else_if = {
+		limit = { scope:bad_omen_modifier ?= yes }
+		set_variable = bad_omen_modifier
+		sbs_ritual_medium_effect = yes
+	}
+	else_if = {
+		limit = { scope:lost_in_lust_modifier ?= yes }
+		set_variable = lost_in_lust_modifier
+		sbs_ritual_medium_effect = yes
+	}
+	else_if = {
+		limit = { scope:sbs_seal ?= yes }
+		set_variable = sbs_seal
+		sbs_ritual_easy_effect = yes
+	}
+	else_if = {
+		limit = { scope:sbs_debuff ?= yes }
+		set_variable = sbs_debuff
+		sbs_ritual_easy_effect = yes
+	}
+	else_if = {
+		limit = { scope:stanky_modifier ?= yes }
+		set_variable = stanky_modifier
+		sbs_ritual_easy_effect = yes
+	}
+	else_if = {
+		limit = { scope:confused_modifier ?= yes }
+		set_variable = confused_modifier
+		sbs_ritual_easy_effect = yes
+	}
+	else = {
+		set_variable = stress_smelling_of_sweat
+		sbs_ritual_easy_effect = yes
+	}
+}
+
+# Store selected Devil's Gift.
+sbs_store_gift_effect = {
+	if = {
+		limit = { scope:game_concept_ruler ?= yes }
+		set_variable = game_concept_ruler
+		sbs_ritual_hard_effect = yes
+	}
+	else_if = {
+		limit = { scope:intellect_good ?= yes }
+		set_variable = intellect_good
+		sbs_ritual_hard_effect = yes
+	}
+	else_if = {
+		limit = { scope:education_learning ?= yes }
+		set_variable = education_learning
+		sbs_ritual_hard_effect = yes
+	}
+	else_if = {
+		limit = { scope:education_martial ?= yes }
+		set_variable = education_martial
+		sbs_ritual_hard_effect = yes
+	}
+	else_if = {
+		limit = { scope:education_intrigue ?= yes }
+		set_variable = education_intrigue
+		sbs_ritual_hard_effect = yes
+	}
+	else_if = {
+		limit = { scope:education_diplomacy ?= yes }
+		set_variable = education_diplomacy
+		sbs_ritual_hard_effect = yes
+	}
+	else_if = {
+		limit = { scope:education_stewardship ?= yes }
+		set_variable = education_stewardship
+		sbs_ritual_hard_effect = yes
+	}
+	else_if = {
+		limit = { scope:learned_in_demonology ?= yes }
+		set_variable = learned_in_demonology
+		sbs_ritual_medium_effect = yes
+	}
+	else_if = {
+		limit = { scope:possessed_prophetic_visions ?= yes }
+		set_variable = possessed_prophetic_visions
+		sbs_ritual_medium_effect = yes
+	}
+	else_if = {
+		limit = { scope:convert_diplomacy_perk ?= yes }
+		set_variable = convert_diplomacy_perk
+		sbs_ritual_medium_effect = yes
+	}
+	else_if = {
+		limit = { scope:convert_martial_perk ?= yes }
+		set_variable = convert_martial_perk
+		sbs_ritual_medium_effect = yes
+	}
+	else_if = {
+		limit = { scope:convert_stewardship_perk ?= yes }
+		set_variable = convert_stewardship_perk
+		sbs_ritual_medium_effect = yes
+	}
+	else_if = {
+		limit = { scope:convert_intrigue_perk ?= yes }
+		set_variable = convert_intrigue_perk
+		sbs_ritual_medium_effect = yes
+	}
+	else_if = {
+		limit = { scope:convert_learning_perk ?= yes }
+		set_variable = convert_learning_perk
+		sbs_ritual_medium_effect = yes
+	}
+	else_if = {
+		limit = { scope:reset_perks ?= yes }
+		set_variable = reset_perks
+		sbs_ritual_medium_effect = yes
+	}
+	else_if = {
+		limit = { scope:deviant ?= yes }
+		set_variable = deviant
+		sbs_ritual_easy_effect = yes
+	}
+	else_if = {
+		limit = { scope:witch ?= yes }
+		set_variable = witch
+		sbs_ritual_easy_effect = yes
+	}
+	else_if = {
+		limit = { scope:sbs_seal ?= yes }
+		set_variable = sbs_seal
+		sbs_ritual_easy_effect = yes
+	}
+	else_if = {
+		limit = { scope:possessed_by_lust_demon_modifier ?= yes }
+		set_variable = possessed_by_lust_demon_modifier
+		sbs_ritual_easy_effect = yes
+	}
+	else_if = {
+		limit = { scope:legend_bloodthirsty_warrior ?= yes }
+		set_variable = legend_bloodthirsty_warrior
+		sbs_ritual_easy_effect = yes
+	}
+	else = {
+		set_variable = sbs_buff
+		sbs_ritual_easy_effect = yes
+	}
+}
+
+# Apply selected Curse.
+sbs_curse_effect = {
+	scheme_target_character = {
+		if = {
+			limit = { scope:scheme = { has_variable = sbs_seal } }
+			add_character_modifier = sbs_seal
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = player } }
+			sbs_steal_body = { VICTIM = scope:target STEALER = scope:owner }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = sbs_debuff } }
+			add_character_modifier = { modifier = sbs_debuff years = 10 }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = stanky_modifier } }
+			add_character_modifier = { modifier = stanky_modifier years = 5 }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = party_baron_murdered_the_joy_of_life_modifier } }
+			add_character_modifier = { modifier = party_baron_murdered_the_joy_of_life_modifier years = 5 }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = bad_omen_modifier } }
+			add_character_modifier = { modifier = bad_omen_modifier years = 5 }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = totally_lost_modifier } }
+			add_character_modifier = { modifier = totally_lost_modifier years = 5 }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = confused_modifier } }
+			add_character_modifier = { modifier = confused_modifier years = 5 }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = intrigue_starved_and_deprived_modifier } }
+			add_character_modifier = { modifier = intrigue_starved_and_deprived_modifier years = 5 }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = lost_in_lust_modifier } }
+			add_character_modifier = { modifier = lost_in_lust_modifier years = 5 }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = stress_smelling_of_sweat } }
+			add_character_modifier = { modifier = stress_smelling_of_sweat years = 5 }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = plagued_by_nightmares_modifier } }
+			random_directly_owned_province = {
+				limit = { NOT = { has_province_modifier = plagued_by_nightmares_modifier } }
+				add_province_modifier = { modifier = plagued_by_nightmares_modifier years = 10 }
+			}
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = county_corruption_bandits_rampant_modifier } }
+			random_held_county = {
+				limit = {
+					NOT = { has_county_modifier = county_corruption_bandits_rampant_modifier }
+					NOR = {
+						title_province = { has_holding_type = nomad_holding }
+						title_province = { has_holding_type = herder_holding }
+					}
+				}
+				add_county_modifier = { modifier = county_corruption_bandits_rampant_modifier years = 10 }
+			}
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = county_corruption_thieves_guild_modifier } }
+			random_held_county = {
+				limit = {
+					NOT = { has_county_modifier = county_corruption_thieves_guild_modifier }
+					NOR = {
+						title_province = { has_holding_type = nomad_holding }
+						title_province = { has_holding_type = herder_holding }
+					}
+				}
+				add_county_modifier = { modifier = county_corruption_thieves_guild_modifier years = 10 }
+			}
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = county_corruption_roaming_bandits_modifier } }
+			random_held_county = {
+				limit = {
+					NOT = { has_county_modifier = county_corruption_roaming_bandits_modifier }
+					OR = {
+						title_province = { has_holding_type = nomad_holding }
+						title_province = { has_holding_type = herder_holding }
+					}
+				}
+				add_county_modifier = { modifier = county_corruption_roaming_bandits_modifier years = 10 }
+			}
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = smallpox } }
+			capital_province = { create_epidemic_outbreak = { type = smallpox intensity = minor } }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = typhus } }
+			capital_province = { create_epidemic_outbreak = { type = typhus intensity = minor } }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = consumption } }
+			capital_province = { create_epidemic_outbreak = { type = consumption intensity = minor } }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = bubonic_plague } }
+			capital_province = { create_epidemic_outbreak = { type = bubonic_plague intensity = minor } }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = measles } }
+			capital_province = { create_epidemic_outbreak = { type = measles intensity = minor } }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = dysentery } }
+			capital_province = { create_epidemic_outbreak = { type = dysentery intensity = minor } }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = ergotism } }
+			capital_province = { create_epidemic_outbreak = { type = ergotism intensity = minor } }
+		}
+	}
+}
+
+# Apply selected Devil's Gift.
+sbs_gift_effect = {
+	scheme_target_character = {
+		if = {
+			limit = { scope:scheme = { has_variable = game_concept_ruler } }
+			create_landless_adventurer_title_effect = {
+				REASON = flag:voluntary
+				FLAVOR_CHAR = scope:target
+			}
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = sbs_buff } }
+			random_list = {
+				5 = {
+					add_character_modifier = { modifier = sbs_generals years = 50 }
+				}
+				10 = {
+					modifier = {
+						is_valid_construction_alchemy_trigger = yes
+						add = 20
+					}
+					add_character_modifier = { modifier = sbs_buff years = 100 }
+				}
+			}
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = sbs_seal } }
+			remove_character_modifier = sbs_seal
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = deviant } }
+			if = {
+				limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:deviant } }
+				add_secret = { type = secret_deviant }
+			}
+			else = { add_trait = deviant }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = witch } }
+			if = {
+				limit = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = trait:witch } }
+				add_secret = { type = secret_witch }
+			}
+			else = { add_trait = witch }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = possessed_by_lust_demon_modifier } }
+			add_character_modifier = { modifier = possessed_by_lust_demon_modifier years = 10 }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = legend_bloodthirsty_warrior } }
+			add_character_modifier = { modifier = legend_bloodthirsty_warrior years = 10 }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = possessed_prophetic_visions } }
+			add_character_modifier = { modifier = possessed_prophetic_visions years = 10 }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = learned_in_demonology } }
+			add_character_modifier = { modifier = learned_in_demonology years = 10 }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = intellect_good } }
+			if = {
+				limit = { has_trait_rank = { trait = intellect_good rank < 3 } }
+				change_trait_rank = { trait = intellect_good rank = 1 }
+			}
+			else = { set_trait_rank = { trait = intellect_good rank = 0 } }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = convert_diplomacy_perk } }
+			add_diplomacy_lifestyle_perk_points = -1
+			add_diplomacy_skill = 1
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = convert_martial_perk } }
+			add_martial_lifestyle_perk_points = -1
+			add_martial_skill = 1
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = convert_stewardship_perk } }
+			add_stewardship_lifestyle_perk_points = -1
+			add_stewardship_skill = 1
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = convert_intrigue_perk } }
+			add_intrigue_lifestyle_perk_points = -1
+			add_intrigue_skill = 1
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = convert_learning_perk } }
+			add_learning_lifestyle_perk_points = -1
+			add_learning_skill = 1
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = reset_perks } }
+			refund_all_perks = yes
+			remove_all_landless_inspector_modifiers = yes
+			remove_all_perk_lifestyle_traits_effect = yes
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = education_learning } }
+			change_trait_rank = { trait = education_learning rank = 1 }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = education_martial } }
+			change_trait_rank = { trait = education_martial rank = 1 }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = education_intrigue } }
+			change_trait_rank = { trait = education_intrigue rank = 1 }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = education_diplomacy } }
+			change_trait_rank = { trait = education_diplomacy rank = 1 }
+		}
+		else_if = {
+			limit = { scope:scheme = { has_variable = education_stewardship } }
+			change_trait_rank = { trait = education_stewardship rank = 1 }
+		}
+	}
+}

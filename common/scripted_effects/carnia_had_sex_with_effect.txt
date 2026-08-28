@@ -375,5 +375,5 @@
 	fp2_had_friend_with_benefits = yes # FP2 History's Best Friend
 	save_scope_as = carn_sex_player
 	$CHARACTER$ = { save_scope_as = carn_sex_partner }
-	trigger_event = { on_action = carn_on_sex_v2 }
+	trigger_event = { on_action = carn_on_sex }
 }

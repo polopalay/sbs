@@ -42,3 +42,13 @@
 
   carn_force_stop_prostitution_interaction: "Arrêter la Prostitution"
   carn_force_stop_prostitution_interaction.desc: "Arrêter de forcer [recipient.GetShortUINameNoTooltip] à gagner [gold|E] pour vous en tant que prostituée"
+
+  carn_demand_free_illegal_slaves_interaction: "Exiger l'affranchissement"
+  carn_demand_free_slaves_interaction_desc: "Exiger que [recipient.GetShortUINameNoTooltip] affranchisse les [slaves|E] [illegal|E] qu'[recipient.GetSheHe] possède"
+  carn_demand_free_illegal_slaves_is_crime: "\\nRefuser d'affranchir des esclaves illégaux est un [crime|E]"
+  carn_seize_slave_interaction: "Saisir l'esclave"
+  carn_seize_slave_interaction_desc: "Prendre [recipient.GetShortUINameNoTooltip] comme [slave|E]"
+  sbs_pray_for_interaction: "Prier pour"
+  sbs_pray_for_interaction.desc: "Prier pour [recipient.GetShortUIName] et demander à Dieu une bénédiction selon votre niveau de dévotion."
+  sbs_ask_for_blessing_interaction: "Demander une bénédiction"
+  sbs_ask_for_blessing_interaction.desc: "Demander à [recipient.GetShortUIName] de prier pour vous. La bénédiction dépend automatiquement du niveau de dévotion de [recipient.GetHerHis]."

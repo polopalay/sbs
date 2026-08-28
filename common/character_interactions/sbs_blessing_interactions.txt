@@ -1,0 +1,196 @@
+sbs_pray_for_interaction = {
+	desc = sbs_pray_for_interaction.desc
+	category = interaction_category_religion
+	common_interaction = yes
+	use_diplomatic_range = yes
+	cooldown = { months = 6 }
+	cooldown_against_recipient = { years = 3 }
+
+	is_shown = {
+		scope:actor = {
+			is_adult = yes
+			has_trait = saint
+			faith = {
+				OR = {
+					religion = religion:christianity_religion
+					religion = religion:islam_religion
+					religion = religion:judaism_religion
+				}
+			}
+		}
+		scope:actor.faith.religion = scope:recipient.faith.religion
+	}
+	is_valid = {
+    	scope:actor = {
+    	    piety >= medium_piety_value
+    	}
+	}
+
+
+	on_accept = {
+		scope:actor = {
+			add_piety = medium_piety_loss
+			save_scope_as = sbs_blesser
+		}
+		scope:recipient = {
+			sbs_receive_blessing_effect = yes
+		}
+	}
+
+	auto_accept = yes
+	ai_frequency = 12
+	ai_targets = {
+		ai_recipients = self
+		ai_recipients = liege
+	}
+	ai_targets = {
+		ai_recipients = vassals
+		ai_recipients = peer_vassals
+		ai_recipients = courtiers
+		max = 5
+	}
+	ai_targets = {
+		ai_recipients = neighboring_rulers
+		ai_recipients = nearby_domicile_owners
+		max = 5
+	}
+	ai_targets = {
+		ai_recipients = realm_characters
+		max = 10
+	}
+	ai_will_do = {
+		base = 0
+		modifier = {
+			scope:actor = {
+				piety >= medium_piety_value
+			}
+			scope:recipient = scope:actor
+			scope:recipient = {
+				OR = {
+					sbs_has_bad_habit_trait_trigger = yes
+					sbs_has_sinful_trait_trigger = yes
+					sbs_has_injury_trait_trigger = yes
+					sbs_has_physical_issue_trait_trigger = yes
+					sbs_has_bad_fame_trait_trigger = yes
+				}
+			}
+			add = 50
+		}
+		modifier = {
+			scope:actor = { piety >= medium_piety_value }
+			add = 10
+		}
+		modifier = {
+			scope:actor = {
+				piety >= medium_piety_value
+			}
+			scope:recipient = {
+				OR = {
+					sbs_has_bad_habit_trait_trigger = yes
+					sbs_has_sinful_trait_trigger = yes
+					sbs_has_injury_trait_trigger = yes
+					sbs_has_physical_issue_trait_trigger = yes
+					sbs_has_bad_fame_trait_trigger = yes
+				}
+			}
+			add = 1
+		}
+	}
+}
+
+sbs_ask_for_blessing_interaction = {
+	desc = sbs_ask_for_blessing_interaction.desc
+	category = interaction_category_religion
+	common_interaction = yes
+	use_diplomatic_range = yes
+	cooldown = { months = 6 }
+	cooldown_against_recipient = { years = 3 }
+
+	is_shown = {
+		scope:actor = {
+			NOT = { has_trait = saint }
+		}
+		scope:recipient = {
+			is_adult = yes
+			has_trait = saint
+			faith = {
+				OR = {
+					religion = religion:christianity_religion
+					religion = religion:islam_religion
+					religion = religion:judaism_religion
+				}
+			}
+		}
+		scope:actor.faith.religion = scope:recipient.faith.religion
+	}
+	is_valid = {
+    	scope:recipient = {
+    	    piety >= medium_piety_value
+    	}
+	}
+
+	on_accept = {
+		scope:recipient = {
+			add_piety = medium_piety_loss
+			save_scope_as = sbs_blesser
+		}
+		scope:actor = {
+			sbs_receive_blessing_effect = yes
+		}
+	}
+
+	auto_accept = {
+		scope:recipient = {
+			has_trait = saint
+			opinion = { target = scope:actor value >= 0 }
+		}
+	}
+
+	ai_accept = {
+		base = 25
+		opinion_modifier = {
+			who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 0.5
+			desc = AI_OPINION_REASON
+		}
+	}
+	ai_potential = { always = yes }
+	ai_frequency = 12
+	ai_targets = {
+		ai_recipients = liege
+	}
+	ai_targets = {
+		ai_recipients = vassals
+		ai_recipients = peer_vassals
+		ai_recipients = courtiers
+		max = 5
+	}
+	ai_targets = {
+		ai_recipients = neighboring_rulers
+		ai_recipients = nearby_domicile_owners
+		max = 5
+	}
+	ai_targets = {
+		ai_recipients = realm_characters
+		max = 10
+	}
+	ai_will_do = {
+		base = 0
+		modifier = {
+			scope:recipient = {
+				piety >= medium_piety_value
+			}
+			scope:actor = {
+				OR = {
+					sbs_has_bad_habit_trait_trigger = yes
+					sbs_has_sinful_trait_trigger = yes
+					sbs_has_injury_trait_trigger = yes
+					sbs_has_physical_issue_trait_trigger = yes
+					sbs_has_bad_fame_trait_trigger = yes
+				}
+			}
+			add = 50
+		}
+	}
+}

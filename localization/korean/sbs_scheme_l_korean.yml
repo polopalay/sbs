@@ -1,0 +1,21 @@
+﻿l_korean:
+ sbs_devils_curse: "악마의 저주"
+ sbs_devils_curse_action: "저주한다"
+ sbs_devils_curse_general_desc: "선택한 저주를 대상에게 내리는 악마의 의식을 행한다. 성공 확률은 계략 능력에 따라 결정된다."
+ sbs_devils_curse_success_desc: "성공하면 선택한 저주가 대상에게 걸린다."
+ sbs_devils_curse_success_toast: "악마의 저주가 성공했다"
+ sbs_devils_curse_failure_toast: "악마의 저주가 실패했다"
+
+ sbs_devils_gift: "악마의 선물"
+ sbs_devils_gift_action: "에게 악마의 선물을 내린다"
+ sbs_devils_gift_general_desc: "선택한 선물을 대상에게 내리는 악마의 의식을 행한다. 성공 확률은 학식 능력에 따라 결정된다."
+ sbs_devils_gift_success_desc: "성공하면 선택한 선물이 대상에게 주어진다."
+ sbs_devils_gift_success_toast: "악마의 선물이 성공했다"
+ sbs_devils_gift_failure_toast: "악마의 선물이 실패했다"
+
+ sbs_ritual_easy_modifier: "단순한 의식"
+ sbs_ritual_easy_modifier_desc: "단순한 의식: 약 1개월, 고정 성공 확률 +60."
+ sbs_ritual_medium_modifier: "고급 의식"
+ sbs_ritual_medium_modifier_desc: "고급 의식: 약 2개월, 고정 성공 확률 +40."
+ sbs_ritual_hard_modifier: "어려운 의식"
+ sbs_ritual_hard_modifier_desc: "어려운 의식: 약 3개월, 고정 성공 확률 +20."

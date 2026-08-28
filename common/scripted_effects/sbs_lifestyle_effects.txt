@@ -1,6 +1,12 @@
 ﻿sbs_reset_all_lifestyle_perks_effect = {
 	refund_all_perks = yes
 	remove_all_perk_lifestyle_traits_effect = yes
+	add_learning_lifestyle_perk_points = -100
+	add_diplomacy_lifestyle_perk_points = -100
+	add_intrigue_lifestyle_perk_points = -100
+	add_martial_lifestyle_perk_points = -100
+	add_stewardship_lifestyle_perk_points = -100
+	add_wanderer_lifestyle_perk_points = -100
 }
 
 sbs_grant_diplomat_branch_effect = {

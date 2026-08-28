@@ -18,8 +18,8 @@ carn_seize_slave_interaction = {
 	is_shown = {
 		scope:recipient = {
 			has_trait = slave
-			is_imprisoned_by = scope:actor
 			NOT = { has_relation_slave_owner = scope:actor }
+			is_imprisoned_by = scope:actor
 		}
 	}
 
@@ -55,18 +55,11 @@ carn_seize_slave_interaction = {
 
 	ai_will_do = {
 		base = 0
-
 		opinion_modifier = {
 			opinion_target = scope:recipient.liege
 			multiplier = -1
 		}
-
-		ai_value_modifier = {
-			ai_compassion = -1
-		}
-
-		ai_value_modifier = {
-			ai_honor = -1
-		}
+		ai_value_modifier = { ai_compassion = -1 }
+		ai_value_modifier = { ai_honor = -1 }
 	}
 }

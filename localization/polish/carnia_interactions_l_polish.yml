@@ -42,3 +42,13 @@ use_contraception: "Stosuj antykoncepcję"
 
  carn_force_stop_prostitution_interaction: "Zatrzymaj prostytucję"
  carn_force_stop_prostitution_interaction.desc: "Przestań zmuszać [recipient.GetShortUINameNoTooltip] do zarabiania [gold|E] jako prostytutka"
+
+ carn_demand_free_illegal_slaves_interaction: "Żądaj wyzwolenia"
+ carn_demand_free_slaves_interaction_desc: "Żądaj, by [recipient.GetShortUINameNoTooltip] wyzwolił[recipient.GetSheHe] [illegal|E] [slaves|E], których posiada"
+ carn_demand_free_illegal_slaves_is_crime: "\\nOdmowa wyzwolenia nielegalnych niewolników to [crime|E]"
+ carn_seize_slave_interaction: "Zajmij niewolnika"
+ carn_seize_slave_interaction_desc: "Weź [recipient.GetShortUINameNoTooltip] jako własnego [slave|E]"
+ sbs_pray_for_interaction: "Módl się za"
+ sbs_pray_for_interaction.desc: "Módl się za [recipient.GetShortUIName] i proś Boga o błogosławieństwo zgodne z poziomem oddania."
+ sbs_ask_for_blessing_interaction: "Poproś o błogosławieństwo"
+ sbs_ask_for_blessing_interaction.desc: "Poproś [recipient.GetShortUIName], by pomodlił się za ciebie. Błogosławieństwo zależy automatycznie od poziomu oddania [recipient.GetHerHis]."

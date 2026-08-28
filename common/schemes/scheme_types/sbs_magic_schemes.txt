@@ -1,0 +1,170 @@
+sbs_devils_curse = {
+	skill = intrigue
+	category = hostile
+	desc = sbs_devils_curse_general_desc
+	success_desc = sbs_devils_curse_success_desc
+	icon = icon_scheme_murder
+	illustration = "gfx/interface/illustrations/event_scenes/corridor.dds"
+	target_type = character
+	is_secret = yes
+	is_basic = yes
+	uses_resistance = no
+	odds_prediction = { add = 20 }
+
+	base_progress_goal = 30
+	speed_per_skill_point = 0
+	speed_per_target_skill_point = 0
+	spymaster_speed_per_skill_point = 0
+	target_spymaster_speed_per_skill_point = 0
+	tier_speed = 0
+	success_chance_growth_per_skill_point = 0
+
+	minimum_success = 5
+	base_maximum_success = 95
+	maximum_secrecy = 100
+	minimum_secrecy = 100
+	base_secrecy = 100
+
+	allow = {
+		is_alive = yes
+		is_adult = yes
+		has_trait_with_flag = sbs_demon_trait
+		scope:target = {
+			is_alive = yes
+			is_adult = yes
+			NOT = {
+				has_trait = saint
+				has_trait_with_flag = sbs_demon_trait
+			}
+		}
+	}
+
+	valid = {
+		is_alive = yes
+		scope:target = { is_alive = yes }
+	}
+
+	base_success_chance = {
+		base = 0
+		scheme_type_skill_success_chance_modifier = { SKILL = INTRIGUE }
+	}
+
+	on_phase_completed = {
+		save_scope_as = scheme
+		scheme_owner = { save_scope_as = owner }
+		scheme_target_character = { save_scope_as = target }
+
+		random = {
+			chance = scope:scheme.scheme_success_chance
+			save_scope_value_as = {
+				name = sbs_ritual_successful
+				value = yes
+			}
+			sbs_curse_effect = yes
+		}
+
+		if = {
+			limit = { exists = scope:sbs_ritual_successful }
+			scheme_owner = {
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = sbs_devils_curse_success_toast
+					left_icon = scope:owner
+					right_icon = scope:target
+				}
+			}
+		}
+		else = {
+			scheme_owner = {
+				send_interface_toast = {
+					type = event_toast_effect_bad
+					title = sbs_devils_curse_failure_toast
+					left_icon = scope:owner
+					right_icon = scope:target
+				}
+			}
+		}
+
+		end_scheme = yes
+	}
+}
+
+sbs_devils_gift = {
+	skill = learning
+	category = personal
+	desc = sbs_devils_gift_general_desc
+	success_desc = sbs_devils_gift_success_desc
+	icon = icon_scheme_convert_to_witchcraft
+	illustration = "gfx/interface/illustrations/event_scenes/corridor.dds"
+	target_type = character
+	is_secret = no
+	is_basic = yes
+	uses_resistance = no
+	odds_prediction = { add = 20 }
+
+	base_progress_goal = 30
+	speed_per_skill_point = 0
+	speed_per_target_skill_point = 0
+	spymaster_speed_per_skill_point = 0
+	target_spymaster_speed_per_skill_point = 0
+	tier_speed = 0
+	success_chance_growth_per_skill_point = 0
+
+	minimum_success = 5
+	base_maximum_success = 95
+
+	allow = {
+		is_alive = yes
+		has_trait_with_flag = sbs_demon_trait
+		scope:target = { is_alive = yes }
+	}
+
+	valid = {
+		is_alive = yes
+		scope:target = { is_alive = yes }
+	}
+
+	base_success_chance = {
+		base = 0
+		scheme_type_skill_success_chance_modifier = { SKILL = LEARNING }
+	}
+
+	on_phase_completed = {
+		save_scope_as = scheme
+		scheme_owner = { save_scope_as = owner }
+		scheme_target_character = { save_scope_as = target }
+
+		random = {
+			chance = scope:scheme.scheme_success_chance
+			save_scope_value_as = {
+				name = sbs_ritual_successful
+				value = yes
+			}
+			sbs_gift_effect = yes
+		}
+
+		if = {
+			limit = { exists = scope:sbs_ritual_successful }
+			scheme_owner = {
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = sbs_devils_gift_success_toast
+					left_icon = scope:owner
+					right_icon = scope:target
+				}
+			}
+		}
+		else = {
+			scheme_owner = {
+				send_interface_toast = {
+					type = event_toast_effect_bad
+					title = sbs_devils_gift_failure_toast
+					left_icon = scope:owner
+					right_icon = scope:target
+				}
+			}
+		}
+
+		end_scheme = yes
+	}
+}

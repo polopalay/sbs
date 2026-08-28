@@ -1,6 +1,6 @@
 ﻿l_spanish:
   carn_doctrine_same_slavery_name: "Religión Esclavista Justa"
-  carn_doctrine_same_slavery_crime_name: "Criminal"
+  carn_doctrine_same_slavery_crime_name: "Delito"
   carn_doctrine_same_slavery_crime_desc: "Es un pecado capital esclavizar a un miembro de la fé [ROOT.Faith.GetReligion.GetAdjectiveNoTooltip], porque hacerlo es creerte superior a [ROOT.Faith.PantheonTerm]."
   carn_doctrine_same_slavery_shunned_name: "Rechazado"
   carn_doctrine_same_slavery_shunned_desc: "A pesar de nuestras diferencia, todos los miembros de [ROOT.Faith.GetReligion.GetAdjectiveNoTooltip] son projimos. Es injusto que uno de nosotros sea tratado menos que un ser humano."
@@ -11,7 +11,7 @@
   doctrine_parameter_same_slavery_accepted: "Poseer [slaves|E] de [faith_righteous|E] o [faith_astray|E] [faiths|E] es aceptado"
 
   carn_doctrine_other_slavery_name: "Religión Esclavista Hostil"
-  carn_doctrine_other_slavery_crime_name: "Criminal"
+  carn_doctrine_other_slavery_crime_name: "Delito"
   carn_doctrine_other_slavery_crime_desc: "Todas las personas tienen dignidad a pesar de su credo. Es un crimen esclavizar a alguien solo porque no cree en [ROOT.Faith.PantheonTerm]."
   carn_doctrine_other_slavery_shunned_name: "Rechazado"
   carn_doctrine_other_slavery_shunned_desc: "Es cruel y desagradable apropiarse de la vida de un infiel, incluso si sus creencias son erroneas."
@@ -22,7 +22,7 @@
   doctrine_parameter_other_slavery_accepted: "Poseer [slaves|E] de [faith_hostile|E] o [faith_evil|E] [faiths|E] es aceptado"
 
   carn_doctrine_prostitution_name: "Prostitución"
-  carn_doctrine_prostitution_crime_name: "Criminal"
+  carn_doctrine_prostitution_crime_name: "Delito"
   carn_doctrine_prostitution_crime_desc: "Vender o pagar por sexo es corromper la base misma de la sociedad. Aquellos que esparcen este mal deben ser castigados por sus crimenes."
   carn_doctrine_prostitution_shunned_name: "Rechazada"
   carn_doctrine_prostitution_shunned_desc: "Aunque sea vergonzoso y demigrante vender cuerpos por sexo, no hay nada inherentemente contrario hacia [ROOT.Faith.PantheonTerm]."

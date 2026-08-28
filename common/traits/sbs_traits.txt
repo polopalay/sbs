@@ -13,6 +13,13 @@ sbs_true_demon = {
 	flag = carn_cannot_be_enslaved
 	flag = sbs_demon_trait
 
+    ai_compassion = dominant_negative_ai_value
+	ai_sociability = dominant_positive_ai_value
+    ai_boldness = dominant_positive_ai_value
+    ai_honor = dominant_negative_ai_value
+	ai_greed = dominant_positive_ai_value
+	ai_zeal = dominant_negative_ai_value
+
 	diplomacy = 100
 	martial = 100
 	stewardship = 100
@@ -86,8 +93,10 @@ sbs_demon = {
 	monthly_lifestyle_xp_gain_mult = -1000
 	long_reign_bonus_mult = -1000
 
-	ai_honor = dominant_positive_ai_value
-	ai_vengefulness = dominant_positive_ai_value
+	ai_compassion = dominant_negative_ai_value
+    ai_boldness = high_positive_ai_value
+    ai_honor = dominant_negative_ai_value
+	ai_zeal = dominant_negative_ai_value
 
 	desc = {
 		first_valid = {
@@ -123,6 +132,9 @@ sbs_succubus = {
 	monthly_lifestyle_xp_gain_mult = -1000
 	long_reign_bonus_mult = -1000
 
+	ai_honor = very_high_negative_ai_value
+	ai_boldness = high_positive_ai_value
+	ai_sociability = dominant_positive_ai_value
 	ai_greed = dominant_positive_ai_value
 	ai_zeal = dominant_negative_ai_value
 
@@ -154,8 +166,11 @@ sbs_lesser_succubus = {
 	valid_sex = female
 	minimum_age = 16
 
-	ai_honor = dominant_positive_ai_value
+	ai_honor = high_negative_ai_value
+	ai_boldness = medium_positive_ai_value
+	ai_sociability = medium_positive_ai_value
 	ai_greed = dominant_positive_ai_value
+	ai_zeal = dominant_negative_ai_value
 
 	monthly_lifestyle_xp_gain_mult = -0.9
 	long_reign_bonus_mult = -0.9
@@ -244,8 +259,10 @@ sbs_lesser_demon = {
 	valid_sex = male
 	minimum_age = 16
 
-	ai_honor = dominant_positive_ai_value
-	ai_vengefulness = dominant_positive_ai_value
+	ai_compassion = high_negative_ai_value
+    ai_boldness = medium_positive_ai_value
+    ai_honor = high_negative_ai_value
+	ai_zeal = dominant_negative_ai_value
 
 	desc = {
 		first_valid = {
@@ -276,4 +293,3 @@ sbs_lesser_demon = {
 
 	ruler_designer_cost = 200
 }
-
